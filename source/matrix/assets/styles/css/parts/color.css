@@ -1,0 +1,78 @@
+/*=== COLOR ===*/
+:root
+{
+  --HTML_OPAC: 0;
+  --INVERT_FILTER:
+      invert(100%)
+      hue-rotate({{C_o.HUE_ROTATE_n}}deg)
+      brightness(8);
+  --SATURATE_FILTER:
+      saturate(3)
+      brightness(2);
+}
+
+
+
+
+/*=== OPACITY ===*/
+.unseen,
+.invisible,
+.retract,
+__                     {opacity: 0}
+
+
+#sections_nav > h1,
+__                     {opacity: .5}
+#sections_nav > h1:hover,
+__                     {opacity: 1}
+
+
+
+/*=== FRONT ===*/
+a,
+legend,
+__                     {color: inherit}
+
+body,
+h2,
+#sections_nav,
+__                     {color: var(--c_prim_lo)}
+
+
+#sections_nav > h1,
+__                     {color: var(--c_highlight)}
+
+
+.svg_icon,
+__                     {stroke: var(--c_highlight)}
+
+
+
+/*=== BACKGROUND ===*/
+#sections_nav,
+#scroll_top,
+#scroll_bottom,
+#sections,
+#sections > *
+,
+__                     {background: transparent}
+
+.svg_icon,
+__                     {fill: none}
+
+
+
+*::-webkit-scrollbar-track,
+__                     {background: var(--c_decor_ne)}
+
+*::-webkit-scrollbar-thumb,
+__                     {background: var(--c_decor_hi)}
+
+body,
+#nav_bar,
+#sections_slider,
+#graph_slider,
+__                     {background: var(--c_prim_hi)}
+
+#section_docs,
+__                     {background: var(--c_prim_lo_2)}

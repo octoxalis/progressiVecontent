@@ -1,0 +1,91 @@
+/*=== DIMENSIONS ===*/
+:root
+{
+  --BODY_WIDTH: calc( {{C_o.BODY_WIDTH_n}} * 1vw );
+  --LINE_WIDTH: clamp( 30ch, {{C_o.LINE_WIDTH_n}} * 1ch, var(--BODY_WIDTH) - 4vw );
+  --IMG_REVEAL:    6em;
+  --NAVBAR_DIM:    4em;
+  --SLIDER_HEIGHT: 4em;
+  --SLIDER_WIDTH:  100vw;
+}
+
+#nav_bar               {--svg_icon_dim: 1.8em}
+
+
+/*=== WIDTH ===*/
+.retract,
+__                     {width: 0}
+
+.unseen,
+__                     {width: 1px}
+
+article,
+__                     {width: var(--BODY_WIDTH)}
+
+p,
+ol, ul,
+__                     {width: var(--LINE_WIDTH)}
+
+hr,
+__                     {width: calc( var(--BODY_WIDTH) * .25 )}
+
+.svg_icon,
+__                     {width: var(--svg_icon_dim)}
+
+#sections,
+#nav_bar,
+#sections_slider,
+#graph_slider
+__                     {width: 100%}
+
+
+#sections_slider,
+#graph_slider
+__                     {width: 100vw}
+
+
+*,
+__                     {scrollbar-width:thin}
+
+
+
+/*=== HEIGHT ===*/
+.retract,
+__                     {height: 0}
+
+.unseen,
+__                     {height: 1px}
+
+.svg_icon,
+__                     {height: var(--svg_icon_dim)}
+
+#nav_bar,
+__                     {height: var(--NAVBAR_DIM)}
+
+#sections_slider,
+__                     {height: var(--SLIDER_HEIGHT)}
+
+
+
+/*=== FLEX-BASIS ===*/
+#scroll_top,
+#scroll_bottom,
+__                     {flex-basis: 10%}
+#sections_nav,
+__                     {flex-basis: 80%}    /* calc( ( 100 - (10*2) ) * 1% ) */
+
+
+/*=== CLIP ===*/
+.unseen,
+__                     {clip-path: inset(0px 0px)}
+
+
+/*=== OVERFLOW ===*/
+#sections_slider,
+#graph_slider,
+.unseen,
+__                     {overflow: hidden}
+
+body,
+__                     {overflow-x: hidden}
+

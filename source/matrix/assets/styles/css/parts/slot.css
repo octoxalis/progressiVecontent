@@ -1,0 +1,211 @@
+/*=== SLOT ===*/
+
+article,
+__                     {--count_txt: note_txt;
+                        --count_img: note_img;
+                        --count_example: note_example}
+
+article,
+__                     {counter-reset: var(--count_txt) var(--count_example)}
+
+.span_icon,
+__                     {--svg_icon_dim: 2rem }
+
+
+a[data-id="redirect"],
+__                     {display:none}
+
+
+pre > code,
+[data-id="example"]::before,
+__                     {display:block}
+
+
+.span_icon,
+__                     {display: grid; place-items: center}
+
+
+button[data-slot_s],
+__                     {display: flex;
+                        justify-content: space-between;
+                        align-content: center}
+
+
+a,
+[data-id="ulist"] > li::before,
+[data-id="important"]::before,
+__                     {position: relative}
+
+
+
+[data-id="ulist"]  > li
+__                     {margin: 0}
+
+
+button[data-slot_s],
+h2[data-slot_s],
+__                     {margin: var(--PAD_4) 0}
+
+
+.span_icon,
+__                     {margin: var(--PAD_1) 0}
+
+
+[data-id="ulist"],
+__                     {margin: var(--PAD_2) 0 0 var(--PAD_4)}
+
+
+h3[data-id="performance"],
+__                     {margin-top: var(--PAD_8)}
+
+
+
+
+h2[data-slot_s],
+__                     {padding: var(--PAD_1) var(--PAD_2)}
+
+div[data-slot_s],
+__                     {padding: var(--PAD_4)  var(--PAD_8)}
+
+
+[data-id="ulist"],
+__                     {padding-left:0}
+
+
+[data-id="ulist"],
+__                     {padding-left:var(--PAD_2)}
+
+
+[data-id="example"],
+__                     {max-width:100%}
+
+button[data-slot_s],
+/*__                     {width: var(--BODY_WIDTH)}*/
+__                     {width: 100vw}
+
+
+button[data-slot_s] > h2,
+__                     {height: 6em}  /* see line-height */
+
+
+button[data-slot_s],
+__                     {left: 50%; right: 50%}  /* center */
+
+button[data-slot_s],
+__                     {margin-left: -50vw; margin-right: -50vw}  /* center */
+
+
+
+button[data-slot_s] > h2,
+__                     {flex-basis: 100%}
+
+
+
+hr,
+__                     {border-top: 1px solid var(--c_prim_ne)}
+
+
+
+/*
+button[data-slot_s]:focus,
+__                     {border-top: 2px solid var(--c_prim_lo)}
+*/
+
+
+[data-id="ulist"]  > li,
+__                     {border-left: var(--BORDER_1) solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
+
+[data-id="ulist"]  > li,
+__                     {--border_opac:.6}
+
+[data-id="ulist"]  > li >  [data-id="ulist"]  > li,
+__                     {--border_opac:.4}
+
+[data-id="ulist"]  > li >  [data-id="ulist"]  > li >, [data-id="ulist"]  > li
+__                     {--border_opac:.3}
+
+
+
+/*
+button[data-slot_s],
+__                     {border-radius: 8px}
+*/
+
+
+button[data-slot_s],
+__                     {box-shadow:var(--BOX_SHADOW)}
+
+
+[data-id="note_txt"] > button,
+mark[data-tag],
+__                     {color: inherit}
+
+
+
+[data-id="important"]::before,
+__                     {color:var(--c_decor_ne)}
+
+
+[data--=important]::before,
+__                     {color:var(--c_decor_ne)}
+
+
+a:focus, a:hover ,
+__                     {color: var(--c_link_hi)}
+
+
+
+mark[data-tag],
+__                     {background: inherit}
+
+
+section[data-slot_n],
+__                     {background: var(--c_sec_hi_3)}
+
+
+button[data-slot_s],
+__                     {background: var(--c_prim_hi_2)}
+
+
+[data-id="note_txt"] > button,
+__                     {background:var(--c_decor_hi_op_lo)}
+
+
+
+button[data-slot_s] > h2,
+__                     {line-height: 6}  /* see height */
+
+
+__                     {font-size: inherit}
+
+
+
+[data-id="ulist"]  > li::before,
+__                     {--char_size: .5em}
+
+[data-id="ulist"]  > li::before,
+__                     {content: '▶'}
+[data-id="ulist"]  > li::before,
+__                     {top: calc( var(--char_size) * -0.125 )}
+[data-id="ulist"]  > li::before,
+__                     {left: calc( var(--char_size) * -1 )}
+[data-id="ulist"]  > li::before,
+__                     {color: var(--border_color)}
+[data-id="ulist"]  > li::before,
+__                     {font-size: var(--char_size)}
+
+
+
+button[data-slot_s] > h2,
+__                     {font-weight: 600}
+
+
+
+button[data-slot_s] > h2,
+__                     {text-transform: uppercase}
+
+
+.svg_icon:hover,
+button[data-slot_s]:hover,
+#tools_link:hover,
+__                     {filter: brightness( 2 )}

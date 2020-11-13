@@ -1,0 +1,8 @@
+---js
+{
+  layout:    `assets/scripts/js/json.njk`,
+  permalink: `assets/scripts/js/json.min.js`,
+
+  sitemap_exclude_b: true,
+}
+---

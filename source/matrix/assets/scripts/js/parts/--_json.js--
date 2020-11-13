@@ -1,0 +1,19 @@
+//-- JSO_o
+var JSO_o =
+{
+  class__c    //:- Convert a Json `Object` to a `Class` instance
+  (
+    json_o,    //: JSON `Object`
+    proto_o    //: `Class` prototype
+  )
+  {
+    json_o.__proto__ = proto_o
+    return json_o
+  }
+,
+
+  
+}
+
+
+//: json_o.__proto__ = Class.prototype

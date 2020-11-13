@@ -1,0 +1,19 @@
+/*=== TRANSFORM ===*/
+
+.retract,
+__                     {transform: scale(0)}
+
+#scroll_bottom > svg,
+__                     {transform:rotate(.5turn)}
+
+__                     {transform: translate(0)}
+
+.aside,
+__                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7rem ) * -1 ) )}
+
+
+
+/*=== ORIGIN ===*/
+.retract,
+__                     {transform-origin: top left}
+

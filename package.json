@@ -1,0 +1,39 @@
+{
+  "name": "progressiVecontent",
+  "version": "1.0.0",
+  "description": "Innovative website architecture for modular content",
+  "main": "source/make/11ty/make.js",
+  "dependencies": {
+    "clean-css": "^4.2.3",
+    "clipboard": "^2.0.6",
+    "dayjs": "^1.8.27",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^8.1.0",
+    "html-minifier": "^4.0.0",
+    "http-server": "^0.12.3",
+    "json5": "^2.1.3",
+    "klaw-sync": "^6.0.0",
+    "markdown-it": "^9.1.0",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-include": "^1.1.0",
+    "node-fetch": "^2.6.1",
+    "npx": "^10.2.2",
+    "nunjucks": "^3.2.2",
+    "performance-leaderboard": "^1.0.4",
+    "prismjs": "^1.22.0",
+    "terser": "^5.3.8"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  },
+  "scripts": {
+    "test": "eleventy --help"
+  },
+  "keywords": [
+    "static",
+    "site"
+  ],
+  "author": "octoxalis",
+  "license": "MIT"
+}

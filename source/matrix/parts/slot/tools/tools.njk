@@ -1,0 +1,15 @@
+{% set data_o = D_o.data__o( permalink, collections.all ) %}
+{{- '' | template_start( data_o ) -}}{# ante process #}
+
+{% set _id_s = F_o.slotId__s( permalink ) %}
+{% set _svg_icon %}
+<svg class="svg_icon">
+{% endset %}
+
+{%- set _template_s %}
+<h2>tools</h2>
+{% include "parts/slot/tools/hue_base.njk" %}
+{% include "parts/slot/tools/light_mode.njk" %}
+{% endset -%}
+
+{{- _template_s | section( permalink, rank_n ) | spot | safe | minify_html | template_end( data_o ) -}}{# post process #}

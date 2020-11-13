@@ -1,0 +1,22 @@
+/*=== BOX ===*/
+:root
+{
+  --BOX_SHADOW:
+        0 1px 1px var(--c_shadow_ne), 
+        0 2px 2px var(--c_shadow_ne), 
+        0 4px 4px var(--c_shadow_ne);
+  
+  /* !!!!!! TODO --BOX_OVERLAY: 0 0 0 100vmax var(--c_overlay);*/
+}
+
+
+
+/*=== SIZING ===*/
+html,
+__                     {box-sizing:border-box}
+
+*, 
+*:before,
+*:after,
+__                     {box-sizing:inherit}
+

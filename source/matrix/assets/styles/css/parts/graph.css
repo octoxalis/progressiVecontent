@@ -1,0 +1,213 @@
+/*=== GRAPH ===*/
+
+:root
+{
+  --NODE_BACK_SELECTED: var(--c_box_ne);
+  --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
+}
+
+#tools_link,
+__                     {--svg_icon_dim: 2rem }
+
+#node_display
+{
+  --display_dim: 50vw;
+  --svg_icon_dim: 2em;
+  --size_ratio: .8;
+  --node_height: 3rem;
+}
+
+
+#node_document,
+#node_actions,
+__                     {display: grid; place-items: center}
+
+
+#node_actions > ul,
+__                     {display: flex; flex-direction: row-reverse}
+
+
+#node_document,
+__                     {display: flex; justify-content: flex-start}
+
+
+
+
+#docs_graph,
+#graph_svg,
+#node_actions,
+#node_labels,
+#tools_link,
+__                     {position: relative}
+
+
+#node_display,
+__                     {position: absolute}
+
+
+#node_labels,
+__                     {top: -.8rem}
+
+
+#node_display,
+__                     {top: calc( var(--display_dim) * .5 )}
+
+#node_actions,
+__                     {top: calc( var(--node_height) * -1 )}
+
+
+#node_display,
+__                     {left: calc( var(--display_dim) * .25 )}
+
+
+#docs_graph,
+__                     {margin: 0}
+
+
+#graph,
+__                     {margin: auto}
+
+#graph,
+__                     {margin-top: var(--PAD_8)}
+
+#tools_link,
+__                     {margin: var(--PAD_4) 0}
+
+
+#node_actions li:not(:first-of-type),
+__                     {margin-right: var(--PAD_2)}
+
+
+#graph_svg,
+__                     {padding:0}
+
+
+#node_document,
+__                     {padding: var(--PAD_2)}
+
+#node_labels,
+__                     {padding:0 var(--PAD_2)}
+
+
+#node_actions > ul,
+__                     {padding-right: var(--PAD_2)}
+
+
+#docs_graph,
+#graph,
+#graph_svg,
+#node_actions > ul,
+#node_labels > ul,
+__                     {width: 100%}
+
+
+#node_display,
+__                     {width: var(--display_dim)}
+
+
+#node_display,
+__                     {height: auto}
+
+
+#node_document,
+__                     {height: var(--node_height)}
+
+
+#node_display,
+__                     {border: 2px solid var(--c_sec_hi_2)}
+
+
+#graph_svg,
+#node_display,
+#tools_link,
+__                     {border-radius: 8px}
+
+
+#node_document,
+#node_actions
+__                     {border-top-left-radius: 8px}
+
+#node_document,
+#node_actions
+__                     {border-top-right-radius: 8px}
+
+
+#graph_svg,
+__                     {cursor: pointer}
+
+
+       /* ??? mouse device only */
+#graph_svg:hover,
+__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+
+
+#node_display:hover,
+__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
+
+
+#node_labels,
+__                     {color: var(--c_prim_lo_4)}
+
+
+#graph_svg > rect,
+__                     {stroke: none}
+
+
+#graph_svg > rect.node_focus,
+__                     {stroke: var(--c_sec_lo)}
+
+#graph_svg > rect,
+__                     {fill: var(--c_prim_hi_2)}
+
+
+#graph_svg > rect.node_selected,
+__                     {fill: var(--c_prim_ne)}
+
+
+
+
+
+#graph_svg,
+#node_actions,
+__                     {background: transparent}
+
+
+#node_display,
+__                     {background: var(--NODE_BACK)}
+
+#node_document,
+__                     {background: var(--c_sec_hi)}
+
+#tools_link,
+__                     {background: var(--c_prim_hi_2)}
+
+/*
+#node_actions > ul,
+__                     {background: var(--c_sec_hi_2)}
+*/
+
+#node_display *,
+__                     {font-size: inherit}
+
+#node_labels li,
+__                     {font-weight: 500}
+
+
+#node_document,
+__                     {text-transform: uppercase}
+
+
+#node_display,
+__                     {cursor: pointer}
+
+#node_display,
+__                     {box-shadow:var(--BOX_SHADOW)}
+
+
+#node_display,
+__                     {transition: transform .2s ease}
+
+
+#node_labels li:hover,
+__                     {color: var(--c_sec_lo);
+                        background: var(--c_sec_hi)}

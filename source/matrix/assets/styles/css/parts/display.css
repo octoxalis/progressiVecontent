@@ -1,0 +1,34 @@
+/*=== DISPLAY ===*/
+:root
+{
+  --ASIDE_Z: 1;
+}
+
+
+/*=== DISPLAY ===*/
+main,
+section,
+article,
+#scroll_top,
+#scroll_bottom,
+#sections_nav,
+__                     {display:grid; place-items:center}
+
+#nav_bar,
+#sections_slider,
+#graph_slider,
+__                     {display: flex}
+
+
+#sections_slider,
+#graph_slider,
+__                     {flex-direction: column}
+
+
+/*=== Z-INDEX ===*/
+#sections_slider,
+__                     {z-index: var(--ASIDE_Z)}
+
+#nav_bar,
+__                     {z-index: calc( var(--ASIDE_Z) + 1 )}
+

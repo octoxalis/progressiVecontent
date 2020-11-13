@@ -1,0 +1,213 @@
+/*=== SLIDER ===*/
+
+dl[data-step],
+__                     {display: grid; place-items: center}
+
+.step_list,
+dl[data-step] > dd,
+__                     {display: flex}
+
+
+.step_list,
+__                     {flex-wrap: nowrap}
+
+
+.step_list,
+__                     {justify-content: center}
+
+
+dl[data-step] > dd,
+__                     {align-items: flex-start}
+
+
+#sections_slider,
+#graph_slider,
+.slide_list,
+.step_list,
+dl[data-step] > dt,
+dl[data-step] > dd,
+__                     {position: relative}
+
+dl[data-step],
+__                     {position: absolute}
+
+
+
+dl[data-step],
+__                     {margin: 0}
+
+button[data-step],
+__                     {margin: auto}
+
+button[data-step] + button[data-step],
+__                     {margin-left: 1.5%}  /* space between */
+
+
+#sections_slider,
+#graph_slider,
+__                     {margin-left: -50vw; margin-right: -50vw}  /* center */
+
+
+
+.slide_list,
+.step_list,
+button[data-step],
+__                     {padding: .1rem}
+
+dl[data-step],
+__                     {padding: var(--PAD_2)}
+
+
+#graph_slider  button[data-step],
+__                     {--slider_cap: var(--LABELS_CAP)}
+#sections_slider  button[data-step],
+__                     {--slider_cap: var(--SECTIONS_CAP)}
+
+
+
+.slide_list,
+.step_list,
+__                     {--slide_height: .85;
+                        --step_height:  .15}
+
+.slide_list,
+__                     {--list_height: var(--slide_height)}  /* ??? flex-basis */
+
+.step_list,
+__                     {--list_height: var(--step_height)}  /* ??? flex-basis */
+
+
+dl[data-step],
+__                     {--slide_width: 16ch}
+
+
+#sections_slider,
+#graph_slider,
+__                     {width: 100vw}
+
+/*
+.slide_list,
+.step_list,
+__                     {width: 100%}
+*/
+
+dl[data-step],
+__                     {width: var(--slide_width)}
+
+button[data-step],
+__                     {flex-grow: 1}/* !!! width by flex-grow */
+
+
+.slide_list,
+.step_list,
+__                     {height: calc( var(--SLIDER_HEIGHT) * var(--list_height) + 1rem)}
+
+dl[data-step],
+__                     {height: calc( var(--SLIDER_HEIGHT) * var(--list_height) - 1rem )}  /* padding * 2 */
+
+button[data-step],
+__                     {height:  .8rem}
+
+
+#sections_slider,
+#graph_slider,
+__                     {left: 50%; right: 50%}  /* center */
+
+
+
+dl[data-step],
+__                     {overflow: hidden}
+
+
+
+dl[data-step],
+__                     {color: var(--c_sec_lo)}
+
+
+button[data-step],
+.slide_list,
+__                     {background: transparent}
+
+.step_list,
+__                     {background: var(--c_prim_hi)}
+
+dl[data-step],
+__                     {background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_ne) / 1 )}
+
+
+
+.slide_list,
+.step_list,
+__                     {list-style: none}
+
+
+button[data-step],
+__                     {appearance: none}  /* destyle */
+
+dl[data-step],
+__                     {text-transform: uppercase}
+
+
+.slide_list,
+.step_list,
+__                     {border: none}
+
+button[data-step],
+.slide_focus,
+__                     {border: 2px solid var(--c_sec_lo)}
+
+
+dl[data-step],
+__                     {border-radius: 8px}
+
+button[data-step],
+__                     {border-radius: 2px}
+
+
+button[data-step],
+__                     {outline: 0}
+
+
+.slide_list,
+.step_list,
+__                     {overflow: hidden}
+
+dl[data-step] > dt,
+__                     {text-align: center}
+
+
+button[data-step],
+__                     {font: inherit}
+
+
+.slide_title,
+__                     {--size_ratio: .65}
+
+dl[data-step] > dd,
+__                     {--size_ratio: .8}
+
+dl[data-step],
+button[data-step],
+__                     {cursor: pointer}
+
+
+.slide_list,
+.step_list,
+__                     {transform-style: preserve-3d}
+
+
+.slide_list,
+.step_list,
+__                     {transform-origin: 0 50%}
+
+
+button[data-step],
+__                     {transition: all .2s ease}
+
+
+button[data-step]:hover,
+.step_focus:focus,
+.step_focus,
+__                     {background: var(--c_sec_ne);
+                        filter: var(--SATURATE_FILTER)}
+

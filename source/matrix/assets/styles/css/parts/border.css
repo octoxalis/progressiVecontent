@@ -1,0 +1,34 @@
+/*=== BORDER ===*/
+:root
+{
+  --BORDER_W: .2em;
+  --BORDER_1: calc( var(--BORDER_W) * 1 );
+  --BORDER_2: calc( var(--BORDER_1) * 2 );
+  --BORDER_3: calc( var(--BORDER_1) * 3 );
+}
+
+
+
+/*=== BORDER ===*/
+iframe,
+button,
+.unseen,
+__                     {border: 0}
+
+
+*::-webkit-scrollbar-thumb,
+__                     {border: var(--BORDER_1) solid var(--c_decor_ne)}
+
+
+
+/*=== BORDER-RADIUS ===*/
+*::-webkit-scrollbar-thumb,
+__                     {border-radius: .5rem}
+
+
+
+/*=== OUTLINE ===*/
+/* ??? #sections_nav, */
+button:focus,
+__                     {outline: 0}
+

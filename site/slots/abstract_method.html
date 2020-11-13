@@ -1,0 +1,104 @@
+
+
+<section id="section_abstract_method" data-rank_n="1" class="invisible"><button data-slot_s="abstract_method"><h2>abstract method</h2><span class="span_icon" data-slot_s="abstract_method"><svg class="svg_icon"><use href="#icon_trash" class="use_icon"></use></svg></span></button><article data-slot_s="abstract_method" class="retract"><p>One with only a <mark data-tag="TAG">signature</mark> and no <mark data-tag="TAG">implementation body</mark>. It is often used to specify that a subclass must provide an implementation of the method. Abstract methods are used to specify <mark data-tag="TAG">interfaces</mark> in some computer languages.</p><pre data-id="code"><code data-id="code" class="language-javascript"><span class="token comment">//:- https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading</span>
+  
+  fetch__v    <span class="token comment">//:- Fetch offline-1st</span>
+  <span class="token punctuation">(</span>
+    fetch_o
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> fetch_o<span class="token punctuation">.</span>request<span class="token punctuation">.</span>mode <span class="token operator">===</span> <span class="token string">'navigate'</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+      <span class="token keyword">try</span>
+      <span class="token punctuation">{</span>
+        fetch_o
+          <span class="token punctuation">.</span><span class="token function">respondWith</span>
+          <span class="token punctuation">(</span>
+            <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+              <span class="token keyword">const</span> url_o <span class="token operator">=</span>
+                SWO_o
+                  <span class="token punctuation">.</span><span class="token function">route__v</span>
+                  <span class="token punctuation">(</span>
+                    <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span> fetch_o<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url <span class="token punctuation">)</span>
+                  <span class="token punctuation">)</span>
+              <span class="token keyword">const</span> response_o <span class="token operator">=</span>
+                <span class="token function">fetch</span><span class="token punctuation">(</span> url_o <span class="token punctuation">)</span>
+              <span class="token keyword">const</span> clone_o <span class="token operator">=</span>
+                response_o
+                  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token parameter">resp_o</span> <span class="token operator">=></span> resp_o<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+              fetch_o
+                <span class="token punctuation">.</span><span class="token function">waitUntil</span>
+                <span class="token punctuation">(</span>
+                  <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token keyword">const</span> cache_o <span class="token operator">=</span>
+                      <span class="token keyword">await</span> caches
+                        <span class="token punctuation">.</span><span class="token function">open</span>
+                        <span class="token punctuation">(</span>
+                          SWO_o<span class="token punctuation">.</span>cache_s
+                        <span class="token punctuation">)</span>
+                    <span class="token keyword">await</span> cache_o
+                      <span class="token punctuation">.</span><span class="token function">put</span>
+                      <span class="token punctuation">(</span>
+                        url_o<span class="token punctuation">,</span>
+                        <span class="token keyword">await</span> clone_o
+                      <span class="token punctuation">)</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">//: IIFE</span>
+                <span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">(</span> <span class="token keyword">await</span> caches<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span> url_o <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">||</span> response_o
+            <span class="token punctuation">}</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">catch</span>
+      <span class="token punctuation">(</span>
+        error_o
+      <span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> cache_o <span class="token operator">=</span>
+          caches
+            <span class="token punctuation">.</span><span class="token function">open</span>
+            <span class="token punctuation">(</span>
+              SWO_o<span class="token punctuation">.</span>cache_s
+            <span class="token punctuation">)</span>
+        <span class="token keyword">return</span> cache_o
+          <span class="token operator">&amp;&amp;</span>
+          cache_o
+            <span class="token punctuation">.</span><span class="token function">match</span>
+            <span class="token punctuation">(</span>
+              <span class="token keyword">new</span> <span class="token class-name">Request</span><span class="token punctuation">(</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{{U_o.url_s}}offline.html</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">)</span>  <span class="token comment">//: We don't have a cached version, display offline page</span>
+            <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span>
+  
+
+route__v   <span class="token comment">//: from self</span>
+  <span class="token punctuation">(</span>
+    url_o    <span class="token comment">//: e.g. 'http://{{U_o.url_s}}#/slots/page.html', i.e. hash: '#/slots/page.html'</span>
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> pathSlot_s <span class="token operator">=</span>
+      url_o
+        <span class="token punctuation">.</span>pathname
+    <span class="token keyword">let</span> hash_s <span class="token operator">=</span>
+      url_o
+        <span class="token punctuation">.</span>hash
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> hash_s <span class="token punctuation">)</span>    <span class="token comment">//: for internal links (-> '#/slots/page.html')</span>
+    <span class="token punctuation">{</span>
+      pathSlot_s <span class="token operator">=</span>
+        hash_s
+          <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span>    <span class="token comment">//: trim '#'  //:-> '/slots/page.html'</span>
+      url_o<span class="token punctuation">.</span>href <span class="token operator">=</span>
+        url_o
+          <span class="token punctuation">.</span>origin      <span class="token comment">//: "back" to origin</span>
+    <span class="token punctuation">}</span>
+    SWO_o
+      <span class="token punctuation">.</span><span class="token function">cache__v</span>
+      <span class="token punctuation">(</span>
+        pathSlot_s
+      <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> url_o
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span></code></pre><div data-id="code_ref"><dl data-id="code_ref"><dt><a href="https://github.com/octoxalis/progressiVecontent/blob/master/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js" target="_blank">progressiVecontent/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js</a></dt><dd><a href="https://prismjs.com" target="_blank" title="Highlighting provided by Prism.js">Prism</a></dd></dl></div></article><a href="https://progressivecontent.netlify.app/#//slots/abstract_method.html" data-id="redirect" tabindex="-1">Go to Site Open</a><script data-node="Link" data-list="slot code"></script></section>

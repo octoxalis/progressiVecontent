@@ -1,0 +1,375 @@
+/*=== NOTE ===*/
+
+ .note_link_a,
+ __                     {--button_dim: 3em;
+                         /*--button_pad: .5em;*/
+                        }
+
+[data-id^=note_] button,
+__                      {--size_ratio: .75}
+
+
+[data-id="note_img"],
+__                      {--note_dim: 2em}
+[data-id="note_img"],
+__                      {--svg_icon_dim: 1em}
+
+[data-id^="note_"],
+__                      {--font_body: 90%;
+                         --font_sup: 75%;
+                         --font_strong: 120%;
+                         --border_radius: .3em}
+
+
+[data-id="note_txt"] > button::after,
+__                      {content: counter( var(--count_txt) )}
+
+[data-id="note_txt"] > button,
+__                      {counter-increment: var(--count_txt)}
+
+[data-id="note_img"],
+__                      {counter-increment: var(--count_img)}
+
+ 
+.note_link::before,
+.note_link::after,
+/*[src^="data:image/gif;base64,R0"],*/
+[src$="1px.png"],
+__                     {display: none}
+
+
+[data-id="note_content"].note_open
+__                     {display: block}
+
+
+[data-id="note_content"],
+[data-id="note_content"] u,
+[data-id="note_content"] strong,
+[data-id="note_content"] cite,
+[data-id="note_content"] code,
+__                     {display:inline-block}
+
+
+
+.note_link,
+[data-id="note_img"] button,
+__                     {display: grid;
+                        place-items: center}
+
+.note_link,
+__                     {display: grid;
+                        align-items: end}
+
+
+[data-id="note_img"] button,
+__                     {grid-template-columns: 1fr var(--IMG_REVEAL)}
+
+
+[data-id="img_unfold"],
+__                     {display: grid;
+                        justify-items: end}
+
+
+.note_link_a,
+__                     {display: flex;
+                        justify-content: center}
+
+
+[data-id="img_legend"],
+[data-id="note_img"],
+__                     {display: flex;
+                        flex-direction: column;
+                        align-items: stretch}
+
+
+
+[data-id="img_unfold"] > img,
+__                     {justify-content: end}
+
+
+
+
+.note_link_a,
+[data-id="img_unfold"] > img,
+[data-id="note_img"] [data-id="note_content"],
+__                     {position: relative}
+
+
+
+[data-id="img_unfold"] > img,
+.note_open img,
+__                     {object-fit: scale-down}
+
+
+.note_open img,
+__                     {object-position: 50% 0%}  /* top align */
+
+
+[data-id="img_unfold"] > img,
+__                     {object-position: 100% 50%}  /* right align */
+
+
+
+
+[data-id="note_content"],
+__                     {overflow: hidden}
+
+[data-id="note_content"],
+__                     {break-before: avoid;
+                        break-inside: avoid;
+                        break-after: avoid}
+  
+
+.note_link_a,
+
+__                     {top: calc( var(--button_dim) * -.5 ) }  /* covering both legend & image */
+
+
+
+
+[data-id="note_img"] [data-id="note_content"],
+__                     {margin: 0}
+
+button[data-legend],
+__                     {margin-top: var(--PAD_8)}
+
+
+[data-id="note_txt"] > button,
+__                     {margin-right: var(--PAD_1)}
+
+
+
+[data-id="note_img"] [data-id="note_content"],
+__                     {margin-left: -50vw; margin-right: -50vw}/* !!!! full width */
+[data-id="note_img"] [data-id="note_content"],
+__                     {left: 50%; right: 50%}/* !!!! full width */
+
+
+
+[data-id="note_txt"] > button,
+[data-id="note_img"] button,
+__                     {padding: 0 var(--PAD_1)}
+
+[data-id="note_txt"] .note_open,
+.note_link,
+__                     {padding: var(--PAD_2)}
+
+[data-id="img_legend"],
+[data-id="note_img"] button,
+__                     {padding: var(--PAD_1)}
+
+[data-id="note_img"] em,    /* as author or credit */
+__                     {padding: var(--PAD_4) 0}
+
+
+[data-id="note_content"],
+__                     {width: 0}
+
+
+
+.note_link_a,
+__                     {width: var(--line_width)}
+
+
+
+[data-id="note_img"] button,
+.note_open img,                  /* can be overriden by inline style */
+__                     {width: 100%}
+
+
+[data-id="note_img"] [data-id="note_content"],
+__                     {width: 100vw}/* !!!! full width */
+
+
+
+[data-id="note_content"].note_open,
+__                     {min-width: var(--LINE_WIDTH)}
+
+
+
+[data-id="img_unfold"] > img,
+__                     {width: var(--IMG_REVEAL)}
+
+
+
+
+[data-id="note_content"],
+__                     {height: 0}
+
+.note_open,
+__                     {height: auto}  /*!!! keep after [data-id="note_content"] */
+
+
+.note_link,
+__                     {width: var(--button_dim); height: var(--button_dim)}
+
+
+[data-id="note_img"] button,
+__                     {height: calc( var(--IMG_REVEAL) + (2px * 2) )}  /* border:2px */
+
+
+[data-id="img_unfold"] > img,
+__                     {height: var(--IMG_REVEAL)}
+
+
+
+[data-id="note_txt"] .note_open,
+__                     {border-left: var(--PAD_2) solid var(--c_back_op)}
+
+
+.note_link,
+[data-id="note_txt"] > button,
+__                     {border-radius: 50%}
+
+[data-id="img_unfold"] > img,
+[data-id="note_img"] button,
+.note_open,
+__                     {border-radius: var(--border_radius)}
+
+
+.note_link,
+__                     {outline: none}
+
+
+__                     {cursor: pointer}
+
+
+__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+
+
+
+button[data-legend],
+__                     {color: inherit}
+
+.note_link,
+__                     {color: var(--c_decor_hi)}
+
+__                     {stroke: none}
+
+
+
+__                     {fill: var(--c_prim_hi_2)}
+
+[data-id="note_img"] [data-id="note_content"],
+[data-id="note_img"],
+__                     {background: transparent}
+
+
+
+.note_open,
+.note_link,
+button[data-legend],
+[data-id^="note_"] > button,
+__                     {background: var(--c_box_hi)}
+
+
+/*[data-id="note_txt"] .note_open,*/
+[data-id^="note_"] button:hover,
+.note_link:hover,
+__                     {filter: brightness( 2 )}
+
+
+
+
+[data-id="note_img"] button *,
+__                     {font-size: inherit}
+
+[data-id^="note_"] > button,
+__                     {font-size: var(--font_sup)}
+
+
+
+
+[data-id^="note_"],
+__                     {text-decoration: none}
+
+
+.note_link:hover,
+[data-id^="note_"],
+__                     {cursor: pointer}
+
+
+__                     {box-shadow:var(--BOX_SHADOW)}
+
+
+
+
+@keyframes unfold_note_img
+                       {  0% { opacity:0; transform:scale(0)}
+                        100% { opacity:1; transform:scale(1)} }
+
+@keyframes load_note_img
+                       {  0% {transform: scale(0)}
+                        100% {transform: scale(1)} }
+
+
+.note_open,
+__                     {transition: all 0.25s ease}
+
+
+[data-id="img_unfold"] > img,
+__                     {transform-origin: center}
+.note_open img,
+__                     {transform-origin: top right}
+
+
+[data-id="img_unfold"] > img,
+__                     {animation: unfold_note_img .25s ease-in-out}
+
+.note_open img,
+__                     {animation: load_note_img .25s ease-in-out}
+
+
+
+
+[data-id="note_content"],
+__                     {pointer-events: none}
+
+
+
+
+/* ................................................*/
+[data-id="note_content"] u    /* horizontal line */
+{
+  border-top: .1rem solid var(--c_prim_tr);
+}
+
+[data-id="note_content"] strong    /* title */
+{
+  /*display: inline-block;*/
+  margin-top: var(--PAD_4);
+  font-size: var(--font_strong);
+  font-weight: 900;
+  font-style: normal;
+}
+
+[data-id="note_content"] em    /* emphasis */
+{
+  font-weight: 900;
+  font-style: normal;
+}
+
+[data-id="note_content"] a  /* link */
+{
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+[data-id="note_content"] cite    /* citation */
+{
+  padding-left: var(--PAD_4);
+}
+[data-id="note_content"] cite::before
+{
+  content: '\00ab';
+}
+[data-id="note_content"] cite::after
+{
+  content: '\00bb';
+}
+
+[data-id="note_img"] cite    /* as title */
+{
+  padding: 1em 0;
+  font-weight: 500;
+}

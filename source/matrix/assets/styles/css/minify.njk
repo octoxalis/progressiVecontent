@@ -1,0 +1,3 @@
+{% if U_o.dev_b === true %}{{- _css | strip | safe -}}
+{% else %}{{- _css | strip | minify_css | safe -}}
+{% endif %}

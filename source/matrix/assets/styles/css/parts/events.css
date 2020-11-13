@@ -1,0 +1,8 @@
+/*=== EVENTS ===*/
+.svg_icon,
+__                     {pointer-events: all}
+
+.unseen,
+.invisible,
+__                     {pointer-events: none}
+

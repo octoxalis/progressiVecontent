@@ -1,0 +1,110 @@
+/*=== DECORATION ===*/
+
+/*=== TEXT ===*/
+a,
+__                     {text-decoration: none}
+                                      
+button, select,
+__                     {text-transform: none}
+
+
+/*=== WHITE-SPACE ===*/
+p > code,
+pre > code,
+__                     {white-space: pre}
+
+.unseen,
+__                     {white-space: nowrap}
+
+
+
+/*=== LIST-STYLE ===*/
+dl,
+ol,
+ul,
+__                     {list-style: none}
+
+
+
+/*=== CURSOR ===*/
+body,
+__                     {cursor: default}
+
+.invisible,
+__                     {cursor: auto}
+
+button,
+.svg_icon,
+__                     {cursor: pointer}
+
+
+
+/*=== SHADOW ===*/
+/*
+hr,
+__                     {box-shadow:var(--BOX_SHADOW)}
+*/
+
+
+
+a::before,
+a::after
+{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  background: var(--c_link_ne);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+a::before,
+__                     {height: 1px}
+
+a::after,
+__                     {height: 4px;transform: scaleX(0)}
+
+a:hover::after,
+__                     {transform: scaleX(1)}
+
+
+/* .................................*/
+svg.unfold,
+__                     {--svg_icon_dim: 3em}
+
+svg.unfold,
+__                     {stroke-width: 1.5px}
+svg.unfold,
+__                     {position: relative}
+svg.unfold,
+__                     {top: 1.15em}
+
+svg.unfold,
+__                     {margin: 0 calc(var(--PAD_1) * -5 ) 0 calc(var(--PAD_1) * -2 )}  /* negative margins */
+
+
+h1:hover,
+__                     {filter: invert( .75 )}
+svg.unfold:hover,
+__                     {filter: saturate( 10 )}
+/* .................................*/
+
+
+/* === SCROLLBAR === */
+*,
+__                     {scrollbar-width:thin;
+                        scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
+
+*::-webkit-scrollbar,
+__                     {width: .75em}
+
+*::-webkit-scrollbar-track,
+__                     {background: var(--c_decor_ne)}
+
+*::-webkit-scrollbar-thumb
+,
+__                     {background-color: var(--c_decor_hi);
+                        border:           .2em solid var(--c_decor_ne);
+                        border-radius:    .5em}
+

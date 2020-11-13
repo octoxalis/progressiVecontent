@@ -1,0 +1,112 @@
+/*=== FONT ===*/
+:root
+{
+  --base_u: 8;
+  --base_min: 1.7;
+  --screen_min: 400;
+  --screen_max: 1600;
+
+  --font_base: calc( var(--base_u) * var(--base_min) );
+  --font_min: var(--font_base);
+  --font_max: calc( var(--font_base) * 2 );
+  --font_size: calc( (var(--font_min) * 1px)
+                     + ( var(--font_max) - var(--font_min) )
+                     * ( 100vw - (var(--screen_min) * 1px) )
+                     / ( var(--screen_max) - var(--screen_min) )
+                   );
+  --font_u: calc( var(--font_size) * 1 );  /* font unit - can be adjusted */
+
+  --font_body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif;
+  --font_mono: system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace;
+  --font_title: var(--font_body);
+}
+
+
+
+/*=== FAMILY ===*/
+body,
+body *,                /* default */
+__                     {font-family: var(--font_body)}
+
+button[data-slot_s],
+__                     {font-family:var(--font_title)}
+
+
+
+/*=== SIZE ===*/
+body,
+body *,                /* default */
+body *:before,
+body *:after,
+__                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
+
+
+
+h1,
+__                     {--size_ratio: 1.6}
+
+h2,
+__                     {--size_ratio: 1.4}
+h3,
+h4,
+h5,
+h6,
+__                     {--size_ratio: 1.2}
+
+body,
+body *,                /* default */
+__                     {--size_ratio: 1}
+
+small,
+sub,
+sup,
+ins[data-id^=note_] button,
+.note_open,
+__                     {--size_ratio: .8}
+
+#sections_nav > h1,
+__                     {--size_ratio: .7}
+                 
+
+
+
+/*=== WEIGHT ===*/
+body,
+body *,
+__                     {font-weight: 300}
+
+b,
+strong,
+h1,
+__                     {font-weight: 900}
+
+button[data-slot_s],
+__                     {font-weight: 500}
+
+h2,
+__                     {font-weight: 200}
+
+
+#sections_nav > h1,
+__                     {font-weight: 600}
+
+
+
+
+/*=== STYLE ===*/
+#sections_nav > h1,
+[data-id=example]::before,
+__                     {font-style:italic}
+
+
+
+/*=== HEIGHT ===*/
+h1,
+__                     {line-height: 1}
+
+
+
+/*=== SPACING ===*/
+#sections_nav > h1,
+__                     {letter-spacing: .4em}
+

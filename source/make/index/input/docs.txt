@@ -1,0 +1,294 @@
+abstract_data_type_(adt) mathematical_model data_types semantics user data_structures 
+abstract_method signature implementation_body interfaces 
+agent_architecture blueprint software_agents intelligent_control intelligent_agents cognitive_architectures 
+agent-based_model_(abm) computational_models simulating game_theory complex_systems emergence computational_sociology multi-agent_systems evolutionary_programming Monte-Carlo_methods 
+aggregate_function database_management function set bag list 
+agile_software_development software_development self-organizing cross-functional customer(s) end_user(s) continual_improvement 
+algorithm calculation data_processing automated_reasoning 
+algorithm_design algorithms operation_research dynamic_programming divide-and-conquer 
+algorithmic_efficiency algorithm computational_resources analyzed productivity 
+american_standard_code_for_information_interchange_(ascii) character_encoding telecommunications_equipment 
+application_programming_interface_(api) subroutine communication_protocols software computer_program programmer 
+application_software Computer_software user word_processors spreadsheets accounting_applications web_browsers media_players flight_simulators console_games photo_editors system_software 
+array_data_structure data_structure values variables tuple 
+artifact software use_cases class_diagrams Unified_Modeling_Language 
+artificial_intelligence_(ai) Intelligence machines computer_science intelligent_agents human_minds 
+ascii American_Standard_Code_for_Information_Interchange 
+assertion computer_programming statement predicate Boolean-valued_function expression compiler crashes exception 
+associative_array 
+automata_theory abstract_machines automata computational_problems theoretical_computer_science discrete_mathematics mathematics computer_science 
+automated_reasoning computer_science mathematical_logic reasoning computer_programs artificial_intelligence theoretical_computer_science philosophy 
+bandwidth 
+bayesian_programming probabilistic_models 
+benchmark computer_program 
+best,_worst_and_average_case resource algorithm time_complexity 
+big_data data_sets data-processing application_software statistical_power false_discovery_rate 
+big_o_notation limiting_behavior function Paul_Bachmann Edmund_Landau 
+binary_number digital_electronics 0_(zero) 1_(one) 
+binary_search_algorithm search_algorithm sorted_array 
+binary_tree tree data_structure children recursive_definition set_theory tuple empty_set singleton_set 
+bioinformatics biology computer_science information_engineering mathematics statistics software_tools in_silico 
+bit basic_unit_of_information computing binary values 
+bit_rate_(r) telecommunications computing bits 
+blacklist computing access_control URLs IP_addresses domain_names hashes whitelist greylist 
+bmp_file_format raster_graphics image_file_format bitmap display_device graphics_adapter Microsoft_Windows OS/2 
+boolean_data_type data_type truth_values logic Boolean_algebra George_Boole conditional control_flow probabilistic_logic 
+boolean_expression expression programming_language Boolean_value Boolean-typed Boolean-valued_functions 
+boolean_algebra mathematical_logic algebra truth_values elementary_algebra conjunction disjunction negation 
+byte unit_of_digital_information bits binary_number character addressable memory computer_architectures 
+booting computer computer_appliance read-only_memory firmware power-on_self-tests hard_disk main_memory programs main_memory 
+callback executable_code argument 
+central_processing_unit_(cpu) computer instructions computer_program input/output control_unit main_memory 
+character unit_of_information grapheme alphabet syllabary natural_language 
+cipher cryptography algorithm encryption decryption procedure 
+class object-oriented_programming objects member_variables methods constructor subroutine type instantiating 
+class-based_programming object-oriented_programming classes objects prototype-based_programming 
+class-orientation Object-oriented_programming classes objects prototype-based_programming 
+client computer_hardware software server computer_system network client–server_model 
+cleanroom_software_engineering software_development_process reliability Harlan_Mills IBM 
+closure lexically_scoped name_binding first-class_functions Operationally record function 
+cloud_computing system_resources provisioned Internet economies_of_scale public_utility 
+code_library non-volatile_resources computer_programs software_development pre-written_code subroutines classes values type IBM's_OS/360_and_its_successors partitioned_data_sets 
+collection 
+coding executable computer_program computing algorithms programming_language source_code application_domain logic 
+coding_theory codes data_compression cryptography error_detection_and_correction data_transmission data_storage information_theory electrical_engineering mathematics linguistics computer_science 
+cognitive_science scientific mind cognition information artificial_intelligence philosophy neuroscience 
+comma-separated_values_(csv) text_file tabular plain_text record fields commas file_format 
+compiler computer_program programming_language translator source_code high-level_programming_language lower-level_language assembly_language object_code machine_code executable 
+compiler_theory 
+computability_theory mathematical_logic computer_science theory_of_computation computable_functions Turing_degrees proof_theory effective_descriptive_set_theory 
+computation model algorithm computer_science 
+computational_biology 
+computational_chemistry chemistry computer_simulation theoretical_chemistry computer_programs 
+computational_complexity_theory computational_science algorithm 
+computational_model mathematical_model computational_science computational_resources computer_simulation 
+computational_neuroscience neuroscience development structure physiology cognitive_abilities nervous_system 
+computational_physics 
+computational_science 
+computational_steering 
+computer logical computer_programming programs 
+computer_architecture computer instruction_set_architecture microarchitecture logic_design implementation 
+computer_data_storage computer recording_media data 
+computer_ethics practical_philosophy 
+computer_graphics 
+computer_network digital telecommunications_network nodes computing_devices exchange_data data_links cable_media wireless_media Wi-Fi 
+computer_program 
+computer_programming executable computer_program computing algorithms programming_language source_code application_domain logic 
+computer_science computers algorithms digital_information computer_scientist computation 
+computer_scientist computer_science 
+computer_security computer_systems hardware software electronic_data disruption misdirection 
+computer_vision digital_images videos human_visual_system 
+computing 
+concatenation 
+concurrency 
+conditional programming_language Boolean branch_predication control_flow 
+container 
+continuation-passing_style_(cps) functional_programming control continuation direct_style Gerald_Jay_Sussman Guy_L._Steele,_Jr. AI_Memo Scheme 
+control_flow statements instructions function_calls imperative program executed imperative_programming declarative_programming 
+creative_commons_(cc) non-profit_organization copyright licenses Creative_Commons_licenses 
+cryptography 
+csv comma-separated_values 
+cyberbullying bullying harassment 
+cyberspace technology 
+daemon 
+data_center computer_systems data_storage_systems redundant power_supply 
+database data 
+data_mining 
+data_science data data_mining information_science computer_science 
+data_structure efficient 
+data_type data compiler interpreter programming_languages real integer Boolean expression variable function 
+debugging computer_program computer_software control_flow unit_testing integration_testing log_file_analysis application system memory_dumps profiling 
+declaration computer_programming language_construct identifier functions variables constants classes data_type type_signature compiler strongly_typed forward_declaration 
+digital_data information_theory information_systems representation 
+digital_signal_processing_(dsp) digital_processing digital_signal_processors signal_processing samples continuous_variable 
+discrete_event_simulation_(des) discrete state simulation 
+disk_storage 
+distributed_computing computer_science networked_computers passing_messages lack_of_a_global_clock SOA-based_systems massively_multiplayer_online_games peer-to-peer_applications 
+divide_and_conquer_algorithm algorithm_design_paradigm recursion algorithm 
+dns Domain_Name_System 
+documentation computer_software source_code 
+domain 
+domain_name_system_(dns) Internet domain_names IP_addresses network_protocols distributed directory_service 
+double-precision_floating-point_format computer_number_format radix 
+download computer_networks server web_server FTP email uploading file 
+edge_device routers switches integrated_access_devices metropolitan_area_network wide_area_network local_area_network 
+encryption 
+event asynchronously handled 
+event-driven_programming programming_paradigm flow_of_the_program events mouse sensor messages threads graphical_user_interfaces web_applications user_input device_drivers P 
+evolutionary_computing algorithms global_optimization biological_evolution artificial_intelligence soft_computing metaheuristic stochastic_optimization 
+executable instructions data_file parsed machine_code CPU bytecode scripting_language 
+executable_module 
+execution 
+exception_handling computation program execution programming_language computer_hardware interrupts operating_system IPC signals 
+expression programming_language constants variables operators functions rules_of_precedence stateful mathematical_expressions 
+external_library 
+fault-tolerant_computer_system fault_tolerance 
+feasibility_study natural_environment 
+field 
+filename_extension suffix name computer_file 
+filter_(software) computer_program subroutine stream pipeline 
+floating_point_arithmetic 
+for_loop control_flow statement iteration executed ALGOL Fortran COBOL 
+formal_methods specification verification software hardware 
+formal_verification proving correctness algorithms formal_specification formal_methods 
+functional_programming programming_paradigm computer_programs computation mathematical_functions state mutable declarative_programming expressions declarations statements 
+game_theory mathematical_models social_science logic computer_science zero-sum_games umbrella_term science 
+garbage_in,_garbage_out_(gigo) input output 
+graphics_interchange_format 
+gigabyte byte prefix giga International_System_of_Units 
+global_variable computer_programming scope shadowed static_variables extent command-line_interpreters 
+graph_theory graphs vertices edges 
+handle 
+hard_problem 
+hash_function function data hash_table data_structure 
+hash_table computing data_structure associative_array abstract_data_type keys values hash_function 
+heap tree data_structure node 
+heapsort comparison-based sorting_algorithm selection_sort heap 
+human-computer_interaction_(hci) users computer_science behavioral_sciences design media_studies several_other_fields_of_study 
+identifier 
+ide 
+image_processing 
+imperative_programming programming_paradigm statements state imperative_mood natural_languages commands 
+incremental_build_model software_development designed tested waterfall_model prototyping 
+information_space_analysis machine_intelligence resources 
+information_visualization 
+inheritance object-oriented_programming object class prototype-based_inheritance class-based_inheritance sub_classes base_class 
+input/output_(i/o) information_processing_system computer information_processing_system Inputs data input_or_output_operation 
+insertion_sort sorting_algorithm sorted_array 
+instruction_cycle central_processing_unit boot-up 
+integer data_type range integers virtual_machines register 
+integrated_development_environment_(ide) software_application software_development source_code_editor build_automation debugger 
+integration_testing software_testing compliance functional_requirements unit_testing validation_testing modules test_plan system_testing 
+intellectual_property_(ip) copyrights patents trademarks trade_secrets 
+intelligent_agent 
+interface computer_system software computer_hardware peripheral humans touchscreen 
+internal_documentation software source_code variable documentation 
+internet computer_networks Internet_protocol_suite 
+internet_bot software_application Internet web_spidering human 
+interpreter computer_program executes programming scripting_language compiled machine_language 
+invariant 
+iteration 
+java general-purpose programming_language class-based object-oriented dependencies application_developers write_once,_run_anywhere compiled 
+kernel operating_system memory 
+library_(computing) non-volatile computer_programs software_development pre-written_code subroutines classes values type 
+linear_search list 
+linked_list points data_structure nodes sequence 
+linker utility object_files compiler assembler executable library loading 
+list abstract_data_type values sequence stream containers 
+loader operating_system programs libraries executable_file 
+logic_error computer_programming bug crash 
+logic_programming programming_paradigm formal_logic programming_language Prolog answer_set_programming Datalog 
+machine_learning_(ml) algorithms statistical_models computer_systems inference artificial_intelligence mathematical_model training_data 
+machine_vision_(mv) process_control systems_engineering computer_vision computer_science 
+mathematical_logic mathematics logic metamathematics foundations_of_mathematics theoretical_computer_science formal_systems deductive proof 
+matrix mathematics rectangular array irregular_matrix numbers symbols expressions rows columns 
+memory computer recording_media data 
+merge_sort comparison-based sorting_algorithm stable_sort divide_and_conquer_algorithm John_von_Neumann Goldstine von_Neumann 
+method object-oriented_programming procedure message object 
+methodology software_engineering software_development design product_management project_management deliverables 
+modem hardware transmission_medium modulates carrier_wave digital_information demodulates signal light-emitting_diodes radio digital_data computer electrical_signal telephone_lines 
+natural_language_processing_(nlp) linguistics computer_science information_engineering artificial_intelligence natural_language speech_recognition natural_language_understanding natural_language_generation 
+node 
+number_theory pure_mathematics integers integer-valued_functions 
+numerical_analysis algorithms approximation symbolic_manipulations mathematical_analysis discrete_mathematics 
+numerical_method numerical_analysis 
+object variable data_structure function method value memory identifier class-based object-oriented_programming instance class relational database 
+object_code compiler statements machine_code binary register_transfer_language goal 
+object-oriented_analysis_and_design_(ooad) object-oriented_programming 
+object-oriented_programming_(oop) programming_paradigm objects data fields procedures this class-based instances classes types 
+open-source_software_(oss) computer_software source_code license copyright distribute_the_software collaborative_public_manner open_collaboration 
+operating_system_(os) System_software computer_hardware software services computer_programs 
+optical_fiber transparent fiber drawing glass silica human_hair fiber-optic_communications bandwidths metal loss electromagnetic_interference 
+pair_programming agile_software_development programmers code reviews 
+parallel_computing computation processes bit-level instruction-level data task_parallelism 
+parameter computer_programming variable subroutine definition_of_a_subroutine 
+peripheral 
+pointer 
+postcondition computer_programming predicate formal_specification assertions 
+precondition computer_programming predicate code formal_specification code Security 
+primary_storage 
+primitive_data_type 
+priority_queue abstract_data_type queue stack 
+procedural_programming 
+procedure 
+program_lifecycle_phase computer_program execution 
+programming_language formal_language set_of_instructions output computer_programming algorithms 
+programming_language_implementation 
+programming_language_theory 
+prolog 
+python 
+quantum_computing quantum-mechanical superposition entanglement computation 
+queue collection 
+quicksort efficient sorting_algorithm random_access file array 
+r_programming_language 
+radix digital_numeral_systems digits positional binary_system computing 
+record 
+recursion linguistics logic mathematics computer_science function 
+reference 
+reference_counting references pointers handles garbage_collection 
+relational_database 
+reliability_engineering systems_engineering lifecycle_management availability 
+regression_testing functional non-functional_tests regression bug configuration electronic_components change_impact_analysis 
+requirements_analysis systems_engineering software_engineering requirements stakeholders 
+robotics engineering science mechanical_engineering electronic_engineering information_engineering computer_science robots computer_systems sensory_feedback information_processing 
+round-off_error algorithm quantization_error equations numerical_analysis estimate numerical_errors truncation_errors 
+router networking_device data_packets computer_networks Internet web_page email forwarded internetwork node 
+routing_table 
+run_time 
+run_time_error 
+search_algorithm algorithm search_problem search_space problem_domain discrete_or_continuous_values 
+secondary_storage input/output 
+selection_sort in-place comparison sorting_algorithm O time_complexity insertion_sort auxiliary_memory 
+semantics programming_language_theory programming_languages syntactically strings platform model_of_computation 
+sequence mathematics order set members function natural_numbers Fibonacci_sequence finite infinite even positive_integers computing computer_science strings words lists computer_memory streams 
+serializability concurrency_control databases transaction_processing transactional transactional_memory software_transactional_memory distributed schedule citation_needed isolation transactions concurrency_control Strong_strict_two-phase_locking 
+serialization data_structures object file buffer network references objects methods marshalling unmarshalling 
+service_level_agreement Internet_service_providers telcos mean_time_between_failures mean_time_to_repair mean_time_to_recovery throughput jitter 
+set abstract_data_type order mathematical finite_set collection 
+soft_computing 
+software data computer physical_hardware computer_science software_engineering information computer_systems programs data computer_programs libraries data online_documentation digital_media 
+software_agent authority bots robot Siri chatbots human-robot_interaction natural_language_understanding Asimo 
+software_construction software_engineering software coding verification unit_testing integration_testing debugging software_engineering software_design software_testing 
+software_deployment software_system 
+software_design agent software_artifact goals constraints requirements programming 
+software_development programming documenting testing bug_fixing applications frameworks maintaining source_code structured 
+software_development_process 
+software_engineering 
+software_maintenance 
+software_prototyping 
+software_requirements_specification 
+software_testing 
+sorting_algorithm 
+source_code 
+spiral_model 
+stack 
+state 
+statement 
+storage 
+stream 
+string 
+structured_storage 
+subroutine 
+symbolic_computation 
+syntax 
+syntax_error 
+system_console 
+technical_documentation documentation development end_user manual 
+third-generation_programming_language 
+top-down_and_bottom-up_design 
+tree abstract_data_type tree_structure parent_node nodes 
+type_theory formal_systems set_theory foundation_for_all_mathematics 
+upload computer_networks data server download 
+uniform_resource_locator_(url) web_resource computer_network Uniform_Resource_Identifier http ftp mailto JDBC 
+user 
+user_agent software_agent user web_browser mail_user_agent 
+user_interface_(ui) decision-making operating_systems tools heavy_machinery process ergonomics psychology 
+user_interface_design user_interfaces software usability user_experience user-centered_design 
+variable computer_programming memory_address identifier value reference source_code bound run_time program_execution 
+virtual_machine_(vm) emulation computer_architectures 
+v-model software_development_process waterfall_model general_V-model coding testing 
+waterfall_model sequential engineering_design software_development waterfall analysis design construction testing deployment maintenance 
+waveform_audio_file_format audio_file_format Microsoft IBM PCs Resource_Interchange_File_Format bitstream_format 8SVX AIFF Amiga Macintosh Microsoft_Windows linear_pulse-code_modulation 
+web_crawler Internet_bot World_Wide_Web Web_indexing 
+wi-fi IEEE_802.11 local_area_networking Internet Wi-Fi_Alliance interoperability 
+xhtml XML markup_languages HyperText_Markup_Language web_pages 
