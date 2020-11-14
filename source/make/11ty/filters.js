@@ -58,7 +58,7 @@ module.exports = make_o =>
     }) )
 
 
-  const TEM_o = require('../lib/generator.js')
+  const TEM_o = require('../lib/builder.js')
   make_o.addFilter( 'head_end', ( head_s, ...args_ ) => TEM_o.head__s( head_s, ...args_ ) )
   make_o.addFilter( 'body_end', ( body_s, ...args_ ) => TEM_o.body__s( body_s, ...args_ ) )
   make_o.addFilter( 'template_start', ( start_s, ...args_ ) => TEM_o.start__s( start_s, ...args_ ) )

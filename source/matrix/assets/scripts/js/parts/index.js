@@ -179,6 +179,23 @@ initial__v
         .nodeId__o( 'initial' ),
       'add'
     )
+; [
+    'scroll_top',
+    'scroll_bottom'
+  ]
+    .forEach
+      (
+        scroll_s =>
+        {
+          LIB_o
+          .invisible__v
+          (
+            LIB_o
+              .nodeId__o( scroll_s ),
+            'remove'
+          )
+        }
+      )
 }
 ,
 
@@ -218,12 +235,10 @@ clearUrl__v
     )
     {
       set_n =
-        window
-          .localStorage
-          .getItem
-            ( set_s )
-        ||
-        1    //!!! C_o.HUE_P_n || C_o.LUM_MODE_n (can't be set with Nunjucks !!!)
+        set_s === 'hue_base' ?
+        '{{C_o.HUE_P_n}}'
+        :
+        '{{C_o.LUM_MODE_n}}'
     }
     window
       .localStorage
@@ -261,11 +276,11 @@ void function    //:- init serviceWorker & launcher event
   IND_o
     .colorMode__v
       ( 'lum_mode' )
-  const initial_b =
-    window
-      .localStorage
-      .getItem
-        ( 'initial_b' )
+  const initial_b = false ///!!! TEMPORARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //... window
+    //...   .localStorage
+    //...   .getItem
+    //...     ( 'initial_b' )
   if ( !initial_b )
   {
     window

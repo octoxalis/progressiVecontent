@@ -70,18 +70,24 @@ __                     {transform: scaleX(1)}
 
 
 /* .................................*/
+svg.initial,
+__                     {--svg_icon_dim: 50vmin}
 svg.unfold,
 __                     {--svg_icon_dim: 3em}
 
 svg.unfold,
 __                     {stroke-width: 1.5px}
+h1,
 svg.unfold,
 __                     {position: relative}
-svg.unfold,
-__                     {top: 1.15em}
+h1,
+__                     {top: calc( var(--NAVBAR_DIM) * -.5 )}
 
 svg.unfold,
-__                     {margin: 0 calc(var(--PAD_1) * -5 ) 0 calc(var(--PAD_1) * -2 )}  /* negative margins */
+__                     {top: 1.45em }
+
+svg.unfold,
+__                     {margin: 0 calc(var(--PAD_1) * -1 ) 0 calc(var(--PAD_1) * -5 )}  /* negative margins */
 
 
 h1:hover,

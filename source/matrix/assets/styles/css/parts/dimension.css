@@ -21,7 +21,6 @@ __                     {width: 0}
 __                     {width: 1px}
 
 article,
-#initial,
 __                     {width: var(--BODY_WIDTH)}
 
 p,
@@ -41,6 +40,7 @@ __                     {width: var(--svg_icon_dim)}
 __                     {width: 100%}
 
 
+#initial,
 #initial > button,
 #sections_slider,
 #graph_slider

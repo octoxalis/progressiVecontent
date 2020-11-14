@@ -80,6 +80,7 @@ __                     {background: linear-gradient( 90deg,
                          hsla( var(--hue_base) 50% 20%   / 1 ) 50%,
                          hsla( var(--hue_base) 50% 80% / 1 ) 50%,
                          hsla( var(--hue_base) 50% 80% / 1 ) 100%)}
+
                          
 #lum_current,
 __                     {background: hsla( var(--hue_base) 50% calc( ( 50 + ( 30 * var(--lum_mode) ) ) * 1% ) / 1 )}

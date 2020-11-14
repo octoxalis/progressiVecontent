@@ -76,3 +76,15 @@ __                     {background: var(--c_prim_hi)}
 
 #section_docs,
 __                     {background: var(--c_prim_lo_2)}
+
+
+
+#initial > button,
+__                     {background: linear-gradient( 35deg,
+                         hsla( var(--hue_base) 100% 15% / .8 ) 0%,
+                         hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
+
+/*
+#initial > button,
+__                     {background: var(--c_prim_lo)}
+*/
