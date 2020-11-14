@@ -1,6 +1,6 @@
 ---js
 {
-  date: `2020-07-29`,
+  date: `2020-11-14`,
   layout:    `sitemap.njk`,
   permalink: `sitemap.xml`,
   tags:      [ `notag` ],
