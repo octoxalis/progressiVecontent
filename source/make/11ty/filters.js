@@ -7,17 +7,46 @@ module.exports = make_o =>
   const CSS_f = require('clean-css')
   make_o.addFilter('minify_css', code_s => new CSS_f({}).minify( code_s ).styles )
 
+
   //: js minify
-  make_o.addFilter('minify_js', code_s =>
-  {
-    let MINIFY_o = require('terser').minify( code_s )
-    if( MINIFY_o.error )
-    {
-        console.log('terser error: ', MINIFY_o.error)
-        return code_s
-    }
-    return MINIFY_o.code
-  })
+  make_o
+    .addNunjucksAsyncFilter
+    (
+      'minify_js',
+      (
+        input_s,
+        callback_f
+      ) =>
+      {
+        const MINIFY_o =
+          require('terser')
+        MINIFY_o
+          .minify( input_s )
+          .then
+            (
+              output_o =>
+              {
+                if( MINIFY_o.error )
+                {
+                  console.log('terser error: ', MINIFY_o.error)
+                  callback_f
+                    (
+                      null,
+                      input_s
+                    )
+                }
+                callback_f
+                  (
+                    null,
+                    output_o.code
+                  )
+              }
+            )
+      }
+    )
+
+
+
 
   //: html minify filter
   make_o.addFilter('minify_html', code_s => require('html-minifier').minify( code_s,

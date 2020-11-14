@@ -6,7 +6,7 @@ const A_o = require( './A_o.js' )
 
 const U_o =
 {
-  //dev_b: true,   //: development/production switch
+  //...dev_b: true,   //: development/production switch
   dev_b: false,  //!!!! REMEMBER TO ADJUST SERVICE_PATH_s & SERVICE_SCOPE_s
   url_s: null,
 
@@ -43,7 +43,7 @@ const U_o =
 void function ()
 {
   U_o.url_s = U_o[U_o.dev_b === true ? 'DEV_s' : 'PRO_s']
-  console.log( `Site URL: ${U_o.u
+  console.log( `Site URL: ${U_o.url_s}` )
 } ()
 
 module.exports = U_o

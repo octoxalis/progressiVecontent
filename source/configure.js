@@ -21,9 +21,9 @@ module.exports =
 {
   AUTHOR_s:     'octoxalis',             //: github name
   EMAIL_s:      'octoxalis@gmail.com',   //: github e-mail
-  ID_s:         'progressiVecontent',             //: github repository
+  ID_s:         'progressiVecontent',    //: github repository
   KEY_n:         1,                      //: service worker key
-  NAME_s:       'Open⇾⇽Site',           //: site name
+  NAME_s:       'progressiVecontent',    //: site name
   LANGUAGE_s:   'en',                    //: site language
 
   URL_s:         URL_o.URL_s,
@@ -38,8 +38,8 @@ module.exports =
   
   description_o:                        //: descriptions for SEO
   {
-    DESCRIPT_s: 'Innovative website architecture for intense UX',
-    GLOBAL_s:   'website architecture,static site generator',
+    DESCRIPT_s: 'Innovative website architecture for modular content',
+    GLOBAL_s:   'website architecture,static site generator,modular content',
   },
 
 
@@ -86,7 +86,7 @@ module.exports =
 
 
   SAT_UNIT_n:     11,   //: saturation unit -> [ 6 17 28 39 50 61 72 83 96 ]
-  LUM_MODE_n:     1,   //: luminosity mode: 1 (light) || -1 (dark)
+  LUM_MODE_n:     1,    //: luminosity mode: 1 (light) || -1 (dark)
   LUM_CONTRAST_n: 40,   //: luminosity contrast in range [30...49] (30 is less contrast than 49)
                         //: see https://www.w3.org/TR/WCAG20/ §1.4.1 compliance
 
