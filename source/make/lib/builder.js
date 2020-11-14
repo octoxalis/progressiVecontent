@@ -73,12 +73,12 @@ const TEM_o =
     data_o
   )
   {
-    let end_s = WORD_o.tag__s( input_s )
     HEAD_o
       .add__v( data_o )
     CSP_o
-      .add__s( end_s )
-    return end_s
+      .add__s( input_s )
+    return WORD_o
+      .tag__s( input_s )
   }
 ,
 
