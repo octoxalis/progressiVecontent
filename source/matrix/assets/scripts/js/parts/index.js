@@ -2,6 +2,7 @@
 
 var IND_o =
 {
+
   load__v
   (
     path_s='{{A_o.SYS_s}}',
@@ -35,7 +36,7 @@ var IND_o =
             () =>
             {
               LIB_o
-                .visible__v
+                .invisible__v
                 (
                   section_e
                 )
@@ -91,7 +92,11 @@ listen__v
             const id_s =
               target_e
                 .id
-            if ( id_s.includes( 'scroll_' ) ) return void LIB_o.scroll__v( id_s === 'scroll_bottom' )
+            if ( id_s.includes( 'scroll_' ) )
+            {
+              return void LIB_o
+                .scroll__v( id_s === 'scroll_bottom' )
+            }
             //>
             if ( id_s.includes( 'sections_' ) )
             {
@@ -148,23 +153,39 @@ listen__v
   service__v
   ()
   {
-    if ( 'serviceWorker' in navigator )    //:- register service worker
+    if ( !'serviceWorker' in navigator )    //:- register service worker
     {
-      window
-        .addEventListener
-        (
-          'load',
-          () =>
-            SER_o.init__v( '{{U_o.url_s}}{{U_o.SERVICE_PATH_s}}' )
-        )
+      return void window
+        .alert( "To visit {{A_o.NAME_s}}, please use a browser with Service Workers enabled" )
     }
+    //>
+    SER_o
+      .init__v( '{{U_o.url_s}}{{U_o.SERVICE_PATH_s}}' )
   }
 ,
 
 
 
 
-  clearUrl__v
+initial__v
+()
+{
+  IND_o
+    .unfold__v()
+  LIB_o
+    .invisible__v
+    (
+      LIB_o
+        .nodeId__o( 'initial' ),
+      'add'
+    )
+}
+,
+
+
+
+
+clearUrl__v
   ()
   {
     if ( window.location.hash )    //: location from an internal link
@@ -227,8 +248,6 @@ void function    //:- init serviceWorker & launcher event
 ()
 {
   IND_o
-    .service__v()
-  IND_o
     .listen__v()
   LIB_o
     .rootVar__v
@@ -242,8 +261,34 @@ void function    //:- init serviceWorker & launcher event
   IND_o
     .colorMode__v
       ( 'lum_mode' )
+  const initial_b =
+    window
+      .localStorage
+      .getItem
+        ( 'initial_b' )
+  if ( !initial_b )
+  {
+    window
+      .requestIdleCallback
+        (
+          IND_o.service__v
+        )
+    LIB_o
+      .nodeId__o( 'initial' )
+      .addEventListener
+      (
+        'click',
+        () =>
+        {
+          IND_o
+            .initial__v()
+        }
+      )
+    return
+  }
+  //>
   IND_o
-    .unfold__v()
+    .initial__v()
 } ()
 
 

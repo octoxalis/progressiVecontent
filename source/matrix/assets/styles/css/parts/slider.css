@@ -83,7 +83,7 @@ __                     {--slide_width: 16ch}
 
 #sections_slider,
 #graph_slider,
-__                     {width: 100vw}
+__                     {width: var(--FULL_WIDTH)}
 
 /*
 .slide_list,

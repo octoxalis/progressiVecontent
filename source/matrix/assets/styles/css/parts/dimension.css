@@ -3,10 +3,11 @@
 {
   --BODY_WIDTH: calc( {{C_o.BODY_WIDTH_n}} * 1vw );
   --LINE_WIDTH: clamp( 30ch, {{C_o.LINE_WIDTH_n}} * 1ch, var(--BODY_WIDTH) - 4vw );
-  --IMG_REVEAL:    6em;
   --NAVBAR_DIM:    4em;
+  --FULL_WIDTH:  100vw;
+  --FULL_HEIGHT:  100vh;
   --SLIDER_HEIGHT: 4em;
-  --SLIDER_WIDTH:  100vw;
+  --IMG_REVEAL:    6em;
 }
 
 #nav_bar               {--svg_icon_dim: 1.8em}
@@ -20,6 +21,7 @@ __                     {width: 0}
 __                     {width: 1px}
 
 article,
+#initial,
 __                     {width: var(--BODY_WIDTH)}
 
 p,
@@ -39,9 +41,10 @@ __                     {width: var(--svg_icon_dim)}
 __                     {width: 100%}
 
 
+#initial > button,
 #sections_slider,
 #graph_slider
-__                     {width: 100vw}
+__                     {width: var(--FULL_WIDTH)}
 
 
 *,
@@ -55,6 +58,9 @@ __                     {height: 0}
 
 .unseen,
 __                     {height: 1px}
+
+#initial > button,
+__                     {height: var(--FULL_HEIGHT)}
 
 .svg_icon,
 __                     {height: var(--svg_icon_dim)}

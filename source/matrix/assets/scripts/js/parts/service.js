@@ -6,7 +6,8 @@ var SER_o =
     [
       'RESTORE',
       'REMOVE',
-      'route',
+      'ROUTE',
+      'INITIAL',
     ]
 ,
 
@@ -141,6 +142,20 @@ receive__v    //:-- Listen to messages
       )
   }
 ,
+
+
+
+  INITIAL__v   //: from worker
+  (
+    initial_b
+  )
+  {
+    window
+      .localStorage
+      .setItem
+        ( 'initial_b', initial_b )
+  }
+  ,
 
 }
 

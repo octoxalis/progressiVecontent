@@ -50,7 +50,7 @@ var GRA_o =
     if ( target_e.classList.contains( 'slide_focus' ) )
     {
       LIB_o
-        .visible__v
+        .invisible__v
         (
           GRA_o.svg_e
         )

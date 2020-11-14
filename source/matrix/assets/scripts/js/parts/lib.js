@@ -151,7 +151,7 @@ toggleId__v:
   */
 
 
-  visible__v:
+  invisible__v:
   (
     node_e,
     method_s='remove'
@@ -215,7 +215,7 @@ toggleId__v:
     }
 
     LIB_o
-      .visible__v
+      .invisible__v
       (
         adopted_e,
         'add'
@@ -240,7 +240,7 @@ toggleId__v:
             .slotInit__v( root_e )
           callback_f && callback_f( adopter_e, root_e )
           LIB_o
-            .visible__v
+            .invisible__v
             (
               adopted_e
             )

@@ -3,7 +3,7 @@
 
 class Slider3D
 {
-  static defaults =
+  static default_o =
   {
     //-- classes
     slideList_s:  'slide_list',
@@ -59,7 +59,7 @@ class Slider3D
   {
     this.container_e = container_e
     this.sectionList_e = sectionList_e
-    this.option_o = Object.assign( {}, Slider3D.defaults, options_o )
+    this.option_o = Object.assign( {}, Slider3D.default_o, options_o )
 
     this.sectionList = null
     this.slide_e  = null

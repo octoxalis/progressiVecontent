@@ -35,9 +35,10 @@ var SWO_o =
 
   types_a:
     [
-      'route',
+      'ROUTE',
       'RESTORE',
       'REMOVE',
+      'INITIAL',
     ]
   ,
 
@@ -99,7 +100,7 @@ var SWO_o =
             {
               const url_o =
                 SWO_o
-                  .route__v
+                  .ROUTE__v
                   (
                     new URL( fetch_o.request.url )
                   )
@@ -155,7 +156,7 @@ var SWO_o =
 ,
   
 
-route__v   //: from self
+ROUTE__v   //: from self
   (
     url_o    //: e.g. 'http://{{U_o.url_s}}#/slots/page.html', i.e. hash: '#/slots/page.html'
   )
@@ -193,6 +194,7 @@ route__v   //: from self
     payload_o    //: not used
   )
   {
+    /*
     SWO_o
       .client__o()
       .then
@@ -229,7 +231,37 @@ route__v   //: from self
             )
         }
       )
-}
+
+*/
+
+
+    const cache_a =  Array.from( SWO_o.cache_a )
+    if ( !cache_a.length ) return
+    //>
+    const restore_a = []
+    for ( let url_s of cache_a )
+    {
+      const pathSlot_s =
+        SWO_o
+            .pathSlot__s
+            (
+              url_s
+            )
+      restore_a
+        .push
+        (
+          pathSlot_s
+            .split( '/' )
+        )
+    }
+    SWO_o
+      .send__v    //: to main
+      (
+        'RESTORE',
+        restore_a
+      )
+      
+  }
 ,
 
 
@@ -249,32 +281,18 @@ route__v   //: from self
 
 
 
-  client__o
-  (
-    client_n=0
-  )
+  INITIAL__v
+  ()
   {
-    return self
-      .clients
-      .matchAll
-        (
-          {
-            includeUncontrolled: true,
-            type: 'window',
-          }
-        )
-      .then
-        (
-          client_a => 
-          {
-            return ( client_a && client_a.length ) ?
-              client_a[client_n]
-              :
-              void console.log( 'No Service Worker client found' )
-          }
-        )
+    SWO_o
+      .send__v    //: to main
+      (
+        'INITIAL',
+        true
+      )
   }
 ,
+
 
 
   cache__v
@@ -309,6 +327,34 @@ route__v   //: from self
 
 
 
+  client__o
+  (
+    client_n=0
+  )
+  {
+    return self
+      .clients
+      .matchAll
+        (
+          {
+            includeUncontrolled: true,
+            type: 'window',
+          }
+        )
+      .then
+        (
+          client_a => 
+          {
+            return ( client_a && client_a.length ) ?
+              client_a[client_n]
+              :
+              void console.log( 'No Service Worker client found' )
+          }
+        )
+  }
+,
+
+
   receive__v    //: from main
   (
     msg_o
@@ -324,6 +370,48 @@ route__v   //: from self
         (
           msg_o.data.payload_o
         )
+  }
+,
+
+
+
+  send__v    //: to main
+  (
+    type_s,
+    payload_o
+  )
+  {
+    SWO_o
+    .client__o()
+    .then
+    (
+      client_o =>
+      {
+        if ( !client_o ) return//>
+        client_o
+          .postMessage
+          (
+            {
+              type_s: type_s,
+              payload_o: payload_o
+            }
+          )
+      }
+    )
+  }
+,
+
+
+
+  import__v
+  ()
+  {
+    self
+      .importScripts
+      (
+        SWO_o.DOC_JS_s,
+        SWO_o.LAB_JS_s
+      )
   }
 ,
 
@@ -356,30 +444,18 @@ route__v   //: from self
         'message',
         SWO_o.receive__v
       )
-    //......
     SWO_o
-      .import__v()
+      .INITIAL__v()
+    //... SWO_o
+    //...   .import__v()
   }
 ,
-
-
-
-  import__v
-  ()
-  {
-    self
-      .importScripts
-      (
-        SWO_o.DOC_JS_s,
-        SWO_o.LAB_JS_s
-      )
-  }
 
 }
 
 
-//!!! no IIFE
+
 SWO_o
-  .init__v()
+  .init__v()  // !!! no IIFE
 
 

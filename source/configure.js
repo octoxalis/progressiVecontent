@@ -38,8 +38,8 @@ module.exports =
   
   description_o:                        //: descriptions for SEO
   {
-    DESCRIPT_s: 'Innovative website architecture for modular content',
-    GLOBAL_s:   'website architecture,static site generator,modular content',
+    DESCRIPT_s: 'Innovative website architecture for partitioned content',
+    GLOBAL_s:   'website architecture,static site generator,partitioned,modular,content',
   },
 
 

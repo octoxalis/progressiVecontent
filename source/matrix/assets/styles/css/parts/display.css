@@ -6,9 +6,11 @@
 
 
 /*=== DISPLAY ===*/
+
 main,
 section,
 article,
+#initial,
 #scroll_top,
 #scroll_bottom,
 #sections_nav,

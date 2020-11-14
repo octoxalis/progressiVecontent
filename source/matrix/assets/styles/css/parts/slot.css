@@ -80,8 +80,7 @@ __                     {padding-left:var(--PAD_2)}
 __                     {max-width:100%}
 
 button[data-slot_s],
-/*__                     {width: var(--BODY_WIDTH)}*/
-__                     {width: 100vw}
+__                     {width: var(--FULL_WIDTH)}
 
 
 button[data-slot_s] > h2,
