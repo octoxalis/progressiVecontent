@@ -1,1 +1,92 @@
-:root{--half_side:-50vw}div[data-id=code_ref]{display:grid;place-items:center}__{display:flex;justify-content:flex-start}code[data-id=code],dl[data-id=code_ref]{position:relative}__{position:absolute}__{top:0}__{left:0}code[data-id=code],dl[data-id=code_ref]{left:50%;right:50%}code[data-id=code],dl[data-id=code_ref]{margin-left:var(--half_side);margin-right:var(--half_side)}code[data-id=code]{margin-top:var(--PAD_8)}code[data-id=code]{padding:var(--PAD_2) var(--PAD_2) var(--PAD_2) var(--PAD_4)}code[data-id=code],dl[data-id=code_ref]{width:125vw}__{width:100%}__{height:auto}__{border-left:8px solid var(--c_box_lo)}__{border-radius:8px}__{cursor:pointer}__{box-shadow:12px 12px 32px 100vmax var(--c_shadow_ne)}__{color:var(--c_prim_lo_4)}__{stroke:none}__{fill:var(--c_prim_hi_2)}code[data-id=code]{background:var(--c_prim_trans)}code,code *{font-family:var(--font_mono)}__{font-size:inherit}__{font-weight:500}__{text-transform:uppercase}__{cursor:pointer}code[data-id=code]{box-shadow:var(--BOX_SHADOW)}code[data-id=code]{transform:scale(.8)}code[data-id=code]{transform-origin:top left}__{transition:transform .2s ease}code[data-id=code]{--c_h1:calc( var(--c_hue_p) + 45 );--c_h2:calc( var(--c_hue_p) + 90 );--c_h3:calc( var(--c_hue_p) + 135 );--c_h4:calc( var(--c_hue_p) + 180 );--c_h5:calc( var(--c_hue_p) + 225 );--c_h6:calc( var(--c_hue_p) + 270 );--c_h7:calc( var(--c_hue_p) + 315 );--c_1:hsla( var(--c_h1) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_2:hsla( var(--c_h2) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_3:hsla( var(--c_h3) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_4:hsla( var(--c_h4) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_5:hsla( var(--c_h5) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_6:hsla( var(--c_h6) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );--c_7:hsla( var(--c_h7) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 )}.token.namespace{opacity:.7}.token.cdata,.token.comment,.token.doctype,.token.italic,.token.prolog{font-style:italic}.token.bold,.token.important{font-weight:700}.token.cdata,.token.comment,.token.doctype,.token.prolog,__{color:var(--c_1)}.token.attr-value,.token.string,__{color:var(--c_2)}.token.operator,.token.punctuation,__{color:var(--c_3)}.token.boolean,.token.constant,.token.entity,.token.inserted,.token.number,.token.property,.token.regex,.token.symbol,.token.url,.token.variable,__{color:var(--c_4)}.language-autohotkey .token.selector,.token.atrule,.token.attr-name,.token.keyword,__{color:var(--c_5)}.language-autohotkey .token.tag,.token.deleted,.token.function,__{color:var(--c_6)}.language-autohotkey .token.keyword,.token.selector,.token.tag,__{color:var(--c_7)}code[data-id=code],code[data-id=code] *,pre[class*=language-]{--size_ratio:1;font-family:var(--font_mono);font-size:100%;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;text-shadow:none}
+
+:root
+  {--half_side: -50vw}
+div[data-id="code_ref"]{display: grid; place-items: center}
+__  {display: flex; justify-content: flex-start}
+code[data-id="code"],dl[data-id="code_ref"]{position: relative}
+__  {position: absolute}
+__  {top: 0}
+__  {left: 0}
+code[data-id="code"],dl[data-id="code_ref"]{left: 50%; right: 50%}
+code[data-id="code"],dl[data-id="code_ref"]{margin-left: var(--half_side);
+  margin-right: var(--half_side)} 
+code[data-id="code"]{margin-top: var(--PAD_8)}
+code[data-id="code"]{padding: var(--PAD_2) var(--PAD_2) var(--PAD_2) var(--PAD_4)}
+code[data-id="code"],dl[data-id="code_ref"]{width: 125vw} 
+__  {width: 100%}
+__  {height: auto}
+__  {border-left: 8px solid var(--c_box_lo)}
+__  {border-radius: 8px}
+__  {cursor: pointer}
+__  {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+__  {color: var(--c_prim_lo_4)}
+__  {stroke: none}
+__  {fill: var(--c_prim_hi_2)}
+code[data-id="code"]{background: var(--c_prim_trans)}
+code,code *{font-family: var(--font_mono)}
+__  {font-size: inherit}
+__  {font-weight: 500}
+__  {text-transform: uppercase}
+__  {cursor: pointer}
+code[data-id="code"]{box-shadow:var(--BOX_SHADOW)}
+code[data-id="code"]{transform: scale( .8 )} 
+code[data-id="code"]{transform-origin: top left}
+__  {transition: transform .2s ease}
+ 
+code[data-id="code"]
+{
+ --c_h1: calc( var(--c_hue_p) + 45 );
+ --c_h2: calc( var(--c_hue_p) + 90 );
+ --c_h3: calc( var(--c_hue_p) + 135 );
+ --c_h4: calc( var(--c_hue_p) + 180 );
+ --c_h5: calc( var(--c_hue_p) + 225 );
+ --c_h6: calc( var(--c_hue_p) + 270 );
+ --c_h7: calc( var(--c_hue_p) + 315 );
+ --c_1: hsla( var(--c_h1) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_2: hsla( var(--c_h2) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_3: hsla( var(--c_h3) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_4: hsla( var(--c_h4) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_5: hsla( var(--c_h5) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_6: hsla( var(--c_h6) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+ --c_7: hsla( var(--c_h7) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+}
+.token.namespace{opacity: .7}
+.token.comment,.token.prolog,.token.doctype,.token.cdata,.token.italic{font-style: italic}
+.token.important,
+.token.bold{font-weight: bold}
+.token.comment,.token.prolog,.token.doctype,.token.cdata,
+__  {color: var(--c_1)}
+.token.string,.token.attr-value,
+__  {color: var(--c_2)}
+.token.punctuation,.token.operator,
+__  {color: var(--c_3)}
+.token.entity,.token.url,.token.symbol,.token.number,.token.boolean,.token.variable,.token.constant,.token.property,.token.regex,.token.inserted,
+__  {color: var(--c_4)}
+.token.atrule,.token.keyword,.token.attr-name,.language-autohotkey .token.selector,
+__  {color: var(--c_5)}
+.token.function,.token.deleted,.language-autohotkey .token.tag,
+__  {color: var(--c_6)}
+.token.tag,.token.selector,.language-autohotkey .token.keyword,
+__  {color: var(--c_7)}
+pre[class*="language-"],code[data-id="code"],code[data-id="code"] *
+{
+ --size_ratio: 1; 
+ font-family: var(--font_mono);
+ font-size: 100%;
+ 
+ direction: ltr;
+ text-align: left;
+ white-space: pre;
+ word-spacing: normal;
+ word-break: normal;
+ line-height: 1.2em;
+ -moz-tab-size: 4;
+ -o-tab-size: 4;
+ tab-size: 4;
+ -webkit-hyphens: none;
+ -moz-hyphens: none;
+ -ms-hyphens: none;
+ hyphens: none;
+ 
+ text-shadow: none;
+}
