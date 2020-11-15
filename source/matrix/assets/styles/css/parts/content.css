@@ -2,5 +2,7 @@
 
 a::before,
 a::after,
-  __                     {content: ''}
+__                     {content: ''}
 
+[data-sub] > span::before,
+__                     {content: 'HELLO THERE' }

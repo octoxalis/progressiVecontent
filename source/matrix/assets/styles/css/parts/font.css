@@ -58,6 +58,7 @@ h4,
 h5,
 h6,
 #hero span,
+[data-sub]::before,
 __                     {--size_ratio: 1.2}
 
 body,

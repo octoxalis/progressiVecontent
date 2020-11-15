@@ -39,6 +39,7 @@ __                     {cursor: auto}
 
 button,
 .svg_icon,
+[data-sub]:hover,
 __                     {cursor: pointer}
 
 

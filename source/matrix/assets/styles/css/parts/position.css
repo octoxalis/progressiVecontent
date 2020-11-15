@@ -21,6 +21,7 @@ __                     {position: fixed}
 
 /*=== TOP ===*/
 #nav_bar,
+[data-sub]::before,
 __                     {top: 0}
 
 
@@ -41,6 +42,7 @@ __                     {top: 1.45em }
 /*=== LEFT ===*/
 a::before,
 a::after,
+[data-sub]::before,
 __                     {left: 0}
 
 section > div > section,

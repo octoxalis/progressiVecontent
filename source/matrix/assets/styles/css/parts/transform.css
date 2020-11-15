@@ -20,9 +20,11 @@ __                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7r
 
 
 h1:hover,
+[data-sub]:hover,
 __                     {filter: invert( .75 )}
 
 svg.unfold:hover,
+[data-sub]:hover,
 __                     {filter: saturate( 10 )}
 
 

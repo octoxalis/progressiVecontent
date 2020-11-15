@@ -30,6 +30,7 @@ __                     {width: 1px}
 __                     {width: var(--FULL_WIDTH)}
 
 #hero,
+[data-sub]::before,
 __                     {width: var(--HALF_WIDTH)}
 
 #hero,
@@ -91,6 +92,8 @@ __                     {height: var(--NAVBAR_DIM)}
 #sections_slider,
 __                     {height: var(--SLIDER_HEIGHT)}
 
+[data-sub]::before,
+__                     {height: 10vh}
 
 .svg_icon,
 __                     {height: var(--svg_icon_dim)}

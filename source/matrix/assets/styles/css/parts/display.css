@@ -7,12 +7,19 @@
 
 /*=== DISPLAY ===*/
 
+/*
+[data-sub]::before,
+__                     {display: none}
+*/
+
+
 main,
 section,
 article,
 #scroll_top,
 #scroll_bottom,
 #sections_nav,
+[data-sub]::before,
 __                     {display:grid; place-items:center}
 
 

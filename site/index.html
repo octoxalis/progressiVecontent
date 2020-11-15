@@ -14,7 +14,7 @@ html{box-sizing:border-box}
 {
  --ASIDE_Z: 1;
 }
-main,section,article,#scroll_top,#scroll_bottom,#sections_nav{display:grid; place-items:center}
+main,section,article,#scroll_top,#scroll_bottom,#sections_nav,[data-sub]::before{display:grid; place-items:center}
 #initial > button{display:grid; justify-items: start; align-items: center}
 #hero,#nav_bar,#sections_slider,#graph_slider{display: flex}
 #hero,#sections_slider,#graph_slider{flex-direction: column}
@@ -47,12 +47,12 @@ body,h1,h2,h3,h4,h5,h6,p,dl,ul,ol{padding:0}
 h1,section > div,svg.initial,svg.unfold{position:relative}
 #initial,#hero,#sections,.unseen,a::before,a::after{position: absolute}
 #nav_bar,#sections_slider{position: fixed}
-#nav_bar{top: 0}
+#nav_bar,[data-sub]::before{top: 0}
 h1{top: calc( var(--NAVBAR_DIM) * -.5 )}
 #sections_slider{top: calc( var(--NAVBAR_DIM) + var(--PAD_1) )}
 #sections{top: calc( var(--NAVBAR_DIM) + var(--SLIDER_HEIGHT) )}
 svg.unfold{top: 1.45em }
-a::before,a::after{left: 0}
+a::before,a::after,[data-sub]::before{left: 0}
 section > div > section{left: var(--BODY_MARGIN)}
 #initial svg{left: -8vw}
 #hero{bottom: 0}
@@ -74,7 +74,7 @@ a::before,a::after{bottom: -1px}
 .retract{width: 0}
 .unseen{width: 1px}
 #initial,#initial > button,#sections_slider,#graph_slider{width: var(--FULL_WIDTH)}
-#hero{width: var(--HALF_WIDTH)}
+#hero,[data-sub]::before{width: var(--HALF_WIDTH)}
 #hero{width: 70vw}
 article{width: var(--BODY_WIDTH)}
 hr{width: calc( var(--BODY_WIDTH) * .25 )}
@@ -90,6 +90,7 @@ a::after{height: 4px}
 #hero,#initial > button{height: var(--FULL_HEIGHT)}
 #nav_bar{height: var(--NAVBAR_DIM)}
 #sections_slider{height: var(--SLIDER_HEIGHT)}
+[data-sub]::before{height: 10vh}
 .svg_icon{height: var(--svg_icon_dim)}
 #scroll_top,#scroll_bottom{flex-basis: 10%}
 #sections_nav{flex-basis: 80%} 
@@ -186,6 +187,7 @@ a,legend{color: inherit}
 body,h2,#sections_nav{color: var(--c_prim_lo)}
 #sections_nav > h1{color: var(--c_highlight)}
 #hero{color: var(--c_decor_hi)}
+[data-sub]::before{color: red}
 .svg_icon{stroke: var(--c_highlight)}
 #hero,#sections_nav,#scroll_top,#scroll_bottom,#sections,#sections > *
 {background: transparent}
@@ -194,7 +196,7 @@ body,#nav_bar,#sections_slider,#graph_slider{background: var(--c_prim_hi)}
 #section_docs{background: var(--c_prim_lo_2)}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background: var(--c_decor_hi)}
-a::before,a::after{background: var(--c_link_ne)}
+a::before,a::after,[data-sub]:hover::after{background: var(--c_link_ne)}
 #initial > button{background: linear-gradient( 35deg,  hsla( var(--hue_base) 100% 15% / .8 ) 0%,  hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
 :root
 {
@@ -219,7 +221,7 @@ body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--si
 h1{--size_ratio: 1.6}
 #hero *{--size_ratio: 1.6}
 h2{--size_ratio: 1.4}
-h3,h4,h5,h6,#hero span{--size_ratio: 1.2}
+h3,h4,h5,h6,#hero span,[data-sub]::before{--size_ratio: 1.2}
 body,body *{--size_ratio: 1}
 small,sub,sup,ins[data-id^=note_] button,.note_open{--size_ratio: .8}
 #sections_nav > h1{--size_ratio: .7}
@@ -247,7 +249,7 @@ p > code,pre > code{white-space: pre}
 dl,ol,ul{list-style: none}
 body{cursor: default}
 .invisible{cursor: auto}
-button,.svg_icon{cursor: pointer}
+button,.svg_icon,[data-sub]:hover{cursor: pointer}
 *{scrollbar-width:thin;
   scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
 *::-webkit-scrollbar{width: .75em}
@@ -261,8 +263,8 @@ a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
 #scroll_bottom > svg{transform:rotate(.5turn)}
 .aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7rem ) * -1 ) )}
-h1:hover{filter: invert( .75 )}
-svg.unfold:hover{filter: saturate( 10 )}
+h1:hover,[data-sub]:hover{filter: invert( .75 )}
+svg.unfold:hover,[data-sub]:hover{filter: saturate( 10 )}
 .retract{transform-origin: top left}
 a::before,a::after{transform-origin: bottom left}
 .fade_in{animation: fade_in .5s ease-in-out}
@@ -271,4 +273,4 @@ a::before,a::after{transform-origin: bottom left}
 #sections_slider,#graph_slider,a::before,a::after,.aside{transition: transform .2s ease}
 h1,h1:hover{transition: .3s ease}
 .svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt>partitioned content<br/><span>architecture</span></dt><dd>ARIA semantic<br/><span>HTML</span></dd><dd>properties driven<br/><span>CSS</span></dd><dd>library free<br/><span>JavaScript</span></dd><dd>framework free<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="scroll_top" class="invisible" title="Go to page top"><svg class="svg_icon"><use href="#icon_top"/></svg></button> <button id="sections_nav" title="Show page slots"><h1>progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</h1></button> <button id="scroll_bottom" class="invisible" title="Go to page bottom"><svg class="svg_icon"><use href="#icon_bottom"/></svg></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
+.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content according to their own interest centers">partitioned content<br/><span>architecture</span></dt><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">library free<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independance">framework free<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="scroll_top" class="invisible" title="Go to page top"><svg class="svg_icon"><use href="#icon_top"/></svg></button> <button id="sections_nav" title="Show page slots"><h1>progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</h1></button> <button id="scroll_bottom" class="invisible" title="Go to page bottom"><svg class="svg_icon"><use href="#icon_bottom"/></svg></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>

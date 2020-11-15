@@ -46,9 +46,11 @@ __                     {color: var(--c_highlight)}
 #hero,
 __                     {color: var(--c_decor_hi)}
 
+[data-sub]::before,
+__                     {color: red}
+
 .svg_icon,
 __                     {stroke: var(--c_highlight)}
-
 
 
 /*=== BACKGROUND ===*/
@@ -82,6 +84,7 @@ __                     {background: var(--c_decor_hi)}
 
 a::before,
 a::after,
+[data-sub]:hover::after,
 __                     {background: var(--c_link_ne)}
 
 
