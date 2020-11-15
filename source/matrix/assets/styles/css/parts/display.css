@@ -17,7 +17,7 @@ __                     {display:grid; place-items:center}
 
 
 #initial > button,
-__                     {display:grid; justify-items: start;; align-items: center}
+__                     {display:grid; justify-items: start; align-items: center}
 
 
 #hero,

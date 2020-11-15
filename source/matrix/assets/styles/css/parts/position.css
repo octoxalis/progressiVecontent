@@ -46,6 +46,10 @@ __                     {left: 0}
 section > div > section,
 __                     {left: var(--BODY_MARGIN)}
 
+#initial svg,
+__                     {left: -8vw}
+
+
 
 /*=== BOTTOM ===*/
 #hero,

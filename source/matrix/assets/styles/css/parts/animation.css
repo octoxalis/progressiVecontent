@@ -1,14 +1,9 @@
 /*=== ANIMATION ===*/
-__                     {animation: __name__ 1s ease-in-out}
-
 .fade_in,
 __                     {animation: fade_in .5s ease-in-out}
 
 
 /*=== KEYFRAMES ===*/
-@keyframes __name__    {0%   { opacity:0}
-                        100% { opacity:1} }
-
 @keyframes fade_in     {0%   { opacity:0}
                         100% { opacity:1} }
 

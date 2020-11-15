@@ -1,8 +1,4 @@
 /* === ALIGN === */
-__                     {align-items: flex-start}
-
-__                     {align-items: center}
-
 #hero,
 __                     {justify-content: space-between}
 

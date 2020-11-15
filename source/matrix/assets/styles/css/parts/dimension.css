@@ -26,14 +26,14 @@ __                     {width: 1px}
 #initial,
 #initial > button,
 #sections_slider,
-#graph_slider
+#graph_slider,
 __                     {width: var(--FULL_WIDTH)}
 
 #hero,
 __                     {width: var(--HALF_WIDTH)}
 
 #hero,
-__                     {width: 66vw}
+__                     {width: 70vw}
 
 article,
 __                     {width: var(--BODY_WIDTH)}
@@ -50,7 +50,7 @@ __                     {width: var(--LINE_WIDTH)}
 #sections,
 #nav_bar,
 #sections_slider,
-#graph_slider
+#graph_slider,
 __                     {width: 100%}
 
 

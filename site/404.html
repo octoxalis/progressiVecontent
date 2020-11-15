@@ -15,7 +15,7 @@ html{box-sizing:border-box}
  --ASIDE_Z: 1;
 }
 main,section,article,#scroll_top,#scroll_bottom,#sections_nav{display:grid; place-items:center}
-#initial > button{display:grid; justify-items: start;; align-items: center}
+#initial > button{display:grid; justify-items: start; align-items: center}
 #hero,#nav_bar,#sections_slider,#graph_slider{display: flex}
 #hero,#sections_slider,#graph_slider{flex-direction: column}
 #sections_slider{z-index: var(--ASIDE_Z)}
@@ -54,6 +54,7 @@ h1{top: calc( var(--NAVBAR_DIM) * -.5 )}
 svg.unfold{top: 1.45em }
 a::before,a::after{left: 0}
 section > div > section{left: var(--BODY_MARGIN)}
+#initial svg{left: -8vw}
 #hero{bottom: 0}
 a::before,a::after{bottom: -1px}
 #hero,a::before,a::after{right: 0}
@@ -72,15 +73,13 @@ a::before,a::after{bottom: -1px}
 #nav_bar {--svg_icon_dim: 1.8em}
 .retract{width: 0}
 .unseen{width: 1px}
-#initial,#initial > button,#sections_slider,#graph_slider
-__  {width: var(--FULL_WIDTH)}
+#initial,#initial > button,#sections_slider,#graph_slider{width: var(--FULL_WIDTH)}
 #hero{width: var(--HALF_WIDTH)}
-#hero{width: 66vw}
+#hero{width: 70vw}
 article{width: var(--BODY_WIDTH)}
 hr{width: calc( var(--BODY_WIDTH) * .25 )}
 p,ol, ul{width: var(--LINE_WIDTH)}
-#sections,#nav_bar,#sections_slider,#graph_slider
-__  {width: 100%}
+#sections,#nav_bar,#sections_slider,#graph_slider{width: 100%}
 .svg_icon{width: var(--svg_icon_dim)}
 svg.initial{--svg_icon_dim: clamp( 50vmin, 60vh, 90vw )}
 svg.unfold{--svg_icon_dim: 3em}
@@ -110,8 +109,6 @@ iframe,button,.unseen{border: 0}
 *::-webkit-scrollbar-thumb{border-radius: .5rem}
 svg.unfold{stroke-width: 1.5px}
 button:focus{outline: 0}
-__  {align-items: flex-start}
-__  {align-items: center}
 #hero{justify-content: space-between}
 h1{text-align: center}
 #hero *{text-align: right}
@@ -218,9 +215,9 @@ a::before,a::after{background: var(--c_link_ne)}
 body,body *{font-family: var(--font_body)}
 #hero,button[data-slot_s]{font-family:var(--font_title)}
 body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--size_ratio) )}
-#hero *:first-child{--size_ratio: 2.3}
+#hero *:first-child{--size_ratio: 2.6}
 h1{--size_ratio: 1.6}
-#hero *{--size_ratio: 1.5}
+#hero *{--size_ratio: 1.6}
 h2{--size_ratio: 1.4}
 h3,h4,h5,h6,#hero span{--size_ratio: 1.2}
 body,body *{--size_ratio: 1}
@@ -228,15 +225,16 @@ small,sub,sup,ins[data-id^=note_] button,.note_open{--size_ratio: .8}
 #sections_nav > h1{--size_ratio: .7}
   
 b,strong,h1{font-weight: 900}
-#hero > *:not(:first-child),#sections_nav > h1{font-weight: 600}
+#sections_nav > h1,#hero span{font-weight: 600}
 button[data-slot_s]{font-weight: 500}
-body,body *,#hero span,#hero *:first-child{font-weight: 300}
+body,body *{font-weight: 300}
 h2{font-weight: 200}
+#hero *{font-weight: 100}
 #sections_nav > h1,[data-id=example]::before{font-style:italic}
 h1{line-height: 1}
 #hero *:not( span ){line-height: .8}
 #sections_nav > h1{letter-spacing: .4em}
-#hero *{letter-spacing: .05em}
+#hero span{letter-spacing: .2em}
 .svg_icon{stroke-width: 1}
 .svg_icon{stroke-linecap: round}
 .svg_icon{stroke-linejoin: round}
@@ -262,21 +260,15 @@ button,.svg_icon{cursor: pointer}
 a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
 #scroll_bottom > svg{transform:rotate(.5turn)}
-__  {transform: translate(0)}
 .aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7rem ) * -1 ) )}
 h1:hover{filter: invert( .75 )}
 svg.unfold:hover{filter: saturate( 10 )}
 .retract{transform-origin: top left}
 a::before,a::after{transform-origin: bottom left}
-__  {animation: __name__ 1s ease-in-out}
 .fade_in{animation: fade_in .5s ease-in-out}
-@keyframes __name__ {0% { opacity:0}
-  100% { opacity:1} }
 @keyframes fade_in {0% { opacity:0}
   100% { opacity:1} }
 #sections_slider,#graph_slider,a::before,a::after,.aside{transition: transform .2s ease}
 h1,h1:hover{transition: .3s ease}
 .svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}
-__  {object-fit: scale-down}
-__  {object-position: 50% 50%}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt>partitioned content</dt><dd>ARIA semantic<br/><span>HTML</span></dd><dd>properties driven<br/><span>CSS</span></dd><dd>library free<br/><span>JavaScript</span></dd><dd>framework free<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="scroll_top" class="invisible" title="Go to page top"><svg class="svg_icon"><use href="#icon_top"/></svg></button> <button id="sections_nav" title="Show page slots"><h1>progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</h1></button> <button id="scroll_bottom" class="invisible" title="Go to page bottom"><svg class="svg_icon"><use href="#icon_bottom"/></svg></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
+.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt>partitioned content<br/><span>architecture</span></dt><dd>ARIA semantic<br/><span>HTML</span></dd><dd>properties driven<br/><span>CSS</span></dd><dd>library free<br/><span>JavaScript</span></dd><dd>framework free<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="scroll_top" class="invisible" title="Go to page top"><svg class="svg_icon"><use href="#icon_top"/></svg></button> <button id="sections_nav" title="Show page slots"><h1>progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</h1></button> <button id="scroll_bottom" class="invisible" title="Go to page bottom"><svg class="svg_icon"><use href="#icon_bottom"/></svg></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
