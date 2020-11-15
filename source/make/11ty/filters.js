@@ -58,11 +58,11 @@ module.exports = make_o =>
     }) )
 
 
-  const TEM_o = require('../lib/builder.js')
-  make_o.addFilter( 'head_end', ( head_s, ...args_ ) => TEM_o.head__s( head_s, ...args_ ) )
-  make_o.addFilter( 'body_end', ( body_s, ...args_ ) => TEM_o.body__s( body_s, ...args_ ) )
-  make_o.addFilter( 'template_start', ( start_s, ...args_ ) => TEM_o.start__s( start_s, ...args_ ) )
-  make_o.addFilter( 'template_end', ( end_s, ...args_ ) => TEM_o.end__s( end_s, ...args_ ) )
+  const BUI_o = require('../lib/builder.js')
+  make_o.addFilter( 'head_end', ( head_s, ...args_ ) => BUI_o.head__s( head_s, ...args_ ) )
+  make_o.addFilter( 'body_end', ( body_s, ...args_ ) => BUI_o.body__s( body_s, ...args_ ) )
+  make_o.addFilter( 'template_start', ( start_s, ...args_ ) => BUI_o.start__s( start_s, ...args_ ) )
+  make_o.addFilter( 'template_end', ( end_s, ...args_ ) => BUI_o.end__s( end_s, ...args_ ) )
 
   const SEC_o = require('../lib/section.js')
   make_o.addFilter( 'section', ( slot_s, permalink, rank_n ) => SEC_o.section__s( slot_s, permalink, rank_n ) )

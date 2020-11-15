@@ -39,9 +39,12 @@ h2,
 __                     {color: var(--c_prim_lo)}
 
 
+
 #sections_nav > h1,
 __                     {color: var(--c_highlight)}
 
+#slogan,
+__                     {color: var(--c_decor_hi)}
 
 .svg_icon,
 __                     {stroke: var(--c_highlight)}
@@ -49,6 +52,7 @@ __                     {stroke: var(--c_highlight)}
 
 
 /*=== BACKGROUND ===*/
+#slogan,
 #sections_nav,
 #scroll_top,
 #scroll_bottom,

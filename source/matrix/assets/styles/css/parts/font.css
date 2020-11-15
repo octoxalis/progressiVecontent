@@ -28,6 +28,8 @@ body,
 body *,                /* default */
 __                     {font-family: var(--font_body)}
 
+
+#slogan,
 button[data-slot_s],
 __                     {font-family:var(--font_title)}
 
@@ -40,6 +42,14 @@ body *:before,
 body *:after,
 __                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
 
+
+#slogan *,
+__                     {--size_ratio: 1.5}
+#slogan *:first-child,
+__                     {--size_ratio: 2.3}
+
+#slogan span,
+__                     {--size_ratio: 1.2}
 
 
 h1,
@@ -71,24 +81,30 @@ __                     {--size_ratio: .7}
 
 
 /*=== WEIGHT ===*/
-body,
-body *,
-__                     {font-weight: 300}
 
 b,
 strong,
 h1,
 __                     {font-weight: 900}
 
+
+
+#slogan > *:not(:first-child),
+#sections_nav > h1,
+__                     {font-weight: 600}
+
 button[data-slot_s],
 __                     {font-weight: 500}
+
+body,
+body *,
+#slogan span,
+#slogan *:first-child,
+__                     {font-weight: 300}
 
 h2,
 __                     {font-weight: 200}
 
-
-#sections_nav > h1,
-__                     {font-weight: 600}
 
 
 
@@ -104,9 +120,13 @@ __                     {font-style:italic}
 h1,
 __                     {line-height: 1}
 
+#slogan *:not( span ),
+__                     {line-height: .8}
 
 
 /*=== SPACING ===*/
+#slogan *,
+__                     {letter-spacing: .05em}
+
 #sections_nav > h1,
 __                     {letter-spacing: .4em}
-

@@ -1,11 +1,10 @@
 /*=== POSITION ===*/
-/*
-h1,
-*/
 section > div,
+svg.initial,
 __                     {position:relative}
 
 #initial,
+#slogan,
 #sections,
 .unseen,
 __                     {position: absolute}
@@ -17,11 +16,9 @@ __                     {position: fixed}
 
 
 /*=== TOP ===*/
-#initial,
 #nav_bar,
 __                     {top: 0}
 
-__                     {top: 30vh}
 
 #sections_slider,
 __                     {top: calc( var(--NAVBAR_DIM) + var(--PAD_1) )}
@@ -34,3 +31,19 @@ __                     {top: calc( var(--NAVBAR_DIM) + var(--SLIDER_HEIGHT) )}
 section > div > section,
 __                     {left: var(--BODY_MARGIN)}
 
+/*
+svg.initial,
+__                     {right: 0}
+*/
+
+
+
+/*=== BOTTOM ===*/
+#slogan,
+__                     {bottom: 0}
+
+
+/*=== RIGHT ===*/
+
+#slogan,
+__                     {right: 0}

@@ -8,6 +8,11 @@ button, select,
 __                     {text-transform: none}
 
 
+#slogan,
+__                     {text-transform: uppercase}
+
+
+
 /*=== WHITE-SPACE ===*/
 p > code,
 pre > code,
@@ -70,10 +75,6 @@ __                     {transform: scaleX(1)}
 
 
 /* .................................*/
-svg.initial,
-__                     {--svg_icon_dim: 50vmin}
-svg.unfold,
-__                     {--svg_icon_dim: 3em}
 
 svg.unfold,
 __                     {stroke-width: 1.5px}

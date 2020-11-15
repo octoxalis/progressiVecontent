@@ -6,6 +6,7 @@
   --PAD_4:  calc( var(--PAD_1) * 4 );
   --PAD_6:  calc( var(--PAD_1) * 6 );
   --PAD_8:  calc( var(--PAD_1) * 8 );
+  --PAD_12:  calc( var(--PAD_1) * 12 );
   --PAD_16: calc( var(--PAD_1) * 16 );
 
   --BODY_MARGIN: calc( ( 100 - {{C_o.BODY_WIDTH_n}} ) * .5vw );
@@ -25,6 +26,9 @@ dd,
 ul,
 ol,
 __                     {margin:0}
+
+svg.initial,
+__                     {margin-top: calc( var(--NAVBAR_DIM) + var(--PAD_1) ) }
 
 button > h2,
 __                     {margin: var(--PAD_2)}
@@ -72,6 +76,11 @@ ul,
 ol,
 __                     {padding:0}
 
+
+#slogan,
+__                     {padding: calc( var(--NAVBAR_DIM) + var(--PAD_4) ) var(--PAD_4) var(--PAD_4) 0 }
+
+
 #sections_slider,
-__                     {padding-top: .5rem}
+__                     {padding-top: var(--PAD_2)}
 

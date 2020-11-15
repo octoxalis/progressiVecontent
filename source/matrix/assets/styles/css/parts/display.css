@@ -10,18 +10,24 @@
 main,
 section,
 article,
-#initial,
 #scroll_top,
 #scroll_bottom,
 #sections_nav,
 __                     {display:grid; place-items:center}
 
+
+#initial > button,
+__                     {display:grid; justify-items: start;; align-items: center}
+
+
+#slogan,
 #nav_bar,
 #sections_slider,
 #graph_slider,
 __                     {display: flex}
 
 
+#slogan,
 #sections_slider,
 #graph_slider,
 __                     {flex-direction: column}

@@ -1,7 +1,15 @@
 /* === ALIGN === */
-__                     {align-items: center}
-__                     {align-items: stretch}
 __                     {align-items: flex-start}
+
+__                     {align-items: center}
+
+#slogan,
+__                     {justify-content: space-between}
+
 
 h1,
 __                     {text-align: center}
+
+
+#slogan *,
+__                     {text-align: right}

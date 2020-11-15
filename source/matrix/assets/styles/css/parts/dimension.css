@@ -5,7 +5,9 @@
   --LINE_WIDTH: clamp( 30ch, {{C_o.LINE_WIDTH_n}} * 1ch, var(--BODY_WIDTH) - 4vw );
   --NAVBAR_DIM:    4em;
   --FULL_WIDTH:  100vw;
+  --HALF_WIDTH:  50vw;
   --FULL_HEIGHT:  100vh;
+  --HALF_HEIGHT:  50vh;
   --SLIDER_HEIGHT: 4em;
   --IMG_REVEAL:    6em;
 }
@@ -33,6 +35,9 @@ __                     {width: calc( var(--BODY_WIDTH) * .25 )}
 .svg_icon,
 __                     {width: var(--svg_icon_dim)}
 
+#slogan,
+__                     {width: var(--HALF_WIDTH)}
+
 #sections,
 #nav_bar,
 #sections_slider,
@@ -47,6 +52,21 @@ __                     {width: 100%}
 __                     {width: var(--FULL_WIDTH)}
 
 
+/*
+#slogan,
+__                     {width: var(--HALFL_WIDTH)}
+*/
+
+#slogan,
+__                     {width: 66vw}
+
+
+
+svg.initial,
+__                     {--svg_icon_dim: clamp( 50vmin, 60vh, 90vw )}
+svg.unfold,
+__                     {--svg_icon_dim: 3em}
+
 *,
 __                     {scrollbar-width:thin}
 
@@ -59,6 +79,8 @@ __                     {height: 0}
 .unseen,
 __                     {height: 1px}
 
+
+#slogan,
 #initial > button,
 __                     {height: var(--FULL_HEIGHT)}
 
@@ -79,6 +101,9 @@ __                     {height: var(--SLIDER_HEIGHT)}
 __                     {flex-basis: 10%}
 #sections_nav,
 __                     {flex-basis: 80%}    /* calc( ( 100 - (10*2) ) * 1% ) */
+
+#slogan *:first-child,
+__                     {flex-basis: 30%}
 
 
 /*=== CLIP ===*/

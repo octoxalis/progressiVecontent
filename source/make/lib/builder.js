@@ -5,7 +5,7 @@ const CSP_o = require( './csp.js' )
 const WORD_o = require( './words.js' )
 const TOP_o = require( './topics.js' )
 
-const TEM_o =
+const BUI_o =
 {
   file_a:   null,
   docs_a:   new Map(),
@@ -19,7 +19,7 @@ const TEM_o =
     data_o
   )
   {
-    console.log( `${TEM_o.count_n} Markdown files to process` )
+    console.log( `${BUI_o.count_n} Markdown files to process` )
   }
 ,
 
@@ -31,11 +31,13 @@ const TEM_o =
     data_o
   )
   {
+   
     //!!! TEMPORARY TOP_o
     //!!! TEMPORARY   .write__v()
     console.log( '!!!! TOPICS TEMPORARY DISABLED' )
     HEAD_o
-      .write__v( `${CSP_o.directive__s()}\n${HEAD_o.directive__s()}\n` )
+      .write__v
+      ( `${CSP_o.directive__s()}\n${HEAD_o.directive__s()}\n` )
     GIT_o
       .write__v()
   }
@@ -59,7 +61,7 @@ const TEM_o =
     let slash_n = data_o.permalink.lastIndexOf( '/')
     const id_s = data_o.permalink.slice( slash_n + 1, '.html'.length * -1 )
     const path_s = ( slash_n < 0 ) ? '' : data_o.permalink.slice( 0, slash_n )
-    TEM_o.docs_a.set( id_s, { path_s: path_s } )
+    BUI_o.docs_a.set( id_s, { path_s: path_s } )
     let start_s = input_s
     //... what else?
     return start_s
@@ -125,8 +127,8 @@ module.exports =
     data_o
   )
   {
-    if ( TEM_o.current_n === 0 && TEM_o.file_a ) TEM_o.buildStart__v( data_o )
-    let start_s = TEM_o.templateStart__s( input_s, data_o )
+    if ( BUI_o.current_n === 0 && BUI_o.file_a ) BUI_o.buildStart__v( data_o )
+    let start_s = BUI_o.templateStart__s( input_s, data_o )
     return start_s
   }
 ,
@@ -139,10 +141,10 @@ module.exports =
     data_o
   )
   {
-    ++TEM_o.current_n    //;console.log( `${TEM_o.current_n} / ${TEM_o.count_n}`)
-    let end_s = TEM_o.templateEnd__s( input_s, data_o )
-    if ( TEM_o.file_a && TEM_o.current_n === TEM_o.count_n - 1 ) TEM_o.buildEnd__v( end_s, data_o )
-    FIL_o.writeFile( `make/index/output/docs_paths.json`, JSON.stringify([...TEM_o.docs_a]), error_o=>{/*console.log( error_o )*/})
+    ++BUI_o.current_n    //;console.log( `${BUI_o.current_n} / ${BUI_o.count_n}`)
+    let end_s = BUI_o.templateEnd__s( input_s, data_o )
+    if ( BUI_o.file_a && BUI_o.current_n === BUI_o.count_n - 1 ) BUI_o.buildEnd__v( end_s, data_o )
+    FIL_o.writeFile( `make/index/output/docs_paths.json`, JSON.stringify([...BUI_o.docs_a]), error_o=>{/*console.log( error_o )*/})
     return end_s
   }
 ,
@@ -154,7 +156,7 @@ module.exports =
     input_s,
     data_o
   )
-  { return TEM_o.headEnd__s( input_s, data_o ) }
+  { return BUI_o.headEnd__s( input_s, data_o ) }
 ,
 
 
@@ -164,7 +166,7 @@ module.exports =
     input_s,
     data_o
   )
-  { return TEM_o.bodyEnd__s( input_s, data_o ) }
+  { return BUI_o.bodyEnd__s( input_s, data_o ) }
 ,
 
 
@@ -183,12 +185,12 @@ void function ()
 {
   const MD_DIR_s = './matter/content/'    //: all Mardown files
   const DEPTH_n  = 2
-  TEM_o
+  BUI_o
     .file_a = require( 'klaw-sync' )( MD_DIR_s, { nodir: true, depthLimit: DEPTH_n } )
-  if ( TEM_o.file_a )
+  if ( BUI_o.file_a )
   {
-    TEM_o
-      .count_n = TEM_o.file_a.length
-    //; console.table(TEM_o.file_a)
+    BUI_o
+      .count_n = BUI_o.file_a.length
+    //; console.table(BUI_o.file_a)
   }
 } ()

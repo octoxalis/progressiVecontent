@@ -1,1 +1,105 @@
-dl[data-tool_color]{display:flex;flex-direction:column}dd[data-tool_color]:after{position:relative}dl[data-tool_color]{align-items:center}dd[data-tool_color]:after{left:var(--PAD_2)}dl[data-tool_color]>:not(dt){padding:var(--PAD_2)}dl[data-tool_color]{margin:var(--PAD_4) 0}dl[data-tool_color]>dt{margin-bottom:0}dl[data-tool_color]>dd{margin-bottom:var(--PAD_1)}[data-tool_color],[data-tool_color]>*{width:var(--BODY_WIDTH)}dd[data-tool_color]:after{width:100%}[data-tool_color]>dd{height:3em}[data-tool_color]>dd:last-of-type{border:1px solid hsla(0 0% 0% / .5)}#hue_current,#hue_picker{color:hsla(0,50%,50% / .8)}#hue_picker{background:linear-gradient(90deg,hsla(0 100% 50% / 1) 0,hsla(36 100% 50% / 1) 10%,hsla(72 100% 50% / 1) 20%,hsla(108 100% 50% / 1) 30%,hsla(144 100% 50% / 1) 40%,hsla(180 100% 50% / 1) 50%,hsla(216 100% 50% / 1) 60%,hsla(252 100% 50% / 1) 70%,hsla(288 100% 50% / 1) 80%,hsla(324 100% 50% / 1) 90%,hsla(360 100% 50% / 1) 100%)}#hue_current{background:hsla(var(--hue_base) 100% 50% / 1)}#lum_picker{background:linear-gradient(90deg,hsla(var(--hue_base) 50% 20% / 1) 0,hsla(var(--hue_base) 50% 20% / 1) 50%,hsla(var(--hue_base) 50% 80% / 1) 50%,hsla(var(--hue_base) 50% 80% / 1) 100%)}#lum_current{background:hsla(var(--hue_base) 50% calc((50 + (30 * var(--lum_mode))) * 1%)/ 1)}dd[data-tool_color]:after{--size_ratio:1}dd[data-tool_color]:after{line-height:2}[data-tool_color]>dd:last-of-type{cursor:crosshair}dd[data-tool_color]:after{content:attr(data-tool_color)}
+/*=== TOOLS ===*/
+
+
+dl[data-tool_color]
+{display: flex;
+                        flex-direction: column;}
+
+
+dd[data-tool_color]:after
+{position: relative}
+
+
+dl[data-tool_color]
+{align-items: center}
+
+
+
+dd[data-tool_color]:after
+{left: var(--PAD_2)}
+
+
+dl[data-tool_color] > *:not( dt )
+{padding: var(--PAD_2)}
+
+
+dl[data-tool_color]
+{margin: var(--PAD_4) 0}
+
+
+  dl[data-tool_color] > dt
+{margin-bottom: 0}
+
+dl[data-tool_color] > dd
+{margin-bottom: var(--PAD_1)}
+
+
+
+[data-tool_color],
+[data-tool_color] > *
+{width: var(--BODY_WIDTH)}
+
+dd[data-tool_color]:after
+{width: 100%}
+
+
+[data-tool_color] > dd
+{height: 3em}
+
+
+[data-tool_color] > dd:last-of-type
+{border: 1px solid hsla( 0 0% 0% / .5)}
+
+
+#hue_picker,
+#hue_current
+{color: hsla( 0, 50%, 50% / .8 )}
+
+
+#hue_picker
+{background: linear-gradient( 90deg,
+                        hsla( 0 100% 50% / 1 ) 0%,
+                        hsla( 36   100% 50% / 1 ) 10%,
+                        hsla( 72   100% 50% / 1 ) 20%,
+                        hsla( 108  100% 50% / 1 ) 30%,
+                        hsla( 144  100% 50% / 1 ) 40%,
+                        hsla( 180  100% 50% / 1 ) 50%,
+                        hsla( 216  100% 50% / 1 ) 60%,
+                        hsla( 252  100% 50% / 1 ) 70%,
+                        hsla( 288  100% 50% / 1 ) 80%,
+                        hsla( 324  100% 50% / 1 ) 90%,
+                        hsla( 360  100% 50% / 1 ) 100%)}
+                           
+#hue_current
+{background: hsla( var(--hue_base) 100% 50% / 1 )}
+                         
+
+#lum_picker
+{background: linear-gradient( 90deg,
+                         hsla( var(--hue_base) 50% 20%   / 1 ) 0%,
+                         hsla( var(--hue_base) 50% 20%   / 1 ) 50%,
+                         hsla( var(--hue_base) 50% 80% / 1 ) 50%,
+                         hsla( var(--hue_base) 50% 80% / 1 ) 100%)}
+
+                         
+#lum_current
+{background: hsla( var(--hue_base) 50% calc( ( 50 + ( 30 * var(--lum_mode) ) ) * 1% ) / 1 )}
+
+
+
+
+dd[data-tool_color]:after
+{--size_ratio: 1}
+
+
+dd[data-tool_color]:after
+{line-height: 2}
+
+
+
+[data-tool_color] > dd:last-of-type
+{cursor: crosshair}
+
+
+dd[data-tool_color]:after
+{content: attr( data-tool_color )}
