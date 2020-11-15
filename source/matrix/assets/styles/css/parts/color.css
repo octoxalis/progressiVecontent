@@ -20,9 +20,9 @@
 .retract,
 __                     {opacity: 0}
 
-
 #sections_nav > h1,
 __                     {opacity: .5}
+
 #sections_nav > h1:hover,
 __                     {opacity: 1}
 
@@ -43,7 +43,7 @@ __                     {color: var(--c_prim_lo)}
 #sections_nav > h1,
 __                     {color: var(--c_highlight)}
 
-#slogan,
+#hero,
 __                     {color: var(--c_decor_hi)}
 
 .svg_icon,
@@ -52,7 +52,7 @@ __                     {stroke: var(--c_highlight)}
 
 
 /*=== BACKGROUND ===*/
-#slogan,
+#hero,
 #sections_nav,
 #scroll_top,
 #scroll_bottom,
@@ -65,13 +65,6 @@ __                     {background: transparent}
 __                     {fill: none}
 
 
-
-*::-webkit-scrollbar-track,
-__                     {background: var(--c_decor_ne)}
-
-*::-webkit-scrollbar-thumb,
-__                     {background: var(--c_decor_hi)}
-
 body,
 #nav_bar,
 #sections_slider,
@@ -81,14 +74,19 @@ __                     {background: var(--c_prim_hi)}
 #section_docs,
 __                     {background: var(--c_prim_lo_2)}
 
+*::-webkit-scrollbar-track,
+__                     {background: var(--c_decor_ne)}
+
+*::-webkit-scrollbar-thumb,
+__                     {background: var(--c_decor_hi)}
+
+a::before,
+a::after,
+__                     {background: var(--c_link_ne)}
 
 
+/*=== GRADIENT ===*/
 #initial > button,
 __                     {background: linear-gradient( 35deg,
                          hsla( var(--hue_base) 100% 15% / .8 ) 0%,
                          hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
-
-/*
-#initial > button,
-__                     {background: var(--c_prim_lo)}
-*/

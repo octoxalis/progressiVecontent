@@ -7,8 +7,7 @@ __                     {text-decoration: none}
 button, select,
 __                     {text-transform: none}
 
-
-#slogan,
+#hero,
 __                     {text-transform: uppercase}
 
 
@@ -50,52 +49,6 @@ hr,
 __                     {box-shadow:var(--BOX_SHADOW)}
 */
 
-
-
-a::before,
-a::after
-{
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-  background: var(--c_link_ne);
-  transform-origin: bottom left;
-  transition: transform 0.3s ease;
-}
-a::before,
-__                     {height: 1px}
-
-a::after,
-__                     {height: 4px;transform: scaleX(0)}
-
-a:hover::after,
-__                     {transform: scaleX(1)}
-
-
-/* .................................*/
-
-svg.unfold,
-__                     {stroke-width: 1.5px}
-h1,
-svg.unfold,
-__                     {position: relative}
-h1,
-__                     {top: calc( var(--NAVBAR_DIM) * -.5 )}
-
-svg.unfold,
-__                     {top: 1.45em }
-
-svg.unfold,
-__                     {margin: 0 calc(var(--PAD_1) * -1 ) 0 calc(var(--PAD_1) * -5 )}  /* negative margins */
-
-
-h1:hover,
-__                     {filter: invert( .75 )}
-svg.unfold:hover,
-__                     {filter: saturate( 10 )}
-/* .................................*/
 
 
 /* === SCROLLBAR === */

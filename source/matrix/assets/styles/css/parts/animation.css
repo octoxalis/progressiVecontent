@@ -15,10 +15,13 @@ __                     {animation: fade_in .5s ease-in-out}
 
 
 /*=== TRANSITION ===*/
-#sections_slider, #graph_slider,
+#sections_slider,
+#graph_slider,
+a::before,
+a::after,
 .aside,
 __                     {transition: transform .2s ease}
 
 h1,
 h1:hover,
-__                     {transition: .5s ease}
+__                     {transition: .3s ease}

@@ -3,7 +3,7 @@ __                     {align-items: flex-start}
 
 __                     {align-items: center}
 
-#slogan,
+#hero,
 __                     {justify-content: space-between}
 
 
@@ -11,5 +11,5 @@ h1,
 __                     {text-align: center}
 
 
-#slogan *,
+#hero *,
 __                     {text-align: right}

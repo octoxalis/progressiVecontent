@@ -20,14 +20,14 @@ __                     {display:grid; place-items:center}
 __                     {display:grid; justify-items: start;; align-items: center}
 
 
-#slogan,
+#hero,
 #nav_bar,
 #sections_slider,
 #graph_slider,
 __                     {display: flex}
 
 
-#slogan,
+#hero,
 #sections_slider,
 #graph_slider,
 __                     {flex-direction: column}

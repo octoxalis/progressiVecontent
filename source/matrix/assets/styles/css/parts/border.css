@@ -21,10 +21,14 @@ __                     {border: var(--BORDER_1) solid var(--c_decor_ne)}
 
 
 
-/*=== BORDER-RADIUS ===*/
+/*=== RADIUS ===*/
 *::-webkit-scrollbar-thumb,
 __                     {border-radius: .5rem}
 
+
+/*=== STROKE ===*/
+svg.unfold,
+__                     {stroke-width: 1.5px}
 
 
 /*=== OUTLINE ===*/

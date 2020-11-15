@@ -3,6 +3,14 @@
 .retract,
 __                     {transform: scale(0)}
 
+a::after,
+__                     {transform: scaleX(0)}
+
+a:hover::after,
+__                     {transform: scaleX(1)}
+
+
+
 #scroll_bottom > svg,
 __                     {transform:rotate(.5turn)}
 
@@ -12,8 +20,16 @@ __                     {transform: translate(0)}
 __                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7rem ) * -1 ) )}
 
 
+h1:hover,
+__                     {filter: invert( .75 )}
+svg.unfold:hover,
+__                     {filter: saturate( 10 )}
+
 
 /*=== ORIGIN ===*/
 .retract,
 __                     {transform-origin: top left}
 
+a::before,
+a::after,
+__                     {transform-origin: bottom left}

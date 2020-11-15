@@ -25,46 +25,43 @@
 
 /*=== FAMILY ===*/
 body,
-body *,                /* default */
+body *,
 __                     {font-family: var(--font_body)}
 
-
-#slogan,
+#hero,
 button[data-slot_s],
 __                     {font-family:var(--font_title)}
 
 
-
 /*=== SIZE ===*/
 body,
-body *,                /* default */
+body *,
 body *:before,
 body *:after,
 __                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
 
 
-#slogan *,
-__                     {--size_ratio: 1.5}
-#slogan *:first-child,
+#hero *:first-child,
 __                     {--size_ratio: 2.3}
-
-#slogan span,
-__                     {--size_ratio: 1.2}
-
 
 h1,
 __                     {--size_ratio: 1.6}
 
+#hero *,
+__                     {--size_ratio: 1.5}
+
 h2,
 __                     {--size_ratio: 1.4}
+
 h3,
 h4,
 h5,
 h6,
+#hero span,
 __                     {--size_ratio: 1.2}
 
 body,
-body *,                /* default */
+body *,
 __                     {--size_ratio: 1}
 
 small,
@@ -79,7 +76,6 @@ __                     {--size_ratio: .7}
                  
 
 
-
 /*=== WEIGHT ===*/
 
 b,
@@ -89,7 +85,7 @@ __                     {font-weight: 900}
 
 
 
-#slogan > *:not(:first-child),
+#hero > *:not(:first-child),
 #sections_nav > h1,
 __                     {font-weight: 600}
 
@@ -98,13 +94,12 @@ __                     {font-weight: 500}
 
 body,
 body *,
-#slogan span,
-#slogan *:first-child,
+#hero span,
+#hero *:first-child,
 __                     {font-weight: 300}
 
 h2,
 __                     {font-weight: 200}
-
 
 
 
@@ -120,13 +115,14 @@ __                     {font-style:italic}
 h1,
 __                     {line-height: 1}
 
-#slogan *:not( span ),
+#hero *:not( span ),
 __                     {line-height: .8}
 
 
 /*=== SPACING ===*/
-#slogan *,
-__                     {letter-spacing: .05em}
 
 #sections_nav > h1,
 __                     {letter-spacing: .4em}
+
+#hero *,
+__                     {letter-spacing: .05em}
