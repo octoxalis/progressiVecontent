@@ -1,24 +1,9 @@
-<svg id="svg_symbols" style="display:none" aria-hidden="true">
+<svg id="svg_symbols" aria-hidden="true">
 
   <symbol id="icon_unfold" viewBox="0 0 24 24">
     <circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle>
     <line x1="12" y1="7" x2="12" y2="12"></line>
     <polyline points="12 15 12 22 22 2"></polyline>
-  </symbol>
-
-  <symbol id="icon_top" viewBox="0 0 24 24">
-      <path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/>
-  </symbol>
-
-  <symbol id="icon_bottom" viewBox="0 0 24 24">
-      <path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/>
-  </symbol>
-
-  <symbol id="icon_graph" viewBox="0 0 24 24">
-    <rect x="3" y="3" width="7" height="7"></rect>
-    <rect x="14" y="3" width="7" height="7"></rect>
-    <rect x="14" y="14" width="7" height="7"></rect>
-    <rect x="3" y="14" width="7" height="7"></rect>
   </symbol>
 
   <symbol id="icon_close" viewBox="0 0 24 24">

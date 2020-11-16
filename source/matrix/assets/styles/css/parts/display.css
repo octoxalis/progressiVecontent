@@ -7,10 +7,10 @@
 
 /*=== DISPLAY ===*/
 
-/*
-[data-sub]::before,
+/*[data-sub]::before,*/
+#svg_symbols,
 __                     {display: none}
-*/
+
 
 
 main,
