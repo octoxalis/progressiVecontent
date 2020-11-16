@@ -62,7 +62,7 @@ __                     {--size_ratio: .7}
 
 /*=== WEIGHT ===*/
 
-#sections_nav,
+#sections_nav *,
 #hero span,
 __                     {font-weight: 600}
 
@@ -95,7 +95,7 @@ __                     {line-height: .5}
 /*=== SPACING ===*/
 
 #sections_nav,
-__                     {letter-spacing: .4em}
+__                     {letter-spacing: 1em}
 
 #hero span,
 __                     {letter-spacing: .2em}

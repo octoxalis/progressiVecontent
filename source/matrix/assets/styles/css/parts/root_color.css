@@ -94,7 +94,7 @@
 
 
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
---c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+--c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_4) var(--c_lum_lo_4) / 1 );
 
 }
 

@@ -37,7 +37,7 @@ __                     {color: var(--c_prim_lo)}
 
 
 [data-id="sections_nav"],
-__                     {color: var(--c_highlight)}
+__                     {color: var(--c_highlight_in)}
 
 #hero,
 __                     {color: var(--c_decor_hi)}

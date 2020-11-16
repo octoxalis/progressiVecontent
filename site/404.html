@@ -156,7 +156,7 @@ button:focus{outline: 0}
 --c_link_hi: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
 --c_link_ne: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / .5 );
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
---c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
+--c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_4) var(--c_lum_lo_4) / 1 );
 }
 :root
 {
@@ -173,7 +173,7 @@ button:focus{outline: 0}
 [data-id="sections_nav"]{opacity: .5}
 [data-id="sections_nav"]:hover{opacity: 1}
 body,#sections_nav{color: var(--c_prim_lo)}
-[data-id="sections_nav"]{color: var(--c_highlight)}
+[data-id="sections_nav"]{color: var(--c_highlight_in)}
 #hero{color: var(--c_decor_hi)}
 [data-sub]::before{color: red}
 .svg_icon{stroke: var(--c_highlight)}
@@ -209,13 +209,13 @@ body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--si
 body,body *{--size_ratio: 1}
 #sections_nav{--size_ratio: .7}
   
-#sections_nav,#hero span{font-weight: 600}
+#sections_nav *,#hero span{font-weight: 600}
 body,body *{font-weight: 300}
 #hero *{font-weight: 100}
 #sections_nav{font-style:italic}
 #hero *:not( span ){line-height: .8}
 #sections_nav{line-height: .5}
-#sections_nav{letter-spacing: .4em}
+#sections_nav{letter-spacing: 1em}
 #hero span{letter-spacing: .2em}
 .svg_icon{stroke-width: 1}
 .svg_icon{stroke-linecap: round}
@@ -250,4 +250,4 @@ svg.unfold:hover,[data-sub]:hover{filter: saturate( 10 )}
   100% { opacity:1} }
 [sections_nav]{transition: .3s ease}
 .svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content following to their own interests">partitioned content<br/><span>architecture</span></dt><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">standalone<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independence">frameworkless<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="sections_nav" title="Show page slots"><i data-id="sections_nav">progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</i></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
+.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button aria-label="Discover progressiVecontent"><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content following to their own interests">partitioned content<br/><span>architecture</span></dt><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">standalone<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independence">frameworkless<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="sections_nav" title="Show page slots"><i data-id="sections_nav">progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</i></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
