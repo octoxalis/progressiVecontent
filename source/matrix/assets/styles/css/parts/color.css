@@ -20,27 +20,23 @@
 .retract,
 __                     {opacity: 0}
 
-#sections_nav > h1,
+[data-id="sections_nav"],
 __                     {opacity: .5}
 
-#sections_nav > h1:hover,
+[data-id="sections_nav"]:hover,
 __                     {opacity: 1}
 
 
 
 /*=== FRONT ===*/
-a,
-legend,
-__                     {color: inherit}
 
 body,
-h2,
 #sections_nav,
 __                     {color: var(--c_prim_lo)}
 
 
 
-#sections_nav > h1,
+[data-id="sections_nav"],
 __                     {color: var(--c_highlight)}
 
 #hero,
@@ -59,8 +55,7 @@ __                     {stroke: var(--c_highlight)}
 #scroll_top,
 #scroll_bottom,
 #sections,
-#sections > *
-,
+#sections > *,
 __                     {background: transparent}
 
 .svg_icon,
@@ -70,11 +65,9 @@ __                     {fill: none}
 body,
 #nav_bar,
 #sections_slider,
-#graph_slider,
 __                     {background: var(--c_prim_hi)}
 
-#section_docs,
-__                     {background: var(--c_prim_lo_2)}
+
 
 *::-webkit-scrollbar-track,
 __                     {background: var(--c_decor_ne)}
@@ -82,8 +75,6 @@ __                     {background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb,
 __                     {background: var(--c_decor_hi)}
 
-a::before,
-a::after,
 [data-sub]:hover::after,
 __                     {background: var(--c_link_ne)}
 

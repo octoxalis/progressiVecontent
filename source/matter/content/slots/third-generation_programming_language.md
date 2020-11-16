@@ -8,6 +8,5 @@
   labels_a: ['search algorithm','bit','decryption'],
 }
 ---
-## third-generation programming language
-
+:third-generation programming language:
 

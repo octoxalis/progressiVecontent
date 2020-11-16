@@ -8,6 +8,5 @@
   labels_a: ['computer architectures','computing','cipher','binary','digital electronics','non-volatile resources'],
 }
 ---
-## reference
-
+:reference:
 

@@ -8,6 +8,5 @@
   labels_a: ['binary search algorithm','constructor','values','type','encryption'],
 }
 ---
-## run time
-
+:run time:
 

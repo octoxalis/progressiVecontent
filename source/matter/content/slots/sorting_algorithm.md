@@ -8,6 +8,5 @@
   labels_a: ['computing','software development','basic unit of information','procedure','values','subroutines'],
 }
 ---
-## sorting algorithm
-
+:sorting algorithm:
 

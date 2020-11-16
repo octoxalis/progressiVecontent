@@ -9,7 +9,6 @@
   title_s: `tools`,
 }
 ---
-### Preferences
-
+:Preferences:
 
 {{A_o.NAME_s}} appearance can be changed by tweaking the following settings.

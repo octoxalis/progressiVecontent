@@ -8,6 +8,5 @@
   labels_a: ['bit','argument','basic unit of information','values','objects'],
 }
 ---
-## object-oriented analysis and design (ooad)
-
+:object-oriented analysis and design (ooad):
 A technical approach for analyzing and designing an application, system, or business by applying ~°object-oriented programming°~, as well as using visual modeling throughout the software development process to guide stakeholder communication and product quality.

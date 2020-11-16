@@ -8,6 +8,5 @@
   labels_a: ['decryption','bits','binary','object-oriented programming'],
 }
 ---
-## numerical analysis
-
+:numerical analysis:
 The study of ~°algorithms°~ that use numerical ~°approximation°~ (as opposed to ~°symbolic manipulations°~) for the problems of ~°mathematical analysis°~ (as distinguished from ~°discrete mathematics°~).

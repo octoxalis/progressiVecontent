@@ -8,6 +8,5 @@
   labels_a: ['bits','cryptography','computing','data sets','binary search algorithm'],
 }
 ---
-## symbolic computation
-
+:symbolic computation:
 

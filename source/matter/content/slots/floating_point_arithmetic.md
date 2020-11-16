@@ -8,6 +8,5 @@
   labels_a: ['encryption','search algorithm','subroutines'],
 }
 ---
-## floating point arithmetic
-
+:floating point arithmetic:
 

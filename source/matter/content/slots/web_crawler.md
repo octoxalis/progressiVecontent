@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','objects'],
 }
 ---
-## web crawler
-
+:web crawler:
 An ~°Internet bot°~ that systematically browses the ~°World Wide Web°~, typically for the purpose of ~°Web indexing°~ (<i>web spidering</i>).

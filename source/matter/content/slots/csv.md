@@ -8,6 +8,5 @@
   labels_a: ['objects','software development','type'],
 }
 ---
-## csv
-
+:csv:
 See <i>~°comma-separated values°~</i>.

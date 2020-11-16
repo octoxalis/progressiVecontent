@@ -15,14 +15,18 @@ __                     {--svg_icon_dim: 2rem }
 a[data-id="redirect"],
 __                     {display:none}
 
+section,
+article,
+.span_icon,
+__                     {display:grid; place-items:center}
+
 
 pre > code,
 [data-id="example"]::before,
 __                     {display:block}
 
 
-.span_icon,
-__                     {display: grid; place-items: center}
+
 
 
 button[data-slot_s],
@@ -31,10 +35,20 @@ __                     {display: flex;
                         align-content: center}
 
 
+
+
 a,
+section > div,
 [data-id="ulist"] > li::before,
 [data-id="important"]::before,
 __                     {position: relative}
+
+a::before,
+a::after,
+__                     {position: absolute}
+
+
+
 
 
 
@@ -43,8 +57,7 @@ __                     {margin: 0}
 
 
 button[data-slot_s],
-h2[data-slot_s],
-__                     {margin: var(--PAD_4) 0}
+__                     {margin: 0}
 
 
 .span_icon,
@@ -55,14 +68,12 @@ __                     {margin: var(--PAD_1) 0}
 __                     {margin: var(--PAD_2) 0 0 var(--PAD_4)}
 
 
-h3[data-id="performance"],
-__                     {margin-top: var(--PAD_8)}
+article,
+__                     {margin: var(--PAD_12) 0 var(--PAD_4) 0}
+article.retract,
+__                     {margin: var(--PAD_2) 0 0 0}
 
 
-
-
-h2[data-slot_s],
-__                     {padding: var(--PAD_1) var(--PAD_2)}
 
 div[data-slot_s],
 __                     {padding: var(--PAD_4)  var(--PAD_8)}
@@ -72,8 +83,16 @@ __                     {padding: var(--PAD_4)  var(--PAD_8)}
 __                     {padding-left:0}
 
 
+
 [data-id="ulist"],
 __                     {padding-left:var(--PAD_2)}
+
+
+hr,
+article,
+__                     {margin-bottom: var(--PAD_6)}
+
+
 
 
 [data-id="example"],
@@ -82,20 +101,78 @@ __                     {max-width:100%}
 button[data-slot_s],
 __                     {width: var(--FULL_WIDTH)}
 
+article,
+__                     {width: var(--BODY_WIDTH)}
 
-button[data-slot_s] > h2,
+
+[data-slot_s] > u,
 __                     {height: 6em}  /* see line-height */
+
+
+
+a::before,
+.unseen,
+__                     {height: 1px}
+
+a::after,
+__                     {height: 4px}
+
+
+
+
+
+
+[data-slot_s] > u,
+__                     {top: calc( var(--NAVBAR_DIM) * -1 )}
+
+a::before,
+a::after,
+__                     {left: 0}
+
+section > div > section,
+__                     {left: var(--BODY_MARGIN)}
 
 
 button[data-slot_s],
 __                     {left: 50%; right: 50%}  /* center */
 
+a::before,
+a::after,
+__                     {bottom: -1px}
+
+a::before,
+a::after,
+__                     {right: 0}
+
+
+
 button[data-slot_s],
 __                     {margin-left: -50vw; margin-right: -50vw}  /* center */
 
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+__                     {margin-bottom: var(--PAD_2)}
 
-button[data-slot_s] > h2,
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+__                     {padding:0}
+
+
+
+[data-slot_s] > u,
 __                     {flex-basis: 100%}
 
 
@@ -135,10 +212,15 @@ button[data-slot_s],
 __                     {box-shadow:var(--BOX_SHADOW)}
 
 
+a,
+legend,
 [data-id="note_txt"] > button,
 mark[data-tag],
 __                     {color: inherit}
 
+
+[data-slot_s] > u,
+__                     {color: var(--c_prim_lo)}
 
 
 [data-id="important"]::before,
@@ -158,6 +240,11 @@ mark[data-tag],
 __                     {background: inherit}
 
 
+a::before,
+a::after,
+__                     {background: var(--c_link_ne)}
+
+
 section[data-slot_n],
 __                     {background: var(--c_sec_hi_3)}
 
@@ -170,12 +257,34 @@ __                     {background: var(--c_prim_hi_2)}
 __                     {background:var(--c_decor_hi_op_lo)}
 
 
+h1,
+__                     {--size_ratio: 1.6}
 
-button[data-slot_s] > h2,
+
+h2,
+__                     {--size_ratio: 1.4}
+
+h3,
+h4,
+h5,
+h6,
+__                     {--size_ratio: 1.2}
+
+
+[data-slot_s] > u,
+__                     {--size_ratio: 1.4}
+
+small,
+sub,
+sup,
+__                     {--size_ratio: .8}
+
+
+[data-slot_s] > u,
+__                     {font-weight: 200}
+
+[data-slot_s] > u,
 __                     {line-height: 6}  /* see height */
-
-
-__                     {font-size: inherit}
 
 
 
@@ -194,17 +303,44 @@ __                     {color: var(--border_color)}
 __                     {font-size: var(--char_size)}
 
 
+a::before,
+a::after,
+__                     {content: ''}
 
-button[data-slot_s] > h2,
-__                     {font-weight: 600}
+
+a,
+[data-slot_s] > u,
+__                     {text-decoration: none}
 
 
-
-button[data-slot_s] > h2,
+[data-slot_s] > u,
 __                     {text-transform: uppercase}
 
+
+article::after,
+__                     {content: '◻'}
+
+
+button[data-slot_s],
+__                     {font-family:var(--font_title)}
+
+
+[data-id=example]::before,
+__                     {font-style:italic}
 
 .svg_icon:hover,
 button[data-slot_s]:hover,
 #tools_link:hover,
 __                     {filter: brightness( 2 )}
+
+
+
+a::before,
+a::after,
+__                     {transform-origin: bottom left}
+
+
+a::before,
+a::after,
+.aside,
+__                     {transition: transform .2s ease}

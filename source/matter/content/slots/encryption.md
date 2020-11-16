@@ -8,6 +8,5 @@
   labels_a: ['subroutines','computing','computer programs','computer architectures','non-volatile resources','bits','objects'],
 }
 ---
-## encryption
-
+:encryption:
 

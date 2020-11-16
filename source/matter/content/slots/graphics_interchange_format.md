@@ -8,6 +8,5 @@
   labels_a: ['pre-written code','constructor','code library'],
 }
 ---
-## graphics interchange format
-
+:graphics interchange format:
 

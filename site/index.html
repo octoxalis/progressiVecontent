@@ -14,12 +14,13 @@ html{box-sizing:border-box}
 {
  --ASIDE_Z: 1;
 }
-main,section,article,#scroll_top,#scroll_bottom,#sections_nav,[data-sub]::before{display:grid; place-items:center}
+main,#scroll_top,#scroll_bottom,#sections_nav,[data-sub]::before{display:grid; place-items:center}
 #initial > button{display:grid; justify-items: start; align-items: center}
-#hero,#nav_bar,#sections_slider,#graph_slider{display: flex}
-#hero,#sections_slider,#graph_slider{flex-direction: column}
-#sections_slider{z-index: var(--ASIDE_Z)}
+#hero,#nav_bar,[data-id="sections_nav"],#sections_slider{display: flex}
+[data-id="sections_nav"]{align-items: center}
+#hero,#sections_slider{flex-direction: column}
 #nav_bar{z-index: calc( var(--ASIDE_Z) + 1 )}
+#sections_slider{z-index: var(--ASIDE_Z)}
 :root
 {
  --PAD_1: .25em;
@@ -31,72 +32,59 @@ main,section,article,#scroll_top,#scroll_bottom,#sections_nav,[data-sub]::before
  --PAD_16: calc( var(--PAD_1) * 16 );
  --BODY_MARGIN: calc( ( 100 - 80 ) * .5vw );
 }
-body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol{margin:0}
-button > h2{margin: var(--PAD_2)}
+body,dl,dt,dd,#nav_bar > button{margin:0}
+#sections_slider{margin-left: -50vw; margin-right: -50vw} 
 svg.unfold{margin: 0 calc(var(--PAD_1) * -1 ) 0 calc(var(--PAD_1) * -5 )} 
-#sections{margin-top: var(--PAD_4)}
-blockquote{margin-top: var(--PAD_6)}
-h2{margin-top: var(--PAD_8)}
 svg.initial{margin-top: calc( var(--NAVBAR_DIM) + var(--PAD_1) ) }
-blockquote *:last-child{margin-bottom: 0}
-h2,h3,h4,h5,h6{margin-bottom: var(--PAD_2)}
-hr,article{margin-bottom: var(--PAD_6)}
-body,h1,h2,h3,h4,h5,h6,p,dl,ul,ol{padding:0}
-#sections_slider{padding-top: var(--PAD_2)}
+body,dl,dt,dd,#nav_bar > button{padding:0}
 #hero{padding: calc( var(--NAVBAR_DIM) + var(--PAD_4) ) var(--PAD_4) var(--PAD_4) 0 }
-h1,section > div,svg.initial,svg.unfold{position:relative}
-#initial,#hero,#sections,.unseen,a::before,a::after{position: absolute}
-#nav_bar,#sections_slider{position: fixed}
+svg.initial,svg.unfold,#sections_slider{position:relative}
+#initial,#hero,#sections,.unseen{position: absolute}
+#nav_bar{position: fixed}
+#sections_slider{position: fixed}
 #nav_bar,[data-sub]::before{top: 0}
-h1{top: calc( var(--NAVBAR_DIM) * -.5 )}
-#sections_slider{top: calc( var(--NAVBAR_DIM) + var(--PAD_1) )}
+#sections_slider{top: var(--NAVBAR_DIM)}
 #sections{top: calc( var(--NAVBAR_DIM) + var(--SLIDER_HEIGHT) )}
-svg.unfold{top: 1.45em }
-a::before,a::after,[data-sub]::before{left: 0}
-section > div > section{left: var(--BODY_MARGIN)}
+svg.unfold{top: .4em }
+[data-sub]::before{left: 0}
 #initial svg{left: -8vw}
+#sections_slider{left: 50%; right: 50%} 
 #hero{bottom: 0}
-a::before,a::after{bottom: -1px}
-#hero,a::before,a::after{right: 0}
+#hero{right: 0}
 :root
 {
  --BODY_WIDTH: calc( 80 * 1vw );
  --LINE_WIDTH: clamp( 30ch, 52 * 1ch, var(--BODY_WIDTH) - 4vw );
- --NAVBAR_DIM: 4em;
  --FULL_WIDTH: 100vw;
  --HALF_WIDTH: 50vw;
  --FULL_HEIGHT: 100vh;
  --HALF_HEIGHT: 50vh;
+ --NAVBAR_DIM: 4em;
  --SLIDER_HEIGHT: 4em;
  --IMG_REVEAL: 6em;
 }
 #nav_bar {--svg_icon_dim: 1.8em}
 .retract{width: 0}
 .unseen{width: 1px}
-#initial,#initial > button,#sections_slider,#graph_slider{width: var(--FULL_WIDTH)}
+#initial,#initial > button,#sections_slider{width: var(--FULL_WIDTH)}
 #hero,[data-sub]::before{width: var(--HALF_WIDTH)}
 #hero{width: 70vw}
-article{width: var(--BODY_WIDTH)}
 hr{width: calc( var(--BODY_WIDTH) * .25 )}
 p,ol, ul{width: var(--LINE_WIDTH)}
-#sections,#nav_bar,#sections_slider,#graph_slider{width: 100%}
+#nav_bar,#sections_nav,#sections{width: 100%}
 .svg_icon{width: var(--svg_icon_dim)}
 svg.initial{--svg_icon_dim: clamp( 50vmin, 60vh, 90vw )}
 svg.unfold{--svg_icon_dim: 3em}
 *{scrollbar-width:thin}
 .retract{height: 0}
-a::before,.unseen{height: 1px}
-a::after{height: 4px}
 #hero,#initial > button{height: var(--FULL_HEIGHT)}
 #nav_bar{height: var(--NAVBAR_DIM)}
 #sections_slider{height: var(--SLIDER_HEIGHT)}
 [data-sub]::before{height: 10vh}
 .svg_icon{height: var(--svg_icon_dim)}
-#scroll_top,#scroll_bottom{flex-basis: 10%}
-#sections_nav{flex-basis: 80%} 
 #hero *:first-child{flex-basis: 30%}
 .unseen{clip-path: inset(0px 0px)}
-#sections_slider,#graph_slider,.unseen{overflow: hidden}
+.unseen{overflow: hidden}
 body{overflow-x: hidden}
 :root
 {
@@ -111,7 +99,7 @@ iframe,button,.unseen{border: 0}
 svg.unfold{stroke-width: 1.5px}
 button:focus{outline: 0}
 #hero{justify-content: space-between}
-h1{text-align: center}
+[sections_nav]{text-align: center}
 #hero *{text-align: right}
 :root
 {
@@ -181,22 +169,19 @@ h1{text-align: center}
  brightness(2);
 }
 .unseen,.invisible,.retract{opacity: 0}
-#sections_nav > h1{opacity: .5}
-#sections_nav > h1:hover{opacity: 1}
-a,legend{color: inherit}
-body,h2,#sections_nav{color: var(--c_prim_lo)}
-#sections_nav > h1{color: var(--c_highlight)}
+[data-id="sections_nav"]{opacity: .5}
+[data-id="sections_nav"]:hover{opacity: 1}
+body,#sections_nav{color: var(--c_prim_lo)}
+[data-id="sections_nav"]{color: var(--c_highlight)}
 #hero{color: var(--c_decor_hi)}
 [data-sub]::before{color: red}
 .svg_icon{stroke: var(--c_highlight)}
-#hero,#sections_nav,#scroll_top,#scroll_bottom,#sections,#sections > *
-{background: transparent}
+#hero,#sections_nav,#scroll_top,#scroll_bottom,#sections,#sections > *{background: transparent}
 .svg_icon{fill: none}
-body,#nav_bar,#sections_slider,#graph_slider{background: var(--c_prim_hi)}
-#section_docs{background: var(--c_prim_lo_2)}
+body,#nav_bar,#sections_slider{background: var(--c_prim_hi)}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background: var(--c_decor_hi)}
-a::before,a::after,[data-sub]:hover::after{background: var(--c_link_ne)}
+[data-sub]:hover::after{background: var(--c_link_ne)}
 #initial > button{background: linear-gradient( 35deg,  hsla( var(--hue_base) 100% 15% / .8 ) 0%,  hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
 :root
 {
@@ -215,36 +200,28 @@ a::before,a::after,[data-sub]:hover::after{background: var(--c_link_ne)}
  --font_title: var(--font_body);
 }
 body,body *{font-family: var(--font_body)}
-#hero,button[data-slot_s]{font-family:var(--font_title)}
+#hero{font-family:var(--font_title)}
 body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--size_ratio) )}
 #hero *:first-child{--size_ratio: 2.6}
-h1{--size_ratio: 1.6}
 #hero *{--size_ratio: 1.6}
-h2{--size_ratio: 1.4}
-h3,h4,h5,h6,#hero span,[data-sub]::before{--size_ratio: 1.2}
+#hero span,[data-sub]::before{--size_ratio: 1.2}
 body,body *{--size_ratio: 1}
-small,sub,sup,ins[data-id^=note_] button,.note_open{--size_ratio: .8}
-#sections_nav > h1{--size_ratio: .7}
+#sections_nav{--size_ratio: .7}
   
-b,strong,h1{font-weight: 900}
-#sections_nav > h1,#hero span{font-weight: 600}
-button[data-slot_s]{font-weight: 500}
+#sections_nav,#hero span{font-weight: 600}
 body,body *{font-weight: 300}
-h2{font-weight: 200}
 #hero *{font-weight: 100}
-#sections_nav > h1,[data-id=example]::before{font-style:italic}
-h1{line-height: 1}
+#sections_nav{font-style:italic}
 #hero *:not( span ){line-height: .8}
-#sections_nav > h1{letter-spacing: .4em}
+#sections_nav{line-height: .5}
+#sections_nav{letter-spacing: .4em}
 #hero span{letter-spacing: .2em}
 .svg_icon{stroke-width: 1}
 .svg_icon{stroke-linecap: round}
 .svg_icon{stroke-linejoin: round}
-a{text-decoration: none}
    
 button, select{text-transform: none}
 #hero{text-transform: uppercase}
-p > code,pre > code{white-space: pre}
 .unseen{white-space: nowrap}
 dl,ol,ul{list-style: none}
 body{cursor: default}
@@ -262,15 +239,14 @@ button,.svg_icon,[data-sub]:hover{cursor: pointer}
 a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
 #scroll_bottom > svg{transform:rotate(.5turn)}
-.aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - .7rem ) * -1 ) )}
-h1:hover,[data-sub]:hover{filter: invert( .75 )}
+.aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5rem ) * -1 ) )}
+[data-sub]:hover{filter: invert( .75 )}
 svg.unfold:hover,[data-sub]:hover{filter: saturate( 10 )}
 .retract{transform-origin: top left}
-a::before,a::after{transform-origin: bottom left}
+#sections_slider{transition: transform .2s ease}
 .fade_in{animation: fade_in .5s ease-in-out}
 @keyframes fade_in {0% { opacity:0}
   100% { opacity:1} }
-#sections_slider,#graph_slider,a::before,a::after,.aside{transition: transform .2s ease}
-h1,h1:hover{transition: .3s ease}
+[sections_nav]{transition: .3s ease}
 .svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content according to their own interest centers">partitioned content<br/><span>architecture</span></dt><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">library free<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independance">framework free<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="scroll_top" class="invisible" title="Go to page top"><svg class="svg_icon"><use href="#icon_top"/></svg></button> <button id="sections_nav" title="Show page slots"><h1>progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</h1></button> <button id="scroll_bottom" class="invisible" title="Go to page bottom"><svg class="svg_icon"><use href="#icon_bottom"/></svg></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>
+.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" style="display:none" aria-hidden="true"><symbol id="icon_unfold" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_top" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_bottom" viewBox="0 0 24 24"><path d="M17 11l-5-5-5 5M17 18l-5-5-5 5"/></symbol><symbol id="icon_graph" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><header id="initial"><button><svg class="svg_icon initial"><use href="#icon_unfold"/></svg></button><dl id="hero"><dt data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content following to their own interests">partitioned content<br/><span>architecture</span></dt><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">standalone<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independence">frameworkless<br/><span>JAMstack</span></dd></dl></header><nav id="nav_bar"><button id="sections_nav" title="Show page slots"><i data-id="sections_nav">progress<span><svg class="svg_icon unfold"><use href="#icon_unfold"/></svg></span>econtent</i></button></nav><aside id="sections_slider" class="aside"></aside><main id="sections"></main></body></html>

@@ -8,6 +8,5 @@
   labels_a: ['code library','cryptography','bit','classes','subroutines','decryption','values'],
 }
 ---
-## computer scientist
-
+:computer scientist:
 A person who has acquired the knowledge of ~°computer science°~, the study of the theoretical foundations of information and computation and their application.

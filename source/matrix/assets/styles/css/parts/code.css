@@ -93,6 +93,10 @@ __                     {font-weight: 500}
 
 __                     {text-transform: uppercase}
 
+p > code,
+pre > code,
+__                     {white-space: pre}
+
 
 __                     {cursor: pointer}
 

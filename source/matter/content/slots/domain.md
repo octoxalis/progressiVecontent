@@ -8,6 +8,5 @@
   labels_a: ['digital electronics','constructor','partitioned data sets','computing','computer programs'],
 }
 ---
-## domain
-
+:domain:
 

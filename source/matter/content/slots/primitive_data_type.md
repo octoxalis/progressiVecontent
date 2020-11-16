@@ -8,6 +8,5 @@
   labels_a: ['software development','binary search algorithm','argument','pre-written code','bits'],
 }
 ---
-## primitive data type
-
+:primitive data type:
 

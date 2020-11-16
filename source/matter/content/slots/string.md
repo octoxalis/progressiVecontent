@@ -8,6 +8,5 @@
   labels_a: ['digital electronics','binary','data sets','computer architectures','instantiating'],
 }
 ---
-## string
-
+:string:
 

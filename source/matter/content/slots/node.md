@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','subroutines','binary','instantiating','telecommunications','values','partitioned data sets'],
 }
 ---
-## node
-
+:node:
 

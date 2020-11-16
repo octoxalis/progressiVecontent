@@ -8,6 +8,5 @@
   labels_a: ['constructor','instantiating','objects','computer programs','non-volatile resources'],
 }
 ---
-## collection
-
+:collection:
 

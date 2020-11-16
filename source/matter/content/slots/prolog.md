@@ -8,6 +8,5 @@
   labels_a: ['basic unit of information','non-volatile resources','software development','classes'],
 }
 ---
-## prolog
-
+:prolog:
 

@@ -8,6 +8,5 @@
   labels_a: ['partitioned data sets','constructor','binary','cryptography'],
 }
 ---
-## daemon
-
+:daemon:
 

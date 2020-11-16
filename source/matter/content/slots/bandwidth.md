@@ -8,6 +8,5 @@
   labels_a: ['procedure','digital electronics','software development','non-volatile resources','telecommunications'],
 }
 ---
-## bandwidth
-
+:bandwidth:
 The maximum rate of data transfer across a given path. Bandwidth may be characterized as <i>network bandwidth</i>, <i>data bandwidth</i>, or <i>digital bandwidth</i>.

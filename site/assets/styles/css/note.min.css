@@ -94,6 +94,7 @@ __  {box-shadow:var(--BOX_SHADOW)}
 [data-id="img_unfold"] > img{animation: unfold_note_img .25s ease-in-out}
 .note_open img{animation: load_note_img .25s ease-in-out}
 [data-id="note_content"]{pointer-events: none}
+ins[data-id^=note_] button,.note_open{--size_ratio: .8}
 [data-id="note_content"] u 
 {
  border-top: .1rem solid var(--c_prim_tr);

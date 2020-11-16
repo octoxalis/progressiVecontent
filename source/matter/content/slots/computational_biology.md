@@ -8,6 +8,5 @@
   labels_a: ['objects','software development','digital electronics','computing','instantiating','bits'],
 }
 ---
-## computational biology
-
+:computational biology:
 

@@ -8,6 +8,5 @@
   labels_a: ['values','cryptography','classes','argument'],
 }
 ---
-## debugging
-
+:debugging:
 The process of finding and resolving defects or problems within a ~°computer program°~ that prevent correct operation of ~°computer software°~ or the system as a whole. Debugging tactics can involve interactive debugging, ~°control flow°~ analysis, ~°unit testing°~, ~°integration testing°~, ~°log file analysis°~, monitoring at the ~°application°~ or ~°system°~ level, ~°memory dumps°~, and ~°profiling°~.

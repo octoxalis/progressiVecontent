@@ -8,6 +8,5 @@
   labels_a: ['binary search algorithm','computer programs','encryption','search algorithm','computing','code library'],
 }
 ---
-## stack
-
+:stack:
 

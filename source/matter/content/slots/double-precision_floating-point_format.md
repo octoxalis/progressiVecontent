@@ -8,6 +8,5 @@
   labels_a: ['procedure','digital electronics','cipher','partitioned data sets','computer programs','computer architectures','bit'],
 }
 ---
-## double-precision floating-point format
-
+:double-precision floating-point format:
 A ~°computer number format°~. It represents a wide dynamic range of numerical values by using a floating ~°radix°~ point.

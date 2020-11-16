@@ -8,6 +8,5 @@
   labels_a: ['cryptography','prototype-based programming','search algorithm','partitioned data sets'],
 }
 ---
-## bioinformatics
-
+:bioinformatics:
 An interdisciplinary field that combines ~°biology°~, ~°computer science°~, ~°information engineering°~, ~°mathematics°~, and ~°statistics°~ to develop methods and ~°software tools°~ for analyzing and interpreting biological data. Bioinformatics is widely used for <i>~°in silico°~</i> analyses of biological queries using mathematical and statistical techniques.

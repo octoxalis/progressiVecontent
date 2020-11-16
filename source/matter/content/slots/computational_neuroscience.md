@@ -8,6 +8,5 @@
   labels_a: ['binary','telecommunications','values','partitioned data sets'],
 }
 ---
-## computational neuroscience
-
+:computational neuroscience:
 A branch of ~°neuroscience°~ which employs mathematical models, theoretical analysis, and abstractions of the brain to understand the principles that govern the ~°development°~, ~°structure°~, ~°physiology°~, and ~°cognitive abilities°~ of the ~°nervous system°~.

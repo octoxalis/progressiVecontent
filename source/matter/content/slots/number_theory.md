@@ -8,6 +8,5 @@
   labels_a: ['classes','data sets','computing','cipher','objects'],
 }
 ---
-## number theory
-
+:number theory:
 A branch of ~°pure mathematics°~ devoted primarily to the study of the ~°integers°~ and ~°integer-valued functions°~.

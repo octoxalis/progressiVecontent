@@ -8,6 +8,5 @@
   labels_a: ['objects','binary search algorithm','bits'],
 }
 ---
-## disk storage
-
+:disk storage:
 

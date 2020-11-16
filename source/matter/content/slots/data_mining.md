@@ -8,6 +8,5 @@
   labels_a: ['prototype-based programming','bits','object-oriented programming','objects','subroutines'],
 }
 ---
-## data mining
-
+:data mining:
 

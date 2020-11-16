@@ -8,6 +8,5 @@
   labels_a: ['binary','software development','cryptography','basic unit of information','digital electronics','pre-written code'],
 }
 ---
-## matrix
-
+:matrix:
 In ~°mathematics°~, a matrix, (plural matrices), is a ~°rectangular°~ <i>~°array°~</i> (see ~°irregular matrix°~) of ~°numbers°~, ~°symbols°~, or ~°expressions°~, arranged in <i>~°rows°~</i> and <i>~°columns°~</i>.

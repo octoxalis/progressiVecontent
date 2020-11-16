@@ -8,6 +8,5 @@
   labels_a: ['procedure','prototype-based programming','computing','computer programs','bit'],
 }
 ---
-## information space analysis
-
+:information space analysis:
 A deterministic method, enhanced by ~°machine intelligence°~, for locating and assessing ~°resources°~ for team-centric efforts.

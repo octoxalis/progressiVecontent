@@ -8,6 +8,5 @@
   labels_a: ['bits','type','computer architectures'],
 }
 ---
-## filter (software)
-
+:filter (software):
 A ~°computer program°~ or ~°subroutine°~ to process a ~°stream°~, producing another stream. While a single filter can be used individually, they are frequently strung together to form a ~°pipeline°~.

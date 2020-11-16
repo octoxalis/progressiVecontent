@@ -8,6 +8,5 @@
   labels_a: ['software development','values','search algorithm','argument'],
 }
 ---
-## compiler theory
-
+:compiler theory:
 

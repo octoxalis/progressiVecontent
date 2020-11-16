@@ -8,6 +8,5 @@
   labels_a: ['subroutines','digital electronics','basic unit of information'],
 }
 ---
-## state
-
+:state:
 

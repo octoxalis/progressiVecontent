@@ -8,6 +8,5 @@
   labels_a: ['cipher','code library','pre-written code','objects'],
 }
 ---
-## dns
-
+:dns:
 See <i>~°Domain Name System°~</i>.

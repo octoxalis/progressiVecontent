@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','digital electronics','subroutines'],
 }
 ---
-## image processing
-
+:image processing:
 

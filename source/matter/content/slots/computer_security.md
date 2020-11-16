@@ -8,6 +8,5 @@
   labels_a: ['basic unit of information','bits','encryption','computing','cryptography','binary search algorithm'],
 }
 ---
-## computer security
-
+:computer security:
 The protection of ~°computer systems°~ from theft or damage to their ~°hardware°~, ~°software°~, or ~°electronic data°~, as well as from ~°disruption°~ or ~°misdirection°~ of the services they provide.

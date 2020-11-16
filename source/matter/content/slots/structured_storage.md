@@ -8,6 +8,5 @@
   labels_a: ['bits','computing','subroutines','cipher'],
 }
 ---
-## structured storage
-
+:structured storage:
 

@@ -8,8 +8,7 @@
   labels_a: ['object-oriented programming','prototype-based programming','subroutines','binary','digital electronics'],
 }
 ---
-## abstract method
-
+:abstract method:
 One with only a ~°signature°~ and no ~°implementation body°~. It is often used to specify that a subclass must provide an implementation of the method. Abstract methods are used to specify ~°interfaces°~ in some computer languages.
 
 

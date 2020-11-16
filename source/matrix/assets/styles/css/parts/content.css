@@ -1,8 +1,4 @@
 /*=== CONTENT ===*/
 
-a::before,
-a::after,
-__                     {content: ''}
-
 [data-sub] > span::before,
 __                     {content: 'HELLO THERE' }

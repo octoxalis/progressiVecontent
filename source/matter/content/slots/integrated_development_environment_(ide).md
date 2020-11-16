@@ -8,6 +8,5 @@
   labels_a: ['values','cipher','computer architectures'],
 }
 ---
-## integrated development environment (ide)
-
+:integrated development environment (ide):
 A ~°software application°~ that provides comprehensive facilities to computer programmers for ~°software development°~. An IDE normally consists of at least a ~°source code editor°~, ~°build automation°~ tools, and a ~°debugger°~.

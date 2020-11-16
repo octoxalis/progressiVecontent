@@ -8,6 +8,5 @@
   labels_a: ['type','procedure','bits','values'],
 }
 ---
-## programming language theory
-
+:programming language theory:
 

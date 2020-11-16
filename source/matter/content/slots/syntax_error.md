@@ -8,6 +8,5 @@
   labels_a: ['pre-written code','code library','digital electronics','cipher','objects'],
 }
 ---
-## syntax error
-
+:syntax error:
 

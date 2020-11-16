@@ -8,6 +8,5 @@
   labels_a: ['bits','classes','telecommunications'],
 }
 ---
-## computational model
-
+:computational model:
 A ~°mathematical model°~ in ~°computational science°~ that requires extensive ~°computational resources°~ to study the behavior of a complex system by ~°computer simulation°~.

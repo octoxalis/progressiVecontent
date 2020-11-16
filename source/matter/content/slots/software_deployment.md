@@ -8,6 +8,5 @@
   labels_a: ['partitioned data sets','binary search algorithm','computing','decryption','objects'],
 }
 ---
-## software deployment
-
+:software deployment:
 Is all of the activities that make a ~°software system°~ available for use.

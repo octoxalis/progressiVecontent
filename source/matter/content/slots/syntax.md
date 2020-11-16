@@ -8,6 +8,5 @@
   labels_a: ['data sets','non-volatile resources','encryption','basic unit of information','cipher','telecommunications'],
 }
 ---
-## syntax
-
+:syntax:
 

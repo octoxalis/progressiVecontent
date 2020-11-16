@@ -8,6 +8,5 @@
   labels_a: ['procedure','telecommunications','computer programs','constructor'],
 }
 ---
-## selection sort
-
+:selection sort:
 Is an ~°in-place°~ ~°comparison°~ ~°sorting algorithm°~. It has an ~°O°~(<i>n</i><sup>2</sup>) ~°time complexity°~, which makes it inefficient on large lists, and generally performs worse than the similar ~°insertion sort°~. Selection sort is noted for its simplicity and has performance advantages over more complicated algorithms in certain situations, particularly where ~°auxiliary memory°~ is limited.

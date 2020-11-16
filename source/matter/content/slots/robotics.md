@@ -8,6 +8,5 @@
   labels_a: ['decryption','bits','basic unit of information','computing'],
 }
 ---
-## robotics
-
+:robotics:
 An interdisciplinary branch of ~°engineering°~ and ~°science°~ that includes ~°mechanical engineering°~, ~°electronic engineering°~, ~°information engineering°~, ~°computer science°~, and others. Robotics involves design, construction, operation, and use of ~°robots°~, as well as ~°computer systems°~ for their perception, control, ~°sensory feedback°~, and ~°information processing°~. The goal of robotics is to design intelligent machines that can help and assist humans in their day-to-day lives and keep everyone safe.

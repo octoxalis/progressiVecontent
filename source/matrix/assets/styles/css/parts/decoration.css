@@ -1,8 +1,8 @@
 /*=== DECORATION ===*/
 
 /*=== TEXT ===*/
-a,
-__                     {text-decoration: none}
+
+
                                       
 button, select,
 __                     {text-transform: none}
@@ -13,9 +13,6 @@ __                     {text-transform: uppercase}
 
 
 /*=== WHITE-SPACE ===*/
-p > code,
-pre > code,
-__                     {white-space: pre}
 
 .unseen,
 __                     {white-space: nowrap}

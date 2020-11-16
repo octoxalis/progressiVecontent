@@ -8,6 +8,5 @@
   labels_a: ['basic unit of information','telecommunications','non-volatile resources'],
 }
 ---
-## executable module
-
+:executable module:
 

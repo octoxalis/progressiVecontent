@@ -8,6 +8,5 @@
   labels_a: ['procedure','encryption','non-volatile resources','subroutines','values','search algorithm'],
 }
 ---
-## soft computing
-
+:soft computing:
 

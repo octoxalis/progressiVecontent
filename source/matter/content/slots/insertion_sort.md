@@ -8,6 +8,5 @@
   labels_a: ['encryption','digital electronics','constructor'],
 }
 ---
-## insertion sort
-
+:insertion sort:
 A simple ~°sorting algorithm°~ that builds the final ~°sorted array°~ (or list) one item at a time.

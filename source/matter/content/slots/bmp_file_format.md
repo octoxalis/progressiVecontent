@@ -8,6 +8,5 @@
   labels_a: ['procedure','binary','subroutines'],
 }
 ---
-## bmp file format
-
+:bmp file format:
 A ~°raster graphics°~ ~°image file format°~ used to store ~°bitmap°~ digital images independently of the ~°display device°~ (such as a ~°graphics adapter°~), used especially on ~°Microsoft Windows°~ and ~°OS/2°~ operating systems.

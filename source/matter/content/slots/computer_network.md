@@ -8,6 +8,5 @@
   labels_a: ['decryption','partitioned data sets','computer programs','instantiating','argument','objects','bits'],
 }
 ---
-## computer network
-
+:computer network:
 A ~°digital°~ ~°telecommunications network°~ which allows ~°nodes°~ to share resources. In computer networks, ~°computing devices°~ ~°exchange data°~ with each other using connections (~°data links°~) between nodes. These data links are established over ~°cable media°~ such as wires or optic cables, or ~°wireless media°~ such as ~°Wi-Fi°~.

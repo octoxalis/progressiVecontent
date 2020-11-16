@@ -8,6 +8,5 @@
   labels_a: ['binary','cipher','software development','non-volatile resources','argument'],
 }
 ---
-## procedural programming
-
+:procedural programming:
 

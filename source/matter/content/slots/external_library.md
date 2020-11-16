@@ -8,6 +8,5 @@
   labels_a: ['argument','computing','type','subroutines'],
 }
 ---
-## external library
-
+:external library:
 

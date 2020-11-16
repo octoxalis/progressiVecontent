@@ -4,18 +4,19 @@ const U_o = require( '../../matter/assets/scripts/js/lib/U_o.js' )
 
 const SEC_o =
 {
-  content__v    //:- Wrap `content_s` (if starting with a h1-6 element) to a (button + div) collapsible content 
+  content__v    //:- Wrap `content_s` (starting with a ':' delimiter !!no blank line after!!) to a (button + div) collapsible content 
   (
     content_s,
     slot_s
   )
   {
-    const head_o = /<(h[1-6][\s\S]*?)>([\s\S]*?)<\/h[1-6]>/i    //:- wrap content head (h1-h6) with a button
-    const head_a = content_s.match( head_o )
+    const head_re = /:([\s\S]*?):/    //:- NO 'g'!!! wrap content head with a button
+    const head_a = content_s.match( head_re )
     if ( !head_a ) return content_s
     //>
-    const head_s = head_a[0]
-    const main_s = content_s.slice( head_s.length + 1 )
+    let head_s = head_a[0]
+    const main_s = content_s.replace( head_s, '' )    //: head_s consumed by header button
+    head_s = head_s.replace( head_re, '<u>$1</u>' )   //: replace ':' delimiters by <u> tag
     const trash_s = slot_s === A_o.DOCS_s ?
       ''
       :
@@ -39,7 +40,7 @@ module.exports =
     const slot_s = permalink_s.slice( permalink_s.lastIndexOf( '/' ) + 1, -5 )  //: '.html'.length
     const section_s = `<section id="section_${slot_s}" data-rank_n="${rank_n}" class="invisible">`
     const output_s  = SEC_o.content__v( content_s, slot_s )
-    const redirect_s = `<a href="${U_o.url_s}${A_o.URL_H_s}/${permalink_s}" data-id="redirect" tabindex=-1>Go to Site Open</a>`
+    const redirect_s = `<a href="${U_o.url_s}${A_o.URL_H_s}/${permalink_s}" data-id="redirect" tabindex=-1>Go to ${A_o.NAME_s} site</a>`
     return `${section_s}${output_s}${redirect_s}</section>`
   },
   

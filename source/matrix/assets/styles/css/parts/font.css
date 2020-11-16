@@ -29,7 +29,6 @@ body *,
 __                     {font-family: var(--font_body)}
 
 #hero,
-button[data-slot_s],
 __                     {font-family:var(--font_title)}
 
 
@@ -44,19 +43,9 @@ __                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
 #hero *:first-child,
 __                     {--size_ratio: 2.6}
 
-h1,
-__                     {--size_ratio: 1.6}
-
 #hero *,
 __                     {--size_ratio: 1.6}
 
-h2,
-__                     {--size_ratio: 1.4}
-
-h3,
-h4,
-h5,
-h6,
 #hero span,
 [data-sub]::before,
 __                     {--size_ratio: 1.2}
@@ -65,40 +54,24 @@ body,
 body *,
 __                     {--size_ratio: 1}
 
-small,
-sub,
-sup,
-ins[data-id^=note_] button,
-.note_open,
-__                     {--size_ratio: .8}
 
-#sections_nav > h1,
+#sections_nav,
 __                     {--size_ratio: .7}
                  
 
 
 /*=== WEIGHT ===*/
 
-b,
-strong,
-h1,
-__                     {font-weight: 900}
-
-
-
-#sections_nav > h1,
+#sections_nav,
 #hero span,
 __                     {font-weight: 600}
 
-button[data-slot_s],
-__                     {font-weight: 500}
 
 body,
 body *,
 __                     {font-weight: 300}
 
-h2,
-__                     {font-weight: 200}
+
 
 #hero *,
 __                     {font-weight: 100}
@@ -106,23 +79,22 @@ __                     {font-weight: 100}
 
 
 /*=== STYLE ===*/
-#sections_nav > h1,
-[data-id=example]::before,
+#sections_nav,
 __                     {font-style:italic}
 
 
 
 /*=== HEIGHT ===*/
-h1,
-__                     {line-height: 1}
 
 #hero *:not( span ),
 __                     {line-height: .8}
 
+#sections_nav,
+__                     {line-height: .5}
 
 /*=== SPACING ===*/
 
-#sections_nav > h1,
+#sections_nav,
 __                     {letter-spacing: .4em}
 
 #hero span,

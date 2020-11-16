@@ -8,6 +8,5 @@
   labels_a: ['object-oriented programming','decryption','subroutines','non-volatile resources','software development','pre-written code','objects'],
 }
 ---
-## relational database
-
+:relational database:
 

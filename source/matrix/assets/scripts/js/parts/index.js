@@ -77,33 +77,14 @@ listen__v
   ()
   {
     LIB_o
-      .nodeId__o( 'nav_bar' )
+      .nodeId__o( 'sections_nav' )
       .addEventListener
       (
         'click',
         event_o =>
         {
-          const target_e =
-            event_o
-              .target
-              .closest( 'button' )
-          if ( target_e )
-          {
-            const id_s =
-              target_e
-                .id
-            if ( id_s.includes( 'scroll_' ) )
-            {
-              return void LIB_o
-                .scroll__v( id_s === 'scroll_bottom' )
-            }
-            //>
-            if ( id_s.includes( 'sections_' ) )
-            {
-              IND_o
-                .unfold__v()
-            }
-          }
+          IND_o
+            .unfold__v()
         }
       )
     }
@@ -179,23 +160,6 @@ initial__v
         .nodeId__o( 'initial' ),
       'add'
     )
-; [
-    'scroll_top',
-    'scroll_bottom'
-  ]
-    .forEach
-      (
-        scroll_s =>
-        {
-          LIB_o
-          .invisible__v
-          (
-            LIB_o
-              .nodeId__o( scroll_s ),
-            'remove'
-          )
-        }
-      )
 }
 ,
 
@@ -276,11 +240,11 @@ void function    //:- init serviceWorker & launcher event
   IND_o
     .colorMode__v
       ( 'lum_mode' )
-  const initial_b = false ///!!! TEMPORARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //... window
-    //...   .localStorage
-    //...   .getItem
-    //...     ( 'initial_b' )
+  const initial_b =    //!!!!! const initial_b = false ///!!! TEMPORARY 
+    window
+      .localStorage
+      .getItem
+        ( 'initial_b' )
   if ( !initial_b )
   {
     window

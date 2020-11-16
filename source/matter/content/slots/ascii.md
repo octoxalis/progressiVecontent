@@ -8,6 +8,5 @@
   labels_a: ['decryption','procedure','instantiating','prototype-based programming','objects'],
 }
 ---
-## ascii
-
+:ascii:
 See <i>~°American Standard Code for Information Interchange°~</i>.

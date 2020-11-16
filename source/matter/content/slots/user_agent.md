@@ -8,6 +8,5 @@
   labels_a: ['decryption','prototype-based programming','binary search algorithm','procedure','telecommunications','constructor'],
 }
 ---
-## user agent
-
+:user agent:
 Software (a ~°software agent°~) that acts on behalf of a ~°user°~, such as a ~°web browser°~ that "retrieves, renders and facilitates end user interaction with Web content". An email reader is a ~°mail user agent°~.

@@ -8,6 +8,5 @@
   labels_a: ['cryptography','values','telecommunications'],
 }
 ---
-## associative array
-
+:associative array:
 

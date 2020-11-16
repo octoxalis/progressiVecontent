@@ -8,8 +8,7 @@
   labels_a: ['values','basic unit of information','data sets','type'],
 }
 ---
-## abstract data type (adt)
-
+:abstract data type (adt):
 A ~°mathematical model°~ for ~°data types°~ in which a data type is defined by its behavior (~°semantics°~) from the point of view of a ~°user°~ of the data, specifically in terms of possible values, possible operations on data of this type, and the behavior of these operations. This contrasts with ~°data structures°~, which are concrete
 {% _note_txt %}
 short

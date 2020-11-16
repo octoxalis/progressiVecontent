@@ -1,15 +1,16 @@
 
 dl[data-step]{display: grid; place-items: center}
-.step_list,dl[data-step] > dd{display: flex}
+#graph_slider,.step_list,dl[data-step] > dd{display: flex}
+#graph_slider{flex-direction: column}
 .step_list{flex-wrap: nowrap}
 .step_list{justify-content: center}
 dl[data-step] > dd{align-items: flex-start}
-#sections_slider,#graph_slider,.slide_list,.step_list,dl[data-step] > dt,dl[data-step] > dd{position: relative}
+#graph_slider,.slide_list,.step_list,dl[data-step] > dt,dl[data-step] > dd{position: relative}
 dl[data-step]{position: absolute}
 dl[data-step]{margin: 0}
 button[data-step]{margin: auto}
 button[data-step] + button[data-step]{margin-left: 1.5%} 
-#sections_slider,#graph_slider{margin-left: -50vw; margin-right: -50vw} 
+#graph_slider{margin-left: -50vw; margin-right: -50vw} 
 .slide_list,.step_list,button[data-step]{padding: .1rem}
 dl[data-step]{padding: var(--PAD_2)}
 #graph_slider button[data-step]{--slider_cap: var(--LABELS_CAP)}
@@ -19,27 +20,30 @@ dl[data-step]{padding: var(--PAD_2)}
 .slide_list{--list_height: var(--slide_height)} 
 .step_list{--list_height: var(--step_height)} 
 dl[data-step]{--slide_width: 16ch}
-#sections_slider,#graph_slider{width: var(--FULL_WIDTH)}
+#graph_slider{width: var(--FULL_WIDTH)}
+.slide_list,.step_list{width: 100%}
 dl[data-step]{width: var(--slide_width)}
 button[data-step]{flex-grow: 1}
 .slide_list,.step_list{height: calc( var(--SLIDER_HEIGHT) * var(--list_height) + 1rem)}
 dl[data-step]{height: calc( var(--SLIDER_HEIGHT) * var(--list_height) - 1rem )} 
 button[data-step]{height: .8rem}
-#sections_slider,#graph_slider{left: 50%; right: 50%} 
-dl[data-step]{overflow: hidden}
+#graph_slider{left: 50%; right: 50%} 
+dl[data-step],.slide_list,.step_list{overflow: hidden}
 dl[data-step]{color: var(--c_sec_lo)}
 button[data-step],.slide_list{background: transparent}
 .step_list{background: var(--c_prim_hi)}
 dl[data-step]{background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_ne) / 1 )}
-.slide_list,.step_list{list-style: none}
-button[data-step]{appearance: none} 
-dl[data-step]{text-transform: uppercase}
+#graph_slider{background: var(--c_prim_hi)}
+button[data-step]:hover,.step_focus:focus,.step_focus{background: var(--c_sec_ne);
+  filter: var(--SATURATE_FILTER)}
 .slide_list,.step_list{border: none}
 button[data-step],.slide_focus{border: 2px solid var(--c_sec_lo)}
 dl[data-step]{border-radius: 8px}
 button[data-step]{border-radius: 2px}
 button[data-step]{outline: 0}
-.slide_list,.step_list{overflow: hidden}
+.slide_list,.step_list{list-style: none}
+button[data-step]{appearance: none} 
+dl[data-step]{text-transform: uppercase}
 dl[data-step] > dt{text-align: center}
 button[data-step]{font: inherit}
 .slide_title{--size_ratio: .65}
@@ -47,6 +51,4 @@ dl[data-step] > dd{--size_ratio: .8}
 dl[data-step],button[data-step]{cursor: pointer}
 .slide_list,.step_list{transform-style: preserve-3d}
 .slide_list,.step_list{transform-origin: 0 50%}
-button[data-step]{transition: all .2s ease}
-button[data-step]:hover,.step_focus:focus,.step_focus{background: var(--c_sec_ne);
-  filter: var(--SATURATE_FILTER)}
+#graph_slider,button[data-step]{transition: transform .2s ease}

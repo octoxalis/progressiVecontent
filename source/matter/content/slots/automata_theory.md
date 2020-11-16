@@ -8,6 +8,5 @@
   labels_a: ['cryptography','partitioned data sets','encryption','subroutines'],
 }
 ---
-## automata theory
-
+:automata theory:
 The study of ~°abstract machines°~ and ~°automata°~, as well as the ~°computational problems°~ that can be solved using them. It is a theory in ~°theoretical computer science°~ and ~°discrete mathematics°~ (a subject of study in both ~°mathematics°~ and ~°computer science°~).

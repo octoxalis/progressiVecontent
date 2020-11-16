@@ -8,6 +8,5 @@
   labels_a: ['decryption','prototype-based programming','binary search algorithm','argument','pre-written code'],
 }
 ---
-## programming language
-
+:programming language:
 A ~°formal language°~, which comprises a ~°set of instructions°~ that produce various kinds of ~°output°~. Programming languages are used in ~°computer programming°~ to implement ~°algorithms°~.

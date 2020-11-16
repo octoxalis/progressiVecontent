@@ -8,6 +8,5 @@
   labels_a: ['subroutines','bit','computing','decryption','pre-written code','procedure'],
 }
 ---
-## quicksort
-
+:quicksort:
 An ~°efficient°~ ~°sorting algorithm°~ which serves as a systematic method for placing the elements of a ~°random access°~ ~°file°~ or an ~°array°~ in order.

@@ -8,6 +8,5 @@
   labels_a: ['cryptography','telecommunications','binary search algorithm'],
 }
 ---
-## python
-
+:python:
 

@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','cipher','partitioned data sets','binary'],
 }
 ---
-## database
-
+:database:
 An organized collection of ~°data°~, generally stored and accessed electronically from a computer system. Where databases are more complex, they are often developed using formal design and modeling techniques.

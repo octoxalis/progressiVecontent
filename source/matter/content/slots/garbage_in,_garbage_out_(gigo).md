@@ -8,6 +8,5 @@
   labels_a: ['code library','prototype-based programming','subroutines','instantiating','software development'],
 }
 ---
-## garbage in, garbage out (gigo)
-
+:garbage in, garbage out (gigo):
 A term used to describe the concept that flawed or nonsense ~°input°~ data produces nonsense ~°output°~ or "garbage".

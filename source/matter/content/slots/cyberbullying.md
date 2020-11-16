@@ -8,6 +8,5 @@
   labels_a: ['partitioned data sets','cryptography','cipher'],
 }
 ---
-## cyberbullying
-
+:cyberbullying:
 A form of ~°bullying°~ or ~°harassment°~ using electronic means.

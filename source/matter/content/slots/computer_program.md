@@ -8,6 +8,5 @@
   labels_a: ['search algorithm','values','cryptography','binary search algorithm','classes'],
 }
 ---
-## computer program
-
+:computer program:
 

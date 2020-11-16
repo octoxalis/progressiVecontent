@@ -8,6 +8,5 @@
   labels_a: ['binary','classes','non-volatile resources'],
 }
 ---
-## spiral model
-
+:spiral model:
 

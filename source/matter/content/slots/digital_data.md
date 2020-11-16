@@ -8,6 +8,5 @@
   labels_a: ['object-oriented programming','encryption','prototype-based programming','subroutines'],
 }
 ---
-## digital data
-
+:digital data:
 In ~°information theory°~ and ~°information systems°~, the discrete, discontinuous ~°representation°~ of information or works. Numbers and letters are commonly used representations.

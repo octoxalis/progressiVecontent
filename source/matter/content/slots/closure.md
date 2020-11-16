@@ -8,6 +8,5 @@
   labels_a: ['type','instantiating','computer architectures','non-volatile resources','telecommunications','bit'],
 }
 ---
-## closure
-
+:closure:
 A technique for implementing ~°lexically scoped°~ ~°name binding°~ in a language with ~°first-class functions°~. ~°Operationally°~, a closure is a ~°record°~ storing a ~°function°~ together with an environment.

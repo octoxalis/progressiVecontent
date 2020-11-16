@@ -8,6 +8,5 @@
   labels_a: ['binary search algorithm','computer architectures','search algorithm','classes','subroutines'],
 }
 ---
-## pointer
-
+:pointer:
 

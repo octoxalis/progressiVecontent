@@ -8,6 +8,5 @@
   labels_a: ['type','values','instantiating','partitioned data sets'],
 }
 ---
-## cloud computing
-
+:cloud computing:
 Shared pools of configurable computer ~°system resources°~ and higher-level services that can be rapidly ~°provisioned°~ with minimal management effort, often over the ~°Internet°~.  Cloud computing relies on sharing of resources to achieve coherence and ~°economies of scale°~, similar to a ~°public utility°~.

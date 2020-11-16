@@ -8,6 +8,5 @@
   labels_a: ['software development','object-oriented programming','cryptography','bit'],
 }
 ---
-## primary storage
-
+:primary storage:
 

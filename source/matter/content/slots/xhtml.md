@@ -8,6 +8,5 @@
   labels_a: ['search algorithm','telecommunications','bit','computer programs','classes','cryptography','binary search algorithm'],
 }
 ---
-## xhtml
-
+:xhtml:
 Part of the family of ~°XML°~ ~°markup languages°~. It mirrors or extends versions of the widely used ~°HyperText Markup Language°~ (HTML), the language in which ~°web pages°~ are formulated.

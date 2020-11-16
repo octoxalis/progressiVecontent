@@ -14,74 +14,48 @@
 
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
 dl,
+dt,
 dd,
-ul,
-ol,
+#nav_bar > button,
 __                     {margin:0}
 
-button > h2,
-__                     {margin: var(--PAD_2)}
+
+#sections_slider,
+__                     {margin-left: -50vw; margin-right: -50vw}  /* center */
+
 
 svg.unfold,
 __                     {margin: 0 calc(var(--PAD_1) * -1 ) 0 calc(var(--PAD_1) * -5 )}  /* negative margins */
 
-#sections,
-__                     {margin-top: var(--PAD_4)}
-
-blockquote,
-__                     {margin-top: var(--PAD_6)}
-
-h2,
-__                     {margin-top: var(--PAD_8)}
-
 svg.initial,
 __                     {margin-top: calc( var(--NAVBAR_DIM) + var(--PAD_1) ) }
 
-blockquote *:last-child,
-__                     {margin-bottom: 0}
-
-h2,
-h3,
-h4,
-h5,
-h6,
-__                     {margin-bottom: var(--PAD_2)}
-
-hr,
-article,
-__                     {margin-bottom: var(--PAD_6)}
-
-
-
+/*
+#sections,
+__                     {margin-top: var(--PAD_4)}
+*/
 
 
 /*=== PADDING ===*/
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
 dl,
-ul,
-ol,
+dt,
+dd,
+#nav_bar > button,
 __                     {padding:0}
 
-#sections_slider,
-__                     {padding-top: var(--PAD_2)}
 
 #hero,
 __                     {padding: calc( var(--NAVBAR_DIM) + var(--PAD_4) ) var(--PAD_4) var(--PAD_4) 0 }
 
 
+/*XXXXXX
+#sections_slider,
+__                     {padding-top: var(--PAD_2)}
+*/
 
+/*
+#sections,
+__                     {margin-top: var(--PAD_4)}
+*/

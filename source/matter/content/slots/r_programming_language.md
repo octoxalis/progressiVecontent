@@ -8,6 +8,5 @@
   labels_a: ['partitioned data sets','binary','non-volatile resources','computing','subroutines','computer programs'],
 }
 ---
-## r programming language
-
+:r programming language:
 

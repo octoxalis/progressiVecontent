@@ -8,6 +8,5 @@
   labels_a: ['type','procedure','constructor','decryption','cipher'],
 }
 ---
-## intelligent agent
-
+:intelligent agent:
 

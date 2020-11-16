@@ -1,21 +1,21 @@
 /*=== POSITION ===*/
-h1,
-section > div,
 svg.initial,
 svg.unfold,
+#sections_slider,
 __                     {position:relative}
 
 #initial,
 #hero,
 #sections,
 .unseen,
-a::before,
-a::after,
 __                     {position: absolute}
 
 #nav_bar,
+__                     {position: fixed}
+
 #sections_slider,
 __                     {position: fixed}
+
 
 
 
@@ -25,45 +25,35 @@ __                     {position: fixed}
 __                     {top: 0}
 
 
-h1,
-__                     {top: calc( var(--NAVBAR_DIM) * -.5 )}
-
 #sections_slider,
-__                     {top: calc( var(--NAVBAR_DIM) + var(--PAD_1) )}
+__                     {top: var(--NAVBAR_DIM)}
 
 #sections,
 __                     {top: calc( var(--NAVBAR_DIM) + var(--SLIDER_HEIGHT) )}
 
 svg.unfold,
-__                     {top: 1.45em }
+__                     {top: .4em }
 
 
 
 /*=== LEFT ===*/
-a::before,
-a::after,
 [data-sub]::before,
 __                     {left: 0}
 
-section > div > section,
-__                     {left: var(--BODY_MARGIN)}
 
 #initial svg,
 __                     {left: -8vw}
 
+#sections_slider,
+__                     {left: 50%; right: 50%}  /* center */
 
 
 /*=== BOTTOM ===*/
 #hero,
 __                     {bottom: 0}
 
-a::before,
-a::after,
-__                     {bottom: -1px}
 
 /*=== RIGHT ===*/
 
 #hero,
-a::before,
-a::after,
 __                     {right: 0}

@@ -8,6 +8,5 @@
   labels_a: ['software development','bit','type'],
 }
 ---
-## computer data storage
-
+:computer data storage:
 A technology consisting of ~°computer°~ components and ~°recording media°~ that are used to retain digital ~°data°~. Data storage is a core function and fundamental component of all modern computer systems.<sup class="reference" style="white-space:nowrap;">:15–16</sup>

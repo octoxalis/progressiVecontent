@@ -8,6 +8,5 @@
   labels_a: ['basic unit of information','procedure','bits'],
 }
 ---
-## operating system (os)
-
+:operating system (os):
 ~°System software°~ that manages ~°computer hardware°~, ~°software°~ resources, and provides common ~°services°~ for ~°computer programs°~.

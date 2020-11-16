@@ -8,6 +8,5 @@
   labels_a: ['computer programs','values','code library','object-oriented programming'],
 }
 ---
-## binary search algorithm
-
+:binary search algorithm:
 A ~°search algorithm°~ that finds the position of a target value within a ~°sorted array°~.

@@ -8,6 +8,5 @@
   labels_a: ['computer architectures','subroutines','data sets'],
 }
 ---
-## top-down and bottom-up design
-
+:top-down and bottom-up design:
 

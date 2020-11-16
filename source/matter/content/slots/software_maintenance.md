@@ -8,6 +8,5 @@
   labels_a: ['computer programs','software development','cipher','subroutines','binary search algorithm','non-volatile resources'],
 }
 ---
-## software maintenance
-
+:software maintenance:
 

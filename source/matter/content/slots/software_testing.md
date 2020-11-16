@@ -8,6 +8,5 @@
   labels_a: ['classes','encryption','basic unit of information','data sets','prototype-based programming'],
 }
 ---
-## software testing
-
+:software testing:
 

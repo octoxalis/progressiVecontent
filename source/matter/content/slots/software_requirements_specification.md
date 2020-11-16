@@ -8,6 +8,5 @@
   labels_a: ['constructor','decryption','basic unit of information','search algorithm','bit','encryption'],
 }
 ---
-## software requirements specification
-
+:software requirements specification:
 

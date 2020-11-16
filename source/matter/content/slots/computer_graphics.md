@@ -8,6 +8,5 @@
   labels_a: ['telecommunications','digital electronics','encryption','bit','search algorithm','object-oriented programming'],
 }
 ---
-## computer graphics
-
+:computer graphics:
 Pictures and films created using computers. Usually, the term refers to computer-generated image data created with the help of specialized graphical hardware and software. It is a vast and recently developed area of computer science.

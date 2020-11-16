@@ -3,11 +3,11 @@
 {
   --BODY_WIDTH: calc( {{C_o.BODY_WIDTH_n}} * 1vw );
   --LINE_WIDTH: clamp( 30ch, {{C_o.LINE_WIDTH_n}} * 1ch, var(--BODY_WIDTH) - 4vw );
-  --NAVBAR_DIM:    4em;
   --FULL_WIDTH:  100vw;
   --HALF_WIDTH:  50vw;
   --FULL_HEIGHT:  100vh;
   --HALF_HEIGHT:  50vh;
+  --NAVBAR_DIM:    4em;
   --SLIDER_HEIGHT: 4em;
   --IMG_REVEAL:    6em;
 }
@@ -26,18 +26,16 @@ __                     {width: 1px}
 #initial,
 #initial > button,
 #sections_slider,
-#graph_slider,
 __                     {width: var(--FULL_WIDTH)}
 
 #hero,
 [data-sub]::before,
 __                     {width: var(--HALF_WIDTH)}
 
+
+
 #hero,
 __                     {width: 70vw}
-
-article,
-__                     {width: var(--BODY_WIDTH)}
 
 
 hr,
@@ -48,10 +46,9 @@ ol, ul,
 __                     {width: var(--LINE_WIDTH)}
 
 
-#sections,
 #nav_bar,
-#sections_slider,
-#graph_slider,
+#sections_nav,
+#sections,
 __                     {width: 100%}
 
 
@@ -74,12 +71,6 @@ __                     {scrollbar-width:thin}
 .retract,
 __                     {height: 0}
 
-a::before,
-.unseen,
-__                     {height: 1px}
-
-a::after,
-__                     {height: 4px}
 
 #hero,
 #initial > button,
@@ -101,11 +92,6 @@ __                     {height: var(--svg_icon_dim)}
 
 
 /*=== FLEX-BASIS ===*/
-#scroll_top,
-#scroll_bottom,
-__                     {flex-basis: 10%}
-#sections_nav,
-__                     {flex-basis: 80%}    /* calc( ( 100 - (10*2) ) * 1% ) */
 
 #hero *:first-child,
 __                     {flex-basis: 30%}
@@ -117,8 +103,6 @@ __                     {clip-path: inset(0px 0px)}
 
 
 /*=== OVERFLOW ===*/
-#sections_slider,
-#graph_slider,
 .unseen,
 __                     {overflow: hidden}
 

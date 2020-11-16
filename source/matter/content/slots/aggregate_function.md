@@ -8,6 +8,5 @@
   labels_a: ['basic unit of information','computing','binary search algorithm','cryptography','encryption','bits'],
 }
 ---
-## aggregate function
-
+:aggregate function:
 In ~°database management°~, a ~°function°~ in which the values of multiple rows are grouped together to form a single value of more significant meaning or measurement, such as a ~°set°~, a ~°bag°~, or a ~°list°~.

@@ -8,6 +8,5 @@
   labels_a: ['decryption','binary','binary search algorithm'],
 }
 ---
-## programming language implementation
-
+:programming language implementation:
 

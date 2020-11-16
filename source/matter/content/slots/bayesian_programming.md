@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','argument','basic unit of information','software development'],
 }
 ---
-## bayesian programming
-
+:bayesian programming:
 A formalism and a methodology for having a technique to specify ~°probabilistic models°~ and solve problems when less than the necessary information is available.

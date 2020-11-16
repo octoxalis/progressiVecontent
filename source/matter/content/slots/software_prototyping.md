@@ -8,6 +8,5 @@
   labels_a: ['type','computing','decryption','prototype-based programming','software development'],
 }
 ---
-## software prototyping
-
+:software prototyping:
 

@@ -328,6 +328,11 @@ __                     {pointer-events: none}
 
 
 
+ins[data-id^=note_] button,
+.note_open,
+__                     {--size_ratio: .8}
+
+
 /* ................................................*/
 [data-id="note_content"] u    /* horizontal line */
 {

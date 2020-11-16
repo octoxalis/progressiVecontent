@@ -8,6 +8,5 @@
   labels_a: ['values','subroutines','data sets','prototype-based programming','code library','instantiating'],
 }
 ---
-## cyberspace
-
+:cyberspace:
 Widespread, interconnected digital ~°technology°~.

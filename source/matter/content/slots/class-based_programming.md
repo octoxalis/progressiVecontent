@@ -8,6 +8,5 @@
   labels_a: ['type','partitioned data sets','computing','argument','classes'],
 }
 ---
-## class-based programming
-
+:class-based programming:
 A style of ~°object-oriented programming°~ (OOP) in which inheritance occurs via defining "~°classes°~" of ~°objects°~, instead of via the objects alone. Compare <i>~°prototype-based programming°~</i>.

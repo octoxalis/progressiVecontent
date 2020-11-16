@@ -8,6 +8,5 @@
   labels_a: ['binary search algorithm','procedure','prototype-based programming','classes'],
 }
 ---
-## program lifecycle phase
-
+:program lifecycle phase:
 Program lifecycle phases are the stages a ~°computer program°~ undergoes, from initial creation to deployment and ~°execution°~. The phases are edit time, compile time, link time, distribution time, installation time, load time, and run time.

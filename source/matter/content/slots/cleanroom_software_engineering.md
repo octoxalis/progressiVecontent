@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','subroutines','argument','telecommunications','binary search algorithm','cryptography'],
 }
 ---
-## cleanroom software engineering
-
+:cleanroom software engineering:
 A ~°software development process°~ intended to produce software with a certifiable level of ~°reliability°~. The cleanroom process was originally developed by ~°Harlan Mills°~ and several of his colleagues including Alan Hevner at ~°IBM°~. The focus of the cleanroom process is on defect prevention, rather than defect removal.

@@ -8,6 +8,5 @@
   labels_a: ['non-volatile resources','partitioned data sets','pre-written code','computer programs','decryption','computing','objects'],
 }
 ---
-## invariant
-
+:invariant:
 

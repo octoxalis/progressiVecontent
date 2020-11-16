@@ -8,6 +8,5 @@
   labels_a: ['telecommunications','data sets','computer architectures','values','subroutines','digital electronics'],
 }
 ---
-## cryptography
-
+:cryptography:
 

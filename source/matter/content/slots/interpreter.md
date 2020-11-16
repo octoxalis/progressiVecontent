@@ -8,6 +8,5 @@
   labels_a: ['subroutines','computer architectures','software development','non-volatile resources','bit','pre-written code','type'],
 }
 ---
-## interpreter
-
+:interpreter:
 A ~°computer program°~ that directly ~°executes°~ instructions written in a ~°programming°~ or ~°scripting language°~, without requiring them to have been previously ~°compiled°~ into a ~°machine language°~ program.

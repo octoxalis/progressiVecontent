@@ -8,6 +8,5 @@
   labels_a: ['subroutines','values','binary','decryption','search algorithm'],
 }
 ---
-## computational physics
-
+:computational physics:
 

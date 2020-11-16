@@ -8,6 +8,5 @@
   labels_a: ['values','code library','data sets','constructor','telecommunications'],
 }
 ---
-## agent architecture
-
+:agent architecture:
 A ~°blueprint°~ for ~°software agents°~ and ~°intelligent control°~ systems depicting the arrangement of components. The architectures implemented by ~°intelligent agents°~ are referred to as ~°cognitive architectures°~.

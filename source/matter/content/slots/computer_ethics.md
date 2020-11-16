@@ -8,6 +8,5 @@
   labels_a: ['binary','prototype-based programming','search algorithm','type'],
 }
 ---
-## computer ethics
-
+:computer ethics:
 A part of ~°practical philosophy°~ concerned with how computing professionals should make decisions regarding professional and social conduct.

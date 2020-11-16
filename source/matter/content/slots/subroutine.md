@@ -8,6 +8,5 @@
   labels_a: ['computing','constructor','encryption','non-volatile resources','object-oriented programming','cipher','search algorithm'],
 }
 ---
-## subroutine
-
+:subroutine:
 

@@ -8,6 +8,5 @@
   labels_a: ['pre-written code','basic unit of information','values','constructor'],
 }
 ---
-## instruction cycle
-
+:instruction cycle:
 The cycle which the ~°central processing unit°~ (CPU) follows from ~°boot-up°~ until the computer has shut down in order to process instructions. It is composed of three main stages: the fetch stage, the decode stage, and the execute stage.

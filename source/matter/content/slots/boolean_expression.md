@@ -8,6 +8,5 @@
   labels_a: ['code library','bit','constructor','encryption'],
 }
 ---
-## boolean expression
-
+:boolean expression:
 An ~°expression°~ used in a ~°programming language°~ that returns a ~°Boolean value°~ when evaluated, that is one of <i>true</i> or <i>false</i>. A Boolean expression may be composed of a combination of the Boolean constants <i>true</i> or <i>false</i>, ~°Boolean-typed°~ variables, Boolean-valued operators, and ~°Boolean-valued functions°~.
