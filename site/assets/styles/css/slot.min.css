@@ -29,7 +29,7 @@ article{width: var(--BODY_WIDTH)}
 [data-slot_s] > u{height: 6em} 
 a::before,.unseen{height: 1px}
 a::after{height: 4px}
-[data-slot_s] > u{top: calc( var(--NAVBAR_DIM) * -1 )}
+[data-slot_s] > u{top: 0}
 a::before,a::after{left: 0}
 section > div > section{left: var(--BODY_MARGIN)}
 button[data-slot_s]{left: 50%; right: 50%} 

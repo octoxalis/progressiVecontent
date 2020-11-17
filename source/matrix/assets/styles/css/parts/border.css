@@ -27,12 +27,11 @@ __                     {border-radius: .5rem}
 
 
 /*=== STROKE ===*/
-svg.unfold,
+#introduce,
 __                     {stroke-width: 1.5px}
 
 
 /*=== OUTLINE ===*/
-/* ??? #sections_nav, */
 button:focus,
 __                     {outline: 0}
 

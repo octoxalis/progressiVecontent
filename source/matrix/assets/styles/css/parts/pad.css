@@ -20,42 +20,23 @@ dd,
 #nav_bar > button,
 __                     {margin:0}
 
+#hero dd,
+__                     {margin: var(--PAD_1) }
 
-#sections_slider,
-__                     {margin-left: -50vw; margin-right: -50vw}  /* center */
 
 
-svg.unfold,
-__                     {margin: 0 calc(var(--PAD_1) * -1 ) 0 calc(var(--PAD_1) * -5 )}  /* negative margins */
+#introduce,
+__                     {margin: 0  -.3em 0 -.9em}  /* negative margins */
 
-svg.initial,
-__                     {margin-top: calc( var(--NAVBAR_DIM) + var(--PAD_1) ) }
 
-/*
-#sections,
-__                     {margin-top: var(--PAD_4)}
-*/
+button[data-slot_s="docs"],
+__                     {margin-top: var(--SLIDER_HEIGHT) }
 
 
 /*=== PADDING ===*/
+#hero,
 body,
 dl,
 dt,
 dd,
-#nav_bar > button,
 __                     {padding:0}
-
-
-#hero,
-__                     {padding: calc( var(--NAVBAR_DIM) + var(--PAD_4) ) var(--PAD_4) var(--PAD_4) 0 }
-
-
-/*XXXXXX
-#sections_slider,
-__                     {padding-top: var(--PAD_2)}
-*/
-
-/*
-#sections,
-__                     {margin-top: var(--PAD_4)}
-*/

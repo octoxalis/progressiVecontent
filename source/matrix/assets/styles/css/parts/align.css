@@ -3,9 +3,6 @@
 __                     {justify-content: space-between}
 
 
-[sections_nav],
-__                     {text-align: center}
 
-
-#hero *,
+#hero dd,
 __                     {text-align: right}

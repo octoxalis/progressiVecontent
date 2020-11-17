@@ -20,40 +20,39 @@
 .retract,
 __                     {opacity: 0}
 
-[data-id="sections_nav"],
-__                     {opacity: .5}
-
-[data-id="sections_nav"]:hover,
-__                     {opacity: 1}
-
 
 
 /*=== FRONT ===*/
 
 body,
-#sections_nav,
 __                     {color: var(--c_prim_lo)}
 
 
 
-[data-id="sections_nav"],
-__                     {color: var(--c_highlight_in)}
-
-#hero,
+#logo,
 __                     {color: var(--c_decor_hi)}
 
-[data-sub]::before,
-__                     {color: red}
+#logo .svg_icon,
+__                     {stroke: var(--c_decor_hi)}
+
+#hero dd,
+__                     {color: var(--c_decor_hi)}
+
 
 .svg_icon,
 __                     {stroke: var(--c_highlight)}
 
 
+
+[data-sub]::before,
+__                     {color: red}
+
+
+
+
 /*=== BACKGROUND ===*/
 #hero,
-#sections_nav,
-#scroll_top,
-#scroll_bottom,
+#hero *,
 #sections,
 #sections > *,
 __                     {background: transparent}
@@ -63,9 +62,9 @@ __                     {fill: none}
 
 
 body,
-#nav_bar,
 #sections_slider,
 __                     {background: var(--c_prim_hi)}
+
 
 
 
@@ -80,7 +79,7 @@ __                     {background: var(--c_link_ne)}
 
 
 /*=== GRADIENT ===*/
-#initial > button,
+#initial,
 __                     {background: linear-gradient( 35deg,
                          hsla( var(--hue_base) 100% 15% / .8 ) 0%,
                          hsla( var(--hue_base) 0% 5% / 1 ) 100%)}

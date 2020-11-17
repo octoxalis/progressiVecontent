@@ -87,7 +87,7 @@ module.exports =
 
   SAT_UNIT_n:     11,   //: saturation unit -> [ 6 17 28 39 50 61 72 83 96 ]
   LUM_MODE_n:     1,    //: luminosity mode: 1 (light) || -1 (dark)
-  LUM_CONTRAST_n: 40,   //: luminosity contrast in range [30...49] (30 is less contrast than 49)
+  LUM_CONTRAST_n: 45,   //: luminosity contrast in range [30...49] (30 is less contrast than 49)
                         //: see https://www.w3.org/TR/WCAG20/ §1.4.1 compliance
 
   HUE_ROTATE_n: 0,      //: hue deviation for hover effect

@@ -1,7 +1,7 @@
 /*=== DISPLAY ===*/
 :root
 {
-  --ASIDE_Z: 1;
+  --SLIDER_Z: 1;
 }
 
 
@@ -13,27 +13,18 @@ __                     {display: none}
 
 
 
+#initial,
 main,
-#scroll_top,
-#scroll_bottom,
-#sections_nav,
 [data-sub]::before,
 __                     {display:grid; place-items:center}
 
 
-#initial > button,
-__                     {display:grid; justify-items: start; align-items: center}
-
 
 #hero,
-#nav_bar,
-[data-id="sections_nav"],
 #sections_slider,
 __                     {display: flex}
 
 
-[data-id="sections_nav"],
-__                     {align-items: center}
 
 
 #hero,
@@ -43,9 +34,8 @@ __                     {flex-direction: column}
 
 /*=== Z-INDEX ===*/
 
-
-#nav_bar,
-__                     {z-index: calc( var(--ASIDE_Z) + 1 )}
+#initial,
+__                     {z-index: calc( var(--SLIDER_Z) + 1 )}
 
 #sections_slider,
-__                     {z-index: var(--ASIDE_Z)}
+__                     {z-index: var(--SLIDER_Z)}

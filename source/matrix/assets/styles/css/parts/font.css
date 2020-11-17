@@ -39,63 +39,66 @@ body *:before,
 body *:after,
 __                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
 
-
-#hero *:first-child,
-__                     {--size_ratio: 2.6}
-
-#hero *,
-__                     {--size_ratio: 1.6}
-
-#hero span,
-[data-sub]::before,
-__                     {--size_ratio: 1.2}
-
 body,
 body *,
 __                     {--size_ratio: 1}
 
 
-#sections_nav,
-__                     {--size_ratio: .7}
+#hero dd:first-of-type,
+__                     {--size_ratio: 2.2}
+
+#hero dd:first-of-type span,
+__                     {--size_ratio: calc( 2.2 * .75 )}
+
+#hero dd,
+__                     {--size_ratio: 1.8}
+
+#hero span,
+__                     {--size_ratio: calc( 1.8 * .75 )}
+
+[data-sub]::before,
+__                     {--size_ratio: 1.2}
+
+
+#hero button,
+__                     {--size_ratio: 1}
+
+
+
                  
 
 
 /*=== WEIGHT ===*/
-
-#sections_nav *,
-#hero span,
-__                     {font-weight: 600}
-
 
 body,
 body *,
 __                     {font-weight: 300}
 
 
+#hero span,
+__                     {font-weight: 600}
 
-#hero *,
+
+#hero dd,
 __                     {font-weight: 100}
 
 
 
 /*=== STYLE ===*/
-#sections_nav,
-__                     {font-style:italic}
 
 
 
 /*=== HEIGHT ===*/
 
-#hero *:not( span ),
-__                     {line-height: .8}
 
-#sections_nav,
-__                     {line-height: .5}
+#hero button,
+__                     {line-height: .8}/*#hero *:not( span ),*/
+
+#hero dd,
+__                     {line-height: .65}/*#hero *:not( span ),*/
+
 
 /*=== SPACING ===*/
-
-#sections_nav,
-__                     {letter-spacing: 1em}
 
 #hero span,
 __                     {letter-spacing: .2em}

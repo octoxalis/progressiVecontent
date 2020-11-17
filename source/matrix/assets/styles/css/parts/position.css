@@ -1,59 +1,45 @@
 /*=== POSITION ===*/
-svg.initial,
-svg.unfold,
-#sections_slider,
-__                     {position:relative}
 
 #initial,
-#hero,
-#sections,
+#main,
 .unseen,
 __                     {position: absolute}
 
-#nav_bar,
-__                     {position: fixed}
 
 #sections_slider,
-__                     {position: fixed}
+__                     {position: sticky}
 
+
+#logo,
+#introduce,
+#sections,
+__                     {position:relative}
 
 
 
 /*=== TOP ===*/
-#nav_bar,
+#initial,
+#logo,
+#sections_slider,
 [data-sub]::before,
 __                     {top: 0}
 
 
-#sections_slider,
-__                     {top: var(--NAVBAR_DIM)}
 
-#sections,
-__                     {top: calc( var(--NAVBAR_DIM) + var(--SLIDER_HEIGHT) )}
+#logo,
+__                     {top: -1em }
+#introduce,
+__                     {top: 1.5em }
 
-svg.unfold,
-__                     {top: .4em }
 
 
 
 /*=== LEFT ===*/
-[data-sub]::before,
-__                     {left: 0}
 
-
-#initial svg,
-__                     {left: -8vw}
-
-#sections_slider,
-__                     {left: 50%; right: 50%}  /* center */
 
 
 /*=== BOTTOM ===*/
-#hero,
-__                     {bottom: 0}
 
 
 /*=== RIGHT ===*/
 
-#hero,
-__                     {right: 0}

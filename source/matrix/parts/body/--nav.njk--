@@ -1,6 +1,7 @@
+<!--
 <nav id="nav_bar">
   <button id="sections_nav" title="Show page {{A_o.SLOTS_s}}">
 {% include "parts/body/header.njk" %}
   </button>
 </nav>
-<aside id="sections_slider" class="aside"></aside>
+-->

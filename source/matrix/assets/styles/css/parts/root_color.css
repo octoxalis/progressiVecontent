@@ -6,7 +6,7 @@
 --hue_base: {{C_o.HUE_P_n}};
 
 --c_hue_p: var(--hue_base);                               /* primary */
---c_hue_i: calc( var(--hue_base) + 190 );                 /* inverse of primary color */
+--c_hue_i: calc( var(--hue_base) + 140 );                 /* inverse of primary color */
 --c_hue_s: calc( var(--hue_base) + {{C_o.HUE_S_n}} );     /* secondary */
 --c_hue_h: calc( var(--hue_base) + {{C_o.HUE_H_n}} );     /* highlight */
 --c_hue_d: calc( var(--hue_base) + {{C_o.HUE_D_n}} );     /* decor */
@@ -94,7 +94,7 @@
 
 
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
---c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_4) var(--c_lum_lo_4) / 1 );
+--c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2) / 1 );
 
 }
 

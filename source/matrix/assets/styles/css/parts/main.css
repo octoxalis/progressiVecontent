@@ -85,6 +85,16 @@ dl[data-step],
 __                     {--slide_width: 16ch}
 
 
+
+
+hr,
+__                     {width: calc( var(--BODY_WIDTH) * .25 )}
+
+p,
+ol, ul,
+__                     {width: var(--LINE_WIDTH)}
+
+
 #graph_slider,
 __                     {width: var(--FULL_WIDTH)}
 
@@ -140,7 +150,7 @@ __                     {background: transparent}
 __                     {background: var(--c_prim_hi)}
 
 dl[data-step],
-__                     {background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_ne) / 1 )}
+__                     {background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
 
 #graph_slider,
 __                     {background: var(--c_prim_hi)}
@@ -202,8 +212,8 @@ __                     {font: inherit}
 .slide_title,
 __                     {--size_ratio: .65}
 
-dl[data-step] > dd,
-__                     {--size_ratio: .8}
+dl[data-step] > dt,
+__                     {--size_ratio: .9}
 
 
 
