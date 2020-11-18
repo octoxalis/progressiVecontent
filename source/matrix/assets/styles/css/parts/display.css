@@ -7,7 +7,6 @@
 
 /*=== DISPLAY ===*/
 
-/*[data-sub]::before,*/
 #svg_symbols,
 __                     {display: none}
 
@@ -15,7 +14,7 @@ __                     {display: none}
 
 #initial,
 main,
-[data-sub]::before,
+[data-sub]:hover::after,
 __                     {display:grid; place-items:center}
 
 
@@ -26,13 +25,15 @@ __                     {display: flex}
 
 
 
-
 #hero,
 #sections_slider,
 __                     {flex-direction: column}
 
 
 /*=== Z-INDEX ===*/
+[data-sub]:hover::after,
+__                     {z-index: calc( var(--SLIDER_Z) + 2 )}
+
 
 #initial,
 __                     {z-index: calc( var(--SLIDER_Z) + 1 )}

@@ -18,7 +18,7 @@ dl,
 dt,
 dd,
 #nav_bar > button,
-__                     {margin:0}
+__                     {margin: 0}
 
 #hero dd,
 __                     {margin: var(--PAD_1) }
@@ -39,4 +39,7 @@ body,
 dl,
 dt,
 dd,
-__                     {padding:0}
+__                     {padding: 0}
+
+[data-sub]:hover::after,
+__                     {padding: var(--PAD_4)}

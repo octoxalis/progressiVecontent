@@ -72,7 +72,6 @@ small,sub,sup{--size_ratio: .8}
 a::before,a::after{content: ''}
 a,[data-slot_s] > u{text-decoration: none}
 [data-slot_s] > u{text-transform: uppercase}
-article::after{content: '◻'}
 button[data-slot_s]{font-family:var(--font_title)}
 [data-id=example]::before{font-style:italic}
 .svg_icon:hover,button[data-slot_s]:hover,#tools_link:hover{filter: brightness( 2 )}

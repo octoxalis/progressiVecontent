@@ -30,6 +30,8 @@ __                     {width: 1px}
 __                     {width: var(--FULL_WIDTH)}
 
 
+[data-sub]:hover::after,
+__                     {width: 40ch}
 
 
 #hero button,
@@ -63,10 +65,6 @@ __                     {height: var(--LOGO_HEIGHT)}
 #sections_slider,
 __                     {height: var(--SLIDER_HEIGHT)}
 
-/*.....................
-[data-sub]::before,
-__                     {height: 10vh}
-*/
 
 .svg_icon,
 __                     {height: var(--svg_icon_dim)}

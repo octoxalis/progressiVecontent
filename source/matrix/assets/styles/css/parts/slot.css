@@ -317,8 +317,10 @@ __                     {text-decoration: none}
 __                     {text-transform: uppercase}
 
 
+/*
 article::after,
 __                     {content: '◻'}
+*/
 
 
 button[data-slot_s],

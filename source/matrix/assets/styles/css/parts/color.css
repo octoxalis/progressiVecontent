@@ -44,10 +44,6 @@ __                     {stroke: var(--c_highlight)}
 
 
 
-[data-sub]::before,
-__                     {color: red}
-
-
 
 
 /*=== BACKGROUND ===*/
@@ -67,19 +63,17 @@ __                     {background: var(--c_prim_hi)}
 
 
 
-
 *::-webkit-scrollbar-track,
 __                     {background: var(--c_decor_ne)}
 
 *::-webkit-scrollbar-thumb,
 __                     {background: var(--c_decor_hi)}
 
-[data-sub]:hover::after,
-__                     {background: var(--c_link_ne)}
 
 
 /*=== GRADIENT ===*/
 #initial,
+[data-sub]:hover::after,
 __                     {background: linear-gradient( 35deg,
                          hsla( var(--hue_base) 100% 15% / .8 ) 0%,
                          hsla( var(--hue_base) 0% 5% / 1 ) 100%)}

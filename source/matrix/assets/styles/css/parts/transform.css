@@ -22,9 +22,8 @@ __                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5
 [data-sub]:hover,
 __                     {filter: invert( .75 )}
 
-#introduce:hover,
 [data-sub]:hover,
-__                     {filter: saturate( 10 )}
+__                     {filter: saturate( 4 )}
 
 
 /*=== ORIGIN ===*/

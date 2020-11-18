@@ -3,6 +3,7 @@
 #initial,
 #main,
 .unseen,
+[data-sub]:hover::after,
 __                     {position: absolute}
 
 
@@ -18,15 +19,14 @@ __                     {position:relative}
 
 
 /*=== TOP ===*/
-#initial,
-#logo,
+#initial *,
 #sections_slider,
-[data-sub]::before,
 __                     {top: 0}
 
 
 
 #logo,
+[data-sub]:hover::after,
 __                     {top: -1em }
 #introduce,
 __                     {top: 1.5em }
@@ -43,3 +43,5 @@ __                     {top: 1.5em }
 
 /*=== RIGHT ===*/
 
+[data-sub]:hover::after,
+__                     {right: 0}

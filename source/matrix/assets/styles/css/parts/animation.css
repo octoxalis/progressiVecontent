@@ -11,6 +11,5 @@ __                     {animation: fade_in .5s ease-in-out}
 
 /*=== TRANSITION ===*/
 
-/*[sections_nav],
-__                     {transition: .3s ease}
-*/
+.aside,
+__                     {transition: .2s ease}

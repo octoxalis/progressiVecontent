@@ -3,6 +3,8 @@
 __                     {justify-content: space-between}
 
 
-
 #hero dd,
 __                     {text-align: right}
+
+[data-sub]:hover::after,
+__                     {text-align: left}

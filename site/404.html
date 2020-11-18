@@ -5,8 +5,9 @@
  0 2px 2px var(--c_shadow_ne), 
  0 4px 4px var(--c_shadow_ne);
  
- 
+ --BOX_OVERLAY: 12px 12px 32px 100vmax var(--c_shadow_lo);
 }
+[data-sub]:hover::after{box-shadow:var(--BOX_OVERLAY)}
 html{box-sizing:border-box}
 *, 
 *:before,*:after{box-sizing:inherit}
@@ -15,9 +16,10 @@ html{box-sizing:border-box}
  --SLIDER_Z: 1;
 }
 #svg_symbols{display: none}
-#initial,main,[data-sub]::before{display:grid; place-items:center}
+#initial,main,[data-sub]:hover::after{display:grid; place-items:center}
 #hero,#sections_slider{display: flex}
 #hero,#sections_slider{flex-direction: column}
+[data-sub]:hover::after{z-index: calc( var(--SLIDER_Z) + 2 )}
 #initial{z-index: calc( var(--SLIDER_Z) + 1 )}
 #sections_slider{z-index: var(--SLIDER_Z)}
 :root
@@ -31,17 +33,19 @@ html{box-sizing:border-box}
  --PAD_16: calc( var(--PAD_1) * 16 );
  --BODY_MARGIN: calc( ( 100 - 80 ) * .5vw );
 }
-body,dl,dt,dd,#nav_bar > button{margin:0}
+body,dl,dt,dd,#nav_bar > button{margin: 0}
 #hero dd{margin: var(--PAD_1) }
 #introduce{margin: 0 -.3em 0 -.9em} 
 button[data-slot_s="docs"]{margin-top: var(--SLIDER_HEIGHT) }
-#hero,body,dl,dt,dd{padding:0}
-#initial,#main,.unseen{position: absolute}
+#hero,body,dl,dt,dd{padding: 0}
+[data-sub]:hover::after{padding: var(--PAD_4)}
+#initial,#main,.unseen,[data-sub]:hover::after{position: absolute}
 #sections_slider{position: sticky}
 #logo,#introduce,#sections{position:relative}
-#initial,#logo,#sections_slider,[data-sub]::before{top: 0}
-#logo{top: -1em }
+#initial *,#sections_slider{top: 0}
+#logo,[data-sub]:hover::after{top: -1em }
 #introduce{top: 1.5em }
+[data-sub]:hover::after{right: 0}
 :root
 {
  --BODY_WIDTH: calc( 80 * 1vw );
@@ -58,6 +62,7 @@ button[data-slot_s="docs"]{margin-top: var(--SLIDER_HEIGHT) }
 .retract{width: 0}
 .unseen{width: 1px}
 #initial,#hero,#sections_slider{width: var(--FULL_WIDTH)}
+[data-sub]:hover::after{width: 40ch}
 #hero button,#sections{width: 100%}
 .svg_icon{width: var(--svg_icon_dim)}
 *{scrollbar-width:thin}
@@ -78,11 +83,12 @@ body{overflow-x: hidden}
 }
 iframe,button,.unseen{border: 0}
 *::-webkit-scrollbar-thumb{border: var(--BORDER_1) solid var(--c_decor_ne)}
-*::-webkit-scrollbar-thumb{border-radius: .5rem}
+[data-sub]:hover::after,*::-webkit-scrollbar-thumb{border-radius: .5rem}
 #introduce{stroke-width: 1.5px}
 button:focus{outline: 0}
 #hero{justify-content: space-between}
 #hero dd{text-align: right}
+[data-sub]:hover::after{text-align: left}
 :root
 {
 --hue_base: 220;
@@ -132,8 +138,8 @@ button:focus{outline: 0}
 --c_box_hi: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_hi_3) / 1 );
 --c_box_ne: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_ne) / 1 );
 --c_box_lo: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_3) / 1 );
---c_shadow_ne: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_lo_2) / .2 );
---c_shadow_lo: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_lo_2) / .8 );
+--c_shadow_ne: hsla( var(--c_hue_s) var(--c_sat_lo_2) var(--c_lum_lo_4) / .2 );
+--c_shadow_lo: hsla( var(--c_hue_s) var(--c_sat_lo_2) var(--c_lum_lo_4) / .8 );
 --c_link_hi: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
 --c_link_ne: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / .5 );
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
@@ -156,14 +162,12 @@ body{color: var(--c_prim_lo)}
 #logo .svg_icon{stroke: var(--c_decor_hi)}
 #hero dd{color: var(--c_decor_hi)}
 .svg_icon{stroke: var(--c_highlight)}
-[data-sub]::before{color: red}
 #hero,#hero *,#sections,#sections > *{background: transparent}
 .svg_icon{fill: none}
 body,#sections_slider{background: var(--c_prim_hi)}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background: var(--c_decor_hi)}
-[data-sub]:hover::after{background: var(--c_link_ne)}
-#initial{background: linear-gradient( 35deg,  hsla( var(--hue_base) 100% 15% / .8 ) 0%,  hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
+#initial,[data-sub]:hover::after{background: linear-gradient( 35deg,  hsla( var(--hue_base) 100% 15% / .8 ) 0%,  hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
 :root
 {
  --base_u: 8;
@@ -180,7 +184,7 @@ body,#sections_slider{background: var(--c_prim_hi)}
  --font_mono: system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace;
  --font_title: var(--font_body);
 }
-body,body *{font-family: var(--font_body)}
+body,body *,[data-sub]:hover::after{font-family: var(--font_body)}
 #hero{font-family:var(--font_title)}
 body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--size_ratio) )}
 body,body *{--size_ratio: 1}
@@ -188,12 +192,13 @@ body,body *{--size_ratio: 1}
 #hero dd:first-of-type span{--size_ratio: calc( 2.2 * .75 )}
 #hero dd{--size_ratio: 1.8}
 #hero span{--size_ratio: calc( 1.8 * .75 )}
-[data-sub]::before{--size_ratio: 1.2}
+[data-sub]:hover::after{--size_ratio: 1.2}
 #hero button{--size_ratio: 1}
   
-body,body *{font-weight: 300}
+body,body *,[data-sub]:hover::after{font-weight: 300}
 #hero span{font-weight: 600}
 #hero dd{font-weight: 100}
+[data-sub]:hover::after{line-height: 1}
 #hero button{line-height: .8}
 #hero dd{line-height: .65}
 #hero span{letter-spacing: .2em}
@@ -201,8 +206,9 @@ body,body *{font-weight: 300}
 .svg_icon{stroke-linecap: round}
 .svg_icon{stroke-linejoin: round}
    
-button, select{text-transform: none}
+button, select,[data-sub]:hover::after{text-transform: none}
 #hero{text-transform: uppercase}
+[data-sub]:hover::after{content: attr( data-sub ) }
 .unseen{white-space: nowrap}
 dl,ol,ul{list-style: none}
 body{cursor: default}
@@ -222,11 +228,12 @@ a:hover::after{transform: scaleX(1)}
 #scroll_bottom > svg{transform:rotate(.5turn)}
 .aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5rem ) * -1 ) )}
 [data-sub]:hover{filter: invert( .75 )}
-#introduce:hover,[data-sub]:hover{filter: saturate( 10 )}
+[data-sub]:hover{filter: saturate( 4 )}
 .retract{transform-origin: top left}
 #sections_slider{transition: transform .2s ease}
 .fade_in{animation: fade_in .5s ease-in-out}
 @keyframes fade_in {0% { opacity:0}
   100% { opacity:1} }
+.aside{transition: .2s ease}
 .svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><main id="main"><nav id="sections_slider"></nav><div id="sections"></div></main><header id="initial"><dl id="hero"><dt><button aria-label="Discover progressiVecontent"><i id="logo">progress<svg id="introduce" class="svg_icon"><use href="#icon_logo"/></svg>econtent</i></button></dt><dd data-sub="Structure your site with content components classified by deep learning techniques and let visitors compose their own page content following to their own interests">partitioned content<br/><span>architecture</span></dd><dd data-sub="Provide a rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">no dependency<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independence">frameworkless<br/><span>JAMstack</span></dd></dl></header></body></html>
+.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 2"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_trash" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6"/></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_tools" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol></svg><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><dl id="hero"><dt><button aria-label="Discover progressiVecontent"><i id="logo">progress<svg id="introduce" class="svg_icon"><use href="#icon_logo"/></svg>econtent</i></button></dt><dd data-sub="Content components classified with deep learning techniques to let visitors compose page content according to their own interests">partitioned content<br/><span>architecture</span></dd><dd data-sub="Rich semantic set of elements to let visitors follow their own knowledgepath">ARIA semantic<br/><span>HTML</span></dd><dd data-sub="Classify your styles simply gathering similar CSS properties">properties driven<br/><span>CSS</span></dd><dd data-sub="Give up time and performance consuming libraries and frameworks to leverage on your own programming skills">no dependency<br/><span>JavaScript</span></dd><dd data-sub="Rely on the Web foundations to conquer your development independence">frameworkless<br/><span>JAMstack</span></dd></dl></header></body></html>

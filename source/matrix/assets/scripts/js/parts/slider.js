@@ -82,7 +82,7 @@ var SLI_o =
   {
     document
       .querySelector( `section[data-slot_s="${slot_s}"]` )
-      .scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} )
+      .scrollIntoView( {behavior: "smooth", block: "start"} )
     //?? window
     //??   .location
     //??   .hash = `#${slot_s}`
