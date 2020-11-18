@@ -60,6 +60,7 @@ __                     {top: calc( var(--node_height) * -1 )}
 __                     {left: calc( var(--display_dim) * .25 )}
 
 
+ul,
 #docs_graph,
 __                     {margin: 0}
 
@@ -78,6 +79,7 @@ __                     {margin: var(--PAD_4) 0}
 __                     {margin-right: var(--PAD_2)}
 
 
+ul,
 #graph_svg,
 __                     {padding:0}
 

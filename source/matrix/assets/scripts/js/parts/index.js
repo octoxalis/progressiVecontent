@@ -2,43 +2,45 @@
 
 var IND_o =
 {
-  initial__v
-  ()
-  {
-    IND_o
-      .unfold__v()
-    LIB_o
-      .invisible__v
-      (
-        LIB_o
-          .nodeId__o( 'initial' ),
-        'add'
-      )
-    IND_o
-      .listen__v()
-  }
-  ,
-  
-  
-  
-  boot__v
+  boot__v    //: display initial page while registering Service Worker
   ()
   {
     window
-      .requestIdleCallback
-        (
-          IND_o.service__v
-        )
+      .requestIdleCallback( IND_o.service__v )
     LIB_o
       .nodeId__o( 'initial' )
       .addEventListener
       (
         'click',    //: wait for visitor entrance
-        IND_o
-          .initial__v
+        IND_o.initial__v
       )
   }
 ,
+  
+  
+  
+  initial__v
+  (
+    initial_b=false    //: true if Service Worker already registered
+  )
+  {
+    if ( initial_b )
+    {
+      IND_o
+        .service__v()    //: reactive
+    }
+    IND_o
+      .unfold__v()
+    LIB_o
+      .invisible__v
+      (
+        LIB_o.nodeId__o( 'initial' ),
+        'add'
+      )
+    IND_o
+      .listen__v()
+    }
+  ,
   
   
   
@@ -280,11 +282,20 @@ void function    //:- init serviceWorker & launcher event
   IND_o
     .colorMode__v
       ( 'lum_mode' )
-  const initial_b = false   //!!!!! const initial_b = false ///!!! TEMPORARY 
-  //...  window
-  //...    .localStorage
-  //...    .getItem
-  //...      ( 'initial_b' )
+  //....................................
+  ;console.log( location )
+  window
+    .localStorage
+    .setItem
+      (
+        'pathname_s',
+        location
+      )
+    const initial_b = //... false   //!!!!! const initial_b = false ///!!! TEMPORARY 
+  window
+    .localStorage
+    .getItem
+      ( 'initial_b' )
   if ( !initial_b )
   {
     return IND_o
@@ -292,7 +303,7 @@ void function    //:- init serviceWorker & launcher event
   }
   //>
   IND_o
-    .initial__v()
+    .initial__v( initial_b )
 } ()
 
 

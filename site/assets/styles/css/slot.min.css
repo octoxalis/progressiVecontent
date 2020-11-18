@@ -99,12 +99,12 @@ a::before,a::after,.aside{transition: transform .2s ease}
 #node_display{top: calc( var(--display_dim) * .5 )}
 #node_actions{top: calc( var(--node_height) * -1 )}
 #node_display{left: calc( var(--display_dim) * .25 )}
-#docs_graph{margin: 0}
+ul,#docs_graph{margin: 0}
 #graph{margin: auto}
 #graph{margin-top: var(--PAD_8)}
 #tools_link{margin: var(--PAD_4) 0}
 #node_actions li:not(:first-of-type){margin-right: var(--PAD_2)}
-#graph_svg{padding:0}
+ul,#graph_svg{padding:0}
 #node_document{padding: var(--PAD_2)}
 #node_labels{padding:0 var(--PAD_2)}
 #node_actions > ul{padding-right: var(--PAD_2)}

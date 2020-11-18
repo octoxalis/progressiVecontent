@@ -8,17 +8,13 @@ dl[data-step] > dd{align-items: flex-start}
 #graph_slider,.slide_list,.step_list,dl[data-step] > dt,dl[data-step] > dd{position: relative}
 dl[data-step]{position: absolute}
 dl[data-step]{margin: 0}
-button[data-step]{margin: auto}
 button[data-step] + button[data-step]{margin-left: 1.5%} 
 #graph_slider{margin-left: -50vw; margin-right: -50vw} 
-.slide_list,.step_list,button[data-step]{padding: .1rem}
+#graph_slider,#sections_slider{padding: var(--PAD_1) }
+button[data-step]{padding: .1rem}
 dl[data-step]{padding: var(--PAD_2)}
 #graph_slider button[data-step]{--slider_cap: var(--LABELS_CAP)}
 #sections_slider button[data-step]{--slider_cap: var(--SECTIONS_CAP)}
-.slide_list,.step_list{--slide_height: .85;
-  --step_height: .15}
-.slide_list{--list_height: var(--slide_height)} 
-.step_list{--list_height: var(--step_height)} 
 dl[data-step]{--slide_width: 16ch}
 hr{width: calc( var(--BODY_WIDTH) * .25 )}
 p,ol, ul{width: var(--LINE_WIDTH)}
@@ -26,16 +22,18 @@ p,ol, ul{width: var(--LINE_WIDTH)}
 .slide_list,.step_list{width: 100%}
 dl[data-step]{width: var(--slide_width)}
 button[data-step]{flex-grow: 1}
-.slide_list,.step_list{height: calc( var(--SLIDER_HEIGHT) * var(--list_height) + 1rem)}
-dl[data-step]{height: calc( var(--SLIDER_HEIGHT) * var(--list_height) - 1rem )} 
-button[data-step]{height: .8rem}
+#sections_slider,#graph_slider{--slide_height: .85;
+  --step_height: .15}
+.slide_list{--list_height: var(--slide_height)} 
+.step_list{--list_height: var(--step_height)} 
+.slide_list,.step_list{height: calc( var(--SLIDER_HEIGHT) * var(--list_height) )}
+dl[data-step],button[data-step]{height: calc( ( var(--SLIDER_HEIGHT) - 1.2rem ) * var(--list_height) )} 
 #graph_slider{left: 50%; right: 50%} 
 dl[data-step],.slide_list,.step_list{overflow: hidden}
 dl[data-step]{color: var(--c_sec_lo)}
-button[data-step],.slide_list{background: transparent}
-.step_list{background: var(--c_prim_hi)}
+#graph_slider,#sections_slider{background: var(--c_prim_hi_3)}
+button[data-step],.slide_list,.step_list{background: transparent}
 dl[data-step]{background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
-#graph_slider{background: var(--c_prim_hi)}
 button[data-step]:hover,.step_focus:focus,.step_focus{background: var(--c_sec_ne);
   filter: var(--SATURATE_FILTER)}
 .slide_list,.step_list{border: none}

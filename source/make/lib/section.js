@@ -40,7 +40,7 @@ module.exports =
     const slot_s = permalink_s.slice( permalink_s.lastIndexOf( '/' ) + 1, -5 )  //: '.html'.length
     const section_s = `<section id="section_${slot_s}" data-rank_n="${rank_n}" class="invisible">`
     const output_s  = SEC_o.content__v( content_s, slot_s )
-    const redirect_s = `<a href="${U_o.url_s}${A_o.URL_H_s}/${permalink_s}" data-id="redirect" tabindex=-1>Go to ${A_o.NAME_s} site</a>`
+    const redirect_s = `<a href="${U_o.url_s}${A_o.URL_H_s}/${permalink_s}" data-id="redirect" tabindex=-1>This content belongs to ${A_o.NAME_s} site. See it in situ.</a>`
     return `${section_s}${output_s}${redirect_s}</section>`
   },
   

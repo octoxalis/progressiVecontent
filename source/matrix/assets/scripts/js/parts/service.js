@@ -33,12 +33,19 @@ var SER_o =
         )
       .then
         (
-          null,    //-- .then( registration => console.log(  `${REGISTRATION_s} ${SUCCESS_s} [scope: ${registration.scope}]` ),
-          error_o => console.log( `${REGISTRATION_s} ${FAILURE_s} [error: ${error_o}]` )
+          register_o =>    //: resolve
+          {
+            //console.log(  `${REGISTRATION_s} ${SUCCESS_s} [scope: ${register_o.scope}]` )
+            navigator
+              .serviceWorker
+              .onmessage =
+                msg_o =>
+                  SER_o
+                    .receive__v( msg_o )
+          },
+          error_o =>
+            console.log( `${REGISTRATION_s} ${FAILURE_s} [error: ${error_o}]` )    //: reject
         )
-    navigator
-      .serviceWorker
-      .onmessage = msg_o => SER_o.receive__v( msg_o )
   }
 ,
   
@@ -96,7 +103,7 @@ receive__v    //:-- Listen to messages
     for ( let path_a of restore_a )
     {
       const [ path_s, slot_s ] = path_a
-      if ( SET_o.restore_b )
+      if ( PREF_o.restore_b )
       {
         IND_o
         .load__v

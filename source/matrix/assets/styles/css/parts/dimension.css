@@ -7,9 +7,9 @@
   --HALF_WIDTH:  50vw;
   --FULL_HEIGHT:  100vh;
   --HALF_HEIGHT:  50vh;
-  --LOGO_HEIGHT:   6rem;
-  --SLIDER_HEIGHT: 4em;
-  --IMG_REVEAL:    6em;
+  --LOGO_HEIGHT:   5rem;
+  --SLIDER_HEIGHT: 5em;
+  --IMG_REVEAL:    5em;
 }
 #introduce,
 __                     {--svg_icon_dim: 3em}
