@@ -11,6 +11,9 @@
 html{box-sizing:border-box}
 *, 
 *:before,*:after{box-sizing:inherit}
+.unseen{clip-path: inset(0px 0px)}
+.unseen,button{overflow: hidden}
+body{overflow-x: hidden}
 :root
 {
  --SLIDER_Z: 1;
@@ -71,9 +74,6 @@ button[data-slot_s="docs"]{margin-top: var(--SLIDER_HEIGHT) }
 #hero dt,#hero button{height: var(--LOGO_HEIGHT)}
 #sections_slider{height: var(--SLIDER_HEIGHT)}
 .svg_icon{height: var(--svg_icon_dim)}
-.unseen{clip-path: inset(0px 0px)}
-.unseen{overflow: hidden}
-body{overflow-x: hidden}
 :root
 {
  --BORDER_W: .2em;
@@ -157,6 +157,7 @@ button:focus{outline: 0}
  brightness(2);
 }
 .unseen,.invisible,.retract{opacity: 0}
+html{opacity: var(--HTML_OPAC)}
 body{color: var(--c_prim_lo)}
 #logo{color: var(--c_decor_hi)}
 #logo .svg_icon{stroke: var(--c_decor_hi)}
@@ -210,6 +211,12 @@ button, select,[data-sub]:hover::after{text-transform: none}
 #hero{text-transform: uppercase}
 [data-sub]:hover::after{content: attr( data-sub ) }
 .unseen{white-space: nowrap}
+.truncate::after{content: "";
+  position: absolute;
+  inset-inline-end: 0; 
+  width: var(--truncate_n);
+  height: 1em;
+  background: var(--truncate_c)}
 dl,ol,ul{list-style: none}
 body{cursor: default}
 .invisible{cursor: auto}

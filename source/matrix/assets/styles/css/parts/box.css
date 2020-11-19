@@ -24,3 +24,15 @@ __                     {box-sizing:border-box}
 *:after,
 __                     {box-sizing:inherit}
 
+/*=== CLIP ===*/
+.unseen,
+__                     {clip-path: inset(0px 0px)}
+
+
+/*=== OVERFLOW ===*/
+.unseen,
+button,
+__                     {overflow: hidden}
+
+body,
+__                     {overflow-x: hidden}

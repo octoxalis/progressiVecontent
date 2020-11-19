@@ -21,13 +21,13 @@ var IND_o =
   
   initial__v
   (
-    initial_b=false    //: true if Service Worker already registered
+    worker_b=false    //: true if Service Worker already registered
   )
   {
-    if ( initial_b )
+    if ( worker_b )
     {
       IND_o
-        .service__v()    //: reactive
+        .service__v()    //: reactivate
     }
     IND_o
       .unfold__v()
@@ -270,40 +270,25 @@ clearUrl__v
 void function    //:- init serviceWorker & launcher event
 ()
 {
-  LIB_o
-    .rootVar__v
-    (
-      '--HTML_OPAC',
-      '1'        //:- set HTML element opacity (initially transparent)
-    )
   IND_o
     .colorMode__v
       ( 'hue_base' )
   IND_o
     .colorMode__v
       ( 'lum_mode' )
-  //....................................
-  ;console.log( location )
-  window
-    .localStorage
-    .setItem
-      (
-        'pathname_s',
-        location
-      )
-    const initial_b = //... false   //!!!!! const initial_b = false ///!!! TEMPORARY 
+  const worker_b = //... false   //!!!!! TEMPORARY TO TEST INITIAL PAGE
   window
     .localStorage
     .getItem
-      ( 'initial_b' )
-  if ( !initial_b )
+      ( 'worker_b' )
+  if ( !worker_b )
   {
     return IND_o
       .boot__v()
   }
   //>
   IND_o
-    .initial__v( initial_b )
+    .initial__v( worker_b )
 } ()
 
 

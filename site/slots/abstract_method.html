@@ -7,7 +7,11 @@
     fetch_o
   <span class="token punctuation">)</span>
   <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span> fetch_o<span class="token punctuation">.</span>request<span class="token punctuation">.</span>mode <span class="token operator">===</span> <span class="token string">'navigate'</span> <span class="token punctuation">)</span>
+    <span class="token keyword">const</span> mode_s <span class="token operator">=</span>
+      fetch_o
+        <span class="token operator">?.</span>request
+        <span class="token operator">?.</span>mode
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>mode_s  <span class="token operator">===</span> <span class="token string">'navigate'</span> <span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
       <span class="token keyword">try</span>
       <span class="token punctuation">{</span>
@@ -74,7 +78,36 @@
 <span class="token punctuation">,</span>
   
 
-ROUTE__v   <span class="token comment">//: from self</span>
+  <span class="token function">REGISTER__v</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    SWO_o
+      <span class="token punctuation">.</span>send__v    <span class="token comment">//: to main</span>
+      <span class="token punctuation">(</span>
+        <span class="token string">'REGISTER'</span><span class="token punctuation">,</span>
+        <span class="token boolean">true</span>
+      <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span>
+
+
+
+  LOAD__v    <span class="token comment">//: receive from main after registering triggered by extern url (link, bookmark, etc.)</span>
+  <span class="token punctuation">(</span>
+    search_s
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    SWO_o
+      <span class="token punctuation">.</span>cache__v    <span class="token comment">//: simly put on cache: we shall stop at site entrance before loading the new slot</span>
+      <span class="token punctuation">(</span>
+        search_s
+          <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token string">'{{A_o.URL_S_s}}'</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span>    <span class="token comment">//: trim '?s=' keeping '/'  //:-> '/slots/page.html'</span>
+      <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span>
+
+
+  ROUTE__v   <span class="token comment">//: from self</span>
   <span class="token punctuation">(</span>
     url_o    <span class="token comment">//: e.g. 'http://{{U_o.url_s}}#/slots/page.html', i.e. hash: '#/slots/page.html'</span>
   <span class="token punctuation">)</span>
@@ -82,18 +115,16 @@ ROUTE__v   <span class="token comment">//: from self</span>
     <span class="token keyword">let</span> pathSlot_s <span class="token operator">=</span>
       url_o
         <span class="token punctuation">.</span>pathname
-    <span class="token keyword">let</span> hash_s <span class="token operator">=</span>
+    <span class="token keyword">let</span> search_s <span class="token operator">=</span>
       url_o
-        <span class="token punctuation">.</span>hash
-    <span class="token keyword">if</span> <span class="token punctuation">(</span> hash_s <span class="token punctuation">)</span>    <span class="token comment">//: for internal links (-> '#/slots/page.html')</span>
+        <span class="token punctuation">.</span>search
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> search_s <span class="token punctuation">)</span>    <span class="token comment">//: for internal links (-> '?s=/slots/page.html')</span>
     <span class="token punctuation">{</span>
       pathSlot_s <span class="token operator">=</span>
-        hash_s
-          <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span>    <span class="token comment">//: trim '#'  //:-> '/slots/page.html'</span>
-      url_o<span class="token punctuation">.</span>href <span class="token operator">=</span>
-        url_o
-          <span class="token punctuation">.</span>origin      <span class="token comment">//: "back" to origin</span>
+      search_s
+          <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token string">'{{A_o.URL_S_s}}'</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span>    <span class="token comment">//: see supra</span>
     <span class="token punctuation">}</span>
+    <span class="token comment">//........................................</span>
     SWO_o
       <span class="token punctuation">.</span><span class="token function">cache__v</span>
       <span class="token punctuation">(</span>
@@ -101,4 +132,4 @@ ROUTE__v   <span class="token comment">//: from self</span>
       <span class="token punctuation">)</span>
     <span class="token keyword">return</span> url_o
   <span class="token punctuation">}</span>
-<span class="token punctuation">,</span></code></pre><div data-id="code_ref"><dl data-id="code_ref"><dt><a href="https://github.com/octoxalis/progressiVecontent/blob/master/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js" target="_blank">progressiVecontent/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js</a></dt><dd><a href="https://prismjs.com" target="_blank" title="Highlighting provided by Prism.js">Prism</a></dd></dl></div></article><a href="https://progressivecontent.netlify.app/#//slots/abstract_method.html" data-id="redirect" tabindex="-1">This content belongs to progressiVecontent site. See it in situ.</a><script data-node="Link" data-list="slot code"></script></section>
+<span class="token punctuation">,</span></code></pre><div data-id="code_ref"><dl data-id="code_ref"><dt><a href="https://github.com/octoxalis/progressiVecontent/blob/master/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js" target="_blank">progressiVecontent/progressiVecontentmatrix/assets/scripts/js/parts/service_worker.js</a></dt><dd><a href="https://prismjs.com" target="_blank" title="Highlighting provided by Prism.js">Prism</a></dd></dl></div></article><a href="https://progressivecontent.netlify.app/?s=/slots/abstract_method.html" data-id="redirect" tabindex="-1"><br/>This content is part of <em>progressiVecontent</em> site</a><script data-node="Link" data-list="slot code"></script></section>

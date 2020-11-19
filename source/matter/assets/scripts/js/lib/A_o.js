@@ -19,7 +19,7 @@ module.exports =
   SLOTS_s:       CONF_o.SLOTS_s,
   DOCS_s:        CONF_o.DOCS_s,
   TOOLS_s:       CONF_o.TOOLS_s,
-  URL_H_s:       CONF_o.URL_H_s,
+  URL_S_s:       CONF_o.URL_S_s,
 
   description_o: CONF_o.description_o,
 
@@ -29,5 +29,4 @@ module.exports =
 
   SYS_s:         CONF_o.SYS_s,
   DOCS_s:        CONF_o.DOCS_s,
-  URL_H_s:       CONF_o.URL_H_s,
 }

@@ -303,7 +303,7 @@ nodeStep__s
     let html_s = ''
     for ( let lab_s of labels_s.split( ' ' ) )
     {
-      html_s += `<li>${lab_s}`
+      html_s += `<li class="truncate">${lab_s}`
     }
     LIB_o
       .nodeId__o( 'node_labels' )

@@ -93,6 +93,8 @@ a::before,a::after,.aside{transition: transform .2s ease}
 #node_document,#node_actions{display: grid; place-items: center}
 #node_actions > ul{display: flex; flex-direction: row-reverse}
 #node_document{display: flex; justify-content: flex-start}
+#node_display *{overflow: hidden;
+  white-space: nowrap}
 #docs_graph,#graph_svg,#node_actions,#node_labels,#tools_link{position: relative}
 #node_display{position: absolute}
 #node_labels{top: -.8rem}
@@ -105,6 +107,8 @@ ul,#docs_graph{margin: 0}
 #tools_link{margin: var(--PAD_4) 0}
 #node_actions li:not(:first-of-type){margin-right: var(--PAD_2)}
 ul,#graph_svg{padding:0}
+#node_document{--truncate_n: calc( var(--svg_icon_dim) * 2.2 )} 
+#node_display li{--truncate_n: 1em} 
 #node_document{padding: var(--PAD_2)}
 #node_labels{padding:0 var(--PAD_2)}
 #node_actions > ul{padding-right: var(--PAD_2)}
@@ -129,7 +133,9 @@ __  {border-top-right-radius: 8px}
 #graph_svg > rect.node_selected{fill: var(--c_prim_ne)}
 #graph_svg,#node_actions{background: transparent}
 #node_display{background: var(--NODE_BACK)}
-#node_document{background: var(--c_sec_hi)}
+#node_document{--truncate_c: var(--c_sec_hi);
+  background: var(--c_sec_hi)}
+#node_labels li{--truncate_c: var(--NODE_BACK)}
 #tools_link{background: var(--c_prim_hi_2)}
 #node_display *{font-size: inherit}
 #node_labels li{font-weight: 500}

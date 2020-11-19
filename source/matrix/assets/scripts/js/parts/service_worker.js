@@ -16,7 +16,6 @@ var SWO_o =
       //XX'{{U_o.url_s}}offline.html',
       '{{U_o.url_s}}assets/scripts/js/index.min.js',
       //.....DEFER.... '{{U_o.url_s}}assets/scripts/js/instant_page.min.js',
-    
       '{{U_o.url_s}}favicon.ico',
     ]
   ,
@@ -35,11 +34,15 @@ var SWO_o =
 
   types_a:
     [
+      'REGISTER',
+      'LOAD',
       'ROUTE',
       'RESTORE',
       'REMOVE',
-      'INITIAL',
     ]
+  ,
+
+    pathname_s: ''
   ,
 
 
@@ -50,14 +53,20 @@ var SWO_o =
     install_o
   )
   {
-    install_o.waitUntil(
-      void async function ()
-      {
-        const cache_o = await caches.open( SWO_o.cache_s )
-        await cache_o.addAll( SWO_o.url_a  )
-        self.skipWaiting()
-      } ()
-    )
+    install_o
+      .waitUntil
+      (
+        void async function ()
+        {
+          const cache_o =
+            await caches
+              .open( SWO_o.cache_s )
+          await cache_o
+            .addAll( SWO_o.url_a  )
+          self
+            .skipWaiting()
+        } ()
+      )
   }
 ,
   
@@ -71,10 +80,27 @@ var SWO_o =
     activate_o.waitUntil(
       void async function ()
       {
-        const entry_a = await caches.keys()
-        const remove_a = await entry_a.filter( entry_s => entry_s !== SWO_o.cache_s )
-        await Promise.all( remove_a.map( remove_s => caches.delete( remove_s ) ) )
-        self.clients.claim()
+        const entry_a =
+          await caches
+            .keys()
+        const remove_a =
+          await entry_a
+            .filter
+            (
+              entry_s => entry_s !== SWO_o.cache_s
+            )
+        await Promise
+          .all
+          (
+            remove_a
+              .map
+              (
+                remove_s => caches.delete( remove_s )
+              )
+          )
+        self
+          .clients
+          .claim()
       } ()
     )
   }
@@ -89,7 +115,11 @@ var SWO_o =
     fetch_o
   )
   {
-    if ( fetch_o.request.mode === 'navigate' )
+    const mode_s =
+      fetch_o
+        ?.request
+        ?.mode
+    if (mode_s  === 'navigate' )
     {
       try
       {
@@ -156,7 +186,36 @@ var SWO_o =
 ,
   
 
-ROUTE__v   //: from self
+  REGISTER__v
+  ()
+  {
+    SWO_o
+      .send__v    //: to main
+      (
+        'REGISTER',
+        true
+      )
+  }
+,
+
+
+
+  LOAD__v    //: receive from main after registering triggered by extern url (link, bookmark, etc.)
+  (
+    search_s
+  )
+  {
+    SWO_o
+      .cache__v    //: simly put on cache: we shall stop at site entrance before loading the new slot
+      (
+        search_s
+          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: trim '?s=' keeping '/'  //:-> '/slots/page.html'
+      )
+  }
+,
+
+
+  ROUTE__v   //: from self
   (
     url_o    //: e.g. 'http://{{U_o.url_s}}#/slots/page.html', i.e. hash: '#/slots/page.html'
   )
@@ -164,18 +223,16 @@ ROUTE__v   //: from self
     let pathSlot_s =
       url_o
         .pathname
-    let hash_s =
+    let search_s =
       url_o
-        .hash
-    if ( hash_s )    //: for internal links (-> '#/slots/page.html')
+        .search
+    if ( search_s )    //: for internal links (-> '?s=/slots/page.html')
     {
       pathSlot_s =
-        hash_s
-          .slice( 1 )    //: trim '#'  //:-> '/slots/page.html'
-      url_o.href =
-        url_o
-          .origin      //: "back" to origin
+      search_s
+          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: see supra
     }
+    //........................................
     SWO_o
       .cache__v
       (
@@ -194,47 +251,6 @@ ROUTE__v   //: from self
     payload_o    //: not used
   )
   {
-    /*
-    SWO_o
-      .client__o()
-      .then
-      (
-        client_o =>
-        {
-          if ( !client_o ) return//>
-          const cache_a =  Array.from( SWO_o.cache_a )
-          if ( !cache_a.length ) return
-          //>
-          const restore_a = []
-          for ( let url_s of cache_a )
-          {
-            const pathSlot_s =
-              SWO_o
-                  .pathSlot__s
-                  (
-                    url_s
-                  )
-            restore_a
-              .push
-              (
-                pathSlot_s
-                  .split( '/' )
-              )
-          }
-          client_o
-            .postMessage
-            (
-              {
-                type_s: 'RESTORE',
-                payload_o: restore_a
-              }
-            )
-        }
-      )
-
-*/
-
-
     const cache_a =  Array.from( SWO_o.cache_a )
     if ( !cache_a.length ) return
     //>
@@ -275,20 +291,6 @@ ROUTE__v   //: from self
       .delete
       (
         `/{{A_o.SLOTS_s}}/${slot_s}.html`  //!!! do not remove sys slots; '/' before 'slots'
-      )
-  }
-,
-
-
-
-  INITIAL__v
-  ()
-  {
-    SWO_o
-      .send__v    //: to main
-      (
-        'INITIAL',
-        true
       )
   }
 ,
@@ -445,7 +447,7 @@ ROUTE__v   //: from self
         SWO_o.receive__v
       )
     SWO_o
-      .INITIAL__v()
+      .REGISTER__v()
     //... SWO_o
     //...   .import__v()
   }

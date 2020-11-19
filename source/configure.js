@@ -11,9 +11,8 @@
   SLOTS_s: 'slots',                           //: Eleventy tag for SLOTS_s collection
   DOCS_s:  'docs',                            //: grph slot
   TOOLS_s: 'tools',                           //: tools slot
-  URL_H_s: '#/',                              //: url hash prefix for internal links (NEEDS a slash)
-                                              //: e.g. '{{U_o.url_s}}{{A_o.URL_H_s}}{{A_o.SLOTS_s}}/slot_s.html'
- }
+  URL_S_s: '?s=/',                            //: url search prefix, e.g. '{{U_o.url_s}}{{A_o.URL_S_s}}{{A_o.SLOTS_s}}/slot_s.html'
+  }
 
 
 
@@ -28,13 +27,11 @@ module.exports =
 
   URL_s:         URL_o.URL_s,
   LOCAL_s:       URL_o.LOCAL_s,
-  SYS_s:         URL_o.SYS_s,           //: system slots dir
-  SLOTS_s:       URL_o.SLOTS_s,         //: Eleventy tag for SLOTS_s collection
-  DOCS_s:        URL_o.DOCS_s,          //: default slot
-  TOOLS_s:       URL_o.TOOLS_s,          //: default slot
-  URL_H_s:       URL_o.URL_H_s,                   //: url hash prefix for internal links (NEEDS a slash)
-                                        //: e.g. '{{U_o.url_s}}{{A_o.URL_H_s}}/{{A_o.SLOTS_s}}/slot_s.html'  //!!! '/'
-
+  SYS_s:         URL_o.SYS_s,
+  SLOTS_s:       URL_o.SLOTS_s,
+  DOCS_s:        URL_o.DOCS_s,
+  TOOLS_s:       URL_o.TOOLS_s,
+  URL_S_s:       URL_o.URL_S_s,
   
   description_o:                        //: descriptions for SEO
   {

@@ -31,6 +31,9 @@ __                     {display: flex; flex-direction: row-reverse}
 __                     {display: flex; justify-content: flex-start}
 
 
+#node_display *,
+__                     {overflow: hidden;
+                        white-space: nowrap}
 
 
 #docs_graph,
@@ -82,6 +85,14 @@ __                     {margin-right: var(--PAD_2)}
 ul,
 #graph_svg,
 __                     {padding:0}
+
+
+#node_document,
+__                     {--truncate_n: calc( var(--svg_icon_dim) * 2.2 )}  /* place holder: 2 icons */
+
+
+#node_display li,
+__                     {--truncate_n: 1em}  /* place holder: 1 char */
 
 
 #node_document,
@@ -178,7 +189,11 @@ __                     {background: transparent}
 __                     {background: var(--NODE_BACK)}
 
 #node_document,
-__                     {background: var(--c_sec_hi)}
+__                     {--truncate_c: var(--c_sec_hi);
+                        background: var(--c_sec_hi)}
+
+#node_labels li,
+__                     {--truncate_c: var(--NODE_BACK)}
 
 #tools_link,
 __                     {background: var(--c_prim_hi_2)}

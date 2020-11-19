@@ -22,6 +22,16 @@ __                     {white-space: nowrap}
 
 
 
+.truncate::after,
+__                     {content: "";
+                        position: absolute;
+                        inset-inline-end: 0; /* right */
+                        width: var(--truncate_n);
+                        height: 1em;
+                        background: var(--truncate_c)}
+
+
+
 /*=== LIST-STYLE ===*/
 dl,
 ol,

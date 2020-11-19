@@ -73,16 +73,3 @@ __                     {height: var(--svg_icon_dim)}
 
 /*=== FLEX-BASIS ===*/
 
-
-/*=== CLIP ===*/
-.unseen,
-__                     {clip-path: inset(0px 0px)}
-
-
-/*=== OVERFLOW ===*/
-.unseen,
-__                     {overflow: hidden}
-
-body,
-__                     {overflow-x: hidden}
-

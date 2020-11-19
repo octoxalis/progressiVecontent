@@ -41,5 +41,5 @@ actually, as soon as you clicked on this section header, your browser loaded the
 
 [comment]: # (======== Links ========)
 
-[algorithm]: {{U_o.url_s}}{{A_o.URL_H_s}}{{A_o.SLOTS_s}}/algorithm.html
+[algorithm]: {{U_o.url_s}}{{A_o.URL_S_s}}{{A_o.SLOTS_s}}/algorithm.html
 [1PX]: {{ F_o.img1px__s() }} "A young woman holding a distaff before a lit candle"

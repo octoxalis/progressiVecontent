@@ -4,10 +4,11 @@ var SER_o =
 {
   types_a:
     [
+      'REGISTER',
+      'LOAD',
+      'ROUTE',
       'RESTORE',
       'REMOVE',
-      'ROUTE',
-      'INITIAL',
     ]
 ,
 
@@ -19,9 +20,6 @@ var SER_o =
     //!!! comment out the following line if HTTP dev server supports headers
     //..... if ( '{{U_o.url_s}}' === '{{U_o.DEV_s}}' ) return  //: skip service worker in dev mode
     //>
-    const REGISTRATION_s = 'ServiceWorker registration'
-    //-- const SUCCESS_s = 'successful'
-    const FAILURE_s = 'failed'
     navigator  //--  navigator.serviceWorker.register( url_s } )  //: WITHOUT Service-Worker-Allowed HTTP header 
       .serviceWorker
       .register
@@ -35,16 +33,34 @@ var SER_o =
         (
           register_o =>    //: resolve
           {
-            //console.log(  `${REGISTRATION_s} ${SUCCESS_s} [scope: ${register_o.scope}]` )
             navigator
               .serviceWorker
               .onmessage =
-                msg_o =>
-                  SER_o
-                    .receive__v( msg_o )
+              msg_o =>
+                SER_o
+                  .receive__v( msg_o )
+            const search_s =
+              window
+                .location
+                .search
+            if ( search_s )
+            {
+              SER_o
+                .send__v
+                (
+                  'LOAD',
+                  search_s
+                )
+            }
+            LIB_o
+            .rootVar__v
+            (
+              '--HTML_OPAC',
+              '1'        //:- set HTML element opacity (initially transparent)
+            )
           },
           error_o =>
-            console.log( `${REGISTRATION_s} ${FAILURE_s} [error: ${error_o}]` )    //: reject
+            console.log( `ServiceWorker registration failed [error: ${error_o}]` )    //: reject
         )
   }
 ,
@@ -87,7 +103,21 @@ receive__v    //:-- Listen to messages
     (
       msg_o.data.payload_o
     )
-}
+  }
+,
+
+
+
+  REGISTER__v   //: from worker
+  (
+    worker_b
+  )
+  {
+    window
+      .localStorage
+      .setItem
+        ( 'worker_b', worker_b )
+  }
 ,
 
 
@@ -150,19 +180,6 @@ receive__v    //:-- Listen to messages
   }
 ,
 
-
-
-  INITIAL__v   //: from worker
-  (
-    initial_b
-  )
-  {
-    window
-      .localStorage
-      .setItem
-        ( 'initial_b', initial_b )
-  }
-  ,
 
 }
 
