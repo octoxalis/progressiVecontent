@@ -2,8 +2,8 @@
 
 #initial,
 #main,
-.unseen,
 [data-sub]:hover::after,
+.unseen,
 __                     {position: absolute}
 
 
@@ -12,30 +12,29 @@ __                     {position: sticky}
 
 
 #logo,
-#introduce,
+#entrance,
 #sections,
 __                     {position:relative}
 
 
 
 /*=== TOP ===*/
-#initial *,
+
 #sections_slider,
 __                     {top: 0}
+
 
 
 
 #logo,
 [data-sub]:hover::after,
 __                     {top: -1em }
-#introduce,
+#entrance,
 __                     {top: 1.5em }
 
 
 
-
 /*=== LEFT ===*/
-
 
 
 /*=== BOTTOM ===*/

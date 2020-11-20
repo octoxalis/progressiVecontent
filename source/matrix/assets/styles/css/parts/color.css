@@ -1,7 +1,6 @@
 /*=== COLOR ===*/
 :root
 {
-  --HTML_OPAC: 0;
   --INVERT_FILTER:
       invert(100%)
       hue-rotate({{C_o.HUE_ROTATE_n}}deg)
@@ -20,9 +19,6 @@
 .retract,
 __                     {opacity: 0}
 
-
-html,
-__                     {opacity: var(--HTML_OPAC)}
 
 
 /*=== FRONT ===*/

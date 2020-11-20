@@ -2,11 +2,9 @@
 
 var IND_o =
 {
-  boot__v    //: display initial page while registering Service Worker
+  boot__v    //: register Service Worker & display initial page
   ()
   {
-    window
-      .requestIdleCallback( IND_o.service__v )
     LIB_o
       .nodeId__o( 'initial' )
       .addEventListener
@@ -14,21 +12,22 @@ var IND_o =
         'click',    //: wait for visitor entrance
         IND_o.initial__v
       )
+    IND_o
+      .service__v()
   }
 ,
   
   
   
   initial__v
-  (
-    worker_b=false    //: true if Service Worker already registered
-  )
+  ()
   {
-    if ( worker_b )
-    {
-      IND_o
-        .service__v()    //: reactivate
-    }
+    IND_o
+      .colorMode__v
+        ( 'hue_base' )
+    IND_o
+      .colorMode__v
+        ( 'lum_mode' )
     IND_o
       .unfold__v()
     LIB_o
@@ -51,7 +50,7 @@ var IND_o =
   {
     //?? LIB_o
     //??   .scroll__v()    //!!! scroll to top
-    if ( !LIB_o.nodeId__o( 'section_{{A_o.DOCS_s}}' ) )  //: docs section not yet loaded
+    if ( !LIB_o.nodeId__o( 'section_{{A_o.DOCS_s}}' ) )  //: contents section not yet loaded
     {
       IND_o
         .load__v()    //: default args
@@ -270,25 +269,16 @@ clearUrl__v
 void function    //:- init serviceWorker & launcher event
 ()
 {
+  const method_s =
+    window
+      .localStorage
+      .getItem
+        ( 'worker_b' )  ?
+    'initial'
+    :
+    'boot'
   IND_o
-    .colorMode__v
-      ( 'hue_base' )
-  IND_o
-    .colorMode__v
-      ( 'lum_mode' )
-  const worker_b = //... false   //!!!!! TEMPORARY TO TEST INITIAL PAGE
-  window
-    .localStorage
-    .getItem
-      ( 'worker_b' )
-  if ( !worker_b )
-  {
-    return IND_o
-      .boot__v()
-  }
-  //>
-  IND_o
-    .initial__v( worker_b )
+    [ `${method_s}__v` ]()
 } ()
 
 

@@ -22,7 +22,7 @@ __  {display: block}
   place-items: center}
 .note_link{display: grid;
   align-items: end}
-[data-id="note_img"] button{grid-template-columns: 1fr var(--IMG_REVEAL)}
+[data-id="note_img"] button{grid-template-columns: 1fr var(--IMG_UNFOLD)}
 [data-id="img_unfold"]{display: grid;
   justify-items: end}
 .note_link_a{display: flex;
@@ -58,12 +58,12 @@ __  {padding: var(--PAD_4) 0}
 __  {width: 100%}
 [data-id="note_img"] [data-id="note_content"]{width: var(--FULL_WIDTH)}
 [data-id="note_content"].note_open{min-width: var(--LINE_WIDTH)}
-[data-id="img_unfold"] > img{width: var(--IMG_REVEAL)}
+[data-id="img_unfold"] > img{width: var(--IMG_UNFOLD)}
 [data-id="note_content"]{height: 0}
 .note_open{height: auto} 
 .note_link{width: var(--button_dim); height: var(--button_dim)}
-[data-id="note_img"] button{height: calc( var(--IMG_REVEAL) + (2px * 2) )} 
-[data-id="img_unfold"] > img{height: var(--IMG_REVEAL)}
+[data-id="note_img"] button{height: calc( var(--IMG_UNFOLD) + (2px * 2) )} 
+[data-id="img_unfold"] > img{height: var(--IMG_UNFOLD)}
 [data-id="note_txt"] .note_open{border-left: var(--PAD_2) solid var(--c_back_op)}
 .note_link,[data-id="note_txt"] > button{border-radius: 50%}
 [data-id="img_unfold"] > img,[data-id="note_img"] button,.note_open{border-radius: var(--border_radius)}

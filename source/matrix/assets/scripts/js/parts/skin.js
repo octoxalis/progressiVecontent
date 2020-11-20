@@ -1,4 +1,4 @@
-//=== TOO_o: tools.js ===
+//=== TOO_o: skin.js ===
 var TOO_o =
 {
 

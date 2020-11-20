@@ -52,12 +52,6 @@ var SER_o =
                   search_s
                 )
             }
-            LIB_o
-            .rootVar__v
-            (
-              '--HTML_OPAC',
-              '1'        //:- set HTML element opacity (initially transparent)
-            )
           },
           error_o =>
             console.log( `ServiceWorker registration failed [error: ${error_o}]` )    //: reject

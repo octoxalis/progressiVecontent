@@ -9,8 +9,8 @@
   //--LOCAL_s: 'http://192.168.1.36:8080/',       //: local address and port for development
   SYS_s:   'sys',                             //: system slots dir
   SLOTS_s: 'slots',                           //: Eleventy tag for SLOTS_s collection
-  DOCS_s:  'docs',                            //: grph slot
-  TOOLS_s: 'tools',                           //: tools slot
+  DOCS_s:  'contents',                        //: content slot
+  TOOLS_s: 'skin',                            //: skin slot
   URL_S_s: '?s=/',                            //: url search prefix, e.g. '{{U_o.url_s}}{{A_o.URL_S_s}}{{A_o.SLOTS_s}}/slot_s.html'
   }
 

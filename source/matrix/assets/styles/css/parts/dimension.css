@@ -7,11 +7,13 @@
   --HALF_WIDTH:  50vw;
   --FULL_HEIGHT:  100vh;
   --HALF_HEIGHT:  50vh;
-  --LOGO_HEIGHT:   5rem;
-  --SLIDER_HEIGHT: 5em;
-  --IMG_REVEAL:    5em;
+  --STD_HEIGHT:    5;
+  --LOGO_HEIGHT:   calc( var(--STD_HEIGHT) * 1em );
+  --SLIDER_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
+  --BUTTON_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
+  --IMG_UNFOLD:    calc( var(--STD_HEIGHT) * 1em );
 }
-#introduce,
+#entrance,
 __                     {--svg_icon_dim: 3em}
 
 

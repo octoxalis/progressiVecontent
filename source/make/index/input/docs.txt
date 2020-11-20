@@ -282,7 +282,7 @@ upload computer_networks data server download
 uniform_resource_locator_(url) web_resource computer_network Uniform_Resource_Identifier http ftp mailto JDBC 
 user 
 user_agent software_agent user web_browser mail_user_agent 
-user_interface_(ui) decision-making operating_systems tools heavy_machinery process ergonomics psychology 
+user_interface_(ui) decision-making operating_systems skin heavy_machinery process ergonomics psychology 
 user_interface_design user_interfaces software usability user_experience user-centered_design 
 variable computer_programming memory_address identifier value reference source_code bound run_time program_execution 
 virtual_machine_(vm) emulation computer_architectures 

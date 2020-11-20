@@ -1,12 +1,12 @@
 ---js
 {
-  layout: 'parts/slot/tools/tools.njk',
-  permalink: 'sys/tools.html',
+  layout: 'parts/slot/skin/skin.njk',
+  permalink: 'sys/skin.html',
   rank_n: -2,
   tags:      [ `notag` ],
   //?? eleventyExcludeFromCollections: true,
 
-  title_s: `tools`,
+  title_s: `skin`,
 }
 ---
 :Preferences:

@@ -17,27 +17,25 @@ __  {margin: 0}
 button[data-slot_s]{margin: 0}
 .span_icon{margin: var(--PAD_1) 0}
 [data-id="ulist"]{margin: var(--PAD_2) 0 0 var(--PAD_4)}
-article{margin: var(--PAD_12) 0 var(--PAD_4) 0}
-article.retract{margin: var(--PAD_2) 0 0 0}
 div[data-slot_s]{padding: var(--PAD_4) var(--PAD_8)}
 [data-id="ulist"]{padding-left:0}
 [data-id="ulist"]{padding-left:var(--PAD_2)}
-hr,article{margin-bottom: var(--PAD_6)}
-[data-id="example"]{max-width:100%}
+hr{margin-bottom: var(--PAD_6)}
 button[data-slot_s]{width: var(--FULL_WIDTH)}
 article{width: var(--BODY_WIDTH)}
-[data-slot_s] > u{height: 6em} 
+[data-id="example"]{max-width:100%}
+[data-slot_s] > u{height: var(--BUTTON_HEIGHT)} 
 a::before,.unseen{height: 1px}
 a::after{height: 4px}
 [data-slot_s] > u{top: 0}
 a::before,a::after{left: 0}
-section > div > section{left: var(--BODY_MARGIN)}
 button[data-slot_s]{left: 50%; right: 50%} 
 a::before,a::after{bottom: -1px}
 a::before,a::after{right: 0}
 button[data-slot_s]{margin-left: -50vw; margin-right: -50vw} 
-h1,h2,h3,h4,h5,h6{margin-bottom: var(--PAD_2)}
+h1,h2,h3,h4,h5,h6,p{margin-bottom: var(--PAD_2)}
 h1,h2,h3,h4,h5,h6,p,ul,ol{padding:0}
+button[data-slot_s]{padding: var(--PAD_2)}
 [data-slot_s] > u{flex-basis: 100%}
 hr{border-top: 1px solid var(--c_prim_ne)}
 [data-id="ulist"] > li{border-left: var(--BORDER_1) solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
@@ -62,7 +60,7 @@ h3,h4,h5,h6{--size_ratio: 1.2}
 [data-slot_s] > u{--size_ratio: 1.4}
 small,sub,sup{--size_ratio: .8}
 [data-slot_s] > u{font-weight: 200}
-[data-slot_s] > u{line-height: 6} 
+[data-slot_s] > u{line-height: var(--STD_HEIGHT)} 
 [data-id="ulist"] > li::before{--char_size: .5em}
 [data-id="ulist"] > li::before{content: '▶'}
 [data-id="ulist"] > li::before{top: calc( var(--char_size) * -0.125 )}
@@ -74,7 +72,7 @@ a,[data-slot_s] > u{text-decoration: none}
 [data-slot_s] > u{text-transform: uppercase}
 button[data-slot_s]{font-family:var(--font_title)}
 [data-id=example]::before{font-style:italic}
-.svg_icon:hover,button[data-slot_s]:hover,#tools_link:hover{filter: brightness( 2 )}
+.svg_icon:hover,button[data-slot_s]:hover,#skin_link:hover{filter: brightness( 2 )}
 a::before,a::after{transform-origin: bottom left}
 a::before,a::after,.aside{transition: transform .2s ease}
 :root
@@ -82,7 +80,7 @@ a::before,a::after,.aside{transition: transform .2s ease}
  --NODE_BACK_SELECTED: var(--c_box_ne);
  --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
 }
-#tools_link{--svg_icon_dim: 2rem }
+#skin_link{--svg_icon_dim: 2rem }
 #node_display
 {
  --display_dim: 50vw;
@@ -95,7 +93,7 @@ a::before,a::after,.aside{transition: transform .2s ease}
 #node_document{display: flex; justify-content: flex-start}
 #node_display *{overflow: hidden;
   white-space: nowrap}
-#docs_graph,#graph_svg,#node_actions,#node_labels,#tools_link{position: relative}
+#docs_graph,#graph_svg,#node_actions,#node_labels,#skin_link{position: relative}
 #node_display{position: absolute}
 #node_labels{top: -.8rem}
 #node_display{top: calc( var(--display_dim) * .5 )}
@@ -104,7 +102,7 @@ a::before,a::after,.aside{transition: transform .2s ease}
 ul,#docs_graph{margin: 0}
 #graph{margin: auto}
 #graph{margin-top: var(--PAD_8)}
-#tools_link{margin: var(--PAD_4) 0}
+#skin_link{margin: var(--PAD_4) 0}
 #node_actions li:not(:first-of-type){margin-right: var(--PAD_2)}
 ul,#graph_svg{padding:0}
 #node_document{--truncate_n: calc( var(--svg_icon_dim) * 2.2 )} 
@@ -117,11 +115,12 @@ ul,#graph_svg{padding:0}
 #node_display{height: auto}
 #node_document{height: var(--node_height)}
 #node_display{border: 2px solid var(--c_sec_hi_2)}
-#graph_svg,#node_display,#tools_link{border-radius: 8px}
+#node_display{border-radius: 8px}
 #node_document,#node_actions
 __  {border-top-left-radius: 8px}
 #node_document,#node_actions
 __  {border-top-right-radius: 8px}
+#graph_svg,#skin_link{border-radius: 4px}
 #graph_svg{cursor: pointer}
  
 #graph_svg:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
@@ -136,7 +135,7 @@ __  {border-top-right-radius: 8px}
 #node_document{--truncate_c: var(--c_sec_hi);
   background: var(--c_sec_hi)}
 #node_labels li{--truncate_c: var(--NODE_BACK)}
-#tools_link{background: var(--c_prim_hi_2)}
+#skin_link{background: var(--c_prim_hi_2)}
 #node_display *{font-size: inherit}
 #node_labels li{font-weight: 500}
 #node_document{text-transform: uppercase}

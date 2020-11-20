@@ -11,12 +11,12 @@ var SWO_o =
 
   url_a:     //: URLs of assets to immediately cache
     [
-      '{{U_o.url_s}}',
-      '{{U_o.url_s}}index.html',
+      //?? '{{U_o.url_s}}',
+      //?? '{{U_o.url_s}}index.html',
       //XX'{{U_o.url_s}}offline.html',
-      '{{U_o.url_s}}assets/scripts/js/index.min.js',
+      //?? '{{U_o.url_s}}assets/scripts/js/index.min.js',
       //.....DEFER.... '{{U_o.url_s}}assets/scripts/js/instant_page.min.js',
-      '{{U_o.url_s}}favicon.ico',
+      //?? '{{U_o.url_s}}favicon.ico',
     ]
   ,
 

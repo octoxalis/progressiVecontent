@@ -68,11 +68,6 @@ __                     {margin: var(--PAD_1) 0}
 __                     {margin: var(--PAD_2) 0 0 var(--PAD_4)}
 
 
-article,
-__                     {margin: var(--PAD_12) 0 var(--PAD_4) 0}
-article.retract,
-__                     {margin: var(--PAD_2) 0 0 0}
-
 
 
 div[data-slot_s],
@@ -89,14 +84,11 @@ __                     {padding-left:var(--PAD_2)}
 
 
 hr,
-article,
 __                     {margin-bottom: var(--PAD_6)}
 
 
 
 
-[data-id="example"],
-__                     {max-width:100%}
 
 button[data-slot_s],
 __                     {width: var(--FULL_WIDTH)}
@@ -104,9 +96,11 @@ __                     {width: var(--FULL_WIDTH)}
 article,
 __                     {width: var(--BODY_WIDTH)}
 
+[data-id="example"],
+__                     {max-width:100%}
 
 [data-slot_s] > u,
-__                     {height: 6em}  /* see line-height */
+__                     {height: var(--BUTTON_HEIGHT)}  /* see line-height */
 
 
 
@@ -121,16 +115,13 @@ __                     {height: 4px}
 
 
 
-
 [data-slot_s] > u,
-__                     {top: 0}/*calc( var(--NAVBAR_DIM) * -1 )*/
+__                     {top: 0}
 
 a::before,
 a::after,
 __                     {left: 0}
 
-section > div > section,
-__                     {left: var(--BODY_MARGIN)}
 
 
 button[data-slot_s],
@@ -156,6 +147,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 __                     {margin-bottom: var(--PAD_2)}
 
 
@@ -170,6 +162,8 @@ ul,
 ol,
 __                     {padding:0}
 
+button[data-slot_s],
+__                     {padding: var(--PAD_2)}
 
 
 [data-slot_s] > u,
@@ -181,11 +175,6 @@ hr,
 __                     {border-top: 1px solid var(--c_prim_ne)}
 
 
-
-/*
-button[data-slot_s]:focus,
-__                     {border-top: 2px solid var(--c_prim_lo)}
-*/
 
 
 [data-id="ulist"]  > li,
@@ -202,10 +191,6 @@ __                     {--border_opac:.3}
 
 
 
-/*
-button[data-slot_s],
-__                     {border-radius: 8px}
-*/
 
 
 button[data-slot_s],
@@ -284,7 +269,7 @@ __                     {--size_ratio: .8}
 __                     {font-weight: 200}
 
 [data-slot_s] > u,
-__                     {line-height: 6}  /* see height */
+__                     {line-height: var(--STD_HEIGHT)}  /* see height */
 
 
 
@@ -332,7 +317,7 @@ __                     {font-style:italic}
 
 .svg_icon:hover,
 button[data-slot_s]:hover,
-#tools_link:hover,
+#skin_link:hover,
 __                     {filter: brightness( 2 )}
 
 

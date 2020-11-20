@@ -62,7 +62,7 @@ __                     {display: grid;
 
 
 [data-id="note_img"] button,
-__                     {grid-template-columns: 1fr var(--IMG_REVEAL)}
+__                     {grid-template-columns: 1fr var(--IMG_UNFOLD)}
 
 
 [data-id="img_unfold"],
@@ -188,7 +188,7 @@ __                     {min-width: var(--LINE_WIDTH)}
 
 
 [data-id="img_unfold"] > img,
-__                     {width: var(--IMG_REVEAL)}
+__                     {width: var(--IMG_UNFOLD)}
 
 
 
@@ -205,11 +205,11 @@ __                     {width: var(--button_dim); height: var(--button_dim)}
 
 
 [data-id="note_img"] button,
-__                     {height: calc( var(--IMG_REVEAL) + (2px * 2) )}  /* border:2px */
+__                     {height: calc( var(--IMG_UNFOLD) + (2px * 2) )}  /* border:2px */
 
 
 [data-id="img_unfold"] > img,
-__                     {height: var(--IMG_REVEAL)}
+__                     {height: var(--IMG_UNFOLD)}
 
 
 
