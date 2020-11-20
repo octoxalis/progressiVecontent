@@ -1,4 +1,4 @@
-//=== SET_o: sets.js ===
+// === SET_o: sets.js ===
 //-> export
 var SET_o =
 {

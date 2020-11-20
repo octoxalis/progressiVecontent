@@ -1,4 +1,4 @@
-//=== Slider_c.js ===
+// === Slider_c.js ===
 //-- Refactored from: https://lgse.github.io/micro-slider
 
 class Slider3D

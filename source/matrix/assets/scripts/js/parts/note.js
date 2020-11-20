@@ -1,4 +1,4 @@
-//=== NOTE_o: note.js ==
+// === NOTE_o: note.js ==
 
 var NOTE_o =
 {

@@ -1,4 +1,4 @@
-//=== LIB_o: lib.js ===
+// === LIB_o: lib.js ===
 
 var LIB_o =
 {
@@ -13,7 +13,7 @@ var LIB_o =
 
 
 
-  //=== CSS ===
+  // === CSS ===
   rootVar__s:
   (
     var_s
@@ -31,7 +31,7 @@ var LIB_o =
 
 
 
-  //=== ELEMENT ===
+  // === ELEMENT ===
   nodeId__o:
   (
     id_s,
@@ -108,7 +108,7 @@ toggleId__v:
 
 
 
-  //=== EVENTS ===
+  // === EVENTS ===
   keyClick__v:
   (
     tag_e
@@ -166,7 +166,7 @@ toggleId__v:
 
 
 
-  //=== FRAME ===
+  // === FRAME ===
 /**
    * 
    * @param {*} tag_s 
@@ -325,7 +325,7 @@ toggleId__v:
 
 
 
-  //=== SLOT ===
+  // === SLOT ===
   slot__v:
   (
     path_s,
@@ -415,7 +415,7 @@ toggleId__v:
 
 
 
-//=== UI ===
+// === UI ===
  scroll__v:    //:- scroll to top/bottom
   (
     bottom_b=false

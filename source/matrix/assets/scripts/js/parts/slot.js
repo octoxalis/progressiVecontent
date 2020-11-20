@@ -1,4 +1,4 @@
-//=== SLOT_o: slot.js ===
+// === SLOT_o: slot.js ===
 var SLOT_o =
 {
 

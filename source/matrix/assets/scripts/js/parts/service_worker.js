@@ -1,4 +1,4 @@
-//=== SWO_o: service_worker.js ===
+// === SWO_o: service_worker.js ===
 
 var SWO_o =
 {

@@ -18,7 +18,8 @@ module.exports =
   SYS_s:         CONF_o.SYS_s,
   SLOTS_s:       CONF_o.SLOTS_s,
   DOCS_s:        CONF_o.DOCS_s,
-  TOOLS_s:       CONF_o.TOOLS_s,
+  SKIN_s:        CONF_o.SKIN_s,
+  BOOKMARK_s:    CONF_o.BOOKMARK_s,
   URL_S_s:       CONF_o.URL_S_s,
 
   description_o: CONF_o.description_o,

@@ -1,0 +1,26 @@
+/*=== BOOKMARK ===*/
+#bookmark_page,
+__                     {display: flex;
+                        flex-direction: column;}
+
+#bookmark_input,
+__                     {display: flex}
+
+
+#bookmark_page,
+#bookmark_input,
+__                     {width: var(--BODY_WIDTH)}
+
+
+#bookmark_name,
+__                     {flex-basis: 80%}
+
+#bookmark_save,
+__                     {flex-basis: 20%}
+
+#bookmark_save,
+__                     {margin-left: var(--PAD_2)}
+
+#bookmark_save,
+__                     {border: 1px solid black;
+                        border-radius: 4px}

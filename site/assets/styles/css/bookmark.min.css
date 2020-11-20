@@ -1,0 +1,10 @@
+
+#bookmark_page{display: flex;
+  flex-direction: column;}
+#bookmark_input{display: flex}
+#bookmark_page,#bookmark_input{width: var(--BODY_WIDTH)}
+#bookmark_name{flex-basis: 80%}
+#bookmark_save{flex-basis: 20%}
+#bookmark_save{margin-left: var(--PAD_2)}
+#bookmark_save{border: 1px solid black;
+  border-radius: 4px}

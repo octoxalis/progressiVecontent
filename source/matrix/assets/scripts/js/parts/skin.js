@@ -1,5 +1,5 @@
-//=== TOO_o: skin.js ===
-var TOO_o =
+// === SKIN_o: skin.js ===
+var SKIN_o =
 {
 
 
@@ -42,7 +42,7 @@ var TOO_o =
           `#hue_current`
         )
         .dataset
-        ['tool_color'] =
+        ['skin'] =
           window
             .localStorage
             .getItem
@@ -93,7 +93,7 @@ var TOO_o =
           `#lum_current`
         )
           .dataset
-            ['tool_color'] =
+            ['skin'] =
               window
                 .localStorage
                 .getItem
@@ -120,7 +120,7 @@ void function ()
     .addEventListener
     (
       'click',
-      TOO_o.hue__v
+      SKIN_o.hue__v
     )
   document
     .querySelector
@@ -128,7 +128,7 @@ void function ()
       `#hue_current`
     )
     .dataset
-    ['tool_color'] =
+    ['skin'] =
       window
         .localStorage
         .getItem
@@ -141,7 +141,7 @@ document
     .addEventListener
     (
       'click',
-      TOO_o.lum__v
+      SKIN_o.lum__v
     )
   document
     .querySelector
@@ -149,7 +149,7 @@ document
       `#lum_current`
     )
     .dataset
-    ['tool_color'] =
+    ['skin'] =
       window
         .localStorage
         .getItem

@@ -1,53 +1,53 @@
-/*=== TOOLS ===*/
+/*=== SKIN ===*/
 
 
-dl[data-tool_color],
+dl[data-skin],
 __                     {display: flex;
                         flex-direction: column;}
 
 
-dd[data-tool_color]:after,
+dd[data-skin]:after,
 __                     {position: relative}
 
 
-dl[data-tool_color],
+dl[data-skin],
 __                     {align-items: center}
 
 
 
-dd[data-tool_color]:after,
+dd[data-skin]:after,
 __                     {left: var(--PAD_2)}
 
 
-dl[data-tool_color] > *:not( dt ),
+dl[data-skin] > *:not( dt ),
 __                     {padding: var(--PAD_2)}
 
 
-dl[data-tool_color],
+dl[data-skin],
 __                     {margin: var(--PAD_4) 0}
 
 
-  dl[data-tool_color] > dt,
+  dl[data-skin] > dt,
 __                     {margin-bottom: 0}
 
-dl[data-tool_color] > dd,
+dl[data-skin] > dd,
 __                     {margin-bottom: var(--PAD_1)}
 
 
 
-[data-tool_color],
-[data-tool_color] > *,
+[data-skin],
+[data-skin] > *,
 __                     {width: var(--BODY_WIDTH)}
 
-dd[data-tool_color]:after,
+dd[data-skin]:after,
 __                     {width: 100%}
 
 
-[data-tool_color] > dd,
+[data-skin] > dd,
 __                     {height: 3em}
 
 
-[data-tool_color] > dd:last-of-type,
+[data-skin] > dd:last-of-type,
 __                     {border: 1px solid hsla( 0 0% 0% / .5)}
 
 
@@ -88,18 +88,18 @@ __                     {background: hsla( var(--hue_base) 50% calc( ( 50 + ( 30 
 
 
 
-dd[data-tool_color]:after,
+dd[data-skin]:after,
 __                     {--size_ratio: 1}
 
 
-dd[data-tool_color]:after,
+dd[data-skin]:after,
 __                     {line-height: 2}
 
 
 
-[data-tool_color] > dd:last-of-type,
+[data-skin] > dd:last-of-type,
 __                     {cursor: crosshair}
 
 
-dd[data-tool_color]:after,
-__                     {content: attr( data-tool_color )}
+dd[data-skin]:after,
+__                     {content: attr( data-skin )}

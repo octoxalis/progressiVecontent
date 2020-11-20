@@ -1,4 +1,4 @@
-//=== Graph.js ===
+// === Graph.js ===
 
 class Graph
 {

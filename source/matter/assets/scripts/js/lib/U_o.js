@@ -1,7 +1,5 @@
-/*
- * URL and path constants
- * Naming scheme: abrev_s
- */
+// === = A_o.js === //
+
 const A_o = require( './A_o.js' )
 
 const U_o =
@@ -21,7 +19,7 @@ const U_o =
   SERVICE_PATH_s: 'service_worker.min.js',    //: WITHOUT Service-Worker-Allowed HTTP header 
 
   //-- SERVICE_PATH_s: 'assets/scripts/js/service_worker.min.js',    //: NEEDS Service-Worker-Allowed HTTP header
-  //--SERVICE_SCOPE_s: '../../../',  //: assets/scripts/js/
+  //-- SERVICE_SCOPE_s: '../../../',  //: assets/scripts/js/
   SERVICE_SCOPE_s: '/',  //: site root
   MEDIA_PATH_s: 'assets/media/',
   JSON_PATH_s: 'assets/data/json/',

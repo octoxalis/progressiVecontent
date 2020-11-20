@@ -1,4 +1,4 @@
-//=== IND_o: index.js ===
+// === IND_o: index.js ===
 
 var IND_o =
 {

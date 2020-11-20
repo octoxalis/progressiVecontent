@@ -1,5 +1,9 @@
 /*=== SLOT ===*/
 
+#skin_link,
+#bookmark_link,
+__                     {--svg_icon_dim: 2rem }
+
 article,
 __                     {--count_txt: note_txt;
                         --count_img: note_img;
@@ -30,13 +34,15 @@ __                     {display:block}
 
 
 button[data-slot_s],
+#preferences,
 __                     {display: flex;
-                        justify-content: space-between;
+                        justify-content: center;
                         align-content: center}
 
 
 
 
+/*#skin_link,*/
 a,
 section > div,
 [data-id="ulist"] > li::before,
@@ -58,6 +64,15 @@ __                     {margin: 0}
 
 button[data-slot_s],
 __                     {margin: 0}
+
+#preferences,
+__                     {margin: var(--PAD_8) 0}
+
+
+#skin_link,
+#bookmark_link,
+__                     {margin: 0 var(--PAD_4)}
+
 
 
 .span_icon,
@@ -93,6 +108,7 @@ __                     {margin-bottom: var(--PAD_6)}
 button[data-slot_s],
 __                     {width: var(--FULL_WIDTH)}
 
+#preferences,
 article,
 __                     {width: var(--BODY_WIDTH)}
 
@@ -103,6 +119,8 @@ __                     {max-width:100%}
 __                     {height: var(--BUTTON_HEIGHT)}  /* see line-height */
 
 
+#preferences,
+__                     {height: calc( var(--BUTTON_HEIGHT) * .5 )}
 
 a::before,
 .unseen,
@@ -114,9 +132,10 @@ __                     {height: 4px}
 
 
 
-
+/*
 [data-slot_s] > u,
 __                     {top: 0}
+*/
 
 a::before,
 a::after,
@@ -163,6 +182,7 @@ ol,
 __                     {padding:0}
 
 button[data-slot_s],
+#preferences,
 __                     {padding: var(--PAD_2)}
 
 
@@ -170,11 +190,15 @@ __                     {padding: var(--PAD_2)}
 __                     {flex-basis: 100%}
 
 
+#preferences,
+__                     {border: 1px solid var(--c_prim_ne)}
 
 hr,
 __                     {border-top: 1px solid var(--c_prim_ne)}
 
 
+#preferences,
+__                     {border-radius: 4px}
 
 
 [data-id="ulist"]  > li,
@@ -225,6 +249,11 @@ mark[data-tag],
 __                     {background: inherit}
 
 
+#preferences,
+#skin_link,
+#bookmark_link,
+__                     {background: transparent}
+
 a::before,
 a::after,
 __                     {background: var(--c_link_ne)}
@@ -236,6 +265,7 @@ __                     {background: var(--c_sec_hi_3)}
 
 button[data-slot_s],
 __                     {background: var(--c_prim_hi_2)}
+
 
 
 [data-id="note_txt"] > button,
@@ -264,6 +294,9 @@ sub,
 sup,
 __                     {--size_ratio: .8}
 
+
+.site_label,
+__                     {font-weight: 500}
 
 [data-slot_s] > u,
 __                     {font-weight: 200}
@@ -313,6 +346,7 @@ __                     {font-family:var(--font_title)}
 
 
 [data-id=example]::before,
+.site_label,
 __                     {font-style:italic}
 
 .svg_icon:hover,

@@ -1,4 +1,4 @@
-//=== SLI_o: slider.js ===
+// === SLI_o: slider.js ===
 var SLI_o =
 {
   slider_e: null,

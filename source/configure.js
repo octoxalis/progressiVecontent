@@ -7,11 +7,13 @@
   URL_s:   'https://progressivecontent.netlify.app/',  //: CDN deployer
   LOCAL_s: 'http://127.0.0.1:8080/',          //: local address and port for development
   //--LOCAL_s: 'http://192.168.1.36:8080/',       //: local address and port for development
+  URL_S_s: '?s=/',                            //: url search prefix, e.g. '{{U_o.url_s}}{{A_o.URL_S_s}}{{A_o.SLOTS_s}}/slot_s.html'
+
   SYS_s:   'sys',                             //: system slots dir
   SLOTS_s: 'slots',                           //: Eleventy tag for SLOTS_s collection
   DOCS_s:  'contents',                        //: content slot
-  TOOLS_s: 'skin',                            //: skin slot
-  URL_S_s: '?s=/',                            //: url search prefix, e.g. '{{U_o.url_s}}{{A_o.URL_S_s}}{{A_o.SLOTS_s}}/slot_s.html'
+  SKIN_s:  'skin',                            //: skin slot
+  BOOKMARK_s: 'bookmark',                     //: bookmark slot
   }
 
 
@@ -30,7 +32,8 @@ module.exports =
   SYS_s:         URL_o.SYS_s,
   SLOTS_s:       URL_o.SLOTS_s,
   DOCS_s:        URL_o.DOCS_s,
-  TOOLS_s:       URL_o.TOOLS_s,
+  SKIN_s:        URL_o.SKIN_s,
+  BOOKMARK_s:    URL_o.BOOKMARK_s,
   URL_S_s:       URL_o.URL_S_s,
   
   description_o:                        //: descriptions for SEO

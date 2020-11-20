@@ -6,8 +6,6 @@
   --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
 }
 
-#skin_link,
-__                     {--svg_icon_dim: 2rem }
 
 #node_display
 {
@@ -40,7 +38,6 @@ __                     {overflow: hidden;
 #graph_svg,
 #node_actions,
 #node_labels,
-#skin_link,
 __                     {position: relative}
 
 
@@ -74,8 +71,6 @@ __                     {margin: auto}
 #graph,
 __                     {margin-top: var(--PAD_8)}
 
-#skin_link,
-__                     {margin: var(--PAD_4) 0}
 
 
 #node_actions li:not(:first-of-type),
@@ -126,6 +121,7 @@ __                     {height: auto}
 __                     {height: var(--node_height)}
 
 
+
 #node_display,
 __                     {border: 2px solid var(--c_sec_hi_2)}
 
@@ -143,7 +139,6 @@ __                     {border-top-left-radius: 8px}
 __                     {border-top-right-radius: 8px}
 
 #graph_svg,
-#skin_link,
 __                     {border-radius: 4px}
 
 #graph_svg,
@@ -196,13 +191,7 @@ __                     {--truncate_c: var(--c_sec_hi);
 #node_labels li,
 __                     {--truncate_c: var(--NODE_BACK)}
 
-#skin_link,
-__                     {background: var(--c_prim_hi_2)}
 
-/*
-#node_actions > ul,
-__                     {background: var(--c_sec_hi_2)}
-*/
 
 #node_display *,
 __                     {font-size: inherit}

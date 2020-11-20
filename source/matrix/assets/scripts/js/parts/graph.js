@@ -1,4 +1,4 @@
-//=== GRA_o: graph.js ===
+// === GRA_o: graph.js ===
 
 var GRA_o =
 {
@@ -327,19 +327,36 @@ nodeStep__s
 ,
 
 
-tools__v
-()
-{
-  if ( LIB_o.nodeId__o( 'section_tools' ) )  return    //: already loaded
-  //->
-  IND_o
-    .load__v
-    (
-      path_s='{{A_o.SYS_s}}',
-      slot_s='{{A_o.TOOLS_s}}',
-      slot_n=-2,          //: negative indices for sys slots
-      callback_f=null
-    )
+  skin__v
+  ()
+  {
+    if ( LIB_o.nodeId__o( 'section_skin' ) )  return    //: already loaded
+    //->
+    IND_o
+      .load__v
+      (
+        path_s='{{A_o.SYS_s}}',
+        slot_s='{{A_o.SKIN_s}}',
+        slot_n=-2,          //: negative indices for sys slots
+        callback_f=null
+      )
+  }
+,
+  
+
+  bookmark__v
+  ()
+  {
+    if ( LIB_o.nodeId__o( 'section_bookmark' ) )  return    //: already loaded
+    //->
+    IND_o
+      .load__v
+      (
+        path_s='{{A_o.SYS_s}}',
+        slot_s='{{A_o.BOOKMARK_s}}',
+        slot_n=-3,          //: negative indices for sys slots
+        callback_f=null
+      )
   }
 ,
 
@@ -388,7 +405,18 @@ tools__v
         event_o =>
         {
           GRA_o
-            .tools__v()
+            .skin__v()
+        }
+      )
+    LIB_o
+      .nodeId__o( 'bookmark_link' )
+      .addEventListener
+      (
+        'click',
+        event_o =>
+        {
+          GRA_o
+            .bookmark__v()
         }
       )
   //: keyboard

@@ -1,4 +1,4 @@
-//=== Link.js ===
+// === Link.js ===
 
 class Link
 {

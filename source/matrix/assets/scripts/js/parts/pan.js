@@ -1,4 +1,4 @@
-//=== PAN_o: pan.js ===
+// === PAN_o: pan.js ===
 
 var PAN_o =
 {
