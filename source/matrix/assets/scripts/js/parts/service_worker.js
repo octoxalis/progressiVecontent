@@ -28,6 +28,8 @@ var SWO_o =
       '/',    //: U_o.url_s
       '/index.html',
       `/{{A_o.SYS_s}}/{{A_o.DOCS_s}}.html`,
+      `/{{A_o.SYS_s}}/{{A_o.SKIN_s}}.html`,
+      `/{{A_o.SYS_s}}/{{A_o.BOOKMARK_s}}.html`,
       //....
     ]
   ,
@@ -39,6 +41,7 @@ var SWO_o =
       'ROUTE',
       'RESTORE',
       'REMOVE',
+      'CACHE',
     ]
   ,
 
@@ -297,7 +300,33 @@ var SWO_o =
 
 
 
-  cache__v
+  CACHE__v    //: from/to main: get or set all entries in SWO_o.cache_a
+  (
+    payload_o    //: { cache_a }    //: target_s not used
+  )
+  {
+    const { cache_a } = payload_o
+    if ( cache_a )    //: replace items (after sorting/removing)
+    {
+      SWO_o.cache_a = cache_a
+      return
+      //>
+    }
+    //: get cache_a items
+    SWO_o
+      .send__v    //: to main
+      (
+        'CACHE',
+        {
+          cache_a: SWO_o.cache_a
+        }
+      )
+  }
+,
+
+
+
+cache__v
   (
     pathSlot_s
   )
@@ -384,22 +413,23 @@ var SWO_o =
   )
   {
     SWO_o
-    .client__o()
-    .then
-    (
-      client_o =>
-      {
-        if ( !client_o ) return//>
-        client_o
-          .postMessage
-          (
-            {
-              type_s: type_s,
-              payload_o: payload_o
-            }
-          )
-      }
-    )
+      .client__o()
+      .then
+      (
+        client_o =>
+        {
+          if ( !client_o ) return
+          //>
+          client_o
+            .postMessage
+            (
+              {
+                type_s: type_s,
+                payload_o: payload_o
+              }
+            )
+        }
+      )
   }
 ,
 

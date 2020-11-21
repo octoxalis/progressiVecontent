@@ -1,15 +1,19 @@
 /*=== BOOKMARK ===*/
 #bookmark_page,
+#bookmark_list,
 __                     {display: flex;
-                        flex-direction: column;}
+                        flex-direction: column}
 
-#bookmark_input,
+#bookmark_form,
 __                     {display: flex}
 
 
 #bookmark_page,
-#bookmark_input,
-__                     {width: var(--BODY_WIDTH)}
+#bookmark_page > *,
+#bookmark_page ul,
+#bookmark_form,
+/*#bookmark_page li,*/
+__                     {width: 100%}
 
 
 #bookmark_name,
@@ -18,9 +22,90 @@ __                     {flex-basis: 80%}
 #bookmark_save,
 __                     {flex-basis: 20%}
 
-#bookmark_save,
-__                     {margin-left: var(--PAD_2)}
+
+#bookmark_page,
+__                     {margin: var(--PAD_6) 0}
+
+
+#bookmark_page > dt,
+__                     {margin: var(--PAD_4) 0 0  var(--PAD_2)}
+
+#bookmark_page > dd,
+__                     {margin-bottom: var(--PAD_2)}
+
+#bookmark_list > li,
+__                     {margin: var(--PAD_2)}
+
+
+
+#bookmark_list > li,
+__                     {padding: var(--PAD_2)}
+
+#bookmark_name,
+__                     {padding-left: var(--PAD_4)}
+
+#bookmark_list > li,
+__                     {border: 1px solid transparent}
+
+#bookmark_name,
+__                     {border: none;
+                        border-bottom: 1px solid var(--c_prim_ne)}
 
 #bookmark_save,
-__                     {border: 1px solid black;
-                        border-radius: 4px}
+#bookmark_content,
+__                     {border: 1px solid var(--c_prim_ne)}
+
+
+#bookmark_save,
+#bookmark_page dd,
+#bookmark_list > li,
+__                     {border-radius: 4px}
+
+#bookmark_page dt,
+#bookmark_form > *,
+__                     {color: var(--c_prim_lo)}
+
+#bookmark_page dt,
+#bookmark_name::placeholder,
+__                     {--size_ratio: .9}
+#bookmark_page dt,
+__                     {line-height: 1.5}
+
+#bookmark_list > li,
+__                     {color: var(--c_prim_lo_4)}
+
+
+#bookmark_form *,
+__                     {background: transparent}
+
+#bookmark_list > li,
+__                     {background: var(--c_prim_hi_2)}
+
+
+
+#bookmark_list > li:hover,
+__                     {color: var(--c_sec_lo);
+                        background: var(--c_sec_hi);
+                        border-color: var(--c_decor_lo)}
+
+#bookmark_page,
+__                     {--size_ratio: .9}
+
+
+#bookmark_name,
+__                     {font-weight: 700}
+
+#bookmark_list li,
+#bookmark_page > dt,
+__                     {font-weight: 500}
+
+#bookmark_page > dt,
+#bookmark_name::placeholder,
+__                     {font-style: italic}
+
+
+#bookmark_page > dd:hover,
+__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
+
+
+

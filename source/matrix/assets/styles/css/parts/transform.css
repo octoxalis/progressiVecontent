@@ -25,6 +25,10 @@ __                     {filter: invert( .75 )}
 [data-sub]:hover,
 __                     {filter: saturate( 4 )}
 
+.svg_icon:hover,
+__                     {filter: brightness( 2 )}
+
+
 
 /*=== ORIGIN ===*/
 .retract,

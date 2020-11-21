@@ -9,8 +9,14 @@ var SER_o =
       'ROUTE',
       'RESTORE',
       'REMOVE',
+      'CACHE',
     ]
 ,
+
+  requester_o: null    //: for callback
+,
+
+
 
   init__v    //:--Service worker registration
   (
@@ -171,6 +177,37 @@ receive__v    //:-- Listen to messages
         'REMOVE',
         slot_s
       )
+  }
+,
+
+
+  CACHE__v    //: from/to worker
+  (
+    payload_o,    //: { target_s, cache_a, requester_o }
+  )
+  {
+    const { target_s, cache_a, requester_o } = payload_o
+    if ( target_s === 'SWO_o' )    //: send to worker
+    {
+      SER_o
+        .send__v
+        (
+          'CACHE',
+          {
+            cache_a: cache_a
+          }
+        )
+      SER_o.requester_o = requester_o
+      return
+      //>
+    }
+    //: receive from worker
+    SER_o.requester_o
+    &&
+    SER_o
+      .requester_o
+      .CACHE__v( cache_a )
+      SER_o.requester_o = null    //: reset
   }
 ,
 

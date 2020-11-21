@@ -20,7 +20,7 @@ const SEC_o =
     const trash_s = slot_s === A_o.DOCS_s ?
       ''
       :
-      `<span class="span_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_trash" class="use_icon"></use></svg></span>`
+      `<span class="span_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_close" class="use_icon"></use></svg></span>`
     return `<button data-slot_s="${slot_s}">${head_s}${trash_s}</button><article data-slot_s="${slot_s}" class="retract">${main_s}</article>`
   }
 ,
