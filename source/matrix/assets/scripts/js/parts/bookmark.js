@@ -11,8 +11,8 @@ var BOOK_o =
         .CACHE__v
         (
           {
-            target_s: 'SWO_o',
-            requester_o: BOOK_o
+            sender_o: BOOK_o,
+            recipient_s: 'SWO_o'
           }
         )
   }
@@ -70,7 +70,7 @@ list__v    //: display cache_a items
       .CACHE__v
       (
         {
-          target_s: 'SWO_o',
+          recipient_s: 'SWO_o',
           cache_a: list_a
         }
       )

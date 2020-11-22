@@ -8,6 +8,7 @@ __                     {display: flex;
 __                     {display: flex}
 
 
+
 #bookmark_page,
 #bookmark_page > *,
 #bookmark_page ul,
@@ -15,12 +16,12 @@ __                     {display: flex}
 /*#bookmark_page li,*/
 __                     {width: 100%}
 
-
 #bookmark_name,
 __                     {flex-basis: 80%}
 
 #bookmark_save,
 __                     {flex-basis: 20%}
+
 
 
 #bookmark_page,
@@ -55,21 +56,16 @@ __                     {border: none;
 #bookmark_content,
 __                     {border: 1px solid var(--c_prim_ne)}
 
-
 #bookmark_save,
-#bookmark_page dd,
+#bookmark_content,
 #bookmark_list > li,
 __                     {border-radius: 4px}
+
+
 
 #bookmark_page dt,
 #bookmark_form > *,
 __                     {color: var(--c_prim_lo)}
-
-#bookmark_page dt,
-#bookmark_name::placeholder,
-__                     {--size_ratio: .9}
-#bookmark_page dt,
-__                     {line-height: 1.5}
 
 #bookmark_list > li,
 __                     {color: var(--c_prim_lo_4)}
@@ -88,7 +84,11 @@ __                     {color: var(--c_sec_lo);
                         background: var(--c_sec_hi);
                         border-color: var(--c_decor_lo)}
 
+
+
 #bookmark_page,
+#bookmark_page dt,
+#bookmark_name::placeholder,
 __                     {--size_ratio: .9}
 
 
@@ -98,6 +98,9 @@ __                     {font-weight: 700}
 #bookmark_list li,
 #bookmark_page > dt,
 __                     {font-weight: 500}
+
+#bookmark_page dt,
+__                     {line-height: 1.5}
 
 #bookmark_page > dt,
 #bookmark_name::placeholder,

@@ -4,16 +4,16 @@ var SER_o =
 {
   types_a:
     [
+      //-- 'ROUTE',  //: not used
       'REGISTER',
       'LOAD',
-      'ROUTE',
       'RESTORE',
       'REMOVE',
       'CACHE',
     ]
 ,
 
-  requester_o: null    //: for callback
+  sender_o: null    //: for callback
 ,
 
 
@@ -37,7 +37,7 @@ var SER_o =
         )
       .then
         (
-          register_o =>    //: resolve
+          () =>    //: resolve //!!! parameter not used
           {
             navigator
               .serviceWorker
@@ -93,10 +93,11 @@ receive__v    //:-- Listen to messages
   msg_o
 )
 {
-  if ( !msg_o.data ) return console.log( 'An unidentified message has been sent by the Service Worker' )   //: error
+  if ( !msg_o.data ) return //: error
   //>
-  const type_s = msg_o.data.type_s
-  if ( !SER_o.types_a.includes( type_s ) ) return console.log( 'An unknown message type has been sent by Service Worker' )
+  const type_s =
+    msg_o.data.type_s
+  if ( !SER_o.types_a.includes( type_s ) ) return  //: error
   //>
   SER_o
     [`${type_s}__v`]
@@ -109,14 +110,12 @@ receive__v    //:-- Listen to messages
 
 
   REGISTER__v   //: from worker
-  (
-    worker_b
-  )
+  ()
   {
     window
       .localStorage
       .setItem
-        ( 'worker_b', worker_b )
+        ( 'worker_b', true )  //: Service Worker is active now
   }
 ,
 
@@ -127,15 +126,16 @@ receive__v    //:-- Listen to messages
     restore_a    //:-- SWO_o.restore_a []
   )
   {
-    console.time( 'SER_o.RESTORE__v' )
+    console
+      .time( 'SER_o.RESTORE__v' )
     //!!!!!!!!!!!!!!!!!!!!!!
+    if ( !PREF_o.restore_b ) return
+    //>
     let slot_n = 0
     for ( let path_a of restore_a )
     {
       const [ path_s, slot_s ] = path_a
-      if ( PREF_o.restore_b )
-      {
-        IND_o
+      IND_o
         .load__v
           (
             path_s,
@@ -156,11 +156,11 @@ receive__v    //:-- Listen to messages
                 )
             },
           )
-      }
       ++slot_n
     }
     //!!!!!!!!!!!!!!!!!!!!!!
-    console.timeEnd( 'SER_o.RESTORE__v' )
+    console
+      .timeEnd( 'SER_o.RESTORE__v' )
   }
 ,
 
@@ -183,11 +183,11 @@ receive__v    //:-- Listen to messages
 
   CACHE__v    //: from/to worker
   (
-    payload_o,    //: { target_s, cache_a, requester_o }
+    payload_o,    //: { cache_a, sender_o, recipient_s }
   )
   {
-    const { target_s, cache_a, requester_o } = payload_o
-    if ( target_s === 'SWO_o' )    //: send to worker
+    const { cache_a, sender_o, recipient_s } = payload_o
+    if ( recipient_s === 'SWO_o' )    //: send to worker
     {
       SER_o
         .send__v
@@ -197,17 +197,17 @@ receive__v    //:-- Listen to messages
             cache_a: cache_a
           }
         )
-      SER_o.requester_o = requester_o
+      SER_o.sender_o = sender_o
       return
       //>
     }
     //: receive from worker
-    SER_o.requester_o
+    SER_o.sender_o
     &&
     SER_o
-      .requester_o
-      .CACHE__v( cache_a )
-      SER_o.requester_o = null    //: reset
+      .sender_o
+      .CACHE__v( cache_a )    //: consume cache_a
+    SER_o.sender_o = null    //: ...then reset
   }
 ,
 

@@ -16,18 +16,17 @@ __  {width: 100%}
 #bookmark_name{border: none;
   border-bottom: 1px solid var(--c_prim_ne)}
 #bookmark_save,#bookmark_content{border: 1px solid var(--c_prim_ne)}
-#bookmark_save,#bookmark_page dd,#bookmark_list > li{border-radius: 4px}
+#bookmark_save,#bookmark_content,#bookmark_list > li{border-radius: 4px}
 #bookmark_page dt,#bookmark_form > *{color: var(--c_prim_lo)}
-#bookmark_page dt,#bookmark_name::placeholder{--size_ratio: .9}
-#bookmark_page dt{line-height: 1.5}
 #bookmark_list > li{color: var(--c_prim_lo_4)}
 #bookmark_form *{background: transparent}
 #bookmark_list > li{background: var(--c_prim_hi_2)}
 #bookmark_list > li:hover{color: var(--c_sec_lo);
   background: var(--c_sec_hi);
   border-color: var(--c_decor_lo)}
-#bookmark_page{--size_ratio: .9}
+#bookmark_page,#bookmark_page dt,#bookmark_name::placeholder{--size_ratio: .9}
 #bookmark_name{font-weight: 700}
 #bookmark_list li,#bookmark_page > dt{font-weight: 500}
+#bookmark_page dt{line-height: 1.5}
 #bookmark_page > dt,#bookmark_name::placeholder{font-style: italic}
 #bookmark_page > dd:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}

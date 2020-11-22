@@ -9,6 +9,7 @@ var SWO_o =
   LAB_JS_s: '{{U_o.url_s}}/assets/data/js/labels_data.js'
   ,
 
+  /*// ??????????????????????????
   url_a:     //: URLs of assets to immediately cache
     [
       //?? '{{U_o.url_s}}',
@@ -19,39 +20,29 @@ var SWO_o =
       //?? '{{U_o.url_s}}favicon.ico',
     ]
   ,
+  */
 
-  cache_a: new Set()    //: 'path_s/slot_s.html' (!!! keep initial slash)
+  cache_a: new Set()    //: '/path_s/slot_s.html' (!!! keep initial slash)
   ,
 
-  nocache_a:  //: no cache for root url & sys slots (begin with /)
+  types_a:    // message main<-> worker types (methods)
     [
-      '/',    //: U_o.url_s
-      '/index.html',
-      `/{{A_o.SYS_s}}/{{A_o.DOCS_s}}.html`,
-      `/{{A_o.SYS_s}}/{{A_o.SKIN_s}}.html`,
-      `/{{A_o.SYS_s}}/{{A_o.BOOKMARK_s}}.html`,
-      //....
+      'ROUTE',    //: internal msg
+      'REGISTER', //: to main
+      'LOAD',     //: from main, after registering
+      'RESTORE',  //: from main
+      'REMOVE',   //: from main
+      'CACHE',    //: from/to main
     ]
   ,
 
-  types_a:
-    [
-      'REGISTER',
-      'LOAD',
-      'ROUTE',
-      'RESTORE',
-      'REMOVE',
-      'CACHE',
-    ]
-  ,
-
-    pathname_s: ''
-  ,
+  //XX   pathname_s: ''
+  //XX ,
 
 
   
-  
-  install__v    //:- Iterate thru url_a and add cache each entry
+/*//-------------------------------------- WE SKIP INITIAL CACHING
+  install__v    //:- Iterate thru url_a and put each entry in cache
   (
     install_o
   )
@@ -72,7 +63,8 @@ var SWO_o =
       )
   }
 ,
-  
+//---------------------------------------------------------------
+*/
   
   
   activate__v    //:- Remove inapplicable caches entries
@@ -132,27 +124,29 @@ var SWO_o =
             async function()
             {
               const url_o =
-                SWO_o
-                  .ROUTE__v
-                  (
-                    new URL( fetch_o.request.url )
-                  )
+              new URL( fetch_o.request.url )
+
+              SWO_o
+                .ROUTE__v( url_o )
               const response_o =
                 fetch( url_o )
               const clone_o =
                 response_o
-                  .then( resp_o => resp_o.clone() )
+                  .then
+                  (
+                    resp_o =>
+                    resp_o
+                      .clone()
+                  )
               fetch_o
                 .waitUntil
                 (
-                  async function()
+                  async function
+                  ()
                   {
                     const cache_o =
                       await caches
-                        .open
-                        (
-                          SWO_o.cache_s
-                        )
+                        .open( SWO_o.cache_s )
                     await cache_o
                       .put
                       (
@@ -161,7 +155,12 @@ var SWO_o =
                       )
                   }()    //: IIFE
                 )
-                return ( await caches.match( url_o ) ) || response_o
+                return (
+                  await caches
+                    .match( url_o )
+                  )
+                  ||
+                  response_o
             } ()
           )
       }
@@ -172,37 +171,53 @@ var SWO_o =
       {
         const cache_o =
           caches
-            .open
-            (
-              SWO_o.cache_s
-            )
-        return cache_o
+            .open( SWO_o.cache_s )
+        return (
+          cache_o
           &&
           cache_o
             .match
             (
               new Request( `{{U_o.url_s}}offline.html` )  //: We don't have a cached version, display offline page
             )
+          )
       }
     }
   }
 ,
   
 
-  REGISTER__v
-  ()
+  ROUTE__v
+  (
+    url_o    //: e.g. 'http://{{U_o.url_s}}?s=/slots/page.html', i.e. search: '?s=/slots/page.html'
+  )
   {
+    let { pathname, search } = url_o
+    if ( search )    //: for internal links (-> '?s=/slots/page.html')
+    {
+      pathname =
+        search
+          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: see supra
+    }
+    //........................................
     SWO_o
-      .send__v    //: to main
-      (
-        'REGISTER',
-        true
-      )
+      .cache__v( pathname )
   }
 ,
 
 
 
+  REGISTER__v
+  ()
+  {
+    SWO_o
+      .send__v( 'REGISTER' )    //: to main
+  }
+,
+
+
+
+//#code=01
   LOAD__v    //: receive from main after registering triggered by extern url (link, bookmark, etc.)
   (
     search_s
@@ -218,43 +233,14 @@ var SWO_o =
 ,
 
 
-  ROUTE__v   //: from self
-  (
-    url_o    //: e.g. 'http://{{U_o.url_s}}#/slots/page.html', i.e. hash: '#/slots/page.html'
-  )
-  {
-    let pathSlot_s =
-      url_o
-        .pathname
-    let search_s =
-      url_o
-        .search
-    if ( search_s )    //: for internal links (-> '?s=/slots/page.html')
-    {
-      pathSlot_s =
-      search_s
-          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: see supra
-    }
-    //........................................
-    SWO_o
-      .cache__v
-      (
-        pathSlot_s
-      )
-    return url_o
-  }
-,
-//#code=01
-
-
-
-
-  RESTORE__v   //: to main
+  RESTORE__v
   (
     payload_o    //: not used
   )
   {
-    const cache_a =  Array.from( SWO_o.cache_a )
+    const cache_a = 
+      Array
+        .from( SWO_o.cache_a )
     if ( !cache_a.length ) return
     //>
     const restore_a = []
@@ -262,10 +248,10 @@ var SWO_o =
     {
       const pathSlot_s =
         SWO_o
-            .pathSlot__s
-            (
-              url_s
-            )
+          .pathSlot__s
+          (
+            url_s
+          )
       restore_a
         .push
         (
@@ -284,7 +270,7 @@ var SWO_o =
 ,
 
 
-  REMOVE__v    //: from main: remove an entry in SWO_o.cache_a
+  REMOVE__v    //: remove an entry in SWO_o.cache_a
   (
     slot_s     //: as payload_o
   )
@@ -293,19 +279,20 @@ var SWO_o =
       .cache_a
       .delete
       (
-        `/{{A_o.SLOTS_s}}/${slot_s}.html`  //!!! do not remove sys slots; '/' before 'slots'
+        `/{{A_o.SLOTS_s}}/${slot_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
       )
+      //...... delete slider slide ....
   }
 ,
 
 
 
-  CACHE__v    //: from/to main: get or set all entries in SWO_o.cache_a
+  CACHE__v    //: get or set all entries in SWO_o.cache_a
   (
-    payload_o    //: { cache_a }    //: target_s not used
+    payload_o    //: { cache_a }
   )
   {
-    const { cache_a } = payload_o
+    const { cache_a } = payload_o    //: recipient_s not used
     if ( cache_a )    //: replace items (after sorting/removing)
     {
       SWO_o.cache_a = cache_a
@@ -331,7 +318,13 @@ cache__v
     pathSlot_s
   )
   {
-    if ( pathSlot_s && !SWO_o.nocache_a.includes( pathSlot_s ) )
+    if
+    (
+      pathSlot_s
+        .indexOf( '/{{A_o.SLOTS_s}}/' )
+      ===
+      0      //: skip A_o.SYS_s URLs + '/' root URL
+    )
     {
       SWO_o
         .cache_a
@@ -347,12 +340,14 @@ cache__v
     url_s
   )
   {
-    return url_s
-      .slice
-      (
-        1,                 //: trim initial '/'
-        -'.html'.length    //: trim file extension
-      )
+    return (
+      url_s
+        .slice
+        (
+          1,                 //: trim initial '/'
+          -'.html'.length    //: trim file extension
+        )
+    )
   }
 ,
 
@@ -363,16 +358,17 @@ cache__v
     client_n=0
   )
   {
-    return self
-      .clients
-      .matchAll
+    return (
+      self
+        .clients
+        .matchAll
         (
           {
             includeUncontrolled: true,
             type: 'window',
           }
         )
-      .then
+        .then
         (
           client_a => 
           {
@@ -382,6 +378,7 @@ cache__v
               void console.log( 'No Service Worker client found' )
           }
         )
+    )
   }
 ,
 
@@ -391,16 +388,21 @@ cache__v
     msg_o
   )
   {
-    if ( !msg_o.data ) return console.log( 'An unidentified message has been sent by the Main Thread' )
-    //>   //: error
-    const type_s = msg_o.data.type_s
-    if ( !SWO_o.types_a.includes( type_s ) ) return console.log( 'An unknown message type has been sent by the Main Thread' )
-    //>   //: error
-      SWO_o
-        [`${type_s}__v`]
-        (
-          msg_o.data.payload_o
-        )
+    const type_s =
+      msg_o
+        ?.data
+        ?.type_s
+    if ( !type_s ) return
+    //>
+    if
+    (
+      !SWO_o
+        .types_a
+        .includes( type_s )
+    ) return   //: error
+    //>
+    SWO_o
+      [`${type_s}__v`]( msg_o.data.payload_o )
   }
 ,
 
@@ -418,7 +420,7 @@ cache__v
       (
         client_o =>
         {
-          if ( !client_o ) return
+          if ( !client_o ) return    //: error
           //>
           client_o
             .postMessage
@@ -452,22 +454,20 @@ cache__v
   init__v
   ()
   {
-    [ 'install',
+    [ 
+      //------ 'install',  //: SKIP INITIAL CACHING: cache will be filled progressively
       'activate',
       'fetch',
     ]
       .forEach
       (
-        action_s =>
+        event_s =>
         self
           .addEventListener
           (
-            action_s,
-            action_o =>
-            SWO_o[`${action_s}__v`]
-            (
-              action_o
-            )
+            event_s,
+            event_o =>
+              SWO_o[`${event_s}__v`]( event_o )
           )
       )
     self
@@ -478,15 +478,13 @@ cache__v
       )
     SWO_o
       .REGISTER__v()
+    //....................... ??? DO WE NEED THOSE DATA?
     //... SWO_o
     //...   .import__v()
   }
 ,
 
 }
-
-
-
 SWO_o
   .init__v()  // !!! no IIFE
 
