@@ -10,4 +10,4 @@
 }
 ---
 :Bookmarks:
-Save and retrieve later this __{{A_o.NAME_s}}__{.site_label} page content.
+Save and retrieve later the __{{A_o.NAME_s}}__{.site_label} current page content.

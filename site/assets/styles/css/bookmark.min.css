@@ -1,32 +1,30 @@
 
-#bookmark_page,#bookmark_list{display: flex;
+#bookmark_page,#bookmark_content,#bookmark_list,#bookmark_form{display: flex;
   flex-direction: column}
-#bookmark_form{display: flex}
+__  {display: flex}
 #bookmark_page,#bookmark_page > *,#bookmark_page ul,#bookmark_form,
 __  {width: 100%}
-#bookmark_name{flex-basis: 80%}
-#bookmark_save{flex-basis: 20%}
+#bookmark_page button{width: 20%}
 #bookmark_page{margin: var(--PAD_6) 0}
 #bookmark_page > dt{margin: var(--PAD_4) 0 0 var(--PAD_2)}
 #bookmark_page > dd{margin-bottom: var(--PAD_2)}
-#bookmark_list > li{margin: var(--PAD_2)}
-#bookmark_list > li{padding: var(--PAD_2)}
+#bookmark_page input,#bookmark_page button,#bookmark_list > li{margin: var(--PAD_2)}
+#bookmark_list > li,#bookmark_page input{padding: var(--PAD_2)}
 #bookmark_name{padding-left: var(--PAD_4)}
+#bookmark_page button{align-self: flex-end}
 #bookmark_list > li{border: 1px solid transparent}
 #bookmark_name{border: none;
   border-bottom: 1px solid var(--c_prim_ne)}
-#bookmark_save,#bookmark_content{border: 1px solid var(--c_prim_ne)}
-#bookmark_save,#bookmark_content,#bookmark_list > li{border-radius: 4px}
-#bookmark_page dt,#bookmark_form > *{color: var(--c_prim_lo)}
-#bookmark_list > li{color: var(--c_prim_lo_4)}
-#bookmark_form *{background: transparent}
-#bookmark_list > li{background: var(--c_prim_hi_2)}
-#bookmark_list > li:hover{color: var(--c_sec_lo);
+#bookmark_page button,#bookmark_content,#bookmark_form{border: 1px solid var(--c_prim_ne)}
+#bookmark_page dd,#bookmark_page button,#bookmark_page input,#bookmark_list > li{border-radius: 4px}
+#bookmark_form > *,#bookmark_refresh{color: var(--c_prim_lo_4)}
+#bookmark_form *,#bookmark_page button{background: transparent}
+#bookmark_list > li,#bookmark_name{background: var(--c_prim_hi_2)}
+#bookmark_list > li:hover,#bookmark_name:hover{color: var(--c_sec_lo);
   background: var(--c_sec_hi);
   border-color: var(--c_decor_lo)}
 #bookmark_page,#bookmark_page dt,#bookmark_name::placeholder{--size_ratio: .9}
-#bookmark_name{font-weight: 700}
-#bookmark_list li,#bookmark_page > dt{font-weight: 500}
+#bookmark_list li,#bookmark_page input,#bookmark_page > dt{font-weight: 500}
 #bookmark_page dt{line-height: 1.5}
 #bookmark_page > dt,#bookmark_name::placeholder{font-style: italic}
 #bookmark_page > dd:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}

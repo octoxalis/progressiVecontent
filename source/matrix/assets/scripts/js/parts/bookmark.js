@@ -6,15 +6,43 @@ var BOOK_o =
   init__v
   ()
   {
-    const cache_a =
-      SER_o
-        .CACHE__v
-        (
-          {
-            sender_o: BOOK_o,
-            recipient_s: 'SWO_o'
-          }
-        )
+    BOOK_o
+      .cache__v()
+    BOOK_o
+      .listen__v()
+  }
+,
+
+
+
+
+cache__v
+()
+{
+  SER_o
+    .CACHE__v
+    (
+      {
+        sender_o: BOOK_o,
+        recipient_s: 'SWO_o'
+      }
+    )
+}
+,
+
+
+
+
+CACHE__v    //: from service <- worker
+  (
+    cache_a
+  )
+  {
+    BOOK_o
+      .list__v
+      (
+        Array.from( cache_a )
+      )
   }
 ,
 
@@ -82,21 +110,6 @@ list__v    //: display cache_a items
 
 
 
-CACHE__v    //: from service <- worker
-  (
-    cache_a
-  )
-  {
-    BOOK_o
-      .list__v
-      (
-        Array.from( cache_a )
-      )
-  }
-,
-
-
-
   listen__v
   ()
   {
@@ -113,19 +126,24 @@ CACHE__v    //: from service <- worker
             .save__v()
         }
       )
+    document
+      .querySelector( '#bookmark_refresh' )
+      .addEventListener
+      (
+        'click',
+        click_o =>
+        {
+          click_o
+            .preventDefault()    //!!! do not submit form
+          BOOK_o
+            .cache__v()
+        }
+      )
   }
 ,
 
 }
 
-
-
-void function ()
-{
-  BOOK_o
-    .init__v()
-  BOOK_o
-    .listen__v()
-} ()
-
+BOOK_o
+  .init__v()    //: no IIFE
 
