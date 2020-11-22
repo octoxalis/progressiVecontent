@@ -19,7 +19,7 @@ __                     {width: 100%}
 
 
 #bookmark_page button,
-__                     {width: 20%}
+__                     {width: 25%}
 
 
 #bookmark_page,
@@ -70,6 +70,8 @@ __                     {border: 1px solid var(--c_prim_ne)}
 #bookmark_list > li,
 __                     {border-radius: 4px}
 
+.drag_over,
+__                     {outline: 4px solid var(--c_highlight_hi)}
 
 
 #bookmark_form > *,
@@ -94,6 +96,12 @@ __                     {color: var(--c_sec_lo);
                         background: var(--c_sec_hi);
                         border-color: var(--c_decor_lo)}
 
+
+.semi_opac,
+__                     {opacity: .25}
+
+.full_opac,
+__                     {opacity: 1}
 
 
 #bookmark_page,
@@ -120,3 +128,9 @@ __                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
 
 
 
+.on_dragged,
+__                     {transform: scale( .5 )}
+
+
+[draggable],
+__                     {user-select: none}
