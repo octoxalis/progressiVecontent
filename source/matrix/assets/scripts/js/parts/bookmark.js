@@ -1,6 +1,8 @@
 // === BOOK_o: bookmark.js ===
 var BOOK_o =
 {
+  //XXSLOT_SPLIT: '+',
+  //XXLIST_SPLIT: '@',
 
 
   init__v
@@ -8,6 +10,14 @@ var BOOK_o =
   {
     BOOK_o
       .cache__v()
+    BOOK_o
+      .history__v()
+    BOOK_o
+      .dragDrop
+      (
+        document
+          .querySelectorAll( '#bookmark_history_list > li' )
+      )
     BOOK_o
       .listen__v()
   }
@@ -47,7 +57,7 @@ CACHE__v    //: from service <- worker
       .dragDrop
       (
         document
-          .querySelectorAll( '#bookmark_list > li' )
+          .querySelectorAll( '#bookmark_content_list > li' )
       )
   }
 ,
@@ -76,8 +86,59 @@ list__v    //: display cache_a items
         }
       )
     document
-      .querySelector( '#bookmark_list' )
+      .querySelector( '#bookmark_content_list' )
       .innerHTML = list_s
+  }
+,
+
+
+
+
+history__v    //: display store_a items
+  ()
+  {
+    const store_a =
+    JSON
+      .parse
+      (
+        window
+          .localStorage
+          .getItem( 'bookmark_content_list' )
+      )
+    if ( store_a )
+    {
+      let list_s = ''
+      store_a
+        .forEach
+        (
+          item_o =>
+          {
+            let slots_s =
+              item_o
+                .list_a[0]
+                .slice
+                (
+                  '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
+                  -('.html'.length)            //: trim '.html'
+                )
+              slots_s += ' ... '
+              slots_s +=
+                item_o
+                  .list_a[item_o.list_a.length - 1]
+                  .slice
+                  (
+                    '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
+                    -('.html'.length)            //: trim '.html'
+                  )
+              const li_s =
+              `<dl><dt>${item_o.name_s}</dt><dd>${slots_s}</dd><dd>${item_o.date_s}</dd></dl>`
+            list_s += `<li draggable="true">${li_s}</li>`
+          }
+        )
+      document
+        .querySelector( '#bookmark_history_list' )
+        .innerHTML = list_s
+    }
   }
 ,
 
@@ -89,7 +150,7 @@ list__v    //: display cache_a items
   {
     const list_a = new Set()
     document
-      .querySelectorAll( '#bookmark_list > li' )
+      .querySelectorAll( '#bookmark_content_list > li' )
       .forEach
       (
         li_e =>
@@ -98,8 +159,7 @@ list__v    //: display cache_a items
             .add( `/{{A_o.SLOTS_s}}/${li_e.textContent}.html` )
         }
       )
-    console.log( list_a )
-    return
+    //;console.log( list_a )
     SER_o
       .CACHE__v
       (
@@ -108,13 +168,88 @@ list__v    //: display cache_a items
           cache_a: list_a
         }
       )
-
+    BOOK_o
+      .add__v
+      (
+        Array
+          .from( list_a )
+      )
+    
   }
 ,
 
 
 
-  dragDrop
+  add__v
+  (
+    list_a
+  )
+  {
+    const name_s =
+      document
+        .querySelector( '#bookmark_name' )
+        .value
+        .replace
+        (
+          /[^a-zA-Z0-9-_]/g,
+          '-'
+        )
+    //;console.log( name_s )
+    let json_s =
+      window
+        .localStorage
+        .getItem( 'bookmark_content_list' )
+    const json_a =
+      JSON
+        .parse( json_s )
+      ||
+      new Array()    //: init
+    const date_o =
+      new Date()
+    json_a
+      .push
+      (
+        {
+          name_s: name_s,
+          list_a: list_a,
+          date_s: `${date_o.getFullYear()}-${date_o.getMonth() + 1}-${date_o.getDate()}`
+        }
+      )
+    window
+      .localStorage
+      .setItem
+        (
+          'bookmark_content_list',
+          JSON.stringify( json_a )
+        )
+}
+,
+
+
+
+  remove__v
+  (
+    name_s,
+  )
+  {
+  
+  }
+,
+
+
+
+  select__v
+  (
+  
+  )
+  {
+  
+  }
+,
+
+
+
+dragDrop
   (
     list_e
   )

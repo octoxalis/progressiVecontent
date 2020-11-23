@@ -56,7 +56,7 @@ var IND_o =
     if ( !'serviceWorker' in navigator )    //:- register service worker
     {
       return void window
-        .alert( "To visit {{A_o.NAME_s}}, please use a browser with Service Workers enabled" )
+        .alert( "To visit {{A_o.NAME_s}}, please use a Service Workers enabled browser" )
     }
     //>
     //--window
