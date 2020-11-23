@@ -226,43 +226,57 @@ list__v    //: display cache_a items
           }
       )
     }
-  const list_e =
-    document
-     .querySelectorAll( '#bookmark_list > li' )
-  for
-    ( const item_e of list_e )
+
+
+
+    const list_e =
+      document
+       .querySelectorAll( '#bookmark_list > li' )
+    for ( const item_e of list_e )
     {
-      [
-        'start',
-        'enter',
-        'over', 
-        'leave',
-        'end',  
-        'drop',     
-      ]
-      .forEach
-      (
-        method_s =>
-        {
-          const prefix_s =
-            method_s === 'drop' ?
-            ''
-            :
-            'drag'
-          const handle_f = eval( method_s )  //new Function( method_s )
-          item_e
-            .addEventListener
-            (
-              `${prefix_s}${method_s}`,
-              handle_f,
-              false
-            )
-        }
-      )
+      item_e
+        .addEventListener
+        (
+          'dragstart',
+          start,
+          false
+        )
+      item_e
+        .addEventListener
+          (
+            'dragenter',
+            enter,
+            false
+          )
+      item_e
+        .addEventListener
+          (
+            'dragover',
+            over,
+            false
+          )
+      item_e
+        .addEventListener
+          (
+            'dragleave',
+            leave,
+            false
+          )
+      item_e
+        .addEventListener
+          (
+            'dragend',
+            end,
+            false
+          )
+      item_e
+        .addEventListener
+          (
+            'drop',
+            drop,
+            false
+          )
     }
-
-
-
   }
 ,
 
