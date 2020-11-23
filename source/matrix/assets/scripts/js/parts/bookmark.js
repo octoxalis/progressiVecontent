@@ -44,7 +44,11 @@ CACHE__v    //: from service <- worker
         Array.from( cache_a )
       )
     BOOK_o
-      .dragDrop()
+      .dragDrop
+      (
+        document
+          .querySelectorAll( '#bookmark_list > li' )
+      )
   }
 ,
 
@@ -109,173 +113,133 @@ list__v    //: display cache_a items
 ,
 
 
+
   dragDrop
-  ()
+  (
+    list_e
+  )
   {
-    let source_e = null
-  
-  
-    function start
-    (
-      event_o
-    ) 
-    {
-      this
-        .classList
-        .add( 'semi_opac' )
-      source_e = this
-      event_o
-        .dataTransfer
-        .effectAllowed = 'move'
-      event_o
-        .dataTransfer
-        .setData
-        (
-          'text/html',
-          this.innerHTML
-        )
-      //?? event_o
-      //??   .dataTransfer
-      //??   ?.items[0]
-      //??   ?.classList
-      //??   ?.add( 'on_dragged' )
-      //?? console.log( event_o.dataTransfer.items[0] )
-    }
-  
-  
-  
-    function over
-    (
-      event_o
-    )
-    {
-      event_o
-        .preventDefault()
-      event_o
-        .dataTransfer
-        .dropEffect = 'move'
-      return false
-    }
-  
-  
-  
-    function enter
-    (
-      event_o
-    )
+    let source_e
 
+    const handler_o =
     {
-      this
-        .classList
-        .add( 'drag_over' )
-    }
-  
-  
-  
-    function leave
-    (
-      event_o
-    )
-    {
-      this
-        .classList
-        .remove( 'drag_over' )
-    }
-  
-  
-  
-    function drop
-    (
-      event_o
-    )
-    {
-      event_o
-        .stopPropagation()
-      if ( source_e !== this ) 
-      {
-        source_e
-          .innerHTML =
-            this.innerHTML
-        this
-          .innerHTML =
-            event_o
-              .dataTransfer
-              .getData( 'text/html' )
-      }
-      return false
-    }
-  
-  
-  
-    function end
-    (
-    event_o
-    )
-    {
-      this
-        .classList
-        .add( 'full_opac' )
-      list_e
-        .forEach
-        (
-          item =>
+      'dragstart':
+        event_o =>
+        {
+          event_o.target
+            .classList
+            .add( 'semi_opac' )
+          source_e = event_o.target
+          event_o
+            .dataTransfer
+            .effectAllowed = 'move'
+          event_o
+            .dataTransfer
+            .setData
+            (
+              'text/html',
+              event_o.target.innerHTML
+            )
+          //?? event_o
+          //??   .dataTransfer
+          //??   ?.items[0]
+          //??   ?.classList
+          //??   ?.add( 'on_dragged' )
+          //?? console.log( event_o.dataTransfer.items[0] )
+        },
+
+
+
+      'dragenter':
+        event_o =>
+        {
+          event_o.target
+            .classList
+            .add( 'drag_over' )
+        },
+
+
+        
+      'dragover':
+        event_o =>
+        {
+          event_o
+            .preventDefault()
+          event_o
+            .dataTransfer
+            .dropEffect = 'move'
+          return false
+        },
+
+
+        
+      'dragleave':
+        event_o =>
+        {
+          event_o.target
+            .classList
+            .remove( 'drag_over' )
+        },
+
+
+        
+      'dragend':
+        event_o =>
+        {
+          event_o.target
+            .classList
+            .add( 'full_opac' )
+          list_e
+            .forEach
+            (
+              item =>
+              {
+                item
+                  .classList
+                  .remove( 'drag_over' )
+              }
+          )
+        },
+
+
+        
+      'drop':
+        event_o =>
+        {
+          event_o
+            .stopPropagation()
+          if ( source_e !== event_o.target ) 
           {
-            item
-              .classList
-              .remove( 'drag_over' )
+            source_e
+              .innerHTML =
+                event_o.target.innerHTML
+            event_o.target
+              .innerHTML =
+                event_o
+                  .dataTransfer
+                  .getData( 'text/html' )
           }
-      )
+          return false
+        },
+
+
+        
     }
+  
 
 
-
-    const list_e =
-      document
-       .querySelectorAll( '#bookmark_list > li' )
     for ( const item_e of list_e )
     {
-      item_e
-        .addEventListener
-        (
-          'dragstart',
-          start,
-          false
-        )
-      item_e
-        .addEventListener
+      for ( method_s of Object.keys( handler_o ) )
+      {
+        item_e
+          .addEventListener
           (
-            'dragenter',
-            enter,
+            method_s,
+            handler_o[method_s],
             false
           )
-      item_e
-        .addEventListener
-          (
-            'dragover',
-            over,
-            false
-          )
-      item_e
-        .addEventListener
-          (
-            'dragleave',
-            leave,
-            false
-          )
-      item_e
-        .addEventListener
-          (
-            'dragend',
-            end,
-            false
-          )
-      item_e
-        .addEventListener
-          (
-            'drop',
-            drop,
-            false
-          )
+      }
     }
   }
 ,
