@@ -39,12 +39,6 @@ var SER_o =
         (
           () =>    //: resolve //!!! parameter not used
           {
-            navigator
-              .serviceWorker
-              .onmessage =
-              msg_o =>
-                SER_o
-                  .receive__v( msg_o )
             const search_s =
               window
                 .location
@@ -62,6 +56,12 @@ var SER_o =
           error_o =>
             console.log( `ServiceWorker registration failed [error: ${error_o}]` )    //: reject
         )
+    navigator
+      .serviceWorker
+      .onmessage =
+      msg_o =>
+        SER_o
+          .receive__v( msg_o )
   }
 ,
   

@@ -3,7 +3,7 @@
 var IND_o =
 {
   boot__v    //: register Service Worker & display initial page
-  ()
+  ()    //: method_s argument ignored
   {
     LIB_o
       .nodeId__o( 'initial' )
@@ -12,16 +12,22 @@ var IND_o =
         'click',    //: wait for visitor entrance
         IND_o.initial__v
       )
-    IND_o
-      .service__v()
   }
 ,
   
   
   
   initial__v
-  ()
+  (
+    method_s
+  )
   {
+    LIB_o
+      .invisible__v
+      (
+        LIB_o.nodeId__o( 'initial' ),
+        'add'
+      )
     IND_o
       .colorMode__v
         ( 'hue_base' )
@@ -30,12 +36,6 @@ var IND_o =
         ( 'lum_mode' )
     IND_o
       .unfold__v()
-    LIB_o
-      .invisible__v
-      (
-        LIB_o.nodeId__o( 'initial' ),
-        'add'
-      )
     IND_o
       .listen__v()
     }
@@ -163,8 +163,13 @@ service__v
       .alert( "To visit {{A_o.NAME_s}}, please use a browser with Service Workers enabled" )
   }
   //>
-  SER_o
-    .init__v( '{{U_o.url_s}}{{U_o.SERVICE_PATH_s}}' )
+  //--window
+  //--  .requestIdleCallback
+  //--  (
+  //--    () =>
+        SER_o
+          .init__v( '{{U_o.url_s}}{{U_o.SERVICE_PATH_s}}' )
+  //--)
 }
 ,
 
@@ -269,6 +274,8 @@ clearUrl__v
 void function    //:- init serviceWorker & launcher event
 ()
 {
+  IND_o
+    .service__v()
   const method_s =
     window
       .localStorage
@@ -278,7 +285,7 @@ void function    //:- init serviceWorker & launcher event
     :
     'boot'
   IND_o
-    [ `${method_s}__v` ]()
+    [ `${method_s}__v` ]( method_s )
 } ()
 
 
