@@ -109,7 +109,6 @@ list__v    //: display cache_a items
 ,
 
 
-//-----------------------------------------------------------
   dragDrop
   ()
   {
@@ -227,11 +226,10 @@ list__v    //: display cache_a items
           }
       )
     }
-  //::::::::::::::::::::::::
   const list_e =
     document
      .querySelectorAll( '#bookmark_list > li' )
-for
+  for
     ( const item_e of list_e )
     {
       [
@@ -251,11 +249,12 @@ for
             ''
             :
             'drag'
+          const handle_f = eval( method_s )  //new Function( method_s )
           item_e
             .addEventListener
             (
               `${prefix_s}${method_s}`,
-              eval( method_s ),
+              handle_f,
               false
             )
         }
@@ -266,7 +265,7 @@ for
 
   }
 ,
-  //-----------------------------------------------------------
+
 
 
   listen__v
