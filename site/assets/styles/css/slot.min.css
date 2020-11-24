@@ -96,7 +96,7 @@ a::before,a::after,.aside{transition: transform .2s ease}
  --size_ratio: .8;
  --node_height: 3rem;
 }
-#node_document,#node_actions{display: grid; place-items: center}
+#node_actions{display: grid; place-items: center}
 #node_actions > ul{display: flex; flex-direction: row-reverse}
 #node_document{display: flex; justify-content: flex-start}
 #node_display *{overflow: hidden;

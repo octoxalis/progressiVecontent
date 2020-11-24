@@ -1,10 +1,6 @@
 // === BOOK_o: bookmark.js ===
 var BOOK_o =
 {
-  //XXSLOT_SPLIT: '+',
-  //XXLIST_SPLIT: '@',
-
-
   init__v
   ()
   {
@@ -12,12 +8,6 @@ var BOOK_o =
       .cache__v()
     BOOK_o
       .history__v()
-    BOOK_o
-      .dragDrop
-      (
-        document
-          .querySelectorAll( '#bookmark_history_list > li' )
-      )
     BOOK_o
       .listen__v()
   }
@@ -76,12 +66,8 @@ list__v    //: display cache_a items
         item_s =>
         {
           const li_s =
-            item_s
-              .slice
-              (
-                '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
-                -('.html'.length)              //: trim '.html'
-              )
+            BOOK_o
+              .slot__s( item_s )
           list_s += `<li draggable="true">${li_s}</li>`
         }
       )
@@ -94,10 +80,10 @@ list__v    //: display cache_a items
 
 
 
-history__v    //: display store_a items
+history__v    //: display history_a items
   ()
   {
-    const store_a =
+    const history_a =
     JSON
       .parse
       (
@@ -105,35 +91,17 @@ history__v    //: display store_a items
           .localStorage
           .getItem( 'bookmark_content_list' )
       )
-    if ( store_a )
+    if ( history_a )
     {
       let list_s = ''
-      store_a
+      history_a
         .forEach
         (
-          item_o =>
-          {
-            let slots_s =
-              item_o
-                .list_a[0]
-                .slice
-                (
-                  '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
-                  -('.html'.length)            //: trim '.html'
-                )
-              slots_s += ' ... '
-              slots_s +=
-                item_o
-                  .list_a[item_o.list_a.length - 1]
-                  .slice
-                  (
-                    '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
-                    -('.html'.length)            //: trim '.html'
-                  )
-              const li_s =
-              `<dl><dt>${item_o.name_s}</dt><dd>${slots_s}</dd><dd>${item_o.date_s}</dd></dl>`
-            list_s += `<li draggable="true">${li_s}</li>`
-          }
+          (
+            item_o,
+            at_n
+          ) =>
+            list_s += `<li data-at_n="${at_n}">${item_o.name_s} [ ${item_o.date_s} ]</li>`
         )
       document
         .querySelector( '#bookmark_history_list' )
@@ -174,7 +142,8 @@ history__v    //: display store_a items
         Array
           .from( list_a )
       )
-    
+    BOOK_o
+      .history__v()
   }
 ,
 
@@ -238,20 +207,122 @@ history__v    //: display store_a items
 
 
 
-  select__v
+  display__v
   (
-  
+    item_o    //: history list item
   )
   {
-  
+    if ( !item_o ) return
+    //>
+    let json_s =
+      window
+        .localStorage
+        .getItem( 'bookmark_content_list' )
+    const json_a =
+      JSON
+        .parse( json_s )
+    const at_n =
+     +item_o    //: Number
+       .dataset
+       .at_n
+    BOOK_o
+      .bookmarkOpen__v( json_a[at_n] )
   }
 ,
 
 
 
-dragDrop
+bookmarkOpen__v    //:- diplay bookmark data
+(
+  history_o
+)
+{
+  const display_e =
+    LIB_o
+      .nodeId__o( 'bookmark_display' )
+  //~~display_e
+  //~~  .querySelector( '#bookmark_document' )
+  LIB_o
+    .nodeId__o
+    (
+      'bookmark_document',
+      display_e
+    )
+    .innerHTML =
+      `${history_o.name_s} [ ${history_o.date_s} ]`
+  let list_s = ''
+    history_o
+      .list_a
+      .forEach
+      (
+        slot_s =>
+        {
+          const li_s =
+            BOOK_o
+              .slot__s( slot_s )
+          list_s += `<li data-slots_s="${slot_s}" class="truncate">${li_s}`
+        }
+      )
+  LIB_o
+    .nodeId__o
+    (
+      'bookmark_labels',
+      display_e
+    )
+    .innerHTML = `<ul>${list_s}</ul>`
+  display_e  
+    .classList
+    .toggle( 'unseen' )
+}
+,
+
+
+
+  bookmarkClose__v
+  ()
+  {
+    LIB_o
+     .nodeId__o( 'bookmark_display' )
+     .classList
+     .toggle( 'unseen' )
+  }
+,
+
+
+
+  bookmarkLink__v
+  ()
+  {
+    const list_a = new Set()
+    document
+      .querySelectorAll( '#bookmark_labels li' )
+      .forEach
+      (
+        li_e =>
+        {
+          list_a
+            .add( `${li_e.dataset.slot__s}` )
+        }
+      )
+    ;console.log( list_a )
+    return
+    SER_o
+      .CACHE__v
+      (
+        {
+          recipient_s: 'SWO_o',
+          cache_a: list_a
+        }
+      )
+  }
+,
+
+
+
+  dragDrop
   (
-    list_e
+    list_e,
+    callback_f=null
   )
   {
     let source_e
@@ -343,16 +414,28 @@ dragDrop
         {
           event_o
             .stopPropagation()
-          if ( source_e !== event_o.target ) 
-          {
+          if
+          ( 
             source_e
-              .innerHTML =
-                event_o.target.innerHTML
+            !==
             event_o.target
-              .innerHTML =
-                event_o
-                  .dataTransfer
-                  .getData( 'text/html' )
+          ) 
+          {
+            if ( callback_f )
+            {
+              callback_f
+              (
+                source_e,
+                event_o.target
+              )
+              return false
+            }
+            source_e.innerHTML =
+              event_o.target.innerHTML
+            event_o.target.innerHTML =
+              event_o
+                .dataTransfer
+                .getData( 'text/html' )
           }
           return false
         },
@@ -379,13 +462,29 @@ dragDrop
   }
 ,
 
+  slot__s
+  (
+    path_s
+  )
+  {
+    return (
+      path_s
+        .slice
+        (
+          '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
+          -('.html'.length)              //: trim '.html'
+        )
+    )
+}
+,
+
 
 
   listen__v
   ()
   {
-    document
-      .querySelector( '#bookmark_save' )
+    LIB_o
+      .nodeId__o( 'bookmark_save' )
       .addEventListener
       (
         'click',
@@ -397,8 +496,8 @@ dragDrop
             .save__v()
         }
       )
-    document
-      .querySelector( '#bookmark_refresh' )
+    LIB_o
+      .nodeId__o( 'bookmark_refresh' )
       .addEventListener
       (
         'click',
@@ -409,6 +508,37 @@ dragDrop
           BOOK_o
             .cache__v()
         }
+      )
+    LIB_o
+      .nodeId__o( 'bookmark_history_list' )
+      .addEventListener
+      (
+        'click',
+        click_o =>
+        {
+          BOOK_o
+            .display__v
+            (
+              click_o
+                .target
+                .closest( 'LI' )
+            )
+
+        }
+      )
+    LIB_o
+      .nodeId__o( 'bookmark_display' )
+      .addEventListener
+      (
+        'click',
+        BOOK_o.bookmarkClose__v
+      )
+    LIB_o
+      .nodeId__o( 'bookmark_link' )
+      .addEventListener
+      (
+        'click',
+        BOOK_o.bookmarkLink__v
       )
   }
 ,

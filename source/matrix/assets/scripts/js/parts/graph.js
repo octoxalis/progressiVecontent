@@ -114,7 +114,7 @@ var GRA_o =
 
 
 
-  openNode__v    //:- diplay node data
+  nodeOpen__v    //:- diplay node data
   (
     event_e
   )
@@ -222,7 +222,7 @@ var GRA_o =
               )
           }
         )
-    }  
+    }
   }
 ,
 
@@ -300,14 +300,14 @@ nodeStep__s
     const labels_s =
       data_e
       .dataset['-']
-    let html_s = ''
+    let list_s = ''
     for ( let lab_s of labels_s.split( ' ' ) )
     {
-      html_s += `<li class="truncate">${lab_s}`
+      list_s += `<li class="truncate">${lab_s}`
     }
     LIB_o
       .nodeId__o( 'node_labels' )
-      .innerHTML = `<ul>${html_s}</ul>`
+      .innerHTML = `<ul>${list_s}</ul>`
     const select_s =
       selected_b ?
         'NODE_BACK_SELECTED'
@@ -375,14 +375,16 @@ nodeStep__s
       .addEventListener
       (
         'click',
-        GRA_o.openNode__v
+        GRA_o.nodeOpen__v
       )
+      /*
     GRA_o.svg_e
       .addEventListener
       (
         'touchstart',
-        GRA_o.openNode__v
+        GRA_o.nodeOpen__v
       )
+      */
     LIB_o
       .nodeId__o( 'node_display' )
       .addEventListener
