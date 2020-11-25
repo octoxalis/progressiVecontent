@@ -32,8 +32,8 @@ const BUI_o =
   )
   {
    
-    //!!! TEMPORARY TOP_o
-    //!!! TEMPORARY   .write__v()
+    //--TOP_o    //!!!! TOPICS TEMPORARY DISABLED
+    //--  .write__v()    //!!!! TOPICS TEMPORARY DISABLED
     console.log( '!!!! TOPICS TEMPORARY DISABLED' )
     HEAD_o
       .write__v

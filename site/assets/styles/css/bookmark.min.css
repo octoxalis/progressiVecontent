@@ -11,9 +11,9 @@ __  {width: 100%}
 #bookmark_history_list button{flex-basis: 10%}
 #bookmark_history{max-height: 30vh}
 #bookmark_history{overflow-y: auto}
-#bookmark_page{margin: var(--PAD_6) 0}
+#bookmark_page{margin-top: var(--PAD_6)}
 #bookmark_page > dt{margin: var(--PAD_4) 0 0 var(--PAD_2)}
-#bookmark_page > dd{margin-bottom: var(--PAD_2)}
+#bookmark_page > dd{margin-bottom: 0}
 #bookmark_page input,#bookmark_page button{margin: var(--PAD_2)}
 #bookmark_content_list > li,#bookmark_history_list > li{margin: var(--PAD_1)}
 #bookmark_history_list button{margin: 0}
@@ -40,55 +40,3 @@ __  {width: 100%}
 #bookmark_content li,#bookmark_history_list dl *{line-height: .9}
 #bookmark_page > dt,#bookmark_name::placeholder{font-style: italic}
 [draggable]{user-select: none}
-#bookmark_display
-{
- --display_dim: 50vw;
- --svg_icon_dim: 2em;
- --size_ratio: .8;
- --bookmark_height: 3rem;
-}
-#bookmark_actions{display: grid; place-items: center}
-#bookmark_document{display: flex; justify-content: flex-start}
-#bookmark_actions > ul{display: flex; flex-direction: row-reverse}
-#bookmark_display *{overflow: hidden;
-  white-space: nowrap}
-#bookmark_display{position: relative}
-#bookmark_actions,#bookmark_labels{position: relative}
-#bookmark_actions{top: calc( var(--bookmark_height) * -.25 )}
-#bookmark_actions li:not(:first-of-type){margin-right: var(--PAD_2)}
-#bookmark_labels{top: -.8rem}
-#bookmark_display{top: -2em}
-#bookmark_display{left: 0}
-#bookmark_display li{--truncate_n: 1em} 
-#bookmark_document{--truncate_n: calc( var(--svg_icon_dim) * 2.2 )} 
-#bookmark_display{height: auto}
-#bookmark_document{height: var(--bookmark_height)}
-#bookmark_labels{padding:0 var(--PAD_2)}
-#bookmark_actions > ul,#bookmark_labels > ul{width: 100%}
-#bookmark_display{width: var(--display_dim)}
-#bookmark_actions > ul{padding-right: var(--PAD_2)}
-#bookmark_display{border: 2px solid var(--c_sec_hi_2)}
-#bookmark_document,#bookmark_actions
-__  {border-top-left-radius: 8px}
-#bookmark_document,#bookmark_actions
-__  {border-top-right-radius: 8px}
-#bookmark_display{border-radius: 8px}
-#bookmark_document,#bookmark_actions
-__  {border-top-left-radius: 8px}
-#bookmark_document,#bookmark_actions
-__  {border-top-right-radius: 8px}
-#bookmark_display:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
-#bookmark_labels{color: var(--c_prim_lo_4)}
-#bookmark_display{background: var(--c_box_hi)}
-#bookmark_actions{background: transparent}
-#bookmark_document{--truncate_c: var(--c_sec_hi);
-  background: var(--c_sec_hi)}
-#bookmark_display li{--truncate_c: var(--c_box_hi)}
-#bookmark_display *{font-size: inherit}
-#bookmark_display li{font-weight: 500}
-#bookmark_document{text-transform: uppercase}
-#bookmark_display{cursor: pointer}
-#bookmark_display{box-shadow:var(--BOX_SHADOW)}
-#bookmark_display{transition: transform .2s ease}
-#bookmark_display li:hover{color: var(--c_sec_lo);
-  background: var(--c_sec_hi)}

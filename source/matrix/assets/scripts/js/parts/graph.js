@@ -102,7 +102,7 @@ var GRA_o =
           const at_e =
             GRA_o
               .svg_e
-              .querySelector( `rect:nth-child(${at_n})` )
+              .querySelector( `circle:nth-child(${at_n})` )    //-- rect
           at_e &&
             at_e
               .classList
@@ -128,8 +128,8 @@ var GRA_o =
         target_e,
         target_e.classList.contains( 'node_selected' )
       )
-    LIB_o
-      .nodeId__o( 'node_display' )
+    SLOT_o
+      .display__e( 'section_contents' )
       .classList
       .toggle( 'unseen' )
     const node_e =
@@ -153,9 +153,10 @@ var GRA_o =
   nodeClose__v
   ()
   {
-    LIB_o
-     .nodeId__o( 'node_display' )
-     .classList.toggle( 'unseen' )
+    SLOT_o
+      .display__e( 'section_contents' )
+      .classList
+      .toggle( 'unseen' )
   }
 ,
 
@@ -228,12 +229,12 @@ var GRA_o =
 
 
 
-nodeStep__s
+  nodeStep__s
   ()
   {
     return LIB_o
-      .nodeId__o( 'node_link' )
-      .getAttribute( 'data-slot_s' )
+      .id__o( 'link' )
+      .getAttribute( 'data-slot_s' )  //: set by node__v
       .slice( 'node_'.length )
   }
 ,
@@ -279,7 +280,8 @@ nodeStep__s
     //>
     const doc_e =
       LIB_o
-        .nodeId__o( 'node_link' )
+        .id__o( 'link' )
+
     doc_e
       .setAttribute
       (
@@ -287,7 +289,7 @@ nodeStep__s
         node_e.id
       )
     LIB_o
-      .nodeId__o( 'node_document' )
+      .id__o( 'title' )
       .innerHTML =
         data_e
           .dataset
@@ -303,11 +305,11 @@ nodeStep__s
     let list_s = ''
     for ( let lab_s of labels_s.split( ' ' ) )
     {
-      list_s += `<li class="truncate">${lab_s}`
+      list_s += `<li>${lab_s}`
     }
     LIB_o
-      .nodeId__o( 'node_labels' )
-      .innerHTML = `<ul>${list_s}</ul>`
+      .id__o( 'list' )
+      .innerHTML = list_s
     const select_s =
       selected_b ?
         'NODE_BACK_SELECTED'
@@ -386,25 +388,11 @@ nodeStep__s
       )
       */
     LIB_o
-      .nodeId__o( 'node_display' )
-      .addEventListener
-      (
-        'click',
-        GRA_o.nodeClose__v
-      )
-    LIB_o
-      .nodeId__o( 'node_link' )
-      .addEventListener
-      (
-        'click',
-        GRA_o.nodeLink__v
-      )
-    LIB_o
       .nodeId__o( 'skin_link' )
       .addEventListener
       (
         'click',
-        event_o =>
+        _o =>    //: not used
         {
           GRA_o
             .skin__v()
@@ -415,11 +403,30 @@ nodeStep__s
       .addEventListener
       (
         'click',
-        event_o =>
+        _o =>    //: not used
         {
           GRA_o
             .bookmark__v()
         }
+      )
+    const section_e =
+      SLOT_o
+        .display__e( 'section_contents' )
+        .addEventListener
+        (
+          'click',
+          GRA_o.nodeClose__v
+        )
+    LIB_o
+      .id__o
+      (
+        'link',
+        section_e
+      )
+      .addEventListener
+      (
+        'click',
+        GRA_o.nodeLink__v
       )
   //: keyboard
   /*

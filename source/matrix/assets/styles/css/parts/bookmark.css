@@ -43,14 +43,14 @@ __                     {overflow-y: auto}
 
 
 #bookmark_page,
-__                     {margin: var(--PAD_6) 0}
+__                     {margin-top: var(--PAD_6)}
 
 
 #bookmark_page > dt,
 __                     {margin: var(--PAD_4) 0 0  var(--PAD_2)}
 
 #bookmark_page > dd,
-__                     {margin-bottom: var(--PAD_2)}
+__                     {margin-bottom: 0}
 
 #bookmark_page input,
 #bookmark_page button,
@@ -172,163 +172,8 @@ __                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
 */
 
 
-/*
-.on_dragged,
-__                     {transform: scale( .5 )}
-*/
-
 
 [draggable],
 __                     {user-select: none}
 
-
-/*
-#bookmark_page > dd:hover,
-__                     {transition-delay: 1s;
-                        transition: .5s}
-*/
-
-/*
-#bookmark_history_list > option::after
-{
-  content: attr( 'data-slots_s' );
-  position: relative;
-  bottom: -1rem;
-  width: 100%;
-}
-*/
-
-
-#bookmark_display
-{
-  --display_dim: 50vw;
-  --svg_icon_dim: 2em;
-  --size_ratio: .8;
-  --bookmark_height: 3rem;
-}
-
-/*#bookmark_document,*/
-#bookmark_actions,
-__                     {display: grid; place-items: center}
-#bookmark_document,
-__                     {display: flex; justify-content: flex-start}
-
-#bookmark_actions > ul,
-__                     {display: flex; flex-direction: row-reverse}
-
-#bookmark_display *,
-__                     {overflow: hidden;
-                        white-space: nowrap}
-
-#bookmark_display,
-__                     {position: relative}
-#bookmark_actions,
-#bookmark_labels,
-__                     {position: relative}
-
-#bookmark_actions,
-__                     {top: calc( var(--bookmark_height) * -.25 )}
-#bookmark_actions li:not(:first-of-type),
-__                     {margin-right: var(--PAD_2)}
-
-
-#bookmark_labels,
-__                     {top: -.8rem}
-
-#bookmark_display,
-__                     {top: -2em}
-
-#bookmark_display,
-__                     {left: 0/*calc( var(--display_dim) * .25 )*/}
-
-#bookmark_display li,
-__                     {--truncate_n: 1em}  /* place holder: 1 char */
-#bookmark_document,
-__                     {--truncate_n: calc( var(--svg_icon_dim) * 2.2 )}  /* place holder: 2 icons */
-
-#bookmark_display,
-__                     {height: auto}
-
-#bookmark_document,
-__                     {height: var(--bookmark_height)}
-
-#bookmark_labels,
-__                     {padding:0 var(--PAD_2)}
-
-#bookmark_actions > ul,
-#bookmark_labels > ul,
-__                     {width: 100%}
-#bookmark_display,
-__                     {width: var(--display_dim)}
-
-#bookmark_actions > ul,
-__                     {padding-right: var(--PAD_2)}
-
-
-#bookmark_display,
-__                     {border: 2px solid var(--c_sec_hi_2)}
-
-#bookmark_document,
-#bookmark_actions
-__                     {border-top-left-radius: 8px}
-
-#bookmark_document,
-#bookmark_actions
-__                     {border-top-right-radius: 8px}
-
-#bookmark_display,
-__                     {border-radius: 8px}
-
-#bookmark_document,
-#bookmark_actions
-__                     {border-top-left-radius: 8px}
-
-#bookmark_document,
-#bookmark_actions
-__                     {border-top-right-radius: 8px}
-
-#bookmark_display:hover,
-__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
-#bookmark_labels,
-__                     {color: var(--c_prim_lo_4)}
-
-#bookmark_display,
-__                     {background: var(--c_box_hi)}
-#bookmark_actions,
-__                     {background: transparent}
-
-#bookmark_document,
-__                     {--truncate_c: var(--c_sec_hi);
-                        background: var(--c_sec_hi)}
-
-#bookmark_display li,
-__                     {--truncate_c: var(--c_box_hi)}
-
-
-
-#bookmark_display *,
-__                     {font-size: inherit}
-
-#bookmark_display li,
-__                     {font-weight: 500}
-
-
-#bookmark_document,
-__                     {text-transform: uppercase}
-
-
-#bookmark_display,
-__                     {cursor: pointer}
-
-#bookmark_display,
-__                     {box-shadow:var(--BOX_SHADOW)}
-
-
-#bookmark_display,
-__                     {transition: transform .2s ease}
-
-
-#bookmark_display li:hover,
-__                     {color: var(--c_sec_lo);
-                        background: var(--c_sec_hi)}
 

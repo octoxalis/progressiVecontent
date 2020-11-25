@@ -16,6 +16,26 @@ var SLOT_o =
   }
 ,
 
+
+  display__e    //: pseudo-dialog box to display lists
+  (
+    section_s
+  )
+  {
+    return (
+      LIB_o
+        .id__o
+        (
+          'display',
+          LIB_o
+            .nodeId__o( section_s )
+        )
+      )
+  }
+,
+
+
+
 }
 
 

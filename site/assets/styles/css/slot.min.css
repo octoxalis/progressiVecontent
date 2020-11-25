@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol,#preferences{padding:2px}
 #preferences{border: 1px solid var(--c_prim_ne)}
 hr{border-top: 1px solid var(--c_prim_ne)}
 #preferences{border-radius: 4px}
-#preferences > button,.span_icon{border-radius: 50%}
+#preferences > button,.span_icon,.svg_icon{border-radius: 50%}
 [data-id="ulist"] > li{border-left: var(--BORDER_1) solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
 [data-id="ulist"] > li{--border_opac:.6}
 [data-id="ulist"] > li > [data-id="ulist"] > li{--border_opac:.4}
@@ -60,7 +60,7 @@ mark[data-tag]{background: inherit}
 a::before,a::after{background: var(--c_link_ne)}
 section[data-slot_n]{background: var(--c_sec_hi_3)}
 button[data-slot_s]{background: var(--c_prim_hi_2)}
-#preferences > button:hover,.span_icon:hover{background: var(--c_highlight_hi)}
+#preferences > button:hover,.span_icon:hover,.svg_icon:hover{background: var(--c_highlight_hi)}
 [data-id="note_txt"] > button{background:var(--c_decor_hi_op_lo)}
 h1{--size_ratio: 1.6}
 h2{--size_ratio: 1.4}
@@ -89,64 +89,18 @@ a::before,a::after,.aside{transition: transform .2s ease}
  --NODE_BACK_SELECTED: var(--c_box_ne);
  --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
 }
-#node_display
-{
- --display_dim: 50vw;
- --svg_icon_dim: 2em;
- --size_ratio: .8;
- --node_height: 3rem;
-}
-#node_actions{display: grid; place-items: center}
-#node_actions > ul{display: flex; flex-direction: row-reverse}
-#node_document{display: flex; justify-content: flex-start}
-#node_display *{overflow: hidden;
-  white-space: nowrap}
-#docs_graph,#graph_svg,#node_actions,#node_labels{position: relative}
-#node_display{position: absolute}
-#node_labels{top: -.8rem}
-#node_display{top: calc( var(--display_dim) * .5 )}
-#node_actions{top: calc( var(--node_height) * -1 )}
-#node_display{left: calc( var(--display_dim) * .25 )}
+#docs_graph,#graph_svg{position: relative}
 ul,#docs_graph{margin: 0}
 #graph{margin: auto}
 #graph{margin-top: var(--PAD_8)}
-#node_actions li:not(:first-of-type){margin-right: var(--PAD_2)}
 ul,#graph_svg{padding:0}
-#node_document{--truncate_n: calc( var(--svg_icon_dim) * 2.2 )} 
-#node_display li{--truncate_n: 1em} 
-#node_document{padding: var(--PAD_2)}
-#node_labels{padding:0 var(--PAD_2)}
-#node_actions > ul{padding-right: var(--PAD_2)}
-#docs_graph,#graph,#graph_svg,#node_actions > ul,#node_labels > ul{width: 100%}
-#node_display{width: var(--display_dim)}
-#node_display{height: auto}
-#node_document{height: var(--node_height)}
-#node_display{border: 2px solid var(--c_sec_hi_2)}
-#node_display{border-radius: 8px}
-#node_document,#node_actions
-__  {border-top-left-radius: 8px}
-#node_document,#node_actions
-__  {border-top-right-radius: 8px}
+#docs_graph,#graph,#graph_svg{width: 100%}
 #graph_svg{border-radius: 4px}
 #graph_svg{cursor: pointer}
  
 #graph_svg:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
-#node_display:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
-#node_labels{color: var(--c_prim_lo_4)}
-#graph_svg > rect{stroke: none}
-#graph_svg > rect.node_focus{stroke: var(--c_sec_lo)}
-#graph_svg > rect{fill: var(--c_prim_hi_2)}
-#graph_svg > rect.node_selected{fill: var(--c_prim_ne)}
-#graph_svg,#node_actions{background: transparent}
-#node_display{background: var(--NODE_BACK)}
-#node_document{--truncate_c: var(--c_sec_hi);
-  background: var(--c_sec_hi)}
-#node_labels li{--truncate_c: var(--NODE_BACK)}
-#node_display *{font-size: inherit}
-#node_labels li{font-weight: 500}
-#node_document{text-transform: uppercase}
-#node_display{cursor: pointer}
-#node_display{box-shadow:var(--BOX_SHADOW)}
-#node_display{transition: transform .2s ease}
-#node_labels li:hover{color: var(--c_sec_lo);
-  background: var(--c_sec_hi)}
+#graph_svg > circle{stroke: none}
+#graph_svg > circle.node_focus{stroke: var(--c_sec_lo)}
+#graph_svg > circle{fill: var(--c_prim_hi_2)}
+#graph_svg > circle.node_selected{fill: var(--c_prim_ne)}
+#graph_svg{background: transparent}

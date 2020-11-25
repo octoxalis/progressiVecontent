@@ -9,12 +9,12 @@
 {%- set _template_s %}
 :contents:
 <div id="docs_graph">
-{% include "parts/slot/docs_labels_data.njk" %}
+{% include "parts/slot/data/docs_labels.njk" %}
 {% include "parts/slot/slider.njk" %}
   <div id="graph">
-  {% include "parts/slot/graph.svg" %}
+  {% include "parts/slot/graph/graph.svg" %}
   </div>
-  {% include "parts/slot/node_display.njk" %}
+  {% include "parts/slot/dialog.njk" %}
 </div>
 <div id="preferences">
   {% include "parts/slot/skin/link.njk" %}

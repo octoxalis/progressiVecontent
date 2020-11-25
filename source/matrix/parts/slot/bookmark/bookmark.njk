@@ -8,8 +8,8 @@
 
 {%- set _template_s %}
 {% include "parts/slot/bookmark/header.njk" %}
-{% include "parts/slot/bookmark/save.njk" %}
-{% include "parts/slot/bookmark_display.njk" %}
+{% include "parts/slot/bookmark/page.njk" %}
+{% include "parts/slot/dialog.njk" %}
 {% endset -%}
 
 {{- _template_s | section( permalink, rank_n ) | spot | safe | minify_html | template_end( data_o ) -}}{# post process #}

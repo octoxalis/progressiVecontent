@@ -204,6 +204,7 @@ __                     {border-radius: 4px}
 
 #preferences > button,
 .span_icon,
+.svg_icon,
 __                     {border-radius: 50%}
 
 
@@ -274,6 +275,7 @@ __                     {background: var(--c_prim_hi_2)}
 
 #preferences > button:hover,
 .span_icon:hover,
+.svg_icon:hover,
 __                     {background: var(--c_highlight_hi)}
 
 

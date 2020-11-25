@@ -11,11 +11,11 @@ const DOCS_o =
   //??? LABELS_JSON_s: 'labels_docs',
   GRAPH_JSON_s: 'graph',
   //?? DOCS_MD:     'matter/content/sys/docs.md',
-  DOCS_NJK_s:   'matrix/parts/slot/docs_data.njk',
   DOCS_JS_s:    'matrix/assets/static/data/js/docs_data.js',
-  LABELS_NJK_s: 'matrix/parts/slot/labels_data.njk',
   LABELS_JS_s:  'matrix/assets/static/data/js/labels_data.js',
-  GRAPH_SVG_s:  'matrix/parts/slot/graph.svg',
+  DOCS_NJK_s:   'matrix/parts/slot/data/docs.njk',
+  LABELS_NJK_s: 'matrix/parts/slot/data/labels.njk',
+  GRAPH_SVG_s:  'matrix/parts/slot/graph/graph.svg',
   AT_DOC_n:     0,    //: [doc_n]
   AT_LAB_n:     1,    //: [label_s]
   AT_TOP_n:     2,    //: [topic_s]
@@ -221,8 +221,10 @@ svg__v
       )
       ;console.log( `[ ${wide_n}, ${dim_n}, ${height_n}, ${column_n} ]` )
   let svg_s = ''
-  let atX_n = 0
-  let atY_n = 0
+  //--let atX_n = 0
+  //--let atY_n = 0
+  let atX_n = dim_n * .5
+  let atY_n = dim_n * .5
   const GAP_n = 2
   docslabels_a
     .forEach
@@ -232,11 +234,13 @@ svg__v
         step_n
       ) =>
       {
-        svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`
+        //--svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`
+        svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .5}"></circle>`
         atX_n += dim_n + GAP_n
         if ( atX_n >= wide_n )
         {
-          atX_n = 0
+          //--atX_n = 0
+          atX_n = dim_n * .5
           atY_n += dim_n + GAP_n
         }
       }

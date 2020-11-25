@@ -238,14 +238,12 @@ bookmarkOpen__v    //:- diplay bookmark data
 )
 {
   const display_e =
-    LIB_o
-      .nodeId__o( 'bookmark_display' )
-  //~~display_e
-  //~~  .querySelector( '#bookmark_document' )
+    SLOT_o
+      .display__e( 'section_bookmark' )
   LIB_o
-    .nodeId__o
+    .id__o
     (
-      'bookmark_document',
+      'title',
       display_e
     )
     .innerHTML =
@@ -260,16 +258,17 @@ bookmarkOpen__v    //:- diplay bookmark data
           const li_s =
             BOOK_o
               .slot__s( slot_s )
-          list_s += `<li data-slots_s="${slot_s}" class="truncate">${li_s}`
+          list_s += `<li data-slots_s="${slot_s}">${li_s}`
         }
       )
   LIB_o
-    .nodeId__o
+    .id__o
     (
-      'bookmark_labels',
+      'list',
       display_e
     )
-    .innerHTML = `<ul>${list_s}</ul>`
+    .innerHTML =
+      `<ul>${list_s}</ul>`
   display_e  
     .classList
     .toggle( 'unseen' )
@@ -281,10 +280,10 @@ bookmarkOpen__v    //:- diplay bookmark data
   bookmarkClose__v
   ()
   {
-    LIB_o
-     .nodeId__o( 'bookmark_display' )
-     .classList
-     .toggle( 'unseen' )
+    SLOT_o
+      .display__e( 'section_bookmark' )
+      .classList
+      .toggle( 'unseen' )
   }
 ,
 
@@ -295,7 +294,7 @@ bookmarkOpen__v    //:- diplay bookmark data
   {
     const list_a = new Set()
     document
-      .querySelectorAll( '#bookmark_labels li' )
+      .querySelectorAll( '[data-id="list"] > li' )
       .forEach
       (
         li_e =>
@@ -475,9 +474,8 @@ bookmarkOpen__v    //:- diplay bookmark data
           -('.html'.length)              //: trim '.html'
         )
     )
-}
+  }
 ,
-
 
 
   listen__v
@@ -526,15 +524,21 @@ bookmarkOpen__v    //:- diplay bookmark data
 
         }
       )
-    LIB_o
-      .nodeId__o( 'bookmark_display' )
+    const section_e =
+      SLOT_o
+        .display__e( 'section_bookmark' )
+    section_e
       .addEventListener
       (
         'click',
         BOOK_o.bookmarkClose__v
       )
     LIB_o
-      .nodeId__o( 'bookmark_link' )
+      .id__o
+      (
+        'link',
+        section_e
+      )
       .addEventListener
       (
         'click',
