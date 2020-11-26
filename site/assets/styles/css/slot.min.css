@@ -19,6 +19,7 @@ button[data-slot_s]{margin: 0}
 #preferences > button{margin: 0 var(--PAD_4)}
 .span_icon{margin: var(--PAD_1) 0}
 [data-id="ulist"]{margin: var(--PAD_2) 0 0 var(--PAD_4)}
+button[data-slot_s="contents"]{margin-top: var(--SLIDER_HEIGHT) }
 div[data-slot_s]{padding: var(--PAD_4) var(--PAD_8)}
 [data-id="ulist"]{padding-left:0}
 [data-id="ulist"]{padding-left:var(--PAD_2)}
@@ -27,8 +28,7 @@ button[data-slot_s]{width: var(--FULL_WIDTH)}
 #preferences,article{width: var(--BODY_WIDTH)}
 [data-id="example"]{max-width:100%}
 [data-slot_s] > u{height: var(--BUTTON_HEIGHT)} 
-__  {height: calc( var(--BUTTON_HEIGHT) * 1 )}
-a::before,.unseen{height: 1px}
+a::before{height: 1px}
 a::after{height: 4px}
 a::before,a::after{left: 0}
 button[data-slot_s]{left: 50%; right: 50%} 
@@ -98,7 +98,7 @@ ul,#graph_svg{padding:0}
 #graph_svg{border-radius: 4px}
 #graph_svg{cursor: pointer}
  
-#graph_svg:hover{box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+ 
 #graph_svg > circle{stroke: none}
 #graph_svg > circle.node_focus{stroke: var(--c_sec_lo)}
 #graph_svg > circle{fill: var(--c_prim_hi_2)}

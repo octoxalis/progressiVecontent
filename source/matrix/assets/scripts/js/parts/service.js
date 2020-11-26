@@ -202,7 +202,7 @@ receive__v    //:-- Listen to messages
       //>
     }
     //: receive from worker
-    if (!SER_o.sender_o) return void console.log( 'Service WOrker cache not delivered!' )
+    if ( !SER_o.sender_o ) return void console.log( 'Service Worker cache not delivered!' )
     SER_o
       .sender_o
       .CACHE__v( cache_a )    //: consume cache_a

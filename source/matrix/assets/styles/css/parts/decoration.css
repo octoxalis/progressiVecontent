@@ -5,14 +5,14 @@
 
                                       
 button, select,
-[data-sub]:hover::after,
+[data-sub]::after,
 __                     {text-transform: none}
 
 #hero,
 __                     {text-transform: uppercase}
 
 
-[data-sub]:hover::after,
+[data-sub]::after,
 __                     {content: attr( data-sub ) }
 
 /*=== WHITE-SPACE ===*/

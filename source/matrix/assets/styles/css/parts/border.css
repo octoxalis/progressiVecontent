@@ -22,7 +22,6 @@ __                     {border: var(--BORDER_1) solid var(--c_decor_ne)}
 
 
 /*=== RADIUS ===*/
-[data-sub]:hover::after,
 *::-webkit-scrollbar-thumb,
 __                     {border-radius: .5rem}
 

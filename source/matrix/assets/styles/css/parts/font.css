@@ -26,7 +26,7 @@
 /*=== FAMILY ===*/
 body,
 body *,
-[data-sub]:hover::after,
+[data-sub]::after,
 __                     {font-family: var(--font_body)}
 
 #hero,
@@ -45,24 +45,22 @@ body *,
 __                     {--size_ratio: 1}
 
 
-#hero dd:first-of-type,
-__                     {--size_ratio: 2.2}
 
-#hero dd:first-of-type span,
-__                     {--size_ratio: calc( 2.2 * .75 )}
 
+#hero dd:nth-of-type(3),
+__                     {--size_ratio: 2.3}
 #hero dd,
 __                     {--size_ratio: 1.8}
+#hero dd:nth-of-type(1),
+__                     {--size_ratio: 1.3}
 
-#hero span,
-__                     {--size_ratio: calc( 1.8 * .75 )}
-
-[data-sub]:hover::after,
-__                     {--size_ratio: 1.2}
-
-
-#hero button,
+[data-sub]::after,
 __                     {--size_ratio: 1}
+
+
+#logo,
+#logo > em,
+__                     {--size_ratio: 2}
 
 
 
@@ -73,7 +71,7 @@ __                     {--size_ratio: 1}
 
 body,
 body *,
-[data-sub]:hover::after,
+[data-sub]::after,
 __                     {font-weight: 300}
 
 
@@ -92,17 +90,23 @@ __                     {font-weight: 100}
 
 /*=== HEIGHT ===*/
 
-[data-sub]:hover::after,
+
+[data-sub]::after,
 __                     {line-height: 1}
 
 #hero button,
+#hero dd,
 __                     {line-height: .8}
 
-#hero dd,
-__                     {line-height: .65}
+__                     {line-height: .8}
 
 
 /*=== SPACING ===*/
 
+#logo,
+__                     {letter-spacing: 2vw}
+
+
 #hero span,
-__                     {letter-spacing: .2em}
+__                     {letter-spacing: 1vw}
+

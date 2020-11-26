@@ -58,9 +58,6 @@ __                     {width: 100%}
 
 
 
-[data-id="display"],
-__                     {height: auto}
-
 [data-id="title"],
 __                     {height: var(--svg_icon_dim)}
 

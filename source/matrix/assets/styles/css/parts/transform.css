@@ -1,4 +1,8 @@
 /*=== TRANSFORM ===*/
+:root
+{
+  --INITIAL_TURN: .07turn;
+}
 
 .retract,
 __                     {transform: scale(0)}
@@ -15,15 +19,19 @@ __                     {transform: scaleX(1)}
 __                     {transform:rotate(.5turn)}
 
 
+[data-sub]::after,
+__                     {transform: translateX( var(--FULL_WIDTH) )}
+
+
+
 .aside,
 __                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5rem ) * -1 ) )}
 
 
-[data-sub]:hover,
-__                     {filter: invert( .75 )}
 
-[data-sub]:hover,
-__                     {filter: saturate( 4 )}
+[data-sub],
+__                     {transform: rotate( var(--INITIAL_TURN) )}
+
 
 .svg_icon:hover,
 __                     {filter: brightness( 2 )}
@@ -31,10 +39,15 @@ __                     {filter: brightness( 2 )}
 
 
 /*=== ORIGIN ===*/
+#hero dd,
+__                     {transform-origin: top right}
+
 .retract,
 __                     {transform-origin: top left}
 
 
+[data-sub]:hover::after,
+__                     {animation: datasub .3s ease forwards}
 
 #sections_slider,
 __                     {transition: transform .2s ease}

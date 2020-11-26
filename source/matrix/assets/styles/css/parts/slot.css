@@ -79,6 +79,8 @@ __                     {margin: var(--PAD_1) 0}
 __                     {margin: var(--PAD_2) 0 0 var(--PAD_4)}
 
 
+button[data-slot_s="contents"],
+__                     {margin-top: var(--SLIDER_HEIGHT) }
 
 
 div[data-slot_s],
@@ -115,11 +117,8 @@ __                     {max-width:100%}
 __                     {height: var(--BUTTON_HEIGHT)}  /* see line-height */
 
 
-/*#preferences,*/
-__                     {height: calc( var(--BUTTON_HEIGHT) * 1 )}
 
 a::before,
-.unseen,
 __                     {height: 1px}
 
 a::after,

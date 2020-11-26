@@ -62,6 +62,7 @@ __                     {margin: var(--PAD_2)}
 __                     {margin: var(--PAD_1)}
 
 #bookmark_history_list button,
+#bookmark_page > dt,
 __                     {margin: 0}
 
 

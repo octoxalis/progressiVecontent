@@ -71,7 +71,12 @@ __                     {background: var(--c_decor_hi)}
 
 /*=== GRADIENT ===*/
 #initial,
-[data-sub]:hover::after,
-__                     {background: linear-gradient( 35deg,
-                         hsla( var(--hue_base) 100% 15% / .8 ) 0%,
-                         hsla( var(--hue_base) 0% 5% / 1 ) 100%)}
+__                     {background: linear-gradient( var(--INITIAL_TURN),
+                         hsla( var(--hue_base) 100% 15% / .7 ) 0%,
+                         hsla( var(--hue_base) 100% 15% / .7 ) 54%,
+                         hsla( var(--hue_base) 100% 15% / .8 ) 54%,
+                         hsla( var(--hue_base) 100% 15% / .8 ) 75%,
+                         hsla( var(--hue_base) 100% 15% / .9 ) 75%,
+                         hsla( var(--hue_base) 100% 15% / .9 ) 89%,
+                         hsla( var(--hue_base) 100% 15% / 1 )  89%,
+                         hsla( var(--hue_base) 0% 5% / 1 )     100%)}

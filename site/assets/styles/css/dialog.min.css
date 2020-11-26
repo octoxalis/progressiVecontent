@@ -20,7 +20,6 @@
 [data-id="display"] > ul > li{padding-bottom: var(--PAD_2)}
 [data-id="title"],[data-id="display"] dl > dd{padding:var(--PAD_1)}
 [data-id="display"],[data-id="display"] > *,[data-id="list"]{width: 100%}
-[data-id="display"]{height: auto}
 [data-id="title"]{height: var(--svg_icon_dim)}
 [data-id="title"]{border-bottom: 1px solid var(--c_prim_lo)}
 [data-id="display"]{border-radius: 8px}

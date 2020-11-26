@@ -17,19 +17,9 @@ body,
 dl,
 dt,
 dd,
+#entrance,
 __                     {margin: 0}
 
-#hero dd,
-__                     {margin: var(--PAD_1) }
-
-
-
-#entrance,
-__                     {margin: 0  -.3em 0 -.9em}  /* negative margins */
-
-
-button[data-slot_s="contents"],
-__                     {margin-top: var(--SLIDER_HEIGHT) }
 
 section,
 __                     {margin-bottom: var(--PAD_2) }
@@ -44,5 +34,7 @@ dd,
 __                     {padding: 0}
 
 
-[data-sub]:hover::after,
-__                     {padding: var(--PAD_4)}
+
+
+#hero dd,
+__                     {padding-right: 4vw}

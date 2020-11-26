@@ -258,7 +258,7 @@ bookmarkOpen__v    //:- diplay bookmark data
           const li_s =
             BOOK_o
               .slot__s( slot_s )
-          list_s += `<li data-slots_s="${slot_s}">${li_s}`
+          list_s += `<li data-slot_s="${slot_s}">${li_s}`
         }
       )
   LIB_o
@@ -268,10 +268,10 @@ bookmarkOpen__v    //:- diplay bookmark data
       display_e
     )
     .innerHTML =
-      `<ul>${list_s}</ul>`
+      list_s
   display_e  
     .classList
-    .toggle( 'unseen' )
+    .toggle( 'retract' )
 }
 ,
 
@@ -283,7 +283,7 @@ bookmarkOpen__v    //:- diplay bookmark data
     SLOT_o
       .display__e( 'section_bookmark' )
       .classList
-      .toggle( 'unseen' )
+      .toggle( 'retract' )
   }
 ,
 
@@ -293,18 +293,18 @@ bookmarkOpen__v    //:- diplay bookmark data
   ()
   {
     const list_a = new Set()
-    document
+    SLOT_o
+      .display__e( 'section_bookmark' )
       .querySelectorAll( '[data-id="list"] > li' )
       .forEach
       (
         li_e =>
         {
           list_a
-            .add( `${li_e.dataset.slot__s}` )
+            .add( `${li_e.dataset.slot_s}` )
         }
       )
-    ;console.log( list_a )
-    return
+    //;console.log( list_a )
     SER_o
       .CACHE__v
       (
@@ -531,18 +531,20 @@ bookmarkOpen__v    //:- diplay bookmark data
       .addEventListener
       (
         'click',
-        BOOK_o.bookmarkClose__v
+        //XX BOOK_o.bookmarkClose__v
+        BOOK_o.bookmarkLink__v
       )
     LIB_o
       .id__o
       (
-        'link',
+        'close',
         section_e
       )
       .addEventListener
       (
         'click',
-        BOOK_o.bookmarkLink__v
+        //XX BOOK_o.bookmarkLink__v
+        BOOK_o.bookmarkClose__v
       )
   }
 ,

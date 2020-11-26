@@ -9,9 +9,6 @@
   --BOX_OVERLAY: 12px 12px 32px 100vmax var(--c_shadow_lo);
 }
 
-[data-sub]:hover::after,
-__                     {box-shadow:var(--BOX_OVERLAY)}
-
 
 
 

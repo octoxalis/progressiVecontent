@@ -1,6 +1,7 @@
 /*=== DISPLAY ===*/
 :root
 {
+  --INITIAL_Z: 2;
   --SLIDER_Z: 1;
 }
 
@@ -11,32 +12,37 @@
 __                     {display: none}
 
 
-
-#initial,
+/*#initial,*/
+#hero > dt,
 main,
-[data-sub]:hover::after,
 __                     {display:grid; place-items:center}
 
+[data-sub]::after,
+__                     {display:grid; place-items:end}
 
-
-#hero,
 #sections_slider,
 __                     {display: flex}
 
 
 
-#hero,
 #sections_slider,
 __                     {flex-direction: column}
 
 
+#hero,
+__                     {grid-column-gap: 0vh}
+
+
 /*=== Z-INDEX ===*/
+/*
 [data-sub]:hover::after,
 __                     {z-index: calc( var(--SLIDER_Z) + 2 )}
+*/
 
 
 #initial,
-__                     {z-index: calc( var(--SLIDER_Z) + 1 )}
+__                     {z-index: var(--INITIAL_Z)}
+
 
 #sections_slider,
 __                     {z-index: var(--SLIDER_Z)}

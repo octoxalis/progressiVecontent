@@ -16,7 +16,7 @@ __  {width: 100%}
 #bookmark_page > dd{margin-bottom: 0}
 #bookmark_page input,#bookmark_page button{margin: var(--PAD_2)}
 #bookmark_content_list > li,#bookmark_history_list > li{margin: var(--PAD_1)}
-#bookmark_history_list button{margin: 0}
+#bookmark_history_list button,#bookmark_page > dt{margin: 0}
 #bookmark_page input{padding: var(--PAD_2)}
 #bookmark_content_list > li,#bookmark_history_list > li,#bookmark_history_list button{padding: var(--PAD_1)}
 #bookmark_name{padding-left: var(--PAD_4)}

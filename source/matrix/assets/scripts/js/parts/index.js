@@ -30,11 +30,15 @@ var IND_o =
         .service__v()
     }
     LIB_o
-      .invisible__v
-      (
-        LIB_o.nodeId__o( 'initial' ),
-        'add'
-      )
+      .nodeId__o( 'initial' )
+      .classList
+      .toggle( 'unseen' )
+    LIB_o
+      .rootVar__v
+        (
+          '--INITIAL_Z',
+          -1
+        )
     IND_o
       .colorMode__v
         ( 'hue_base' )

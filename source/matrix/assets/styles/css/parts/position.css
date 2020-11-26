@@ -1,8 +1,10 @@
 /*=== POSITION ===*/
 
 #initial,
+#hero > *,
+#entrance,
 #main,
-[data-sub]:hover::after,
+[data-sub]::after,
 .unseen,
 __                     {position: absolute}
 
@@ -12,7 +14,7 @@ __                     {position: sticky}
 
 
 #logo,
-#entrance,
+#logo *,
 #sections,
 __                     {position:relative}
 
@@ -20,21 +22,37 @@ __                     {position:relative}
 
 /*=== TOP ===*/
 
+#entrance,
 #sections_slider,
 __                     {top: 0}
 
+#hero > dd:first-of-type,
+__                     {bottom: 84vh}
+#hero > dd:nth-of-type(2),
+__                     {bottom: 65vh}
+#hero > dd:last-of-type,
+__                     {bottom: 36vh}
+#hero > dt,
+__                     {bottom: 4vh}
 
-
+[data-sub]::after,
+__                     {top: calc( var(--size_ratio) * 4em )}
 
 #logo,
-[data-sub]:hover::after,
-__                     {top: -1em }
-#entrance,
-__                     {top: 1.5em }
+__                     {top: -.75em}
+
 
 
 
 /*=== LEFT ===*/
+
+#logo,
+#entrance,
+__                     {left: 0}
+
+#logo > em:last-of-type,
+__                     {left: calc( var(--size_ratio) * 4vw)}
+
 
 
 /*=== BOTTOM ===*/
@@ -42,5 +60,8 @@ __                     {top: 1.5em }
 
 /*=== RIGHT ===*/
 
-[data-sub]:hover::after,
-__                     {right: 0}
+#logo > em:first-of-type,
+__                     {right: calc( var(--size_ratio) * .2vw)}
+
+
+

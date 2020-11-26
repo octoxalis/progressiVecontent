@@ -54,8 +54,10 @@ __                     {cursor: pointer}
 
 
        /* ??? mouse device only */
+       /*
 #graph_svg:hover,
 __                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+*/
 
 
 

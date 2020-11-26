@@ -6,7 +6,8 @@ __                     {animation: fade_in .5s ease-in-out}
 /*=== KEYFRAMES ===*/
 @keyframes fade_in     {0%   { opacity:0}
                         100% { opacity:1} }
-
+@keyframes datasub     {
+                        100% {transform: translateX( cacl( var(--FULL_WIDTH) * -1 ) ) }
 
 
 /*=== TRANSITION ===*/

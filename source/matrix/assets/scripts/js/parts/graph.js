@@ -131,7 +131,7 @@ var GRA_o =
     SLOT_o
       .display__e( 'section_contents' )
       .classList
-      .toggle( 'unseen' )
+      .toggle( 'retract' )
     const node_e =
       GRA_o
         .svg_e
@@ -156,7 +156,7 @@ var GRA_o =
     SLOT_o
       .display__e( 'section_contents' )
       .classList
-      .toggle( 'unseen' )
+      .toggle( 'retract' )
   }
 ,
 
@@ -224,6 +224,7 @@ var GRA_o =
           }
         )
     }
+    GRA_o.nodeClose__v()
   }
 ,
 
@@ -232,10 +233,17 @@ var GRA_o =
   nodeStep__s
   ()
   {
-    return LIB_o
-      .id__o( 'link' )
-      .getAttribute( 'data-slot_s' )  //: set by node__v
-      .slice( 'node_'.length )
+    return (
+      LIB_o
+        .id__o
+        (
+          'title',
+          SLOT_o
+            .display__e( 'section_contents' )
+        )
+        .getAttribute( 'data-slot_s' )  //: set by node__v
+        .slice( 'node_'.length )
+    )
   }
 ,
 
@@ -278,18 +286,23 @@ var GRA_o =
         .querySelector( `li[data-slot_n="${at_n}"]` )
     if ( !data_e ) return
     //>
-    const doc_e =
+    const section_e =
+      SLOT_o
+        .display__e( 'section_contents' )
+    const title_e =
       LIB_o
-        .id__o( 'link' )
-
-    doc_e
+        .id__o
+        (
+          'title',
+          section_e
+        )
+    title_e
       .setAttribute
       (
         'data-slot_s',
         node_e.id
       )
-    LIB_o
-      .id__o( 'title' )
+    title_e
       .innerHTML =
         data_e
           .dataset
@@ -412,21 +425,25 @@ var GRA_o =
     const section_e =
       SLOT_o
         .display__e( 'section_contents' )
-        .addEventListener
-        (
-          'click',
-          GRA_o.nodeClose__v
+    section_e
+      .querySelector( 'dl' )
+      .addEventListener
+      (
+        'click',
+        //XX GRA_o.nodeClose__v
+        GRA_o.nodeLink__v
         )
     LIB_o
       .id__o
       (
-        'link',
+        'close',
         section_e
       )
       .addEventListener
       (
         'click',
-        GRA_o.nodeLink__v
+        //XX GRA_o.nodeLink__v
+        GRA_o.nodeClose__v
       )
   //: keyboard
   /*
