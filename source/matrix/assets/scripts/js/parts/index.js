@@ -11,7 +11,7 @@ var IND_o =
       .nodeId__o( 'initial' )
       .addEventListener
       (
-        'click',    //: wait for visitor entrance
+        'click',    //: wait for visitor svg_logo
         IND_o.initial__v
       )
   }
@@ -31,14 +31,13 @@ var IND_o =
     }
     LIB_o
       .nodeId__o( 'initial' )
-      .classList
-      .toggle( 'unseen' )
-    LIB_o
-      .rootVar__v
-        (
-          '--INITIAL_Z',
-          -1
-        )
+      .remove()    //: get rid of initial !!!
+    //XX LIB_o
+    //XX   .rootVar__v
+    //XX     (
+    //XX       '--INITIAL_Z',
+    //XX       -1
+    //XX     )
     IND_o
       .colorMode__v
         ( 'hue_base' )

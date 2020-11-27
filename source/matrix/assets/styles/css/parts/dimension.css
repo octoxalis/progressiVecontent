@@ -13,7 +13,7 @@
   --BUTTON_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
   --IMG_UNFOLD:    calc( var(--STD_HEIGHT) * 1em );
 }
-#entrance,
+#svg_logo,
 __                     {--svg_icon_dim: var(--LOGO_HEIGHT)}
 
 
@@ -31,7 +31,7 @@ __                     {width: 1px}
 #hero > dd,
 [data-sub]::after,
 #hero button,
-#entrance,
+#svg_logo,
 #sections_slider,
 __                     {width: var(--FULL_WIDTH)}
 

@@ -47,18 +47,32 @@ __                     {--size_ratio: 1}
 
 
 
-#hero dd:nth-of-type(3),
-__                     {--size_ratio: 2.3}
-#hero dd,
-__                     {--size_ratio: 1.8}
-#hero dd:nth-of-type(1),
-__                     {--size_ratio: 1.3}
+/*#hero dd:nth-of-type(3),*/
+#initial_slogan li:nth-of-type(3) span,
+__                     {--size_ratio: 2}
+/*#hero dd,*/
+#initial_slogan li:nth-of-type(2) span,
+__                     {--size_ratio: 1.6}
+/*#hero dd:nth-of-type(1),*/
+#initial_slogan li:nth-of-type(1) span,
+__                     {--size_ratio: 1.2}
 
+
+
+#initial_slogan li span:nth-of-type(2),
+__                     {font-weight: 600}
+
+
+#initial_slogan li span:nth-of-type(1),
+__                     {letter-spacing: 1vw}
+
+
+/*
 [data-sub]::after,
 __                     {--size_ratio: 1}
+*/
 
 
-#logo,
 #logo > em,
 __                     {--size_ratio: 2}
 
@@ -80,6 +94,7 @@ __                     {font-weight: 600}
 
 
 #hero dd,
+#logo > em,
 __                     {font-weight: 100}
 
 
@@ -103,8 +118,8 @@ __                     {line-height: .8}
 
 /*=== SPACING ===*/
 
-#logo,
-__                     {letter-spacing: 2vw}
+#logo > em,
+__                     {letter-spacing: 1.5vw}
 
 
 #hero span,

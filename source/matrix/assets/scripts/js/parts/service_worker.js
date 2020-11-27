@@ -224,7 +224,7 @@ var SWO_o =
   )
   {
     SWO_o
-      .cache__v    //: simly put on cache: we shall stop at site entrance before loading the new slot
+      .cache__v    //: simly put on cache: we shall stop at site svg_logo before loading the new slot
       (
         search_s
           .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: trim '?s=' keeping '/'  //:-> '/slots/page.html'
