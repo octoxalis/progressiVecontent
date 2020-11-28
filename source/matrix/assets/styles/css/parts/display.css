@@ -13,12 +13,9 @@ __                     {display: none}
 
 
 /*#initial,*/
-#hero > dt,
 main,
 __                     {display:grid; place-items:center}
 
-[data-sub]::after,
-__                     {display:grid; place-items:end}
 
 #sections_slider,
 __                     {display: flex}
@@ -29,20 +26,11 @@ __                     {display: flex}
 __                     {flex-direction: column}
 
 
-#hero,
-__                     {grid-column-gap: 0vh}
 
 
 /*=== Z-INDEX ===*/
-/*
-[data-sub]:hover::after,
-__                     {z-index: calc( var(--SLIDER_Z) + 2 )}
-*/
-
 
 #initial,
+#sections_slider,
 __                     {z-index: var(--INITIAL_Z)}
 
-
-#sections_slider,
-__                     {z-index: var(--SLIDER_Z)}

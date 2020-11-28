@@ -26,15 +26,8 @@ __                     {margin-bottom: var(--PAD_2) }
 
 
 /*=== PADDING ===*/
-#hero,
 body,
 dl,
 dt,
 dd,
 __                     {padding: 0}
-
-
-
-
-#hero dd,
-__                     {padding-right: 3vw}

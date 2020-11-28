@@ -1,4 +1,9 @@
 /*=== TRANSFORM ===*/
+:root
+{
+  --INITIAL_TURN: -.03turn;
+}
+
 
 .retract,
 __                     {transform: scale(0)}
@@ -15,8 +20,6 @@ __                     {transform: scaleX(1)}
 __                     {transform:rotate(.5turn)}
 
 
-[data-sub]::after,
-__                     {transform: translateX( var(--FULL_WIDTH) )}
 
 
 
@@ -25,8 +28,6 @@ __                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5
 
 
 
-[data-sub],
-__                     {transform: rotate( var(--INITIAL_TURN) )}
 
 
 .svg_icon:hover,
@@ -35,15 +36,11 @@ __                     {filter: brightness( 2 )}
 
 
 /*=== ORIGIN ===*/
-#hero dd,
-__                     {transform-origin: top right}
 
 .retract,
 __                     {transform-origin: top left}
 
 
-[data-sub]:hover::after,
-__                     {animation: datasub .3s ease forwards}
 
 #sections_slider,
 __                     {transition: transform .2s ease}
@@ -59,42 +56,9 @@ __                     {filter: saturate( 3 ) hue-rotate(-5deg)}
 
 #initial,
 __                     {background: linear-gradient( var(--INITIAL_TURN),
-  hsla( var(--hue_base) 100% 6% / 1 ) 0%,
-  hsla( var(--hue_base) 100% 6% / 1 ) 60%,
-  hsla( var(--hue_base) 100% 3% / 1 )  60%,
-  hsla( var(--hue_base) 100% 3% / 1 )  100%)}
-/*
-#initial,
-__                     {background: linear-gradient( var(--INITIAL_TURN),
-                         hsla( var(--hue_base) 100% 15% / .6 ) 0%,
-                         hsla( var(--hue_base) 100% 15% / .6 ) 54%,
-                         hsla( var(--hue_base) 100% 15% / .7 ) 54%,
-                         hsla( var(--hue_base) 100% 15% / .7 ) 75%,
-                         hsla( var(--hue_base) 100% 15% / .8 ) 75%,
-                         hsla( var(--hue_base) 100% 15% / .8 ) 89%,
-                         hsla( var(--hue_base) 100% 15% / .9 ) 89%,
-                         hsla( var(--hue_base) 100% 15% / .9 ) 100%)}
-                         */
-#initial_slogan li:nth-of-type(1),
-__                     {background: hsla( var(--hue_base) 100% 5% / 1 )}
-#initial_slogan li:nth-of-type(2),
-__                     {background: hsla( var(--hue_base) 100% 7% / 1 )}
-#initial_slogan li:nth-of-type(3),
-__                     {background: hsla( var(--hue_base) 100% 10% / 1 )}
-#initial_logo,
-__                     {background: transparent}
-
-
-
-
-/*
-#initial_logo > button,
-__                     {position: absolute}
-*/
-
-
-
-
+  hsla( var(--hue_base) 94% 28% / 1 ) 0%,
+  hsla( var(--hue_base) 83% 6% / 1 )  100%)}
+  
 
 #initial_slogan,
 __                     {margin: 0}
@@ -124,35 +88,22 @@ __                     {color: var(--c_decor_hi)}
 __                     {background: transparent}
 
 
-/*
+
 #initial_logo > button,
-__                     {bottom: 4vh}
+__                     {text-align: left}
 
-
-#svg_logo,
-__                     {bottom: 0}
 
 #logo,
-__                     {bottom: 17vh}
-*/
+__                     {top: calc( var(--size_ratio) * -3vh ) }
+
+
 /*
-#initial_logo > button,
-__                     {top: 0}
-
-
-#svg_logo,
-__                     {top: 0}
-*/
-
-#logo,
-__                     {top: calc( var(--size_ratio) * -3em ) }
-
-
 #initial_slogan,
-__                     {--layer_1: 12;
-                        --layer_2: 18;
-                        --layer_3: 26;
-                        --layer_4: 44 }
+__                     {--layer_1: 24;
+                        --layer_2: 24;
+                        --layer_3: 24;
+                        --layer_4: 24 }
+                        */
 
 
 #initial_slogan,
@@ -160,6 +111,7 @@ __                     {--layer_1: 12;
 __                     {display: flex;
                         flex-direction: column}
 
+/*
 #initial_slogan li:nth-of-type(1),
 __                     {height: calc( var(--layer_1) * 1vh )}
 #initial_slogan li:nth-of-type(2),
@@ -168,46 +120,62 @@ __                     {height: calc( var(--layer_2) * 1vh )}
 __                     {height: calc( var(--layer_3) * 1vh )}
 #initial_logo,
 __                     {height: calc( var(--layer_4) * 1vh )}
+*/
 
+#initial_slogan li,
+__                     {height: 24vh}
 
 #initial_slogan span,
-#initial_logo > button,
 __                     {position:relative}
+#svg_logo,
+__                     {position:absolute}
 
 
+/*
 #initial_slogan li:nth-of-type(1) span,
 __                     {top: calc(  (var(--layer_1) * 1vh) - 5em )}
 #initial_slogan li:nth-of-type(2) span,
 __                     {top: calc(  (var(--layer_2) * 1vh) - 5em )}
 #initial_slogan li:nth-of-type(3) span,
 __                     {top: calc(  (var(--layer_3) * 1vh) - 5em )}
+*/
+/*
+#initial_slogan li span,
+__                     {top: 0}
+*/
+
+/*
+#svg_logo,
+__                     {top: calc( var(--svg_icon_dim) * -.3 )}
+*/
+#svg_logo,
+__                     {left: 17vw}
 
 
 
-#initial_slogan li:not( #initial_logo ),
-__                     {padding-left: 4vw}
 
-#initial_slogan li:not( #initial_logo ),
+/*
+#initial_slogan li,
+__                     {padding-left: 2vw}
+*/
+
+/*
+#initial_slogan li,
 __                     {text-align: left}
+*/
 
 
 #initial_slogan li,
 __                     {transform: rotateY( var(--INITIAL_TURN) )}
 #initial_slogan,
-__                     {perspective: 50vw}
+__                     {perspective: 28vw}
 
 
+#svg_logo,
 #initial_slogan > li > span:nth-of-type(3) ,
 __                     {transform: translateX( var(--FULL_WIDTH) )}
 
+#initial_logo > button:hover #svg_logo,
 #initial_slogan > li:hover > span:nth-of-type(3),
-__                     {animation: datasub .3s ease forwards}
+__                     {animation: datasub .4s ease forwards}
 
-
-#logo > em,
-__                     {font-style: normal}
-
-:root
-{
-  --INITIAL_TURN: -.05turn;
-}

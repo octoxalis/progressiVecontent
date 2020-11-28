@@ -8,13 +8,13 @@
   --FULL_HEIGHT:  100vh;
   --HALF_HEIGHT:  50vh;
   --STD_HEIGHT:    5;
-  --LOGO_HEIGHT:   clamp( 8em, 25vh, 12em ) /*calc( var(--STD_HEIGHT) * 1em )*/;
+  --LOGO_HEIGHT:   clamp( 12vh, 16vh, 20vh );
   --SLIDER_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
   --BUTTON_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
   --IMG_UNFOLD:    calc( var(--STD_HEIGHT) * 1em );
 }
 #svg_logo,
-__                     {--svg_icon_dim: var(--LOGO_HEIGHT)}
+__                     {--svg_icon_dim: calc( var(--LOGO_HEIGHT) * .8 )}
 
 
 
@@ -27,11 +27,6 @@ __                     {width: 1px}
 
 
 #initial,
-#hero,
-#hero > dd,
-[data-sub]::after,
-#hero button,
-#svg_logo,
 #sections_slider,
 __                     {width: var(--FULL_WIDTH)}
 
@@ -58,12 +53,8 @@ __                     {height: 1px}
 
 
 #initial,
-/*#hero,*/
 __                     {height: var(--FULL_HEIGHT)}
 
-#hero dt,
-#hero button,
-__                     {height: var(--LOGO_HEIGHT)}
 
 
 

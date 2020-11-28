@@ -30,11 +30,9 @@ __                     {color: var(--c_prim_lo)}
 #logo,
 __                     {color: var(--c_decor_hi)}
 
-#logo .svg_icon,
-__                     {stroke: var(--c_decor_hi)}
+#svg_logo,
+__                     {stroke: var(--c_highlight)}
 
-#hero dd,
-__                     {color: var(--c_decor_hi)}
 
 
 .svg_icon,
@@ -45,8 +43,6 @@ __                     {stroke: var(--c_highlight)}
 
 
 /*=== BACKGROUND ===*/
-#hero,
-#hero *,
 #sections,
 #sections > *,
 __                     {background: transparent}

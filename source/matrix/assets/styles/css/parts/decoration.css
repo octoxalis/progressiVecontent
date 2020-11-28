@@ -4,16 +4,12 @@
 
 
                                       
-button, select,
-[data-sub]::after,
+button,
+select,
 __                     {text-transform: none}
 
-#hero,
-__                     {text-transform: uppercase}
 
 
-[data-sub]::after,
-__                     {content: attr( data-sub ) }
 
 /*=== WHITE-SPACE ===*/
 
@@ -49,7 +45,6 @@ __                     {cursor: auto}
 
 button,
 .svg_icon,
-[data-sub]:hover,
 __                     {cursor: pointer}
 
 
