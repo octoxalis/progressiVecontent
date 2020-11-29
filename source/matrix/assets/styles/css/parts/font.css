@@ -6,11 +6,11 @@
   --screen_min: 400;
   --screen_max: 1600;
 
-  --font_base: {{ C_o.base_u | mul__n( C_o.base_min ) }};
+  --font_base: {{ C_o.base_u * C_o.base_min }};
 
 
-  --font_min: {{ C_o.base_u | mul__n( C_o.base_min ) }};    /* --font_base */
-  --font_max: {{ C_o.base_u | mul__n( C_o.base_min ) | mul__n( 2 ) }};
+  --font_min: {{ C_o.base_u * C_o.base_min }};    /* --font_base */
+  --font_max: {{ C_o.base_u * C_o.base_min * 2 }};
   --font_size: calc( (var(--font_min) * 1px)
                      + ( var(--font_max) - var(--font_min) )
                      * ( 100vw - (var(--screen_min) * 1px) )

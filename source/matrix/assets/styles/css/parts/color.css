@@ -2,11 +2,10 @@
 :root
 {
   --INVERT_FILTER:
+      hue-rotate( {{ C_o.HUE_ROTATE_n }}deg )
       invert(100%)
-      hue-rotate({{C_o.HUE_ROTATE_n}}deg)
       brightness(8);
 }
-
 
 
 

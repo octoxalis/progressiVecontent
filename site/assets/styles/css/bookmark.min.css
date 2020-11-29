@@ -2,8 +2,7 @@
 #bookmark_page,#bookmark_content,#bookmark_history,#bookmark_content_list,#bookmark_history_list,#bookmark_history_list > li,#bookmark_form{display: flex;
   flex-direction: column}
 #bookmark_history_list > li > dl{display: flex}
-#bookmark_page,#bookmark_page > *,#bookmark_page ul,#bookmark_form,
-__  {width: 100%}
+#bookmark_page,#bookmark_page > *,#bookmark_page ul,#bookmark_form{width: 100%}
 #bookmark_page button{width: 25%}
 #bookmark_history_list > li > dl > dt{flex-basis: 25%}
 #bookmark_history_list > li > dl > dd:first-of-type{flex-basis: 50%}

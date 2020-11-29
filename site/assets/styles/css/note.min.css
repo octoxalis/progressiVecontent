@@ -1,7 +1,5 @@
 
- .note_link_a, __  {--button_dim: 3em;
-  
-  }
+ .note_link_a, __  {--button_dim: 3em}
 [data-id^=note_] button{--size_ratio: .75}
 [data-id="note_img"]{--note_dim: 2em}
 [data-id="note_img"]{--svg_icon_dim: 1em}

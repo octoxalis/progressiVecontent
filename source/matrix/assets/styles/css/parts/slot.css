@@ -208,7 +208,7 @@ __                     {border-radius: 50%}
 
 
 [data-id="ulist"]  > li,
-__                     {border-left: {{C_o.BORDER_1}} solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
+__                     {border-left: {{ C_o.BORDER_1 }} solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
 
 [data-id="ulist"]  > li,
 __                     {--border_opac:.6}

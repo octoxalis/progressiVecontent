@@ -1,9 +1,7 @@
 /*=== NOTE ===*/
 
  .note_link_a,
- __                     {--button_dim: 3em;
-                         /*--button_pad: .5em;*/
-                        }
+ __                     {--button_dim: 3em}
 
 [data-id^=note_] button,
 __                      {--size_ratio: .75}

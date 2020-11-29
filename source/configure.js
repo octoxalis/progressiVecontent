@@ -94,8 +94,9 @@ module.exports =
   HUE_ROTATE_n: 0,      //: hue deviation for hover effect
 
 
-  BODY_WIDTH_n: 80,     //: percentage of document width
-  LINE_WIDTH_n: 52,     //: in ch unit
+  BODY_WIDTH_n:  80,     //: percentage of document width
+  BODY_MARGIN_n: 10,     //: (100 - 80) * .5
+  LINE_WIDTH_n:  52,     //: in ch unit
 
 
   //.........................................................

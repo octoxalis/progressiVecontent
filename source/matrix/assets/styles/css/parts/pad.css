@@ -1,9 +1,4 @@
 /*=== MARGIN ===*/
-:root
-{
-  --BODY_MARGIN: calc( ( 100 - {{C_o.BODY_WIDTH_n}} ) * .5vw );
-}
-
 
 body,
 dl,
