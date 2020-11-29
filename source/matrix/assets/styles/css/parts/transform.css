@@ -49,133 +49,61 @@ __                     {transition: transform .2s ease}
 
 /*=== ============================================== ===*/
 
-#initial_slogan li span:nth-of-type(3),
-__                     {filter: saturate( 3 ) hue-rotate(-5deg)}
-
-
-
 #initial,
-__                     {background: linear-gradient( var(--INITIAL_TURN),
-  hsla( var(--hue_base) 94% 28% / 1 ) 0%,
-  hsla( var(--hue_base) 83% 6% / 1 )  100%)}
+__                     {background:
+                        linear-gradient( var(--INITIAL_TURN),
+                        hsla( var(--hue_base) 94% 28% / 1 ) 0%,
+                        hsla( var(--hue_base) 83% 6% / 1 )  100%)}
+  
   
 
 #initial_slogan,
 __                     {margin: 0}
 #initial_slogan,
-#initial_logo > button,
 __                     {padding: 0}
+
+#svg_logo,
+__                     {margin: 0 -2vmin}
 
 
 #initial_slogan,
-#initial_logo,
-#initial_logo > button,
 __                     {width: var(--FULL_WIDTH)}
-#initial_logo,
-#initial_logo > button,
-__                     {width: 100%}
 
 #initial_slogan,
 __                     {height: var(--FULL_HEIGHT)}
 
-#initial_logo > button,
-__                     {height: var(--LOGO_HEIGHT)}
+#initial_slogan,
+__                     {overflow: hidden}
+
 
 #initial_slogan,
 __                     {color: var(--c_decor_hi)}
 
-#initial_logo > button,
-__                     {background: transparent}
-
-
-
-#initial_logo > button,
-__                     {text-align: left}
-
-
-#logo,
-__                     {top: calc( var(--size_ratio) * -3vh ) }
-
-
-/*
-#initial_slogan,
-__                     {--layer_1: 24;
-                        --layer_2: 24;
-                        --layer_3: 24;
-                        --layer_4: 24 }
-                        */
-
 
 #initial_slogan,
 #initial_slogan li,
-__                     {display: flex;
-                        flex-direction: column}
+__                     {display: flex}
 
-/*
-#initial_slogan li:nth-of-type(1),
-__                     {height: calc( var(--layer_1) * 1vh )}
-#initial_slogan li:nth-of-type(2),
-__                     {height: calc( var(--layer_2) * 1vh )}
-#initial_slogan li:nth-of-type(3),
-__                     {height: calc( var(--layer_3) * 1vh )}
-#initial_logo,
-__                     {height: calc( var(--layer_4) * 1vh )}
-*/
+
+#initial_slogan,
+#initial_slogan li:not(#initial_logo),
+__                     {flex-direction: column}
 
 #initial_slogan li,
-__                     {height: 24vh}
+__                     {height: 23vh}
 
-#initial_slogan span,
-__                     {position:relative}
+
 #svg_logo,
-__                     {position:absolute}
+__                     {transform: translateY( var(--FULL_HEIGHT) )}
 
 
-/*
-#initial_slogan li:nth-of-type(1) span,
-__                     {top: calc(  (var(--layer_1) * 1vh) - 5em )}
-#initial_slogan li:nth-of-type(2) span,
-__                     {top: calc(  (var(--layer_2) * 1vh) - 5em )}
-#initial_slogan li:nth-of-type(3) span,
-__                     {top: calc(  (var(--layer_3) * 1vh) - 5em )}
-*/
-/*
-#initial_slogan li span,
-__                     {top: 0}
-*/
-
-/*
-#svg_logo,
-__                     {top: calc( var(--svg_icon_dim) * -.3 )}
-*/
-#svg_logo,
-__                     {left: 17vw}
-
-
-
-
-/*
-#initial_slogan li,
-__                     {padding-left: 2vw}
-*/
-
-/*
-#initial_slogan li,
-__                     {text-align: left}
-*/
+#initial_logo:hover #svg_logo,
+__                     {animation: logo .4s ease forwards}
 
 
 #initial_slogan li,
 __                     {transform: rotateY( var(--INITIAL_TURN) )}
+
 #initial_slogan,
-__                     {perspective: 28vw}
-
-
-#svg_logo,
-#initial_slogan > li > span:nth-of-type(3) ,
-__                     {transform: translateX( var(--FULL_WIDTH) )}
-
-#initial_logo > button:hover #svg_logo,
-#initial_slogan > li:hover > span:nth-of-type(3),
-__                     {animation: datasub .4s ease forwards}
+__                     {perspective: 32vw}
 
