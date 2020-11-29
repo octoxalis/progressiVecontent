@@ -62,7 +62,7 @@ __                     {display: grid;
 
 
 [data-id="note_img"] button,
-__                     {grid-template-columns: 1fr var(--IMG_UNFOLD)}
+__                     {grid-template-columns: 1fr {{ C_o.IMG_UNFOLD }}}
 
 
 [data-id="img_unfold"],
@@ -131,11 +131,11 @@ __                     {top: calc( var(--button_dim) * -.5 ) }  /* covering both
 __                     {margin: 0}
 
 button[data-legend],
-__                     {margin-top: var(--PAD_8)}
+__                     {margin-top: {{ C_o.PAD_8 }}}
 
 
 [data-id="note_txt"] > button,
-__                     {margin-right: var(--PAD_1)}
+__                     {margin-right: {{ C_o.PAD_1 }}}
 
 
 
@@ -148,18 +148,18 @@ __                     {left: 50%; right: 50%}/* !!!! full width */
 
 [data-id="note_txt"] > button,
 [data-id="note_img"] button,
-__                     {padding: 0 var(--PAD_1)}
+__                     {padding: 0 {{ C_o.PAD_1 }}}
 
 [data-id="note_txt"] .note_open,
 .note_link,
-__                     {padding: var(--PAD_2)}
+__                     {padding: {{ C_o.PAD_2 }}}
 
 [data-id="img_legend"],
 [data-id="note_img"] button,
-__                     {padding: var(--PAD_1)}
+__                     {padding: {{ C_o.PAD_1 }}}
 
 [data-id="note_img"] em,    /* as author or credit */
-__                     {padding: var(--PAD_4) 0}
+__                     {padding: {{ C_o.PAD_4 }} 0}
 
 
 [data-id="note_content"],
@@ -178,7 +178,7 @@ __                     {width: 100%}
 
 
 [data-id="note_img"] [data-id="note_content"],
-__                     {width: var(--FULL_WIDTH)}
+__                     {width: {{ C_o.FULL_WIDTH }}}
 
 
 
@@ -188,7 +188,7 @@ __                     {min-width: var(--LINE_WIDTH)}
 
 
 [data-id="img_unfold"] > img,
-__                     {width: var(--IMG_UNFOLD)}
+__                     {width: {{ C_o.IMG_UNFOLD }}}
 
 
 
@@ -205,16 +205,16 @@ __                     {width: var(--button_dim); height: var(--button_dim)}
 
 
 [data-id="note_img"] button,
-__                     {height: calc( var(--IMG_UNFOLD) + (2px * 2) )}  /* border:2px */
+__                     {height: calc( {{ C_o.IMG_UNFOLD }} + (2px * 2) )}  /* border:2px */
 
 
 [data-id="img_unfold"] > img,
-__                     {height: var(--IMG_UNFOLD)}
+__                     {height: {{ C_o.IMG_UNFOLD }}}
 
 
 
 [data-id="note_txt"] .note_open,
-__                     {border-left: var(--PAD_2) solid var(--c_back_op)}
+__                     {border-left: {{ C_o.PAD_2 }} solid var(--c_back_op)}
 
 
 .note_link,
@@ -289,7 +289,7 @@ __                     {text-decoration: none}
 __                     {cursor: pointer}
 
 
-__                     {box-shadow:var(--BOX_SHADOW)}
+__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 
 
 
@@ -342,7 +342,7 @@ __                     {--size_ratio: .8}
 [data-id="note_content"] strong    /* title */
 {
   /*display: inline-block;*/
-  margin-top: var(--PAD_4);
+  margin-top: {{ C_o.PAD_4 }};
   font-size: var(--font_strong);
   font-weight: 900;
   font-style: normal;
@@ -362,7 +362,7 @@ __                     {--size_ratio: .8}
 
 [data-id="note_content"] cite    /* citation */
 {
-  padding-left: var(--PAD_4);
+  padding-left: {{ C_o.PAD_4 }};
 }
 [data-id="note_content"] cite::before
 {

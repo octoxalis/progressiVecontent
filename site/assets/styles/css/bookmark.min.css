@@ -11,15 +11,15 @@ __  {width: 100%}
 #bookmark_history_list button{flex-basis: 10%}
 #bookmark_history{max-height: 30vh}
 #bookmark_history{overflow-y: auto}
-#bookmark_page{margin-top: var(--PAD_6)}
-#bookmark_page > dt{margin: var(--PAD_4) 0 0 var(--PAD_2)}
+#bookmark_page{margin-top: 1.5rem}
+#bookmark_page > dt{margin: 1rem 0 0 0.5rem}
 #bookmark_page > dd{margin-bottom: 0}
-#bookmark_page input,#bookmark_page button{margin: var(--PAD_2)}
-#bookmark_content_list > li,#bookmark_history_list > li{margin: var(--PAD_1)}
+#bookmark_page input,#bookmark_page button{margin: 0.5rem}
+#bookmark_content_list > li,#bookmark_history_list > li{margin: 0.25rem}
 #bookmark_history_list button,#bookmark_page > dt{margin: 0}
-#bookmark_page input{padding: var(--PAD_2)}
-#bookmark_content_list > li,#bookmark_history_list > li,#bookmark_history_list button{padding: var(--PAD_1)}
-#bookmark_name{padding-left: var(--PAD_4)}
+#bookmark_page input{padding: 0.5rem}
+#bookmark_content_list > li,#bookmark_history_list > li,#bookmark_history_list button{padding: 0.25rem}
+#bookmark_name{padding-left: 1rem}
 #bookmark_page button{align-self: flex-end}
 #bookmark_content_list > li,#bookmark_history_list > li{border: 1px solid transparent}
 #bookmark_name{border: none;

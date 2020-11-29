@@ -1,20 +1,10 @@
 /*=== DIMENSIONS ===*/
 :root
 {
-  --BODY_WIDTH: calc( {{C_o.BODY_WIDTH_n}} * 1vw );
-  --LINE_WIDTH: clamp( 30ch, {{C_o.LINE_WIDTH_n}} * 1ch, var(--BODY_WIDTH) - 4vw );
-  --FULL_WIDTH:  100vw;
-  --HALF_WIDTH:  50vw;
-  --FULL_HEIGHT:  100vh;
-  --HALF_HEIGHT:  50vh;
-  --STD_HEIGHT:    5;
-  --LOGO_HEIGHT:   clamp( 12vh, 16vh, 20vh );
-  --SLIDER_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
-  --BUTTON_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
-  --IMG_UNFOLD:    calc( var(--STD_HEIGHT) * 1em );
+  --LINE_WIDTH: clamp( 30ch, {{ C_o.LINE_WIDTH_n }}ch, {{C_o.BODY_WIDTH_n - 4 }}vw );
 }
 #svg_logo,
-__                     {--svg_icon_dim: calc( var(--LOGO_HEIGHT) * .8 )}
+__                     {--svg_icon_dim: calc( {{ C_o.LOGO_HEIGHT }} * .8 )}
 
 
 
@@ -28,7 +18,7 @@ __                     {width: 1px}
 
 #initial,
 #sections_slider,
-__                     {width: var(--FULL_WIDTH)}
+__                     {width: {{ C_o.FULL_WIDTH }}}
 
 
 
@@ -53,13 +43,13 @@ __                     {height: 1px}
 
 
 #initial,
-__                     {height: var(--FULL_HEIGHT)}
+__                     {height: {{ C_o.FULL_HEIGHT }}}
 
 
 
 
 #sections_slider,
-__                     {height: var(--SLIDER_HEIGHT)}
+__                     {height: {{ C_o.SLIDER_HEIGHT }}}
 
 
 .svg_icon,

@@ -1,12 +1,4 @@
 /*=== BORDER ===*/
-:root
-{
-  --BORDER_W: .2em;
-  --BORDER_1: calc( var(--BORDER_W) * 1 );
-  --BORDER_2: calc( var(--BORDER_1) * 2 );
-  --BORDER_3: calc( var(--BORDER_1) * 3 );
-}
-
 
 
 /*=== BORDER ===*/

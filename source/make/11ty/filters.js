@@ -74,7 +74,13 @@ module.exports = make_o =>
   make_o.addFilter( 'strip', ( css_s, ...args_ ) => CSS_o.strip__s( css_s, ...args_ ) )
   
 
-
+  const OPE_o = require('../lib/operators.js')
+  make_o.addFilter( 'add__n', ( op1_n, op2_n ) => OPE_o.add__n( op1_n, op2_n ) )
+  make_o.addFilter( 'sub__n', ( op1_n, op2_n ) => OPE_o.substract__n( op1_n, op2_n ) )
+  make_o.addFilter( 'mul__n', ( op1_n, op2_n ) => OPE_o.multiply__n( op1_n, op2_n ) )
+  make_o.addFilter( 'div__n', ( op1_n, op2_n ) => OPE_o.divide__n( op1_n, op2_n ) )
+  make_o.addFilter( 'mod__n', ( op1_n, op2_n ) => OPE_o.modulo__n( op1_n, op2_n ) )
+  
 
   //: NOT USED
   //XX const MIXIN_o = require('../lib/mixin.js')

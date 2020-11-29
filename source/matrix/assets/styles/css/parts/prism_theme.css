@@ -18,7 +18,7 @@
 
 .toolbar-item > button
 {
-  padding: var(--PAD_1) var(--PAD_2);
+  padding: {{ C_o.PAD_1 }} {{ C_o.PAD_2 }};
   border: .1rem solid var(--c_decor_ne);
 }
 .toolbar-item > button:hover

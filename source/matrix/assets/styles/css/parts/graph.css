@@ -26,7 +26,7 @@ __                     {margin: 0}
 __                     {margin: auto}
 
 #graph,
-__                     {margin-top: var(--PAD_8)}
+__                     {margin-top: {{ C_o.PAD_8 }}}
 
 
 

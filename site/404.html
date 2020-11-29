@@ -1,41 +1,20 @@
-<!doctype html><html lang="en"><head><script defer="defer" src="https://progressivecontent.netlify.app/assets/scripts/js/index.min.js"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>404 Error</title><meta property="og:title" content="404 Error"/><meta property="og:type" content="blog"/><meta name="description" content="undefined,Innovative website architecture for partitioned content,website architecture,static site generator,partitioned,modular,content"><meta name="theme-color" content="#064ec1"><link rel="icon" href="https://progressivecontent.netlify.app/favicon.svg"><link rel="mask-icon" href="https://progressivecontent.netlify.app/mask-icon.svg" color="#000000"><link rel="apple-touch-icon" href="https://progressivecontent.netlify.app/assets/media/apple-touch-icon.png"><link rel="manifest" href="https://progressivecontent.netlify.app/asset-manifest.json"><base href="https://progressivecontent.netlify.app/404.html"><meta property="og:url" content="https://progressivecontent.netlify.app/404.html"/><link rel="canonical" href="https://progressivecontent.netlify.app/404.html"/><style data-id="inline_style">:root
-{
- --BOX_SHADOW:
- 0 1px 1px var(--c_shadow_ne), 
- 0 2px 2px var(--c_shadow_ne), 
- 0 4px 4px var(--c_shadow_ne);
- 
- --BOX_OVERLAY: 12px 12px 32px 100vmax var(--c_shadow_lo);
-}
-html{box-sizing:border-box}
+<!doctype html><html lang="en"><head><script defer="defer" src="https://progressivecontent.netlify.app/assets/scripts/js/index.min.js"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>404 Error</title><meta property="og:title" content="404 Error"/><meta property="og:type" content="blog"/><meta name="description" content="undefined,Innovative website architecture for partitioned content,website architecture,static site generator,partitioned,modular,content"><meta name="theme-color" content="#064ec1"><link rel="icon" href="https://progressivecontent.netlify.app/favicon.svg"><link rel="mask-icon" href="https://progressivecontent.netlify.app/mask-icon.svg" color="#000000"><link rel="apple-touch-icon" href="https://progressivecontent.netlify.app/assets/media/apple-touch-icon.png"><link rel="manifest" href="https://progressivecontent.netlify.app/asset-manifest.json"><base href="https://progressivecontent.netlify.app/404.html"><meta property="og:url" content="https://progressivecontent.netlify.app/404.html"/><link rel="canonical" href="https://progressivecontent.netlify.app/404.html"/><style data-id="inline_style">html{box-sizing:border-box}
 *, 
 *:before,*:after{box-sizing:inherit}
 .unseen{clip-path: inset(0px 0px)}
 .unseen,button{overflow: hidden}
 body{overflow-x: hidden}
-:root
-{
- --INITIAL_Z: 2;
- --SLIDER_Z: 1;
-}
 #svg_symbols{display: none}
 main{display:grid; place-items:center}
 #sections_slider{display: flex}
 #sections_slider{flex-direction: column}
-#initial,#sections_slider{z-index: var(--INITIAL_Z)}
+#initial,#sections_slider{z-index: 2}
 :root
 {
- --PAD_1: .25em;
- --PAD_2: calc( var(--PAD_1) * 2 );
- --PAD_4: calc( var(--PAD_1) * 4 );
- --PAD_6: calc( var(--PAD_1) * 6 );
- --PAD_8: calc( var(--PAD_1) * 8 );
- --PAD_12: calc( var(--PAD_1) * 12 );
- --PAD_16: calc( var(--PAD_1) * 16 );
  --BODY_MARGIN: calc( ( 100 - 80 ) * .5vw );
 }
 body,dl,dt,dd,#entrance{margin: 0}
-section{margin-bottom: var(--PAD_2) }
+section{margin-bottom: 0.5rem }
 body,dl,dt,dd{padding: 0}
 #initial,#main,.unseen{position: absolute}
 #sections_slider{position: sticky}
@@ -44,37 +23,20 @@ body,dl,dt,dd{padding: 0}
 #logo > em:last-of-type{left: 4vw}
 :root
 {
- --BODY_WIDTH: calc( 80 * 1vw );
- --LINE_WIDTH: clamp( 30ch, 52 * 1ch, var(--BODY_WIDTH) - 4vw );
- --FULL_WIDTH: 100vw;
- --HALF_WIDTH: 50vw;
- --FULL_HEIGHT: 100vh;
- --HALF_HEIGHT: 50vh;
- --STD_HEIGHT: 5;
- --LOGO_HEIGHT: clamp( 12vh, 16vh, 20vh );
- --SLIDER_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
- --BUTTON_HEIGHT: calc( var(--STD_HEIGHT) * 1em );
- --IMG_UNFOLD: calc( var(--STD_HEIGHT) * 1em );
+ --LINE_WIDTH: clamp( 30ch, 52ch, 76vw );
 }
-#svg_logo{--svg_icon_dim: calc( var(--LOGO_HEIGHT) * .8 )}
+#svg_logo{--svg_icon_dim: calc( clamp( 12vh, 16vh, 20vh ) * .8 )}
 .retract{width: 0}
 .unseen{width: 1px}
-#initial,#sections_slider{width: var(--FULL_WIDTH)}
+#initial,#sections_slider{width: 100vw}
 #sections{width: 100%}
 .svg_icon{width: var(--svg_icon_dim)}
 *{scrollbar-width:thin}
 .retract{height: 0}
 .unseen{height: 1px}
-#initial{height: var(--FULL_HEIGHT)}
-#sections_slider{height: var(--SLIDER_HEIGHT)}
+#initial{height: 100vh}
+#sections_slider{height: 5em}
 .svg_icon{height: var(--svg_icon_dim)}
-:root
-{
- --BORDER_W: .2em;
- --BORDER_1: calc( var(--BORDER_W) * 1 );
- --BORDER_2: calc( var(--BORDER_1) * 2 );
- --BORDER_3: calc( var(--BORDER_1) * 3 );
-}
 iframe,button,.unseen{border: 0}
 *::-webkit-scrollbar-thumb{border: var(--BORDER_1) solid var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{border-radius: .5rem}
@@ -89,25 +51,22 @@ button:focus{outline: 0}
 --c_hue_h: calc( var(--hue_base) + 20 ); 
 --c_hue_d: calc( var(--hue_base) + -20 ); 
 --c_hue_l: calc( var(--hue_base) + 10 ); 
---sat_base: 50;
---sat_unit: 11;
---c_sat_hi_4: calc( ( var(--sat_base) + (var(--sat_unit) * 4 ) ) * 1% ); 
---c_sat_hi_2: calc( ( var(--sat_base) + (var(--sat_unit) * 2 ) ) * 1% ); 
---c_sat_ne : calc( ( var(--sat_base) + 0 ) * 1% );  
---c_sat_lo_2: calc( ( var(--sat_base) - (var(--sat_unit) * 2 ) ) * 1% ); 
---c_sat_lo_4: calc( ( var(--sat_base) - (var(--sat_unit) * 4 ) ) * 1% ); 
---lum_base: 50;
+--c_sat_hi_4: 94%; 
+--c_sat_hi_2: 94%; 
+--c_sat_ne : 50%;  
+--c_sat_lo_2: 28%; 
+--c_sat_lo_4: 6%; 
 --lum_mode: 1;
 --lum_contrast: 45;
---c_lum_hi_4: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * 1.0 ) ) * 1% ); 
---c_lum_hi_3: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .75 ) ) * 1% ); 
---c_lum_hi_2: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .50 ) ) * 1% ); 
---c_lum_hi_1: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .25 ) ) * 1% ); 
---c_lum_ne : calc( ( var(--lum_base) + 0 ) * 1% );   
---c_lum_lo_1: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .25 ) ) * 1% ); 
---c_lum_lo_2: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .50 ) ) * 1% ); 
---c_lum_lo_3: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .75 ) ) * 1% ); 
---c_lum_lo_4: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * 1.0 ) ) * 1% ); 
+--c_lum_hi_4: calc( ( 50 + ( var(--lum_mode) * 45 * 1.0 ) ) * 1% ); 
+--c_lum_hi_3: calc( ( 50 + ( var(--lum_mode) * 45 * .75 ) ) * 1% ); 
+--c_lum_hi_2: calc( ( 50 + ( var(--lum_mode) * 45 * .50 ) ) * 1% ); 
+--c_lum_hi_1: calc( ( 50 + ( var(--lum_mode) * 45 * .25 ) ) * 1% ); 
+--c_lum_ne : calc( ( 50 + 0 ) * 1% );    
+--c_lum_lo_1: calc( ( 50 - ( var(--lum_mode) * 45 * .25 ) ) * 1% ); 
+--c_lum_lo_2: calc( ( 50 - ( var(--lum_mode) * 45 * .50 ) ) * 1% ); 
+--c_lum_lo_3: calc( ( 50 - ( var(--lum_mode) * 45 * .75 ) ) * 1% ); 
+--c_lum_lo_4: calc( ( 50 - ( var(--lum_mode) * 45 * 1.0 ) ) * 1% ); 
 --sat_ne: var(--c_sat_lo_2);
 --c_prim_hi: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_4) / 1 );
 --c_prim_ne: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_ne) / 1 );
@@ -144,9 +103,6 @@ button:focus{outline: 0}
  invert(100%)
  hue-rotate(0deg)
  brightness(8);
- --SATURATE_FILTER:
- saturate(3)
- brightness(2);
 }
 .unseen,.invisible,.retract{opacity: 0}
 body{color: var(--c_prim_lo)}
@@ -164,15 +120,15 @@ body,#sections_slider{background: var(--c_prim_hi)}
  --base_min: 1.7;
  --screen_min: 400;
  --screen_max: 1600;
- --font_base: calc( var(--base_u) * var(--base_min) );
- --font_min: var(--font_base);
- --font_max: calc( var(--font_base) * 2 );
+ --font_base: 13.6;
+ --font_min: 13.6; 
+ --font_max: 27.2;
  --font_size: calc( (var(--font_min) * 1px) + ( var(--font_max) - var(--font_min) ) * ( 100vw - (var(--screen_min) * 1px) ) / ( var(--screen_max) - var(--screen_min) )
   );
  --font_u: calc( var(--font_size) * 1 ); 
  --font_body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif;
+ --font_title: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif;
  --font_mono: system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace;
- --font_title: var(--font_body);
 }
 body,body *{font-family: var(--font_body)}
 body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--size_ratio) )}
@@ -209,39 +165,35 @@ button,.svg_icon{cursor: pointer}
 {background-color: var(--c_decor_hi);
   border: .2em solid var(--c_decor_ne);
   border-radius: .5em}
-:root
-{
- --INITIAL_TURN: -.03turn;
-}
 .retract{transform: scale(0)}
 a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
 #scroll_bottom > svg{transform:rotate(.5turn)}
-.aside{transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5rem ) * -1 ) )}
+.aside{transform: translateY( calc( (5em - 1.5rem ) * -1 ) )}
 .svg_icon:hover{filter: brightness( 2 )}
 .retract{transform-origin: top left}
 #sections_slider{transition: transform .2s ease}
 #initial{background:
-  linear-gradient( var(--INITIAL_TURN),  hsla( var(--hue_base) 94% 28% / 1 ) 0%,  hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
+  linear-gradient( -0.03turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%,  hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
  
  
 #initial_slogan{margin: 0}
 #initial_slogan{padding: 0}
 #svg_logo{margin: 0 -2vmin}
-#initial_slogan{width: var(--FULL_WIDTH)}
-#initial_slogan{height: var(--FULL_HEIGHT)}
+#initial_slogan{width: 100vw}
+#initial_slogan{height: 100vh}
 #initial_slogan{overflow: hidden}
 #initial_slogan{color: var(--c_decor_hi)}
 #initial_slogan,#initial_slogan li{display: flex}
 #initial_slogan,#initial_slogan li:not(#initial_logo){flex-direction: column}
 #initial_slogan li{height: 23vh}
-#svg_logo{transform: translateY( var(--FULL_HEIGHT) )}
+#svg_logo{transform: translateY( 100vh )}
 #initial_logo:hover #svg_logo{animation: logo .4s ease forwards}
-#initial_slogan li{transform: rotateY( var(--INITIAL_TURN) )}
+#initial_slogan li{transform: rotateY( -0.03turn )}
 #initial_slogan{perspective: 32vw}
 .aside{transition: .2s ease}
 @keyframes fade_in {0% { opacity:0}
   100% { opacity:1} }
-@keyframes logo {100% {transform: translateY( cacl( var(--FULL_HEIGHT) * -1 ) ) }
+@keyframes logo {100% {transform: translateY( -100vh ) }
 .svg_icon{pointer-events: all}
 .unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 7"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><em>OPEN SOURCE</em><em>GITHUB</em></li><li><em>FRAMEWORKLESS</em><em>JAMstack</em></li><li><em>PARTITIONED CONTENT</em><em>ARCHITECTURE</em></li><li id="initial_logo"><em>progress</em> <svg id="svg_logo" class="svg_icon"><use href="#icon_logo"/></svg> <em>econtent</em></li></ul></header></body></html>

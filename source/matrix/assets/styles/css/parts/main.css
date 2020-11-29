@@ -55,13 +55,13 @@ __                     {margin-left: -50vw; margin-right: -50vw}  /* center */
 
 #graph_slider,
 #sections_slider,
-__                     {padding: var(--PAD_1) }
+__                     {padding: {{ C_o.PAD_1 }} }
 
 button[data-step],
 __                     {padding: .1rem}
 
 dl[data-step],
-__                     {padding: var(--PAD_2)}
+__                     {padding: {{ C_o.PAD_2 }}}
 
 
 
@@ -79,7 +79,7 @@ __                     {--slide_width: 16ch}
 
 
 hr,
-__                     {width: calc( var(--BODY_WIDTH) * .25 )}
+__                     {width: calc( {{C_o.BODY_WIDTH_n}}vw * .25 )}
 
 p,
 ol, ul,
@@ -87,7 +87,7 @@ __                     {width: var(--LINE_WIDTH)}
 
 
 #graph_slider,
-__                     {width: var(--FULL_WIDTH)}
+__                     {width: {{ C_o.FULL_WIDTH }}}
 
 
 
@@ -118,12 +118,12 @@ __                     {--list_height: var(--step_height)}  /* ??? flex-basis */
 
 .slide_list,
 .step_list,
-__                     {height: calc( var(--SLIDER_HEIGHT) * var(--list_height) )}
+__                     {height: calc( {{ C_o.SLIDER_HEIGHT }} * var(--list_height) )}
 
 
 dl[data-step],
 button[data-step],
-__                     {height: calc( ( var(--SLIDER_HEIGHT) - 1.2rem ) * var(--list_height) )}  /* padding * 2 */
+__                     {height: calc( ( {{ C_o.SLIDER_HEIGHT }} - 1.2rem ) * var(--list_height) )}  /* padding * 2 */
 
 
 

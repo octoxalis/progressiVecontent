@@ -52,7 +52,7 @@ __                     {cursor: pointer}
 /*=== SHADOW ===*/
 /*
 hr,
-__                     {box-shadow:var(--BOX_SHADOW)}
+__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 */
 
 

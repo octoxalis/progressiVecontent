@@ -22,7 +22,7 @@ __  {display: block}
   place-items: center}
 .note_link{display: grid;
   align-items: end}
-[data-id="note_img"] button{grid-template-columns: 1fr var(--IMG_UNFOLD)}
+[data-id="note_img"] button{grid-template-columns: 1fr 5em}
 [data-id="img_unfold"]{display: grid;
   justify-items: end}
 .note_link_a{display: flex;
@@ -43,28 +43,28 @@ __  {display: block}
 .note_link_a,
 __  {top: calc( var(--button_dim) * -.5 ) } 
 [data-id="note_img"] [data-id="note_content"]{margin: 0}
-button[data-legend]{margin-top: var(--PAD_8)}
-[data-id="note_txt"] > button{margin-right: var(--PAD_1)}
+button[data-legend]{margin-top: 2rem}
+[data-id="note_txt"] > button{margin-right: 0.25rem}
 [data-id="note_img"] [data-id="note_content"]{margin-left: -50vw; margin-right: -50vw}
 [data-id="note_img"] [data-id="note_content"]{left: 50%; right: 50%}
-[data-id="note_txt"] > button,[data-id="note_img"] button{padding: 0 var(--PAD_1)}
-[data-id="note_txt"] .note_open,.note_link{padding: var(--PAD_2)}
-[data-id="img_legend"],[data-id="note_img"] button{padding: var(--PAD_1)}
+[data-id="note_txt"] > button,[data-id="note_img"] button{padding: 0 0.25rem}
+[data-id="note_txt"] .note_open,.note_link{padding: 0.5rem}
+[data-id="img_legend"],[data-id="note_img"] button{padding: 0.25rem}
 [data-id="note_img"] em, 
-__  {padding: var(--PAD_4) 0}
+__  {padding: 1rem 0}
 [data-id="note_content"]{width: 0}
 .note_link_a{width: var(--line_width)}
 [data-id="note_img"] button,.note_open img,  
 __  {width: 100%}
-[data-id="note_img"] [data-id="note_content"]{width: var(--FULL_WIDTH)}
+[data-id="note_img"] [data-id="note_content"]{width: 100vw}
 [data-id="note_content"].note_open{min-width: var(--LINE_WIDTH)}
-[data-id="img_unfold"] > img{width: var(--IMG_UNFOLD)}
+[data-id="img_unfold"] > img{width: 5em}
 [data-id="note_content"]{height: 0}
 .note_open{height: auto} 
 .note_link{width: var(--button_dim); height: var(--button_dim)}
-[data-id="note_img"] button{height: calc( var(--IMG_UNFOLD) + (2px * 2) )} 
-[data-id="img_unfold"] > img{height: var(--IMG_UNFOLD)}
-[data-id="note_txt"] .note_open{border-left: var(--PAD_2) solid var(--c_back_op)}
+[data-id="note_img"] button{height: calc( 5em + (2px * 2) )} 
+[data-id="img_unfold"] > img{height: 5em}
+[data-id="note_txt"] .note_open{border-left: 0.5rem solid var(--c_back_op)}
 .note_link,[data-id="note_txt"] > button{border-radius: 50%}
 [data-id="img_unfold"] > img,[data-id="note_img"] button,.note_open{border-radius: var(--border_radius)}
 .note_link{outline: none}
@@ -81,7 +81,7 @@ __  {fill: var(--c_prim_hi_2)}
 [data-id^="note_"] > button{font-size: var(--font_sup)}
 [data-id^="note_"]{text-decoration: none}
 .note_link:hover,[data-id^="note_"]{cursor: pointer}
-__  {box-shadow:var(--BOX_SHADOW)}
+__  {box-shadow:}
 @keyframes unfold_note_img
   { 0% { opacity:0; transform:scale(0)}
   100% { opacity:1; transform:scale(1)} }
@@ -102,7 +102,7 @@ ins[data-id^=note_] button,.note_open{--size_ratio: .8}
 [data-id="note_content"] strong 
 {
  
- margin-top: var(--PAD_4);
+ margin-top: 1rem;
  font-size: var(--font_strong);
  font-weight: 900;
  font-style: normal;
@@ -119,7 +119,7 @@ ins[data-id^=note_] button,.note_open{--size_ratio: .8}
 }
 [data-id="note_content"] cite 
 {
- padding-left: var(--PAD_4);
+ padding-left: 1rem;
 }
 [data-id="note_content"] cite::before
 {

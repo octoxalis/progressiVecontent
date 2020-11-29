@@ -6,9 +6,11 @@
   --screen_min: 400;
   --screen_max: 1600;
 
-  --font_base: calc( var(--base_u) * var(--base_min) );
-  --font_min: var(--font_base);
-  --font_max: calc( var(--font_base) * 2 );
+  --font_base: {{ C_o.base_u | mul__n( C_o.base_min ) }};
+
+
+  --font_min: {{ C_o.base_u | mul__n( C_o.base_min ) }};    /* --font_base */
+  --font_max: {{ C_o.base_u | mul__n( C_o.base_min ) | mul__n( 2 ) }};
   --font_size: calc( (var(--font_min) * 1px)
                      + ( var(--font_max) - var(--font_min) )
                      * ( 100vw - (var(--screen_min) * 1px) )
@@ -16,9 +18,9 @@
                    );
   --font_u: calc( var(--font_size) * 1 );  /* font unit - can be adjusted */
 
-  --font_body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif;
-  --font_mono: system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace;
-  --font_title: var(--font_body);
+  --font_body:   {{ C_o.FONT_BODY }};
+  --font_title:  {{ C_o.FONT_BODY }};
+  --font_mono:   {{ C_o.FONT_MONO }};
 }
 
 

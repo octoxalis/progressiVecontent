@@ -1,9 +1,4 @@
 /*=== DISPLAY ===*/
-:root
-{
-  --INITIAL_Z: 2;
-  --SLIDER_Z: 1;
-}
 
 
 /*=== DISPLAY ===*/
@@ -32,5 +27,5 @@ __                     {flex-direction: column}
 
 #initial,
 #sections_slider,
-__                     {z-index: var(--INITIAL_Z)}
+__                     {z-index: {{ C_o.INITIAL_Z }}}
 

@@ -1,14 +1,6 @@
 /*=== MARGIN ===*/
 :root
 {
-  --PAD_1:  .25em;
-  --PAD_2:  calc( var(--PAD_1) * 2 );
-  --PAD_4:  calc( var(--PAD_1) * 4 );
-  --PAD_6:  calc( var(--PAD_1) * 6 );
-  --PAD_8:  calc( var(--PAD_1) * 8 );
-  --PAD_12:  calc( var(--PAD_1) * 12 );
-  --PAD_16: calc( var(--PAD_1) * 16 );
-
   --BODY_MARGIN: calc( ( 100 - {{C_o.BODY_WIDTH_n}} ) * .5vw );
 }
 
@@ -22,7 +14,7 @@ __                     {margin: 0}
 
 
 section,
-__                     {margin-bottom: var(--PAD_2) }
+__                     {margin-bottom: {{ C_o.PAD_2 }} }
 
 
 /*=== PADDING ===*/

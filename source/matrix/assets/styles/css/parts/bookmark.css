@@ -43,23 +43,23 @@ __                     {overflow-y: auto}
 
 
 #bookmark_page,
-__                     {margin-top: var(--PAD_6)}
+__                     {margin-top: {{ C_o.PAD_6 }}}
 
 
 #bookmark_page > dt,
-__                     {margin: var(--PAD_4) 0 0  var(--PAD_2)}
+__                     {margin: {{ C_o.PAD_4 }} 0 0  {{ C_o.PAD_2 }}}
 
 #bookmark_page > dd,
 __                     {margin-bottom: 0}
 
 #bookmark_page input,
 #bookmark_page button,
-__                     {margin: var(--PAD_2)}
+__                     {margin: {{ C_o.PAD_2 }}}
 
 
 #bookmark_content_list > li,
 #bookmark_history_list > li,
-__                     {margin: var(--PAD_1)}
+__                     {margin: {{ C_o.PAD_1 }}}
 
 #bookmark_history_list button,
 #bookmark_page > dt,
@@ -67,16 +67,16 @@ __                     {margin: 0}
 
 
 #bookmark_page input,
-__                     {padding: var(--PAD_2)}
+__                     {padding: {{ C_o.PAD_2 }}}
 
 #bookmark_content_list > li,
 #bookmark_history_list > li,
 #bookmark_history_list button,
-__                     {padding: var(--PAD_1)}
+__                     {padding: {{ C_o.PAD_1 }}}
 
 
 #bookmark_name,
-__                     {padding-left: var(--PAD_4)}
+__                     {padding-left: {{ C_o.PAD_4 }}}
 
 #bookmark_page button,
 __                     {align-self: flex-end}

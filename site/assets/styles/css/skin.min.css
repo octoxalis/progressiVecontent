@@ -3,12 +3,12 @@ dl[data-skin]{display: flex;
   flex-direction: column;}
 dd[data-skin]:after{position: relative}
 dl[data-skin]{align-items: center}
-dd[data-skin]:after{left: var(--PAD_2)}
-dl[data-skin] > *:not( dt ){padding: var(--PAD_2)}
-dl[data-skin]{margin: var(--PAD_4) 0}
+dd[data-skin]:after{left: 0.5rem}
+dl[data-skin] > *:not( dt ){padding: 0.5rem}
+dl[data-skin]{margin: 1rem 0}
  dl[data-skin] > dt{margin-bottom: 0}
-dl[data-skin] > dd{margin-bottom: var(--PAD_1)}
-[data-skin],[data-skin] > *{width: var(--BODY_WIDTH)}
+dl[data-skin] > dd{margin-bottom: 0.25rem}
+[data-skin],[data-skin] > *{width: 80vw}
 dd[data-skin]:after{width: 100%}
 [data-skin] > dd{height: 3em}
 [data-skin] > dd:last-of-type{border: 1px solid hsla( 0 0% 0% / .5)}

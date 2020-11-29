@@ -81,7 +81,7 @@ __                     {text-transform: uppercase}
 __                     {cursor: pointer}
 
 
-__                     {box-shadow:var(--BOX_SHADOW)}
+__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 
 
 __                     {transition: transform .2s ease}

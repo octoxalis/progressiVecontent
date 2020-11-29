@@ -39,15 +39,15 @@ __                     {position: relative}
 
 
 [data-id="display"] > *,
-__                     {padding: var(--PAD_2)}
+__                     {padding: {{ C_o.PAD_2 }}}
 
 [data-id="display"] > ul > li,
-__                     {padding-bottom: var(--PAD_2)}
+__                     {padding-bottom: {{ C_o.PAD_2 }}}
 
 
 [data-id="title"],
 [data-id="display"] dl > dd,
-__                     {padding:var(--PAD_1)}
+__                     {padding:{{ C_o.PAD_1 }}}
 
 
 
@@ -95,7 +95,7 @@ __                     {color: var(--c_sec_lo);
                         background: var(--c_sec_hi)}
 
 [data-id="display"],
-__                     {box-shadow:var(--BOX_SHADOW)}
+__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 
 
 [data-id="display"] *,

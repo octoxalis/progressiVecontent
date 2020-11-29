@@ -84,15 +84,75 @@ module.exports =
   HUE_D_n: -20,         //: theme DECORATIVE color offset from primary color
   HUE_L_n:  10,         //: theme LINK color offset from primary color
 
-
   SAT_UNIT_n:     11,   //: saturation unit -> [ 6 17 28 39 50 61 72 83 96 ]
+  SAT_BASE_n:     50,
   LUM_MODE_n:     1,    //: luminosity mode: 1 (light) || -1 (dark)
+  LUM_BASE_n:     50,
   LUM_CONTRAST_n: 45,   //: luminosity contrast in range [30...49] (30 is less contrast than 49)
                         //: see https://www.w3.org/TR/WCAG20/ §1.4.1 compliance
 
   HUE_ROTATE_n: 0,      //: hue deviation for hover effect
 
+
   BODY_WIDTH_n: 80,     //: percentage of document width
   LINE_WIDTH_n: 52,     //: in ch unit
+
+
+  //.........................................................
+  BORDER_1: '.2em',
+
+  BOX_SHADOW:
+    `0 1px 1px var(--c_shadow_ne), 
+     0 2px 2px var(--c_shadow_ne), 
+     0 4px 4px var(--c_shadow_ne)`,
+
+  BOX_OVERLAY: '12px 12px 32px 100vmax var(--c_shadow_lo)',
+
+/*
+  INVERT_FILTER:
+    `invert(100%)
+     hue-rotate(${C_o.HUE_ROTATE_n}deg) ??????????????????
+     brightness(8);`,
+     */
+
+  SATURATE_FILTER: 'saturate(3) brightness(2);',  //??????????????
+
+
+  FULL_WIDTH:  '100vw',
+  HALF_WIDTH:  '50vw',
+  FULL_HEIGHT: '100vh',
+
+  INITIAL_Z: 2,
+  SLIDER_Z:  1,  //??????????
+
+  base_u:     8,
+  base_min:   1.7,
+  screen_min: 400,
+  screen_max: 1600,
+
+
+  PAD_1:  .25 * 1 + 'rem',
+  PAD_2:  .25 * 2 + 'rem',
+  PAD_4:  .25 * 4 + 'rem',
+  PAD_6:  .25 * 6 + 'rem',
+  PAD_8:  .25 * 8 + 'rem',
+  PAD_12: .25 * 12 + 'rem',  //?????????????????
+  PAD_16: .25 * 16 + 'rem',  //?????????????????
+
+
+  INITIAL_TURN: -.03 + 'turn',
+
+
+  BOX_OVERLAY: `12px 12px 32px 100vmax var(--c_shadow_lo)`,
+
+  LOGO_HEIGHT: 'clamp( 12vh, 16vh, 20vh )',
+
+  SLIDER_HEIGHT: 5 + 'em',
+  BUTTON_HEIGHT: 5 + 'em',
+  IMG_UNFOLD:    5 + 'em',
+
+  FONT_BODY: `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif`,
+  FONT_MONO: `system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace`,
+
 }
 

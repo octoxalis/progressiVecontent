@@ -17,4 +17,4 @@ __                     {transition: .2s ease}
 @keyframes fade_in     {0%   { opacity:0}
                         100% { opacity:1} }
 
-@keyframes logo        {100% {transform: translateY( cacl( var(--FULL_HEIGHT) * -1 ) ) }
+@keyframes logo        {100% {transform: translateY( -{{ C_o.FULL_HEIGHT }} ) }

@@ -1,9 +1,4 @@
 /*=== TRANSFORM ===*/
-:root
-{
-  --INITIAL_TURN: -.03turn;
-}
-
 
 .retract,
 __                     {transform: scale(0)}
@@ -24,7 +19,7 @@ __                     {transform:rotate(.5turn)}
 
 
 .aside,
-__                     {transform: translateY( calc( (var(--SLIDER_HEIGHT) - 1.5rem ) * -1 ) )}
+__                     {transform: translateY( calc( ({{ C_o.SLIDER_HEIGHT }} - 1.5rem ) * -1 ) )}
 
 
 
@@ -51,7 +46,7 @@ __                     {transition: transform .2s ease}
 
 #initial,
 __                     {background:
-                        linear-gradient( var(--INITIAL_TURN),
+                        linear-gradient( {{ C_o.INITIAL_TURN }},
                         hsla( var(--hue_base) 94% 28% / 1 ) 0%,
                         hsla( var(--hue_base) 83% 6% / 1 )  100%)}
   
@@ -67,10 +62,10 @@ __                     {margin: 0 -2vmin}
 
 
 #initial_slogan,
-__                     {width: var(--FULL_WIDTH)}
+__                     {width: {{ C_o.FULL_WIDTH }}}
 
 #initial_slogan,
-__                     {height: var(--FULL_HEIGHT)}
+__                     {height: {{ C_o.FULL_HEIGHT }}}
 
 #initial_slogan,
 __                     {overflow: hidden}
@@ -94,7 +89,7 @@ __                     {height: 23vh}
 
 
 #svg_logo,
-__                     {transform: translateY( var(--FULL_HEIGHT) )}
+__                     {transform: translateY( {{ C_o.FULL_HEIGHT }} )}
 
 
 #initial_logo:hover #svg_logo,
@@ -102,8 +97,7 @@ __                     {animation: logo .4s ease forwards}
 
 
 #initial_slogan li,
-__                     {transform: rotateY( var(--INITIAL_TURN) )}
+__                     {transform: rotateY( {{ C_o.INITIAL_TURN }} )}
 
 #initial_slogan,
 __                     {perspective: 32vw}
-

@@ -5,9 +5,6 @@
       invert(100%)
       hue-rotate({{C_o.HUE_ROTATE_n}}deg)
       brightness(8);
-  --SATURATE_FILTER:
-      saturate(3)
-      brightness(2);
 }
 
 

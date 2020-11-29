@@ -1,6 +1,4 @@
 
-:root
-  {--half_side: -50vw}
 div[data-id="code_ref"]{display: grid; place-items: center}
 __  {display: flex; justify-content: flex-start}
 code[data-id="code"],dl[data-id="code_ref"]{position: relative}
@@ -8,10 +6,10 @@ __  {position: absolute}
 __  {top: 0}
 __  {left: 0}
 code[data-id="code"],dl[data-id="code_ref"]{left: 50%; right: 50%}
-code[data-id="code"],dl[data-id="code_ref"]{margin-left: var(--half_side);
-  margin-right: var(--half_side)} 
-code[data-id="code"]{margin-top: var(--PAD_8)}
-code[data-id="code"]{padding: var(--PAD_2) var(--PAD_2) var(--PAD_2) var(--PAD_4)}
+code[data-id="code"],dl[data-id="code_ref"]{margin-left: 50vw;
+  margin-right: 50vw} 
+code[data-id="code"]{margin-top: 2rem}
+code[data-id="code"]{padding: 0.5rem 0.5rem 0.5rem 1rem}
 code[data-id="code"],dl[data-id="code_ref"]{width: 125vw} 
 __  {width: 100%}
 __  {height: auto}
@@ -29,7 +27,7 @@ __  {font-weight: 500}
 __  {text-transform: uppercase}
 p > code,pre > code{white-space: pre}
 __  {cursor: pointer}
-code[data-id="code"]{box-shadow:var(--BOX_SHADOW)}
+code[data-id="code"]{box-shadow:}
 code[data-id="code"]{transform: scale( .8 )} 
 code[data-id="code"]{transform-origin: top left}
 __  {transition: transform .2s ease}

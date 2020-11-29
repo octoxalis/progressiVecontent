@@ -1,16 +1,4 @@
 /*=== BOX ===*/
-:root
-{
-  --BOX_SHADOW:
-        0 1px 1px var(--c_shadow_ne), 
-        0 2px 2px var(--c_shadow_ne), 
-        0 4px 4px var(--c_shadow_ne);
-  
-  --BOX_OVERLAY: 12px 12px 32px 100vmax var(--c_shadow_lo);
-}
-
-
-
 
 /*=== SIZING ===*/
 html,

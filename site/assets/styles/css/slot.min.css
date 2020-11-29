@@ -15,41 +15,41 @@ a,section > div,[data-id="ulist"] > li::before,[data-id="important"]::before{pos
 a::before,a::after{position: absolute}
 [data-id="ulist"] > li
 button[data-slot_s]{margin: 0}
-#preferences{margin: var(--PAD_4) 0}
-#preferences > button{margin: 0 var(--PAD_4)}
-.span_icon{margin: var(--PAD_1) 0}
-[data-id="ulist"]{margin: var(--PAD_2) 0 0 var(--PAD_4)}
-button[data-slot_s="contents"]{margin-top: var(--SLIDER_HEIGHT) }
-div[data-slot_s]{padding: var(--PAD_4) var(--PAD_8)}
+#preferences{margin: 1rem 0}
+#preferences > button{margin: 0 1rem}
+.span_icon{margin: 0.25rem 0}
+[data-id="ulist"]{margin: 0.5rem 0 0 1rem}
+button[data-slot_s="contents"]{margin-top: 5em }
+div[data-slot_s]{padding: 1rem 2rem}
 [data-id="ulist"]{padding-left:0}
-[data-id="ulist"]{padding-left:var(--PAD_2)}
-hr{margin-bottom: var(--PAD_6)}
-button[data-slot_s]{width: var(--FULL_WIDTH)}
-#preferences,article{width: var(--BODY_WIDTH)}
+[data-id="ulist"]{padding-left:0.5rem}
+hr{margin-bottom: 1.5rem}
+button[data-slot_s]{width: 100vw}
+#preferences,article{width: 80vw}
 [data-id="example"]{max-width:100%}
-[data-slot_s] > u{height: var(--BUTTON_HEIGHT)} 
+[data-slot_s] > u{height: 5em} 
 a::before{height: 1px}
 a::after{height: 4px}
 a::before,a::after{left: 0}
 button[data-slot_s]{left: 50%; right: 50%} 
 a::before,a::after{bottom: -1px}
 a::before,a::after{right: 0}
-#preferences > button{margin: var(--PAD_2)}
+#preferences > button{margin: 0.5rem}
 button[data-slot_s]{margin-left: -50vw; margin-right: -50vw} 
-h1,h2,h3,h4,h5,h6,p{margin-bottom: var(--PAD_2)}
+h1,h2,h3,h4,h5,h6,p{margin-bottom: 0.5rem}
 h1,h2,h3,h4,h5,h6,p,ul,ol,#preferences{padding:2px}
-#preferences > button,button[data-slot_s],.span_icon{padding: var(--PAD_2)}
+#preferences > button,button[data-slot_s],.span_icon{padding: 0.5rem}
 [data-slot_s] > u{flex-basis: 100%}
 #preferences{border: 1px solid var(--c_prim_ne)}
 hr{border-top: 1px solid var(--c_prim_ne)}
 #preferences{border-radius: 4px}
 #preferences > button,.span_icon,.svg_icon{border-radius: 50%}
-[data-id="ulist"] > li{border-left: var(--BORDER_1) solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
+[data-id="ulist"] > li{border-left: .2em solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
 [data-id="ulist"] > li{--border_opac:.6}
 [data-id="ulist"] > li > [data-id="ulist"] > li{--border_opac:.4}
 [data-id="ulist"] > li > [data-id="ulist"] > li >, [data-id="ulist"] > li
 __  {--border_opac:.3}
-button[data-slot_s]{box-shadow:var(--BOX_SHADOW)}
+button[data-slot_s]{box-shadow:}
 a,legend,[data-id="note_txt"] > button,mark[data-tag]{color: inherit}
 [data-slot_s] > u{color: var(--c_prim_lo)}
 [data-id="important"]::before{color:var(--c_decor_ne)}
@@ -92,7 +92,7 @@ a::before,a::after,.aside{transition: transform .2s ease}
 #docs_graph,#graph_svg{position: relative}
 ul,#docs_graph{margin: 0}
 #graph{margin: auto}
-#graph{margin-top: var(--PAD_8)}
+#graph{margin-top: 2rem}
 ul,#graph_svg{padding:0}
 #docs_graph,#graph,#graph_svg{width: 100%}
 #graph_svg{border-radius: 4px}

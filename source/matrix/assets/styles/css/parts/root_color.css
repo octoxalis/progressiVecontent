@@ -15,31 +15,27 @@
 
 
 /* === SAT === */
---sat_base: 50;
---sat_unit:   {{C_o.SAT_UNIT_n}};
-
---c_sat_hi_4:  calc( ( var(--sat_base) + (var(--sat_unit) * 4 ) ) * 1% );    /* 94%;*/
---c_sat_hi_2:  calc( ( var(--sat_base) + (var(--sat_unit) * 2 ) ) * 1% );    /* 72%;*/
---c_sat_ne :   calc( ( var(--sat_base) +  0 ) * 1% );                        /* 50% */
---c_sat_lo_2:  calc( ( var(--sat_base) - (var(--sat_unit) * 2 ) ) * 1% );    /* 28%;*/
---c_sat_lo_4:  calc( ( var(--sat_base) - (var(--sat_unit) * 4 ) ) * 1% );    /* 6%; */
+--c_sat_hi_4: {{ C_o.SAT_BASE_n + ( C_o.SAT_UNIT_n * 4 ) }}%;    /* 94%;*/
+--c_sat_hi_2: {{ C_o.SAT_BASE_n + ( C_o.SAT_UNIT_n * 4 ) }}%;    /* 72%;*/
+--c_sat_ne :  {{ C_o.SAT_BASE_n }}%;                             /* 50% */
+--c_sat_lo_2: {{ C_o.SAT_BASE_n - ( C_o.SAT_UNIT_n * 2 ) }}%;    /* 28%;*/
+--c_sat_lo_4: {{ C_o.SAT_BASE_n - ( C_o.SAT_UNIT_n * 4 ) }}%;    /* 6%; */
 
 
 
 /* === LUM === */
---lum_base: 50;
---lum_mode: {{C_o.LUM_MODE_n}};
---lum_contrast: {{C_o.LUM_CONTRAST_n}};
+--lum_mode: {{ C_o.LUM_MODE_n }};
+--lum_contrast: {{ C_o.LUM_CONTRAST_n }};
 
---c_lum_hi_4: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * 1.0 ) ) * 1% );  /* 40/40: 90% */
---c_lum_hi_3: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .75 ) ) * 1% );  /* 30/40: 80% */
---c_lum_hi_2: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .50 ) ) * 1% );  /* 20/40: 70% */
---c_lum_hi_1: calc( ( var(--lum_base) + ( var(--lum_mode) * var(--lum_contrast ) * .25 ) ) * 1% );  /* 10/40: 60% */
---c_lum_ne :  calc( ( var(--lum_base) +  0 ) * 1% );                                                /* 50% */
---c_lum_lo_1: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .25 ) ) * 1% );  /* 10/40: 40% */
---c_lum_lo_2: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .50 ) ) * 1% );  /* 20/40: 30% */
---c_lum_lo_3: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * .75 ) ) * 1% );  /* 30/40: 20% */
---c_lum_lo_4: calc( ( var(--lum_base) - ( var(--lum_mode) * var(--lum_contrast ) * 1.0 ) ) * 1% );  /* 40/40: 10% */
+--c_lum_hi_4: calc( ( {{ C_o.LUM_BASE_n }} + ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * 1.0 ) ) * 1% );  /* 40/40: 90% */
+--c_lum_hi_3: calc( ( {{ C_o.LUM_BASE_n }} + ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .75 ) ) * 1% );  /* 30/40: 80% */
+--c_lum_hi_2: calc( ( {{ C_o.LUM_BASE_n }} + ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .50 ) ) * 1% );  /* 20/40: 70% */
+--c_lum_hi_1: calc( ( {{ C_o.LUM_BASE_n }} + ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .25 ) ) * 1% );  /* 10/40: 60% */
+--c_lum_ne :  calc( ( {{ C_o.LUM_BASE_n }} +  0 ) * 1% );                                                     /* 50% */
+--c_lum_lo_1: calc( ( {{ C_o.LUM_BASE_n }} - ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .25 ) ) * 1% );  /* 10/40: 40% */
+--c_lum_lo_2: calc( ( {{ C_o.LUM_BASE_n }} - ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .50 ) ) * 1% );  /* 20/40: 30% */
+--c_lum_lo_3: calc( ( {{ C_o.LUM_BASE_n }} - ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * .75 ) ) * 1% );  /* 30/40: 20% */
+--c_lum_lo_4: calc( ( {{ C_o.LUM_BASE_n }} - ( var(--lum_mode) * {{ C_o.LUM_CONTRAST_n }} * 1.0 ) ) * 1% );  /* 40/40: 10% */
 
 
 

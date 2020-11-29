@@ -16,28 +16,28 @@ __                     {align-items: center}
 
 
 dd[data-skin]:after,
-__                     {left: var(--PAD_2)}
+__                     {left: {{ C_o.PAD_2 }}}
 
 
 dl[data-skin] > *:not( dt ),
-__                     {padding: var(--PAD_2)}
+__                     {padding: {{ C_o.PAD_2 }}}
 
 
 dl[data-skin],
-__                     {margin: var(--PAD_4) 0}
+__                     {margin: {{ C_o.PAD_4 }} 0}
 
 
   dl[data-skin] > dt,
 __                     {margin-bottom: 0}
 
 dl[data-skin] > dd,
-__                     {margin-bottom: var(--PAD_1)}
+__                     {margin-bottom: {{ C_o.PAD_1 }}}
 
 
 
 [data-skin],
 [data-skin] > *,
-__                     {width: var(--BODY_WIDTH)}
+__                     {width: {{C_o.BODY_WIDTH_n}}vw}
 
 dd[data-skin]:after,
 __                     {width: 100%}
