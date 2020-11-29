@@ -89,7 +89,7 @@ __                     {height: 23vh}
 
 
 #svg_logo,
-__                     {transform: translateY( {{ C_o.FULL_HEIGHT }} )}
+__                     {transform: translateY( -{{ C_o.FULL_HEIGHT }} )}
 
 
 #initial_logo:hover #svg_logo,
