@@ -1,25 +1,23 @@
 /*=== DISPLAY ===*/
 
-
-/*=== DISPLAY ===*/
-
 #svg_symbols,
 __                     {display: none}
 
 
-/*#initial,*/
 main,
 __                     {display:grid; place-items:center}
 
 
+#initial_slogan,
+#initial_slogan li,
 #sections_slider,
 __                     {display: flex}
 
 
-
+#initial_slogan,
+#initial_slogan li:not(#initial_logo),
 #sections_slider,
 __                     {flex-direction: column}
-
 
 
 

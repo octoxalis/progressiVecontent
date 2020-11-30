@@ -10,8 +10,6 @@ __                     {position: absolute}
 __                     {position: sticky}
 
 
-#logo,
-#logo *,
 #sections,
 __                     {position:relative}
 
@@ -24,19 +22,7 @@ __                     {top: 0}
 
 
 
-
-
-
-
 /*=== LEFT ===*/
-
-/*
-#logo,
-__                     {left: 0}
-*/
-
-#logo > em:last-of-type,
-__                     {left: 4vw}
 
 
 /*=== BOTTOM ===*/
@@ -45,9 +31,3 @@ __                     {left: 4vw}
 /*=== RIGHT ===*/
 
 /*
-#logo > em:first-of-type,
-__                     {right: 2vw}
-*/
-
-
-

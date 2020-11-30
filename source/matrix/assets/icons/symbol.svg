@@ -3,7 +3,7 @@
   <symbol id="icon_logo" viewBox="0 0 24 24">
     <circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle>
     <line x1="12" y1="7" x2="12" y2="12"></line>
-    <polyline points="12 15 12 22 22 7"></polyline>
+    <polyline points="12 15 12 22 22 9"></polyline>
   </symbol>
 
   <symbol id="icon_close" viewBox="0 0 24 24">

@@ -1,15 +1,14 @@
 /*=== COLOR ===*/
-:root
-{
-  --INVERT_FILTER:
-      hue-rotate( {{ C_o.HUE_ROTATE_n }}deg )
-      invert(100%)
-      brightness(8);
-}
+
+:root                  {--INVERT_FILTER:
+                        hue-rotate( {{ C_o.HUE_ROTATE_n }}deg )
+                        invert(100%)
+                        brightness(8)}
 
 
 
 /*=== OPACITY ===*/
+
 .unseen,
 .invisible,
 .retract,
@@ -18,13 +17,14 @@ __                     {opacity: 0}
 
 
 /*=== FRONT ===*/
+
 body,
 __                     {color: var(--c_prim_lo)}
 
 
-
-#logo,
+#initial_slogan,
 __                     {color: var(--c_decor_hi)}
+
 
 #svg_logo,
 __                     {stroke: var(--c_highlight)}
@@ -36,9 +36,8 @@ __                     {stroke: var(--c_highlight)}
 
 
 
-
-
 /*=== BACKGROUND ===*/
+
 #sections,
 #sections > *,
 __                     {background: transparent}
@@ -62,3 +61,8 @@ __                     {background: var(--c_decor_hi)}
 
 
 /*=== GRADIENT ===*/
+
+#initial,
+__                     {background: linear-gradient( {{ C_o.INITIAL_TURN }},
+                        hsla( var(--hue_base) 94% 28% / 1 ) 0%,
+                        hsla( var(--hue_base) 83% 6% / 1 )  100%)}

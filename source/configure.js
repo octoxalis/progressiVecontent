@@ -141,7 +141,7 @@ module.exports =
   PAD_16: .25 * 16 + 'rem',  //?????????????????
 
 
-  INITIAL_TURN: -.03 + 'turn',
+  INITIAL_TURN: -.025 + 'turn',
 
 
   BOX_OVERLAY: `12px 12px 32px 100vmax var(--c_shadow_lo)`,

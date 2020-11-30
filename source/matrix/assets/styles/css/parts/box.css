@@ -1,6 +1,5 @@
 /*=== BOX ===*/
 
-/*=== SIZING ===*/
 html,
 __                     {box-sizing:border-box}
 
@@ -10,13 +9,16 @@ __                     {box-sizing:border-box}
 __                     {box-sizing:inherit}
 
 /*=== CLIP ===*/
+
 .unseen,
 __                     {clip-path: inset(0px 0px)}
 
 
 /*=== OVERFLOW ===*/
+
 .unseen,
 button,
+#initial_slogan,
 __                     {overflow: hidden}
 
 body,

@@ -1,11 +1,15 @@
 /*=== BORDER ===*/
 
-
-/*=== BORDER ===*/
 iframe,
 button,
 .unseen,
 __                     {border: 0}
+
+
+#initial_slogan li,
+__                     {border-top: 2px solid transparent;
+                        border-image: linear-gradient(to right, hsla( var(--hue_base) 94% 94% / .3 ) 0%, hsla( var(--hue_base) 83% 6% / 0 ) 100%);
+                        border-image-slice: 1}
 
 
 *::-webkit-scrollbar-thumb,

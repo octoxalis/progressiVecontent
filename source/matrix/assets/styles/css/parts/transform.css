@@ -10,12 +10,12 @@ a:hover::after,
 __                     {transform: scaleX(1)}
 
 
+#initial_slogan li,
+__                     {transform: rotateY( {{ C_o.INITIAL_TURN }} )}
+
 
 #scroll_bottom > svg,
 __                     {transform:rotate(.5turn)}
-
-
-
 
 
 .aside,
@@ -23,81 +23,15 @@ __                     {transform: translateY( calc( ({{ C_o.SLIDER_HEIGHT }} - 
 
 
 
-
-
 .svg_icon:hover,
 __                     {filter: brightness( 2 )}
 
 
+#initial_slogan,
+__                     {perspective: 32vw}
 
 /*=== ORIGIN ===*/
 
 .retract,
 __                     {transform-origin: top left}
 
-
-
-#sections_slider,
-__                     {transition: transform .2s ease}
-
-
-
-/*=== ============================================== ===*/
-
-#initial,
-__                     {background:
-                        linear-gradient( {{ C_o.INITIAL_TURN }},
-                        hsla( var(--hue_base) 94% 28% / 1 ) 0%,
-                        hsla( var(--hue_base) 83% 6% / 1 )  100%)}
-  
-  
-
-#initial_slogan,
-__                     {margin: 0}
-#initial_slogan,
-__                     {padding: 0}
-
-#svg_logo,
-__                     {margin: 0 -2vmin}
-
-
-#initial_slogan,
-__                     {width: {{ C_o.FULL_WIDTH }}}
-
-#initial_slogan,
-__                     {height: {{ C_o.FULL_HEIGHT }}}
-
-#initial_slogan,
-__                     {overflow: hidden}
-
-
-#initial_slogan,
-__                     {color: var(--c_decor_hi)}
-
-
-#initial_slogan,
-#initial_slogan li,
-__                     {display: flex}
-
-
-#initial_slogan,
-#initial_slogan li:not(#initial_logo),
-__                     {flex-direction: column}
-
-#initial_slogan li,
-__                     {height: 23vh}
-
-
-#svg_logo,
-__                     {transform: translateY( -{{ C_o.FULL_HEIGHT }} )}
-
-
-#initial_logo:hover #svg_logo,
-__                     {animation: logo .4s ease forwards}
-
-
-#initial_slogan li,
-__                     {transform: rotateY( {{ C_o.INITIAL_TURN }} )}
-
-#initial_slogan,
-__                     {perspective: 32vw}

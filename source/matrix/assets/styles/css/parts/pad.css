@@ -7,14 +7,25 @@ dd,
 #entrance,
 __                     {margin: 0}
 
+#initial_slogan,
+__                     {margin: 0}
+
+#svg_logo,
+__                     {margin: 0 -4min}
 
 section,
 __                     {margin-bottom: {{ C_o.PAD_2 }} }
 
 
 /*=== PADDING ===*/
+
 body,
 dl,
 dt,
 dd,
+#initial_slogan,
 __                     {padding: 0}
+
+
+#initial_slogan li,
+__                     {padding-top: 1vh}

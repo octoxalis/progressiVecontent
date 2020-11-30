@@ -2,25 +2,25 @@
 *, 
 *:before,*:after{box-sizing:inherit}
 .unseen{clip-path: inset(0px 0px)}
-.unseen,button{overflow: hidden}
+.unseen,button,#initial_slogan{overflow: hidden}
 body{overflow-x: hidden}
 #svg_symbols{display: none}
 main{display:grid; place-items:center}
-#sections_slider{display: flex}
-#sections_slider{flex-direction: column}
+#initial_slogan,#initial_slogan li,#sections_slider{display: flex}
+#initial_slogan,#initial_slogan li:not(#initial_logo),#sections_slider{flex-direction: column}
 #initial,#sections_slider{z-index: 2}
 body,dl,dt,dd,#entrance{margin: 0}
+#initial_slogan{margin: 0}
+#svg_logo{margin: 0 -4min}
 section{margin-bottom: 0.5rem }
-body,dl,dt,dd{padding: 0}
+body,dl,dt,dd,#initial_slogan{padding: 0}
+#initial_slogan li{padding-top: 1vh}
 #initial,#main,.unseen{position: absolute}
 #sections_slider{position: sticky}
-#logo,#logo *,#sections{position:relative}
+#sections{position:relative}
 #sections_slider{top: 0}
-#logo > em:last-of-type{left: 4vw}
 :root
-{
- --LINE_WIDTH: clamp( 30ch, 52ch, 76vw );
-}
+  {--LINE_WIDTH: clamp( 30ch, 52ch, 76vw )}
 #svg_logo{--svg_icon_dim: calc( clamp( 12vh, 16vh, 20vh ) * .8 )}
 .retract{width: 0}
 .unseen{width: 1px}
@@ -31,16 +31,20 @@ body,dl,dt,dd{padding: 0}
 .retract{height: 0}
 .unseen{height: 1px}
 #initial{height: 100vh}
+#initial_slogan li{height: 25vh}
 #sections_slider{height: 5em}
 .svg_icon{height: var(--svg_icon_dim)}
 iframe,button,.unseen{border: 0}
+#initial_slogan li{border-top: 2px solid transparent;
+  border-image: linear-gradient(to right, hsla( var(--hue_base) 94% 94% / .3 ) 0%, hsla( var(--hue_base) 83% 6% / 0 ) 100%);
+  border-image-slice: 1}
 *::-webkit-scrollbar-thumb{border: .2em solid var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{border-radius: .5rem}
 #svg_logo{stroke-width: 1.5px}
 button:focus{outline: 0}
 :root
 {
---hue_base: 220;
+--hue_base: 220; 
 --c_hue_p: var(--hue_base);  
 --c_hue_i: calc( var(--hue_base) + 140 );  
 --c_hue_s: calc( var(--hue_base) + -10 ); 
@@ -52,7 +56,8 @@ button:focus{outline: 0}
 --c_sat_ne : 50%;  
 --c_sat_lo_2: 28%; 
 --c_sat_lo_4: 6%; 
---lum_mode: 1;
+--sat_ne: var(--c_sat_lo_2);
+--lum_mode: 1; 
 --lum_contrast: 45;
 --c_lum_hi_4: calc( ( 50 + ( var(--lum_mode) * 45 * 1.0 ) ) * 1% ); 
 --c_lum_hi_3: calc( ( 50 + ( var(--lum_mode) * 45 * .75 ) ) * 1% ); 
@@ -63,46 +68,38 @@ button:focus{outline: 0}
 --c_lum_lo_2: calc( ( 50 - ( var(--lum_mode) * 45 * .50 ) ) * 1% ); 
 --c_lum_lo_3: calc( ( 50 - ( var(--lum_mode) * 45 * .75 ) ) * 1% ); 
 --c_lum_lo_4: calc( ( 50 - ( var(--lum_mode) * 45 * 1.0 ) ) * 1% ); 
---sat_ne: var(--c_sat_lo_2);
---c_prim_hi: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_4) / 1 );
---c_prim_ne: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_ne) / 1 );
---c_prim_lo: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_lo_4) / 1 );
+--c_prim_hi: hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_hi_4) / 1 );
+--c_prim_ne: hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_ne) / 1 );
+--c_prim_lo: hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_lo_4) / 1 );
 --c_prim_hi_2: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2) / 1 );
 --c_prim_hi_3: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_3) / 1 );
 --c_prim_trans: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2) / .2 );
---c_sec_hi: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_hi_4) / 1 );
---c_sec_ne: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_ne) / 1 );
---c_sec_lo: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_4) / 1 );
---c_sec_trans: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_ne) / .5 );
+--c_sec_hi: hsla( var(--c_hue_s) var(--c_sat_lo_4) var(--c_lum_hi_4) / 1 );
+--c_sec_ne: hsla( var(--c_hue_s) var(--c_sat_lo_4) var(--c_lum_ne) / 1 );
+--c_sec_lo: hsla( var(--c_hue_s) var(--c_sat_lo_4) var(--c_lum_lo_4) / 1 );
 --c_decor_hi: hsla( var(--c_hue_d) var(--c_sat_hi_4) var(--c_lum_hi_3) / 1 );
 --c_decor_ne: hsla( var(--c_hue_d) var(--c_sat_hi_4) var(--c_lum_ne) / 1 );
 --c_decor_lo: hsla( var(--c_hue_d) var(--c_sat_hi_4) var(--c_lum_lo_3) / 1 );
 --c_decor_hi_op_lo: hsla( var(--c_hue_d) var(--c_sat_hi_4) var(--c_lum_lo_3) / .1 );
---c_back_hi: hsla( var(--c_hue_p) var(--c_sat_lo_1) var(--c_lum_lo_2) / .3 );
---c_back_ne: hsla( var(--c_hue_p) var(--c_sat_lo_1) var(--c_lum_lo_2) / .5 );
---c_back_lo: hsla( var(--c_hue_p) var(--c_sat_lo_1) var(--c_lum_lo_2) / .8 );
---c_back_op: hsla( var(--c_hue_p) var(--c_sat_lo_1) var(--c_lum_lo_2) / 1 );
+--c_back_op: hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_lo_2) / 1 );
 --c_box_hi: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_hi_3) / 1 );
 --c_box_ne: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_ne) / 1 );
 --c_box_lo: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_3) / 1 );
---c_shadow_ne: hsla( var(--c_hue_s) var(--c_sat_lo_2) var(--c_lum_lo_4) / .2 );
---c_shadow_lo: hsla( var(--c_hue_s) var(--c_sat_lo_2) var(--c_lum_lo_4) / .8 );
+--c_shadow_ne: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_4) / .2 );
+--c_shadow_lo: hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_4) / .8 );
 --c_link_hi: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
 --c_link_ne: hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2) / .5 );
 --c_highlight_hi: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_1) / 1 );
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
 --c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2) / 1 );
 }
-:root
-{
- --INVERT_FILTER:
- hue-rotate( 0deg )
- invert(100%)
- brightness(8);
-}
+:root  {--INVERT_FILTER:
+  hue-rotate( 0deg )
+  invert(100%)
+  brightness(8)}
 .unseen,.invisible,.retract{opacity: 0}
 body{color: var(--c_prim_lo)}
-#logo{color: var(--c_decor_hi)}
+#initial_slogan{color: var(--c_decor_hi)}
 #svg_logo{stroke: var(--c_highlight)}
 .svg_icon{stroke: var(--c_highlight)}
 #sections,#sections > *{background: transparent}
@@ -110,6 +107,7 @@ body{color: var(--c_prim_lo)}
 body,#sections_slider{background: var(--c_prim_hi)}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background: var(--c_decor_hi)}
+#initial{background: linear-gradient( -0.025turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%,  hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
 :root
 {
  --base_u: 8;
@@ -128,15 +126,15 @@ body,#sections_slider{background: var(--c_prim_hi)}
 }
 body,body *{font-family: var(--font_body)}
 body,body *,body *:before,body *:after{font-size: calc( var(--font_u) * var(--size_ratio) )}
-#initial_logo em{--size_ratio: 2}
-#initial_slogan li:nth-of-type(3) em{--size_ratio: 1.7}
-#initial_slogan li:nth-of-type(2) em{--size_ratio: 1.5}
-#initial_slogan li:nth-of-type(1) em{--size_ratio: 1.3}
+#initial_logo b{--size_ratio: 1.9}
+#initial_slogan li:nth-of-type(4) > *{--size_ratio: 1.7}
+#initial_slogan li:nth-of-type(2) > *{--size_ratio: 1.5}
+#initial_slogan li:nth-of-type(1) > *{--size_ratio: 1.3}
 body,body *{--size_ratio: 1}
-#initial_slogan em:nth-child(2),#initial_logo em{font-weight: 600}
-body,body *{font-weight: 300}
-#initial_slogan em{font-style: normal}
-#initial_slogan li em:nth-of-type(1){letter-spacing: 1vw}
+#initial b{font-weight: 600}
+body,body *{font-weight: 400}
+#initial i{font-style: normal}
+#initial b{letter-spacing: .8vw}
 .svg_icon{stroke-width: 1}
 .svg_icon{stroke-linecap: round}
 .svg_icon{stroke-linejoin: round}
@@ -146,7 +144,7 @@ button,select{text-transform: none}
 .truncate::after{content: "";
   position: absolute;
   inset-inline-end: 0; 
-  width: var(--truncate_n);
+  width: var(--truncate_n); 
   height: 1em;
   background: var(--truncate_c)}
 dl,ol,ul{list-style: none}
@@ -164,32 +162,13 @@ button,.svg_icon{cursor: pointer}
 .retract{transform: scale(0)}
 a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
+#initial_slogan li{transform: rotateY( -0.025turn )}
 #scroll_bottom > svg{transform:rotate(.5turn)}
 .aside{transform: translateY( calc( (5em - 1.5rem ) * -1 ) )}
 .svg_icon:hover{filter: brightness( 2 )}
-.retract{transform-origin: top left}
-#sections_slider{transition: transform .2s ease}
-#initial{background:
-  linear-gradient( -0.03turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%,  hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
- 
- 
-#initial_slogan{margin: 0}
-#initial_slogan{padding: 0}
-#svg_logo{margin: 0 -2vmin}
-#initial_slogan{width: 100vw}
-#initial_slogan{height: 100vh}
-#initial_slogan{overflow: hidden}
-#initial_slogan{color: var(--c_decor_hi)}
-#initial_slogan,#initial_slogan li{display: flex}
-#initial_slogan,#initial_slogan li:not(#initial_logo){flex-direction: column}
-#initial_slogan li{height: 23vh}
-#svg_logo{transform: translateY( -100vh )}
-#initial_logo:hover #svg_logo{animation: logo .4s ease forwards}
-#initial_slogan li{transform: rotateY( -0.03turn )}
 #initial_slogan{perspective: 32vw}
+.retract{transform-origin: top left}
 .aside{transition: .2s ease}
-@keyframes fade_in {0% { opacity:0}
-  100% { opacity:1} }
-@keyframes logo {100% {transform: translateY( -100vh ) }
-.svg_icon{pointer-events: all}
-.unseen,.invisible{pointer-events: none}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 7"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><em>OPEN SOURCE</em><em>GITHUB</em></li><li><em>FRAMEWORKLESS</em><em>JAMstack</em></li><li><em>PARTITIONED CONTENT</em><em>ARCHITECTURE</em></li><li id="initial_logo"><em>progress</em> <svg id="svg_logo" class="svg_icon"><use href="#icon_logo"/></svg> <em>econtent</em></li></ul></header></body></html>
+#sections_slider{transition: transform .2s ease}
+.unseen,.invisible{pointer-events: none}
+.svg_icon{pointer-events: all}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 9"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><b>OPEN SOURCE</b><i>GITHUB</i></li><li><b>FRAMEWORKLESS</b><i>JAMstack</i></li><li id="initial_logo"><b>progress</b> <svg id="svg_logo" class="svg_icon"><use href="#icon_logo"/></svg> <b>econtent</b></li><li><b>PARCELED</b><i>DESIGN</i></li></ul></header></body></html>

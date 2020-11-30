@@ -1,14 +1,15 @@
 /*=== DIMENSIONS ===*/
+
 :root
-{
-  --LINE_WIDTH: clamp( 30ch, {{ C_o.LINE_WIDTH_n }}ch, {{C_o.BODY_WIDTH_n - 4 }}vw );
-}
+                       {--LINE_WIDTH: clamp( 30ch, {{ C_o.LINE_WIDTH_n }}ch, {{C_o.BODY_WIDTH_n - 4 }}vw )}
+
 #svg_logo,
 __                     {--svg_icon_dim: calc( {{ C_o.LOGO_HEIGHT }} * .8 )}
 
 
 
 /*=== WIDTH ===*/
+
 .retract,
 __                     {width: 0}
 
@@ -19,7 +20,6 @@ __                     {width: 1px}
 #initial,
 #sections_slider,
 __                     {width: {{ C_o.FULL_WIDTH }}}
-
 
 
 #sections,
@@ -35,6 +35,7 @@ __                     {scrollbar-width: thin}
 
 
 /*=== HEIGHT ===*/
+
 .retract,
 __                     {height: 0}
 
@@ -45,7 +46,8 @@ __                     {height: 1px}
 #initial,
 __                     {height: {{ C_o.FULL_HEIGHT }}}
 
-
+#initial_slogan li,
+__                     {height: 25vh}
 
 
 #sections_slider,
@@ -58,4 +60,3 @@ __                     {height: var(--svg_icon_dim)}
 
 
 /*=== FLEX-BASIS ===*/
-
