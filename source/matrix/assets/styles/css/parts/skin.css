@@ -2,8 +2,7 @@
 
 
 dl[data-skin],
-__                     {display: flex;
-                        flex-direction: column;}
+__                     {display: flex; flex-direction: column}
 
 
 dd[data-skin]:after,

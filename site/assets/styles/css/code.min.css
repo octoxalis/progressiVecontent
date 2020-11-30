@@ -6,8 +6,7 @@ __  {position: absolute}
 __  {top: 0}
 __  {left: 0}
 code[data-id="code"],dl[data-id="code_ref"]{left: 50%; right: 50%}
-code[data-id="code"],dl[data-id="code_ref"]{margin-left: 50vw;
-  margin-right: 50vw} 
+code[data-id="code"],dl[data-id="code_ref"]{margin: 0 50vw 
 code[data-id="code"]{margin-top: 2rem}
 code[data-id="code"]{padding: 0.5rem 0.5rem 0.5rem 1rem}
 code[data-id="code"],dl[data-id="code_ref"]{width: 125vw} 

@@ -27,8 +27,7 @@ __                     {left: 50%; right: 50%}/* !!!! full width */
 
 code[data-id="code"],
 dl[data-id="code_ref"],
-__                     {margin-left:  {{ C_o.HALF_WIDTH }};
-                        margin-right: {{ C_o.HALF_WIDTH }}}    /* !!!! full width but keep margins for scaling */
+__                     {margin:  0 {{ C_o.HALF_WIDTH }}    /* !!!! full width but keep margins for scaling */
 
 code[data-id="code"],
 __                     {margin-top: {{ C_o.PAD_8 }}}

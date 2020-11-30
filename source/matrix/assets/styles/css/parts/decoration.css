@@ -58,8 +58,7 @@ __                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 /* === SCROLLBAR === */
 
 *,
-__                     {scrollbar-width:thin;
-                        scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
+__                     {scrollbar-width:thin; scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
 
 *::-webkit-scrollbar,
 __                     {width: .75em}
@@ -67,9 +66,6 @@ __                     {width: .75em}
 *::-webkit-scrollbar-track,
 __                     {background: var(--c_decor_ne)}
 
-*::-webkit-scrollbar-thumb
-,
-__                     {background-color: var(--c_decor_hi);
-                        border:           .2em solid var(--c_decor_ne);
-                        border-radius:    .5em}
+*::-webkit-scrollbar-thumb,
+__                     {background-color: var(--c_decor_hi); border: .2em solid var(--c_decor_ne); border-radius:    .5em}
 

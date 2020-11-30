@@ -356,12 +356,12 @@ toggleId__v:
     section_e
   ) =>
   {
-    const span_e =    //:-- slot remove button
+    const i_e =    //:-- slot remove button
       section_e
-       .querySelector( 'span[data-slot_s]' )
-    if ( span_e )
+       .querySelector( '{{ C_o.CLOSE_ICON_TAG }}[data-slot_s]' )
+    if ( i_e )
     {
-      span_e
+      i_e
         .addEventListener
         (
           'click',

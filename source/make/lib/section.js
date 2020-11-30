@@ -1,4 +1,5 @@
 const A_o = require( '../../matter/assets/scripts/js/lib/A_o.js' )
+const C_o = require( '../../matter/assets/scripts/js/lib/C_o.js' )
 const U_o = require( '../../matter/assets/scripts/js/lib/U_o.js' )
 
 
@@ -16,11 +17,11 @@ const SEC_o =
     //>
     let head_s = head_a[0]
     const main_s = content_s.replace( head_s, '' )    //: head_s consumed by header button
-    head_s = head_s.replace( head_re, '<u>$1</u>' )   //: replace ':' delimiters by <u> tag
+    head_s = head_s.replace( head_re, `<${C_o.SECTION_BTN_TAG}>$1</${C_o.SECTION_BTN_TAG}>` )   //: replace ':' delimiters by <${C_o.SECTION_BTN_TAG}> tag
     const trash_s = slot_s === A_o.DOCS_s ?
       ''
       :
-      `<span class="span_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_close" class="use_icon"></use></svg></span>`
+      `<${C_o.CLOSE_ICON_TAG} class="close_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_close" class="use_icon"></use></svg></${C_o.CLOSE_ICON_TAG}>`
     return `<button data-slot_s="${slot_s}">${head_s}${trash_s}</button><article data-slot_s="${slot_s}" class="retract">${main_s}</article>`
   }
 ,

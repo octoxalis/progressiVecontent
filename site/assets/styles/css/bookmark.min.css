@@ -1,7 +1,7 @@
 
-#bookmark_page,#bookmark_content,#bookmark_history,#bookmark_content_list,#bookmark_history_list,#bookmark_history_list > li,#bookmark_form{display: flex;
-  flex-direction: column}
-#bookmark_history_list > li > dl{display: flex}
+#bookmark_page,#bookmark_content,#bookmark_history,#bookmark_content_list,#bookmark_history_list,#bookmark_history_list > li,#bookmark_form{display: flex; flex-direction: column}
+#bookmark_page > dt,#bookmark_history_list > li > dl{display: flex}
+#bookmark_page > dt{align-items: flex-end; justify-content: space-between}
 #bookmark_page,#bookmark_page > *,#bookmark_page ul,#bookmark_form{width: 100%}
 #bookmark_page button{width: 25%}
 #bookmark_history_list > li > dl > dt{flex-basis: 25%}
@@ -11,11 +11,10 @@
 #bookmark_history{max-height: 30vh}
 #bookmark_history{overflow-y: auto}
 #bookmark_page{margin-top: 1.5rem}
-#bookmark_page > dt{margin: 1rem 0 0 0.5rem}
-#bookmark_page > dd{margin-bottom: 0}
+#bookmark_page > dt{margin: 2rem 0 0 0.5rem}
 #bookmark_page input,#bookmark_page button{margin: 0.5rem}
 #bookmark_content_list > li,#bookmark_history_list > li{margin: 0.25rem}
-#bookmark_history_list button,#bookmark_page > dt{margin: 0}
+#bookmark_page > dd{margin-bottom: 0}
 #bookmark_page input{padding: 0.5rem}
 #bookmark_content_list > li,#bookmark_history_list > li,#bookmark_history_list button{padding: 0.25rem}
 #bookmark_name{padding-left: 1rem}
@@ -29,9 +28,7 @@
 #bookmark_form > *,#bookmark_refresh{color: var(--c_prim_lo_4)}
 #bookmark_form *,#bookmark_page button{background: transparent}
 #bookmark_content_list > li,#bookmark_history_list > li,#bookmark_name{background: var(--c_prim_hi_2)}
-#bookmark_content_list > li:hover,#bookmark_history_list > li:hover,#bookmark_name:hover{color: var(--c_sec_lo);
-  background: var(--c_sec_hi);
-  border-color: var(--c_decor_lo)}
+#bookmark_content_list > li:hover,#bookmark_history_list > li:hover,#bookmark_name:hover{color: var(--c_sec_lo); background: var(--c_sec_hi); border-color: var(--c_decor_lo)}
 .semi_opac{opacity: .25}
 .full_opac{opacity: 1}
 #bookmark_content li,#bookmark_history_list dl *{--size_ratio: .9}

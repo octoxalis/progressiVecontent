@@ -1,9 +1,6 @@
 /*=== COLOR ===*/
 
-:root                  {--INVERT_FILTER:
-                        hue-rotate( {{ C_o.HUE_ROTATE_n }}deg )
-                        invert(100%)
-                        brightness(8)}
+:root                  {--INVERT_FILTER: invert(100%) brightness(8) hue-rotate( {{ C_o.HUE_ROTATE_n }}deg ) }
 
 
 
@@ -64,5 +61,4 @@ __                     {background: var(--c_decor_hi)}
 
 #initial,
 __                     {background: linear-gradient( {{ C_o.INITIAL_TURN }},
-                        hsla( var(--hue_base) 94% 28% / 1 ) 0%,
-                        hsla( var(--hue_base) 83% 6% / 1 )  100%)}
+                        hsla( var(--hue_base) 94% 28% / 1 ) 0%, hsla( var(--hue_base) 83% 6% / 1 )  100%)}

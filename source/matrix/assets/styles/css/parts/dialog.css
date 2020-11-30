@@ -13,9 +13,7 @@
 __                     {display: flex; justify-content: space-between;}
 
 [data-id="display"] > *,
-__                     {display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start}
+__                     {display: flex; flex-direction: column; justify-content: flex-start}
 
 
 [data-id="display"] > dl,
@@ -91,8 +89,7 @@ __                     {background: var(--NODE_BACK)}
 
 
 [data-id="list"] > li:hover,
-__                     {color: var(--c_sec_lo);
-                        background: var(--c_sec_hi)}
+__                     {color: var(--c_sec_lo); background: var(--c_sec_hi)}
 
 [data-id="display"],
 __                     {box-shadow:{{ C_o.BOX_SHADOW }}}

@@ -148,12 +148,21 @@ module.exports =
 
   LOGO_HEIGHT: 'clamp( 12vh, 16vh, 20vh )',
 
-  SLIDER_HEIGHT: 5 + 'em',
+  STD_HEIGHT:    5,
   BUTTON_HEIGHT: 5 + 'em',
+  SLIDER_HEIGHT: 5 + 'em',
   IMG_UNFOLD:    5 + 'em',
 
   FONT_BODY: `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif`,
   FONT_MONO: `system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace`,
+
+  SECTION_BTN_TAG:  'b',
+  CLOSE_ICON_TAG:   'em',
+  NOTE_TAG:         'ins',
+  NOTE_CONTENT_TAG: 'i',
+  IMG_UNFOLD_TAG:   'i',
+  NOTE_LINK_TAG:    'em',
+
 
 }
 

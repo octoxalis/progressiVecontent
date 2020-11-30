@@ -7,9 +7,7 @@
  --dialog_height: 3rem;
 }
 [data-id="display"]{display: flex; justify-content: space-between;}
-[data-id="display"] > *{display: flex;
-  flex-direction: column;
-  justify-content: flex-start}
+[data-id="display"] > *{display: flex; flex-direction: column; justify-content: flex-start}
 [data-id="display"] > dl{flex-basis: 90%}
 [data-id="display"] > ul{flex-basis: 10%}
 [data-id="display"] > ul > *{align-self: flex-end}
@@ -26,8 +24,7 @@
 [data-id="display"] li{color: var(--c_prim_lo_4)}
 [data-id="display"] *{background: transparent}
 [data-id="display"]{background: var(--NODE_BACK)}
-[data-id="list"] > li:hover{color: var(--c_sec_lo);
-  background: var(--c_sec_hi)}
+[data-id="list"] > li:hover{color: var(--c_sec_lo); background: var(--c_sec_hi)}
 [data-id="display"]{box-shadow:}
 [data-id="display"] *{font-size: inherit}
 [data-id="title"]{font-weight: 500}

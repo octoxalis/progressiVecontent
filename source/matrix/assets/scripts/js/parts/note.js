@@ -100,7 +100,7 @@ var NOTE_o =
     //>
     unfold_e =
       document
-        .createElement( 'span' )
+        .createElement( '{{ C_o.IMG_UNFOLD_TAG }}' )
     unfold_e.dataset.id = 'img_unfold'
     for ( child_e of content_e.children )
     {

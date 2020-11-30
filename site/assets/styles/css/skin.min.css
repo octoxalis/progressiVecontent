@@ -1,6 +1,5 @@
 
-dl[data-skin]{display: flex;
-  flex-direction: column;}
+dl[data-skin]{display: flex; flex-direction: column}
 dd[data-skin]:after{position: relative}
 dl[data-skin]{align-items: center}
 dd[data-skin]:after{left: 0.5rem}

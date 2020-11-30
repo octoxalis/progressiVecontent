@@ -3,6 +3,7 @@ const FIL_o = require('fs-extra')
 const REPLACE__s = require( '../lib/block_replace.js' )
 const SPLIT__a   = require( '../lib/block_split.js' )
 const CODE_o     = require( '../lib/code.js' )
+const C_o        = require( '../../matter/assets/scripts/js/lib/C_o.js' )
 const F_o        = require( '../../matter/assets/scripts/js/lib/F_o.js' )
 const S_o        = require( '../../matter/assets/scripts/js/lib/S_o.js' )
 
@@ -24,7 +25,7 @@ const CODES_o =
 
   note_txt__s:
   content_s =>
-  `<ins data-id="note_txt"><button aria-label="unfold note"></button><span data-id="note_content">${content_s}</span></ins>`,
+  `<${C_o.NOTE_TAG} data-id="note_txt"><button aria-label="unfold note"></button><${C_o.NOTE_CONTENT_TAG} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG}></${C_o.NOTE_TAG}>`,
 
 
 
@@ -40,13 +41,13 @@ const CODES_o =
     {
       legend_a.forEach( ( at_s, at_n ) =>
         {
-          const tag_s = !at_n ? 'q' : 'small'  //: 1st entry as title
+          const tag_s = !at_n ? 'b' : 'i'  //: 1st entry: name, 2nd entry as title
           data_s += `<${tag_s}>${at_s}</${tag_s}>`
           legend_s += `${at_s}`
           if ( at_n < legend_a.length - 1 ) legend_s += ' - '
         } )
     }
-    return `<ins data-id="note_img"><button aria-label="unfold image" data-legend="${legend_s}"><span data-id="img_legend">${data_s}</span></button><span data-id="note_content">${content_s}</span></ins>`
+    return `<${C_o.NOTE_TAG} data-id="note_img"><button aria-label="unfold image" data-legend="${legend_s}"><label data-id="img_legend">${data_s}</label></button><${C_o.NOTE_CONTENT_TAG} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG}></${C_o.NOTE_TAG}>`
   }
 ,
 
@@ -58,10 +59,9 @@ const CODES_o =
 note_link__s:
   link_a =>
   {
-    let link_s = '<small class="note_link_a">'
+    let link_s = `<${C_o.NOTE_LINK_TAG} class="note_link_a">`
     link_a.forEach( atlink_s =>
       {
-      //XX let act_s, icon_s
       let [ act_s, icon_s, ...arg_a ] = atlink_s.split( ',' )
       let parameter_s = ''
       icon_s = icon_s.trim()
@@ -69,7 +69,7 @@ note_link__s:
       link_s += `<a class="note_link" role="button" tabindex="0"
       data-method="${act_s}" data-param="${parameter_s.slice( 0, -1 )}">${S_o.symbol__s( icon_s )}</a>`
     } )
-    return `${link_s}</small>`
+    return `${link_s}</${C_o.NOTE_LINK_TAG}>`
   }
   ,
   

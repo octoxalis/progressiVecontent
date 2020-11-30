@@ -93,10 +93,7 @@ button:focus{outline: 0}
 --c_highlight: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) / 1 );
 --c_highlight_in: hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2) / 1 );
 }
-:root  {--INVERT_FILTER:
-  hue-rotate( 0deg )
-  invert(100%)
-  brightness(8)}
+:root  {--INVERT_FILTER: invert(100%) brightness(8) hue-rotate( 0deg ) }
 .unseen,.invisible,.retract{opacity: 0}
 body{color: var(--c_prim_lo)}
 #initial_slogan{color: var(--c_decor_hi)}
@@ -107,7 +104,7 @@ body{color: var(--c_prim_lo)}
 body,#sections_slider{background: var(--c_prim_hi)}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background: var(--c_decor_hi)}
-#initial{background: linear-gradient( -0.025turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%,  hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
+#initial{background: linear-gradient( -0.025turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%, hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
 :root
 {
  --base_u: 8;
@@ -151,14 +148,10 @@ dl,ol,ul{list-style: none}
 body{cursor: default}
 .invisible{cursor: auto}
 button,.svg_icon{cursor: pointer}
-*{scrollbar-width:thin;
-  scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
+*{scrollbar-width:thin; scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
 *::-webkit-scrollbar{width: .75em}
 *::-webkit-scrollbar-track{background: var(--c_decor_ne)}
-*::-webkit-scrollbar-thumb
-{background-color: var(--c_decor_hi);
-  border: .2em solid var(--c_decor_ne);
-  border-radius: .5em}
+*::-webkit-scrollbar-thumb{background-color: var(--c_decor_hi); border: .2em solid var(--c_decor_ne); border-radius: .5em}
 .retract{transform: scale(0)}
 a::after{transform: scaleX(0)}
 a:hover::after{transform: scaleX(1)}
