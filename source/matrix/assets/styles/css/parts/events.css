@@ -2,8 +2,8 @@
 
 .unseen,
 .invisible,
-__                     {pointer-events: none}
+__                     {pointer-events:none}
 
 .svg_icon,
-__                     {pointer-events: all}
+__                     {pointer-events:all}
 

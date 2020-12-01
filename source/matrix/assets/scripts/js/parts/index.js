@@ -81,7 +81,7 @@ var IND_o =
   {
     //?? LIB_o
     //??   .scroll__v()    //!!! scroll to top
-    if ( !LIB_o.nodeId__o( 'section_{{A_o.DOCS_s}}' ) )  //: contents section not yet loaded
+    if ( !LIB_o.nodeId__o( 'section_{{C_o.DOCS_s}}' ) )  //: contents section not yet loaded
     {
       IND_o
         .load__v()    //: default args
@@ -98,8 +98,8 @@ var IND_o =
 
   load__v
   (
-    path_s='{{A_o.SYS_s}}',
-    slot_s='{{A_o.DOCS_s}}',
+    path_s='{{C_o.SYS_s}}',
+    slot_s='{{C_o.DOCS_s}}',
     slot_n=-1,          //: negative indices for sys slots
     callback_f=null
   )

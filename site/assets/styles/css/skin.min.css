@@ -1,25 +1,25 @@
 
-dl[data-skin]{display: flex; flex-direction: column}
-dd[data-skin]:after{position: relative}
-dl[data-skin]{align-items: center}
-dd[data-skin]:after{left: 0.5rem}
-dl[data-skin] > *:not( dt ){padding: 0.5rem}
-dl[data-skin]{margin: 1rem 0}
- dl[data-skin] > dt{margin-bottom: 0}
-dl[data-skin] > dd{margin-bottom: 0.25rem}
-[data-skin],[data-skin] > *{width: 80vw}
-dd[data-skin]:after{width: 100%}
-[data-skin] > dd{height: 3em}
-[data-skin] > dd:last-of-type{border: 1px solid hsla( 0 0% 0% / .5)}
-#hue_picker,#hue_current{color: hsla( 0, 50%, 50% / .8 )}
-#hue_picker{background: linear-gradient( 90deg,  hsla( 0 100% 50% / 1 ) 0%,  hsla( 36 100% 50% / 1 ) 10%,  hsla( 72 100% 50% / 1 ) 20%,  hsla( 108 100% 50% / 1 ) 30%,  hsla( 144 100% 50% / 1 ) 40%,  hsla( 180 100% 50% / 1 ) 50%,  hsla( 216 100% 50% / 1 ) 60%,  hsla( 252 100% 50% / 1 ) 70%,  hsla( 288 100% 50% / 1 ) 80%,  hsla( 324 100% 50% / 1 ) 90%,  hsla( 360 100% 50% / 1 ) 100%)}
+dl[data-skin]{display:flex;flex-direction:column}
+dd[data-skin]:after{position:relative}
+dl[data-skin]{align-items:center}
+dd[data-skin]:after{left:0.5rem}
+dl[data-skin] > *:not( dt ){padding:0.5rem}
+dl[data-skin]{margin:1rem 0}
+ dl[data-skin] > dt{margin-bottom:0}
+dl[data-skin] > dd{margin-bottom:0.25rem}
+[data-skin],[data-skin] > *{width:80vw}
+dd[data-skin]:after{width:100%}
+[data-skin] > dd{height:3em}
+[data-skin] > dd:last-of-type{border:1px solid hsla( 0 0% 0% / .5)}
+#hue_picker,#hue_current{color:hsla( 0, 50%, 50% / .8 )}
+#hue_picker{background:linear-gradient( 90deg,  hsla( 0 100% 50% / 1 ) 0%,  hsla( 36 100% 50% / 1 ) 10%,  hsla( 72 100% 50% / 1 ) 20%,  hsla( 108 100% 50% / 1 ) 30%,  hsla( 144 100% 50% / 1 ) 40%,  hsla( 180 100% 50% / 1 ) 50%,  hsla( 216 100% 50% / 1 ) 60%,  hsla( 252 100% 50% / 1 ) 70%,  hsla( 288 100% 50% / 1 ) 80%,  hsla( 324 100% 50% / 1 ) 90%,  hsla( 360 100% 50% / 1 ) 100%)}
   
-#hue_current{background: hsla( var(--hue_base) 100% 50% / 1 )}
+#hue_current{background:hsla( var(--hue_base) 100% 50% / 1 )}
   
-#lum_picker{background: linear-gradient( 90deg,  hsla( var(--hue_base) 50% 20% / 1 ) 0%,  hsla( var(--hue_base) 50% 20% / 1 ) 50%,  hsla( var(--hue_base) 50% 80% / 1 ) 50%,  hsla( var(--hue_base) 50% 80% / 1 ) 100%)}
+#lum_picker{background:linear-gradient( 90deg,  hsla( var(--hue_base) 50% 20% / 1 ) 0%,  hsla( var(--hue_base) 50% 20% / 1 ) 50%,  hsla( var(--hue_base) 50% 80% / 1 ) 50%,  hsla( var(--hue_base) 50% 80% / 1 ) 100%)}
   
-#lum_current{background: hsla( var(--hue_base) 50% calc( ( 50 + ( 30 * var(--lum_mode) ) ) * 1% ) / 1 )}
-dd[data-skin]:after{--size_ratio: 1}
-dd[data-skin]:after{line-height: 2}
-[data-skin] > dd:last-of-type{cursor: crosshair}
-dd[data-skin]:after{content: attr( data-skin )}
+#lum_current{background:hsla( var(--hue_base) 50% calc( ( 50 + ( 30 * var(--lum_mode) ) ) * 1% ) / 1 )}
+dd[data-skin]:after{--size_ratio:1}
+dd[data-skin]:after{line-height:2}
+[data-skin] > dd:last-of-type{cursor:crosshair}
+dd[data-skin]:after{content:attr( data-skin )}

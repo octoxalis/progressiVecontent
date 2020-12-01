@@ -5,27 +5,27 @@ __
 }
 
 
-__                     {display: grid; place-items: center}
+__                     {display:grid;place-items:center}
 
 
-__                     {display: flex; justify-content: flex-start}
+__                     {display:flex;justify-content:flex-start}
 
 
-__                     {position: relative}
+__                     {position:relative}
 
 
-__                     {position: absolute}
+__                     {position:absolute}
 
 
-__                     {top: 0}
+__                     {top:0}
 
 
 
 
-__                     {left: 0}
+__                     {left:0}
 
 
-__                     {margin: 0}
+__                     {margin:0}
 
 
 
@@ -34,55 +34,55 @@ __                     {padding:0}
 
 
 
-__                     {width: 100%}
+__                     {width:100%}
 
 
 
-__                     {height: auto}
+__                     {height:auto}
 
 
 
-__                     {border: 2px solid var(--c_sec_hi_2)}
+__                     {border:2px solid var(--c_sec_hi_2)}
 
 
-__                     {border-radius: 8px}
-
-
-
-__                     {cursor: pointer}
-
-
-__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+__                     {border-radius:8px}
 
 
 
-__                     {color: var(--c_prim_lo_4)}
+__                     {cursor:pointer}
 
 
-__                     {stroke: none}
+__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_ne)}
 
 
 
-__                     {fill: var(--c_prim_hi_2)}
+__                     {color:var(--c_prim_lo_4)}
 
 
-__                     {background: transparent}
+__                     {stroke:none}
 
 
-__                     {font-size: inherit}
+
+__                     {fill:var(--c_prim_hi_2)}
 
 
-__                     {font-weight: 500}
+__                     {background:transparent}
 
 
-__                     {text-transform: uppercase}
+__                     {font-size:inherit}
 
 
-__                     {cursor: pointer}
+__                     {font-weight:500}
 
 
-__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
+__                     {text-transform:uppercase}
 
 
-__                     {transition: transform .2s ease}
+__                     {cursor:pointer}
+
+
+__                     {box-shadow:{{C_o.BOX_SHADOW}}}
+
+
+__                     {transition:transform .2s ease}
 

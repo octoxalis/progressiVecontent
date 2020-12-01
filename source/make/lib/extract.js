@@ -1,5 +1,4 @@
 const FIL_o = require('fs-extra')
-const A_o = require( '../../matter/assets/scripts/js/lib/A_o.js' )
 
 const EXT_o = Object.create( null )
 
@@ -130,7 +129,7 @@ EXT_o.extract__v =
 {
   const [ slot_s, slot_n ] = key_s.split( '=' )    //;console.log( `${slot_s} - ${slot_n}` )
   const buffer_s = EXT_o.toMarkdown__s( val_s, slot_s, slot_n )
-  FIL_o.writeFile( `matter/content/${A_o.SLOTS_s}/${slot_s}.md`, buffer_s, error_o=>{/*console.log( error_o )*/})
+  FIL_o.writeFile( `matter/content/${C_o.SLOTS_s}/${slot_s}.md`, buffer_s, error_o=>{/*console.log( error_o )*/})
   EXT_o.index_s += `${EXT_o.toBuffer__s( buffer_s )}\n`
 }
 

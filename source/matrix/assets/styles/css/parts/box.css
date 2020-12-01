@@ -11,7 +11,7 @@ __                     {box-sizing:inherit}
 /*=== CLIP ===*/
 
 .unseen,
-__                     {clip-path: inset(0px 0px)}
+__                     {clip-path:inset(0px 0px)}
 
 
 /*=== OVERFLOW ===*/
@@ -19,7 +19,7 @@ __                     {clip-path: inset(0px 0px)}
 .unseen,
 button,
 #initial_slogan,
-__                     {overflow: hidden}
+__                     {overflow:hidden}
 
 body,
-__                     {overflow-x: hidden}
+__                     {overflow-x:hidden}

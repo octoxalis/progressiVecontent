@@ -1,4 +1,14 @@
 <svg id="svg_symbols" aria-hidden="true">
+  <!--
+  <symbol id="bg_logo" viewBox="0 0 48 24">
+    <text x="0" y="12">progress</text>
+    <text x="30" y="12">econtent</text>
+    
+    <circle cx="24" cy="3" r="2" stroke="none" fill="red"></circle>
+    <line x1="24" y1="7" x2="24" y2="12"></line>
+    <polyline points="24 15 24 22 34 9"></polyline>
+  </symbol>
+  -->
 
   <symbol id="icon_logo" viewBox="0 0 24 24">
     <circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle>

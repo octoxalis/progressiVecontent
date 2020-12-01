@@ -124,7 +124,7 @@ history__v    //: display history_a items
         li_e =>
         {
           list_a
-            .add( `/{{A_o.SLOTS_s}}/${li_e.textContent}.html` )
+            .add( `/{{C_o.SLOTS_s}}/${li_e.textContent}.html` )
         }
       )
     //;console.log( list_a )
@@ -470,7 +470,7 @@ bookmarkOpen__v    //:- diplay bookmark data
       path_s
         .slice
         (
-          '/{{A_o.SLOTS_s}}/'.length,  //: trim 'slots/'
+          '/{{C_o.SLOTS_s}}/'.length,  //: trim 'slots/'
           -('.html'.length)              //: trim '.html'
         )
     )

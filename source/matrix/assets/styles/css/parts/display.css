@@ -8,10 +8,14 @@ main,
 __                     {display:grid; place-items:center}
 
 
+#background_aside,
 #initial_slogan,
 #initial_slogan li,
 #sections_slider,
 __                     {display: flex}
+
+#background_aside,
+__                     {justify-content: center}
 
 
 #initial_slogan,
@@ -25,5 +29,5 @@ __                     {flex-direction: column}
 
 #initial,
 #sections_slider,
-__                     {z-index: {{ C_o.INITIAL_Z }}}
+__                     {z-index: 1}
 

@@ -47,7 +47,7 @@ var GRA_o =
       event_e
         .target
         .closest( '[data-step]' )
-    if ( target_e.classList.contains( 'slide_focus' ) )
+    if ( target_e && target_e.classList.contains( 'slide_focus' ) )
     {
       LIB_o
         .invisible__v
@@ -194,7 +194,7 @@ var GRA_o =
       IND_o
         .load__v
         (
-          '{{A_o.SLOTS_s}}',      //: path_s default
+          '{{C_o.SLOTS_s}}',      //: path_s default
           slot_s,
           +step_s,        //: Number
           section_e =>    //: callback_f
@@ -350,8 +350,8 @@ var GRA_o =
     IND_o
       .load__v
       (
-        path_s='{{A_o.SYS_s}}',
-        slot_s='{{A_o.SKIN_s}}',
+        path_s='{{C_o.SYS_s}}',
+        slot_s='{{C_o.SKIN_s}}',
         slot_n=-2,          //: negative indices for sys slots
         callback_f=null
       )
@@ -367,8 +367,8 @@ var GRA_o =
     IND_o
       .load__v
       (
-        path_s='{{A_o.SYS_s}}',
-        slot_s='{{A_o.BOOKMARK_s}}',
+        path_s='{{C_o.SYS_s}}',
+        slot_s='{{C_o.BOOKMARK_s}}',
         slot_n=-3,          //: negative indices for sys slots
         callback_f=null
       )
@@ -522,7 +522,7 @@ void async function
 {
   //...let json_o =
   //...  await GRA_o
-  //...    .fetch__v( `{{U_o.url_s}}{{U_o.JSON_PATH_s}}graph.json` )
+  //...    .fetch__v( `{{U_o.url_s}}{{C_o.JSON_PATH_s}}graph.json` )
   //...GRA_o.graph_c =
   //...  Graph
   //...    .json__c( json_o )

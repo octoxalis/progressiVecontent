@@ -2,7 +2,7 @@
   "name":"progressiVecontent",
   "short_name":"progressiVecontent",
   "start_url": "/",
-  "description": "Innovative website architecture for partitioned content",
+  "description": "parceled content architecture for instant loading website",
   "icons": [{ "src": "https://progressivecontent.netlify.app/assets/media/google-touch-icon.png", "sizes": "512x512" }],
   "theme_color":"#064ec1",
   "background_color":"#ffffff",

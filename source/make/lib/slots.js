@@ -7,7 +7,7 @@ module.exports =
   {
     const button_s =
 `<button data-id="slots_reload" aria-label="reload previously opened slots" tabindex="0" class="vanished">
-<svg class="svg_icon"><use href="#refresh" class="use_icon"></use></svg>
+<svg class="svg_icon"><use href="#refresh"></use></svg>
 </button>`
 
     const target_s = '</h1>'  //: button is inside h1 tag

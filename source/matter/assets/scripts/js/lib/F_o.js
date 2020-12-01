@@ -4,6 +4,7 @@
  */
 const A_o = require( './A_o.js' )
 const U_o = require( './U_o.js' )
+const C_o = require( './C_o.js' )
 
 const OPEN_s  = '[='   //: substitute__s function delimiter
 const CLOSE_s = '=]'   //: idem
@@ -13,7 +14,7 @@ const CLOSE_s = '=]'   //: idem
 module.exports =
 {  
   siteUrl__s:
-  ( file_s, dir_s=`${A_o.SLOTS_s}/` ) => `[${file_s.replace('_', ' ')}]: ${U_o.url_s}${dir_s}${file_s}.html`,
+  ( file_s, dir_s=`${C_o.SLOTS_s}/` ) => `[${file_s.replace('_', ' ')}]: ${U_o.url_s}${dir_s}${file_s}.html`,
 
 
 
@@ -23,12 +24,12 @@ module.exports =
 
 
   mediaUrl__s:
-  () => `${U_o.url_s}${U_o.MEDIA_PATH_s}`,
+  () => `${U_o.url_s}${C_o.MEDIA_PATH_s}`,
 
 
 
   img1px__s:
-  () => `${U_o.url_s}${U_o.MEDIA_PATH_s}1px.png`,
+  () => `${U_o.url_s}${C_o.MEDIA_PATH_s}1px.png`,
   
 
 

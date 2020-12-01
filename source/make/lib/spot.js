@@ -1,5 +1,3 @@
-const A_o = require( '../../matter/assets/scripts/js/lib/A_o.js' )
-
 const SPO_o =
 {
   selector_o:    //:- Object properties from shortcodes functions - assets files (CSS & JS)

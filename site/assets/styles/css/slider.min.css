@@ -1,54 +1,54 @@
 
-dl[data-step]{display: grid; place-items: center}
-#graph_slider,.step_list,dl[data-step] > dd{display: flex}
-#graph_slider{flex-direction: column}
-.step_list{flex-wrap: nowrap}
-.step_list{justify-content: center}
-dl[data-step] > dd{align-items: flex-start}
-#graph_slider,.slide_list,.step_list,dl[data-step] > dt,dl[data-step] > dd{position: relative}
-dl[data-step]{position: absolute}
-dl[data-step]{margin: 0}
-button[data-step] + button[data-step]{margin-left: 1.5%} 
-#graph_slider{margin-left: -50vw; margin-right: -50vw} 
-#graph_slider,#sections_slider{padding: 0.25rem }
-button[data-step]{padding: .1rem}
-dl[data-step]{padding: 0.5rem}
-#graph_slider button[data-step]{--slider_cap: var(--LABELS_CAP)}
-#sections_slider button[data-step]{--slider_cap: var(--SECTIONS_CAP)}
-dl[data-step]{--slide_width: 16ch}
-hr{width: calc( 80vw * .25 )}
-p,ol, ul{width: var(--LINE_WIDTH)}
-#graph_slider{width: 100vw}
-.slide_list,.step_list{width: 100%}
-dl[data-step]{width: var(--slide_width)}
-button[data-step]{flex-grow: 1}
-#sections_slider,#graph_slider{--slide_height: .85;
+dl[data-step]{display:grid;place-items:center}
+#graph_slider,.step_list,dl[data-step] > dd{display:flex}
+#graph_slider{flex-direction:column}
+.step_list{flex-wrap:nowrap}
+.step_list{justify-content:center}
+dl[data-step] > dd{align-items:flex-start}
+#graph_slider,.slide_list,.step_list,dl[data-step] > dt,dl[data-step] > dd{position:relative}
+dl[data-step]{position:absolute}
+dl[data-step]{margin:0}
+button[data-step] + button[data-step]{margin-left:1.5%} 
+#graph_slider{margin-left:-50vw;margin-right:-50vw} 
+#graph_slider,#sections_slider{padding:0.25rem }
+button[data-step]{padding:.1rem}
+dl[data-step]{padding:0.5rem}
+#graph_slider button[data-step]{--slider_cap:var(--LABELS_CAP)}
+#sections_slider button[data-step]{--slider_cap:var(--SECTIONS_CAP)}
+dl[data-step]{--slide_width:16ch}
+hr{width:calc( 80vw * .25 )}
+p,ol, ul{width:var(--LINE_WIDTH)}
+#graph_slider{width:100vw}
+.slide_list,.step_list{width:100%}
+dl[data-step]{width:var(--slide_width)}
+button[data-step]{flex-grow:1}
+#sections_slider,#graph_slider{--slide_height:.85;
   --step_height: .15}
-.slide_list{--list_height: var(--slide_height)} 
-.step_list{--list_height: var(--step_height)} 
-.slide_list,.step_list{height: calc( 5em * var(--list_height) )}
-dl[data-step],button[data-step]{height: calc( ( 5em - 1.2rem ) * var(--list_height) )} 
-#graph_slider{left: 50%; right: 50%} 
-dl[data-step],.slide_list,.step_list{overflow: hidden}
-dl[data-step]{color: var(--c_sec_lo)}
-#graph_slider,#sections_slider{background: var(--c_prim_hi_3)}
-button[data-step],.slide_list,.step_list{background: transparent}
-dl[data-step]{background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
-button[data-step]:hover,.step_focus:focus,.step_focus{background: var(--c_sec_ne);
-  filter: var(--SATURATE_FILTER)}
-.slide_list,.step_list{border: none}
-button[data-step],.slide_focus{border: 2px solid var(--c_sec_lo)}
-dl[data-step]{border-radius: 8px}
-button[data-step]{border-radius: 2px}
-button[data-step]{outline: 0}
-.slide_list,.step_list{list-style: none}
-button[data-step]{appearance: none} 
-dl[data-step]{text-transform: uppercase}
-dl[data-step] > dt{text-align: center}
-button[data-step]{font: inherit}
-.slide_title{--size_ratio: .65}
-dl[data-step] > dt{--size_ratio: .9}
-dl[data-step],button[data-step]{cursor: pointer}
-.slide_list,.step_list{transform-style: preserve-3d}
-.slide_list,.step_list{transform-origin: 0 50%}
-#graph_slider,button[data-step]{transition: transform .2s ease}
+.slide_list{--list_height:var(--slide_height)} 
+.step_list{--list_height:var(--step_height)} 
+.slide_list,.step_list{height:calc( 5em * var(--list_height) )}
+dl[data-step],button[data-step]{height:calc( ( 5em - 1.2rem ) * var(--list_height) )} 
+#graph_slider{left:50%;right:50%} 
+dl[data-step],.slide_list,.step_list{overflow:hidden}
+dl[data-step]{color:var(--c_sec_lo)}
+#graph_slider,#sections_slider{background:var(--c_prim_hi_3)}
+button[data-step],.slide_list,.step_list{background:transparent}
+dl[data-step]{background:hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
+button[data-step]:hover,.step_focus:focus,.step_focus{background:var(--c_sec_hi);
+  filter:var(--SATURATE_FILTER)}
+.slide_list,.step_list{border:none}
+button[data-step],.slide_focus{border:2px solid var(--c_sec_lo)}
+dl[data-step]{border-radius:8px}
+button[data-step]{border-radius:2px}
+button[data-step]{outline:0}
+.slide_list,.step_list{list-style:none}
+button[data-step]{appearance:none} 
+dl[data-step]{text-transform:uppercase}
+dl[data-step] > dt{text-align:center}
+button[data-step]{font:inherit}
+.slide_title{--size_ratio:.65}
+dl[data-step] > dt{--size_ratio:.9}
+dl[data-step],button[data-step]{cursor:pointer}
+.slide_list,.step_list{transform-style:preserve-3d}
+.slide_list,.step_list{transform-origin:0 50%}
+#graph_slider,button[data-step]{transition:transform .2s ease}

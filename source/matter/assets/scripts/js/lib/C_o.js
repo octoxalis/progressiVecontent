@@ -1,88 +1,158 @@
 /*
  * COMPONENTS constants for templates
- * Naming scheme: tag[_tag]+__s
  */
-const CONF_o = require( '../../../../../configure.js' )
 
 module.exports =
 {
-  tag_o: CONF_o.tag_o,
+  //=== HEAD ===
+  description_o:                        //: descriptions for SEO
+  {
+    DESCRIPT_s: 'parceled content architecture for instant loading website',
+    GLOBAL_s:   'website architecture,static site generator,parceled,modular,content',
+  },
+  INLINE_s:   'inline_style',
 
-  //-- CSS constants to avoid calc()
 
-  HUE_SET_n:  CONF_o.HUE_SET_n,
+
+  //=== HEADERS ===
+  csp_o:
+  {
+    HEAD_o:  //!!! DON'T change order
+    {
+      DEFAULT_SRC:     '',
+      BASE_URI:        '',
+      FONT_SRC:        '',
+      CONNECT_SRC:     '',
+      PREFETCH_SRC:    '',  //: requires 'enable-experimental-web-platform-features' flag
+      IMG_SRC:         '',
+      FRAME_SRC:       '',
+      FRAME_ANCESTORS: '',
+      FORM_ACTION:     '',
+      MANIFEST_SRC:    '',
+      SCRIPT_SRC_ELEM: '',
+      SCRIPT_SRC:      '',
+      OBJECT_SRC:      '',
+      STYLE_SRC:       `'unsafe-inline'`,  //: for browser not accepting sha-256 (Firefox-78!)
+    },
+  },
+
+
   
-  HUE_BASE_n: CONF_o.HUE_P_n,
-  HUE_P_n:    CONF_o.HUE_P_n,
-  HUE_L_n:    CONF_o.HUE_L_n,
-  HUE_S_n:    CONF_o.HUE_S_n,
-  HUE_H_n:    CONF_o.HUE_H_n,
-  HUE_D_n:    CONF_o.HUE_D_n,
+  //=== DIR ===
+  SYS_s:        'sys',        //: system slots dir
+  SLOTS_s:      'slots',      //: Eleventy tag for SLOTS_s collection
+  DOCS_s:       'contents',   //: content slot
+  SKIN_s:       'skin',       //: skin slot
+  BOOKMARK_s:   'bookmark',   //: bookmark slot
 
-  SAT_UNIT_n: CONF_o.SAT_UNIT_n,
-  SAT_BASE_n: CONF_o.SAT_BASE_n,
-
-  LUM_MODE_n:     CONF_o.LUM_MODE_n,
-  LUM_BASE_n:     CONF_o.LUM_BASE_n,
-  LUM_CONTRAST_n: CONF_o.LUM_CONTRAST_n,
-
-  HUE_ROTATE_n: CONF_o.HUE_ROTATE_n,
-
-
-  BODY_WIDTH_n:  CONF_o.BODY_WIDTH_n,
-  BODY_MARGIN_n: CONF_o.BODY_MARGIN_n,
-  LINE_WIDTH_n:  CONF_o.LINE_WIDTH_n,
-
-
-  BORDER_1: CONF_o.BORDER_1,
-
-  BOX_SHADOW: CONF_o.CONF_o,
-  BOX_OVERLAY: CONF_o.BOX_OVERLAY,
-
-  INVERT_FILTER: CONF_o.INVERT_FILTER,
-  SATURATE_FILTER: CONF_o.SATURATE_FILTER,
-
-  FULL_WIDTH:  CONF_o.FULL_WIDTH,
-  HALF_WIDTH:  CONF_o.HALF_WIDTH,
-  FULL_HEIGHT: CONF_o.FULL_HEIGHT,
-
-  INITIAL_Z: CONF_o.INITIAL_Z,
-  SLIDER_Z:  CONF_o.SLIDER_Z,
-
-
-  PAD_1:  CONF_o.PAD_1,
-  PAD_2:  CONF_o.PAD_2,
-  PAD_4:  CONF_o.PAD_4,
-  PAD_6:  CONF_o.PAD_6,
-  PAD_8:  CONF_o.PAD_8,
-  PAD_12: CONF_o.PAD_12,
-  PAD_16: CONF_o.PAD_16,
-
-  INITIAL_TURN: CONF_o.INITIAL_TURN,
-
-  base_u:     CONF_o.base_u,
-  base_min:   CONF_o.base_min,
-  screen_min: CONF_o.screen_min,
-  screen_max: CONF_o.screen_max,
-
-
-  BOX_OVERLAY: CONF_o.BOX_OVERLAY,
-
-  LOGO_HEIGHT: CONF_o.LOGO_HEIGHT,
-
-  STD_HEIGHT:    CONF_o.STD_HEIGHT,
-  SLIDER_HEIGHT: CONF_o.SLIDER_HEIGHT,
-  BUTTON_HEIGHT: CONF_o.BUTTON_HEIGHT,
-  IMG_UNFOLD:    CONF_o.IMG_UNFOLD,
-
-  FONT_BODY: CONF_o.FONT_BODY,
-  FONT_MONO: CONF_o.FONT_MONO,
+  SHARE_DIR_s:   'sys/',
+  MEDIA_PATH_s:  'assets/media/',
+  JSON_PATH_s:   'assets/data/json/',
   
-  SECTION_BTN_TAG:  CONF_o.SECTION_BTN_TAG,
-  CLOSE_ICON_TAG:   CONF_o.CLOSE_ICON_TAG,
-  IMG_UNFOLD_TAG:   CONF_o.IMG_UNFOLD_TAG,
-  NOTE_TAG:         CONF_o.NOTE_TAG,
-  NOTE_CONTENT_TAG: CONF_o.NOTE_CONTENT_TAG,
-  NOTE_LINK_TAG:    CONF_o.NOTE_LINK_TAG,
+  URL_S_s:    '?s=/',       //: url search prefix, e.g. '{{U_o.url_s}}{{C_o.URL_S_s}}{{C_o.SLOTS_s}}/sl
 
-  }
+  KEY_n:      1,            //: service worker key
+  
+
+
+  //=== TAG MARKUP ===
+  tag_o:
+  {
+    TAG_s:    'TAG',         //: undefined tag identifier
+    ATAG_s:   '~',           //: tag ante char
+    PTAG_s:   '°',           //: tag post char
+    REGEXP_s: 'a-zA-Z0-9_',  //: tags allowed chars
+    MARK_s:   'mark',        //: HTML tag element
+    DATA_s:   'data-tag',    //: HTML tag element attribute
+  },
+
+
+
+  //=== HTML ===
+  SECTION_BTN_TAG:  'b',
+  CLOSE_ICON_TAG:   'em',
+  NOTE_TAG:         'ins',
+  NOTE_CONTENT_TAG: 'i',
+  IMG_UNFOLD_TAG:   'i',
+  NOTE_LINK_TAG:    'em',
+
+
+
+  //=== CSS constants to avoid calc() ===  
+  HUE_SET_n: 1,         //: allow visitor color palette setting
+  
+  HUE_P_n:  220,        //: theme PRIMARY color in range [0...359]
+  HUE_S_n: -10,         //: theme SECONDARY color offset from primary color
+  HUE_H_n:  20,         //: theme HIGHLIGHT color offset from primary color
+  HUE_D_n: -20,         //: theme DECORATIVE color offset from primary color
+  HUE_L_n:  10,         //: theme LINK color offset from primary color
+
+  HUE_ROTATE_n: 0,      //: hue deviation for hover effect
+
+  SAT_UNIT_n:     11,   //: saturation unit -> [ 6 17 28 39 50 61 72 83 96 ]
+  SAT_BASE_n:     50,
+  LUM_MODE_n:     1,    //: luminosity mode: 1 (light) || -1 (dark)
+  LUM_BASE_n:     50,
+  LUM_CONTRAST_n: 45,   //: luminosity contrast in range [30...49] (30 is less contrast than 49)
+                        //: see https://www.w3.org/TR/WCAG20/ §1.4.1 compliance
+
+
+
+  BODY_WIDTH_n:  80,     //: percentage of document width
+  BODY_MARGIN_n: 10,     //: (100 - 80) * .5
+  LINE_WIDTH_n:  52,     //: in ch unit
+
+
+
+  //=== CSS ===
+  BORDER_1: '.2em',
+
+  BOX_SHADOW: `0 1px 1px var(--c_shadow_ne), 0 2px 2px var(--c_shadow_ne), 0 4px 4px var(--c_shadow_ne)`,
+
+  BOX_OVERLAY: '12px 12px 32px 100vmax var(--c_shadow_lo)',
+
+/*
+  INVERT_FILTER:
+    `invert(100%)
+     hue-rotate(${C_o.HUE_ROTATE_n}deg) ??????????????????
+     brightness(8);`,
+     */
+
+  SATURATE_FILTER: 'saturate(3) brightness(3);',  //??????????????
+
+
+  FULL_WIDTH:  '100vw',
+  HALF_WIDTH:  '50vw',
+  FULL_HEIGHT: '100vh',
+
+  base_u:     8,
+  base_min:   1.7,
+  screen_min: 400,
+  screen_max: 1600,
+
+
+  PAD_1:  .25 * 1 + 'rem',
+  PAD_2:  .25 * 2 + 'rem',
+  PAD_4:  .25 * 4 + 'rem',
+  PAD_6:  .25 * 6 + 'rem',
+  PAD_8:  .25 * 8 + 'rem',
+  PAD_12: .25 * 12 + 'rem',  //?????????????????
+  PAD_16: .25 * 16 + 'rem',  //?????????????????
+
+
+  INITIAL_TURN: -.025 + 'turn',
+
+
+  BOX_OVERLAY: `12px 12px 32px 100vmax var(--c_shadow_lo)`,
+
+  LOGO_HEIGHT: 'clamp( 12vh, 16vh, 20vh )',
+
+  STD_HEIGHT:    5,
+  BUTTON_HEIGHT: 5 + 'em',
+  SLIDER_HEIGHT: 5 + 'em',
+  IMG_UNFOLD:    5 + 'em',
+
+  FONT_BODY: `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif`,
+  FONT_MONO: `system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace`,
+
+}

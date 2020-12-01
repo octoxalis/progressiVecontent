@@ -2,115 +2,115 @@
 
 [data-id="display"]
 {
-  --display_dim: 50vw;
-  --svg_icon_dim: 2em;
-  --size_ratio: .8;
-  --dialog_height: 3rem;
+  --display_dim:50vw;
+  --svg_icon_dim:2em;
+  --size_ratio:.8;
+  --dialog_height:3rem;
 }
 
 
 [data-id="display"],
-__                     {display: flex; justify-content: space-between;}
+__                     {display:flex;justify-content:space-between;}
 
 [data-id="display"] > *,
-__                     {display: flex; flex-direction: column; justify-content: flex-start}
+__                     {display:flex;flex-direction:column;justify-content:flex-start}
 
 
 [data-id="display"] > dl,
-__                     {flex-basis: 90%}
+__                     {flex-basis:90%}
 [data-id="display"] > ul,
-__                     {flex-basis: 10%}
+__                     {flex-basis:10%}
 [data-id="display"] > ul > *,
-__                     {align-self: flex-end}
+__                     {align-self:flex-end}
 
 
 
 [data-id="display"] *,
-__                     {overflow: hidden;
-                        white-space: nowrap}
+__                     {overflow:hidden;
+                        white-space:nowrap}
 
 
 [data-id="display"],
 [data-id="display"] > ul > li,
-__                     {position: relative}
+__                     {position:relative}
 
 
 
 [data-id="display"] > *,
-__                     {padding: {{ C_o.PAD_2 }}}
+__                     {padding:{{C_o.PAD_2}}}
 
 [data-id="display"] > ul > li,
-__                     {padding-bottom: {{ C_o.PAD_2 }}}
+__                     {padding-bottom:{{C_o.PAD_2}}}
 
 
 [data-id="title"],
 [data-id="display"] dl > dd,
-__                     {padding:{{ C_o.PAD_1 }}}
+__                     {padding:{{C_o.PAD_1}}}
 
 
 
 [data-id="display"],
 [data-id="display"] > *,
 [data-id="list"],
-__                     {width: 100%}
+__                     {width:100%}
 
 
 
 [data-id="title"],
-__                     {height: var(--svg_icon_dim)}
+__                     {height:var(--svg_icon_dim)}
 
 
 
 [data-id="title"],
-__                     {border-bottom: 1px solid var(--c_prim_lo)}
+__                     {border-bottom:1px solid var(--c_prim_lo)}
 
 
 [data-id="display"],
-__                     {border-radius: 8px}
+__                     {border-radius:8px}
 
 
 /*
 [data-id="display"]:hover,
-__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_lo)}
+__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_lo)}
 */
 
 
 
 [data-id="display"] li,
-__                     {color: var(--c_prim_lo_4)}
+__                     {color:var(--c_prim_lo_4)}
 
 
 [data-id="display"] *,
-__                     {background: transparent}
+__                     {background:transparent}
 
 
 [data-id="display"],
-__                     {background: var(--NODE_BACK)}
+__                     {background:var(--NODE_BACK)}
 
 
 [data-id="list"] > li:hover,
-__                     {color: var(--c_sec_lo); background: var(--c_sec_hi)}
+__                     {color:var(--c_sec_lo);background:var(--c_sec_hi)}
 
 [data-id="display"],
-__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
+__                     {box-shadow:{{C_o.BOX_SHADOW}}}
 
 
 [data-id="display"] *,
-__                     {font-size: inherit}
+__                     {font-size:inherit}
 
 [data-id="title"],
-__                     {font-weight: 500}
+__                     {font-weight:500}
 
 
 [data-id="title"],
-__                     {text-transform: uppercase}
+__                     {text-transform:uppercase}
 
 
 [data-id="display"],
-__                     {cursor: pointer}
+__                     {cursor:pointer}
 
 
 [data-id="display"],
-__                     {transition: transform .2s ease}
+__                     {transition:transform .2s ease}
 
 

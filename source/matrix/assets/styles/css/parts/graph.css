@@ -2,8 +2,8 @@
 
 :root
 {
-  --NODE_BACK_SELECTED: var(--c_box_ne);
-  --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
+  --NODE_BACK_SELECTED:var(--c_box_ne);
+  --NODE_BACK_NOT_SELECTED:var(--c_box_hi);
 }
 
 
@@ -12,21 +12,21 @@
 
 #docs_graph,
 #graph_svg,
-__                     {position: relative}
+__                     {position:relative}
 
 
 
 
 ul,
 #docs_graph,
-__                     {margin: 0}
+__                     {margin:0}
 
 
 #graph,
-__                     {margin: auto}
+__                     {margin:auto}
 
 #graph,
-__                     {margin-top: {{ C_o.PAD_8 }}}
+__                     {margin-top:{{C_o.PAD_8}}}
 
 
 
@@ -42,42 +42,42 @@ __                     {padding:0}
 #docs_graph,
 #graph,
 #graph_svg,
-__                     {width: 100%}
+__                     {width:100%}
 
 
 
 #graph_svg,
-__                     {border-radius: 4px}
+__                     {border-radius:4px}
 
 #graph_svg,
-__                     {cursor: pointer}
+__                     {cursor:pointer}
 
 
        /* ??? mouse device only */
        /*
 #graph_svg:hover,
-__                     {box-shadow: 12px 12px 32px 100vmax var(--c_shadow_ne)}
+__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_ne)}
 */
 
 
 
 
 #graph_svg > circle,
-__                     {stroke: none}
+__                     {stroke:none}
 
 
 #graph_svg > circle.node_focus,
-__                     {stroke: var(--c_sec_lo)}
+__                     {stroke:var(--c_sec_lo)}
 
 #graph_svg > circle,
-__                     {fill: var(--c_prim_hi_2)}
+__                     {fill:var(--c_prim_hi_2)}
 
 
 #graph_svg > circle.node_selected,
-__                     {fill: var(--c_prim_ne)}
+__                     {fill:var(--c_prim_ne)}
 
 
 
 #graph_svg,
-__                     {background: transparent}
+__                     {background:transparent}
 

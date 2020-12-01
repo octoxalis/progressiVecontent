@@ -27,7 +27,7 @@ var SLI_o =
         slide_e,
         [
           ['data-section', '0'],
-          ['data-slot_s', '{{A_o.DOCS_s}}'],
+          ['data-slot_s', '{{C_o.DOCS_s}}'],
         ]
       )
     return SLI_o

@@ -2,24 +2,24 @@
                                       
 button,
 select,
-__                     {text-transform: none}
+__                     {text-transform:none}
 
 
 
 /*=== WHITE-SPACE ===*/
 
 .unseen,
-__                     {white-space: nowrap}
+__                     {white-space:nowrap}
 
 
 
 .truncate::after,
-__                     {content: "";
-                        position: absolute;
-                        inset-inline-end: 0; /* right */
-                        width: var(--truncate_n);  /* local var */
-                        height: 1em;
-                        background: var(--truncate_c)}
+__                     {content:"";
+                        position:absolute;
+                        inset-inline-end:0;/* right */
+                        width:var(--truncate_n); /* local var */
+                        height:1em;
+                        background:var(--truncate_c)}
 
 
 
@@ -28,21 +28,22 @@ __                     {content: "";
 dl,
 ol,
 ul,
-__                     {list-style: none}
+__                     {list-style:none}
 
 
 
 /*=== CURSOR ===*/
 
 body,
-__                     {cursor: default}
+__                     {cursor:default}
 
 .invisible,
-__                     {cursor: auto}
+__                     {cursor:auto}
 
 button,
 .svg_icon,
-__                     {cursor: pointer}
+.svg_logo,
+__                     {cursor:pointer}
 
 
 
@@ -50,7 +51,7 @@ __                     {cursor: pointer}
 
 /*
 hr,
-__                     {box-shadow:{{ C_o.BOX_SHADOW }}}
+__                     {box-shadow:{{C_o.BOX_SHADOW}}}
 */
 
 
@@ -58,14 +59,14 @@ __                     {box-shadow:{{ C_o.BOX_SHADOW }}}
 /* === SCROLLBAR === */
 
 *,
-__                     {scrollbar-width:thin; scrollbar-color: var(--c_decor_hi) var(--c_decor_ne)}
+__                     {scrollbar-width:thin;scrollbar-color:var(--c_decor_hi) var(--c_decor_ne)}
 
 *::-webkit-scrollbar,
-__                     {width: .75em}
+__                     {width:.75em}
 
 *::-webkit-scrollbar-track,
-__                     {background: var(--c_decor_ne)}
+__                     {background:var(--c_decor_ne)}
 
 *::-webkit-scrollbar-thumb,
-__                     {background-color: var(--c_decor_hi); border: .2em solid var(--c_decor_ne); border-radius:    .5em}
+__                     {background-color:var(--c_decor_hi);border:.2em solid var(--c_decor_ne);border-radius:   .5em}
 

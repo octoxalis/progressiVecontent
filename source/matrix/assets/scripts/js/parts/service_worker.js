@@ -2,7 +2,7 @@
 
 var SWO_o =
 {
-  cache_s: '{{A_o.ID_s}}_{{A_o.KEY_n}}'            //: name of the current cache
+  cache_s: '{{A_o.ID_s}}_{{C_o.KEY_n}}'            //: name of the current cache
   ,
   DOC_JS_s: '{{U_o.url_s}}/assets/data/js/docs_data.js'
   ,
@@ -197,7 +197,7 @@ var SWO_o =
     {
       pathname =
         search
-          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: see supra
+          .slice( '{{C_o.URL_S_s}}'.length - 1 )    //: see supra
     }
     //........................................
     SWO_o
@@ -227,7 +227,7 @@ var SWO_o =
       .cache__v    //: simly put on cache: we shall stop at site svg_logo before loading the new slot
       (
         search_s
-          .slice( '{{A_o.URL_S_s}}'.length - 1 )    //: trim '?s=' keeping '/'  //:-> '/slots/page.html'
+          .slice( '{{C_o.URL_S_s}}'.length - 1 )    //: trim '?s=' keeping '/'  //:-> '/slots/page.html'
       )
   }
 ,
@@ -279,7 +279,7 @@ var SWO_o =
       .cache_a
       .delete
       (
-        `/{{A_o.SLOTS_s}}/${slot_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
+        `/{{C_o.SLOTS_s}}/${slot_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
       )
       //...... delete slider slide ....
   }
@@ -321,9 +321,9 @@ cache__v
     if
     (
       pathSlot_s
-        .indexOf( '/{{A_o.SLOTS_s}}/' )
+        .indexOf( '/{{C_o.SLOTS_s}}/' )
       ===
-      0      //: skip A_o.SYS_s URLs + '/' root URL
+      0      //: skip C_o.SYS_s URLs + '/' root URL
     )
     {
       SWO_o

@@ -1,104 +1,103 @@
 
-#preferences > button{--svg_icon_dim: 2rem }
-article{--count_txt: note_txt;
-  --count_img: note_img;
-  --count_example: note_example}
-article{counter-reset: var(--count_txt) var(--count_example)}
-.close_icon{--svg_icon_dim: 2rem }
+#preferences > button{--svg_icon_dim:2rem }
+article{--count_txt:note_txt;
+  --count_img:note_img;
+  --count_example:note_example}
+article{counter-reset:var(--count_txt) var(--count_example)}
+.close_icon{--svg_icon_dim:2rem }
 a[data-id="redirect"]{display:none}
-section,article,.close_icon{display:grid; place-items:center}
+section,article,.close_icon{display:grid;place-items:center}
+#preferences,button[data-slot_s]{display:flex;justify-content:center}
 pre > code,[data-id="example"]::before{display:block}
-#preferences,button[data-slot_s]{display: flex; justify-content: center}
-a,section > div,[data-id="ulist"] > li::before,[data-id="important"]::before{position: relative}
-a::before,a::after{position: absolute}
+a,section > div,[data-id="ulist"] > li::before,[data-id="important"]::before{position:relative}
+a::before,a::after{position:absolute}
 [data-id="ulist"] > li
-button[data-slot_s]{margin: 0}
-#preferences{margin: 1rem 0}
-#preferences > button{margin: 0 1rem}
-.close_icon{margin: 0.25rem 0}
-[data-id="ulist"]{margin: 0.5rem 0 0 1rem}
-button[data-slot_s="contents"]{margin-top: 5em }
-div[data-slot_s]{padding: 1rem 2rem}
+button[data-slot_s]{margin:0}
+#preferences{margin:1rem 0}
+#preferences > button{margin:0 1rem}
+.close_icon{margin:0.25rem 0}
+[data-id="ulist"]{margin:0.5rem 0 0 1rem}
+div[data-slot_s]{padding:1rem 2rem}
 [data-id="ulist"]{padding-left:0}
 [data-id="ulist"]{padding-left:0.5rem}
-hr{margin-bottom: 1.5rem}
-button[data-slot_s]{width: 100vw}
-#preferences,article{width: 80vw}
+hr{margin-bottom:1.5rem}
+button[data-slot_s]{width:100vw}
+#preferences,article{width:80vw}
 [data-id="example"]{max-width:100%}
-[data-slot_s] > b{height: 5em} 
-a::before{height: 1px}
-a::after{height: 4px}
-a::before,a::after{left: 0}
-button[data-slot_s]{left: 50%; right: 50%} 
-a::before,a::after{bottom: -1px}
-a::before,a::after{right: 0}
-#preferences > button{margin: 0.5rem}
-button[data-slot_s]{margin-left: -50vw; margin-right: -50vw} 
-h1,h2,h3,h4,h5,h6,p{margin-bottom: 0.5rem}
+[data-slot_s] > b{height:5em} 
+a::before{height:1px}
+a::after{height:4px}
+a::before,a::after{left:0}
+button[data-slot_s]{left:50%;right:50%} 
+a::before,a::after{bottom:-1px}
+a::before,a::after{right:0}
+#preferences > button{margin:0.5rem}
+button[data-slot_s]{margin-left:-50vw;margin-right:-50vw} 
+h1,h2,h3,h4,h5,h6,p{margin-bottom:0.5rem}
 h1,h2,h3,h4,h5,h6,p,ul,ol,#preferences{padding:2px}
-#preferences > button,button[data-slot_s],.close_icon{padding: 0.5rem}
-[data-slot_s] > b{flex-basis: 100%}
-#preferences{border: 1px solid var(--c_prim_ne)}
-hr{border-top: 1px solid var(--c_prim_ne)}
-#preferences{border-radius: 4px}
-#preferences > button,.close_icon,.svg_icon{border-radius: 50%}
-[data-id="ulist"] > li{border-left: .2em solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
+#preferences > button,button[data-slot_s],.close_icon{padding:0.5rem}
+[data-slot_s] > b{flex-basis:100%}
+#preferences{border:1px solid var(--c_prim_ne)}
+hr{border-top:1px solid var(--c_prim_ne)}
+#preferences{border-radius:4px}
+#preferences > button,.close_icon,.svg_icon{border-radius:50%}
+[data-id="ulist"] > li{border-left:.2em solid hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_3) / var(--border_opac) )}
 [data-id="ulist"] > li{--border_opac:.6}
 [data-id="ulist"] > li > [data-id="ulist"] > li{--border_opac:.4}
 [data-id="ulist"] > li > [data-id="ulist"] > li >, [data-id="ulist"] > li
 __  {--border_opac:.3}
-button[data-slot_s]{box-shadow:}
-a,legend,[data-id="note_txt"] > button,mark[data-tag]{color: inherit}
-[data-slot_s] > b{color: var(--c_prim_lo)}
+button[data-slot_s]{box-shadow:0 1px 1px var(--c_shadow_ne), 0 2px 2px var(--c_shadow_ne), 0 4px 4px var(--c_shadow_ne)}
+a,legend,[data-id="note_txt"] > button,mark[data-tag]{color:inherit}
+[data-slot_s] > b{color:var(--c_prim_lo)}
 [data-id="important"]::before{color:var(--c_decor_ne)}
 [data--=important]::before{color:var(--c_decor_ne)}
-a:focus, a:hover{color: var(--c_link_hi)}
-mark[data-tag]{background: inherit}
-#preferences,#preferences > button,#preferences > button *{background: transparent}
-a::before,a::after{background: var(--c_link_ne)}
-section[data-slot_n]{background: var(--c_sec_hi_3)}
-button[data-slot_s]{background: var(--c_prim_hi_2)}
-#preferences > button:hover,.svg_icon:hover,.close_icon:hover{background: var(--c_highlight_hi)}
+a:focus, a:hover{color:var(--c_link_hi)}
+mark[data-tag]{background:inherit}
+#preferences,#preferences > button,#preferences > button *{background:transparent}
+a::before,a::after{background:var(--c_link_ne)}
+section[data-slot_n]{background:var(--c_sec_hi_3)}
+button[data-slot_s]{background:var(--c_prim_hi_2)}
+#preferences > button:hover,.svg_icon:hover,.close_icon:hover{background:var(--c_highlight_hi)}
 [data-id="note_txt"] > button{background:var(--c_decor_hi_op_lo)}
-h1{--size_ratio: 1.6}
-h2{--size_ratio: 1.4}
-h3,h4,h5,h6{--size_ratio: 1.2}
-[data-slot_s] > b{--size_ratio: 1.4}
-small,sub,sup{--size_ratio: .8}
-.site_label{font-weight: 500}
-[data-slot_s] > b{font-weight: 700}
-button[data-slot_s]{line-height: 5} 
-[data-id="ulist"] > li::before{--char_size: .5em}
-[data-id="ulist"] > li::before{content: '▶'}
-[data-id="ulist"] > li::before{top: calc( var(--char_size) * -0.125 )}
-[data-id="ulist"] > li::before{left: calc( var(--char_size) * -1 )}
-[data-id="ulist"] > li::before{color: var(--border_color)}
-[data-id="ulist"] > li::before{font-size: var(--char_size)}
-a::before,a::after{content: ''}
-a,[data-slot_s] > b{text-decoration: none}
-[data-slot_s] > b{text-transform: uppercase}
+h1{--size_ratio:1.6}
+h2{--size_ratio:1.4}
+h3,h4,h5,h6{--size_ratio:1.2}
+[data-slot_s] > b{--size_ratio:1.4}
+small,sub,sup{--size_ratio:.8}
+.site_label{font-weight:500}
+[data-slot_s] > b{font-weight:700}
+button[data-slot_s]{line-height:5} 
+[data-id="ulist"] > li::before{--char_size:.5em}
+[data-id="ulist"] > li::before{content:'▶'}
+[data-id="ulist"] > li::before{top:calc( var(--char_size) * -0.125 )}
+[data-id="ulist"] > li::before{left:calc( var(--char_size) * -1 )}
+[data-id="ulist"] > li::before{color:var(--border_color)}
+[data-id="ulist"] > li::before{font-size:var(--char_size)}
+a::before,a::after{content:''}
+a,[data-slot_s] > b{text-decoration:none}
+[data-slot_s] > b{text-transform:uppercase}
 button[data-slot_s]{font-family:var(--font_title)}
 [data-id=example]::before,.site_label{font-style:italic}
-button[data-slot_s]:hover,#preferences > button:hover{filter: brightness( 2 )}
-a::before,a::after{transform-origin: bottom left}
-a::before,a::after,.aside{transition: transform .2s ease}
+button[data-slot_s]:hover,#preferences > button:hover{filter:brightness( 2 )}
+a::before,a::after{transform-origin:bottom left}
+a::before,a::after,.aside{transition:transform .2s ease}
 :root
 {
- --NODE_BACK_SELECTED: var(--c_box_ne);
- --NODE_BACK_NOT_SELECTED: var(--c_box_hi);
+ --NODE_BACK_SELECTED:var(--c_box_ne);
+ --NODE_BACK_NOT_SELECTED:var(--c_box_hi);
 }
-#docs_graph,#graph_svg{position: relative}
-ul,#docs_graph{margin: 0}
-#graph{margin: auto}
-#graph{margin-top: 2rem}
+#docs_graph,#graph_svg{position:relative}
+ul,#docs_graph{margin:0}
+#graph{margin:auto}
+#graph{margin-top:2rem}
 ul,#graph_svg{padding:0}
-#docs_graph,#graph,#graph_svg{width: 100%}
-#graph_svg{border-radius: 4px}
-#graph_svg{cursor: pointer}
+#docs_graph,#graph,#graph_svg{width:100%}
+#graph_svg{border-radius:4px}
+#graph_svg{cursor:pointer}
  
  
-#graph_svg > circle{stroke: none}
-#graph_svg > circle.node_focus{stroke: var(--c_sec_lo)}
-#graph_svg > circle{fill: var(--c_prim_hi_2)}
-#graph_svg > circle.node_selected{fill: var(--c_prim_ne)}
-#graph_svg{background: transparent}
+#graph_svg > circle{stroke:none}
+#graph_svg > circle.node_focus{stroke:var(--c_sec_lo)}
+#graph_svg > circle{fill:var(--c_prim_hi_2)}
+#graph_svg > circle.node_selected{fill:var(--c_prim_ne)}
+#graph_svg{background:transparent}

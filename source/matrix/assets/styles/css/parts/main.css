@@ -1,28 +1,28 @@
 /*=== MAIN ===*/
 
 dl[data-step],
-__                     {display: grid; place-items: center}
+__                     {display:grid;place-items:center}
 
 #graph_slider,
 .step_list,
 dl[data-step] > dd,
-__                     {display: flex}
+__                     {display:flex}
 
 #graph_slider,
-__                     {flex-direction: column}
+__                     {flex-direction:column}
 
 
 
 .step_list,
-__                     {flex-wrap: nowrap}
+__                     {flex-wrap:nowrap}
 
 
 .step_list,
-__                     {justify-content: center}
+__                     {justify-content:center}
 
 
 dl[data-step] > dd,
-__                     {align-items: flex-start}
+__                     {align-items:flex-start}
 
 
 
@@ -31,214 +31,214 @@ __                     {align-items: flex-start}
 .step_list,
 dl[data-step] > dt,
 dl[data-step] > dd,
-__                     {position: relative}
+__                     {position:relative}
 
 dl[data-step],
-__                     {position: absolute}
+__                     {position:absolute}
 
 
 dl[data-step],
-__                     {margin: 0}
+__                     {margin:0}
 
 /*
 button[data-step],
-__                     {margin: auto}
+__                     {margin:auto}
 */
 
 button[data-step] + button[data-step],
-__                     {margin-left: 1.5%}  /* space between */
+__                     {margin-left:1.5%}  /* space between */
 
 
 #graph_slider,
-__                     {margin-left: -50vw; margin-right: -50vw}  /* center */
+__                     {margin-left:-50vw;margin-right:-50vw}  /* center */
 
 
 #graph_slider,
 #sections_slider,
-__                     {padding: {{ C_o.PAD_1 }} }
+__                     {padding:{{C_o.PAD_1}} }
 
 button[data-step],
-__                     {padding: .1rem}
+__                     {padding:.1rem}
 
 dl[data-step],
-__                     {padding: {{ C_o.PAD_2 }}}
+__                     {padding:{{C_o.PAD_2}}}
 
 
 
 #graph_slider  button[data-step],
-__                     {--slider_cap: var(--LABELS_CAP)}
+__                     {--slider_cap:var(--LABELS_CAP)}
 #sections_slider  button[data-step],
-__                     {--slider_cap: var(--SECTIONS_CAP)}
+__                     {--slider_cap:var(--SECTIONS_CAP)}
 
 
 
 dl[data-step],
-__                     {--slide_width: 16ch}
+__                     {--slide_width:16ch}
 
 
 
 
 hr,
-__                     {width: calc( {{C_o.BODY_WIDTH_n}}vw * .25 )}
+__                     {width:calc( {{C_o.BODY_WIDTH_n}}vw * .25 )}
 
 p,
 ol, ul,
-__                     {width: var(--LINE_WIDTH)}
+__                     {width:var(--LINE_WIDTH)}
 
 
 #graph_slider,
-__                     {width: {{ C_o.FULL_WIDTH }}}
+__                     {width:{{C_o.FULL_WIDTH}}}
 
 
 
 .slide_list,
 .step_list,
-__                     {width: 100%}
+__                     {width:100%}
 
 
 dl[data-step],
-__                     {width: var(--slide_width)}
+__                     {width:var(--slide_width)}
 
 button[data-step],
-__                     {flex-grow: 1}/* !!! width by flex-grow */
+__                     {flex-grow:1}/* !!! width by flex-grow */
 
 
 
 
 #sections_slider,
 #graph_slider,
-__                     {--slide_height: .85;
-                        --step_height:  .15}
+__                     {--slide_height:.85;
+                        --step_height: .15}
 
 .slide_list,
-__                     {--list_height: var(--slide_height)}  /* ??? flex-basis */
+__                     {--list_height:var(--slide_height)}  /* ??? flex-basis */
 
 .step_list,
-__                     {--list_height: var(--step_height)}  /* ??? flex-basis */
+__                     {--list_height:var(--step_height)}  /* ??? flex-basis */
 
 .slide_list,
 .step_list,
-__                     {height: calc( {{ C_o.SLIDER_HEIGHT }} * var(--list_height) )}
+__                     {height:calc( {{C_o.SLIDER_HEIGHT}} * var(--list_height) )}
 
 
 dl[data-step],
 button[data-step],
-__                     {height: calc( ( {{ C_o.SLIDER_HEIGHT }} - 1.2rem ) * var(--list_height) )}  /* padding * 2 */
+__                     {height:calc( ( {{C_o.SLIDER_HEIGHT}} - 1.2rem ) * var(--list_height) )}  /* padding * 2 */
 
 
 
 
 #graph_slider,
-__                     {left: 50%; right: 50%}  /* center */
+__                     {left:50%;right:50%}  /* center */
 
 
 
 dl[data-step],
 .slide_list,
 .step_list,
-__                     {overflow: hidden}
+__                     {overflow:hidden}
 
 
 
 
 dl[data-step],
-__                     {color: var(--c_sec_lo)}
+__                     {color:var(--c_sec_lo)}
 
 
 
 #graph_slider,
 #sections_slider,
-__                     {background: var(--c_prim_hi_3)}
+__                     {background:var(--c_prim_hi_3)}
 
 button[data-step],
 .slide_list,
 .step_list,
-__                     {background: transparent}
+__                     {background:transparent}
 
 
 dl[data-step],
-__                     {background: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
+__                     {background:hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
 
 
 button[data-step]:hover,
 .step_focus:focus,
 .step_focus,
-__                     {background: var(--c_sec_ne);
-                        filter: var(--SATURATE_FILTER)}
+__                     {background:var(--c_sec_hi);
+                        filter:var(--SATURATE_FILTER)}
 
 /* ?????
 #section_docs,
-__                     {background: var(--c_prim_lo_2)}
+__                     {background:var(--c_prim_lo_2)}
 */
 
 
 
 .slide_list,
 .step_list,
-__                     {border: none}
+__                     {border:none}
 
 button[data-step],
 .slide_focus,
-__                     {border: 2px solid var(--c_sec_lo)}
+__                     {border:2px solid var(--c_sec_lo)}
 
 
 dl[data-step],
-__                     {border-radius: 8px}
+__                     {border-radius:8px}
 
 button[data-step],
-__                     {border-radius: 2px}
+__                     {border-radius:2px}
 
 
 button[data-step],
-__                     {outline: 0}
+__                     {outline:0}
 
 
 .slide_list,
 .step_list,
-__                     {list-style: none}
+__                     {list-style:none}
 
 
 button[data-step],
-__                     {appearance: none}  /* destyle */
+__                     {appearance:none}  /* destyle */
 
 dl[data-step],
-__                     {text-transform: uppercase}
+__                     {text-transform:uppercase}
 
 
 dl[data-step] > dt,
-__                     {text-align: center}
+__                     {text-align:center}
 
 
 
 button[data-step],
-__                     {font: inherit}
+__                     {font:inherit}
 
 
 .slide_title,
-__                     {--size_ratio: .65}
+__                     {--size_ratio:.65}
 
 dl[data-step] > dt,
-__                     {--size_ratio: .9}
+__                     {--size_ratio:.9}
 
 
 
 dl[data-step],
 button[data-step],
-__                     {cursor: pointer}
+__                     {cursor:pointer}
 
 
 .slide_list,
 .step_list,
-__                     {transform-style: preserve-3d}
+__                     {transform-style:preserve-3d}
 
 
 .slide_list,
 .step_list,
-__                     {transform-origin: 0 50%}
+__                     {transform-origin:0 50%}
 
 
 
 #graph_slider,
 button[data-step],
-__                     {transition: transform .2s ease}
+__                     {transition:transform .2s ease}
 

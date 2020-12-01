@@ -2,26 +2,26 @@
 
 :root
 {
-  --base_u: 8;
-  --base_min: 1.7;
-  --screen_min: 400;
-  --screen_max: 1600;
+  --base_u:8;
+  --base_min:1.7;
+  --screen_min:400;
+  --screen_max:1600;
 
-  --font_base: {{ C_o.base_u * C_o.base_min }};
+  --font_base:{{C_o.base_u * C_o.base_min}};
 
 
-  --font_min: {{ C_o.base_u * C_o.base_min }};    /* --font_base */
-  --font_max: {{ C_o.base_u * C_o.base_min * 2 }};
-  --font_size: calc( (var(--font_min) * 1px)
+  --font_min:{{C_o.base_u * C_o.base_min}};   /* --font_base */
+  --font_max:{{C_o.base_u * C_o.base_min * 2}};
+  --font_size:calc( (var(--font_min) * 1px)
                      + ( var(--font_max) - var(--font_min) )
                      * ( 100vw - (var(--screen_min) * 1px) )
                      / ( var(--screen_max) - var(--screen_min) )
                    );
-  --font_u: calc( var(--font_size) * 1 );  /* font unit - can be adjusted */
+  --font_u:calc( var(--font_size) * 1 ); /* font unit - can be adjusted */
 
-  --font_body:   {{ C_o.FONT_BODY }};
-  --font_title:  {{ C_o.FONT_BODY }};
-  --font_mono:   {{ C_o.FONT_MONO }};
+  --font_body:  {{C_o.FONT_BODY}};
+  --font_title: {{C_o.FONT_BODY}};
+  --font_mono:  {{C_o.FONT_MONO}};
 }
 
 
@@ -30,7 +30,7 @@
 
 body,
 body *,
-__                     {font-family: var(--font_body)}
+__                     {font-family:var(--font_body)}
 
 
 
@@ -40,42 +40,47 @@ body,
 body *,
 body *:before,
 body *:after,
-__                     {font-size: calc( var(--font_u)  * var(--size_ratio) )}
+__                     {font-size:calc( var(--font_u)  * var(--size_ratio) )}
 
 
 #initial_logo b,
-__                     {--size_ratio: 1.9}
+__                     {--size_ratio:1.9}
 
 #initial_slogan li:nth-of-type(4) > *,
-__                     {--size_ratio: 1.7}
+__                     {--size_ratio:1.7}
 
 #initial_slogan li:nth-of-type(2) > *,
-__                     {--size_ratio: 1.5}
+__                     {--size_ratio:1.5}
 
 #initial_slogan li:nth-of-type(1) > *,
-__                     {--size_ratio: 1.3}
+__                     {--size_ratio:1.3}
 
 body,
 body *,
-__                     {--size_ratio: 1}
+__                     {--size_ratio:1}
+
+
+.svg_logo text,
+__                     {--size_ratio:.25}
+
 
 
 /*=== WEIGHT ===*/
 
 #initial b,
-__                     {font-weight: 600}
+__                     {font-weight:600}
 
 
 body,
 body *,
-__                     {font-weight: 400}
+__                     {font-weight:400}
 
 
 
 /*=== STYLE ===*/
 
 #initial i,
-__                     {font-style: normal}
+__                     {font-style:normal}
 
 
 /*=== HEIGHT ===*/
@@ -85,6 +90,6 @@ __                     {font-style: normal}
 /*=== SPACING ===*/
 
 #initial b,
-__                     {letter-spacing: .8vw}
+__                     {letter-spacing:.8vw}
 
 
