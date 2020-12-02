@@ -1,9 +1,9 @@
-const FIL_o = require('fs-extra')
-const GIT_o = require( './git.js' )
+const FIL_o =  require('fs-extra')
+const GIT_o =  require( './git.js' )
 const HEAD_o = require( './header.js' )
-const CSP_o = require( './csp.js' )
+const CSP_o =  require( './csp.js' )
 const WORD_o = require( './words.js' )
-const TOP_o = require( './topics.js' )
+const TOP_o =  require( './topics.js' )
 
 const BUI_o =
 {

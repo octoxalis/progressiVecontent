@@ -2,7 +2,7 @@ const SPO_o =
 {
   selector_o:    //:- Object properties from shortcodes functions - assets files (CSS & JS)
   {
-    'data-slot_s="contents' : ['css:slider', 'js:slider', 'css:slot', 'js:slot', 'js:graph_c', 'js:graph', 'css:dialog', ],
+    'data-slot_s="contents' : ['css:slider', 'js:slider', 'css:slot', 'js:slot', 'js:graph_c', 'js:graph', 'css:dialog_block', ],
     'data-slot_s="skin': ['css:skin', 'js:skin' ],
     'data-slot_s="bookmark': ['css:bookmark', 'js:bookmark' ],
     'data-id="note_': ['css:note', 'js:note'],

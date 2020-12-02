@@ -153,7 +153,7 @@ void function
   SER_o
     .send__v
     (
-      'RESTORE',
+      '{{C_o.msg_o.RESTORE_s}}',
       null
     )
 } ()

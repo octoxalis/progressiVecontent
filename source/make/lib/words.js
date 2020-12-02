@@ -1,4 +1,4 @@
-const C_o = require( '../../matter/assets/scripts/js/lib/C_o.js' )
+const C_o = require( '../data/C_o.js' )
 
 const WORD_SEPARATOR = '_'
 const PATH_s =   'content/'

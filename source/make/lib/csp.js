@@ -1,6 +1,6 @@
 const CRYPTO_o  = require('crypto')
-const C_o = require( '../../matter/assets/scripts/js/lib/C_o.js' )
-const U_o = require( '../../matter/assets/scripts/js/lib/U_o.js' )
+const C_o = require( '../data/C_o.js' )
+const U_o = require( '../data/U_o.js' )
 
 const STYLE_OPEN_s = `<style data-id="${C_o.INLINE_s}">`
 const STYLE_CLOSE_s = '<\\/style>'

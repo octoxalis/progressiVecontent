@@ -1,7 +1,7 @@
 ---js
 {
-  layout:    `assets/styles/css/dialog.njk`,
-  permalink: `assets/styles/css/dialog.min.css`,
+  layout:    `assets/styles/css/dialog_block.njk`,
+  permalink: `assets/styles/css/dialog_block.min.css`,
 }
 
 ---

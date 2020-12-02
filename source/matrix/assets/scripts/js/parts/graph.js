@@ -129,7 +129,7 @@ var GRA_o =
         target_e.classList.contains( 'node_selected' )
       )
     SLOT_o
-      .display__e( 'section_contents' )
+      .dialog__o( 'section_contents' )
       .classList
       .toggle( 'retract' )
     const node_e =
@@ -154,7 +154,7 @@ var GRA_o =
   ()
   {
     SLOT_o
-      .display__e( 'section_contents' )
+      .dialog__o( 'section_contents' )
       .classList
       .toggle( 'retract' )
   }
@@ -237,9 +237,9 @@ var GRA_o =
       LIB_o
         .id__o
         (
-          'title',
+          'dialog_block_title',
           SLOT_o
-            .display__e( 'section_contents' )
+            .dialog__o( 'section_contents' )
         )
         .getAttribute( 'data-slot_s' )  //: set by node__v
         .slice( 'node_'.length )
@@ -288,12 +288,12 @@ var GRA_o =
     //>
     const section_e =
       SLOT_o
-        .display__e( 'section_contents' )
+        .dialog__o( 'section_contents' )
     const title_e =
       LIB_o
         .id__o
         (
-          'title',
+          'dialog_block_title',
           section_e
         )
     title_e
@@ -321,7 +321,7 @@ var GRA_o =
       list_s += `<li>${lab_s}`
     }
     LIB_o
-      .id__o( 'list' )
+      .id__o( 'dialog_block_list' )
       .innerHTML = list_s
     const select_s =
       selected_b ?
@@ -424,7 +424,7 @@ var GRA_o =
       )
     const section_e =
       SLOT_o
-        .display__e( 'section_contents' )
+        .dialog__o( 'section_contents' )
     section_e
       .querySelector( 'dl' )
       .addEventListener

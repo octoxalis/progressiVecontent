@@ -25,14 +25,14 @@ var SWO_o =
   cache_a: new Set()    //: '/path_s/slot_s.html' (!!! keep initial slash)
   ,
 
-  types_a:    // message main<-> worker types (methods)
+  types_a:    //: message main<-> worker types; NB: message methods have capitalized names
     [
-      'ROUTE',    //: internal msg
-      'REGISTER', //: to main
-      'LOAD',     //: from main, after registering
-      'RESTORE',  //: from main
-      'REMOVE',   //: from main
-      'CACHE',    //: from/to main
+      '{{C_o.msg_o.ROUTE_s}}',    //: internal msg
+      '{{C_o.msg_o.REGISTER_s}}', //: to main
+      '{{C_o.msg_o.LOAD_s}}',     //: from main, after registering
+      '{{C_o.msg_o.RESTORE_s}}',  //: from main
+      '{{C_o.msg_o.REMOVE_s}}',   //: from main
+      '{{C_o.msg_o.CACHE_s}}',    //: from/to main
     ]
   ,
 
@@ -127,7 +127,7 @@ var SWO_o =
               new URL( fetch_o.request.url )
 
               SWO_o
-                .ROUTE__v( url_o )
+                .{{C_o.msg_o.ROUTE_s}}__v( url_o )
               const response_o =
                 fetch( url_o )
               const clone_o =
@@ -187,7 +187,7 @@ var SWO_o =
 ,
   
 
-  ROUTE__v
+  {{C_o.msg_o.ROUTE_s}}__v
   (
     url_o    //: e.g. 'http://{{U_o.url_s}}?s=/slots/page.html', i.e. search: '?s=/slots/page.html'
   )
@@ -207,18 +207,18 @@ var SWO_o =
 
 
 
-  REGISTER__v
+{{C_o.msg_o.REGISTER_s}}__v
   ()
   {
     SWO_o
-      .send__v( 'REGISTER' )    //: to main
+      .send__v( '{{C_o.msg_o.REGISTER_s}}' )    //: to main
   }
 ,
 
 
 
 //#code=01
-  LOAD__v    //: receive from main after registering triggered by extern url (link, bookmark, etc.)
+  {{C_o.msg_o.LOAD_s}}__v    //: receive from main after registering triggered by extern url (link, bookmark, etc.)
   (
     search_s
   )
@@ -233,7 +233,7 @@ var SWO_o =
 ,
 
 
-  RESTORE__v
+  {{C_o.msg_o.RESTORE_s}}__v
   (
     payload_o    //: not used
   )
@@ -262,7 +262,7 @@ var SWO_o =
     SWO_o
       .send__v    //: to main
       (
-        'RESTORE',
+        '{{C_o.msg_o.RESTORE_s}}',
         restore_a
       )
       
@@ -270,7 +270,7 @@ var SWO_o =
 ,
 
 
-  REMOVE__v    //: remove an entry in SWO_o.cache_a
+  {{C_o.msg_o.REMOVE_s}}__v    //: remove an entry in SWO_o.cache_a
   (
     slot_s     //: as payload_o
   )
@@ -287,7 +287,7 @@ var SWO_o =
 
 
 
-  CACHE__v    //: get or set all entries in SWO_o.cache_a
+  {{C_o.msg_o.CACHE_s}}__v    //: get or set all entries in SWO_o.cache_a
   (
     payload_o    //: { cache_a }
   )
@@ -303,7 +303,7 @@ var SWO_o =
     SWO_o
       .send__v    //: to main
       (
-        'CACHE',
+        '{{C_o.msg_o.CACHE_s}}',
         {
           cache_a: SWO_o.cache_a
         }
@@ -480,7 +480,7 @@ cache__v
         SWO_o.receive__v
       )
     SWO_o
-      .REGISTER__v()
+      .{{C_o.msg_o.REGISTER_s}}__v()
     //....................... ??? DO WE NEED THOSE DATA?
     //... SWO_o
     //...   .import__v()

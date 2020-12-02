@@ -2,7 +2,7 @@
  * Authentication
  * Kind of proxy for configure constants
  */
-const CONF_o = require( '../../../../../configure.js' )
+const CONF_o = require( '../../configure.js' )
 
 module.exports =
 {

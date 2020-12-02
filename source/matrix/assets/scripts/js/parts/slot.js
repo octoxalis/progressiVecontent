@@ -8,16 +8,18 @@ var SLOT_o =
   )
   {
     SER_o.
-      REMOVE__v
+      {{C_o.msg_o.REMOVE_s}}__v
       (
         section_e.dataset.slot_s
       )
-      section_e.remove()
+    section_e
+      .remove()
+    //.... remove slide
   }
 ,
 
 
-  display__e    //: pseudo-dialog box to display lists
+  dialog__o    //: inline dialog box to display lists
   (
     section_s
   )
@@ -26,7 +28,7 @@ var SLOT_o =
       LIB_o
         .id__o
         (
-          'display',
+          'dialog_block',
           LIB_o
             .nodeId__o( section_s )
         )

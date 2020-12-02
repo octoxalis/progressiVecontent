@@ -1,6 +1,6 @@
-const A_o = require( '../../matter/assets/scripts/js/lib/A_o.js' )
-const C_o = require( '../../matter/assets/scripts/js/lib/C_o.js' )
-const U_o = require( '../../matter/assets/scripts/js/lib/U_o.js' )
+const A_o = require( '../data/A_o.js' )
+const C_o = require( '../data/C_o.js' )
+const U_o = require( '../data/U_o.js' )
 
 
 const SEC_o =

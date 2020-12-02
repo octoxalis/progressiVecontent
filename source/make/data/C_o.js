@@ -64,7 +64,22 @@ module.exports =
     REGEXP_s: 'a-zA-Z0-9_',  //: tags allowed chars
     MARK_s:   'mark',        //: HTML tag element
     DATA_s:   'data-tag',    //: HTML tag element attribute
-  },
+  }
+,
+
+
+
+  //=== JS ===
+  msg_o:    //: owrker message types
+  {
+    ROUTE_s:    'ROUTE',
+    REGISTER_s: 'REGISTER',
+    LOAD_s:     'LOAD',
+    RESTORE_s:  'RESTORE',
+    REMOVE_s:   'REMOVE',
+    CACHE_s:    'CACHE',
+}
+,
 
 
 

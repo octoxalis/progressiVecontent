@@ -25,7 +25,7 @@
 #bookmark_page button,#bookmark_content,#bookmark_history,#bookmark_form{border:1px solid var(--c_prim_ne)}
 #bookmark_page dd,#bookmark_page button,#bookmark_page input,#bookmark_content_list > li,#bookmark_history_list > li{border-radius:4px}
 .drag_over{outline:4px solid var(--c_highlight_hi)}
-#bookmark_form > *,#bookmark_refresh{color:var(--c_prim_lo_4)}
+#bookmark_form > *,#bookmark_refresh,#bookmark_save{color:var(--c_prim_lo_4)}
 #bookmark_form *,#bookmark_page button{background:transparent}
 #bookmark_content_list > li,#bookmark_history_list > li,#bookmark_name{background:var(--c_prim_hi_2)}
 #bookmark_content_list > li:hover,#bookmark_history_list > li:hover,#bookmark_name:hover{color:var(--c_sec_lo);background:var(--c_sec_hi);border-color:var(--c_decor_lo)}
@@ -33,6 +33,6 @@
 .full_opac{opacity:1}
 #bookmark_content li,#bookmark_history_list dl *{--size_ratio:.9}
 #bookmark_page input,#bookmark_page > dt,#bookmark_content li,#bookmark_history_list dl *{font-weight:500}
-#bookmark_content li,#bookmark_history_list dl *{line-height:.9}
 #bookmark_page > dt,#bookmark_name::placeholder{font-style:italic}
+#bookmark_content li,#bookmark_history_list dl *{line-height:.9}
 [draggable]{user-select:none}

@@ -114,6 +114,7 @@ __                     {outline:4px solid var(--c_highlight_hi)}
 
 #bookmark_form > *,
 #bookmark_refresh,
+#bookmark_save,
 __                     {color:var(--c_prim_lo_4)}
 
 
@@ -157,15 +158,15 @@ __                     {--size_ratio:.9}
 #bookmark_history_list dl *,
 __                     {font-weight:500}
 
+#bookmark_page > dt,
+#bookmark_name::placeholder,
+__                     {font-style:italic}
 
 
 #bookmark_content li,
 #bookmark_history_list dl *,
 __                     {line-height:.9}
 
-#bookmark_page > dt,
-#bookmark_name::placeholder,
-__                     {font-style:italic}
 
 
 

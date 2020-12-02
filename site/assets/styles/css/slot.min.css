@@ -93,7 +93,6 @@ ul,#docs_graph{margin:0}
 ul,#graph_svg{padding:0}
 #docs_graph,#graph,#graph_svg{width:100%}
 #graph_svg{border-radius:4px}
-#graph_svg{cursor:pointer}
  
  
 #graph_svg > circle{stroke:none}
@@ -101,3 +100,4 @@ ul,#graph_svg{padding:0}
 #graph_svg > circle{fill:var(--c_prim_hi_2)}
 #graph_svg > circle.node_selected{fill:var(--c_prim_ne)}
 #graph_svg{background:transparent}
+#graph_svg{cursor:pointer}

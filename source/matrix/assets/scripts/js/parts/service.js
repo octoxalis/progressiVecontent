@@ -4,12 +4,12 @@ var SER_o =
 {
   types_a:
     [
-      //-- 'ROUTE',  //: not used
-      'REGISTER',
-      'LOAD',
-      'RESTORE',
-      'REMOVE',
-      'CACHE',
+      //-- '{{C_o.msg_o.ROUTE_s}}',  //: not used
+      '{{C_o.msg_o.REGISTER_s}}',
+      '{{C_o.msg_o.LOAD_s}}',
+      '{{C_o.msg_o.RESTORE_s}}',
+      '{{C_o.msg_o.REMOVE_s}}',
+      '{{C_o.msg_o.CACHE_s}}',
     ]
 ,
 
@@ -48,7 +48,7 @@ var SER_o =
               SER_o
                 .send__v
                 (
-                  'LOAD',
+                  '{{C_o.msg_o.LOAD_s}}',
                   search_s
                 )
             }
@@ -109,7 +109,7 @@ receive__v    //:-- Listen to messages
 
 
 
-  REGISTER__v   //: from worker
+  {{C_o.msg_o.REGISTER_s}}__v   //: from worker
   ()
   {
     window
@@ -121,13 +121,13 @@ receive__v    //:-- Listen to messages
 
 
 
-  RESTORE__v   //: from worker
+  {{C_o.msg_o.RESTORE_s}}__v   //: from worker
   (
     restore_a    //:-- SWO_o.restore_a []
   )
   {
     console
-      .time( 'SER_o.RESTORE__v' )
+      .time( 'SER_o.{{C_o.msg_o.RESTORE_s}}__v' )
     //!!!!!!!!!!!!!!!!!!!!!!
     if ( !PREF_o.restore_b ) return
     //>
@@ -160,13 +160,13 @@ receive__v    //:-- Listen to messages
     }
     //!!!!!!!!!!!!!!!!!!!!!!
     console
-      .timeEnd( 'SER_o.RESTORE__v' )
+      .timeEnd( 'SER_o.{{C_o.msg_o.RESTORE_s}}__v' )
   }
 ,
 
 
 
-  REMOVE__v    //: to worker
+  {{C_o.msg_o.REMOVE_s}}__v    //: to worker
   (
     slot_s
   )
@@ -174,14 +174,14 @@ receive__v    //:-- Listen to messages
     SER_o
       .send__v
       (
-        'REMOVE',
+        '{{C_o.msg_o.REMOVE_s}}',
         slot_s
       )
   }
 ,
 
 
-  CACHE__v    //: from/to worker
+  {{C_o.msg_o.CACHE_s}}__v    //: from/to worker
   (
     payload_o,    //: { cache_a, sender_o, recipient_s }
   )
@@ -192,7 +192,7 @@ receive__v    //:-- Listen to messages
       SER_o
         .send__v
         (
-          'CACHE',
+          '{{C_o.msg_o.CACHE_s}}',
           {
             cache_a: cache_a
           }
@@ -205,7 +205,7 @@ receive__v    //:-- Listen to messages
     if ( !SER_o.sender_o ) return void console.log( 'Service Worker cache not delivered!' )
     SER_o
       .sender_o
-      .CACHE__v( cache_a )    //: consume cache_a
+      .{{C_o.msg_o.CACHE_s}}__v( cache_a )    //: consume cache_a
     SER_o.sender_o = null    //: ...then reset
   }
 ,

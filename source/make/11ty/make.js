@@ -14,7 +14,7 @@ const MAKE_o =
     {
       input:    '.',
       output:   '../site',
-      data:     'matter/assets/scripts/js/lib',
+      data:     'make/data',      //data:     'matter/assets/scripts/js/lib',
       includes: 'matrix',
     },
 

@@ -3,9 +3,9 @@ const FIL_o = require('fs-extra')
 const REPLACE__s = require( '../lib/block_replace.js' )
 const SPLIT__a   = require( '../lib/block_split.js' )
 const CODE_o     = require( '../lib/code.js' )
-const C_o        = require( '../../matter/assets/scripts/js/lib/C_o.js' )
-const F_o        = require( '../../matter/assets/scripts/js/lib/F_o.js' )
-const S_o        = require( '../../matter/assets/scripts/js/lib/S_o.js' )
+const C_o        = require( '../data/C_o.js' )
+const F_o        = require( '../data/F_o.js' )
+const S_o        = require( '../data/S_o.js' )
 
 
 

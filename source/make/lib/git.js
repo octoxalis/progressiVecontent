@@ -1,8 +1,8 @@
 require( 'dotenv' ).config( { path: '../.env' } )
 const FETCH_o = require( 'node-fetch' )
 const FIL_o    = require( 'fs' )
-const A_o     = require( '../../matter/assets/scripts/js/lib/A_o.js' )
-const U_o     = require( '../../matter/assets/scripts/js/lib/U_o.js' )
+const A_o     = require( '../data/A_o.js' )
+const U_o     = require( '../data/U_o.js' )
 
 const GIT_API_s    = 'https://api.github.com/'
 const GIT_ISSUES_s = `${GIT_API_s}repos/${A_o.AUTHOR_s}/${A_o.ID_s}/issues`

@@ -90,7 +90,6 @@ __                     {width:var(--LINE_WIDTH)}
 __                     {width:{{C_o.FULL_WIDTH}}}
 
 
-
 .slide_list,
 .step_list,
 __                     {width:100%}
@@ -98,6 +97,7 @@ __                     {width:100%}
 
 dl[data-step],
 __                     {width:var(--slide_width)}
+
 
 button[data-step],
 __                     {flex-grow:1}/* !!! width by flex-grow */
@@ -163,8 +163,8 @@ __                     {background:hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_
 button[data-step]:hover,
 .step_focus:focus,
 .step_focus,
-__                     {background:var(--c_sec_hi);
-                        filter:var(--SATURATE_FILTER)}
+__                     {background:var(--c_highlight_hi);
+                        filter:brightness(3)}
 
 /* ?????
 #section_docs,

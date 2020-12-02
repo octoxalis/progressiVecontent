@@ -16,11 +16,11 @@ var BOOK_o =
 
 
 
-cache__v
+cache__v    //: to service -> worker
 ()
 {
   SER_o
-    .CACHE__v
+    .{{C_o.msg_o.CACHE_s}}__v
     (
       {
         sender_o: BOOK_o,
@@ -33,7 +33,7 @@ cache__v
 
 
 
-CACHE__v    //: from service <- worker
+{{C_o.msg_o.CACHE_s}}__v    //: from service <- worker
   (
     cache_a
   )
@@ -129,7 +129,7 @@ history__v    //: display history_a items
       )
     //;console.log( list_a )
     SER_o
-      .CACHE__v
+      .{{C_o.msg_o.CACHE_s}}__v
       (
         {
           recipient_s: 'SWO_o',
@@ -226,24 +226,24 @@ history__v    //: display history_a items
        .dataset
        .at_n
     BOOK_o
-      .bookmarkOpen__v( json_a[at_n] )
+      .open__v( json_a[at_n] )
   }
 ,
 
 
 
-bookmarkOpen__v    //:- diplay bookmark data
+open__v    //:- display bookmark data
 (
   history_o
 )
 {
   const display_e =
     SLOT_o
-      .display__e( 'section_bookmark' )
+      .dialog__o( 'section_bookmark' )
   LIB_o
     .id__o
     (
-      'title',
+      'dialog_block_title',
       display_e
     )
     .innerHTML =
@@ -264,7 +264,7 @@ bookmarkOpen__v    //:- diplay bookmark data
   LIB_o
     .id__o
     (
-      'list',
+      'dialog_block_list',
       display_e
     )
     .innerHTML =
@@ -277,11 +277,11 @@ bookmarkOpen__v    //:- diplay bookmark data
 
 
 
-  bookmarkClose__v
+  close__v
   ()
   {
     SLOT_o
-      .display__e( 'section_bookmark' )
+      .dialog__o( 'section_bookmark' )
       .classList
       .toggle( 'retract' )
   }
@@ -289,13 +289,13 @@ bookmarkOpen__v    //:- diplay bookmark data
 
 
 
-  bookmarkLink__v
+  linkto__v
   ()
   {
     const list_a = new Set()
     SLOT_o
-      .display__e( 'section_bookmark' )
-      .querySelectorAll( '[data-id="list"] > li' )
+      .dialog__o( 'section_bookmark' )
+      .querySelectorAll( '[data-id="dialog_block_list"] > li' )
       .forEach
       (
         li_e =>
@@ -304,15 +304,17 @@ bookmarkOpen__v    //:- diplay bookmark data
             .add( `${li_e.dataset.slot_s}` )
         }
       )
-    //;console.log( list_a )
     SER_o
-      .CACHE__v
+      .{{C_o.msg_o.CACHE_s}}__v
       (
         {
           recipient_s: 'SWO_o',
           cache_a: list_a
         }
       )
+    window
+      .location
+      .reload()
   }
 ,
 
@@ -526,13 +528,13 @@ bookmarkOpen__v    //:- diplay bookmark data
       )
     const section_e =
       SLOT_o
-        .display__e( 'section_bookmark' )
+        .dialog__o( 'section_bookmark' )
     section_e
       .addEventListener
       (
         'click',
-        //XX BOOK_o.bookmarkClose__v
-        BOOK_o.bookmarkLink__v
+        //XX BOOK_o.close__v
+        BOOK_o.linkto__v
       )
     LIB_o
       .id__o
@@ -543,8 +545,8 @@ bookmarkOpen__v    //:- diplay bookmark data
       .addEventListener
       (
         'click',
-        //XX BOOK_o.bookmarkLink__v
-        BOOK_o.bookmarkClose__v
+        //XX BOOK_o.linkto__v
+        BOOK_o.close__v
       )
   }
 ,

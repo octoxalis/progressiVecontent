@@ -42,4 +42,4 @@ actually, as soon as you clicked on this section header, your browser loaded the
 [comment]: # (======== Links ========)
 
 [algorithm]: {{U_o.url_s}}{{C_o.URL_S_s}}{{C_o.SLOTS_s}}/algorithm.html
-[1PX]: {{ F_o.img1px__s() }} "A young woman holding a distaff before a lit candle"
+[1PX]: {{F_o.img1px__s()}} "A young woman holding a distaff before a lit candle"
