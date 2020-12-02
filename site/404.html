@@ -19,7 +19,7 @@ body,dl,dt,dd,#initial_slogan{padding:0}
 #sections_slider{position:sticky}
 #sections{position:relative}
 #sections_slider{top:0}
-.svg_logo{top:.7rem}
+.svg_logo{top:1rem}
 :root
   {--LINE_WIDTH:clamp( 30ch, 52ch, 76vw )}
 #svg_logo{--svg_icon_dim:calc( clamp( 12vh, 16vh, 20vh ) * .8 )}
@@ -55,7 +55,7 @@ button:focus{outline:0}
 --c_hue_d:calc( var(--hue_base) + -20); 
 --c_hue_l:calc( var(--hue_base) + 10); 
 --c_sat_hi_4:94%; 
---c_sat_hi_2:94%; 
+--c_sat_hi_2:72%; 
 --c_sat_ne :50%;  
 --c_sat_lo_2:28%; 
 --c_sat_lo_4:6%; 
@@ -92,7 +92,7 @@ button:focus{outline:0}
 --c_shadow_lo:hsla( var(--c_hue_s) var(--sat_ne) var(--c_lum_lo_4)/.8);
 --c_link_hi:hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_link_ne:hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2)/.5);
---c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_1)/1);
+--c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
 --c_highlight:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
 }
@@ -104,7 +104,7 @@ body{color:var(--c_prim_lo)}
 .svg_logo text,.svg_logo circle{stroke:none}
 #sections,#sections > *{background:transparent}
 .svg_icon,.svg_logo polyline{fill:none}
-.svg_logo text{fill:var(--c_highlight_hi)}
+.svg_logo text{fill:var(--c_highlight)}
 .svg_logo:hover text{fill:var(--c_highlight_in)}
 .svg_logo circle{fill:var(--c_highlight_in)}
 .svg_logo:hover circle{fill:var(--c_decor_hi)}
@@ -135,10 +135,10 @@ body,body *,body *:before,body *:after{font-size:calc( var(--font_u) * var(--siz
 #initial_slogan li:nth-of-type(2) > *{--size_ratio:1.5}
 #initial_slogan li:nth-of-type(1) > *{--size_ratio:1.3}
 body,body *{--size_ratio:1}
-.svg_logo text{--size_ratio:.25}
+.svg_logo text{font-size:6px} 
 #initial b{font-weight:600}
 body,body *{font-weight:400}
-#initial i{font-style:normal}
+[data-tag],#initial i{font-style:normal}
 #initial b{letter-spacing:.8vw}
 .svg_logo,.svg_icon{stroke-width:1}
 .svg_logo,.svg_icon{stroke-linecap:round}
@@ -166,10 +166,9 @@ a:hover::after{transform:scaleX(1)}
 #initial_slogan li{transform:rotateY( -0.025turn )}
 #scroll_bottom > svg{transform:rotate(.5turn)}
 .aside{transform:translateY( calc( (5em - 1.5rem ) * -1 ) )}
-.svg_icon:hover{filter:brightness(2)}
 #initial_slogan{perspective:32vw}
 .retract{transform-origin:top left}
 .aside{transition:.2s ease}
 #sections_slider{transition:transform .2s ease}
 .unseen,.invisible{pointer-events:none}
-.svg_icon{pointer-events:all}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_logo" viewBox="0 0 24 24"><circle cx="12" cy="3" r="2" stroke="none" fill="var(--c_highlight_in)"></circle><line x1="12" y1="7" x2="12" y2="12"></line><polyline points="12 15 12 22 22 9"></polyline></symbol><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><aside id="background_aside"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 48 24"><circle cx="24" cy="4.5" r="1.6"></circle><line x1="24" y1="7" x2="24" y2="10"></line><polyline points="24 13 24 22 32 11"></polyline><text x="2" y="10">progress</text><text x="26" y="10">econtent</text></svg></aside><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><b>OPEN SOURCE</b><i>GITHUB</i></li><li><b>FRAMEWORKLESS</b><i>JAMstack</i></li><li id="initial_logo"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 48 24"><circle cx="24" cy="4.5" r="1.6"></circle><line x1="24" y1="7" x2="24" y2="10"></line><polyline points="24 13 24 22 32 11"></polyline><text x="2" y="10">progress</text><text x="26" y="10">econtent</text></svg></li><li><b>PARCELED</b><i>DESIGN</i></li></ul></header></body></html>
+.svg_icon{pointer-events:all}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><aside id="background_aside"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></aside><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><b>OPEN SOURCE</b><i>GITHUB</i></li><li><b>FRAMEWORKLESS</b><i>JAMstack</i></li><li id="initial_logo"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></li><li><b>PARCELED</b><i>DESIGN</i></li></ul></header></body></html>

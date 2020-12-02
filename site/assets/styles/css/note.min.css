@@ -73,7 +73,8 @@ __  {stroke:none}
 __  {fill:var(--c_prim_hi_2)}
 [data-id="note_img"] [data-id="note_content"],[data-id="note_img"]{background:transparent}
 .note_open,.note_link,button[data-legend],[data-id^="note_"] > button{background:var(--c_box_hi)}
-[data-id^="note_"] button:hover,.note_link:hover{filter:brightness( 2 )}
+[data-id^="note_"] button:hover,.note_link:hover{background:var(--c_highlight_hi);
+  filter:saturate(2) brightness(2)}
 [data-id="note_img"] button *{font-size:inherit}
 [data-id^="note_"] > button{font-size:var(--font_sup)}
 [data-id^="note_"]{text-decoration:none}

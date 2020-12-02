@@ -36,3 +36,5 @@
 #bookmark_page > dt,#bookmark_name::placeholder{font-style:italic}
 #bookmark_content li,#bookmark_history_list dl *{line-height:.9}
 [draggable]{user-select:none}
+#bookmark_refresh:hover,#bookmark_save:hover{background:var(--c_highlight_hi);
+  filter:saturate(2) brightness(2)}

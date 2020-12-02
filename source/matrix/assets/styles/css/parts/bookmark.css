@@ -174,3 +174,7 @@ __                     {line-height:.9}
 __                     {user-select:none}
 
 
+#bookmark_refresh:hover,
+#bookmark_save:hover,
+__                     {background:{{C_o.BG_FX_s}};
+                        filter:{{C_o.SAT_FX_s}}}

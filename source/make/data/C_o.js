@@ -61,8 +61,7 @@ module.exports =
     TAG_s:    'TAG',         //: undefined tag identifier
     ATAG_s:   '~',           //: tag ante char
     PTAG_s:   '°',           //: tag post char
-    REGEXP_s: 'a-zA-Z0-9_',  //: tags allowed chars
-    MARK_s:   'mark',        //: HTML tag element
+    REGEX_s:  'a-zA-Z0-9_',  //: tag allowed chars
     DATA_s:   'data-tag',    //: HTML tag element attribute
   }
 ,
@@ -84,12 +83,13 @@ module.exports =
 
 
   //=== HTML ===
-  SECTION_BTN_TAG:  'b',
-  CLOSE_ICON_TAG:   'em',
-  NOTE_TAG:         'ins',
-  NOTE_CONTENT_TAG: 'i',
-  IMG_UNFOLD_TAG:   'i',
-  NOTE_LINK_TAG:    'em',
+  SECTION_BTN_TAG_s:  'b',
+  CLOSE_ICON_TAG_s:   'em',
+  NOTE_TAG_s:         'ins',
+  NOTE_CONTENT_TAG_s: 'i',
+  IMG_UNFOLD_TAG_s:   'i',
+  NOTE_LINK_TAG_s:    'em',
+  MARK_DATA_TAG_s:    'b',
 
 
 
@@ -126,15 +126,8 @@ module.exports =
 
   BOX_OVERLAY: '12px 12px 32px 100vmax var(--c_shadow_lo)',
 
-/*
-  INVERT_FILTER:
-    `invert(100%)
-     hue-rotate(${C_o.HUE_ROTATE_n}deg) ??????????????????
-     brightness(8);`,
-     */
-
-  SATURATE_FILTER: 'saturate(3) brightness(3);',  //??????????????
-
+  SAT_FX_s:   'saturate(2) brightness(2)',
+  BG_FX_s:    'var(--c_highlight_hi)',
 
   FULL_WIDTH:  '100vw',
   HALF_WIDTH:  '50vw',

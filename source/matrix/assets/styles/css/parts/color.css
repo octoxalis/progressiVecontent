@@ -47,7 +47,7 @@ __                     {fill:none}
 
 
 .svg_logo text,
-__                     {fill:var(--c_highlight_hi)}
+__                     {fill:var(--c_highlight)}
 
 .svg_logo:hover text,
 __                     {fill:var(--c_highlight_in)}

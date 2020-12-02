@@ -106,7 +106,7 @@ __                     {width:{{C_o.BODY_WIDTH_n}}vw}
 [data-id="example"],
 __                     {max-width:100%}
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {height:{{C_o.BUTTON_HEIGHT}}}  /* see line-height */
 
 
@@ -121,7 +121,7 @@ __                     {height:4px}
 
 
 /*
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {top:0}
 */
 
@@ -179,7 +179,7 @@ button[data-slot_s],
 __                     {padding:{{C_o.PAD_2}}}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {flex-basis:100%}
 
 
@@ -227,7 +227,7 @@ mark[data-tag],
 __                     {color:inherit}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {color:var(--c_prim_lo)}
 
 
@@ -265,11 +265,6 @@ __                     {background:var(--c_sec_hi_3)}
 button[data-slot_s],
 __                     {background:var(--c_prim_hi_2)}
 
-#preferences > button:hover,
-.svg_icon:hover,
-.close_icon:hover,
-__                     {background:var(--c_highlight_hi)}
-
 
 [data-id="note_txt"] > button,
 __                     {background:var(--c_decor_hi_op_lo)}
@@ -289,7 +284,7 @@ h6,
 __                     {--size_ratio:1.2}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {--size_ratio:1.4}
 
 small,
@@ -301,7 +296,7 @@ __                     {--size_ratio:.8}
 .site_label,
 __                     {font-weight:500}
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {font-weight:700}
 
 button[data-slot_s],
@@ -329,11 +324,11 @@ __                     {content:''}
 
 
 a,
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {text-decoration:none}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG}},
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {text-transform:uppercase}
 
 
@@ -351,9 +346,13 @@ __                     {font-family:var(--font_title)}
 .site_label,
 __                     {font-style:italic}
 
-button[data-slot_s]:hover,
+
 #preferences > button:hover,
-__                     {filter:brightness( 2 )}
+__                     {background:{{C_o.BG_FX_s}};
+                        filter:{{C_o.SAT_FX_s}}}
+
+button[data-slot_s]:hover,
+__                     {background:{{C_o.BG_FX_s}}}
 
 
 

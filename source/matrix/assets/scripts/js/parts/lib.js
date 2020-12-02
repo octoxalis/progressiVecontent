@@ -358,7 +358,7 @@ toggleId__v:
   {
     const i_e =    //:-- slot remove button
       section_e
-       .querySelector( '{{ C_o.CLOSE_ICON_TAG }}[data-slot_s]' )
+       .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-slot_s]' )
     if ( i_e )
     {
       i_e

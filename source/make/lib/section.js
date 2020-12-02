@@ -17,11 +17,11 @@ const SEC_o =
     //>
     let head_s = head_a[0]
     const main_s = content_s.replace( head_s, '' )    //: head_s consumed by header button
-    head_s = head_s.replace( head_re, `<${C_o.SECTION_BTN_TAG}>$1</${C_o.SECTION_BTN_TAG}>` )   //: replace ':' delimiters by <${C_o.SECTION_BTN_TAG}> tag
+    head_s = head_s.replace( head_re, `<${C_o.SECTION_BTN_TAG_s}>$1</${C_o.SECTION_BTN_TAG_s}>` )   //: replace ':' delimiters by <${C_o.SECTION_BTN_TAG_s}> tag
     const trash_s = slot_s === C_o.DOCS_s ?
       ''
       :
-      `<${C_o.CLOSE_ICON_TAG} class="close_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_close"></use></svg></${C_o.CLOSE_ICON_TAG}>`
+      `<${C_o.CLOSE_ICON_TAG_s} class="close_icon" data-slot_s="${slot_s}"><svg class="svg_icon"><use href="#icon_close"></use></svg></${C_o.CLOSE_ICON_TAG_s}>`
     return `<button data-slot_s="${slot_s}">${head_s}${trash_s}</button><article data-slot_s="${slot_s}" class="retract">${main_s}</article>`
   }
 ,

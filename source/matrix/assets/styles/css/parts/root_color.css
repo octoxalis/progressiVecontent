@@ -18,7 +18,7 @@
 /* === SAT === */
 
 --c_sat_hi_4:{{C_o.SAT_BASE_n + ( C_o.SAT_UNIT_n * 4 )}}%;  /* 94%;*/
---c_sat_hi_2:{{C_o.SAT_BASE_n + ( C_o.SAT_UNIT_n * 4 )}}%;  /* 72%;*/
+--c_sat_hi_2:{{C_o.SAT_BASE_n + ( C_o.SAT_UNIT_n * 2 )}}%;  /* 72%;*/
 --c_sat_ne :{{C_o.SAT_BASE_n}}%;                            /* 50% */
 --c_sat_lo_2:{{C_o.SAT_BASE_n - ( C_o.SAT_UNIT_n * 2 )}}%;  /* 28%;*/
 --c_sat_lo_4:{{C_o.SAT_BASE_n - ( C_o.SAT_UNIT_n * 4 )}}%;  /* 6%;*/
@@ -91,7 +91,7 @@
 --c_link_ne:hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2)/.5);
 
 
---c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_1)/1);
+--c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
 --c_highlight:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
 

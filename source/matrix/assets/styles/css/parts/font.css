@@ -61,7 +61,8 @@ __                     {--size_ratio:1}
 
 
 .svg_logo text,
-__                     {--size_ratio:.25}
+__                     {font-size:6px}  /*!!! fixed pixel size for SVG */
+
 
 
 
@@ -79,6 +80,7 @@ __                     {font-weight:400}
 
 /*=== STYLE ===*/
 
+{{C_o.MARK_DATA_TAG}}[data-tag],
 #initial i,
 __                     {font-style:normal}
 

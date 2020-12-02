@@ -163,8 +163,10 @@ __                     {background:hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_
 button[data-step]:hover,
 .step_focus:focus,
 .step_focus,
-__                     {background:var(--c_highlight_hi);
-                        filter:brightness(3)}
+.svg_icon:hover,
+.close_icon:hover,
+__                     {background:{{C_o.BG_FX_s}};
+                        filter:{{C_o.SAT_FX_s}}}
 
 /* ?????
 #section_docs,
@@ -242,3 +244,7 @@ __                     {transform-origin:0 50%}
 button[data-step],
 __                     {transition:transform .2s ease}
 
+
+dl[data-step]:hover,
+__                     {background:{{C_o.BG_FX_s}};
+                        filter:{{C_o.SAT_FX_s}}}

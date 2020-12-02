@@ -34,8 +34,8 @@ dl[data-step]{color:var(--c_sec_lo)}
 #graph_slider,#sections_slider{background:var(--c_prim_hi_3)}
 button[data-step],.slide_list,.step_list{background:transparent}
 dl[data-step]{background:hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) / 1 )}
-button[data-step]:hover,.step_focus:focus,.step_focus{background:var(--c_highlight_hi);
-  filter:brightness(3)}
+button[data-step]:hover,.step_focus:focus,.step_focus,.svg_icon:hover,.close_icon:hover{background:var(--c_highlight_hi);
+  filter:saturate(2) brightness(2)}
 .slide_list,.step_list{border:none}
 button[data-step],.slide_focus{border:2px solid var(--c_sec_lo)}
 dl[data-step]{border-radius:8px}
@@ -52,3 +52,5 @@ dl[data-step],button[data-step]{cursor:pointer}
 .slide_list,.step_list{transform-style:preserve-3d}
 .slide_list,.step_list{transform-origin:0 50%}
 #graph_slider,button[data-step]{transition:transform .2s ease}
+dl[data-step]:hover{background:var(--c_highlight_hi);
+  filter:saturate(2) brightness(2)}

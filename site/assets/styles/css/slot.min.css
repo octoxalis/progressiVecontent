@@ -57,7 +57,6 @@ mark[data-tag]{background:inherit}
 a::before,a::after{background:var(--c_link_ne)}
 section[data-slot_n]{background:var(--c_sec_hi_3)}
 button[data-slot_s]{background:var(--c_prim_hi_2)}
-#preferences > button:hover,.svg_icon:hover,.close_icon:hover{background:var(--c_highlight_hi)}
 [data-id="note_txt"] > button{background:var(--c_decor_hi_op_lo)}
 h1{--size_ratio:1.6}
 h2{--size_ratio:1.4}
@@ -78,7 +77,9 @@ a,[data-slot_s] > b{text-decoration:none}
 [data-slot_s] > b{text-transform:uppercase}
 button[data-slot_s]{font-family:var(--font_title)}
 [data-id=example]::before,.site_label{font-style:italic}
-button[data-slot_s]:hover,#preferences > button:hover{filter:brightness( 2 )}
+#preferences > button:hover{background:var(--c_highlight_hi);
+  filter:saturate(2) brightness(2)}
+button[data-slot_s]:hover{background:var(--c_highlight_hi)}
 a::before,a::after{transform-origin:bottom left}
 a::before,a::after,.aside{transition:transform .2s ease}
 :root

@@ -5,7 +5,7 @@ dl[data-skin]{align-items:center}
 dd[data-skin]:after{left:0.5rem}
 dl[data-skin] > *:not( dt ){padding:0.5rem}
 dl[data-skin]{margin:1rem 0}
- dl[data-skin] > dt{margin-bottom:0}
+dl[data-skin] > dt{margin-bottom:0}
 dl[data-skin] > dd{margin-bottom:0.25rem}
 [data-skin],[data-skin] > *{width:80vw}
 dd[data-skin]:after{width:100%}
@@ -21,5 +21,7 @@ dd[data-skin]:after{width:100%}
 #lum_current{background:hsla( var(--hue_base) 50% calc( ( 50 + ( 30 * var(--lum_mode) ) ) * 1% ) / 1 )}
 dd[data-skin]:after{--size_ratio:1}
 dd[data-skin]:after{line-height:2}
+dl[data-skin] > dt{font-style:italic}
+dl[data-skin] > dt{font-weight:500}
 [data-skin] > dd:last-of-type{cursor:crosshair}
 dd[data-skin]:after{content:attr( data-skin )}

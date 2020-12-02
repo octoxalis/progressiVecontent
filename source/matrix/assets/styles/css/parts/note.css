@@ -157,7 +157,7 @@ __                     {padding:{{C_o.PAD_2}}}
 [data-id="note_img"] button,
 __                     {padding:{{C_o.PAD_1}}}
 
-[data-id="img_legend"] {{C_o.IMG_UNFOLD_TAG}},
+[data-id="img_legend"] {{C_o.IMG_UNFOLD_TAG_s}},
 __                     {padding:{{C_o.PAD_4}} 0}
 
 
@@ -263,7 +263,8 @@ __                     {background:var(--c_box_hi)}
 /*[data-id="note_txt"] .note_open,*/
 [data-id^="note_"] button:hover,
 .note_link:hover,
-__                     {filter:brightness( 2 )}
+__                     {background:{{C_o.BG_FX_s}};
+                        filter:{{C_o.SAT_FX_s}}}
 
 
 
@@ -325,7 +326,7 @@ __                     {pointer-events:none}
 
 
 
-{{C_o.NOTE_TAG}}[data-id^=note_] button,
+{{C_o.NOTE_TAG_s}}[data-id^=note_] button,
 .note_open,
 __                     {--size_ratio:.8}
 

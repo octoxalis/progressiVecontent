@@ -25,7 +25,7 @@ const CODES_o =
 
   note_txt__s:
   content_s =>
-  `<${C_o.NOTE_TAG} data-id="note_txt"><button aria-label="unfold note"></button><${C_o.NOTE_CONTENT_TAG} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG}></${C_o.NOTE_TAG}>`,
+  `<${C_o.NOTE_TAG_s} data-id="note_txt"><button aria-label="unfold note"></button><${C_o.NOTE_CONTENT_TAG_s} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG_s}></${C_o.NOTE_TAG_s}>`,
 
 
 
@@ -47,7 +47,7 @@ const CODES_o =
           if ( at_n < legend_a.length - 1 ) legend_s += ' - '
         } )
     }
-    return `<${C_o.NOTE_TAG} data-id="note_img"><button aria-label="unfold image" data-legend="${legend_s}"><label data-id="img_legend">${data_s}</label></button><${C_o.NOTE_CONTENT_TAG} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG}></${C_o.NOTE_TAG}>`
+    return `<${C_o.NOTE_TAG_s} data-id="note_img"><button aria-label="unfold image" data-legend="${legend_s}"><label data-id="img_legend">${data_s}</label></button><${C_o.NOTE_CONTENT_TAG_s} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG_s}></${C_o.NOTE_TAG_s}>`
   }
 ,
 
@@ -59,7 +59,7 @@ const CODES_o =
 note_link__s:
   link_a =>
   {
-    let link_s = `<${C_o.NOTE_LINK_TAG} class="note_link_a">`
+    let link_s = `<${C_o.NOTE_LINK_TAG_s} class="note_link_a">`
     link_a.forEach( atlink_s =>
       {
       let [ act_s, icon_s, ...arg_a ] = atlink_s.split( ',' )
@@ -69,7 +69,7 @@ note_link__s:
       link_s += `<a class="note_link" role="button" tabindex="0"
       data-method="${act_s}" data-param="${parameter_s.slice( 0, -1 )}">${S_o.symbol__s( icon_s )}</a>`
     } )
-    return `${link_s}</${C_o.NOTE_LINK_TAG}>`
+    return `${link_s}</${C_o.NOTE_LINK_TAG_s}>`
   }
   ,
   

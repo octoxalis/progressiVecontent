@@ -26,7 +26,7 @@ dl[data-skin],
 __                     {margin:{{C_o.PAD_4}} 0}
 
 
-  dl[data-skin] > dt,
+dl[data-skin] > dt,
 __                     {margin-bottom:0}
 
 dl[data-skin] > dd,
@@ -94,6 +94,12 @@ __                     {--size_ratio:1}
 dd[data-skin]:after,
 __                     {line-height:2}
 
+
+dl[data-skin] > dt,
+__                     {font-style:italic}
+
+dl[data-skin] > dt,
+__                     {font-weight:500}
 
 
 [data-skin] > dd:last-of-type,
