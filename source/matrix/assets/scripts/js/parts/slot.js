@@ -12,10 +12,21 @@ var SLOT_o =
       (
         section_e.dataset.slot_s
       )
+    const slot_n =
+      SLOT_o
+        .section__n( section_e )
     section_e
       .remove()
-    //.... remove slide
-  }
+    if ( slot_n <= 0 ) return
+    //>
+    location
+      .reload()    //: simplest method, otherwise must remove Slider slide+step
+    //......................... remove slide alternative
+    //?? SLI_o
+    //??   .remove__v( slot_n )
+    //.......................................
+
+}
 ,
 
 
@@ -36,6 +47,33 @@ var SLOT_o =
   }
 ,
 
+
+  section__n
+  (
+    section_e
+  )
+  {
+    const slot_n =
+      section_e
+        .dataset
+        .slot_n
+    const section_a =
+      Array
+        .from
+        (
+          document
+            .querySelectorAll( 'section' )
+        )
+    const section_n =
+      section_a
+        .findIndex
+        (
+          at_e =>
+            at_e.dataset.slot_n === slot_n
+        )
+    return section_n
+  }
+,
 
 
 }

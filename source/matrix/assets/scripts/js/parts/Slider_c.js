@@ -35,8 +35,8 @@ class Slider3D
     clip_b:  false,
     wide_b:  false,
 
-    step_a:  null,
     cycle_f: null,
+    removeAt_n: 0,
 
     padding_n:         0,
     shift_n:           0,
@@ -70,6 +70,8 @@ class Slider3D
 
     this.slide_n  = 0
     this.atStep_n = 0
+
+    this.removeAt_n = 0
 
     this.listener_b = false
     this.pressed_b  = false
@@ -169,6 +171,67 @@ class Slider3D
 
 
 
+  //.....................................................
+  remove__v =
+  ( 
+    slot_n
+  ) =>
+  {
+    this
+      .cycle__v
+      (
+        //?? slot_n > 1 ?  //: goto previous slide
+        //??   slot_n - 1 
+        //??   :
+          0
+      )
+      this.removeAt_n =
+        slot_n
+    //....................................
+    //?? this.geometry__v()
+    //?? this.refresh__v()
+    //....................................
+  }
+  //......................................................
+
+
+
+  //.....................................................
+  removeAt__v =
+  () =>
+  {
+    document
+      .querySelector( `dl[data-step="${this.removeAt_n}"]` )
+      .remove()
+    document
+      .querySelector( `button[data-step="${this.removeAt_n}"]` )
+      .remove()
+    this.slide_a =
+      this
+        .slide_a
+        .splice
+        (
+          this.removeAt_n,
+          1
+        )
+    this.step_a =
+      this
+        .step_a
+        .splice
+        (
+          this.removeAt_n,
+          1
+        )
+    this.removeAt_n = 0    //: reset
+  }
+  //......................................................
+
+
+
+
+
+
+
   addSlide__v =
   (
     slot_e,
@@ -194,6 +257,22 @@ class Slider3D
   }
 
 
+/*
+  removeSlide__v =
+  (
+    slot_n
+  ) =>
+  {
+    console.log( `Slider_c.removeSlide__v: ${slot_n}` )
+    this
+      .removeStep__v
+      (
+        slot_n
+      )
+  }
+  */
+
+
 
   addStep__v =
   (
@@ -214,6 +293,20 @@ class Slider3D
   this.stepContainer.appendChild( step_e )
   this.step_a.push( step_e )
   }
+
+
+/*
+  removeStep__v =
+  (
+    slot_n
+  ) =>
+  {
+    console.log( `Slider_c.removeSlide__v: ${slot_n}` )
+    //...this
+    //...  .slide_a
+    //...
+  }
+  */
 
 
 
@@ -327,6 +420,7 @@ class Slider3D
       {
       this.step_e.classList.remove( this.option_o.stepFocus_s )
       this.step_e = this.step_a[this.atStep_n]
+      if ( !this.step_e ) return    //: we are removing the step
       this.step_e.classList.add( this.option_o.stepFocus_s )
       this.step_e.focus()
     }
@@ -382,6 +476,12 @@ class Slider3D
     slide_e
   ) =>
   {
+    //?? if ( !slide_e )
+    //?? {
+    //??   slide_e =
+    //??     this
+    //??       .slide_a[0]  //: we are removing a slide: reset to contents slide
+    //?? }
     if ( !slide_e.classList.contains( this.option_o.slideFocus_s ) )
     {
       if ( this.slide_e !== null ) this.slide_e.classList.remove( this.option_o.slideFocus_s )
@@ -655,6 +755,12 @@ class Slider3D
     if ( !this.option_o.clip_b || ( this.center_n >= 0 && this.center_n < this.slide_n ) )
     {
       slide_e = this.slide_a[this.clip__n( this.center_n )]
+      if ( !slide_e )
+      {
+        slide_e =
+          this
+            .slide_a[0]  //: we are removing a slide: reset to contents slide
+      }
       this.toSlide__v( slide_e )
       this.translate__v(
         slide_e,
@@ -683,6 +789,7 @@ class Slider3D
       if ( !this.option_o.clip_b || this.center_n - at_n >= 0 )
       {
         slide_e = this.slide_a[this.clip__n( this.center_n - at_n )]
+        //?? if ( !slide_e ) continue    //: we are removing the slide
         this.translate__v(
           slide_e, -at_n, opac_n,
           -this.option_o.shift_n + ( ( -this.size_n * at_n - delta_n ) >> 1 ),
@@ -704,6 +811,7 @@ class Slider3D
       if ( !this.option_o.clip_b || this.center_n + at_n < this.slide_n )
       {
         slide_e = this.slide_a[this.clip__n( this.center_n + at_n )]
+        //?? if ( !slide_e ) continue    //: we are removing the slide
         this.translate__v(
           slide_e,
           -at_n,
@@ -718,6 +826,7 @@ class Slider3D
     {
       this.option_o.cycle_f.call( this, this.slide_e, this.dragY_b )
     }
+    if ( this.removeAt_n ) this.removeAt__v()
   }
 
 

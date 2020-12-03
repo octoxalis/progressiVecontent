@@ -356,12 +356,12 @@ toggleId__v:
     section_e
   ) =>
   {
-    const i_e =    //:-- slot remove button
+    const close_e =    //:-- slot remove button
       section_e
        .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-slot_s]' )
-    if ( i_e )
+    if ( close_e )
     {
-      i_e
+      close_e
         .addEventListener
         (
           'click',

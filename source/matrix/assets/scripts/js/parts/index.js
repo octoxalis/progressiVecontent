@@ -32,12 +32,6 @@ var IND_o =
     LIB_o
       .nodeId__o( 'initial' )
       .remove()    //: get rid of initial !!!
-    //XX LIB_o
-    //XX   .rootVar__v
-    //XX     (
-    //XX       '--INITIAL_Z',
-    //XX       -1
-    //XX     )
     IND_o
       .colorMode__v
         ( 'hue_base' )

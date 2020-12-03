@@ -2,6 +2,7 @@
 var SLI_o =
 {
   slider_e: null,
+  slider_c: null,
 
 
   slider__n    //: init Slider3D & setup slide[0] data-section
@@ -30,10 +31,12 @@ var SLI_o =
           ['data-slot_s', '{{C_o.DOCS_s}}'],
         ]
       )
-    return SLI_o
-      .slider_c
-      .capacity__n()
-  }
+    return (
+      SLI_o
+        .slider_c
+        .capacity__n()
+      )
+  }  
 ,
 
 
@@ -73,7 +76,28 @@ var SLI_o =
 ,
   
   
-  
+  /* */ //...........................................
+  remove__v
+  (
+    slot_n
+  )
+  {
+    SLI_o
+      .slider_c
+      .remove__v( slot_n )
+    LIB_o
+      .rootVar__v
+      (
+        '--SECTIONS_CAP',
+        SLI_o
+          .slider_c
+          .capacity__n()
+      )
+  }
+,
+//.............................................
+/**/
+
   
   location__v
   (
@@ -91,51 +115,51 @@ var SLI_o =
 
 
 
-listen__v
-()
-{
-  SLI_o
-    .slider_e
-    .addEventListener( 'click', SLI_o.section__v )
-  //?? SLI_o.slider_e.addEventListener( 'touchstart', SLI_o.section__v )
-  
-  //: keyboard
-  /*
-  document.addEventListener( 'keyup',
-    key_o =>
-    {
-      if ( key_o.defaultPrevented || !SLI_o.onv}iew__b() ) return
-      //>
-      const key_sn = key_o.key || key_o.keyCode
-      if ( [ 'Escape', 'Esc', 27 ].includes( key_sn ) ||
-           [ 'Backspace', 'Back', 8 ].includes( key_sn ) ) SLI_o.onview__s()    // ESC || BACKSPACE close
-      else
+  listen__v
+  ()
+  {
+    SLI_o
+      .slider_e
+      .addEventListener( 'click', SLI_o.section__v )
+    //?? SLI_o.slider_e.addEventListener( 'touchstart', SLI_o.section__v )
+    
+    //: keyboard
+    /*
+    document.addEventListener( 'keyup',
+      key_o =>
       {
-        switch ( true )
+        if ( key_o.defaultPrevented || !SLI_o.onv}iew__b() ) return
+        //>
+        const key_sn = key_o.key || key_o.keyCode
+        if ( [ 'Escape', 'Esc', 27 ].includes( key_sn ) ||
+             [ 'Backspace', 'Back', 8 ].includes( key_sn ) ) SLI_o.onview__s()    // ESC || BACKSPACE close
+        else
         {
-          case ( [ 'ArrowLeft', 'Left', 37 ].includes( key_sn ) ) :    //: LEFT
-            SLI_o.slider_c.toNearest__v( -1 )
-            break
-          case ( [ 'ArrowRight', 'Right', 39 ].includes( key_sn ) ) :    //: RIGHT
-            SLI_o.slider_c.toNearest__v( 1 )
-            break
-          case ( [ 'ArrowUp', 'Up', 38 ].includes( key_sn ) ) :    //: UP
-            SLI_o.slider_c.toNearest__v( -4 )
-            break
-          case ( [ 'ArrowDown', 'Down', 40 ].includes( key_sn ) ) :    //: DOWN
-            SLI_o.slider_c.toNearest__v( 4 )
-            break
-          case ( [ 'Enter', 13 ].includes( key_sn ) ) :    //: ENTER
-            SLI_o.onview__s()
-            break
-          default:
-            break
+          switch ( true )
+          {
+            case ( [ 'ArrowLeft', 'Left', 37 ].includes( key_sn ) ) :    //: LEFT
+              SLI_o.slider_c.toNearest__v( -1 )
+              break
+            case ( [ 'ArrowRight', 'Right', 39 ].includes( key_sn ) ) :    //: RIGHT
+              SLI_o.slider_c.toNearest__v( 1 )
+              break
+            case ( [ 'ArrowUp', 'Up', 38 ].includes( key_sn ) ) :    //: UP
+              SLI_o.slider_c.toNearest__v( -4 )
+              break
+            case ( [ 'ArrowDown', 'Down', 40 ].includes( key_sn ) ) :    //: DOWN
+              SLI_o.slider_c.toNearest__v( 4 )
+              break
+            case ( [ 'Enter', 13 ].includes( key_sn ) ) :    //: ENTER
+              SLI_o.onview__s()
+              break
+            default:
+              break
+          }
         }
-      }
-      key_o.preventDefault()
-      key_o.stopPropagation()
-    }, true )
-  */
+        key_o.preventDefault()
+        key_o.stopPropagation()
+      }, true )
+    */
     
   }
 ,
