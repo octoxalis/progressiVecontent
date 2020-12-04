@@ -127,7 +127,7 @@ var SWO_o =
               new URL( fetch_o.request.url )
 
               SWO_o
-                .{{C_o.msg_o.ROUTE_s}}__v( url_o )
+                ['{{C_o.msg_o.ROUTE_s}}__v']( url_o )
               const response_o =
                 fetch( url_o )
               const clone_o =
@@ -480,7 +480,7 @@ cache__v
         SWO_o.receive__v
       )
     SWO_o
-      .{{C_o.msg_o.REGISTER_s}}__v()
+      ['{{C_o.msg_o.REGISTER_s}}__v']()
     //....................... ??? DO WE NEED THOSE DATA?
     //... SWO_o
     //...   .import__v()

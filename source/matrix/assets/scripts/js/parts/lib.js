@@ -67,15 +67,30 @@ data__o:
 
 
 
+  resetNode__o:
+  (
+    id_s
+  ) =>
+  {
+    const node_e =
+      LIB_o
+        .nodeId__o( id_s )
+    while ( node_e.firstChild ) node_e.removeChild( node_e.firstChild )
+    return node_e
+  }
+,
+
+
+
   /*
   * @param {*} tag_e : node element
   * @param {*} attrib_a : [ [ 'attribute_s', 'value_' ], ]
   */
-  attribute__v
+  attribute__v:
   (
     tag_e, 
     attrib_a
-  )
+  ) =>
   {
     for ( at_a of attrib_a ) tag_e.setAttribute( at_a[0], at_a[1] )
   }

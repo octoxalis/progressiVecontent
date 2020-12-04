@@ -196,7 +196,7 @@ var GRA_o =
         (
           '{{C_o.SLOTS_s}}',      //: path_s default
           slot_s,
-          +step_s,        //: Number
+          +step_s,        //: as Number
           section_e =>    //: callback_f
           {
             SLI_o
@@ -206,7 +206,7 @@ var GRA_o =
                 section_e,
                 0,    //: NOT auto indexed
                 [
-                  `data-section=${step_s}`,
+                  //XX `data-section=${step_s}`,
                   `data-slot_s=${section_e.dataset.slot_s}`
                 ],
                 () =>    //: callback_f
@@ -352,7 +352,7 @@ var GRA_o =
       (
         path_s='{{C_o.SYS_s}}',
         slot_s='{{C_o.SKIN_s}}',
-        slot_n=-2,          //: negative indices for sys slots
+        slot_n='{{C_o.SKIN_n}}',          //: negative indices for sys slots
         callback_f=null
       )
   }
@@ -369,7 +369,7 @@ var GRA_o =
       (
         path_s='{{C_o.SYS_s}}',
         slot_s='{{C_o.BOOKMARK_s}}',
-        slot_n=-3,          //: negative indices for sys slots
+        slot_n='{{C_o.BOOKMARK_n}}',          //: negative indices for sys slots
         callback_f=null
       )
   }
@@ -526,12 +526,6 @@ void async function
   //...GRA_o.graph_c =
   //...  Graph
   //...    .json__c( json_o )
-  //?? IND_o
-  //??   .colorMode__v
-  //??     ( 'hue_base' )
-  //?? IND_o
-  //??   .colorMode__v
-  //??     ( 'lum_mode' )
   GRA_o.svg_e =
     LIB_o
       .nodeId__o( 'graph_svg' )

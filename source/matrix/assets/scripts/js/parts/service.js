@@ -127,7 +127,7 @@ receive__v    //:-- Listen to messages
   )
   {
     console
-      .time( 'SER_o.{{C_o.msg_o.RESTORE_s}}__v' )
+      .time( SER_o['{{C_o.msg_o.RESTORE_s}}__v'] )
     //!!!!!!!!!!!!!!!!!!!!!!
     if ( !PREF_o.restore_b ) return
     //>
@@ -150,7 +150,7 @@ receive__v    //:-- Listen to messages
                   section_e,
                   slot_n,
                   [
-                    `data-section=${slot_n}`, 
+                    //XX `data-section=${slot_n}`,
                     `data-slot_s=${section_e.dataset.slot_s}`
                   ],
                 )
@@ -160,7 +160,7 @@ receive__v    //:-- Listen to messages
     }
     //!!!!!!!!!!!!!!!!!!!!!!
     console
-      .timeEnd( 'SER_o.{{C_o.msg_o.RESTORE_s}}__v' )
+      .timeEnd( SER_o['{{C_o.msg_o.RESTORE_s}}__v'] )
   }
 ,
 
@@ -205,7 +205,7 @@ receive__v    //:-- Listen to messages
     if ( !SER_o.sender_o ) return void console.log( 'Service Worker cache not delivered!' )
     SER_o
       .sender_o
-      .{{C_o.msg_o.CACHE_s}}__v( cache_a )    //: consume cache_a
+      ['{{C_o.msg_o.CACHE_s}}__v']( cache_a )    //: consume cache_a
     SER_o.sender_o = null    //: ...then reset
   }
 ,

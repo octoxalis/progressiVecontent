@@ -2,7 +2,7 @@
 {
   layout: 'parts/slot/skin/skin.njk',
   permalink: 'sys/skin.html',
-  rank_n: -2,
+  rank_n: -2,    //: {{C_o.SKIN_n}}
   tags:      [ `notag` ],
   //?? eleventyExcludeFromCollections: true,
 

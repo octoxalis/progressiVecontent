@@ -94,7 +94,7 @@ var IND_o =
   (
     path_s='{{C_o.SYS_s}}',
     slot_s='{{C_o.DOCS_s}}',
-    slot_n=-1,          //: negative indices for sys slots
+    slot_n=+'{{C_o.DOCS_n}}',          //: negative indices for C_o.SYS_s slots
     callback_f=null
   )
   {

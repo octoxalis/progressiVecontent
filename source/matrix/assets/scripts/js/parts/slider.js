@@ -11,26 +11,12 @@ var SLI_o =
     SLI_o.slider_e =
       LIB_o
         .nodeId__o( 'sections_slider' )
-    const sections_e =
-      LIB_o
-        .nodeId__o( 'sections' )
     SLI_o
       .slider_c =
         new Slider3D(
           SLI_o.slider_e,
-          sections_e
-        )
-    const slide_e = 
-      document
-        .querySelector( `nav[data--="slide_list"] > dl[data-step="0"]`)
-    LIB_o
-      .attribute__v(
-        slide_e,
-        [
-          ['data-section', '0'],
-          ['data-slot_s', '{{C_o.DOCS_s}}'],
-        ]
-      )
+          LIB_o.nodeId__o( 'sections' )
+          )
     return (
       SLI_o
         .slider_c
@@ -74,29 +60,24 @@ var SLI_o =
     }
   }
 ,
-  
-  
-  /* */ //...........................................
+
+
+
+ //...........................................
   remove__v
   (
     slot_n
   )
   {
+    LIB_o
+      .resetNode__o( 'sections_slider' )
     SLI_o
       .slider_c
-      .remove__v( slot_n )
-    LIB_o
-      .rootVar__v
-      (
-        '--SECTIONS_CAP',
-        SLI_o
-          .slider_c
-          .capacity__n()
-      )
+      .init__v()
   }
 ,
 //.............................................
-/**/
+
 
   
   location__v

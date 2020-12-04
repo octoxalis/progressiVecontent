@@ -2,7 +2,7 @@
 {
   layout: 'parts/slot/bookmark/bookmark.njk',
   permalink: 'sys/bookmark.html',
-  rank_n: -3,
+  rank_n: -3,     //: {{C_o.BOOKMARK_n}}
   tags:      [ `notag` ],
   //?? eleventyExcludeFromCollections: true,
 

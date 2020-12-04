@@ -20,7 +20,7 @@ cache__v    //: to service -> worker
 ()
 {
   SER_o
-    .{{C_o.msg_o.CACHE_s}}__v
+    ['{{C_o.msg_o.CACHE_s}}__v']
     (
       {
         sender_o: BOOK_o,
@@ -129,7 +129,7 @@ history__v    //: display history_a items
       )
     //;console.log( list_a )
     SER_o
-      .{{C_o.msg_o.CACHE_s}}__v
+      ['{{C_o.msg_o.CACHE_s}}__v']
       (
         {
           recipient_s: 'SWO_o',
@@ -305,7 +305,7 @@ open__v    //:- display bookmark data
         }
       )
     SER_o
-      .{{C_o.msg_o.CACHE_s}}__v
+      ['{{C_o.msg_o.CACHE_s}}__v']
       (
         {
           recipient_s: 'SWO_o',
