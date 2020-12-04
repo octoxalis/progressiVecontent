@@ -96,8 +96,20 @@ class Slider3D
     this.ticker_n     = 0
     this.stamp_n      = 0
     this.velocity_n   = 0
-
-    this.setup__v()
+    ;
+    [ 'slide',
+      'step',
+      'fill',
+      'geometry',
+      'refresh',
+      'listen'
+    ]
+      .forEach
+      (
+        method_s =>
+          this
+            [`${method_s}__v`]()
+      )
   }
 
 
@@ -105,13 +117,6 @@ class Slider3D
   setup__v =
   () =>
   {
-    [ 'slide',
-      'step',
-      'fill',
-      'geometry',
-      'refresh',
-      'listen'
-    ].forEach( method_s => this[`${method_s}__v`]() )
   }
 
 

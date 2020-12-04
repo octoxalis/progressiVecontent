@@ -26,15 +26,6 @@ var SLI_o =
 ,
 
 
-  loaded__b    //:- is  slot already loaded?
-  (
-    slot_s
-  )
-  { return document.querySelector( `section[data-slot_s="${slot_s}"]` ) !== null }
-,
-  
-  
-  
   section__v    //:- change view to section
   (
     event_o
@@ -46,13 +37,20 @@ var SLI_o =
         .closest( '[data-step]' )
     if ( step_e )
     {
-      const step_s =
-        step_e
+      const step_n =
+        +step_e
           .dataset
           .step
+      const section_n =
+        +LIB_o
+          .nodeId__o( 'sections_slider' )
+          .querySelector( `dl[data-step="${step_n}"]` )
+          .dataset
+          .section
       const slot_s =
-        document
-          .querySelector( `dl[data-section][data-step="${step_s}"]` )
+        LIB_o
+          .nodeId__o( 'sections' )
+          .querySelector( `[data-slot_n="${section_n}"]` )
           .dataset
           .slot_s
       SLI_o
@@ -63,11 +61,8 @@ var SLI_o =
 
 
 
- //...........................................
   remove__v
-  (
-    slot_n
-  )
+  ()
   {
     LIB_o
       .resetNode__o( 'sections_slider' )
@@ -76,7 +71,6 @@ var SLI_o =
       .init__v()
   }
 ,
-//.............................................
 
 
   

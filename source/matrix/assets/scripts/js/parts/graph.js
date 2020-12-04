@@ -206,7 +206,6 @@ var GRA_o =
                 section_e,
                 0,    //: NOT auto indexed
                 [
-                  //XX `data-section=${step_s}`,
                   `data-slot_s=${section_e.dataset.slot_s}`
                 ],
                 () =>    //: callback_f
@@ -392,14 +391,6 @@ var GRA_o =
         'click',
         GRA_o.nodeOpen__v
       )
-      /*
-    GRA_o.svg_e
-      .addEventListener
-      (
-        'touchstart',
-        GRA_o.nodeOpen__v
-      )
-      */
     LIB_o
       .nodeId__o( 'skin_link' )
       .addEventListener
@@ -430,7 +421,6 @@ var GRA_o =
       .addEventListener
       (
         'click',
-        //XX GRA_o.nodeClose__v
         GRA_o.nodeLink__v
         )
     LIB_o
@@ -442,7 +432,6 @@ var GRA_o =
       .addEventListener
       (
         'click',
-        //XX GRA_o.nodeLink__v
         GRA_o.nodeClose__v
       )
   //: keyboard

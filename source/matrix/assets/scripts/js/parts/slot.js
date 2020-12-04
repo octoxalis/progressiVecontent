@@ -26,21 +26,18 @@ var SLOT_o =
   )
   {
     const slot_n =
-      +section_e.dataset.slot_n    //: Number cast
+      +section_e
+        .dataset
+        .slot_n    //: Number cast
     SER_o
-      ['{{C_o.msg_o.REMOVE_s}}__v']( section_e.dataset.slot_s )
+      ['{{C_o.msg_o.REMOVE_s}}__v']
+      ( section_e.dataset.slot_s )
     section_e
       .remove()
-    const docs_n =
-      +'{{C_o.DOCS_n}}'
-    if ( slot_n > docs_n )    //: skip C_o.SYS_s slots
+    if ( slot_n > +'{{C_o.DOCS_n}}' )    //: skip C_o.SYS_s slots
     {
       SLI_o
         .remove__v( slot_n )
-      
-      //... location
-      //...   .reload()    //: simplest method, otherwise must remove Slider slide+step
-      //......................... remove slide alternative
     }
   }
 ,
