@@ -6,7 +6,7 @@ const SPO_o =
     'data-slot_s="skin': ['css:skin', 'js:skin' ],
     'data-slot_s="bookmark': ['css:bookmark', 'js:bookmark' ],
     'data-id="note_': ['css:note', 'js:note'],
-    'data-id="code_': ['css:code'],
+    'data-id="code_': ['css:code', 'js:code'],
     //...'data-id="comments' : ['js:comments'],
     //...'data-id="performance' : ['css:performance', 'js:web_vitals', 'js:web_vitals_report', 'js:perf_api'],
   }

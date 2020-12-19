@@ -115,11 +115,14 @@ module.exports =
                         //: see https://www.w3.org/TR/WCAG20/ §1.4.1 compliance
 
 
-
   BODY_WIDTH_n:  80,     //: percentage of document width
   BODY_MARGIN_n: 10,     //: (100 - 80) * .5
   LINE_WIDTH_n:  52,     //: in ch unit
 
+  BASE_U_n:     20,      //: font base unit
+  BASE_MIN_n:   1.5,
+  SCREEN_MIN_n: 400,
+  SCREEN_MAX_n: 1600,
 
 
   //=== CSS ===

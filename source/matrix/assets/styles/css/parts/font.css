@@ -2,20 +2,10 @@
 
 :root
 {
-  --base_u:8;
-  --base_min:1.7;
-  --screen_min:400;
-  --screen_max:1600;
-
-  --font_base:{{C_o.base_u * C_o.base_min}};
-
-
-  --font_min:{{C_o.base_u * C_o.base_min}};   /* --font_base */
-  --font_max:{{C_o.base_u * C_o.base_min * 2}};
-  --font_size:calc( (var(--font_min) * 1px)
-                     + ( var(--font_max) - var(--font_min) )
-                     * ( 100vw - (var(--screen_min) * 1px) )
-                     / ( var(--screen_max) - var(--screen_min) )
+  --font_size:calc( ({{C_o.BASE_U_n * C_o.BASE_MIN_n}} * 1px)
+                     + ( {{C_o.BASE_U_n * C_o.BASE_MIN_n * 2}} - {{C_o.BASE_U_n * C_o.BASE_MIN_n}} )
+                     * ( 100vw - ({{C_o.SCREEN_MAX_n}} * 1px) )
+                     / ( {{C_o.SCREEN_MAX_n}} - {{C_o.SCREEN_MIN_n}} )
                    );
   --font_u:calc( var(--font_size) * 1 ); /* font unit - can be adjusted */
 

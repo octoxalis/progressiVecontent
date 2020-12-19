@@ -18,7 +18,7 @@ One with only a ~°signature°~ and no ~°implementation body°~. It is often us
 
 {% _code_block %}
     title_s: '{{A_o.ID_s}}matrix/assets/scripts/js/parts/service_worker.js',
-    lang_s: 'javascript',
+    lang_s: 'js',
 [//]:#(_code_block)
 {{ _code_01 }}
 {% end_code_block %}

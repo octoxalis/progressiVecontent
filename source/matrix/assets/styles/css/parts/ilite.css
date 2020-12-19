@@ -1,0 +1,145 @@
+:root
+{
+  --LINE_BORDER_n: 3px;
+}
+
+/*
+code,
+code *,
+__                     {font-family:var(--FONT_MONO)}
+*/
+
+
+/* === LAYOUT === */
+code
+{  
+  display: block;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  width: 100vw;
+  min-height: 100vh;
+  color: hsla(var(--c_hue_h) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
+  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_3)/.9);
+  white-space: pre;
+  overflow: auto;
+}
+
+code > ol
+{
+  display: flex;
+  flex-direction: column;
+}
+
+code li
+{
+  border-bottom: var(--LINE_BORDER_n) solid transparent;
+}
+
+code li:hover
+{
+  filter: contrast(2);
+  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_1)/.9);
+}
+
+code li::marker
+{
+  display: inline-block;
+  -webkit-select: none;
+  font-size: 80%;        /* for 4 digits number */
+  color: var(--c_ilite_hi);
+  opacity: .7;
+}
+
+
+code li.i_hi
+{
+  background: hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_2)/1);
+}
+
+code li.i_hi::marker
+{
+  color: hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
+}
+
+
+[class^="i_"],
+__                     {font-style:normal}
+
+
+.i_spot
+{
+  border-bottom: var(--LINE_BORDER_n) solid hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
+}
+
+.i_spot:hover
+{
+  cursor: pointer;
+}
+
+
+
+/* === FRONT === */
+.i_dec,
+__                     {color:var(--c_ilite_40)}
+.i_op,
+__                     {color:var(--c_ilite_120)}
+.i_cont,
+.i_prop,
+__                     {color:var(--c_ilite_200)}
+.i_punct,
+__                     {color:var(--c_ilite_240)}
+.i_uv,
+.i_var,
+__                     {color:var(--c_ilite_280)}
+.i_res,
+__                     {color:var(--c_ilite_340)}
+
+
+
+
+.i_type,  /*: JS */
+.i_unit,  /*: CSS */
+.i_per,   /*: CSS */
+__                     {color:var(--c_ilite_80)}
+__                     {color:var(--c_ilite_100)}
+.i_loop,  /*: JS */
+__                     {color:var(--c_ilite_160)}
+.i_temp,  /*: JS */
+.i_sel,   /*: CSS */
+.i_CHILD, /*: CSS */
+.i_attr,  /* HTML */
+__                     {color:var(--c_ilite_0)}
+
+
+.i_log,
+.i_reg,
+__                     {color:var(--c_ilite_0_hi)}
+
+.i_temp,
+__                     {color:red}
+
+/* === BACKGROUND === */
+
+.i_block,
+.i_block_html,
+.i_line,
+__                     {background:var(--c_ilite_hi); opacity:.33}
+
+.i_num,
+__                     {background:var(--c_ilite__300)}
+
+.i_apos,
+.i_quot,
+__                     {background:var(--c_ilite__180)}
+
+
+
+.i_lit,  /*: JS */
+.i_html,    /* NJK */
+.i_href,
+__                     {background:var(--c_ilite__100)}
+
+
+/* === BORDER === */
+.i_node,
+__                     {border-bottom: 1px solid var(--c_ilite_0)}

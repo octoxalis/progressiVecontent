@@ -51,7 +51,7 @@ button:focus{outline:0}
 --c_hue_p:var(--hue_base);  
 --c_hue_i:calc( var(--hue_base) + 140); 
 --c_hue_s:calc( var(--hue_base) + -10); 
---c_hue_h:calc( var(--hue_base) + 20); 
+--c_hue_p:calc( var(--hue_base) + 20); 
 --c_hue_d:calc( var(--hue_base) + -20); 
 --c_hue_l:calc( var(--hue_base) + 10); 
 --c_sat_hi_4:94%; 
@@ -95,6 +95,26 @@ button:focus{outline:0}
 --c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
 --c_highlight:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
+--c_hi_off: 180;
+--c_ilite_0: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_40: hsla( calc( var(--c_hue_p) + 40 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_60: hsla( calc( var(--c_hue_p) + 60 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_80: hsla( calc( var(--c_hue_p) + 80 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_120: hsla( calc( var(--c_hue_p) + 120 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_160: hsla( calc( var(--c_hue_p) + 160 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_200: hsla( calc( var(--c_hue_p) + 200 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_240: hsla( calc( var(--c_hue_p) + 240 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_280: hsla( calc( var(--c_hue_p) + 280 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_320: hsla( calc( var(--c_hue_p) + 320 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_340: hsla( calc( var(--c_hue_p) + 340 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite__0: hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__180: hsla( calc( var(--c_hue_p) + 180 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__300: hsla( calc( var(--c_hue_p) + 300 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite_hi: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) /.4 );
+--c_ilite_lo: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_lo_4) /.4 );
+--c_ilite_0_hi: hsla( 0 var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
 }
 :root  {--INVERT_FILTER:invert(100%) brightness(8) hue-rotate(0deg)}
 .unseen,.invisible,.retract{opacity:0}
@@ -114,14 +134,7 @@ body,#sections_slider{background:var(--c_prim_hi)}
 #initial{background:linear-gradient(-0.025turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%, hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
 :root
 {
- --base_u:8;
- --base_min:1.7;
- --screen_min:400;
- --screen_max:1600;
- --font_base:13.6;
- --font_min:13.6; 
- --font_max:27.2;
- --font_size:calc( (var(--font_min) * 1px) + ( var(--font_max) - var(--font_min) ) * ( 100vw - (var(--screen_min) * 1px) ) / ( var(--screen_max) - var(--screen_min) )
+ --font_size:calc( (30 * 1px) + ( 60 - 30 ) * ( 100vw - (1600 * 1px) ) / ( 1600 - 400 )
   );
  --font_u:calc( var(--font_size) * 1 ); 
  --font_body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif;

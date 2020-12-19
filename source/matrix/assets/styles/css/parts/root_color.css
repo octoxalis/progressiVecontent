@@ -9,7 +9,7 @@
 --c_hue_p:var(--hue_base);                              /* primary */
 --c_hue_i:calc( var(--hue_base) + 140);                /* inverse of primary color */
 --c_hue_s:calc( var(--hue_base) + {{C_o.HUE_S_n}});    /* secondary */
---c_hue_h:calc( var(--hue_base) + {{C_o.HUE_H_n}});    /* highlight */
+--c_hue_p:calc( var(--hue_base) + {{C_o.HUE_H_n}});    /* highlight */
 --c_hue_d:calc( var(--hue_base) + {{C_o.HUE_D_n}});    /* decor */
 --c_hue_l:calc( var(--hue_base) + {{C_o.HUE_L_n}});    /* link */
 
@@ -94,5 +94,40 @@
 --c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
 --c_highlight:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
+
+
+/* === ILITE === */
+
+--c_hi_off: 180;
+
+
+/* === FRONT === scheme: --c_ilite_OFFSET (1 underscore) */
+--c_ilite_0:   hsla( var(--c_hue_p)               var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_40:  hsla( calc( var(--c_hue_p) + 40 )  var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_60:  hsla( calc( var(--c_hue_p) + 60 )  var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_80:  hsla( calc( var(--c_hue_p) + 80 )  var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_120: hsla( calc( var(--c_hue_p) + 120 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_160: hsla( calc( var(--c_hue_p) + 160 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_200: hsla( calc( var(--c_hue_p) + 200 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_240: hsla( calc( var(--c_hue_p) + 240 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_280: hsla( calc( var(--c_hue_p) + 280 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_320: hsla( calc( var(--c_hue_p) + 320 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+--c_ilite_340: hsla( calc( var(--c_hue_p) + 340 ) var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+
+
+
+/* === BACKGROUND === scheme: --c_ilite__OFFSET (2 underscores) */
+--c_ilite__0:   hsla( var(--c_hue_p)               var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__180: hsla( calc( var(--c_hue_p) + 180 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+--c_ilite__300: hsla( calc( var(--c_hue_p) + 300 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.6 );
+
+
+--c_ilite_hi:   hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) /.4 );
+--c_ilite_lo:   hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_lo_4) /.4 );
+
+/* FIXED */
+--c_ilite_0_hi:  hsla( 0 var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
 
 }

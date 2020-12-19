@@ -97,19 +97,20 @@ content_s =>
         .charAt(0) === '#' ?  //: # for nonlink title
           content_o
           .title_s
-            .slice(1)    //: strip starting '#' char
+          .slice(1)    //: strip starting '#' char
         :
         F_o.codeUrl__s( content_o.title_s )
     const code_s =
       CODE_o
-        .highlight__s
+        .ilite__s
         (
           safe_s,
-          content_o.lang_s
+          content_o
+            .lang_s
         )
-    return `<pre data-id="code"><code data-id="code" class="language-${content_o.lang_s}">${code_s}</code></pre>
+    return `<pre data-id="code"><code data-id="code" data-lang="${content_o.lang_s}">${code_s}</code></pre>
 <div data-id="code_ref"><dl data-id="code_ref"><dt>${title_s}</dt>
-<dd><a href="https://prismjs.com" target="_blank" title="Highlighting provided by Prism.js">Prism</a></dd>
+<dd><a href="https://ilite.netlify.app" target="_blank" title="Highlighting by ilite.js">ilite</a></dd>
 </dl></div>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
   }
   ,
