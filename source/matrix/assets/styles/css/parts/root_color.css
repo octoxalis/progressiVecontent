@@ -48,7 +48,7 @@
 
 /* === PRIMARY === */
 
---c_prim_hi:hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_hi_4)/1);
+--c_prim_hi:hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_hi_4)/.9);
 --c_prim_ne:hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_ne)/1);
 --c_prim_lo:hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_lo_4)/1);
 

@@ -55,7 +55,7 @@ a:focus, a:hover{color:var(--c_link_hi)}
 mark[data-tag]{background:inherit}
 #preferences,#preferences > button,#preferences > button *{background:transparent}
 a::before,a::after{background:var(--c_link_ne)}
-section[data-slot_n]{background:var(--c_sec_hi_3)}
+section[data-slot_n]{background:var(--c_sec_hi)}
 button[data-slot_s]{background:var(--c_prim_hi_2)}
 [data-id="note_txt"] > button{background:var(--c_decor_hi_op_lo)}
 h1{--size_ratio:1.6}
