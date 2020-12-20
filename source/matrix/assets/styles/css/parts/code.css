@@ -39,7 +39,7 @@ __                     {padding:{{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.
 
 code[data-id="code"],
 dl[data-id="code_ref"],
-__                     {width:125vw}  /* !!!! full width at scaled .8 */
+__                     {width:100vw}  /* !!!! full width at scale .8 */
 
 
 __                     {width:100%}
@@ -74,7 +74,9 @@ __                     {fill:var(--c_prim_hi_2)}
 
 
 code[data-id="code"],
-__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_3)/1)}
+__                     {color: hsla(var(--c_hue_p) var(--c_sat_hi_2) var(--c_lum_lo_4)/1)}
+code[data-id="code"],
+__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_2)/.9)}
 
 
 code,
@@ -98,12 +100,15 @@ __                     {white-space:pre}
 __                     {cursor:pointer}
 
 
+/*
 code[data-id="code"],
 __                     {box-shadow:{{C_o.BOX_SHADOW}}}
+*/
 
 
+/*
 code[data-id="code"],
-__                     {transform:scale( .8 )}  /* !!!! full width at width 125vw */
+__                     {transform:scale( .8 )}*/  /* !!!! full width at width 125vw */
 
 code[data-id="code"],
 __                     {transform-origin:top left}

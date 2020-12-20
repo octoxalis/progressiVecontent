@@ -99,7 +99,7 @@ module.exports =
   //=== CSS constants to avoid calc() ===  
   HUE_SET_n: 1,         //: allow visitor color palette setting
   
-  HUE_P_n:  220,        //: theme PRIMARY color in range [0...359]
+  HUE_P_n:  25,         //: theme PRIMARY color in range [0...359]
   HUE_S_n: -10,         //: theme SECONDARY color offset from primary color
   HUE_H_n:  20,         //: theme HIGHLIGHT color offset from primary color
   HUE_D_n: -20,         //: theme DECORATIVE color offset from primary color
@@ -166,7 +166,7 @@ module.exports =
   SLIDER_HEIGHT: 5 + 'em',
   IMG_UNFOLD:    5 + 'em',
 
-  FONT_BODY: `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', Helvetica Neue, 'Fira Sans', sans-serif`,
-  FONT_MONO: `system-ui, -apple-system, BlinkMacSystemFont, 'Courier New', Courier, 'Ubuntu Mono', 'Liberation Mono', monospace`,
+  FONT_BODY: `'Cantarell Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Helvetica Neue, sans-serif`,
+  FONT_MONO: `'JetBrains Mono Light', system-ui, -apple-system, BlinkMacSystemFont, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace`,
 
 }

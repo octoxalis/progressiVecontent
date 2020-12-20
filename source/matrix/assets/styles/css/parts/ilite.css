@@ -19,7 +19,7 @@ code
   width: 100vw;
   min-height: 100vh;
   color: hsla(var(--c_hue_h) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
-  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_3)/.9);
+  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_2)/.9);
   white-space: pre;
   overflow: auto;
 }
