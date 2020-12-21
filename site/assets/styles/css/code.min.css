@@ -27,7 +27,7 @@ code[data-id="code"] li
 code[data-id="code"] li:hover
 {
  filter: contrast(2);
- background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_1)/.5);
+ background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_1)/.7);
 }
 code[data-id="code"] li::marker
 {

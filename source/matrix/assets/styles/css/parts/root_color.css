@@ -91,8 +91,8 @@
 --c_link_ne:hsla( var(--c_hue_l) var(--c_sat_hi_4) var(--c_lum_lo_2)/.5);
 
 
---c_highlight_hi:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
---c_highlight:hsla( var(--c_hue_p) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
+--c_highlight_hi:hsla( var(--c_hue_s) var(--c_sat_hi_4) var(--c_lum_hi_2)/1);
+--c_highlight:hsla( var(--c_hue_s) var(--c_sat_hi_4) var(--c_lum_lo_2)/1);
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
 
 

@@ -99,7 +99,7 @@ module.exports =
   //=== CSS constants to avoid calc() ===  
   HUE_SET_n: 1,         //: allow visitor color palette setting
   
-  HUE_P_n:  25,         //: theme PRIMARY color in range [0...359]
+  HUE_P_n:  190,        //: theme PRIMARY color in range [0...359]
   HUE_S_n: -10,         //: theme SECONDARY color offset from primary color
   HUE_H_n:  20,         //: theme HIGHLIGHT color offset from primary color
   HUE_D_n: -20,         //: theme DECORATIVE color offset from primary color
