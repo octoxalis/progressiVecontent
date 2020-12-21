@@ -26,7 +26,7 @@ __                     {content:"";
 /*=== LIST-STYLE ===*/
 
 dl,
-ol,
+ol:not([class="i_code"]),
 ul,
 __                     {list-style:none}
 

@@ -83,7 +83,8 @@ content_s =>
       (
         content_s,
         '_code_block'
-        )
+      )
+    //;console.log( content_o )
     let safe_s =
       content_a[1]
         //?? .replace
@@ -92,24 +93,27 @@ content_s =>
         //??   )
       .trim()
     const title_s =
-    content_o
-        .title_s
-        .charAt(0) === '#' ?  //: # for nonlink title
-          content_o
+      content_o
           .title_s
-          .slice(1)    //: strip starting '#' char
-        :
-        F_o.codeUrl__s( content_o.title_s )
+          .charAt(0) === '#' ?  //: # for nonlink title
+            content_o
+              .title_s
+              .slice(1)    //: strip starting '#' char
+          :
+          F_o
+            .codeUrl__s( content_o.title_s )
     const code_s =
       CODE_o
         .ilite__s
         (
           safe_s,
           content_o
-            .lang_s
+            .lang_s,
+          content_o
+            .spot_a,
         )
     return `<pre data-id="code"><code data-id="code" data-lang="${content_o.lang_s}">${code_s}</code></pre>
-<div data-id="code_ref"><dl data-id="code_ref"><dt>${title_s}</dt>
+<div data-id="code_ref"><dl data-id="code_ref"><dt>Source: ${title_s}</dt>
 <dd><a href="https://ilite.netlify.app" target="_blank" title="Highlighting by ilite.js">ilite</a></dd>
 </dl></div>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
   }

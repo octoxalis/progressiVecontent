@@ -24,16 +24,21 @@ module.exports =
   ilite__s
   (
     code_s,
-    lang_s
+    lang_s,
+    spot_a
   )
   {
+    const lang_o =
+      lang__o( `.${lang_s}` )
+        .lang_o
+    lang_o.hiline_a =
+      spot_a
     return (
       I_o
         .ilite__s
         (
           code_s,
-          lang__o( `.${lang_s}` )
-            .lang_o
+          lang_o
         )
     )
   }

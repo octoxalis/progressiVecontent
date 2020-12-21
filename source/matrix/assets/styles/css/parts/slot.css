@@ -169,7 +169,7 @@ h5,
 h6,
 p,
 ul,
-ol,
+ol:not([class="i_code"]),
 #preferences,
 __                     {padding:2px}
 

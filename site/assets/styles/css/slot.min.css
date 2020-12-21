@@ -34,7 +34,7 @@ a::before,a::after{right:0}
 #preferences > button{margin:0.5rem}
 button[data-slot_s]{margin-left:-50vw;margin-right:-50vw} 
 h1,h2,h3,h4,h5,h6,p{margin-bottom:0.5rem}
-h1,h2,h3,h4,h5,h6,p,ul,ol,#preferences{padding:2px}
+h1,h2,h3,h4,h5,h6,p,ul,ol:not([class="i_code"]),#preferences{padding:2px}
 #preferences > button,button[data-slot_s],.close_icon{padding:0.5rem}
 [data-slot_s] > b{flex-basis:100%}
 #preferences{border:1px solid var(--c_prim_ne)}

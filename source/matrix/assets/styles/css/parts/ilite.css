@@ -3,62 +3,57 @@
   --LINE_BORDER_n: 3px;
 }
 
-/*
-code,
-code *,
-__                     {font-family:var(--FONT_MONO)}
-*/
-
 
 /* === LAYOUT === */
-code
-{  
+code[data-id="code"]
+{
   display: block;
   margin: 0;
   padding: 0 0 0 1rem;
   width: 100vw;
   min-height: 100vh;
-  color: hsla(var(--c_hue_h) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
-  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_2)/.9);
+  color: hsla(var(--c_hue_p) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
+  background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_lo_2)/.9);
   white-space: pre;
   overflow: auto;
 }
 
-code > ol
+code[data-id="code"] > ol
 {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-code li
+code[data-id="code"] li
 {
   border-bottom: var(--LINE_BORDER_n) solid transparent;
 }
 
-code li:hover
+code[data-id="code"] li:hover
 {
   filter: contrast(2);
-  background: hsla(var(--c_hue_h) var(--c_sat_lo_2) var(--c_lum_lo_1)/.9);
+  background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_1)/.5);
 }
 
-code li::marker
+code[data-id="code"] li::marker
 {
   display: inline-block;
   -webkit-select: none;
   font-size: 80%;        /* for 4 digits number */
-  color: var(--c_ilite_hi);
+  color: var(--c_ilite_lo);
   opacity: .7;
 }
 
 
-code li.i_hi
+code[data-id="code"] li.i_hi
 {
-  background: hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_2)/1);
+  background: hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_2)/.2);
 }
 
-code li.i_hi::marker
+code[data-id="code"] li.i_hi::marker
 {
-  color: hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
+  color: hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
 }
 
 
@@ -66,9 +61,9 @@ code li.i_hi::marker
 __                     {font-style:normal}
 
 
-.i_spot
+code[data-id="code"] li.i_spot
 {
-  border-bottom: var(--LINE_BORDER_n) solid hsla(calc( var(--c_hue_h) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
+  border-bottom: var(--LINE_BORDER_n) solid hsla( calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_4)/1);
 }
 
 .i_spot:hover
@@ -116,7 +111,7 @@ __                     {color:var(--c_ilite_0)}
 __                     {color:var(--c_ilite_0_hi)}
 
 .i_temp,
-__                     {color:red}
+__                     {color:red}    /*... TEMPORARY */
 
 /* === BACKGROUND === */
 
@@ -130,7 +125,7 @@ __                     {background:var(--c_ilite__300)}
 
 .i_apos,
 .i_quot,
-__                     {background:var(--c_ilite__180)}
+__                     {background:var(--c_ilite__180); opacity:.6}
 
 
 
