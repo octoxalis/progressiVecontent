@@ -219,7 +219,7 @@ JS_o
 
     ante_a:    //!!! KEEP ORDER
       [
-        'op_b',
+        'op',
         'res_b',    //: see I_o.BOUND_s
         'loop_b',
         'cont_b',

@@ -6,7 +6,7 @@ const CONF_o = require( '../../configure.js' )
 
 const U_o =
 {
-  //~~ dev_b: true,   //: development/production switch
+  //~~dev_b: true,   //: development/production switch
   dev_b: false,  //!!!! REMEMBER TO ADJUST SERVICE_PATH_s & SERVICE_SCOPE_s
   url_s: null,
 
