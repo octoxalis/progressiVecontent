@@ -84,7 +84,6 @@ content_s =>
         content_s,
         '_code_block'
       )
-    //;console.log( content_o )
     let safe_s =
       content_a[1]
         //?? .replace

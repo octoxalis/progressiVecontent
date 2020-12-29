@@ -1,75 +1,37 @@
 :root
 {
-  --LINE_BORDER_n: 3px;
-}
+  --line_border_n: 3px;
+
+  --c_hi_off: 10;
+
+/* === FRONT === scheme: --c_ilite_OFFSET (1 underscore) */
+  --c_ilite_0:   hsla( var(--c_hue_p)               var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_40:  hsla( calc( var(--c_hue_p) + 40 )  var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_60:  hsla( calc( var(--c_hue_p) + 60 )  var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_80:  hsla( calc( var(--c_hue_p) + 80 )  var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_120: hsla( calc( var(--c_hue_p) + 120 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_160: hsla( calc( var(--c_hue_p) + 160 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_200: hsla( calc( var(--c_hue_p) + 200 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_240: hsla( calc( var(--c_hue_p) + 240 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_280: hsla( calc( var(--c_hue_p) + 280 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_320: hsla( calc( var(--c_hue_p) + 320 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
+  --c_ilite_340: hsla( calc( var(--c_hue_p) + 340 ) var(--c_sat_hi_4) var(--c_lum_lo_1) /1 );
 
 
-/* === LAYOUT === */
-code[data-id="code"]
-{
-  display: block;
-  margin: 0;
-  padding: 0 0 0 1rem;
-  width: 100vw;
-  min-height: 100vh;
-  color: hsla(var(--c_hue_p) var(--c_sat_hi_2) var(--c_lum_hi_4)/1);
-  background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_lo_2)/.9);
-  white-space: pre;
-  overflow: auto;
-}
 
-code[data-id="code"] > ol
-{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+/* === BACKGROUND === scheme: --c_ilite__OFFSET (2 underscores) */
+  --c_ilite__0:   hsla( var(--c_hue_p)               var(--c_sat_hi_4) var(--c_lum_lo_2) /.4 );
+  --c_ilite__100: hsla( calc( var(--c_hue_p) + 100 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.4 );
+  --c_ilite__180: hsla( calc( var(--c_hue_p) + 180 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.4 );
+  --c_ilite__300: hsla( calc( var(--c_hue_p) + 300 ) var(--c_sat_hi_4) var(--c_lum_lo_2) /.4 );
 
-code[data-id="code"] li
-{
-  border-bottom: var(--LINE_BORDER_n) solid transparent;
-}
+  --c_ilite_hi: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_hi_4) /.4 );
+  --c_ilite_lo: hsla( var(--c_hue_p) var(--c_sat_ne) var(--c_lum_lo_4) /.4 );
 
-code[data-id="code"] li:hover
-{
-  filter: contrast(2);
-  background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_1)/.7);
-}
-
-code[data-id="code"] li::marker
-{
-  display: inline-block;
-  -webkit-select: none;
-  font-size: 80%;        /* for 4 digits number */
-  color: var(--c_ilite_lo);
-  opacity: .7;
-}
-
-
-code[data-id="code"] li.i_hi
-{
-  background: hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_2)/.2);
-}
-
-code[data-id="code"] li.i_hi::marker
-{
-  color: hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
-}
-
-
-[class^="i_"],
-__                     {font-style:normal}
-
-
-code[data-id="code"] li.i_spot
-{
-  border-bottom: var(--LINE_BORDER_n) solid hsla( calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_lo_4)/1);
-}
-
-.i_spot:hover
-{
-  cursor: pointer;
-}
+/* FIXED */
+  --c_ilite_0_hi: hsla( 0 var(--c_sat_hi_4) var(--c_lum_hi_2) /1 );
+  --c_ilite_marker: hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_4)/1)}
 
 
 
@@ -96,7 +58,6 @@ __                     {color:var(--c_ilite_340)}
 .i_unit,  /*: CSS */
 .i_per,   /*: CSS */
 __                     {color:var(--c_ilite_80)}
-__                     {color:var(--c_ilite_100)}
 .i_loop,  /*: JS */
 __                     {color:var(--c_ilite_160)}
 .i_temp,  /*: JS */
@@ -104,14 +65,13 @@ __                     {color:var(--c_ilite_160)}
 .i_CHILD, /*: CSS */
 .i_attr,  /* HTML */
 __                     {color:var(--c_ilite_0)}
-
-
 .i_log,
 .i_reg,
 __                     {color:var(--c_ilite_0_hi)}
 
-.i_temp,
-__                     {color:red}    /*... TEMPORARY */
+li.i_hi::marker,
+__                     {color:var(--c_ilite_marker)}
+
 
 /* === BACKGROUND === */
 
@@ -119,22 +79,15 @@ __                     {color:red}    /*... TEMPORARY */
 .i_block_html,
 .i_line,
 __                     {background:var(--c_ilite_hi); opacity:.33}
-
 .i_num,
 __                     {background:var(--c_ilite__300)}
-
 .i_apos,
 .i_quot,
-__                     {background:var(--c_ilite__180); opacity:.6}
-
-
-
-.i_lit,  /*: JS */
+__                     {background:var(--c_ilite__180)}
+.i_lit,     /*: JS */
 .i_html,    /* NJK */
 .i_href,
 __                     {background:var(--c_ilite__100)}
 
-
-/* === BORDER === */
-.i_node,
-__                     {border-bottom: 1px solid var(--c_ilite_0)}
+li.i_hi,
+__                     {background:hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_ne)/.4)}

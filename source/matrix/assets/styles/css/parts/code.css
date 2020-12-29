@@ -1,49 +1,53 @@
-/*=== SLOT ===*/
+/*=== CODE ===*/
 
 div[data-id="code_ref"],
 __                     {display:grid;place-items:center}
 
+code,
+__                     {display:block}
+code li::marker,
+__                     {display:inline-block;
+                        -webkit-select: none}
 
+code > ol,
 dl[data-id="code_ref"],
 __                     {display:flex}
 
+code > ol,
+__                     {flex-direction: column}
 
-code[data-id="code"],
+code,
 dl[data-id="code_ref"],
 __                     {position:relative}
 
-
-__                     {position:absolute}
-
-
-__                     {top:0}
-
-
-
-__                     {left:0}
-
-code[data-id="code"],
+code,
 dl[data-id="code_ref"],
 __                     {left:50%;right:50%}/* !!!! full width */
 
-code[data-id="code"],
+code,
+__                     {margin:0}
+
+code,
+__                     {padding-left:1rem}
+
+code,
 dl[data-id="code_ref"],
 __                     {margin-left:-{{C_o.HALF_WIDTH}};margin-right:-{{C_o.HALF_WIDTH}}}    /* !!!! full width but keep margins for scaling */
 
-code[data-id="code"],
+code,
 __                     {margin-top:{{C_o.PAD_8}}}
 
 div[data-id="code_ref"],
 __                     {margin-bottom: {{C_o.PAD_8}}}
 
-code[data-id="code"],
+code,
 __                     {padding:{{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.PAD_4}}}
 
 dl[data-id="code_ref"],
 __                     {padding:0 {{C_o.PAD_2}}}
 
-
-code[data-id="code"],
+code,
+code ol,
 dl[data-id="code_ref"],
 __                     {width:100vw}  /* !!!! full width */
 
@@ -51,74 +55,59 @@ __                     {width:100vw}  /* !!!! full width */
 dl[data-id="code_ref"] > dt,
 __                     {flex-basis:95%}
 
+code,
+__                     {white-space: pre;
+                        overflow: auto}
 
+code li,
+__                     {border-bottom: var(--line_border_n) solid transparent}
+.i_spot,
+__                     {border-bottom: var(--line_border_n) solid hsla(calc( var(--c_hue_p) + var(--c_hi_off) ) var(--c_sat_hi_2) var(--c_lum_hi_4)/1)}
+.i_node,
+__                     {border-bottom: 2px solid var(--c_ilite_marker)}
 
-__                     {height:auto}
+.i_uv_hi,
+__                     {outline: 2px solid var(--c_ilite_marker)}
 
-
-
-__                     {border-left:8px solid var(--c_box_lo)}
-
-
-__                     {border-radius:8px}
-
-
-__                     {cursor:pointer}
-
-
-__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_ne)}
-
-
-
-__                     {color:var(--c_prim_lo_4)}
-
-
-__                     {stroke:none}
-
-
-
-__                     {fill:var(--c_prim_hi_2)}
-
-
-code[data-id="code"],
+code,
 __                     {color: hsla(var(--c_hue_p) var(--c_sat_hi_2) var(--c_lum_lo_4)/1)}
-code[data-id="code"],
-__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_hi_2)/.9)}
+code li::marker,
+__                     {color: var(--c_ilite_hi);
+                        opacity: .8}
 
+code,
+__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_ne)/1)}
+code li:hover,
+__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_ne)/.9)}
 
 code,
 code *,
 __                     {font-family:var(--font_mono)}
 
+code li::marker,
+__                     {font-size:80%}        /* for 4 digits number */
 
-__                     {font-size:inherit}
-
-
-__                     {font-weight:500}
-
-
-__                     {text-transform:uppercase}
+[class^="i_"],
+__                     {font-style:normal}
 
 p > code,
 pre > code,
 __                     {white-space:pre}
 
-
+.i_spot:hover,
 __                     {cursor:pointer}
 
+code li:hover,
+__                     {filter: contrast(2)}
+.i_uv_hi,
+__                     {filter: saturate(8)}
 
-/*
-code[data-id="code"],
-__                     {box-shadow:{{C_o.BOX_SHADOW}}}
-*/
-
-
-/*
-code[data-id="code"],
-__                     {transform:scale( .8 )}*/  /* !!!! full width at width 125vw */
-
-code[data-id="code"],
+code,
 __                     {transform-origin:top left}
 
-__                     {transition:transform .2s ease}
+.i_uv_hi,
+__                     {animation: blink 3s infinite}
 
+@keyframes blink       {0%   { opacity:0}
+                        20%  { opacity:1} 
+                        100% { opacity:1}}

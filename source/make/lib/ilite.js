@@ -28,6 +28,25 @@ const I_o =
 
 
 
+  mark__re:  //: 
+  (
+    regex_s
+  ) =>
+  {
+    let mark_s =
+      `${I_o.MARK_s}${regex_s}${I_o.MARK_s}`
+    return (
+      new RegExp
+      (
+        `${mark_s}([₀-₉]+)${mark_s}`,
+        'gms'
+      )
+    )
+  }
+  ,
+
+
+
   subscript__s:
   (
     code_s,
@@ -74,7 +93,7 @@ const I_o =
 
 
 
-  exit__s:
+  exit__a:
   (
     code_s,
     regex_s,
@@ -118,21 +137,16 @@ const I_o =
 
 
 
-  enter__s:
+  enter__a:
   (
     code_s,
     regex_s,
     aside_a,
   ) =>
   {
-    let mark_s =
-      `${I_o.MARK_s}${regex_s}${I_o.MARK_s}`
-    let regex_re =
-      new RegExp
-      (
-        `${mark_s}([₀-₉]+)${mark_s}`,
-        'gms'
-      )
+    const regex_re =
+      I_o
+        .mark__re( regex_s )
     ;[ ...code_s.matchAll( regex_re ) ]
       .forEach
       (
@@ -165,7 +179,7 @@ const I_o =
             enter_s =
               I_o
                 .lang_o
-                [ `${regex_s}__s` ]( enter_s )
+                [ `${regex_s}__s` ]( enter_s, exit_s )
           }
           code_s =
             code_s
@@ -182,7 +196,7 @@ const I_o =
 
 
 
-  aside__s:  //: (exit|enter) (strings|comments)
+  aside__a:  //: (exit|enter) (strings|comments)
   (
     code_s,
     aside_o,   //: empty when 'exit'
@@ -196,21 +210,21 @@ const I_o =
         (
           regex_s =>
           {
-            if (!aside_o[`${regex_s}`])
+            if (!aside_o[ regex_s ])
             {
-              aside_o[`${regex_s}`] = []
+              aside_o[ regex_s ] = []
             }
             let return_a =
               I_o
-                [`${way_s}__s`]
+                [`${way_s}__a`]
                 (
                   code_s,
                   regex_s,
-                  aside_o[`${regex_s}`],
+                  aside_o[ regex_s ],
                 )
             code_s =
               return_a[0]
-            aside_o[`${regex_s}`] =
+            aside_o[ regex_s ] =
               return_a[1]
           }
         )
@@ -259,7 +273,7 @@ const I_o =
   step__s:
   (
     code_s,
-    order_s,    //:
+    order_s,    //: ante || post
   ) =>
   {
     I_o
@@ -303,7 +317,6 @@ const I_o =
                   .lang_o
                   .regex_o
                   [ `${regex_s}_re` ]  
-            //;console.log( `${regex_s}: ${regex_re}` )
             code_s
               .split( regex_re )
               .forEach
@@ -389,9 +402,9 @@ const I_o =
     code_s =
       code_s
         .trim()
-    const exit_o =
+    const exit_a =
       I_o
-        .aside__s
+        .aside__a
         (
           code_s,
           {},      //: aside_o
@@ -401,22 +414,22 @@ const I_o =
       I_o
         .step__s
         (
-          exit_o[0],
+          exit_a[0],
           'ante'
         )
-    const enter_o =
+    const enter_a =
       I_o
-        .aside__s
+        .aside__a
         (
           code_s,
-          exit_o[1],
+          exit_a[1],
           'enter'
         )
     code_s =
       I_o
         .step__s
         (
-          enter_o[0],
+          enter_a[0],
           'post'
         )
     //------------------------

@@ -180,27 +180,23 @@ JS_o
         //=== aside ===
         line_re:  /((?:^|\s)\/\/(.+?)$)/gms,   //: //Comment
         block_re: /(\/\*.*?\*\/)/gms,          //: /*Comment*/
-        reg_re:   /(\/.+\/[gimsu]+)/g,         //: RegExp
+        reg_re:   /\b(\/.+\/[gimsu]+)\b/g,     //: RegExp
         lit_re:   /(`[^\u0060]*`)/gms,         //: `template String`
         apos_re:  /('[^\u0027]*')/g,           //: 'String'
         quot_re:  /("[^\u0022]*")/g,           //: "String"
-        //=== step ===
+        //=== ante ===
+        op_a:    JS_o.operator_a,
         res_a:   JS_o.reserved_a,
         loop_a:  JS_o.loop_a,
         cont_a:  JS_o.control_a,
         type_a:  JS_o.type_a,
         dec_a:   JS_o.declare_a,
         prop_a:  JS_o.property_a,
-        group_a: JS_o.group_a,
         punct_a: JS_o.punctuation_a,
-        op_a:    JS_o.operator_a,
-      
-        num_re:  /\b([-+]?[0-9]*\.?[0-9]+)\b/g,        //: Number
-        //: user defined
-        temp_re: /(\{\{[^\}]+?\}\})/gms,               //: NJK template variable
-        uv_re:   /\b(\w+_{1,2}[abcefnorsUvY]e?)\b/g,   //: user variable (e.g. 'name_s')
         log_re:  /(console\s*\.[^(]+)/gms,             //: console
+        num_re:  /\b([-+]?[0-9]*\.?[0-9]+)\b/g,        //: Number
         //=== post ===
+        uv_re:   /\b(\w+_{1,2}[abcefnorsUvY]e?)\b/g,   //: user variable (e.g. 'name_s')
       }
     ,
 
@@ -226,16 +222,17 @@ JS_o
         'type_b',
         'dec_b',
         'prop_b',
-        'temp',
         'log',
         'num',
       ]
-    ,
-
-
-
-    post_a:    //!!! KEEP ORDER
-      []
+      ,
+      
+      
+      
+      post_a:    //!!! KEEP ORDER
+      [
+        'uv',
+      ]
     ,
 
 
@@ -248,34 +245,68 @@ JS_o
     // === CALLBACK ===
     lit__s:
     (
-      code_s
+      code_s,
+      aside_s
     ) =>
     {
       let lit_s = ''
+      const split_a =
       code_s
         .split
         (
-          /(\$\{[^\}]+\})/gms
+          /(\$\{[^\{\}]+?\})/gms
         )
+      if ( split_a.length < 2 )
+      {
+        return code_s
+      }
+
+      split_a
         .forEach
         (
-          split_s =>
+          temp_s =>
           {
             lit_s +=
-              split_s
-                .charAt( 0 ) === '\u0024'
+              temp_s
+                .charAt( 0 ) === '$'
                   ?
-                    `<${I_o.TAG_s} class="i_temp">${split_s}</${I_o.TAG_s}>`
+                    JS_o
+                      .lang_o
+                      .temp__s
+                      (
+                        temp_s,
+                        aside_s
+                      )
                   :
-                    split_s
+                    temp_s
           }
         )
         return lit_s
     }
     ,
 
+
+
+    temp__s:    //: from lit callback
+    (
+      temp_s, 
+      aside_s
+    ) =>
+    {
+      const regex_re =
+        I_o
+          .mark__re( 'uv' )
+      temp_s =
+        temp_s
+          .replaceAll
+          (
+            regex_re,
+            `<${I_o.TAG_s} class="i_uv">${aside_s}</${I_o.TAG_s}>`
+          )
+      return `<${I_o.TAG_s} class="i_temp">${temp_s}</${I_o.TAG_s}>`
+    }
+    ,
   }
 
 
-
-  module.exports = JS_o
+module.exports = JS_o
