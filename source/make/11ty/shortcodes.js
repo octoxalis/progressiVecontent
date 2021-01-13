@@ -3,6 +3,7 @@ const FIL_o = require('fs-extra')
 const REPLACE__s = require( '../lib/block_replace.js' )
 const SPLIT__a   = require( '../lib/block_split.js' )
 const CODE_o     = require( '../lib/code.js' )
+const REX_o      = require( '../lib/regex.js' )
 const C_o        = require( '../data/C_o.js' )
 const F_o        = require( '../data/F_o.js' )
 const S_o        = require( '../data/S_o.js' )
@@ -39,13 +40,25 @@ const CODES_o =
     let data_s = ''
     if ( legend_a )
     {
-      legend_a.forEach( ( at_s, at_n ) =>
-        {
-          const tag_s = !at_n ? 'b' : 'i'  //: 1st entry: name, 2nd entry as title
-          data_s += `<${tag_s}>${at_s}</${tag_s}>`
-          legend_s += `${at_s}`
-          if ( at_n < legend_a.length - 1 ) legend_s += ' - '
-        } )
+      legend_a
+        .forEach
+        (
+          (
+            at_s,
+            at_n
+          ) =>
+          {
+            const tag_s =  //: 1st entry: name, 2nd entry as title
+              !at_n
+              ?
+                'b'
+              :
+                'i'
+            data_s += `<${tag_s}>${at_s}</${tag_s}>`
+            legend_s += `${at_s}`
+            if ( at_n < legend_a.length - 1 ) legend_s += ' - '
+          }
+        )
     }
     return `<${C_o.NOTE_TAG_s} data-id="note_img"><button aria-label="unfold image" data-legend="${legend_s}"><label data-id="img_legend">${data_s}</label></button><${C_o.NOTE_CONTENT_TAG_s} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG_s}></${C_o.NOTE_TAG_s}>`
   }
@@ -62,7 +75,9 @@ note_link__s:
     let link_s = `<${C_o.NOTE_LINK_TAG_s} class="note_link_a">`
     link_a.forEach( atlink_s =>
       {
-      let [ act_s, icon_s, ...arg_a ] = atlink_s.split( ',' )
+      let [ act_s, icon_s, ...arg_a ] =
+        atlink_s
+          .split( ',' )
       let parameter_s = ''
       icon_s = icon_s.trim()
       arg_a.forEach( arg_s => parameter_s += `${arg_s.trim()},` )
@@ -74,7 +89,7 @@ note_link__s:
   ,
   
   
-//#code=01
+//code=01
 code_block__s:
 content_s =>
   {
@@ -94,13 +109,14 @@ content_s =>
     const title_s =
       content_o
           .title_s
-          .charAt(0) === '#' ?  //: # for nonlink title
+          .charAt(0) === '#'  //: # for nonlink title
+          ?
             content_o
               .title_s
               .slice(1)    //: strip starting '#' char
           :
-          F_o
-            .codeUrl__s( content_o.title_s )
+            F_o
+              .codeUrl__s( content_o.title_s )
     const code_s =
       CODE_o
         .ilite__s
@@ -117,34 +133,61 @@ content_s =>
 </dl></div>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
   }
   ,
-//#code=01
+//code=01
 
   
 
   code__s:
   (
-    path_s    //: 'path/to/file.ext#index_s'
+    path_s    //: 'path/to/file.ext#index_s', index_s is empty for full file
     ) =>
     {
-    const LANDMARK_s = '\\/\\/#code='
     const [ file_s, index_s ] =
-    path_s
+      path_s
         .split( '#' )
-    const code_re =
-    new RegExp( `${LANDMARK_s}${index_s}([\\s\\S]*?)${LANDMARK_s}${index_s}` )
     const source_s =
-      FIL_o
-        .readFileSync
-        (
-          file_s,
-          'utf8',
-          'r'
-        )
-        const code_a = source_s.match( code_re )
-    return code_a ?
-    code_a[1]
+    FIL_o
+      .readFileSync
+      (
+        file_s,
+        'utf8',
+        'r'
+      )
+    if ( index_s === '' )    //: keep full file
+    {
+      return source_s
+    }
+    //>
+    const CODE_TAG_s =
+      `
+      @code     //: code tag
+      =         //: code ID delimiter
+      `
+    const smRE_o =
+      REX_o
+        .new__re( 'sm' )    //: non-global regex
+    const code_re =
+      smRE_o
+      `
+      ${CODE_TAG_s}${index_s}
+      (       //: open capture group
+      [       //: open char range
+      \s\S    //: anything
+      ]       //: close char range
+      *?      //: non-greedy...
+      )       //: close capture group
+      ${CODE_TAG_s}${index_s}
+      `
+    const code_a =
+      source_s
+        .match( code_re )
+    return (
+      code_a
+      ?
+        code_a[1]
       :
-      ''
+        ''
+      )
     }
 ,
 

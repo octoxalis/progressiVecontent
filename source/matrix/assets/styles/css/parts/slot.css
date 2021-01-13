@@ -21,6 +21,7 @@ __                     {display:none}
 section,
 article,
 .close_icon,
+article > p:last-of-type::after,
 __                     {display:grid;place-items:center}
 
 
@@ -55,6 +56,7 @@ __                     {margin:0}
 
 
 #preferences,
+article > p:last-of-type::after,
 __                     {margin:{{C_o.PAD_4}} 0}
 
 
@@ -160,6 +162,8 @@ h6,
 p,
 __                     {margin-bottom:{{C_o.PAD_2}}}
 
+article > p:last-of-type::after,
+__                     {margin-bottom:{{C_o.PAD_8}}}
 
 h1,
 h2,
@@ -322,20 +326,15 @@ a::before,
 a::after,
 __                     {content:''}
 
+/*article:not([data-slot_s="contents"])::after,*/
+article > p:last-of-type::after,
+__                     {content:'◻◻◻'}
 
 a,
 [data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {text-decoration:none}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
-__                     {text-transform:uppercase}
-
-
-/*
-article::after,
-__                     {content:'◻'}
-*/
 
 
 button[data-slot_s],
@@ -349,12 +348,14 @@ __                     {font-style:italic}
 
 #preferences > button:hover,
 __                     {background:{{C_o.BG_FX_s}};
-                        filter:{{C_o.SAT_FX_s}}}
+filter:{{C_o.SAT_FX_s}}}
 
 button[data-slot_s]:hover,
 __                     {background:{{C_o.BG_FX_s}}}
 
 
+[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+__                     {text-transform:uppercase}
 
 a::before,
 a::after,

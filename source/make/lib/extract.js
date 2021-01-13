@@ -1,173 +1,328 @@
-const FIL_o = require('fs-extra')
+const FIL_o = require( 'fs-extra' )
+const REX_o = require( './regex.js' )
+//?? const LAB_o = require( '../data/topics.js' )
+
+const FILE_DELIM_s = '\n'
+const WORDS_DELIM_s = ' '
+const WORDS_CONCAT_s = '_'
 
 const EXT_o = Object.create( null )
 
-const LABELS_a =
-  [
-    'binary number',
-    'bits',
-    'computer architectures',
-    'digital electronics',
-    'binary search algorithm',
-    'search algorithm',
-    'computing',
-    'values',
-    'bit',
-    'basic unit of information',
-    'binary',
-    'telecommunications',
-    'argument',
-    'data sets',
-    'procedure',
-    'decryption',
-    'encryption',
-    'cryptography',
-    'cipher',
-    'partitioned data sets',
-    'subroutines',
-    'pre-written code',
-    'software development',
-    'computer programs',
-    'values',
-    'non-volatile resources',
-    'objects',
-    'classes',
-    'type',
-    'prototype-based programming',
-    'object-oriented programming',
-    'constructor',
-    'instantiating',
-    'code library',
-  ]
+
+//!!! double slash for template String
+EXT_o.ARRAY_s =
+  `       //: JS Array declaration
+  \\s*?   //: optional space, non-greedy
+  (       //: open capture group
+  \\[     //: opening Array bracket
+  \\s*?   //: optional space, non-greedy
+  [       //: open char range
+  ^\\]    //: everything except close Array bracket
+  ]       //: close char range
+  +?      //: 1 or more chars in that range, non-greedy
+  \\s*?   //: optional space, non-greedy
+  \\]     //: closing Array bracket
+  )       //: close capture group
+  `
+EXT_o.LINE_s =
+  `
+  (       //: open capture group
+  [       //: open char range
+  \\s\\S  //: anything
+  ]       //: close char range
+  *?      //: non-greedy...
+  )       //: close capture group
+  \\n     //: ... up to a new line
+  `
+EXT_o.TITLE_s =
+  `
+  ^       //: start of line
+  :       //: title delimiter
+  (       //: open capture group
+  [       //: open char range
+  ^:      //: word and space chars
+  ]       //: close char range
+  +?      //: non-greedy...
+  )       //: close capture group
+  :       //: title delimiter
+  `
+EXT_o.RANK_n =
+  `
+  \\s*?   //: optional space, non-greedy
+  (       //: open capture group
+  -?      //: optional minus
+  [       //: open char range
+  \\d     //: digit
+  ]       //: close char range
+  +?      //: non-greedy...
+  )       //: close capture group
+  \\s*?   //: optional space, non-greedy
+  ,       //: object properties separator
+  `
+EXT_o.SLOT_s =
+  `
+  \\s*?   //: optional space, non-greedy
+  (?:'|") //: string delimiter
+  (       //: open capture group
+  [       //: open char range
+  \\w     //: word char
+  ]       //: close char range
+  +?      //: non-greedy...
+  )       //: close capture group
+  (?:'|") //: string delimiter
+  `
+
+EXT_o.TAG_s =
+  `
+  ~°           //: opening word delimiter
+  (            //: open capture group
+  [            //: open capture group
+  \\s\\S       //: anything
+  ]            //: close capture group
+  *?           //: non-greedy
+  )            //: close capture group
+  °~           //: closing word delimiter
+  `
 
 
-
-EXT_o.index_s = ''
-
-
-
-EXT_o.randInt__n =  //:- In range inclusive Integer number generator
+EXT_o.concat__s =
 (
-  low_n,    //:- Integer
-  high_n    //:- Integer
+  array_s    //: front matter Array (topics or words)
 ) =>
-  Math.floor( Math.random() * ( Math.floor( high_n ) - low_n + 1 ) ) + low_n
-
-
-
-EXT_o.randLabel__a =    //: simulate labels in front-matter
-() =>
 {
-  const lineLabel_a = new Set()
-  let times_n = EXT_o.randInt__n( 3, 7 )
-  for ( let at_n = 0; at_n < times_n; ++at_n )
+  const array_a =
+    eval( array_s )
+  return (
+    array_a
+      .map
+      (
+        item_s =>
+          item_s
+            .replaceAll
+            (
+              WORDS_DELIM_s,
+              WORDS_CONCAT_s
+            )
+      )
+      .join( WORDS_DELIM_s )
+  )
+}
+
+
+
+EXT_o.docs__o =
+(
+  source_s    //: front matter + markdown (*.md file)
+) =>
+{
+  const docs_o =
+    {
+      rank_n: 0,
+      slot_s: '',
+      topics_s: '',
+      words_s: ''
+    }
+  const gRE_o =
+    REX_o
+      .new__re( 'g' )    //: global regex
+  const smRE_o =
+    REX_o
+    .new__re( 'sm' )    //: multiline regex
+
+  //: rank
+  const rank_re =
+    smRE_o
+      `
+      rank_n:     //: JS front matter Array
+      ${EXT_o.RANK_n}
+      `
+  const rank_a =
+    source_s
+      .match( rank_re )
+  if ( rank_a )
   {
-    lineLabel_a.add( LABELS_a[EXT_o.randInt__n( 1, LABELS_a.length - 1 )] )
+    docs_o.rank_n =
+      +rank_a[1]    //: Number cast
   }
-  //;console.log( lineLabel_a )
-  return Array.from( lineLabel_a )
-}
 
+  //: slot
+  const slot_re =
+    smRE_o
+      `
+      slot_s:     //: JS front matter Array
+      ${EXT_o.SLOT_s}
+      `
+  const slot_a =
+    source_s
+      .match( slot_re )
+  if ( slot_a )
+  {
+    docs_o.slot_s =
+      slot_a[1]
+  }
 
+  //: topics
+  const topics_re =
+    smRE_o
+    `
+    topics_a:     //: JS front matter Array
+    ${EXT_o.ARRAY_s}
+    `
+  let topics_a =
+    source_s
+      .match( topics_re )
+  if ( topics_a )
+  {
+    docs_o.topics_s =
+      EXT_o
+        .concat__s( topics_a[1] )
+  }
 
-EXT_o.toMarkdown__s =
-(
-  val_s,
-  slot_s,
-  rank_n
-) =>
-{
-  let labels_s = ''
-  const labels_a = EXT_o.randLabel__a()
-  labels_a.forEach( at_s => labels_s += `'${at_s}',` )
-  labels_s = `[${labels_s.slice( 0, -1 )}]`    //;console.log( labels_s )  //: trim last ,
-  const title_s = slot_s.replace( /_/g, ' ')
-  const text_s =
-    val_s
-      .replace( /<a href=[\s\S]*?>/g, '~°' )
-      .replace( /<\/a>/g, '°~' )
-      .replace( /<span[\s\S]*?>/g, '' )
-      .replace( /<\/span>/g, '' )
-  let buffer_s =
-`---js
-{
-  layout: 'parts/slot/slot.njk',
-  permalink: 'slots/${slot_s}.html',
-  rank_n: ${rank_n},
-  tags: [ 'notag' ],
-  title_s: '${slot_s.replace( /_/g, ' ')}',
-  labels_a: ${labels_s},
-}
----
-## ${title_s}
-
-${text_s}
-`
-  return buffer_s
-}
-
-
-
-EXT_o.toBuffer__s =
-(
-  buffer_s
-) =>
-{
-  return buffer_s
-    .replace( /---js[\s\S]*?---/g, '' )
-    .replace( /\s{1,2}?#{1,6}\s{1,2}?([\s\S]*?)\n/g, '~°$1°~' )  //: tag document title
-    .replace( /\n/g, ' ' )
-}
-
-
-
-EXT_o.extract__v =
-(
-  val_s,    //: slot content
-  key_s     //: slot_s = slot_n
-) =>
-{
-  const [ slot_s, slot_n ] = key_s.split( '=' )    //;console.log( `${slot_s} - ${slot_n}` )
-  const buffer_s = EXT_o.toMarkdown__s( val_s, slot_s, slot_n )
-  FIL_o.writeFile( `matter/content/${C_o.SLOTS_s}/${slot_s}.md`, buffer_s, error_o=>{/*console.log( error_o )*/})
-  EXT_o.index_s += `${EXT_o.toBuffer__s( buffer_s )}\n`
+  //: words
+  let words_s = ''
+  const words_re =
+    smRE_o
+    `
+    words_a:     //: JS front matter Array
+    ${EXT_o.ARRAY_s}
+    `
+  let words_a =
+    source_s
+      .match( words_re )
+  if ( words_a )    //: skip content without words (sys slots)
+  {
+    words_s +=
+      EXT_o
+        .concat__s( words_a[1] )
+    for
+    (
+      const word_a
+      of
+      source_s
+        .matchAll
+        (
+          gRE_o
+          `
+          ${EXT_o.TAG_s}
+          `
+        )
+    )
+    {
+      words_s +=
+        WORDS_DELIM_s
+        +
+        word_a
+            [1]
+            .replace    //:--=> will have to .replace( /WORDS_CONCAT_s/g, WORDS_DELIM_s ) LATER
+            (
+              gRE_o
+              `\s+?`,    //: multi space, non-greedy
+              WORDS_CONCAT_s
+            )
+    }
+    docs_o.words_s =
+      words_s
+  }
+  return docs_o
 }
 
 
 
 EXT_o.toIndex__v =
-() =>
+(
+  index_a
+) =>
 {
-  let label_a = []    //: simulate labels for each content (line)
-  for ( let atlabel_a of [...EXT_o.index_s.matchAll( /<i>([a-zA-Z]{6,8}[\s\S]*?)<\/i>/g )] )
-  {
-    if ( !atlabel_a[1].includes( ',') ) 
-    {
-      label_a.push( atlabel_a[1].replace( /\s/g, '_' ) )
-      ;console.log( atlabel_a[1] )
-    }
-  }
+  index_a
+    .sort
+    (
+      (
+        item_o,
+        other_o
+      ) =>
+      {
+        return (
+          item_o.rank_n
+          -
+          other_o.rank_n
+        )
+      }
+    )
   let text_s = ''
   let json_a = []
-  for ( let atline_a of [...EXT_o.index_s.matchAll( /([\s\S]*?)\n/g )] )    //: line delimiter
+  let index_n = 0
+  let rank_a =
+    new Set()
+  for
+  (
+    const atdoc_o
+    of
+    index_a
+  )
   {
-    let doc_n = 0    //: documents json_a
-    let doc_s = ''   //: document String
-    let words_a = []   //: document words Array
-    for ( let mark_a of [...atline_a[1].matchAll( /~°([\s\S]*?)°~/g )] )    //: word delimiter
+    if     //: exclude index, 404, sys slots, etc.
+    (
+      atdoc_o
+        .rank_n 
+      >=
+      0
+    )
     {
-      let word_s = `${mark_a[1].replace( / /g, '_' )} `  //: wich one is more accurate?
-      //--const word_s = text_s += `${mark_a[1]} `       //: wich one is more accurate?
-      text_s += word_s
-      word_s = word_s.trim()    //:--=> will have to .replace( /_/g, ' ' ) LATER
-      if ( doc_n++ ) words_a.push( word_s )
-      else doc_s = word_s
+      if
+      (
+        atdoc_o
+          .rank_n
+        >
+        index_n
+      )
+      {
+        index_n =
+          atdoc_o
+            .rank_n
+      }
+      if
+      (
+        rank_a
+          .has
+          (
+            atdoc_o
+              .rank_n
+          )
+      )
+      {
+        console.log( `ERROR: duplicate rank_n: ${atdoc_o.rank_n}`)
+      }
+      rank_a
+        .add
+        (
+          atdoc_o
+            .rank_n
+        )
+      
+      json_a
+        .push
+        (
+          [
+            atdoc_o
+              .rank_n,
+            atdoc_o
+              .slot_s,
+            atdoc_o
+              .topics_s
+              .split( WORDS_DELIM_s ),
+            atdoc_o
+              .words_s
+              .split( WORDS_DELIM_s )
+          ]
+        )
+
+      text_s +=
+        `${atdoc_o.slot_s}${WORDS_DELIM_s}${atdoc_o.words_s}${FILE_DELIM_s}`
     }
-    text_s += '\n'
-    json_a.push( [ doc_s, words_a, EXT_o.randLabel__a() ] )
   }
-  FIL_o.writeFile( `make/index/input/docs.txt`, text_s, error_o=>{/*console.log( error_o )*/})
-  FIL_o.writeFile( `make/index/input/docs.json`, JSON.stringify( json_a ), error_o=>{/*console.log( error_o )*/})
+  FIL_o.writeFile( `make/index/input/docs_topics_words.json`, JSON.stringify( json_a ), error_o=>{/*console.log( error_o )*/})
+  FIL_o.writeFile( `make/index/input/docs_words.txt`, text_s, error_o=>{/*console.log( error_o )*/})
+  console.log( `-----------------\nLast rank_n: ${index_n}\n-----------------`)
 }
 
 
@@ -175,24 +330,49 @@ EXT_o.toIndex__v =
 void function
 ()
 {
-  const file_s = 'make/index/input/docs.html'
-  const glossary_a = new Map()
-  const wiki_s = FIL_o.readFileSync( file_s, { encoding:'utf-8', flag:'r' } )
-  const def_re = /<dt class="glossary" id="([\s\S]*?)"[\s\S]*?<dd class="glossary">([\s\S]*?)<\/dd>/g
-  let at_n = 0    //: negative indices reserved for sys docs
-  for ( match_a of [...wiki_s.matchAll( def_re )] )
+  EXT_o.file_a =        //: prepare
+    require( 'klaw-sync' )
+    (
+      './matter/content/',    //: all Mardown files,
+      {
+        nodir: true,
+        depthLimit: 2
+      }
+    )
+  if ( EXT_o.file_a )
   {
-    const slot_s = `${match_a[1]}=${at_n++}`    //;console.log( slot_s )
-    glossary_a
-      .set
+    EXT_o.count_n =
+      EXT_o
+        .file_a
+        .length            //;console.table(EXT_o.file_a)
+    let index_a = []
+    EXT_o
+      .file_a
+      .forEach
       (
-        slot_s,
-        match_a[2]
+        file_o =>
+        {
+          const source_s =
+            FIL_o
+              .readFileSync
+              (
+                file_o.path,
+                {
+                  encoding:'utf-8',
+                  flag:'r'
+                }
+              )
+          index_a
+            .push
+            (
+              EXT_o
+                .docs__o( source_s )    //: build document
+            )
+        }
       )
-    
+    EXT_o
+      .toIndex__v( index_a )
   }
-  glossary_a.forEach( EXT_o.extract__v )
-  EXT_o.toIndex__v()
   //->
-  ;console.log( `Number of docs: ${glossary_a.size}` )
+  ;console.log( `${EXT_o.count_n} Markdown files processed` )
 } ()

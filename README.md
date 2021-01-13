@@ -1,4 +1,4 @@
 # progressiVecontent
 
 
-Innovative website architecture for partitioned content
+A unique and innovative architecture for content-first website driven by Machine Learning

@@ -46,16 +46,20 @@ var NOTE_o =
       //>
       const widthUnit_s =
         ( `${parseInt( width_s )}`.length === width_s.length )
-        ? 'px'
-        : ''
+        ?
+          'px'
+        :
+          ''
       let style_s =
         `width:${width_s}${widthUnit_s};`
       if ( height_s )
       {
         const heightUnit_s =
           ( `${parseInt( height_s )}`.length === height_s.length )
-          ? 'px'
-          : ''
+          ?
+            'px'
+          :
+            ''
         style_s +=
           ` height:${height_s}${heightUnit_s};`
       }
@@ -200,6 +204,8 @@ void function ()
       'click',
       NOTE_o.text__v
     )
+  //>
+  ;console.log( 'note.js' )
 } ()
 
 

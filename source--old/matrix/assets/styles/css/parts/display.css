@@ -1,0 +1,33 @@
+/*=== DISPLAY ===*/
+
+#svg_symbols,
+__                     {display: none}
+
+
+main,
+__                     {display:grid; place-items:center}
+
+
+#background_aside,
+#initial_slogan,
+#initial_slogan li,
+#sections_slider,
+__                     {display: flex}
+
+#background_aside,
+__                     {justify-content: center}
+
+
+#initial_slogan,
+#initial_slogan li:not(#initial_logo),
+#sections_slider,
+__                     {flex-direction: column}
+
+
+
+/*=== Z-INDEX ===*/
+
+#initial,
+#sections_slider,
+__                     {z-index: 1}
+

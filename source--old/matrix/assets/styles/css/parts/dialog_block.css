@@ -1,0 +1,116 @@
+/*=== DIALOG ===*/
+
+[data-id="dialog_block"]
+{
+  --display_dim:50vw;
+  --svg_icon_dim:2em;
+  --size_ratio:.8;
+  --dialog_height:3rem;
+}
+
+
+[data-id="dialog_block"],
+__                     {display:flex;justify-content:space-between;}
+
+[data-id="dialog_block"] > *,
+__                     {display:flex;flex-direction:column;justify-content:flex-start}
+
+
+[data-id="dialog_block"] > dl,
+__                     {flex-basis:90%}
+[data-id="dialog_block"] > ul,
+__                     {flex-basis:10%}
+[data-id="dialog_block"] > ul > *,
+__                     {align-self:flex-end}
+
+
+
+[data-id="dialog_block"] *,
+__                     {overflow:hidden;
+                        white-space:nowrap}
+
+
+[data-id="dialog_block"],
+[data-id="dialog_block"] > ul > li,
+__                     {position:relative}
+
+
+
+[data-id="dialog_block"] > *,
+__                     {padding:{{C_o.PAD_2}}}
+
+[data-id="dialog_block"] > ul > li,
+__                     {padding-bottom:{{C_o.PAD_2}}}
+
+
+[data-id="dialog_block_title"],
+[data-id="dialog_block"] dl > dd,
+__                     {padding:{{C_o.PAD_1}}}
+
+
+
+[data-id="dialog_block"],
+[data-id="dialog_block"] > *,
+[data-id="dialog_block_list"],
+__                     {width:100%}
+
+
+
+[data-id="dialog_block_title"],
+__                     {height:var(--svg_icon_dim)}
+
+
+
+[data-id="dialog_block_title"],
+__                     {border-bottom:1px solid var(--c_prim_lo)}
+
+
+[data-id="dialog_block"],
+__                     {border-radius:8px}
+
+
+/*
+[data-id="dialog_block"]:hover,
+__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_lo)}
+*/
+
+
+
+[data-id="dialog_block"] li,
+__                     {color:var(--c_prim_lo_4)}
+
+
+[data-id="dialog_block"] *,
+__                     {background:transparent}
+
+
+[data-id="dialog_block"],
+__                     {background:var(--NODE_BACK)}
+
+
+[data-id="dialog_block_list"] > li:hover,
+__                     {color:var(--c_sec_lo);background:var(--c_sec_hi)}
+
+[data-id="dialog_block"],
+__                     {box-shadow:{{C_o.BOX_SHADOW}}}
+
+
+[data-id="dialog_block"] *,
+__                     {font-size:inherit}
+
+[data-id="dialog_block_title"],
+__                     {font-weight:500}
+
+
+[data-id="dialog_block_title"],
+__                     {text-transform:uppercase}
+
+
+[data-id="dialog_block"],
+__                     {cursor:pointer}
+
+
+[data-id="dialog_block"],
+__                     {transition:transform .2s ease}
+
+

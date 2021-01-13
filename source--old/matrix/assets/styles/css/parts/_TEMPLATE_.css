@@ -1,0 +1,88 @@
+/*=== SLOT ===*/
+
+__
+{
+}
+
+
+__                     {display:grid;place-items:center}
+
+
+__                     {display:flex;justify-content:flex-start}
+
+
+__                     {position:relative}
+
+
+__                     {position:absolute}
+
+
+__                     {top:0}
+
+
+
+
+__                     {left:0}
+
+
+__                     {margin:0}
+
+
+
+
+__                     {padding:0}
+
+
+
+__                     {width:100%}
+
+
+
+__                     {height:auto}
+
+
+
+__                     {border:2px solid var(--c_sec_hi_2)}
+
+
+__                     {border-radius:8px}
+
+
+
+__                     {cursor:pointer}
+
+
+__                     {box-shadow:12px 12px 32px 100vmax var(--c_shadow_ne)}
+
+
+
+__                     {color:var(--c_prim_lo_4)}
+
+
+__                     {stroke:none}
+
+
+
+__                     {fill:var(--c_prim_hi_2)}
+
+
+__                     {background:transparent}
+
+
+__                     {font-size:inherit}
+
+
+__                     {font-weight:500}
+
+
+__                     {text-transform:uppercase}
+
+
+__                     {cursor:pointer}
+
+
+__                     {box-shadow:{{C_o.BOX_SHADOW}}}
+
+
+__                     {transition:transform .2s ease}
+

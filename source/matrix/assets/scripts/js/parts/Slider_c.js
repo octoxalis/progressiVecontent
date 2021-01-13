@@ -196,8 +196,14 @@ class Slider3D
   {
     const slide_e = document.createElement( this.option_o.slideTag_s )
     slide_e.dataset[this.option_o.step_s] = slide_n
-    slide_e.dataset[this.option_o.section_s] = slot_e.dataset.slot_n
-    slide_e.innerHTML = `<${this.option_o.titleTag_s} class="${this.option_o.slideTitle_s}">${slot_e.dataset[this.option_o.slot_s]}</${this.option_o.titleTag_s}>`
+    //xxslide_e.dataset[this.option_o.section_s] = slot_e.dataset.slot_n
+    slide_e.dataset[this.option_o.section_s] = slot_e.dataset.rank_n
+    const title_s =
+      slot_e
+        .dataset[this.option_o.slot_s]
+        .replaceAll( '_', ' ' )
+    slide_e.innerHTML =
+      `<${this.option_o.titleTag_s} class="${this.option_o.slideTitle_s}">${title_s}</${this.option_o.titleTag_s}>`
     if ( attribute_a )
     {
       for ( const at_s of attribute_a )

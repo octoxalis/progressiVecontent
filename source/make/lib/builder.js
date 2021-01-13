@@ -1,4 +1,4 @@
-const FIL_o =  require('fs-extra')
+const FIL_o =  require( 'fs-extra' )
 const GIT_o =  require( './git.js' )
 const HEAD_o = require( './header.js' )
 const CSP_o =  require( './csp.js' )
@@ -32,9 +32,9 @@ const BUI_o =
   )
   {
    
-    //--TOP_o    //!!!! TOPICS TEMPORARY DISABLED
-    //--  .write__v()    //!!!! TOPICS TEMPORARY DISABLED
-    console.log( '!!!! TOPICS TEMPORARY DISABLED' )
+    TOP_o    //!!!! TOPICS TEMPORARY DISABLED
+      .write__v()    //!!!! TOPICS TEMPORARY DISABLED
+    //console.log( '!!!! TOPICS TEMPORARY DISABLED' )
     HEAD_o
       .write__v
       ( `${CSP_o.directive__s()}\n${HEAD_o.directive__s()}\n` )

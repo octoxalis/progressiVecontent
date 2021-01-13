@@ -2,10 +2,12 @@
 {
   layout: 'parts/slot/contents.njk',
   permalink: 'sys/contents.html',
-  rank_n: -1,
-  tags:      [ `notag` ],
+  tags: [ 'notag' ],
   //?? eleventyExcludeFromCollections: true,
 
-  title_s: `contents`,
+  rank_n: -1,
+  slot_s: 'contents',
+  title_s: 'contents',
 }
 ---
+:contents:

@@ -6,46 +6,43 @@ const GRA_o = require('./Graph')    //: GRA_o redeclared in: matrix/assets/scrip
 
 const DOCS_o =
 {
-  OUTPUT_DIR_s:  'matrix/assets/static/data/json/',
-  //??? DOCS_JSON_s:   'docs_labels',
-  //??? LABELS_JSON_s: 'labels_docs',
-  GRAPH_JSON_s: 'graph',
-  //?? DOCS_MD:     'matter/content/sys/docs.md',
+  OUTPUT_DIR_s: 'matrix/assets/static/data/json/',
   DOCS_JS_s:    'matrix/assets/static/data/js/docs_data.js',
-  LABELS_JS_s:  'matrix/assets/static/data/js/labels_data.js',
+  LABELS_JS_s:  'matrix/assets/static/data/js/topics_data.js',
   DOCS_NJK_s:   'matrix/parts/slot/data/docs.njk',
-  LABELS_NJK_s: 'matrix/parts/slot/data/labels.njk',
+  LABELS_NJK_s: 'matrix/parts/slot/data/topics.njk',
   GRAPH_SVG_s:  'matrix/parts/slot/graph/graph.svg',
-  AT_DOC_n:     0,    //: [doc_n]
-  AT_LAB_n:     1,    //: [label_s]
-  AT_TOP_n:     2,    //: [topic_s]
-  
+  GRAPH_JSON_s: 'graph',
+  AT_RANK_n:    0,    //: rank_n in docs_a
+  AT_SLOT_n:    1,    //: slot_s
+  AT_LAB_n:     2,    //: [topic_s]
+  AT_WORD_n:    3,    //: [word_s]
+
   
   
   docs__a
   (
-    docs_a    //: parsed 'docs_labels_topics.json'
+    docs_a    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
   )
   {
-    const labelsdocs_a = new Map()
-    const docslabels_a = new Array( docs_a.length )
+    const topicsDocs_a = new Map()
+    const docsLabels_a = new Array( docs_a.length )
     let atdoc_n = 0
     for ( doc_a of docs_a )
     {
-      docslabels_a[atdoc_n] = [ doc_a[DOCS_o.AT_DOC_n] ]
-      for ( lab_a of doc_a[DOCS_o.AT_LAB_n] )
+      docsLabels_a[atdoc_n] = [ doc_a[DOCS_o.AT_RANK_n], doc_a[DOCS_o.AT_SLOT_n] ]
+      for ( topic_s of doc_a[DOCS_o.AT_LAB_n] )
       {
-        const key_s = lab_a[0]
-        docslabels_a[atdoc_n].push( key_s )    //: docs[labels]
-        if ( !labelsdocs_a.has( key_s ) ) labelsdocs_a.set( key_s, new Set() )    //: labels[docs]
-        const set_a = labelsdocs_a.get( key_s )
+        docsLabels_a[atdoc_n].push( topic_s )    //: docs[topics]
+        if ( !topicsDocs_a.has( topic_s ) ) topicsDocs_a.set( topic_s, new Set() )    //: topics[docs]
+        const set_a = topicsDocs_a.get( topic_s )
         set_a.add( atdoc_n )
-        labelsdocs_a.set( key_s, set_a )
+        topicsDocs_a.set( topic_s, set_a )
       }
       ++atdoc_n
     }
-    DOCS_o.graph__v( labelsdocs_a )
-    return [ docslabels_a, labelsdocs_a ]
+    DOCS_o.graph__v( topicsDocs_a )
+    return [ docsLabels_a, topicsDocs_a ]
   }
 ,
 
@@ -53,44 +50,42 @@ const DOCS_o =
 
   docs__v
   (
-    docs_a    //: [ docslabels_a, labelsdocs_a ]
+    docs_a    //: [ docsLabels_a, topicsDocs_a ]
   )
   {
-    const [ docslabels_a, labelsdocs_a ] = docs_a
-
     //----
-    const docLabHtml__v =
+    const docLabelsHtml__v =
     (
-      step_n,
-      doc_a
+      doc_a,    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
+      step_n
       ) =>
     {
-      let labs_s = ''
-      for ( let at_s of doc_a.slice( 1 ) ) labs_s += `${at_s} `
-      return `\n<li data-slot_n="${step_n}" data-slot_s="${doc_a[0]}" data--="${labs_s.trimEnd()}"></li>`
+      let doc_s = ''
+      for ( let at_s of doc_a.slice( DOCS_o.AT_LAB_n ) ) doc_s += `${at_s} `
+      return `\n<li data-slot_n="${step_n}" data-rank_n="${doc_a[DOCS_o.AT_RANK_n]}" data-slot_s="${doc_a[DOCS_o.AT_SLOT_n]}" data--="${doc_s.trimEnd()}"></li>`
     }
 
 
     //----
-    const docLabJs__v =
+    const docWordsJs__v =
     (
-      step_n,
-      doc_a
+      doc_a,    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
+      step_n
       ) =>
     {
-      let labs_s = '['
-      for ( let at_s of doc_a.slice( 1 ) ) labs_s += `'${at_s}',`
-      labs_s = labs_s.slice( 0, -1 )     //: trim last ,
-      return `DOC_o['${doc_a[0]}']=${labs_s}];`
+      let doc_s = '['
+      for ( let at_s of doc_a.slice( DOCS_o.AT_LAB_n ) ) doc_s += `'${at_s}',`
+      doc_s = doc_s.slice( 0, -1 )     //: trim last ','
+      return `DOC_o['${doc_a[DOCS_o.AT_SLOT_n]}']=${doc_s}];`
     }
 
 
     //----
     const labDocHtml__v =
     (
+      docs_a,
       step_n,
-      key_s,
-      docs_a
+      key_s
       ) =>
     {
       let docs_s = ''
@@ -102,78 +97,76 @@ const DOCS_o =
     //----
     const labDocJs__v =
     (
+      docs_a,
       step_n,
-      key_s,
-      docs_a
+      key_s
       ) =>
     {
       let docs_s = '['
-      //XXfor ( let at_s of doc_a.slice( 1 ) ) labs_s += `'${at_s}',`
       for ( let doc_n of docs_a ) docs_s += `${doc_n},`
       docs_s = docs_s.slice( 0, -1 )     //: trim last ,
       return `LAB_o['${key_s}']=${docs_s}];`
     }
 
 
-    //----
+    //--------
+    const [ docsLabels_a, topicsDocs_a ] = docs_a
     let step_n = 0
-    let doc_lab_html_s = ''
-    let doc_lab_js_s = ''
-    docslabels_a.forEach(
+    let doc_word_html_s = ''
+    let doc_word_js_s = ''
+    docsLabels_a.forEach(
       (
         doc_a,
         step_n
       ) =>
       {
-        doc_lab_html_s += docLabHtml__v( step_n, doc_a )
-        doc_lab_js_s   += docLabJs__v( step_n, doc_a )
+        doc_word_html_s += docLabelsHtml__v( doc_a, step_n )
+        doc_word_js_s   += docWordsJs__v( doc_a, step_n )
       } )
-    doc_lab_js_s = `var DOC_o=[];${doc_lab_js_s}`
-    
+    doc_word_js_s = `var DOC_o=[];${doc_word_js_s}`
+    //----
     step_n = 0
     let lab_doc_html_s = ''
     let lab_doc_js_s = ''
-    labelsdocs_a.forEach(
+    topicsDocs_a.forEach(
       (
         value_s,
         key_s
       ) =>
       {
-        const docs_a = Array.from( labelsdocs_a.get( key_s ) )
-        lab_doc_html_s += labDocHtml__v( step_n, key_s, docs_a )
-        lab_doc_js_s   += labDocJs__v( step_n, key_s, docs_a )
+        const docs_a = Array.from( topicsDocs_a.get( key_s ) )
+        lab_doc_html_s += labDocHtml__v( docs_a, step_n, key_s )
+        lab_doc_js_s   += labDocJs__v( docs_a, step_n, key_s )
         step_n++
       } )
       lab_doc_js_s = `var LAB_o=[];${lab_doc_js_s}`
     
     FIL_o.
-      writeFile( DOCS_o.DOCS_NJK_s, doc_lab_html_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.DOCS_NJK_s, doc_word_html_s, error_o=>{/*console.log( error_o )*/} )
     FIL_o.
-      writeFile( DOCS_o.DOCS_JS_s, doc_lab_js_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.DOCS_JS_s, doc_word_js_s, error_o=>{/*console.log( error_o )*/} )
     FIL_o.
       writeFile( DOCS_o.LABELS_NJK_s, lab_doc_html_s, error_o=>{/*console.log( error_o )*/} )
     FIL_o.
       writeFile( DOCS_o.LABELS_JS_s, lab_doc_js_s, error_o=>{/*console.log( error_o )*/} )
-    //............................................
-    DOCS_o.svg__v( docslabels_a )
-    //............................................
+    DOCS_o.svg__v( docsLabels_a )
   }
 ,
 
 
   graph__v
   (
-    labelsdocs_a
+    topicsDocs_a
   )
   {
-    const graph_c = new GRA_o.Graph( new GRA_o.Facet( 'labels_docs' ) )
-    labelsdocs_a.forEach(
+    const graph_c = new GRA_o.Graph( new GRA_o.Facet( 'topics_docs' ) )
+    topicsDocs_a.forEach(
       (
         key_s,
-        label_s
+        topic_s
       ) =>
       {
-        const docs_a = Array.from( labelsdocs_a.get( label_s ) )
+        const docs_a = Array.from( topicsDocs_a.get( topic_s ) )
         for ( doc_n of docs_a )
           {
             let node_o = graph_c.nodeLabel__o( doc_n )
@@ -194,8 +187,8 @@ const DOCS_o =
                   inode_o = graph_c.nodeId__o( id_n )
                 }
                 let link_c = inode_o.link__c( node_n )
-                if ( !link_c ) graph_c.link__v( inode_o.id__n(), node_n, new GRA_o.Facet( label_s ) )
-                else link_c.label__v( label_s )
+                if ( !link_c ) graph_c.link__v( inode_o.id__n(), node_n, new GRA_o.Facet( topic_s ) )
+                else link_c.label__v( topic_s )
               }
             }
           }
@@ -210,23 +203,23 @@ const DOCS_o =
 
 svg__v
 (
-  docslabels_a
+  docsLabels_a
 )
 {
   const [ wide_n, dim_n, height_n, column_n ] =
     DOCS_o
       .geometry__v
       (
-        docslabels_a.length
+        docsLabels_a.length
       )
       ;console.log( `[ ${wide_n}, ${dim_n}, ${height_n}, ${column_n} ]` )
   let svg_s = ''
-  //--let atX_n = 0
-  //--let atY_n = 0
+  //--let atX_n = 0    // rect version
+  //--let atY_n = 0    // rect version
   let atX_n = dim_n * .5
   let atY_n = dim_n * .5
   const GAP_n = 2
-  docslabels_a
+  docsLabels_a
     .forEach
     (
       (
@@ -234,12 +227,18 @@ svg__v
         step_n
       ) =>
       {
-        //--svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`
-        svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .5}"></circle>`
+        //--svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`    // rect version
+        const title_s =
+         step_n === 0
+         ?
+           '<title>Start here</title>'
+        :
+          ''
+        svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
         atX_n += dim_n + GAP_n
         if ( atX_n >= wide_n )
         {
-          //--atX_n = 0
+          //--atX_n = 0    // rect version
           atX_n = dim_n * .5
           atY_n += dim_n + GAP_n
         }
@@ -326,9 +325,11 @@ module.exports =
 {
   parse__v
   (
-    docs_s    //: 'docs_labels_topics.json'
+    docs_s    //: 'docs_topics_words.json'
   )
-  { DOCS_o.docs__v( DOCS_o.docs__a( JSON.parse( FIL_o.readFileSync( docs_s, 'utf8', 'r' ) ) ) ) }
+  {
+    DOCS_o.docs__v( DOCS_o.docs__a( JSON.parse( FIL_o.readFileSync( docs_s, 'utf8', 'r' ) ) ) )
+  }
 ,
 
 

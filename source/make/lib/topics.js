@@ -4,14 +4,14 @@ const DOCS_o = require( './docs.js' )
 
 const TOP_o =
 {
-  script_s: `make/index/PLDA_model.py`,   //: Partially label LDA
-  docs_labels_json_s: `make/index/output/docs_labels_topics.json`,
+  script_s: `make/index/PLDA_model.py`,   //: Partially topic LDA
+  docs_topics_json_s: 'make/index/input/docs_topics_words.json',
   
   
   
   parse__v
   ()
-  { DOCS_o.parse__v( TOP_o.docs_labels_json_s ) }
+  { DOCS_o.parse__v( TOP_o.docs_topics_json_s ) }
 ,
 
 
@@ -26,9 +26,8 @@ module.exports =
   ()
   {
     //return  //:!!!!!!!!!!!  TEMPORARY !!!!!!!!!!!!!!!!
-    const 
-    
-    { spawn } = require( 'child_process' )
+    const  { spawn } =
+      require( 'child_process' )
     const topic_o = spawn( 'python3', [TOP_o.script_s] )
     topic_o
       .stdout.on('data', data => console.log(`STDOUT:\n${data}`) )    //: child process exit code

@@ -97,10 +97,11 @@ var SKIN_o =
               window
                 .localStorage
                 .getItem
-                  ( 'lum_mode' ) === '-1' ?    //: toString
-                  'dark'
+                  ( 'lum_mode' ) === '-1'    //: toString
+                  ?
+                    'dark'
                   :
-                  'light'
+                    'light'
     }
   }
 ,

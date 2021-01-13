@@ -126,22 +126,32 @@ receive__v    //:-- Listen to messages
     restore_a    //:-- SWO_o.restore_a []
   )
   {
-    console
-      .time( SER_o['{{C_o.msg_o.RESTORE_s}}__v'] )
+    console.time( '{{C_o.msg_o.RESTORE_s}}__v' )
     
     if ( !PREF_o.restore_b ) return
     //>
     let slot_n = 0
     for ( let path_a of restore_a )
     {
+      ++slot_n        //: start with slot_n at 1 ( slot_n=0 already there )
       const [ path_s, slot_s ] = path_a
+      //.............................................
+
+
+
+
+
+      //.............................................
       IND_o
         .load__v
           (
             path_s,
             slot_s,
-            slot_n,
-            section_e =>    //: callback_f
+            slot_n,  //!!!! BUG  !!!!
+            (
+              section_e,
+              slot_n
+             ) =>    //: callback_f
             {
               SLI_o
                 .slider_c
@@ -149,18 +159,17 @@ receive__v    //:-- Listen to messages
                 (
                   section_e,
                   slot_n,
+                  //xxsection_e.dataset.rank_n,
                   [
-                    //XX `data-section=${slot_n}`,
-                    `data-slot_s=${section_e.dataset.slot_s}`
+                    `data-slot_s=${section_e.dataset.slot_s}`,
+                    //??`data-slot_n=${section_e.dataset.rank_n}`
                   ],
                 )
-            },
+              },
           )
-      ++slot_n
     }
     
-    console
-      .timeEnd( SER_o['{{C_o.msg_o.RESTORE_s}}__v'] )
+    console.timeEnd( '{{C_o.msg_o.RESTORE_s}}__v' )
   }
 ,
 

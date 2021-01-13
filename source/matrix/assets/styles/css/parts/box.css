@@ -23,3 +23,12 @@ __                     {overflow:hidden}
 
 body,
 __                     {overflow-x:hidden}
+
+
+#sections *,
+__                     {overflow-anchor:none}
+
+
+#sections::after,
+__                     {overflow-anchor:auto}
+

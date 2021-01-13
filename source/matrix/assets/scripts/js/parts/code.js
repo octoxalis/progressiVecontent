@@ -90,4 +90,6 @@ void function ()
           )
       }
     )
+  //>
+  ;console.log( 'code.js' )
 } ()

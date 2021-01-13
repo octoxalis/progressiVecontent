@@ -35,6 +35,8 @@ __                     {overflow:hidden;
 __                     {position:relative}
 
 
+[data-id="dialog_block"],
+__                     {margin:auto}
 
 [data-id="dialog_block"] > *,
 __                     {padding:{{C_o.PAD_2}}}
@@ -50,6 +52,8 @@ __                     {padding:{{C_o.PAD_1}}}
 
 
 [data-id="dialog_block"],
+__                     {max-width:clamp( 10%, 60%, 100%)}
+
 [data-id="dialog_block"] > *,
 [data-id="dialog_block_list"],
 __                     {width:100%}

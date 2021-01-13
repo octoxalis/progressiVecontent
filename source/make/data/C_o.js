@@ -162,10 +162,10 @@ module.exports =
   LOGO_HEIGHT: 'clamp( 12vh, 16vh, 20vh )',
 
   STD_HEIGHT:    5,
-  BUTTON_HEIGHT: 5 + 'em',
   SLIDER_HEIGHT: 5 + 'em',
+  BUTTON_HEIGHT: 5 + 'em',
   IMG_UNFOLD:    5 + 'em',
-
+  
   FONT_BODY: `'Cantarell Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Helvetica Neue, sans-serif`,
   FONT_MONO: `'JetBrains Mono Light', system-ui, -apple-system, BlinkMacSystemFont, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace`,
 

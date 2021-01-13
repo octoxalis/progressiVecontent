@@ -45,6 +45,7 @@ __                     {scrollbar-width:thin}
 .retract,
 __                     {height:0}
 
+#sections::after,
 .unseen,
 __                     {height:1px}
 

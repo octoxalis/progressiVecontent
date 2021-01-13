@@ -58,14 +58,14 @@ var GRA_o =
         GRA_o
           .slider
           .atStep__n()
-      const label_e =
+      const topic_e =
         LIB_o
-          .nodeId__o( 'labels_docs' )
+          .nodeId__o( 'topics_docs' )
           .querySelector( `li[data-slot_n="${at_n}"]` )
       const docs_a =
         new Set
         (
-          label_e
+          topic_e
             .dataset['-']
             .split( ' ' )
         )
@@ -254,7 +254,7 @@ var GRA_o =
   )
   {
     return LIB_o
-      .nodeId__o( 'docs_labels' )
+      .nodeId__o( 'docs_topics' )
       .querySelector( `li[data-slot_n="${step_s}"]` )
       .dataset.slot_s
   }
@@ -277,11 +277,11 @@ var GRA_o =
             .node_s
             .length
         )
-    const labels_e =
+    const topics_e =
       LIB_o
-        .nodeId__o( 'docs_labels' )
+        .nodeId__o( 'docs_topics' )
     const data_e =
-      labels_e
+      topics_e
         .querySelector( `li[data-slot_n="${at_n}"]` )
     if ( !data_e ) return
     //>
@@ -306,18 +306,18 @@ var GRA_o =
         data_e
           .dataset
           .slot_s
-          .replace
+          .replaceAll
           (
             '_',
             ' '
           )
-    const labels_s =
+    const topics_s =
       data_e
       .dataset['-']
     let list_s = ''
-    for ( let lab_s of labels_s.split( ' ' ) )
+    for ( let lab_s of topics_s.split( ' ' ) )
     {
-      list_s += `<li>${lab_s}`
+      list_s += `<li>${lab_s.replaceAll( '_', ' ' )}`
     }
     LIB_o
       .id__o( 'dialog_block_list' )
@@ -521,23 +521,25 @@ void async function
   GRA_o.slider_e =
     LIB_o
       .nodeId__o( 'graph_slider' )
-  const labelsList_e =
+  const topicsList_e =
     LIB_o
-      .nodeId__o( 'labels_docs' )
+      .nodeId__o( 'topics_docs' )
   GRA_o.slider =
     new Slider3D
     (
       GRA_o.slider_e,
-      labelsList_e,
+      topicsList_e,
     )
   LIB_o
     .rootVar__v
     (
       '--LABELS_CAP',
-      labelsList_e.children.length
+      topicsList_e.children.length
     )
   GRA_o
     .listen__v()
+  //>
+  ;console.log( 'graph.js' )
 } ()
 
 

@@ -1,0 +1,43 @@
+{% set _path = '../../assets/styles/css/parts/' %}
+<style data-id="{{ C_o.INLINE_s }}">
+{% set _css %}
+{% include _path + "box.css" %}
+{% include _path + "display.css" %}
+{% include _path + "pad.css" %}
+{% include _path + "position.css" %}
+{% include _path + "dimension.css" %}
+{% include _path + "border.css" %}
+{% include _path + "align.css" %}
+{% include _path + "root_color.css" %}
+{% include _path + "color.css" %}
+{% include _path + "font.css" %}
+{% include _path + "svg.css" %}
+{% include _path + "decoration.css" %}
+{% include _path + "transform.css" %}
+{% include _path + "animation.css" %}
+{% include _path + "events.css" %}
+{% include _path + "object.css" %}
+{% endset %}
+
+{% include "assets/styles/css/minify.njk" %}
+</style>
+
+
+
+
+
+{#=== OLD CSS ===#}
+{#
+{% set _path = '../../assets/styles/css/parts/' %}
+{% set _css_OLD %}
+{% include _path + "root_var.css" %}
+{% include _path + "root_color.css" %}
+{% include _path + "root_font.css" %}
+{% include _path + "_fouc_0_.css" %}
+{% include _path + "font.css" %}
+{% include _path + "reset.css" %}
+{% include _path + "tags.css" %}
+{% include _path + "launcher.css" %}
+{% include _path + "svg_background.css" %}
+{% endset %}
+#}

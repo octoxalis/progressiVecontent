@@ -1,3 +1,5 @@
+const REX_o = require( './regex.js' )
+
 const A_o = require( '../data/A_o.js' )
 const C_o = require( '../data/C_o.js' )
 const U_o = require( '../data/U_o.js' )
@@ -11,12 +13,26 @@ const SEC_o =
     slot_s
   )
   {
-    const head_re = /:([\s\S]*?):/    //:- NO 'g'!!! wrap content head with a button
+    const RE_o =
+    REX_o
+      .new__re( '' )    //!!! NOT global !!! wrap content head with a button
+    const head_re =
+      RE_o
+        `
+        :     //: title delimiter
+        (     //: open capture group
+        [     //: open char range
+        ^:    //: word and space chars
+        ]     //: close char range
+        *?    //: non-greedy...
+        )     //: close capture group
+        :     //: title delimiter
+        `
     const head_a = content_s.match( head_re )
     if ( !head_a ) return content_s
     //>
     let head_s = head_a[0]
-    const main_s = content_s.replace( head_s, '' )    //: head_s consumed by header button
+    const main_s = content_s.replace( head_s, '' )    //: head_s consummed by header button
     head_s = head_s.replace( head_re, `<${C_o.SECTION_BTN_TAG_s}>$1</${C_o.SECTION_BTN_TAG_s}>` )   //: replace ':' delimiters by <${C_o.SECTION_BTN_TAG_s}> tag
     const trash_s = slot_s === C_o.DOCS_s ?
       ''

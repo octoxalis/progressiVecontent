@@ -147,14 +147,16 @@ void function
 {
   LIB_o
     .rootVar__v( '--SECTIONS_CAP', SLI_o.slider__n() )
-  SLI_o
-    .listen__v()
   SER_o
     .send__v
     (
       '{{C_o.msg_o.RESTORE_s}}',
       null
     )
+  SLI_o
+    .listen__v()
+  //>
+  ;console.log( 'slider.js' )
 } ()
 
 

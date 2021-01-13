@@ -25,7 +25,7 @@ module.exports =
   (
     code_s,
     lang_s,
-    spot_a
+    spot_a=[]
   )
   {
     const lang_o =

@@ -2,12 +2,15 @@
 {
   layout: 'parts/slot/bookmark/bookmark.njk',
   permalink: 'sys/bookmark.html',
-  rank_n: -3,     //: {{C_o.BOOKMARK_n}}
-  tags:      [ `notag` ],
+  tags: [ 'notag' ],
   //?? eleventyExcludeFromCollections: true,
 
-  title_s: `bookmark`,
+  rank_n: -3,        //: {{C_o.BOOKMARK_n}}
+  slot_s: 'bookmark',
+  title_s: 'bookmark',
 }
 ---
-:Bookmarks:
+:bookmark:
+
+
 Save and retrieve later __{{A_o.NAME_s}}__{.site_label} current page content.

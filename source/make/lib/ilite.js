@@ -360,6 +360,8 @@ const I_o =
     code_s,
   ) =>
   {
+    if ( !code_s ) return    //: empty source
+    //>    
     let acode_s = ''
     let line_n = 1
     code_s
@@ -375,9 +377,10 @@ const I_o =
             I_o
               .lang_o
               .hiline_a
-              .includes( at_n + 1 ) ?   //: 1-indexed
+              .includes( at_n + 1 )   //: 1-indexed
+              ?
                 ' class="i_hi"'
-                :
+              :
                 ''
           acode_s +=
             `<li data-i=${line_n++}${class_s}>${line_s}`

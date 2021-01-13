@@ -275,6 +275,8 @@ __                     {font-size:inherit}
 [data-id^="note_"] > button,
 __                     {font-size:var(--font_sup)}
 
+[data-id="note_txt"] > *,
+__                     {font-style:normal}
 
 
 
@@ -327,7 +329,7 @@ __                     {pointer-events:none}
 
 
 {{C_o.NOTE_TAG_s}}[data-id^=note_] button,
-.note_open,
+/*.note_open,*/
 __                     {--size_ratio:.8}
 
 

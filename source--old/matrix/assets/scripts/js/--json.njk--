@@ -1,0 +1,4 @@
+{% set _js %}
+{% include "./parts/json.js" %}
+{% endset %}
+{% include "assets/scripts/js/minify.njk" %}

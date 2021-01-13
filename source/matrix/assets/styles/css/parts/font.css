@@ -58,14 +58,13 @@ __                     {font-size:6px}  /*!!! fixed pixel size for SVG */
 
 /*=== WEIGHT ===*/
 
-#initial b,
-__                     {font-weight:600}
-
-
 body,
 body *,
 __                     {font-weight:400}
 
+article strong,
+#initial b,
+__                     {font-weight:600}
 
 
 /*=== STYLE ===*/

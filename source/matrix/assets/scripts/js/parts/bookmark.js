@@ -301,7 +301,12 @@ open__v    //:- display bookmark data
         li_e =>
         {
           list_a
-            .add( `${li_e.dataset.slot_s}` )
+            .add
+            (
+              li_e
+                .dataset.slot_s
+                .replaceAll( '_', ' ' )
+            )
         }
       )
     SER_o

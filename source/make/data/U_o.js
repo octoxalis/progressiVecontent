@@ -33,8 +33,17 @@ const U_o =
 
 void function ()
 {
-  U_o.url_s = U_o[U_o.dev_b === true ? 'DEV_s' : 'PRO_s']
-  console.log( `Site URL: ${U_o.url_s}` )
+  U_o.url_s =
+    U_o
+      [
+        U_o.dev_b === true
+        ?
+          'DEV_s'
+        :
+          'PRO_s'
+      ]
+  console
+    .log( `Site URL: ${U_o.url_s}` )
 } ()
 
 module.exports = U_o

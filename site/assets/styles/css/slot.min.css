@@ -6,14 +6,14 @@ article{--count_txt:note_txt;
 article{counter-reset:var(--count_txt) var(--count_example)}
 .close_icon{--svg_icon_dim:2rem }
 a[data-id="redirect"]{display:none}
-section,article,.close_icon{display:grid;place-items:center}
+section,article,.close_icon,article > p:last-of-type::after{display:grid;place-items:center}
 #preferences,button[data-slot_s]{display:flex;justify-content:center}
 pre > code,[data-id="example"]::before{display:block}
 a,section > div,[data-id="ulist"] > li::before,[data-id="important"]::before{position:relative}
 a::before,a::after{position:absolute}
 [data-id="ulist"] > li
 button[data-slot_s]{margin:0}
-#preferences{margin:1rem 0}
+#preferences,article > p:last-of-type::after{margin:1rem 0}
 #preferences > button{margin:0 1rem}
 .close_icon{margin:0.25rem 0}
 [data-id="ulist"]{margin:0.5rem 0 0 1rem}
@@ -34,6 +34,7 @@ a::before,a::after{right:0}
 #preferences > button{margin:0.5rem}
 button[data-slot_s]{margin-left:-50vw;margin-right:-50vw} 
 h1,h2,h3,h4,h5,h6,p{margin-bottom:0.5rem}
+article > p:last-of-type::after{margin-bottom:2rem}
 h1,h2,h3,h4,h5,h6,p,ul,ol:not([class="i_code"]),#preferences{padding:2px}
 #preferences > button,button[data-slot_s],.close_icon{padding:0.5rem}
 [data-slot_s] > b{flex-basis:100%}
@@ -73,13 +74,14 @@ button[data-slot_s]{line-height:5}
 [data-id="ulist"] > li::before{color:var(--border_color)}
 [data-id="ulist"] > li::before{font-size:var(--char_size)}
 a::before,a::after{content:''}
+article > p:last-of-type::after{content:'◻◻◻'}
 a,[data-slot_s] > b{text-decoration:none}
-[data-slot_s] > b{text-transform:uppercase}
 button[data-slot_s]{font-family:var(--font_title)}
 [data-id=example]::before,.site_label{font-style:italic}
 #preferences > button:hover{background:var(--c_highlight_hi);
-  filter:saturate(2) brightness(2)}
+filter:saturate(2) brightness(2)}
 button[data-slot_s]:hover{background:var(--c_highlight_hi)}
+[data-slot_s] > b{text-transform:uppercase}
 a::before,a::after{transform-origin:bottom left}
 a::before,a::after,.aside{transition:transform .2s ease}
 :root
@@ -92,13 +94,16 @@ ul,#docs_graph{margin:0}
 #graph{margin:auto}
 #graph{margin-top:2rem}
 ul,#graph_svg{padding:0}
-#docs_graph,#graph,#graph_svg{width:100%}
+#docs_graph{width:120%} 
+#graph,#graph_svg
+__  {max-width:clamp( 10%, 20%, 100%)}
 #graph_svg{border-radius:4px}
  
  
 #graph_svg > circle{stroke:none}
 #graph_svg > circle.node_focus{stroke:var(--c_sec_lo)}
 #graph_svg > circle{fill:var(--c_prim_hi_2)}
+#graph_svg > circle:first-of-type{fill:var(--c_highlight_hi)}
 #graph_svg > circle.node_selected{fill:var(--c_prim_ne)}
 #graph_svg{background:transparent}
 #graph_svg{cursor:pointer}
