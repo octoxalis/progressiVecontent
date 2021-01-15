@@ -2,9 +2,9 @@ const SPO_o =
 {
   selector_o:    //:- Object properties from shortcodes functions - assets files (CSS & JS)
   {
-    'data-slot_s="contents' : ['css:slider', 'js:slider', 'css:slot', 'js:slot', 'js:graph_c', 'js:graph', 'css:dialog_block', ],
-    'data-slot_s="skin': ['css:skin', 'js:skin' ],
-    'data-slot_s="bookmark': ['css:bookmark', 'js:bookmark' ],
+    'data-doc_s="contents' : ['css:slider', 'js:slider', 'css:slot', 'js:slot', 'js:graph_c', 'js:graph', 'css:dialog_block', ],
+    'data-doc_s="skin': ['css:skin', 'js:skin' ],
+    'data-doc_s="bookmark': ['css:bookmark', 'js:bookmark' ],
     'data-id="note_': ['css:note', 'js:note'],
     'data-id="code_': ['css:code', 'js:code'],
     //...'data-id="comments' : ['js:comments'],
@@ -58,7 +58,7 @@ module.exports =
 {
   spot__s    //:- check if slot content requests css or js assets
   (
-    slot_s,
+    doc_s,
     ...args_
   )
   {
@@ -66,7 +66,7 @@ module.exports =
     const spot_a = new Set()
     for ( let key_s of Object.keys( SPO_o.selector_o ) )
     {
-      if ( slot_s.indexOf( key_s ) > -1 )
+      if ( doc_s.indexOf( key_s ) > -1 )
       {
         spot_a.add( SPO_o.selector_o[key_s] )
         spot_s += `${SPO_o.selector_o[key_s]} `
@@ -74,7 +74,7 @@ module.exports =
       }
     }
     const asset_o = SPO_o.asset__o( spot_a )
-    return slot_s.replace( `</section>`, `${asset_o.style_s}${asset_o.script_s}</section">` )
+    return doc_s.replace( `</section>`, `${asset_o.style_s}${asset_o.script_s}</section">` )
   }
 ,
 

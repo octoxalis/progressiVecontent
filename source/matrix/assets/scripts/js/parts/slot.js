@@ -25,19 +25,19 @@ var SLOT_o =
     section_e
   )
   {
-    const slot_n =
+    const doc_n =
       +section_e
         .dataset
-        .slot_n    //: Number cast
+        .doc_n    //: Number cast
     SER_o
       ['{{C_o.msg_o.REMOVE_s}}__v']
-      ( section_e.dataset.slot_s )
+      ( section_e.dataset.doc_s )
     section_e
       .remove()
-    if ( slot_n > +'{{C_o.DOCS_n}}' )    //: skip C_o.SYS_s slots
+    if ( doc_n > +'{{C_o.DOCS_n}}' )    //: skip C_o.SYS_s slots
     {
       SLI_o
-        .remove__v( slot_n )
+        .remove__v( doc_n )
     }
   }
 ,

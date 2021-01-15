@@ -253,12 +253,12 @@ open__v    //:- display bookmark data
       .list_a
       .forEach
       (
-        slot_s =>
+        doc_s =>
         {
           const li_s =
             BOOK_o
-              .slot__s( slot_s )
-          list_s += `<li data-slot_s="${slot_s}">${li_s}`
+              .slot__s( doc_s )
+          list_s += `<li data-doc_s="${doc_s}">${li_s}`
         }
       )
   LIB_o
@@ -304,7 +304,7 @@ open__v    //:- display bookmark data
             .add
             (
               li_e
-                .dataset.slot_s
+                .dataset.doc_s
                 .replaceAll( '_', ' ' )
             )
         }

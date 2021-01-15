@@ -130,27 +130,23 @@ receive__v    //:-- Listen to messages
     
     if ( !PREF_o.restore_b ) return
     //>
-    let slot_n = 0
     for ( let path_a of restore_a )
     {
-      ++slot_n        //: start with slot_n at 1 ( slot_n=0 already there )
-      const [ path_s, slot_s ] = path_a
-      //.............................................
-
-
-
-
-
-      //.............................................
+      const [ path_s, doc_s ] = path_a
+      const atdoc_n =
+        document
+          .querySelector( `#docs_topics > [data-doc_s="${doc_s}"]` )
+          ?.dataset
+          ?.doc_n
       IND_o
         .load__v
           (
             path_s,
-            slot_s,
-            slot_n,  //!!!! BUG  !!!!
+            doc_s,
+            atdoc_n,
             (
               section_e,
-              slot_n
+              atdoc_n
              ) =>    //: callback_f
             {
               SLI_o
@@ -158,11 +154,9 @@ receive__v    //:-- Listen to messages
                 .add__v
                 (
                   section_e,
-                  slot_n,
-                  //xxsection_e.dataset.doc_n,
+                  atdoc_n,
                   [
-                    `data-slot_s=${section_e.dataset.slot_s}`,
-                    //??`data-slot_n=${section_e.dataset.doc_n}`
+                    `data-doc_s=${section_e.dataset.doc_s}`
                   ],
                 )
               },
@@ -177,14 +171,14 @@ receive__v    //:-- Listen to messages
 
   {{C_o.msg_o.REMOVE_s}}__v    //: to worker
   (
-    slot_s
+    doc_s
   )
   {
     SER_o
       .send__v
       (
         '{{C_o.msg_o.REMOVE_s}}',
-        slot_s
+        doc_s
       )
   }
 ,

@@ -26,7 +26,7 @@ __                     {display:grid;place-items:center}
 
 
 #preferences,
-button[data-slot_s],
+button[data-doc_s],
 __                     {display:flex;justify-content:center}
 
 
@@ -50,7 +50,7 @@ __                     {position:absolute}
 
 
 [data-id="ulist"]  > li
-button[data-slot_s],
+button[data-doc_s],
 __                     {margin:0}
 
 
@@ -73,12 +73,12 @@ __                     {margin:{{C_o.PAD_1}} 0}
 __                     {margin:{{C_o.PAD_2}} 0 0 {{C_o.PAD_4}}}
 
 /*
-button[data-slot_s="contents"],
+button[data-doc_s="contents"],
 __                     {margin-top:{{C_o.SLIDER_HEIGHT}} }
 */
 
 
-div[data-slot_s],
+div[data-doc_s],
 __                     {padding:{{C_o.PAD_4}}  {{C_o.PAD_8}}}
 
 
@@ -98,7 +98,7 @@ __                     {margin-bottom:{{C_o.PAD_6}}}
 
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {width:{{C_o.FULL_WIDTH}}}
 
 #preferences,
@@ -108,7 +108,7 @@ __                     {width:{{C_o.BODY_WIDTH_n}}vw}
 [data-id="example"],
 __                     {max-width:100%}
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {height:{{C_o.BUTTON_HEIGHT}}}  /* see line-height */
 
 
@@ -123,7 +123,7 @@ __                     {height:4px}
 
 
 /*
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {top:0}
 */
 
@@ -133,7 +133,7 @@ __                     {left:0}
 
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {left:50%;right:50%}  /* center */
 
 a::before,
@@ -149,7 +149,7 @@ __                     {right:0}
 __                     {margin:{{C_o.PAD_2}}}
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {margin-left:-50vw;margin-right:-50vw}  /* center */
 
 
@@ -178,12 +178,12 @@ ol:not([class="i_code"]),
 __                     {padding:2px}
 
 #preferences > button,
-button[data-slot_s],
+button[data-doc_s],
 .close_icon,
 __                     {padding:{{C_o.PAD_2}}}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {flex-basis:100%}
 
 
@@ -220,7 +220,7 @@ __                     {--border_opac:.3}
 
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {box-shadow:{{C_o.BOX_SHADOW}}}
 
 
@@ -231,7 +231,7 @@ mark[data-tag],
 __                     {color:inherit}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {color:var(--c_prim_lo)}
 
 
@@ -262,11 +262,11 @@ a::after,
 __                     {background:var(--c_link_ne)}
 
 
-section[data-slot_n],
+section[data-doc_n],
 __                     {background:var(--c_sec_hi)}
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {background:var(--c_prim_hi_2)}
 
 
@@ -288,7 +288,7 @@ h6,
 __                     {--size_ratio:1.2}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {--size_ratio:1.4}
 
 small,
@@ -300,10 +300,10 @@ __                     {--size_ratio:.8}
 .site_label,
 __                     {font-weight:500}
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {font-weight:700}
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {line-height:{{C_o.STD_HEIGHT}}}  /* see height -- vertical centering as --BUTTON_HEIGHT */
 
 
@@ -326,18 +326,18 @@ a::before,
 a::after,
 __                     {content:''}
 
-/*article:not([data-slot_s="contents"])::after,*/
+/*article:not([data-doc_s="contents"])::after,*/
 article > p:last-of-type::after,
 __                     {content:'◻◻◻'}
 
 a,
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {text-decoration:none}
 
 
 
 
-button[data-slot_s],
+button[data-doc_s],
 __                     {font-family:var(--font_title)}
 
 
@@ -350,11 +350,11 @@ __                     {font-style:italic}
 __                     {background:{{C_o.BG_FX_s}};
 filter:{{C_o.SAT_FX_s}}}
 
-button[data-slot_s]:hover,
+button[data-doc_s]:hover,
 __                     {background:{{C_o.BG_FX_s}}}
 
 
-[data-slot_s] > {{C_o.SECTION_BTN_TAG_s}},
+[data-doc_s] > {{C_o.SECTION_BTN_TAG_s}},
 __                     {text-transform:uppercase}
 
 a::before,

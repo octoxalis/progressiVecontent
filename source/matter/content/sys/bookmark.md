@@ -6,7 +6,7 @@
   //?? eleventyExcludeFromCollections: true,
 
   doc_n: -3,        //: {{C_o.BOOKMARK_n}}
-  slot_s: 'bookmark',
+  doc_s: 'bookmark',
   title_s: 'bookmark',
 }
 ---

@@ -93,8 +93,8 @@ var IND_o =
   load__v
   (
     path_s='{{C_o.SYS_s}}',
-    slot_s='{{C_o.DOCS_s}}',
-    slot_n=+'{{C_o.DOCS_n}}',          //: negative indices for C_o.SYS_s slots
+    doc_s='{{C_o.DOCS_s}}',
+    doc_n=+'{{C_o.DOCS_n}}',          //: negative indices for C_o.SYS_s slots
     callback_f=null
   )
   {
@@ -102,15 +102,15 @@ var IND_o =
       .slot__v
       (
         path_s,
-        slot_s,
-        slot_n,
+        doc_s,
+        doc_n,
         (        //: callback_f
           _e,    //: not used
           section_e,
         ) =>
         {
-          section_e.dataset.slot_n = ''+slot_n
-          section_e.dataset.slot_s = slot_s
+          section_e.dataset.doc_n = ''+doc_n
+          section_e.dataset.doc_s = doc_s
           callback_f
             && callback_f( section_e )
           IND_o
@@ -217,14 +217,14 @@ var IND_o =
   )
   {
       section_e
-        .querySelector( 'button[data-slot_s]' )
+        .querySelector( 'button[data-doc_s]' )
         .addEventListener
         (
           'click',
           () =>
           {
             section_e
-              .querySelector( 'article[data-slot_s]' )
+              .querySelector( 'article[data-doc_s]' )
               .classList
               .toggle( 'retract' )
           }
@@ -240,7 +240,7 @@ var IND_o =
   )
   {
     section_e
-      .querySelector( 'article[data-slot_s]' )
+      .querySelector( 'article[data-doc_s]' )
       .classList
       .toggle( 'retract' )
     section_e

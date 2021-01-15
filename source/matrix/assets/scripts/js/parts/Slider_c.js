@@ -30,7 +30,7 @@ class Slider3D
 
     //:- attributes
     hyphen_s:   '-',
-    slot_s:   'slot_s',
+    doc_s:   'doc_s',
 
 
     clip_b:  false,
@@ -150,7 +150,7 @@ class Slider3D
       {
         const skin_n =
           +'{{C_o.SKIN_n}}'
-        if ( slot_e.dataset.slot_n > skin_n )        //: skip C_o.SYS_s slots except DOCS_s
+        if ( slot_e.dataset.doc_n > skin_n )        //: skip C_o.SYS_s slots except DOCS_s
         {
           this.addStep__v( slot_e, slot_n )
           this.addSlide__v( slot_e, slot_n )
@@ -196,11 +196,11 @@ class Slider3D
   {
     const slide_e = document.createElement( this.option_o.slideTag_s )
     slide_e.dataset[this.option_o.step_s] = slide_n
-    //xxslide_e.dataset[this.option_o.section_s] = slot_e.dataset.slot_n
+    //xxslide_e.dataset[this.option_o.section_s] = slot_e.dataset.doc_n
     slide_e.dataset[this.option_o.section_s] = slot_e.dataset.doc_n
     const title_s =
       slot_e
-        .dataset[this.option_o.slot_s]
+        .dataset[this.option_o.doc_s]
         .replaceAll( '_', ' ' )
     slide_e.innerHTML =
       `<${this.option_o.titleTag_s} class="${this.option_o.slideTitle_s}">${title_s}</${this.option_o.titleTag_s}>`
@@ -228,7 +228,7 @@ class Slider3D
   {
   const step_e = document.createElement( this.option_o.stepTag_s )
   step_e.dataset[this.option_o.step_s] = slide_n
-  const title_s = slot_e.dataset[this.option_o.slot_s]
+  const title_s = slot_e.dataset[this.option_o.doc_s]
   step_e.setAttribute( 'title', title_s )
   if ( slide_n === 0 )
   {

@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
 
   doc_n: 0,
-  slot_s: 'introduction',
+  doc_s: 'introduction',
   title_s: 'About progressiVecontent',
   topics_a: [ 'web site architecture', 'fondamentals' ],
   words_a: [ 'content-on-request', 'machine learning', 'lazy loading', 'speed loading' ],

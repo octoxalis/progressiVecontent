@@ -61,7 +61,7 @@ var GRA_o =
       const topic_e =
         LIB_o
           .nodeId__o( 'topics_docs' )
-          .querySelector( `li[data-slot_n="${at_n}"]` )
+          .querySelector( `li[data-doc_n="${at_n}"]` )
       const docs_a =
         new Set
         (
@@ -179,14 +179,14 @@ var GRA_o =
     const step_s =
       GRA_o
         .nodeStep__s()
-    const slot_s =
+    const doc_s =
       GRA_o
         .nodeSlot__s( step_s )
     let section_e =
       document
         .querySelector
         (
-          `section[data-slot_n="${step_s}"]`
+          `section[data-doc_n="${step_s}"]`
           //...`section[data-doc_n="${+step_s + 1}"]`              //: Number cast
         )
     if ( !section_e )  //: not yet fetched
@@ -195,7 +195,7 @@ var GRA_o =
         .load__v
         (
           '{{C_o.SLOTS_s}}',      //: path_s default
-          slot_s,
+          doc_s,
           +step_s,        //: as Number
           section_e =>    //: callback_f
           {
@@ -206,7 +206,7 @@ var GRA_o =
                 section_e,
                 0,    //: NOT auto indexed
                 [
-                  `data-slot_s=${section_e.dataset.slot_s}`
+                  `data-doc_s=${section_e.dataset.doc_s}`
                 ],
                 () =>    //: callback_f
                 {
@@ -240,7 +240,7 @@ var GRA_o =
           SLOT_o
             .dialog__o( 'section_contents' )
         )
-        .getAttribute( 'data-slot_s' )  //: set by node__v
+        .getAttribute( 'data-doc_s' )  //: set by node__v
         .slice( 'node_'.length )
     )
   }
@@ -255,8 +255,8 @@ var GRA_o =
   {
     return LIB_o
       .nodeId__o( 'docs_topics' )
-      .querySelector( `li[data-slot_n="${step_s}"]` )
-      .dataset.slot_s
+      .querySelector( `li[data-doc_n="${step_s}"]` )
+      .dataset.doc_s
   }
 ,
 
@@ -282,7 +282,7 @@ var GRA_o =
         .nodeId__o( 'docs_topics' )
     const data_e =
       topics_e
-        .querySelector( `li[data-slot_n="${at_n}"]` )
+        .querySelector( `li[data-doc_n="${at_n}"]` )
     if ( !data_e ) return
     //>
     const section_e =
@@ -298,14 +298,14 @@ var GRA_o =
     title_e
       .setAttribute
       (
-        'data-slot_s',
+        'data-doc_s',
         node_e.id
       )
     title_e
       .innerHTML =
         data_e
           .dataset
-          .slot_s
+          .doc_s
           .replaceAll
           (
             '_',
@@ -350,8 +350,8 @@ var GRA_o =
       .load__v
       (
         path_s='{{C_o.SYS_s}}',
-        slot_s='{{C_o.SKIN_s}}',
-        slot_n='{{C_o.SKIN_n}}',          //: negative indices for sys slots
+        doc_s='{{C_o.SKIN_s}}',
+        doc_n='{{C_o.SKIN_n}}',          //: negative indices for sys slots
         callback_f=null
       )
   }
@@ -367,8 +367,8 @@ var GRA_o =
       .load__v
       (
         path_s='{{C_o.SYS_s}}',
-        slot_s='{{C_o.BOOKMARK_s}}',
-        slot_n='{{C_o.BOOKMARK_n}}',          //: negative indices for sys slots
+        doc_s='{{C_o.BOOKMARK_s}}',
+        doc_n='{{C_o.BOOKMARK_n}}',          //: negative indices for sys slots
         callback_f=null
       )
   }
@@ -479,15 +479,15 @@ var GRA_o =
       click_o =>
       {
         const path_s = click_o.target.dataset.path
-        const slot_s = click_o.target.dataset.slot_s
+        const doc_s = click_o.target.dataset.doc_s
         const step_n = GRA_o.slider.capacity__n()
-        if ( !GRA_o.loaded__b( slot_s ) )
+        if ( !GRA_o.loaded__b( doc_s ) )
         {
-          LIB_o.slot__v( path_s, slot_s, step_n,
+          LIB_o.slot__v( path_s, doc_s, step_n,
            ( _e, section_e ) =>
            {
-             section_e.dataset.slot_s = slot_s
-             section_e.dataset.slot_n = step_n
+             section_e.dataset.doc_s = doc_s
+             section_e.dataset.doc_n = step_n
              GRA_o.slider.add__v( section_e )
            } )
        

@@ -18,7 +18,7 @@ const CODES_o =
     const cleanContent_s = content_s.trim()
     const level_n = cleanContent_s.indexOf( ' ' )
     const title_s = cleanContent_s.substring( level_n + 1 )
-    return `<h${level_n} data-slot_s=n>${title_s}</h${level_n}>`
+    return `<h${level_n} data-doc_s=n>${title_s}</h${level_n}>`
   }
 ,
 

@@ -344,7 +344,7 @@ toggleId__v:
   slot__v:
   (
     path_s,
-    slot_s,
+    doc_s,
     step_n,
     callback_f
   ) =>
@@ -355,9 +355,9 @@ toggleId__v:
     const iframe_e =
       document
         .createElement( 'iframe' )
-    //???? iframe_e.src = `${path_s}/${slot_s}.html`
-    iframe_e.src = `/${path_s}/${slot_s}.html`
-    iframe_e.dataset.slot_n = ''+step_n
+    //???? iframe_e.src = `${path_s}/${doc_s}.html`
+    iframe_e.src = `/${path_s}/${doc_s}.html`
+    iframe_e.dataset.doc_n = ''+step_n
     adopter_e
       .appendChild( iframe_e )
     LIB_o
@@ -373,7 +373,7 @@ toggleId__v:
   {
     const close_e =    //:-- slot remove button
       section_e
-       .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-slot_s]' )
+       .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-doc_s]' )
     if ( close_e )
     {
       close_e

@@ -63,7 +63,7 @@ EXT_o.DOC_n =
   \\s*?   //: optional space, non-greedy
   ,       //: object properties separator
   `
-EXT_o.SLOT_s =
+EXT_o.DOC_s =
   `
   \\s*?   //: optional space, non-greedy
   (?:'|") //: string delimiter
@@ -122,7 +122,7 @@ EXT_o.docs__o =
   const docs_o =
     {
       doc_n: 0,
-      slot_s: '',
+      doc_s: '',
       topics_s: '',
       words_s: ''
     }
@@ -133,36 +133,36 @@ EXT_o.docs__o =
     REX_o
     .new__re( 'sm' )    //: multiline regex
 
-  //: doc
-  const doc_re =
+  //: doc_n
+  const docN_re =
     smRE_o
       `
       doc_n:     //: JS front matter Array
       ${EXT_o.DOC_n}
       `
-  const doc_a =
+  const docN_a =
     source_s
-      .match( doc_re )
-  if ( doc_a )
+      .match( docN_re )
+  if ( docN_a )
   {
     docs_o.doc_n =
-      +doc_a[1]    //: Number cast
+      +docN_a[1]    //: Number cast
   }
 
-  //: slot
-  const slot_re =
+  //: doc_s
+  const docS_re =
     smRE_o
       `
-      slot_s:     //: JS front matter Array
-      ${EXT_o.SLOT_s}
+      doc_s:     //: JS front matter Array
+      ${EXT_o.DOC_s}
       `
-  const slot_a =
+  const docS_a =
     source_s
-      .match( slot_re )
-  if ( slot_a )
+      .match( docS_re )
+  if ( docS_a )
   {
-    docs_o.slot_s =
-      slot_a[1]
+    docs_o.doc_s =
+      docS_a[1]
   }
 
   //: topics
@@ -310,7 +310,7 @@ EXT_o.toIndex__v =
             atdoc_o
               .doc_n,
             atdoc_o
-              .slot_s,
+              .doc_s,
             atdoc_o
               .topics_s
               .split( WORDS_DELIM_s ),
@@ -321,7 +321,7 @@ EXT_o.toIndex__v =
         )
 
       text_s +=
-        `${atdoc_o.slot_s}${WORDS_DELIM_s}${atdoc_o.words_s}${FILE_DELIM_s}`
+        `${atdoc_o.doc_s}${WORDS_DELIM_s}${atdoc_o.words_s}${FILE_DELIM_s}`
     }
   }
   FIL_o.writeFile( DOCS_TOPICS_s, JSON.stringify( json_a ), error_o => F_o.writeFile__v( error_o) )

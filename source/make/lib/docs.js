@@ -15,7 +15,7 @@ const DOCS_o =
   GRAPH_SVG_s:  'matrix/parts/slot/graph/graph.svg',
   GRAPH_JSON_s: 'graph',
   AT_DOC_n:     0,    //: doc_n in docs_a
-  AT_SLOT_n:    1,    //: slot_s
+  AT_SLOT_n:    1,    //: doc_s
   AT_LAB_n:     2,    //: [topic_s]
   AT_WORD_n:    3,    //: [word_s]
 
@@ -23,7 +23,7 @@ const DOCS_o =
   
   docs__a
   (
-    docs_a    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
+    docs_a    //: [ [doc_n, doc_s, [topics_a] ], [words_a], ... ]
   )
   {
     const topicsDocs_a = new Map()
@@ -57,20 +57,20 @@ const DOCS_o =
     //----
     const docLabelsHtml__v =
     (
-      doc_a,    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
-      step_n
+      doc_a,    //: [ [doc_n, doc_s, [topics_a] ], [words_a], ... ]
+      step_n    //: not used
       ) =>
     {
       let doc_s = ''
       for ( let at_s of doc_a.slice( DOCS_o.AT_LAB_n ) ) doc_s += `${at_s} `
-      return `\n<li data-slot_n="${step_n}" data-doc_n="${doc_a[DOCS_o.AT_DOC_n]}" data-slot_s="${doc_a[DOCS_o.AT_SLOT_n]}" data--="${doc_s.trimEnd()}"></li>`
+      return `\n<li data-doc_n="${doc_a[DOCS_o.AT_DOC_n]}" data-doc_s="${doc_a[DOCS_o.AT_SLOT_n]}" data--="${doc_s.trimEnd()}"></li>`
     }
 
 
     //----
     const docWordsJs__v =
     (
-      doc_a,    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
+      doc_a,    //: [ [doc_n, doc_s, [topics_a] ], [words_a], ... ]
       step_n
       ) =>
     {
@@ -91,7 +91,7 @@ const DOCS_o =
     {
       let docs_s = ''
       for ( let atdoc_n of docs_a ) docs_s += `${atdoc_n} `
-      return `\n<li data-slot_n="${step_n}" data-slot_s="${key_s}" data--="${docs_s.trimEnd()}"></li>`
+      return `\n<li data-doc_n="${step_n}" data-doc_s="${key_s}" data--="${docs_s.trimEnd()}"></li>`
     }
 
     

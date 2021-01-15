@@ -22,7 +22,7 @@ var SWO_o =
   ,
   */
 
-  cache_a: new Set()    //: '/path_s/slot_s.html' (!!! keep initial slash)
+  cache_a: new Set()    //: '/path_s/doc_s.html' (!!! keep initial slash)
   ,
 
   types_a:    //: message main<-> worker types; NB: message methods have capitalized names
@@ -272,14 +272,14 @@ var SWO_o =
 
   {{C_o.msg_o.REMOVE_s}}__v    //: remove an entry in SWO_o.cache_a
   (
-    slot_s     //: as payload_o
+    doc_s     //: as payload_o
   )
   {
     SWO_o
       .cache_a
       .delete
       (
-        `/{{C_o.SLOTS_s}}/${slot_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
+        `/{{C_o.SLOTS_s}}/${doc_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
       )
       //...... delete slider slide ....
   }

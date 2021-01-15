@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
 
   doc_n: 7,
-  slot_s: 'content_component_structure',
+  doc_s: 'content_component_structure',
   title_s: 'content component structure',
   topics_a: [ 'web site architecture', 'fondamentals', 'content composition' ],
   words_a: [ 'graph', 'dynamic page' ],

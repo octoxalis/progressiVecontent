@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
 
   doc_n: 6,
-  slot_s: 'contents_graph',
+  doc_s: 'contents_graph',
   title_s: 'ProgressiVecontent contents graph',
   topics_a: [ 'user interface', 'user experience' ],
   words_a: [ 'contents graph' ],

@@ -65,10 +65,10 @@ module.exports = make_o =>
   make_o.addFilter( 'template_end', ( end_s, ...args_ ) => BUI_o.end__s( end_s, ...args_ ) )
 
   const SEC_o = require('../lib/section.js')
-  make_o.addFilter( 'section', ( slot_s, permalink, doc_n ) => SEC_o.section__s( slot_s, permalink, doc_n ) )
+  make_o.addFilter( 'section', ( doc_s, permalink, doc_n ) => SEC_o.section__s( doc_s, permalink, doc_n ) )
   
   const SPO_o = require('../lib/spot.js')
-  make_o.addFilter( 'spot', ( slot_s, ...args_ ) => SPO_o.spot__s( slot_s, ...args_ ) )
+  make_o.addFilter( 'spot', ( doc_s, ...args_ ) => SPO_o.spot__s( doc_s, ...args_ ) )
   
   const CSS_o = require('../lib/css.js')
   make_o.addFilter( 'strip', ( css_s, ...args_ ) => CSS_o.strip__s( css_s, ...args_ ) )

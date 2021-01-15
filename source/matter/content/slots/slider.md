@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
 
   doc_n: 3,
-  slot_s: 'slider',
+  doc_s: 'slider',
   title_s: 'ProgressiVecontent slider',
   topics_a: [ 'user interface', 'user experience' ],
   words_a: [ 'slide list', 'scroll forward', 'scroll backward' ],

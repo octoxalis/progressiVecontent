@@ -41,12 +41,12 @@ module.exports =
   //=== DIR ===
   SYS_s:        'sys',        //: system slots dir
   SLOTS_s:      'slots',      //: Eleventy tag for SLOTS_s collection
-  DOCS_s:       'contents',   //: content slot_s
-  DOCS_n:       -1,           //: content slot_n
-  SKIN_s:       'skin',       //: skin slot_s
-  SKIN_n:       -2,           //: skin slot_n
-  BOOKMARK_s:   'bookmark',   //: bookmark slot_s
-  BOOKMARK_n:   -3,           //: bookmark slot_n
+  DOCS_s:       'contents',   //: content doc_s
+  DOCS_n:       -1,           //: content doc_n
+  SKIN_s:       'skin',       //: skin doc_s
+  SKIN_n:       -2,           //: skin doc_n
+  BOOKMARK_s:   'bookmark',   //: bookmark doc_s
+  BOOKMARK_n:   -3,           //: bookmark doc_n
 
   SHARE_DIR_s:    'sys/',
   MEDIA_PATH_s:   'assets/media/',

@@ -47,14 +47,14 @@ var SLI_o =
           .querySelector( `dl[data-step="${step_n}"]` )
           .dataset
           .section
-      const slot_s =
+      const doc_s =
         LIB_o
           .nodeId__o( 'sections' )
-          .querySelector( `[data-slot_n="${section_n}"]` )
+          .querySelector( `[data-doc_n="${section_n}"]` )
           .dataset
-          .slot_s
+          .doc_s
       SLI_o
-        .location__v( slot_s )
+        .location__v( doc_s )
     }
   }
 ,
@@ -76,15 +76,15 @@ var SLI_o =
   
   location__v
   (
-    slot_s
+    doc_s
   )
   {
     document
-      .querySelector( `section[data-slot_s="${slot_s}"]` )
+      .querySelector( `section[data-doc_s="${doc_s}"]` )
       .scrollIntoView( {behavior: "smooth", block: "start"} )
     //?? window
     //??   .location
-    //??   .hash = `#${slot_s}`
+    //??   .hash = `#${doc_s}`
   }
 ,
 
