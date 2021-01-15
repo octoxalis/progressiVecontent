@@ -4,7 +4,7 @@
   permalink: 'slots/contents_graph.html',
   tags: [ 'notag' ],
 
-  rank_n: 6,
+  doc_n: 6,
   slot_s: 'contents_graph',
   title_s: 'ProgressiVecontent contents graph',
   topics_a: [ 'user interface', 'user experience' ],

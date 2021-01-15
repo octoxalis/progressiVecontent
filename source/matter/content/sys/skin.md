@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
   //?? eleventyExcludeFromCollections: true,
 
-  rank_n: -2,        //: {{C_o.SKIN_n}}
+  doc_n: -2,        //: {{C_o.SKIN_n}}
   slot_s: 'skin',
   title_s: 'skin',
 }

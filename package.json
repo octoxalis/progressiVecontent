@@ -20,14 +20,16 @@
     "npx": "^10.2.2",
     "nunjucks": "^3.2.2",
     "performance-leaderboard": "^3.1.6",
-    "prismjs": "^1.22.0",
     "terser": "^5.3.8"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1"
   },
   "scripts": {
-    "test": "eleventy --help"
+    "test": "eleventy --help",
+    "extract": "node source/make/lib/extract.js",
+    "11ty": "npx @11ty/eleventy --config=source/make/11ty/make.js",
+    "build": "npm-run-all extract 11ty"
   },
   "keywords": [
     "static",

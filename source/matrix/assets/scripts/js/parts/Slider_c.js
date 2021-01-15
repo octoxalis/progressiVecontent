@@ -197,7 +197,7 @@ class Slider3D
     const slide_e = document.createElement( this.option_o.slideTag_s )
     slide_e.dataset[this.option_o.step_s] = slide_n
     //xxslide_e.dataset[this.option_o.section_s] = slot_e.dataset.slot_n
-    slide_e.dataset[this.option_o.section_s] = slot_e.dataset.rank_n
+    slide_e.dataset[this.option_o.section_s] = slot_e.dataset.doc_n
     const title_s =
       slot_e
         .dataset[this.option_o.slot_s]

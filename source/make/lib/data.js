@@ -8,7 +8,7 @@ const DATA_a =    // default exported data
   'layout',
   'permalink',
   'tags',
-  'rank_n',
+  'doc_n',
   'title_s',
   'subtitle_s',
   'abstract_s',

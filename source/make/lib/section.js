@@ -51,11 +51,11 @@ module.exports =
   (
     content_s,
     permalink_s,
-    rank_n
+    doc_n
   ) =>
   {
     const slot_s = permalink_s.slice( permalink_s.lastIndexOf( '/' ) + 1, -5 )  //: '.html'.length
-    const section_s = `<section id="section_${slot_s}" data-rank_n="${rank_n}" class="invisible">`
+    const section_s = `<section id="section_${slot_s}" data-doc_n="${doc_n}" class="invisible">`
     const output_s  = SEC_o.content__v( content_s, slot_s )
     const redirect_s = `<a href="${U_o.url_s}${C_o.URL_S_s}${permalink_s}" data-id="redirect" tabindex=-1><br/>This content is part of <em>${A_o.NAME_s}</em> site</a>`
     return `${section_s}${output_s}${redirect_s}</section>`

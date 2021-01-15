@@ -65,7 +65,7 @@ module.exports = make_o =>
   make_o.addFilter( 'template_end', ( end_s, ...args_ ) => BUI_o.end__s( end_s, ...args_ ) )
 
   const SEC_o = require('../lib/section.js')
-  make_o.addFilter( 'section', ( slot_s, permalink, rank_n ) => SEC_o.section__s( slot_s, permalink, rank_n ) )
+  make_o.addFilter( 'section', ( slot_s, permalink, doc_n ) => SEC_o.section__s( slot_s, permalink, doc_n ) )
   
   const SPO_o = require('../lib/spot.js')
   make_o.addFilter( 'spot', ( slot_s, ...args_ ) => SPO_o.spot__s( slot_s, ...args_ ) )

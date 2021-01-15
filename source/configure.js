@@ -7,8 +7,8 @@ module.exports =
 {
   AUTHOR_s:     'octoxalis',             //: github name
   EMAIL_s:      'octoxalis@gmail.com',   //: github e-mail
-  ID_s:         'progressiVecontent',        //: github repository
-  NAME_s:       'progressiVecontent',        //: site name
+  ID_s:         'progressiVecontent',    //: github repository
+  NAME_s:       'progressiVecontent',    //: site name
   LANGUAGE_s:   'en',                    //: site language
   
   URL_s:        'https://progressivecontent.netlify.app/',  //: CDN deployer

@@ -3,7 +3,7 @@
 
 {% set _id_s = F_o.slotId__s( permalink ) %}
 {%- set _template_s %}
-{{ layoutContent | section( permalink, rank_n ) | spot -}}
+{{ layoutContent | section( permalink, doc_n ) | spot -}}
 {% endset -%}
 
 {{- _template_s | safe | minify_html | template_end( data_o ) -}}{# post process #}

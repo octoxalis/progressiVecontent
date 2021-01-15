@@ -6,7 +6,7 @@
   eleventyExcludeFromCollections: false,
 
 
-  rank_n: -9999,
+  doc_n: -9999,
   slot_s: 'index',
   title_s:    'progressiVecontent',
   subtitle_s: 'content oriented website architecture',

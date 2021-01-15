@@ -1,6 +1,10 @@
 const FIL_o = require( 'fs-extra' )
 const REX_o = require( './regex.js' )
-//?? const LAB_o = require( '../data/topics.js' )
+const C_o   = require( '../data/C_o.js' )
+const F_o   = require( '../data/F_o.js' )
+
+const DOCS_TOPICS_s = `${C_o.INDEX_DIR_s}input/docs_topics_words.json`
+const DOCS_WORDS_s  = `${C_o.INDEX_DIR_s}input/docs_words.txt`
 
 const FILE_DELIM_s = '\n'
 const WORDS_DELIM_s = ' '
@@ -46,7 +50,7 @@ EXT_o.TITLE_s =
   )       //: close capture group
   :       //: title delimiter
   `
-EXT_o.RANK_n =
+EXT_o.DOC_n =
   `
   \\s*?   //: optional space, non-greedy
   (       //: open capture group
@@ -117,7 +121,7 @@ EXT_o.docs__o =
 {
   const docs_o =
     {
-      rank_n: 0,
+      doc_n: 0,
       slot_s: '',
       topics_s: '',
       words_s: ''
@@ -129,20 +133,20 @@ EXT_o.docs__o =
     REX_o
     .new__re( 'sm' )    //: multiline regex
 
-  //: rank
-  const rank_re =
+  //: doc
+  const doc_re =
     smRE_o
       `
-      rank_n:     //: JS front matter Array
-      ${EXT_o.RANK_n}
+      doc_n:     //: JS front matter Array
+      ${EXT_o.DOC_n}
       `
-  const rank_a =
+  const doc_a =
     source_s
-      .match( rank_re )
-  if ( rank_a )
+      .match( doc_re )
+  if ( doc_a )
   {
-    docs_o.rank_n =
-      +rank_a[1]    //: Number cast
+    docs_o.doc_n =
+      +doc_a[1]    //: Number cast
   }
 
   //: slot
@@ -242,16 +246,16 @@ EXT_o.toIndex__v =
       ) =>
       {
         return (
-          item_o.rank_n
+          item_o.doc_n
           -
-          other_o.rank_n
+          other_o.doc_n
         )
       }
     )
   let text_s = ''
   let json_a = []
   let index_n = 0
-  let rank_a =
+  let doc_a =
     new Set()
   for
   (
@@ -263,7 +267,7 @@ EXT_o.toIndex__v =
     if     //: exclude index, 404, sys slots, etc.
     (
       atdoc_o
-        .rank_n 
+        .doc_n 
       >=
       0
     )
@@ -271,32 +275,32 @@ EXT_o.toIndex__v =
       if
       (
         atdoc_o
-          .rank_n
+          .doc_n
         >
         index_n
       )
       {
         index_n =
           atdoc_o
-            .rank_n
+            .doc_n
       }
       if
       (
-        rank_a
+        doc_a
           .has
           (
             atdoc_o
-              .rank_n
+              .doc_n
           )
       )
       {
-        console.log( `ERROR: duplicate rank_n: ${atdoc_o.rank_n}`)
+        console.log( `ERROR: duplicate doc_n: ${atdoc_o.doc_n}`)
       }
-      rank_a
+      doc_a
         .add
         (
           atdoc_o
-            .rank_n
+            .doc_n
         )
       
       json_a
@@ -304,7 +308,7 @@ EXT_o.toIndex__v =
         (
           [
             atdoc_o
-              .rank_n,
+              .doc_n,
             atdoc_o
               .slot_s,
             atdoc_o
@@ -320,9 +324,9 @@ EXT_o.toIndex__v =
         `${atdoc_o.slot_s}${WORDS_DELIM_s}${atdoc_o.words_s}${FILE_DELIM_s}`
     }
   }
-  FIL_o.writeFile( `make/index/input/docs_topics_words.json`, JSON.stringify( json_a ), error_o=>{/*console.log( error_o )*/})
-  FIL_o.writeFile( `make/index/input/docs_words.txt`, text_s, error_o=>{/*console.log( error_o )*/})
-  console.log( `-----------------\nLast rank_n: ${index_n}\n-----------------`)
+  FIL_o.writeFile( DOCS_TOPICS_s, JSON.stringify( json_a ), error_o => F_o.writeFile__v( error_o) )
+  FIL_o.writeFile( DOCS_WORDS_s, text_s, error_o => F_o.writeFile__v( error_o) )
+  console.log( `-----------------\nLast doc_n: ${index_n}\n-----------------`)
 }
 
 
@@ -333,7 +337,7 @@ void function
   EXT_o.file_a =        //: prepare
     require( 'klaw-sync' )
     (
-      './matter/content/',    //: all Mardown files,
+      C_o.CONTENT_PATH_s,    //: all Mardown files,
       {
         nodir: true,
         depthLimit: 2

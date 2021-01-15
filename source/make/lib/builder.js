@@ -4,6 +4,12 @@ const HEAD_o = require( './header.js' )
 const CSP_o =  require( './csp.js' )
 const WORD_o = require( './words.js' )
 const TOP_o =  require( './topics.js' )
+const C_o =    require( '../data/C_o.js' )
+const F_o =    require( '../data/F_o.js' )
+
+
+const OUTPUT_DIR_s = 'make/index/output/'
+const DOCS_PATH_s = `${OUTPUT_DIR_s}docs_paths.json`
 
 const BUI_o =
 {
@@ -144,7 +150,7 @@ module.exports =
     ++BUI_o.current_n    //;console.log( `${BUI_o.current_n} / ${BUI_o.count_n}`)
     let end_s = BUI_o.templateEnd__s( input_s, data_o )
     if ( BUI_o.file_a && BUI_o.current_n === BUI_o.count_n - 1 ) BUI_o.buildEnd__v( end_s, data_o )
-    FIL_o.writeFile( `make/index/output/docs_paths.json`, JSON.stringify([...BUI_o.docs_a]), error_o=>{/*console.log( error_o )*/})
+    FIL_o.writeFile( DOCS_PATH_s, JSON.stringify([...BUI_o.docs_a]), error_o => F_o.writeFile__v( error_o) )
     return end_s
   }
 ,
@@ -183,7 +189,7 @@ module.exports =
 void function ()
 //==============
 {
-  const MD_DIR_s = './matter/content/'    //: all Mardown files
+  const MD_DIR_s = C_o.CONTENT_PATH_s    //: all Mardown files
   const DEPTH_n  = 2
   BUI_o
     .file_a = require( 'klaw-sync' )( MD_DIR_s, { nodir: true, depthLimit: DEPTH_n } )

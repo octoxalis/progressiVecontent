@@ -3,7 +3,7 @@
   "short_name":"progressiVecontent",
   "start_url": "/",
   "description": "parceled content architecture for instant loading website",
-  "icons": [{ "src": "https://progressivecontent.netlify.app/assets/media/google-touch-icon.png", "sizes": "512x512" }],
+  "icons": [{ "src": "http://127.0.0.1:8080/assets/media/google-touch-icon.png", "sizes": "512x512" }],
   "theme_color":"#064ec1",
   "background_color":"#ffffff",
   "display":"standalone"

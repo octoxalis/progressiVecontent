@@ -4,7 +4,7 @@
   permalink: 'slots/introduction.html',
   tags: [ 'notag' ],
 
-  rank_n: 0,
+  doc_n: 0,
   slot_s: 'introduction',
   title_s: 'About progressiVecontent',
   topics_a: [ 'web site architecture', 'fondamentals' ],

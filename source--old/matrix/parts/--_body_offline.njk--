@@ -1,3 +1,0 @@
-<body>
-{% include "parts/body/article.njk" %}
-</body>

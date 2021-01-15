@@ -1,5 +1,6 @@
 const FIL_o = require('fs-extra')
 
+const F_o = require( '../data/F_o.js' )
 const GRA_o = require('./Graph')    //: GRA_o redeclared in: matrix/assets/scripts/js/parts/graph.js
 
 
@@ -13,7 +14,7 @@ const DOCS_o =
   LABELS_NJK_s: 'matrix/parts/slot/data/topics.njk',
   GRAPH_SVG_s:  'matrix/parts/slot/graph/graph.svg',
   GRAPH_JSON_s: 'graph',
-  AT_RANK_n:    0,    //: rank_n in docs_a
+  AT_DOC_n:     0,    //: doc_n in docs_a
   AT_SLOT_n:    1,    //: slot_s
   AT_LAB_n:     2,    //: [topic_s]
   AT_WORD_n:    3,    //: [word_s]
@@ -22,7 +23,7 @@ const DOCS_o =
   
   docs__a
   (
-    docs_a    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
+    docs_a    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
   )
   {
     const topicsDocs_a = new Map()
@@ -30,7 +31,7 @@ const DOCS_o =
     let atdoc_n = 0
     for ( doc_a of docs_a )
     {
-      docsLabels_a[atdoc_n] = [ doc_a[DOCS_o.AT_RANK_n], doc_a[DOCS_o.AT_SLOT_n] ]
+      docsLabels_a[atdoc_n] = [ doc_a[DOCS_o.AT_DOC_n], doc_a[DOCS_o.AT_SLOT_n] ]
       for ( topic_s of doc_a[DOCS_o.AT_LAB_n] )
       {
         docsLabels_a[atdoc_n].push( topic_s )    //: docs[topics]
@@ -56,20 +57,20 @@ const DOCS_o =
     //----
     const docLabelsHtml__v =
     (
-      doc_a,    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
+      doc_a,    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
       step_n
       ) =>
     {
       let doc_s = ''
       for ( let at_s of doc_a.slice( DOCS_o.AT_LAB_n ) ) doc_s += `${at_s} `
-      return `\n<li data-slot_n="${step_n}" data-rank_n="${doc_a[DOCS_o.AT_RANK_n]}" data-slot_s="${doc_a[DOCS_o.AT_SLOT_n]}" data--="${doc_s.trimEnd()}"></li>`
+      return `\n<li data-slot_n="${step_n}" data-doc_n="${doc_a[DOCS_o.AT_DOC_n]}" data-slot_s="${doc_a[DOCS_o.AT_SLOT_n]}" data--="${doc_s.trimEnd()}"></li>`
     }
 
 
     //----
     const docWordsJs__v =
     (
-      doc_a,    //: [ [rank_n, slot_s, [topics_a] ], [words_a], ... ]
+      doc_a,    //: [ [doc_n, slot_s, [topics_a] ], [words_a], ... ]
       step_n
       ) =>
     {
@@ -89,7 +90,7 @@ const DOCS_o =
       ) =>
     {
       let docs_s = ''
-      for ( let doc_n of docs_a ) docs_s += `${doc_n} `
+      for ( let atdoc_n of docs_a ) docs_s += `${atdoc_n} `
       return `\n<li data-slot_n="${step_n}" data-slot_s="${key_s}" data--="${docs_s.trimEnd()}"></li>`
     }
 
@@ -103,7 +104,7 @@ const DOCS_o =
       ) =>
     {
       let docs_s = '['
-      for ( let doc_n of docs_a ) docs_s += `${doc_n},`
+      for ( let atdoc_n of docs_a ) docs_s += `${atdoc_n},`
       docs_s = docs_s.slice( 0, -1 )     //: trim last ,
       return `LAB_o['${key_s}']=${docs_s}];`
     }
@@ -142,13 +143,13 @@ const DOCS_o =
       lab_doc_js_s = `var LAB_o=[];${lab_doc_js_s}`
     
     FIL_o.
-      writeFile( DOCS_o.DOCS_NJK_s, doc_word_html_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.DOCS_NJK_s, doc_word_html_s, error_o => F_o.writeFile__v( error_o) )
     FIL_o.
-      writeFile( DOCS_o.DOCS_JS_s, doc_word_js_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.DOCS_JS_s, doc_word_js_s, error_o=>F_o.writeFile__v( error_o) )
     FIL_o.
-      writeFile( DOCS_o.LABELS_NJK_s, lab_doc_html_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.LABELS_NJK_s, lab_doc_html_s, error_o=>F_o.writeFile__v( error_o) )
     FIL_o.
-      writeFile( DOCS_o.LABELS_JS_s, lab_doc_js_s, error_o=>{/*console.log( error_o )*/} )
+      writeFile( DOCS_o.LABELS_JS_s, lab_doc_js_s, error_o=>F_o.writeFile__v( error_o) )
     DOCS_o.svg__v( docsLabels_a )
   }
 ,
@@ -167,18 +168,18 @@ const DOCS_o =
       ) =>
       {
         const docs_a = Array.from( topicsDocs_a.get( topic_s ) )
-        for ( doc_n of docs_a )
+        for ( atdoc_n of docs_a )
           {
-            let node_o = graph_c.nodeLabel__o( doc_n )
+            let node_o = graph_c.nodeLabel__o( atdoc_n )
             if ( !node_o )
             {
-              const node_n = graph_c.node__n( new GRA_o.Facet( doc_n ) )
+              const node_n = graph_c.node__n( new GRA_o.Facet( atdoc_n ) )
               node_o = graph_c.nodeId__o( node_n )
             }
             const node_n = node_o.id__n()
             for ( idoc_n of docs_a )  //: link to every other nodes in the Set (complete graph)
             {
-              if ( idoc_n !== doc_n )
+              if ( idoc_n !== atdoc_n )
               {
                 let inode_o = graph_c.nodeLabel__o( idoc_n )
                 if ( !inode_o )
@@ -196,7 +197,7 @@ const DOCS_o =
     FIL_o
       .writeFile( `${DOCS_o.OUTPUT_DIR_s}${DOCS_o.GRAPH_JSON_s}.json`,
       JSON.stringify( graph_c ),
-      error_o=>{/*console.log( error_o )*/})
+      error_o => F_o.writeFile__v( error_o))
   }
 ,
 
@@ -250,7 +251,7 @@ svg__v
     (
       DOCS_o.GRAPH_SVG_s,
       svg_s,
-      error_o=>{/*console.log( error_o )*/}
+      error_o => F_o.writeFile__v( error_o)
     )
 }
 

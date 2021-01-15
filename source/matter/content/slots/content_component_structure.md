@@ -4,7 +4,7 @@
   permalink: 'slots/content_component_structure.html',
   tags: [ 'notag' ],
 
-  rank_n: 7,
+  doc_n: 7,
   slot_s: 'content_component_structure',
   title_s: 'content component structure',
   topics_a: [ 'web site architecture', 'fondamentals', 'content composition' ],
@@ -25,7 +25,7 @@ For instance, the original Markdown file of the _Introduction_ content component
 {% endset %}
 
 {% _code_block %}
-    title_s: '{{A_o.ID_s}}matter/content/slots/introduction.md',
+    title_s: 'source/matter/content/slots/introduction.md',
     lang_s: 'njk',
 [//]:#(_code_block)
 {{ _code_01 }}
@@ -44,3 +44,4 @@ And the following corresponding HTML file is automatically generated.
 [//]:#(_code_block)
 {{ _code_02 }}
 {% end_code_block %}
+

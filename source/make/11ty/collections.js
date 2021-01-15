@@ -1,12 +1,12 @@
 const sort_o =
 {
 //> Sort a tag collection
-//> according to rank_n frontmatter property
-  sortByRank__a: ( collection_a, tag_s ) =>
+//> according to doc_n frontmatter property
+  sortByDoc__a: ( collection_a, tag_s ) =>
   {
     return collection_a
       .getFilteredByTag( tag_s )
-      .sort( ( current_o, other_o ) => current_o.data.rank_n - other_o.data.rank_n )
+      .sort( ( current_o, other_o ) => current_o.data.doc_n - other_o.data.doc_n )
   }
 }
 

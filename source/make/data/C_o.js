@@ -48,9 +48,11 @@ module.exports =
   BOOKMARK_s:   'bookmark',   //: bookmark slot_s
   BOOKMARK_n:   -3,           //: bookmark slot_n
 
-  SHARE_DIR_s:   'sys/',
-  MEDIA_PATH_s:  'assets/media/',
-  JSON_PATH_s:   'assets/data/json/',
+  SHARE_DIR_s:    'sys/',
+  MEDIA_PATH_s:   'assets/media/',
+  JSON_PATH_s:    'assets/data/json/',
+  CONTENT_PATH_s: 'matter/content/',
+  INDEX_DIR_s:    'make/index/',
   
   URL_S_s:    '?s=/',       //: url search prefix, e.g. '{{U_o.url_s}}{{C_o.URL_S_s}}{{C_o.SLOTS_s}}/sl
 

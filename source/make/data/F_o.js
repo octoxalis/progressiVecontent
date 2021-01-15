@@ -114,4 +114,13 @@ module.exports =
     return till_s
   },
 
+
+
+  writeFile__v:
+  (
+    output_o
+  ) =>
+  {
+    if ( output_o ) console.log( output_o )    //: null or error message
+  }
 }

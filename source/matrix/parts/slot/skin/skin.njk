@@ -12,4 +12,4 @@
 {% include "parts/slot/skin/light_mode.njk" %}
 {% endset -%}
 
-{{- _template_s | section( permalink, rank_n ) | spot | safe | minify_html | template_end( data_o ) -}}{# post process #}
+{{- _template_s | section( permalink, doc_n ) | spot | safe | minify_html | template_end( data_o ) -}}{# post process #}

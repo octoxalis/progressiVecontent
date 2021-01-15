@@ -187,7 +187,7 @@ var GRA_o =
         .querySelector
         (
           `section[data-slot_n="${step_s}"]`
-          //...`section[data-rank="${+step_s + 1}"]`              //: Number cast
+          //...`section[data-doc_n="${+step_s + 1}"]`              //: Number cast
         )
     if ( !section_e )  //: not yet fetched
     {

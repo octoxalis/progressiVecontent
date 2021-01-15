@@ -4,7 +4,7 @@
   permalink: 'slots/topics_slider.html',
   tags: [ 'notag' ],
 
-  rank_n: 5,
+  doc_n: 5,
   slot_s: 'topics_slider',
   title_s: 'ProgressiVecontent topics slider',
   topics_a: [ 'user interface', 'user experience' ],

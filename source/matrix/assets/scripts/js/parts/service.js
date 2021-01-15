@@ -159,10 +159,10 @@ receive__v    //:-- Listen to messages
                 (
                   section_e,
                   slot_n,
-                  //xxsection_e.dataset.rank_n,
+                  //xxsection_e.dataset.doc_n,
                   [
                     `data-slot_s=${section_e.dataset.slot_s}`,
-                    //??`data-slot_n=${section_e.dataset.rank_n}`
+                    //??`data-slot_n=${section_e.dataset.doc_n}`
                   ],
                 )
               },

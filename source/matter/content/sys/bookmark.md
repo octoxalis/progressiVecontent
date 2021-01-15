@@ -5,7 +5,7 @@
   tags: [ 'notag' ],
   //?? eleventyExcludeFromCollections: true,
 
-  rank_n: -3,        //: {{C_o.BOOKMARK_n}}
+  doc_n: -3,        //: {{C_o.BOOKMARK_n}}
   slot_s: 'bookmark',
   title_s: 'bookmark',
 }
