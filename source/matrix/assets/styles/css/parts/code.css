@@ -21,26 +21,29 @@ dl[data-id="code_ref"],
 __                     {position:relative}
 
 code,
-dl[data-id="code_ref"],
+/*dl[data-id="code_ref"],*/
 __                     {left:50%;right:50%}/* !!!! full width */
 
 code,
 __                     {margin:0}
 
+pre[data-id="code"],
+__                     {margin: 0 0 {{C_o.PAD_16}} 0}
+
 code,
 __                     {padding-left:1rem}
 
 code,
-dl[data-id="code_ref"],
+div[data-id="code_ref"],
+/*dl[data-id="code_ref"],*/
 __                     {margin-left:-{{C_o.HALF_WIDTH}};margin-right:-{{C_o.HALF_WIDTH}}}    /* !!!! full width but keep margins for scaling */
 
-code,
-__                     {margin-top:{{C_o.PAD_8}}}
-
 div[data-id="code_ref"],
-__                     {margin-bottom: {{C_o.PAD_8}}}
+__                     {margin-top: {{C_o.PAD_16}}}
+
 
 code,
+div[data-id="code_ref"],
 __                     {padding:{{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.PAD_2}} {{C_o.PAD_4}}}
 
 dl[data-id="code_ref"],
@@ -48,6 +51,7 @@ __                     {padding:0 {{C_o.PAD_2}}}
 
 code,
 code ol,
+div[data-id="code_ref"],
 dl[data-id="code_ref"],
 __                     {width:100vw}  /* !!!! full width */
 

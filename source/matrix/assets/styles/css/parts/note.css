@@ -170,7 +170,6 @@ __                     {width:0}
 __                     {width:var(--line_width)}
 
 
-
 [data-id="note_img"] button,
 .note_open img,                  /* can be overriden by inline style */
 __                     {width:100%}

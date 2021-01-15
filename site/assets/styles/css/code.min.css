@@ -55,15 +55,17 @@ code li::marker{display:inline-block;
 code > ol,dl[data-id="code_ref"]{display:flex}
 code > ol{flex-direction: column}
 code,dl[data-id="code_ref"]{position:relative}
-code,dl[data-id="code_ref"]{left:50%;right:50%}
+code,
+__  {left:50%;right:50%}
 code{margin:0}
+pre[data-id="code"]{margin: 0 0 4rem 0}
 code{padding-left:1rem}
-code,dl[data-id="code_ref"]{margin-left:-50vw;margin-right:-50vw} 
-code{margin-top:2rem}
-div[data-id="code_ref"]{margin-bottom: 2rem}
-code{padding:0.5rem 0.5rem 0.5rem 1rem}
+code,div[data-id="code_ref"],
+__  {margin-left:-50vw;margin-right:-50vw} 
+div[data-id="code_ref"]{margin-top: 4rem}
+code,div[data-id="code_ref"]{padding:0.5rem 0.5rem 0.5rem 1rem}
 dl[data-id="code_ref"]{padding:0 0.5rem}
-code,code ol,dl[data-id="code_ref"]{width:100vw} 
+code,code ol,div[data-id="code_ref"],dl[data-id="code_ref"]{width:100vw} 
 dl[data-id="code_ref"] > dt{flex-basis:95%}
 code{white-space: pre;
   overflow: auto}

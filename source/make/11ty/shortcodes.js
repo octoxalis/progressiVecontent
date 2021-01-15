@@ -127,11 +127,11 @@ content_s =>
           content_o
             .spot_a,
         )
-    return `<pre data-id="code"><code data-id="code" data-lang="${content_o.lang_s}">${code_s}</code></pre>
-<div data-id="code_ref"><dl data-id="code_ref"><dt>Source: ${title_s}</dt>
-<dd><a href="https://ilite.netlify.app" target="_blank" title="Highlighting by ilite.js">ilite</a></dd>
-</dl></div>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
-  }
+    return `<div data-id="code_ref"><dl data-id="code_ref"><dt>Source: ${title_s}</dt>
+<dd><a href="https://ilite.netlify.app" target="_blank" title="Interactively highlighted by ilite.js">ilite</a></dd>
+</dl></div>
+<pre data-id="code"><code data-id="code" data-lang="${content_o.lang_s}">${code_s}</code></pre>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
+    }
   ,
 //code=01
 
