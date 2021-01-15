@@ -39,9 +39,11 @@ And the following corresponding HTML file is automatically generated.
 {% endset %}
 
 {% _code_block %}
-    title_s: '{{A_o.ID_s}}/slots/introduction.html',
+    title_s: 'site/slots/introduction.html',
     lang_s: 'html',
 [//]:#(_code_block)
 {{ _code_02 }}
 {% end_code_block %}
 
+
+This HTML file is minified!

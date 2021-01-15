@@ -140,7 +140,7 @@ content_s =>
   code__s:
   (
     path_s    //: 'path/to/file.ext#index_s', index_s is empty for full file
-    ) =>
+  ) =>
     {
     const [ file_s, index_s ] =
       path_s
