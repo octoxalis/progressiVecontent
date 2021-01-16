@@ -16,6 +16,11 @@ __                     {transition:.2s ease}
 #sections_slider,
 __                     {transition:transform .2s ease}
 
+#initial_discover,
+__                     {transition: 1s ease}
+
+
+
 /*=== KEYFRAMES ===*/
 
 /*

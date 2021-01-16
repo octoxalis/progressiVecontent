@@ -1,4 +1,4 @@
-const FIL_o = require('fs-extra')
+const FS_o = require('fs-extra')
 
 const REPLACE__s = require( '../lib/block_replace.js' )
 const SPLIT__a   = require( '../lib/block_split.js' )
@@ -146,7 +146,7 @@ content_s =>
       path_s
         .split( '#' )
     const source_s =
-    FIL_o
+    FS_o
       .readFileSync
       (
         file_s,

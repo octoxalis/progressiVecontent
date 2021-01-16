@@ -1,11 +1,12 @@
 const DOCS_o = require( './docs.js' )
+const C_o    = require( '../data/C_o.js' )
 
 
 
 const TOP_o =
 {
-  script_s: `make/index/PLDA_model.py`,   //: Partially topic LDA
-  docs_topics_json_s: 'make/index/input/docs_topics_words.json',
+  script_s: `${C_o.INDEX_DIR_s}PLDA_model.py`,   //: Partially topic LDA
+  docs_topics_json_s: `${C_o.INDEX_DIR_s}input/docs_topics_words.json`,
   
   
   
@@ -25,7 +26,6 @@ module.exports =
   write__v
   ()
   {
-    //return  //:!!!!!!!!!!!  TEMPORARY !!!!!!!!!!!!!!!!
     const  { spawn } =
       require( 'child_process' )
     const topic_o = spawn( 'python3', [TOP_o.script_s] )

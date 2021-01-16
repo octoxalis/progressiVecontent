@@ -1,4 +1,4 @@
-const FIL_o = require('fs-extra')
+const FS_o = require('fs-extra')
 
 const F_o = require( '../data/F_o.js' )
 const GRA_o = require('./Graph')    //: GRA_o redeclared in: matrix/assets/scripts/js/parts/graph.js
@@ -142,13 +142,13 @@ const DOCS_o =
       } )
       lab_doc_js_s = `var LAB_o=[];${lab_doc_js_s}`
     
-    FIL_o.
+    FS_o.
       writeFile( DOCS_o.DOCS_NJK_s, doc_word_html_s, error_o => F_o.writeFile__v( error_o) )
-    FIL_o.
+    FS_o.
       writeFile( DOCS_o.DOCS_JS_s, doc_word_js_s, error_o=>F_o.writeFile__v( error_o) )
-    FIL_o.
+    FS_o.
       writeFile( DOCS_o.LABELS_NJK_s, lab_doc_html_s, error_o=>F_o.writeFile__v( error_o) )
-    FIL_o.
+    FS_o.
       writeFile( DOCS_o.LABELS_JS_s, lab_doc_js_s, error_o=>F_o.writeFile__v( error_o) )
     DOCS_o.svg__v( docsLabels_a )
   }
@@ -194,10 +194,10 @@ const DOCS_o =
             }
           }
       } )
-    FIL_o
+    FS_o
       .writeFile( `${DOCS_o.OUTPUT_DIR_s}${DOCS_o.GRAPH_JSON_s}.json`,
       JSON.stringify( graph_c ),
-      error_o => F_o.writeFile__v( error_o))
+      error_o => F_o.writeFile__v( error_o) )
   }
 ,
 
@@ -213,7 +213,7 @@ svg__v
       (
         docsLabels_a.length
       )
-      ;console.log( `[ ${wide_n}, ${dim_n}, ${height_n}, ${column_n} ]` )
+  //;console.log( `[ ${wide_n}, ${dim_n}, ${height_n}, ${column_n} ]` )
   let svg_s = ''
   //--let atX_n = 0    // rect version
   //--let atY_n = 0    // rect version
@@ -224,10 +224,11 @@ svg__v
     .forEach
     (
       (
-        doc_a,    //!!! not used
+        doc_a,
         step_n
       ) =>
       {
+        //;console.log( doc_a )
         //--svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`    // rect version
         const title_s =
          step_n === 0
@@ -235,7 +236,9 @@ svg__v
            '<title>Start here</title>'
         :
           ''
-        svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
+        //~~svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
+        svg_s += `<circle id="node_${doc_a[0]}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
+        //~~svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}"></circle><text x="${atX_n}" y="${atY_n}">&#9679;</text>`
         atX_n += dim_n + GAP_n
         if ( atX_n >= wide_n )
         {
@@ -246,7 +249,7 @@ svg__v
       }
     )
   svg_s = `<svg xmlns="http://www.w3.org/2000/svg" id="graph_svg" class="" viewBox="0 0 ${wide_n} ${height_n}">${svg_s}</svg>`
-  FIL_o.
+  FS_o.
     writeFile
     (
       DOCS_o.GRAPH_SVG_s,
@@ -329,7 +332,7 @@ module.exports =
     docs_s    //: 'docs_topics_words.json'
   )
   {
-    DOCS_o.docs__v( DOCS_o.docs__a( JSON.parse( FIL_o.readFileSync( docs_s, 'utf8', 'r' ) ) ) )
+    DOCS_o.docs__v( DOCS_o.docs__a( JSON.parse( FS_o.readFileSync( docs_s, 'utf8', 'r' ) ) ) )
   }
 ,
 

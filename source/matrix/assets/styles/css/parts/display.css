@@ -5,12 +5,13 @@ __                     {display: none}
 
 
 main,
+#initial_logo,
 __                     {display:grid; place-items:center}
 
 
+#initial_hero,
+#initial_discover,
 #background_aside,
-#initial_slogan,
-#initial_slogan li,
 #sections_slider,
 __                     {display: flex}
 
@@ -22,8 +23,8 @@ __                     {display: block}
 __                     {justify-content: center}
 
 
-#initial_slogan,
-#initial_slogan li:not(#initial_logo),
+#initial_hero,
+#initial_discover,
 #sections_slider,
 __                     {flex-direction: column}
 
@@ -34,4 +35,3 @@ __                     {flex-direction: column}
 #initial,
 #sections_slider,
 __                     {z-index: 1}
-

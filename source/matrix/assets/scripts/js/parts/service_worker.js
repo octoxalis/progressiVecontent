@@ -9,20 +9,28 @@ var SWO_o =
   LAB_JS_s: '{{U_o.url_s}}/assets/data/js/topics_data.js'
   ,
 
-  /*// ??????????????????????????
-  url_a:     //: URLs of assets to immediately cache
+
+  slots_a:    //: '/path_s/doc_s.html' (!!! keep initial slash)
     [
-      //?? '{{U_o.url_s}}',
-      //?? '{{U_o.url_s}}index.html',
-      //XX'{{U_o.url_s}}offline.html',
-      //?? '{{U_o.url_s}}assets/scripts/js/index.min.js',
-      //.....DEFER.... '{{U_o.url_s}}assets/scripts/js/instant_page.min.js',
-      //?? '{{U_o.url_s}}favicon.ico',
+      '/slots/introduction.html',
+      '/slots/content_graph.html',
+      '/slots/nodes_assembly.html',
+      '/slots/slider.html',
     ]
   ,
-  */
 
-  cache_a: new Set()    //: '/path_s/doc_s.html' (!!! keep initial slash)
+  url_a:     //: URLs of assets to immediately cache
+    [
+      '{{U_o.url_s}}slots/introduction.html',
+      '{{U_o.url_s}}slots/content_graph.html',
+      '{{U_o.url_s}}slots/nodes_assembly.html',
+      '{{U_o.url_s}}slots/slider.html',
+      //XX'{{U_o.url_s}}offline.html',
+    ]
+  ,
+  
+
+  cache_a: null
   ,
 
   types_a:    //: message main<-> worker types; NB: message methods have capitalized names
@@ -41,12 +49,16 @@ var SWO_o =
 
 
   
-/*//-------------------------------------- WE SKIP INITIAL CACHING
   install__v    //:- Iterate thru url_a and put each entry in cache
   (
     install_o
   )
   {
+    SWO_o.cache_a =
+      new Set
+      (
+        SWO_o.slots_a
+      )
     install_o
       .waitUntil
       (
@@ -63,8 +75,6 @@ var SWO_o =
       )
   }
 ,
-//---------------------------------------------------------------
-*/
   
   
   activate__v    //:- Remove inapplicable caches entries
@@ -241,6 +251,7 @@ var SWO_o =
     const cache_a = 
       Array
         .from( SWO_o.cache_a )
+    //;console.log( cache_a )
     if ( !cache_a.length ) return
     //>
     const restore_a = []
@@ -458,7 +469,7 @@ cache__v
   ()
   {
     [ 
-      //??? 'install',  //: SKIP INITIAL CACHING: cache will be filled progressively
+      'install',
       'activate',
       'fetch',
     ]

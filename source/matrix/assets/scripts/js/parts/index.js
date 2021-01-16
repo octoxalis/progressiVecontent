@@ -8,10 +8,10 @@ var IND_o =
     IND_o
       .service__v()
     LIB_o
-      .nodeId__o( 'initial' )
+      .nodeId__o( 'initial_hero' )
       .addEventListener
       (
-        'click',    //: wait for visitor svg_logo
+        'click',
         IND_o.initial__v
       )
   }
@@ -53,7 +53,7 @@ var IND_o =
     if ( !'serviceWorker' in navigator )    //:- register service worker
     {
       return void window
-        .alert( "To visit {{A_o.NAME_s}}, please use a Service Workers enabled browser" )
+        .alert( "To visit {{A_o.NAME_s}}, you have to use a Service Workers enabled browser" )
     }
     //>
     //--window
@@ -130,6 +130,15 @@ var IND_o =
               },
             20
           )
+          if ( doc_n >= 0 )    //: not for sys slots
+          {
+            const node_e =
+              GRA_o
+                .svg_e
+                .querySelector( `#node_${doc_n}` )
+                ?.classList
+                ?.toggle( 'onview' )
+          }
         }
       )
     IND_o

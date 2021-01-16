@@ -38,3 +38,33 @@ Acting on these indicators spots the respective slide on the front. Slides can a
 for instance left or right
 {% end_note_txt %}
 .
+
+
+## Page slider
+
+{{ A_o.NAME_s }} ~°page slider°~ is a sticky ~°horizontal slider°~ located at the very top of the ~°page°~.
+It lists the ~°content components°~ that have been loaded
+{% _note_txt  %}
+~°tools components°~ are excluded: ~°skin°~, ~°bookmark°~ component, etc.
+{% end_note_txt %}
+, the first one beeing the _~°content graph°~_, which is automacally loaded when ~°first visiting°~ the site.
+
+Page slider ~°indicators°~ have a ~°width°~ in proportion with the number of loaded components: wider for a small number of components than for a high number.
+
+~°Acting on°~ the ~°front slide°~ or any indicator ~°scrolls°~ the page
+{% _note_txt  %}
+either ~°upwards°~ or ~°downwards°~
+{% end_note_txt %}
+and brings the respective content component in sight.
+When acting on an indicator, if its associated ~°slide°~ is already the front slide, the ~°slide list°~ is ~°retracted°~ to ~°free up°~ its place for the benefit of the ~°content area°~, unveiling the {{ A_o.NAME_s }} ~°logo°~.
+
+
+## Topics slider
+
+{{ A_o.NAME_s }} ~°topics slider°~ is an inline ~°horizontal slider°~ located inside and at the top of the ~°contents component°~, under the ~°page slider°~.
+It displays the full ~°list of topics°~ defined for the site.
+~°Acting on°~ the slider ~°front slide°~ refreshes the ~°components graph°~, ~°highlighting°~ all the nodes/circles related to the front topic
+{% _note_txt  %}
+but it **doesn't scroll the page** as does the page slider
+{% end_note_txt %}
+.

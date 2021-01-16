@@ -2,6 +2,9 @@
 
 :root                  {--INVERT_FILTER:invert(100%) brightness(8) hue-rotate({{C_o.HUE_ROTATE_n}}deg)}
 
+/*=== HOVER ===*/
+#initial_hero li:hover,
+__                     {filter:var(--INVERT_FILTER)}
 
 
 /*=== OPACITY ===*/
@@ -19,7 +22,7 @@ body,
 __                     {color:var(--c_prim_lo)}
 
 
-#initial_slogan,
+#initial_hero,
 __                     {color:var(--c_decor_hi)}
 
 

@@ -59,6 +59,19 @@ module.exports =
   KEY_n:      1,            //: service worker key
   
 
+  //=== INDEX ===
+  index_o:
+  {
+    CONCEPT_s:   0,
+    UI_s:        1,
+    IMPLEMENT_s: 2,
+    //......
+    RANGE_F_n:   0xF,    //: 16 categories (ranges)
+    RANGE_SHIFT_n: 9,    //: ... of 512 documents
+
+  }
+,
+
 
   //=== TAG MARKUP ===
   tag_o:
@@ -101,7 +114,7 @@ module.exports =
   //=== CSS constants to avoid calc() ===  
   HUE_SET_n: 1,         //: allow visitor color palette setting
   
-  HUE_P_n:  190,        //: theme PRIMARY color in range [0...359]
+  HUE_P_n:  233,        //: theme PRIMARY color in range [0...359]
   HUE_S_n: -10,         //: theme SECONDARY color offset from primary color
   HUE_H_n:  20,         //: theme HIGHLIGHT color offset from primary color
   HUE_D_n: -20,         //: theme DECORATIVE color offset from primary color
@@ -156,7 +169,7 @@ module.exports =
   PAD_16: .25 * 16 + 'rem',  //?????????????????
 
 
-  INITIAL_TURN: -.025 + 'turn',
+  INITIAL_TURN: -.005 + 'turn',
 
 
   BOX_OVERLAY: `12px 12px 32px 100vmax var(--c_shadow_lo)`,

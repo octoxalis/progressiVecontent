@@ -26,8 +26,10 @@ __                     {width:{{C_o.FULL_WIDTH}}}
 #sections,
 __                     {width:100%}
 
+/*
 #initial .svg_logo,
-__                     {width:35%}
+__                     {width:100%}
+*/
 
 #background_aside .svg_logo,
 __                     {width:18%}
@@ -53,8 +55,10 @@ __                     {height:1px}
 #initial,
 __                     {height:{{C_o.FULL_HEIGHT}}}
 
-#initial_slogan li,
-__                     {height:25vh}
+
+#initial_hero li,
+__                     {height:50vh}
+
 
 
 #sections_slider,

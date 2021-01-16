@@ -9,7 +9,7 @@
 --c_hue_p:var(--hue_base);                              /* primary */
 --c_hue_i:calc( var(--hue_base) + 140);                /* inverse of primary color */
 --c_hue_s:calc( var(--hue_base) + {{C_o.HUE_S_n}});    /* secondary */
---c_hue_p:calc( var(--hue_base) + {{C_o.HUE_H_n}});    /* highlight */
+--c_hue_h:calc( var(--hue_base) + {{C_o.HUE_H_n}});    /* highlight */
 --c_hue_d:calc( var(--hue_base) + {{C_o.HUE_D_n}});    /* decor */
 --c_hue_l:calc( var(--hue_base) + {{C_o.HUE_L_n}});    /* link */
 
@@ -54,7 +54,7 @@
 
 --c_prim_hi_2:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/1);
 --c_prim_hi_3:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_3)/1);
---c_prim_trans:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/.2);
+--c_prim_trans:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/.3);
 
 
 

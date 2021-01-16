@@ -1,4 +1,4 @@
-const FIL_o = require( 'fs-extra' )
+const FS_o = require( 'fs-extra' )
 const REX_o = require( './regex.js' )
 const C_o   = require( '../data/C_o.js' )
 const F_o   = require( '../data/F_o.js' )
@@ -10,7 +10,15 @@ const FILE_DELIM_s = '\n'
 const WORDS_DELIM_s = ' '
 const WORDS_CONCAT_s = '_'
 
+
+
 const EXT_o = Object.create( null )
+
+EXT_o.range_a =        //: document doc_n by ranges [0-2^10]
+  new Array( C_o.index_o.RANGE_F_n + 1 )
+EXT_o
+  .range_a
+  .fill( 0 )
 
 
 //!!! double slash for template String
@@ -232,6 +240,30 @@ EXT_o.docs__o =
 
 
 
+EXT_o.range__v =
+(
+  doc_n
+) =>
+{
+  const range_n =
+    doc_n >> C_o.index_o.RANGE_SHIFT_n
+  if
+  (
+    doc_n
+    >
+    EXT_o
+      .range_a
+      [range_n]
+  )
+  {
+    EXT_o.range_a[range_n] =
+      doc_n
+  }
+}
+
+
+
+
 EXT_o.toIndex__v =
 (
   index_a
@@ -267,23 +299,13 @@ EXT_o.toIndex__v =
     if     //: exclude index, 404, sys slots, etc.
     (
       atdoc_o
-        .doc_n 
+        .doc_n
       >=
       0
     )
     {
-      if
-      (
-        atdoc_o
-          .doc_n
-        >
-        index_n
-      )
-      {
-        index_n =
-          atdoc_o
-            .doc_n
-      }
+      EXT_o
+        .range__v( atdoc_o.doc_n )
       if
       (
         doc_a
@@ -324,9 +346,9 @@ EXT_o.toIndex__v =
         `${atdoc_o.doc_s}${WORDS_DELIM_s}${atdoc_o.words_s}${FILE_DELIM_s}`
     }
   }
-  FIL_o.writeFile( DOCS_TOPICS_s, JSON.stringify( json_a ), error_o => F_o.writeFile__v( error_o) )
-  FIL_o.writeFile( DOCS_WORDS_s, text_s, error_o => F_o.writeFile__v( error_o) )
-  console.log( `-----------------\nLast doc_n: ${index_n}\n-----------------`)
+  FS_o.writeFile( DOCS_TOPICS_s, JSON.stringify( json_a ), error_o => F_o.writeFile__v( error_o) )
+  FS_o.writeFile( DOCS_WORDS_s, text_s, error_o => F_o.writeFile__v( error_o) )
+  console.table( EXT_o.range_a )
 }
 
 
@@ -357,7 +379,7 @@ void function
         file_o =>
         {
           const source_s =
-            FIL_o
+            FS_o
               .readFileSync
               (
                 file_o.path,

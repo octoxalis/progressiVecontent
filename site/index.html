@@ -2,27 +2,24 @@
 *, 
 *:before,*:after{box-sizing:inherit}
 .unseen{clip-path:inset(0px 0px)}
-.unseen,button,#initial_slogan{overflow:hidden}
+.unseen,button,#initial_hero{overflow:hidden}
 body{overflow-x:hidden}
 #sections *{overflow-anchor:none}
 #sections::after{overflow-anchor:auto}
 #svg_symbols{display: none}
-main{display:grid; place-items:center}
-#background_aside,#initial_slogan,#initial_slogan li,#sections_slider{display: flex}
+main,#initial_logo{display:grid; place-items:center}
+#initial_hero,#initial_discover,#background_aside,#sections_slider{display: flex}
 #sections::after{display: block}
 #background_aside{justify-content: center}
-#initial_slogan,#initial_slogan li:not(#initial_logo),#sections_slider{flex-direction: column}
+#initial_hero,#initial_discover,#sections_slider{flex-direction: column}
 #initial,#sections_slider{z-index: 1}
-body,dl,dt,dd,#entrance,#initial_slogan{margin:0}
-#svg_logo{margin:0 -4min}
+body,dl,dt,dd,#entrance,#initial_hero{margin:0}
 section{margin-bottom:0.5rem }
-body,dl,dt,dd,#initial_slogan{padding:0}
-#initial_slogan li{padding-top:1vh}
+body,dl,dt,dd,#initial_hero{padding:0}
 #initial,.svg_logo,#main,.unseen{position:absolute}
 #sections_slider{position:sticky}
 #sections{position:relative}
 #sections_slider{top:0}
-.svg_logo{top:1rem}
 :root
   {--LINE_WIDTH:clamp( 30ch, 52ch, 76vw )}
 #svg_logo{--svg_icon_dim:calc( clamp( 12vh, 16vh, 20vh ) * .8 )}
@@ -30,31 +27,28 @@ body,dl,dt,dd,#initial_slogan{padding:0}
 .unseen{width:1px}
 #background_aside,#initial,#sections_slider{width:100vw}
 #sections{width:100%}
-#initial .svg_logo{width:35%}
 #background_aside .svg_logo{width:18%}
 .svg_icon{width:var(--svg_icon_dim)}
 *{scrollbar-width:thin}
 .retract{height:0}
 #sections::after,.unseen{height:1px}
 #initial{height:100vh}
-#initial_slogan li{height:25vh}
+#initial_hero li{height:50vh}
 #sections_slider{height:5em}
 .svg_icon{height:var(--svg_icon_dim)}
 iframe,button,.unseen{border:0}
-#initial_slogan li{border-top:2px solid transparent;
-  border-image:linear-gradient(to right, hsla( var(--hue_base) 94% 94% / .3 ) 0%, hsla( var(--hue_base) 83% 6% / 0 ) 100%);
-  border-image-slice:1}
 *::-webkit-scrollbar-thumb{border:.2em solid var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{border-radius:.5rem}
 #svg_logo{stroke-width:1.5px}
 button:focus{outline:0}
+#initial_discover{text-align:center}
 :root
 {
---hue_base:190; 
+--hue_base:233; 
 --c_hue_p:var(--hue_base);  
 --c_hue_i:calc( var(--hue_base) + 140); 
 --c_hue_s:calc( var(--hue_base) + -10); 
---c_hue_p:calc( var(--hue_base) + 20); 
+--c_hue_h:calc( var(--hue_base) + 20); 
 --c_hue_d:calc( var(--hue_base) + -20); 
 --c_hue_l:calc( var(--hue_base) + 10); 
 --c_sat_hi_4:94%; 
@@ -79,7 +73,7 @@ button:focus{outline:0}
 --c_prim_lo:hsla( var(--c_hue_p) var(--c_sat_lo_4) var(--c_lum_lo_4)/1);
 --c_prim_hi_2:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/1);
 --c_prim_hi_3:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_3)/1);
---c_prim_trans:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/.2);
+--c_prim_trans:hsla( var(--c_hue_p) var(--sat_ne) var(--c_lum_hi_2)/.3);
 --c_sec_hi:hsla( var(--c_hue_s) var(--c_sat_hi_4) var(--c_lum_hi_4)/1);
 --c_sec_ne:hsla( var(--c_hue_s) var(--c_sat_hi_4) var(--c_lum_ne)/1);
 --c_sec_lo:hsla( var(--c_hue_s) var(--c_sat_hi_4) var(--c_lum_lo_4)/1);
@@ -100,9 +94,10 @@ button:focus{outline:0}
 --c_highlight_in:hsla( var(--c_hue_i) var(--c_sat_hi_2) var(--c_lum_hi_2)/1);
 }
 :root  {--INVERT_FILTER:invert(100%) brightness(8) hue-rotate(0deg)}
+#initial_hero li:hover{filter:var(--INVERT_FILTER)}
 .unseen,.invisible,.retract{opacity:0}
 body{color:var(--c_prim_lo)}
-#initial_slogan{color:var(--c_decor_hi)}
+#initial_hero{color:var(--c_decor_hi)}
 .svg_logo path,.svg_logo line,.svg_logo polyline,.svg_icon{stroke:var(--c_highlight)}
 .svg_logo text,.svg_logo circle{stroke:none}
 #sections,#sections > *{background:transparent}
@@ -114,7 +109,7 @@ body{color:var(--c_prim_lo)}
 body,#sections_slider{background:var(--c_prim_hi)}
 *::-webkit-scrollbar-track{background:var(--c_decor_ne)}
 *::-webkit-scrollbar-thumb{background:var(--c_decor_hi)}
-#initial{background:linear-gradient(-0.025turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%, hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
+#initial{background:linear-gradient(-0.005turn,  hsla( var(--hue_base) 94% 28% / 1 ) 0%, hsla( var(--hue_base) 83% 6% / 1 ) 100%)}
 :root
 {
  --font_size:calc( (30 * 1px) + ( 60 - 30 ) * ( 100vw - (1600 * 1px) ) / ( 1600 - 400 )
@@ -126,10 +121,9 @@ body,#sections_slider{background:var(--c_prim_hi)}
 }
 body,body *{font-family:var(--font_body)}
 body,body *,body *:before,body *:after{font-size:calc( var(--font_u) * var(--size_ratio) )}
+#initial_hero li > *{--size_ratio:2}
+#initial_hero li > b{--size_ratio:6}
 #initial_logo b{--size_ratio:1.9}
-#initial_slogan li:nth-of-type(4) > *{--size_ratio:1.7}
-#initial_slogan li:nth-of-type(2) > *{--size_ratio:1.5}
-#initial_slogan li:nth-of-type(1) > *{--size_ratio:1.3}
 body,body *{--size_ratio:1}
 .svg_logo text{font-size:6px} 
 body,body *{font-weight:400}
@@ -151,7 +145,8 @@ button,select{text-transform:none}
 dl,ol:not([class="i_code"]),ul{list-style:none}
 body{cursor:default}
 .invisible{cursor:auto}
-button,.svg_icon,.svg_logo{cursor:pointer}
+button,.svg_icon,
+#initial{cursor:pointer}
 *{scrollbar-width:thin;scrollbar-color:var(--c_decor_hi) var(--c_decor_ne)}
 *::-webkit-scrollbar{width:.75em}
 *::-webkit-scrollbar-track{background:var(--c_decor_ne)}
@@ -159,12 +154,11 @@ button,.svg_icon,.svg_logo{cursor:pointer}
 .retract{transform:scale(0)}
 a::after{transform:scaleX(0)}
 a:hover::after{transform:scaleX(1)}
-#initial_slogan li{transform:rotateY( -0.025turn )}
 #scroll_bottom > svg{transform:rotate(.5turn)}
 .aside{transform:translateY( calc( (5em - 1.5rem ) * -1 ) )}
-#initial_slogan{perspective:32vw}
 .retract{transform-origin:top left}
 .aside{transition:.2s ease}
 #sections_slider{transition:transform .2s ease}
+#initial_discover{transition: 1s ease}
 .unseen,.invisible{pointer-events:none}
-.svg_icon{pointer-events:all}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><aside id="background_aside"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></aside><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_slogan" aria-label="Discover progressiVecontent"><li><b>OPEN SOURCE</b><i>GITHUB</i></li><li><b>FRAMEWORKLESS</b><i>JAMstack</i></li><li id="initial_logo"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></li><li><b>PARCELED</b><i>DESIGN</i></li></ul></header></body></html>
+.svg_icon{pointer-events:all}</style></head><body><svg id="svg_symbols" aria-hidden="true"><symbol id="icon_close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol><symbol id="icon_link" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></symbol><symbol id="icon_load" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></symbol><symbol id="icon_skin" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></symbol><symbol id="icon_bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></symbol></svg><aside id="background_aside"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></aside><main id="main"><nav id="sections_slider" class="aside"></nav><div id="sections"></div></main><header id="initial"><ul id="initial_hero" aria-label="Discover progressiVecontent"><li id="initial_discover"><b>DISCOVER</b><i>AN INNOVATIVE WEBSITE ARCHITECTURE</i></li><li id="initial_logo"><svg xmlns="http://www.w3.org/2000/svg" class="svg_logo" viewBox="0 0 64 24"><circle cx="32" cy="4.5" r="1.6"></circle><line x1="32" y1="7" x2="32" y2="10"></line><polyline points="32 13 32 22 40 11"></polyline><text x="6" y="10">progress</text><text x="34" y="10">econtent</text></svg></li></ul></header></body></html>

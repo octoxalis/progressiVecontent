@@ -38,7 +38,7 @@ var GRA_o =
 
 
 
-  nodes__v    //:- select grid nodes
+  nodes__v    //:- select topic grid nodes
   (
     event_e
   )
@@ -218,11 +218,21 @@ var GRA_o =
                       '--SECTIONS_CAP',
                       SLI_o.slider_c.capacity__n()
                     )
+                  //................................
+                  //XXconst doc_n =
+                  //XX  section_e
+                  //XX  .dataset
+                  //XX  .doc_n
+                  //XXGRA_o
+                  //XX  .svg_e
+                  //XX  .querySelector( `#node_${doc_n}` )
+                  //XX  ?.classList
+                  //XX  ?.toggle( 'onview' )
                 }
               )
           }
         )
-    }
+      }
     GRA_o.nodeClose__v()
   }
 ,
@@ -379,13 +389,15 @@ var GRA_o =
   listen__v
   ()
   {
-    GRA_o.slider_e
+    GRA_o
+      .slider_e
       .addEventListener
       (
         'click',
         GRA_o.nodes__v
       )
-    GRA_o.svg_e
+    GRA_o
+      .svg_e
       .addEventListener
       (
         'click',
@@ -449,16 +461,16 @@ var GRA_o =
         switch ( true )
         {
           case ( [ 'ArrowLeft', 'Left', 37 ].includes( key_sn ) ) :    //: LEFT
-            GRA_o.slider.toNearest__v( -1 )
+            GRA_o.slider_c.toNearest__v( -1 )
             break
           case ( [ 'ArrowRight', 'Right', 39 ].includes( key_sn ) ) :    //: RIGHT
-            GRA_o.slider.toNearest__v( 1 )
+            GRA_o.slider_c.toNearest__v( 1 )
             break
           case ( [ 'ArrowUp', 'Up', 38 ].includes( key_sn ) ) :    //: UP
-            GRA_o.slider.toNearest__v( -4 )
+            GRA_o.slider_c.toNearest__v( -4 )
             break
           case ( [ 'ArrowDown', 'Down', 40 ].includes( key_sn ) ) :    //: DOWN
-            GRA_o.slider.toNearest__v( 4 )
+            GRA_o.slider_c.toNearest__v( 4 )
             break
           case ( [ 'Enter', 13 ].includes( key_sn ) ) :    //: ENTER
             GRA_o.onview__s()
@@ -480,7 +492,7 @@ var GRA_o =
       {
         const path_s = click_o.target.dataset.path
         const doc_s = click_o.target.dataset.doc_s
-        const step_n = GRA_o.slider.capacity__n()
+        const step_n = GRA_o.slider_c.capacity__n()
         if ( !GRA_o.loaded__b( doc_s ) )
         {
           LIB_o.slot__v( path_s, doc_s, step_n,
@@ -488,7 +500,7 @@ var GRA_o =
            {
              section_e.dataset.doc_s = doc_s
              section_e.dataset.doc_n = step_n
-             GRA_o.slider.add__v( section_e )
+             GRA_o.slider_c.add__v( section_e )
            } )
        
         }
@@ -524,7 +536,7 @@ void async function
   const topicsList_e =
     LIB_o
       .nodeId__o( 'topics_docs' )
-  GRA_o.slider =
+  GRA_o.slider_c =
     new Slider3D
     (
       GRA_o.slider_e,

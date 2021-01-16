@@ -9,10 +9,10 @@ __                     {transform:scaleX(0)}
 a:hover::after,
 __                     {transform:scaleX(1)}
 
-
-#initial_slogan li,
+/*
+#initial_hero li,
 __                     {transform:rotateY( {{C_o.INITIAL_TURN}} )}
-
+*/
 
 #scroll_bottom > svg,
 __                     {transform:rotate(.5turn)}
@@ -23,10 +23,10 @@ __                     {transform:translateY( calc( ({{C_o.SLIDER_HEIGHT}} - 1.5
 
 
 
-
-#initial_slogan,
-__                     {perspective:32vw}
-
+/*
+#initial_hero,
+__                     {perspective:15vw}
+*/
 /*=== ORIGIN ===*/
 
 .retract,

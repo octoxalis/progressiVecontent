@@ -103,7 +103,7 @@ __  {max-width:clamp( 10%, 20%, 100%)}
 #graph_svg > circle{stroke:none}
 #graph_svg > circle.node_focus{stroke:var(--c_sec_lo)}
 #graph_svg > circle{fill:var(--c_prim_hi_2)}
-#graph_svg > circle:first-of-type{fill:var(--c_highlight_hi)}
+#graph_svg > circle.onview{fill:var(--c_prim_trans)}
 #graph_svg > circle.node_selected{fill:var(--c_prim_ne)}
 #graph_svg{background:transparent}
 #graph_svg{cursor:pointer}

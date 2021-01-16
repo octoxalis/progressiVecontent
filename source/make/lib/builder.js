@@ -1,4 +1,4 @@
-const FIL_o =  require( 'fs-extra' )
+const FS_o =  require( 'fs-extra' )
 const GIT_o =  require( './git.js' )
 const HEAD_o = require( './header.js' )
 const CSP_o =  require( './csp.js' )
@@ -8,8 +8,7 @@ const C_o =    require( '../data/C_o.js' )
 const F_o =    require( '../data/F_o.js' )
 
 
-const OUTPUT_DIR_s = 'make/index/output/'
-const DOCS_PATH_s = `${OUTPUT_DIR_s}docs_paths.json`
+const DOCS_PATH_s = `${C_o.INDEX_DIR_s}output/docs_paths.json`
 
 const BUI_o =
 {
@@ -37,15 +36,13 @@ const BUI_o =
     data_o
   )
   {
-   
-    TOP_o    //!!!! TOPICS TEMPORARY DISABLED
-      .write__v()    //!!!! TOPICS TEMPORARY DISABLED
-    //console.log( '!!!! TOPICS TEMPORARY DISABLED' )
+    TOP_o
+      .write__v()
     HEAD_o
       .write__v
       ( `${CSP_o.directive__s()}\n${HEAD_o.directive__s()}\n` )
-    GIT_o
-      .write__v()
+    //....GIT_o
+    //....  .write__v()
   }
 ,
 
@@ -150,7 +147,7 @@ module.exports =
     ++BUI_o.current_n    //;console.log( `${BUI_o.current_n} / ${BUI_o.count_n}`)
     let end_s = BUI_o.templateEnd__s( input_s, data_o )
     if ( BUI_o.file_a && BUI_o.current_n === BUI_o.count_n - 1 ) BUI_o.buildEnd__v( end_s, data_o )
-    FIL_o.writeFile( DOCS_PATH_s, JSON.stringify([...BUI_o.docs_a]), error_o => F_o.writeFile__v( error_o) )
+    FS_o.writeFile( DOCS_PATH_s, JSON.stringify([...BUI_o.docs_a]), error_o => F_o.writeFile__v( error_o) )
     return end_s
   }
 ,

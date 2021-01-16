@@ -133,20 +133,24 @@ receive__v    //:-- Listen to messages
     for ( let path_a of restore_a )
     {
       const [ path_s, doc_s ] = path_a
-      const atdoc_n =
-        document
-          .querySelector( `#docs_topics > [data-doc_s="${doc_s}"]` )
-          ?.dataset
-          ?.doc_n
-      IND_o
+      const doc_n =
+        //XXdocument
+        //XX  .querySelector( `#docs_topics > [data-doc_s="${doc_s}"]` )
+        //XX  ?.dataset
+        //XX  ?.doc_n
+        LIB_o
+          .nodeId__o( 'docs_topics' )
+          .querySelector( `li[data-doc_s="${doc_s}"]` )
+          .dataset.doc_n
+        IND_o
         .load__v
           (
             path_s,
             doc_s,
-            atdoc_n,
+            doc_n,
             (
               section_e,
-              atdoc_n
+              doc_n
              ) =>    //: callback_f
             {
               SLI_o
@@ -154,7 +158,7 @@ receive__v    //:-- Listen to messages
                 .add__v
                 (
                   section_e,
-                  atdoc_n,
+                  doc_n,
                   [
                     `data-doc_s=${section_e.dataset.doc_s}`
                   ],

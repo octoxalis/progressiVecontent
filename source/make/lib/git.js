@@ -1,6 +1,6 @@
 require( 'dotenv' ).config( { path: '../.env' } )
 const FETCH_o = require( 'node-fetch' )
-const FIL_o    = require( 'fs' )
+const FS_o    = require( 'fs' )
 const A_o     = require( '../data/A_o.js' )
 const U_o     = require( '../data/U_o.js' )
 

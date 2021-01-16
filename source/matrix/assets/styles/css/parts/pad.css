@@ -5,12 +5,13 @@ dl,
 dt,
 dd,
 #entrance,
-#initial_slogan,
+#initial_hero,
 __                     {margin:0}
 
-
+/*
 #svg_logo,
 __                     {margin:0 -4min}
+*/
 
 section,
 __                     {margin-bottom:{{C_o.PAD_2}} }
@@ -22,9 +23,11 @@ body,
 dl,
 dt,
 dd,
-#initial_slogan,
+#initial_hero,
 __                     {padding:0}
 
 
-#initial_slogan li,
-__                     {padding-top:1vh}
+/*
+#initial_hero li,
+__                     {padding:4vh}
+*/

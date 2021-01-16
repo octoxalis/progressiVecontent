@@ -38,7 +38,13 @@ var SLOT_o =
     {
       SLI_o
         .remove__v( doc_n )
-    }
+      const node_e =
+        GRA_o
+          .svg_e
+          .querySelector( `#node_${doc_n}` )
+          ?.classList
+          ?.toggle( 'onview' )
+  }
   }
 ,
 
