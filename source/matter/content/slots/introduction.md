@@ -12,26 +12,30 @@
 }
 ---
 :introduction:
-__{{ A_o.NAME_s }}__ is an unusual site: as its name imply, its ~°architecture°~ is based on the ~°concept°~ of ~°progressive-content°~ which means that content dictates both ~°flow control°~ and ~°user interface°~,
- taking advantage of the ~°most recent°~ ~°artificial intelligence°~ ~°software developments°~
+__{{ A_o.NAME_s }}__ is an unusual site. As its name imply, its ~°architecture°~ is based on the ~°concept°~ of ~°progressive-content°~, where content drives both ~°flow control°~ and ~°user interface°~.
+This innovative architecture takes advantage of the ~°most recent°~ ~°artificial intelligence°~ ~°software developments°~
 {% _note_txt  %}
  ~°machine learning°~ ~°natural language processing°~ ~°algorithms°~ are used for ~°content analysis°~
 {% end_note_txt %} .
 
 
-The second unusual aspect of __{{ A_o.NAME_s }}__ is that its content is dynamic:
-unlike a usual ~°web page°~ where whole content is loaded at once,
-here, each visitor composes his/her ~°personal page°~ by successively ~°loading°~ ~°content modules°~ ~°related°~ to his/her research theme.
-At any time, he/she can ~°add°~, ~°reorder°~, or even ~°delete°~, ~°modules°~ that correspond to this theme, so as to build a ~°customized page°~ he/she can later refer with a ~°bookmark°~, while retaining the possibility to develop it further, as he/she sees fit.
+The second unusual aspect of __{{ A_o.NAME_s }}__ is that its content is **~°dynamic°~**.
+Unlike a usual ~°web page°~ where whole content is loaded at once,
+here, each visitor composes a ~°personal page°~ by successively ~°loading°~ ~°content modules°~ ~°related°~ to the research theme.
+At any time, he can ~°add°~, ~°reorder°~, or even ~°delete°~, ~°modules°~ that correspond to this theme,
+so as to build a ~°customized page°~ he can later refer to with a ~°bookmark°~, while retaining the possibility to develop it further, as he sees fit.
 
 
-These _à la carte_ functionalities have major incidence on ~°speed°~ and ~°efficiency°~. Instead of waiting a few seconds to have a ~°full page load°~, ~°parceled content°~ needs only a fraction of second, broken up in a few occurences, temporally spaced. Fast <q>~°lazy loading°~</q> rules the ~°flow°~ because content is served only when needed, in easily grasped ~°cognitive segments°~: <q>~°content-on-request°~</q>.
+These _à la carte_ functionalities have major incidence on ~°speed°~ and ~°efficiency°~.
+Instead of waiting a few seconds to have a ~°full page load°~, ~°parceled content°~ needs only a fraction of second, broken up in a few occurences, temporally spaced.
+Fast <q>~°lazy loading°~</q> rules the ~°flow°~ because content is served only when needed, in easily grasped ~°cognitive segments°~: <q>~°content-on-request°~</q>.
 
 
-This site, built only using the fondamental ~°frameless°~
+This site, built only using the fondamental ~°Web technologies°~
 {% _note_txt  %}
 ~°no framework°~ inside!
 {% end_note_txt %}
-~°Web technologies°~: ~°HTML5°~, ~°JavaScript°~ and ~°CSS°~,  fully explores this concept and deploys an experimental ~°implementation°~, unveiling usefull ~°code bits°~ as ~°smart RegExp°~ or ~°interactive code highlighting°~.
+: ~°HTML5°~, ~°JavaScript°~ and ~°CSS°~,  fully explores this concept and deploys an experimental ~°implementation°~,
+unveiling usefull ~°code bits°~ as ~°smart RegExp°~ or ~°interactive code highlighting°~.
 
 Browse along __{{ A_o.NAME_s }}__ ~°knowledge paths°~ exploring the ~°contents graph°~ component.

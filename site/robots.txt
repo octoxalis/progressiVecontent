@@ -4,4 +4,4 @@ Allow: /
 User-agent: *
 Disallow:
 
-Sitemap: https://progressivecontent.netlify.app/sitemap.xml
+Sitemap: http://127.0.0.1:8080/sitemap.xml
