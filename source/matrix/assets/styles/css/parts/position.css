@@ -1,7 +1,6 @@
 /*=== POSITION ===*/
 
 #initial,
-.svg_logo,
 #main,
 .unseen,
 __                     {position:absolute}
@@ -11,6 +10,7 @@ __                     {position:absolute}
 __                     {position:sticky}
 
 
+.svg_logo,
 #sections,
 __                     {position:relative}
 
@@ -18,13 +18,9 @@ __                     {position:relative}
 
 /*=== TOP ===*/
 
+#initial,
 #sections_slider,
 __                     {top:0}
-
-/*
-.svg_logo,
-__                     {top:1rem}
-*/
 
 
 /*=== LEFT ===*/
