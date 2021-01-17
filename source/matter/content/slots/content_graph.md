@@ -4,7 +4,7 @@
   permalink: 'slots/content_graph.html',
   tags: [ 'notag' ],
 
-  doc_n: 1,
+  doc_n: 1,    //: CONCEPT_s
   doc_s: 'content_graph',
   title_s: 'content graph',
   topics_a: [ 'web site architecture', 'fondamentals', 'navigation', 'page composition' ],

@@ -7,6 +7,7 @@ var IND_o =
   {
     IND_o
       .service__v()
+
     LIB_o
       .nodeId__o( 'initial_hero' )
       .addEventListener
@@ -29,17 +30,22 @@ var IND_o =
       IND_o
         .service__v()
     }
+
     LIB_o
       .nodeId__o( 'initial' )
       .remove()    //: get rid of initial !!!
+
     IND_o
       .colorMode__v
         ( 'hue_base' )
+
     IND_o
       .colorMode__v
         ( 'lum_mode' )
+
     IND_o
       .unfold__v()
+
     IND_o
       .listen__v()
     }
@@ -80,6 +86,7 @@ var IND_o =
       IND_o
         .load__v()    //: default args
     }
+
     LIB_o
       .toggleId__v
       (
@@ -110,11 +117,15 @@ var IND_o =
         ) =>
         {
           section_e.dataset.doc_n = ''+doc_n
+
           section_e.dataset.doc_s = doc_s
+
           callback_f
             && callback_f( section_e )
+
           IND_o
             .listenSection__v( section_e )
+
           IND_o
             .toggleSection__v( section_e )
           
@@ -130,14 +141,14 @@ var IND_o =
               },
             20
           )
-          if ( doc_n >= 0 )    //: not for sys slots
+
+          if ( doc_n >= {{C_o.SLOT_n}} )    //: only for content slots
           {
-            const node_e =
-              GRA_o
-                .svg_e
-                .querySelector( `#node_${doc_n}` )
-                ?.classList
-                ?.toggle( 'onview' )
+            GRA_o
+              .svg_e
+              .querySelector( `#node_${doc_n}` )
+              ?.classList
+              ?.toggle( 'node_on' )
           }
         }
       )

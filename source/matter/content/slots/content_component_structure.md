@@ -4,7 +4,7 @@
   permalink: 'slots/content_component_structure.html',
   tags: [ 'notag' ],
 
-  doc_n: 7,
+  doc_n: 1024,    //: IMPLEMENT_s
   doc_s: 'content_component_structure',
   title_s: 'content component structure',
   topics_a: [ 'web site architecture', 'fondamentals', 'content composition' ],

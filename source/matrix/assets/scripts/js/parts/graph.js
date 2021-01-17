@@ -47,6 +47,7 @@ var GRA_o =
       event_e
         .target
         .closest( '[data-step]' )
+
     if ( target_e && target_e.classList.contains( 'slide_focus' ) )
     {
       LIB_o
@@ -54,14 +55,17 @@ var GRA_o =
         (
           GRA_o.svg_e
         )
+
       const at_n =
         GRA_o
-          .slider
+          .slider_c
           .atStep__n()
+
       const topic_e =
         LIB_o
           .nodeId__o( 'topics_docs' )
           .querySelector( `li[data-doc_n="${at_n}"]` )
+
       const docs_a =
         new Set
         (
@@ -69,6 +73,7 @@ var GRA_o =
             .dataset['-']
             .split( ' ' )
         )
+
       SET_o
         .disjoint__a
         (
@@ -81,6 +86,7 @@ var GRA_o =
             GRA_o
               .toggle__v( at_a )
         )
+        
       GRA_o
         .selected_a = docs_a
     }
@@ -106,7 +112,7 @@ var GRA_o =
           at_e &&
             at_e
               .classList
-              .toggle( 'node_selected' )
+              .toggle( 'node_set' )
         }
       )  
   }    
@@ -126,7 +132,7 @@ var GRA_o =
       .node__v
       (
         target_e,
-        target_e.classList.contains( 'node_selected' )
+        target_e.classList.contains( 'node_set' )
       )
     SLOT_o
       .dialog__o( 'section_contents' )
@@ -183,7 +189,8 @@ var GRA_o =
       GRA_o
         .nodeSlot__s( step_s )
     let section_e =
-      document
+      LIB_o
+        .nodeId__o( 'sections' )
         .querySelector
         (
           `section[data-doc_n="${step_s}"]`
@@ -218,16 +225,6 @@ var GRA_o =
                       '--SECTIONS_CAP',
                       SLI_o.slider_c.capacity__n()
                     )
-                  //................................
-                  //XXconst doc_n =
-                  //XX  section_e
-                  //XX  .dataset
-                  //XX  .doc_n
-                  //XXGRA_o
-                  //XX  .svg_e
-                  //XX  .querySelector( `#node_${doc_n}` )
-                  //XX  ?.classList
-                  //XX  ?.toggle( 'onview' )
                 }
               )
           }
@@ -250,7 +247,8 @@ var GRA_o =
           SLOT_o
             .dialog__o( 'section_contents' )
         )
-        .getAttribute( 'data-doc_s' )  //: set by node__v
+        //XX.getAttribute( 'data-doc_s' )  //: set by node__v
+        .dataset.doc_s  //: set by node__v
         .slice( 'node_'.length )
     )
   }

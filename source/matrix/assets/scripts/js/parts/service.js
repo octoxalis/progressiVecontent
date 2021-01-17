@@ -134,10 +134,6 @@ receive__v    //:-- Listen to messages
     {
       const [ path_s, doc_s ] = path_a
       const doc_n =
-        //XXdocument
-        //XX  .querySelector( `#docs_topics > [data-doc_s="${doc_s}"]` )
-        //XX  ?.dataset
-        //XX  ?.doc_n
         LIB_o
           .nodeId__o( 'docs_topics' )
           .querySelector( `li[data-doc_s="${doc_s}"]` )
@@ -178,12 +174,26 @@ receive__v    //:-- Listen to messages
     doc_s
   )
   {
+    const doc_n =
+      LIB_o
+        .docN__o( doc_s )
+
+    if ( doc_n >= {{C_o.SLOT_n}} )    //: only for content slots
+    {
+      GRA_o
+        .svg_e
+        .querySelector( `#node_${doc_n}` )
+        ?.classList
+        ?.remove( 'node_focus' )
+    }
+
     SER_o
       .send__v
       (
         '{{C_o.msg_o.REMOVE_s}}',
         doc_s
       )
+
   }
 ,
 

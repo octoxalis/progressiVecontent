@@ -41,20 +41,18 @@ var SLI_o =
         +step_e
           .dataset
           .step
-      const section_n =
+      const doc_n =
         +LIB_o
           .nodeId__o( 'sections_slider' )
           .querySelector( `dl[data-step="${step_n}"]` )
           .dataset
           .section
-      const doc_s =
-        LIB_o
-          .nodeId__o( 'sections' )
-          .querySelector( `[data-doc_n="${section_n}"]` )
-          .dataset
-          .doc_s
       SLI_o
-        .location__v( doc_s )
+        .location__v
+        (
+          LIB_o
+            .docS__o( doc_n )
+        )
     }
   }
 ,

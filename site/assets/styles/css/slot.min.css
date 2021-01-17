@@ -88,6 +88,10 @@ a::before,a::after,.aside{transition:transform .2s ease}
 {
  --NODE_BACK_SELECTED:var(--c_box_ne);
  --NODE_BACK_NOT_SELECTED:var(--c_box_hi);
+ --c_node_h:var(--c_hue_p);
+ --c_node_s:var(--sat_ne);
+ --c_node_l:var(--c_lum_hi_2);
+ --c_node:hsla( var(--c_node_h) var(--c_node_s) var(--c_node_l)/1);
 }
 #docs_graph,#graph_svg{position:relative}
 ul,#docs_graph{margin:0}
@@ -100,10 +104,13 @@ __  {max-width:clamp( 10%, 20%, 100%)}
 #graph_svg{border-radius:4px}
  
  
-#graph_svg > circle{stroke:none}
-#graph_svg > circle.node_focus{stroke:var(--c_sec_lo)}
-#graph_svg > circle{fill:var(--c_prim_hi_2)}
-#graph_svg > circle.onview{fill:var(--c_prim_trans)}
-#graph_svg > circle.node_selected{fill:var(--c_prim_ne)}
+#graph_svg > circle{stroke-width:8}
+#graph_svg > circle{stroke:transparent}
+#graph_svg > circle{fill:var(--c_sec_ne)}
+#graph_svg > circle{opacity:.2}
+#graph_svg > circle.node_set{opacity:.75}
+#graph_svg > circle.node_focus,#graph_svg > circle.node_on{opacity:1}
+#graph_svg > circle.node_on{stroke:var(--c_sec_ne)}
+#graph_svg > circle.node_focus{fill:var(--c_sec_hi)}
 #graph_svg{background:transparent}
 #graph_svg{cursor:pointer}

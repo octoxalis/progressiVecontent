@@ -49,7 +49,7 @@ var LIB_o =
 ,
 
 
-data__o:
+  data__o:
   (
     data_s,
     node_e=document
@@ -63,6 +63,34 @@ data__o:
     data_s,
     node_e=document
   ) => node_e.querySelector( `[data--=${data_s}]` )
+,
+
+
+
+  docN__o:
+  (
+    doc_s,
+    element_s='sections'
+  ) =>
+    LIB_o
+      .nodeId__o( element_s )
+      .querySelector( `[data-doc_s="${doc_s}"]` )
+      .dataset
+      .doc_n
+,
+
+
+
+  docS__o:
+  (
+    doc_n,
+    element_s='sections'
+  ) =>
+    LIB_o
+      .nodeId__o( element_s )
+      .querySelector( `[data-doc_n="${doc_n}"]` )
+      .dataset
+      .doc_s
 ,
 
 

@@ -43,7 +43,7 @@ var SLOT_o =
           .svg_e
           .querySelector( `#node_${doc_n}` )
           ?.classList
-          ?.toggle( 'onview' )
+          ?.toggle( 'node_on' )
   }
   }
 ,

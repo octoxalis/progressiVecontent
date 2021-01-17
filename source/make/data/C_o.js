@@ -10,6 +10,7 @@ module.exports =
     DESCRIPT_s: 'parceled content architecture for instant loading website',
     GLOBAL_s:   'website architecture,static site generator,parceled,modular,content',
   },
+  
   INLINE_s:   'inline_style',
 
 
@@ -53,6 +54,8 @@ module.exports =
   JSON_PATH_s:    'assets/data/json/',
   CONTENT_PATH_s: 'matter/content/',
   INDEX_DIR_s:    'make/index/',
+
+  SLOT_n:     0,            //: sys slots < 0, content slots >= 0
   
   URL_S_s:    '?s=/',       //: url search prefix, e.g. '{{U_o.url_s}}{{C_o.URL_S_s}}{{C_o.SLOTS_s}}/sl
 
@@ -62,9 +65,9 @@ module.exports =
   //=== INDEX ===
   index_o:
   {
-    CONCEPT_s:   0,
-    UI_s:        1,
-    IMPLEMENT_s: 2,
+    CONCEPT_s:   0,      //: 0-511
+    UI_s:        1,      //: 512-1023
+    IMPLEMENT_s: 2,      //: 1024-1535
     //......
     RANGE_F_n:   0xF,    //: 16 categories (ranges)
     RANGE_SHIFT_n: 9,    //: ... of 512 documents

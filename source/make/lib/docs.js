@@ -224,21 +224,11 @@ svg__v
     .forEach
     (
       (
-        doc_a,
-        step_n
+        doc_a
       ) =>
       {
-        //;console.log( doc_a )
-        //--svg_s += `<rect id="node_${step_n}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`    // rect version
-        const title_s =
-         step_n === 0
-         ?
-           '<title>Start here</title>'
-        :
-          ''
-        //~~svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
-        svg_s += `<circle id="node_${doc_a[0]}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}">${title_s}</circle>`
-        //~~svg_s += `<circle id="node_${step_n}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .4}"></circle><text x="${atX_n}" y="${atY_n}">&#9679;</text>`
+        //--svg_s += `<rect id="node_${{doc_a[0]}" x="${atX_n}" y="${atY_n}" width="${dim_n}" height="${dim_n}" rx="4"></rect>`    // rect version
+        svg_s += `<circle id="node_${doc_a[0]}" cx="${atX_n}" cy="${atY_n}" r="${dim_n * .3}"></circle>`
         atX_n += dim_n + GAP_n
         if ( atX_n >= wide_n )
         {

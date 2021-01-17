@@ -4,7 +4,7 @@
   permalink: 'slots/introduction.html',
   tags: [ 'notag' ],
 
-  doc_n: 0,
+  doc_n: 0,    //: CONCEPT_s
   doc_s: 'introduction',
   title_s: 'About progressiVecontent',
   topics_a: [ 'web site architecture', 'fondamentals' ],

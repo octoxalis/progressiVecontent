@@ -1,4 +1,8 @@
 /*=== CODE ===*/
+:root
+{
+  --c_code_bg: var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_ne);
+}
 
 div[data-id="code_ref"],
 __                     {display:grid;place-items:center}
@@ -79,10 +83,12 @@ code li::marker,
 __                     {color: var(--c_ilite_hi);
                         opacity: .8}
 
+div[data-id="code_ref"],
+__                     {background: hsla(var(--c_code_bg)/.4)}
 code,
-__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_ne)/1)}
+__                     {background: hsla(var(--c_code_bg)/1)}
 code li:hover,
-__                     {background: hsla(var(--c_hue_p) var(--c_sat_lo_2) var(--c_lum_ne)/.9)}
+__                     {background: hsla(var(--c_code_bg)/.9)}
 
 code,
 code *,

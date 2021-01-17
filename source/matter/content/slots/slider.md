@@ -4,7 +4,7 @@
   permalink: 'slots/slider.html',
   tags: [ 'notag' ],
 
-  doc_n: 3,
+  doc_n: 512,    //: UI_s
   doc_s: 'slider',
   title_s: 'ProgressiVecontent slider',
   topics_a: [ 'user interface', 'user experience' ],
