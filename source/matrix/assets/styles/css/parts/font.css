@@ -67,6 +67,7 @@ body *,
 __                     {font-weight:400}
 
 article strong,
+article strong > b,
 #initial b,
 __                     {font-weight:600}
 

@@ -41,6 +41,7 @@ var SWO_o =
       '{{C_o.msg_o.RESTORE_s}}',  //: from main
       '{{C_o.msg_o.REMOVE_s}}',   //: from main
       '{{C_o.msg_o.CACHE_s}}',    //: from/to main
+      '{{C_o.msg_o.REQ_IMG_s}}',  //: from main
     ]
   ,
 
@@ -292,7 +293,6 @@ var SWO_o =
       (
         `/{{C_o.SLOTS_s}}/${doc_s}.html`  //: we don't remove sys slots  !!! '/' before 'slots'
       )
-      //...... delete slider slide ....
   }
 ,
 
@@ -319,6 +319,17 @@ var SWO_o =
           cache_a: SWO_o.cache_a
         }
       )
+  }
+,
+
+
+
+  {{C_o.msg_o.REQ_IMG_s}}__v    //: 
+  (
+    json_s     //: as payload_o
+  )
+  {
+    console.log( json_s )
   }
 ,
 

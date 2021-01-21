@@ -19,7 +19,7 @@ This innovative architecture takes advantage of the ~°most recent°~ ~°artific
 {% end_note_txt %} .
 
 
-The second unusual aspect of __{{ A_o.NAME_s }}__ is that its content is **~°dynamic°~**.
+The second unusual aspect of __{{ A_o.NAME_s }}__ is that its content is __~°dynamic°~__.
 Unlike a usual ~°web page°~ where whole content is loaded at once,
 here, each visitor composes a ~°personal page°~ by successively ~°loading°~ ~°content modules°~ ~°related°~ to the research theme.
 At any time, he can ~°add°~, ~°reorder°~, or even ~°delete°~, ~°modules°~ that correspond to this theme,
@@ -31,11 +31,21 @@ Instead of waiting a few seconds to have a ~°full page load°~, ~°parceled con
 Fast <q>~°lazy loading°~</q> rules the ~°flow°~ because content is served only when needed, in easily grasped ~°cognitive segments°~: <q>~°content-on-request°~</q>.
 
 
-This site, built only using the fondamental ~°Web technologies°~
-{% _note_txt  %}
-~°no framework°~ inside!
+This site fully explores this concept and deploys an experimental ~°implementation°~, built only using the fondamental ~°Web technologies°~:
+~°HTML5°~, ~°JavaScript°~ and ~°CSS°~{% _note_txt  %}
+~°no framework°~ inside! {{ A_o.NAME_s }} __is__ the _framework_
 {% end_note_txt %}
-: ~°HTML5°~, ~°JavaScript°~ and ~°CSS°~,  fully explores this concept and deploys an experimental ~°implementation°~,
-unveiling usefull ~°code bits°~ as ~°smart RegExp°~ or ~°interactive code highlighting°~.
+, unveiling usefull ~°code bits°~ as __~°imarq°~__ ~°IIIF compatible images-on-request°~, __~°smartReg°~__ ~°templated RegExp°~ or __~°ilite°~__ ~°interactive code highlighting°~.
 
-Browse along __{{ A_o.NAME_s }}__ ~°knowledge paths°~ exploring the ~°contents graph°~ component.
+
+{% _ior_path '1585_coster-₀_₀-1625_youngwoman/full/max/0/jpg' %}
+Adam de Coster [1586-1643]
+Young women holding a distaff before a lit candle
+{% end_ior_path %}
+
+
+{% _ior_spot '1585_coster-₀_₀-1625_youngwoman' %}
+color full  == quality:color
+gray medium == size:400,/quality:gray
+gray small  == size:100,/quality:gray
+{% end_ior_spot %}

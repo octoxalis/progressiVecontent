@@ -10,6 +10,7 @@ var SER_o =
       '{{C_o.msg_o.RESTORE_s}}',
       '{{C_o.msg_o.REMOVE_s}}',
       '{{C_o.msg_o.CACHE_s}}',
+      '{{C_o.msg_o.REQ_IMG}}',
     ]
 ,
 
@@ -226,6 +227,22 @@ receive__v    //:-- Listen to messages
     SER_o.sender_o = null    //: ...then reset
   }
 ,
+
+
+  {{C_o.msg_o.REQ_IMG_s}}__v   //: to worker
+  (
+    json_s
+  )
+  {
+    SER_o
+      .send__v
+      (
+        '{{C_o.msg_o.REQ_IMG_s}}',
+        json_s      //: as payload
+      )
+}
+,
+
 
 
 }

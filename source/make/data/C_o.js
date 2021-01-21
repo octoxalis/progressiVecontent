@@ -51,6 +51,7 @@ module.exports =
 
   SHARE_DIR_s:    'sys/',
   MEDIA_PATH_s:   'assets/media/',
+  IIIF_DIR_s:     'iif/',
   JSON_PATH_s:    'assets/data/json/',
   CONTENT_PATH_s: 'matter/content/',
   INDEX_DIR_s:    'make/index/',
@@ -98,6 +99,7 @@ module.exports =
     RESTORE_s:  'RESTORE',
     REMOVE_s:   'REMOVE',
     CACHE_s:    'CACHE',
+    REQ_IMG_s:  'REQ_IMG',
 }
 ,
 
@@ -110,6 +112,10 @@ module.exports =
   NOTE_CONTENT_TAG_s: 'i',
   IMG_UNFOLD_TAG_s:   'i',
   NOTE_LINK_TAG_s:    'em',
+  IOR_PATH_TAG_s:     'ul',
+  IOR_LEGEND_TAG_s:   'li',
+  IOR_SPOT_TAG_s:     'ul',
+  IOR_SHOT_TAG_s:     'li',
   MARK_DATA_TAG_s:    'b',
 
 

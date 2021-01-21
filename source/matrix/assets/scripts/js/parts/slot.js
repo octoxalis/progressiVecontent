@@ -44,7 +44,7 @@ var SLOT_o =
           .querySelector( `#node_${doc_n}` )
           ?.classList
           ?.toggle( 'node_on' )
-  }
+    }
   }
 ,
 

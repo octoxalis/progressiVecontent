@@ -16,6 +16,6 @@
 It displays the full ~°list of topics°~ defined for the site.
 ~°Acting on°~ the slider ~°front slide°~ refreshes the ~°components graph°~, ~°highlighting°~ all the nodes/circles related to the front topic
 {% _note_txt  %}
-but it **doesn't scroll the page** as does the page slider
+but it __doesn't scroll the page__ as does the page slider
 {% end_note_txt %}
 .
