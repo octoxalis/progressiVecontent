@@ -1,4 +1,5 @@
 // === SLOT_o: slot.js ===
+
 var SLOT_o =
 {
 
@@ -29,26 +30,34 @@ var SLOT_o =
       +section_e
         .dataset
         .doc_n    //: Number cast
+
     SER_o
       ['{{C_o.msg_o.REMOVE_s}}__v']
       ( section_e.dataset.doc_s )
+
     section_e
       .remove()
+
     if ( doc_n > +'{{C_o.DOCS_n}}' )    //: skip C_o.SYS_s slots
     {
       SLI_o
         .remove__v( doc_n )
-      const node_e =
-        GRA_o
-          .svg_e
-          .querySelector( `#node_${doc_n}` )
-          ?.classList
-          ?.toggle( 'node_on' )
+
+      GRA_o
+        .svg_e
+        .querySelector( `#node_${doc_n}` )
+        ?.classList
+        ?.toggle( 'node_on' )
     }
   }
 ,
 
 
 }
+
+
+  //>
+  ;console.log( 'slot.js' )
+
 
 

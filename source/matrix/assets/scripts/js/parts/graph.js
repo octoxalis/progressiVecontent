@@ -128,26 +128,31 @@ var GRA_o =
     const target_e =
       event_e
         .target
+
     GRA_o
       .node__v
       (
         target_e,
         target_e.classList.contains( 'node_set' )
       )
+
     SLOT_o
       .dialog__o( 'section_contents' )
       .classList
       .toggle( 'retract' )
+
     const node_e =
       GRA_o
         .svg_e
         .querySelector( '.node_focus' )
+
     if ( node_e )    //: deselect previous focused node
     {
       node_e
        .classList
        .remove( 'node_focus' )
     }
+
     target_e    //: select new focused node
       .classList
       .add( 'node_focus' )
@@ -247,7 +252,6 @@ var GRA_o =
           SLOT_o
             .dialog__o( 'section_contents' )
         )
-        //XX.getAttribute( 'data-doc_s' )  //: set by node__v
         .dataset.doc_s  //: set by node__v
         .slice( 'node_'.length )
     )
@@ -285,17 +289,22 @@ var GRA_o =
             .node_s
             .length
         )
+
     const topics_e =
       LIB_o
         .nodeId__o( 'docs_topics' )
+
     const data_e =
       topics_e
         .querySelector( `li[data-doc_n="${at_n}"]` )
+
     if ( !data_e ) return
     //>
+
     const section_e =
       SLOT_o
         .dialog__o( 'section_contents' )
+
     const title_e =
       LIB_o
         .id__o
@@ -303,12 +312,14 @@ var GRA_o =
           'dialog_block_title',
           section_e
         )
+
     title_e
       .setAttribute
       (
         'data-doc_s',
         node_e.id
       )
+
     title_e
       .innerHTML =
         data_e
@@ -319,22 +330,28 @@ var GRA_o =
             '_',
             ' '
           )
+
     const topics_s =
       data_e
       .dataset['-']
+
     let list_s = ''
+
     for ( let lab_s of topics_s.split( ' ' ) )
     {
       list_s += `<li>${lab_s.replaceAll( '_', ' ' )}`
     }
+
     LIB_o
       .id__o( 'dialog_block_list' )
       .innerHTML = list_s
+
     const select_s =
       selected_b ?
         'NODE_BACK_SELECTED'
         :
         'NODE_BACK_NOT_SELECTED'
+        
     LIB_o
       .rootVar__v
       (
