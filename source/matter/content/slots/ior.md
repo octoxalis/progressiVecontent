@@ -27,3 +27,18 @@ color full  == quality:color
 gray medium == size:512,/quality:gray
 gray small  == size:64,/quality:gray
 {% end_ior_spot %}
+
+
+{% _ior_path '1585_coster-₀_₀-1625_sangerolamo/full/max/0/jpg' %}
+Adam de Coster [1586-1643]
+San Gerolamo
+134 x 94.9 cm
+Private collection, Paris, France
+{% end_ior_path %}
+
+
+{% _ior_spot '1585_coster-₀_₀-1625_sangerolamo' %}
+color full  == quality:color
+gray medium == size:512,/quality:gray
+gray small  == size:64,/quality:gray
+{% end_ior_spot %}

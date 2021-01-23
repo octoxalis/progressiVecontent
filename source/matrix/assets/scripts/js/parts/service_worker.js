@@ -338,8 +338,32 @@ var SWO_o =
     json_s     //: as payload_o
   )
   {
-    IOR_o
-      .init__v( json_s )
+    const urlMap_o =
+      IOR_o
+        .parse__a( json_s )
+/*
+    const entry_a =
+      await caches
+        .keys()
+
+      await entry_a
+        .filter
+        (
+          entry_s => entry_s !== SWO_o.cache_s
+        )
+
+    await Promise
+      .all
+      (
+        remove_a
+          .map
+          (
+            remove_s => caches.delete( remove_s )
+          )
+      )
+      */
+    //;console.log( JSON.stringify( urlMap_o ) )
+
   }
 ,
 

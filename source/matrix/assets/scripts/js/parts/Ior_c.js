@@ -5,7 +5,7 @@ const DEF_a =
     'id_s',
     'region_s',
     'size_s',
-    'rotate_s',
+    'rotation_s',
     'format_s',
   ]
 
