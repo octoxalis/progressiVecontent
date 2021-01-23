@@ -5,7 +5,6 @@
   tags: [ 'notag' ],
 
   doc_n: 2,    //: CONCEPT_s
-  doc_s: 'nodes_assembly',
   title_s: 'graph nodes assembly',
   topics_a: [ 'web site architecture', 'fondamentals', 'content composition' ],
   words_a: [ 'graph', 'dynamic page' ],

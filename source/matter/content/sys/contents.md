@@ -6,7 +6,6 @@
   //?? eleventyExcludeFromCollections: true,
 
   doc_n: -1,
-  doc_s: 'contents',
   title_s: 'contents',
 }
 ---

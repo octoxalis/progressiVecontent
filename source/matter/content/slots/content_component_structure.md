@@ -5,14 +5,12 @@
   tags: [ 'notag' ],
 
   doc_n: 1024,    //: IMPLEMENT_s
-  doc_s: 'content_component_structure',
   title_s: 'content component structure',
   topics_a: [ 'web site architecture', 'fondamentals', 'content composition' ],
   words_a: [ 'graph', 'dynamic page' ],
 }
 ---
 :content component structure:
-
 A content component is the building block of __{{ A_o.NAME_s }}__. It's totally autonomous and can easily be read outside the site environment, even if will not be styled according to the cascading style sheet it follows when it is integrated.
 
 

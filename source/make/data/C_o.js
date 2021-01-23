@@ -100,18 +100,23 @@ module.exports =
     REMOVE_s:   'REMOVE',
     CACHE_s:    'CACHE',
     REQ_IMG_s:  'REQ_IMG',
-}
+  }
 ,
+
+  KEYVAL_DELIM_s:  '==',  //: _ior_spot shortcode
+  LINE_DELIM_s:    '\n',
 
 
 
   //=== HTML ===
   SECTION_BTN_TAG_s:  'b',
   CLOSE_ICON_TAG_s:   'em',
+
   NOTE_TAG_s:         'ins',
   NOTE_CONTENT_TAG_s: 'i',
   IMG_UNFOLD_TAG_s:   'i',
   NOTE_LINK_TAG_s:    'em',
+
   IOR_PATH_TAG_s:     'ul',
   IOR_LEGEND_TAG_s:   'li',
   IOR_SPOT_TAG_s:     'ul',
@@ -143,8 +148,8 @@ module.exports =
   BODY_MARGIN_n: 10,     //: (100 - 80) * .5
   LINE_WIDTH_n:  52,     //: in ch unit
 
-  BASE_U_n:     20,      //: font base unit
-  BASE_MIN_n:   1.5,
+  BASE_U_n:     16,      //: font base unit
+  BASE_MIN_n:   2.3,
   SCREEN_MIN_n: 400,
   SCREEN_MAX_n: 1600,
 

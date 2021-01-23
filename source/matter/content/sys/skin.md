@@ -6,7 +6,6 @@
   //?? eleventyExcludeFromCollections: true,
 
   doc_n: -2,        //: {{C_o.SKIN_n}}
-  doc_s: 'skin',
   title_s: 'skin',
 }
 ---

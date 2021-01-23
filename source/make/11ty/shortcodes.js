@@ -12,6 +12,7 @@ const S_o        = require( '../data/S_o.js' )
 
 const CODES_o =
 {
+/*
   anchor__s:
   content_s =>
   {
@@ -28,19 +29,20 @@ const CODES_o =
         .substring( level_n + 1 )
 
     return (
-      /*HTML*/
+      //--HTML
       `<h${level_n} data-doc_s=n>
       ${title_s}
       </h${level_n}>`
       )
   }
 ,
+*/
 
 
 
   note_txt__s:
   content_s => (
-    /*HTML*/
+    //--HTML
     `<${C_o.NOTE_TAG_s} data-id="note_txt">
     <button aria-label="unfold note"></button>
     <${C_o.NOTE_CONTENT_TAG_s} data-id="note_content">${content_s}</${C_o.NOTE_CONTENT_TAG_s}>
@@ -90,7 +92,7 @@ const CODES_o =
     }
     
     return (
-      /*HTML*/
+      //--HTML
       `<${C_o.NOTE_TAG_s} data-id="note_img">
       <button aria-label="unfold image" data-legend="${legend_s}">
       <label data-id="img_legend">${data_s}</label>
@@ -110,7 +112,7 @@ note_link__s:
   link_a =>
   {
     let link_s =
-      /*HTML*/
+      //--HTML
       `<${C_o.NOTE_LINK_TAG_s} class="note_link_a">`
 
     link_a
@@ -133,7 +135,7 @@ note_link__s:
             )
   
           link_s +=
-            /*HTML*/
+            //--HTML
             `<a class="note_link"
             role="button" tabindex="0"
             data-method="${act_s}"
@@ -141,7 +143,7 @@ note_link__s:
         } )
 
     return (
-      /*HTML*/
+      //--HTML
       `${link_s}</${C_o.NOTE_LINK_TAG_s}>`
     )
   }
@@ -165,22 +167,20 @@ note_link__s:
     {
       content_s
         .trim()
-        .split( '\n' )
+        .split( `${C_o.LINE_DELIM_s}` )
         .forEach
         (
           at_s =>
           {
             legend_s +=
-              `<li>${at_s}`
+              `<${C_o.IOR_LEGEND_TAG_s}>${at_s}`
           }
         )
     }
-    //>
 
-    
     return (
-      /*HTML*/
-      `<ul data-ior_path="${path_s}">${legend_s}</ul>`
+      //--HTML
+      `<${C_o.IOR_PATH_TAG_s} data-ior_path="${path_s}">${legend_s}</${C_o.IOR_PATH_TAG_s}>`
     )
   }
   ,
@@ -201,24 +201,24 @@ note_link__s:
     {
       content_s
         .trim()
-        .split( '\n' )
+        .split( `${C_o.LINE_DELIM_s}` )
         .forEach
         (
           at_s =>
           {
-            const at_a =
+            const [ title_s, attr_s ] =
               at_s
-                .split( '==' )
+                .split( `${C_o.KEYVAL_DELIM_s}` )
 
             shots_s +=
-              `<li data-ior_shot="${at_a[1].trim()}">${at_a[0].trim()}`
+              `<${C_o.IOR_SHOT_TAG_s} data-ior_shot="${attr_s?.trim()}">${title_s?.trim()}`
           }
         )
     }
     
     return (
-      /*HTML*/
-      `<ul data-ior_spot="${id_s}">${shots_s}</ul>`
+      //--HTML
+      `<${C_o.IOR_SPOT_TAG_s} data-ior_spot="${id_s}">${shots_s}</${C_o.IOR_SPOT_TAG_s}>`
     )
   }
   ,
@@ -271,7 +271,8 @@ content_s =>
         )
 
     return (
-      /*HTML*/`<div data-id="code_ref">
+      //--HTML
+      `<div data-id="code_ref">
       <dl data-id="code_ref">
       <dt>Source: ${title_s}</dt>
       <dd>
@@ -395,7 +396,8 @@ module.exports = make_o =>
     )
   ,
 
-  [ 'anchor',
+  [ 
+    //~~'anchor',   not used anymore
     'note_txt',
     'note_img',
     'ior_path',

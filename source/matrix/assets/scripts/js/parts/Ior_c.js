@@ -26,7 +26,8 @@ class Ior    //: Image on request map class (Array of definitions)
 
     this.prefix_s = prefix_s
 
-    this.map_o = {}            //: IOR id_s dictionnary
+    this.map_o =
+      new Object( null )            //: IOR id_s dictionnary
 
     this
       .init__v()

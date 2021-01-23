@@ -4,27 +4,37 @@ var SWO_o =
 {
   cache_s: '{{A_o.ID_s}}_{{C_o.KEY_n}}'            //: name of the current cache
   ,
-  DOC_JS_s: '{{U_o.url_s}}/assets/data/js/docs_data.js'
+  DOC_JS_s: '{{U_o.url_s}}assets/data/js/docs_data.js'
   ,
-  LAB_JS_s: '{{U_o.url_s}}/assets/data/js/topics_data.js'
+  LAB_JS_s: '{{U_o.url_s}}assets/data/js/topics_data.js'
   ,
-
+  IOR_FILE_s: '{{U_o.url_s}}assets/scripts/js/ior_worker.min.js'
+  ,
 
   slots_a:    //: '/path_s/doc_s.html' (!!! keep initial slash)
     [
-      '/slots/introduction.html',
-      '/slots/content_graph.html',
-      '/slots/nodes_assembly.html',
-      '/slots/slider.html',
+      '/slots/ior.html',    //!!! DEV ONLY
+
+      //...'/slots/introduction.html',
+      //...'/slots/content_graph.html',
+      //...'/slots/nodes_assembly.html',
+      //...'/slots/slider.html',
     ]
   ,
 
   url_a:     //: URLs of assets to immediately cache
     [
-      '{{U_o.url_s}}slots/introduction.html',
-      '{{U_o.url_s}}slots/content_graph.html',
-      '{{U_o.url_s}}slots/nodes_assembly.html',
-      '{{U_o.url_s}}slots/slider.html',
+      '{{U_o.url_s}}assets/scripts/js/index.min.js',
+      '{{U_o.url_s}}assets/scripts/js/slot.min.js',
+      '{{U_o.url_s}}assets/scripts/js/slider.min.js',
+
+
+      '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
+
+      //...'{{U_o.url_s}}slots/introduction.html',
+      //...'{{U_o.url_s}}slots/content_graph.html',
+      //...'{{U_o.url_s}}slots/nodes_assembly.html',
+      //...'{{U_o.url_s}}slots/slider.html',
       //XX'{{U_o.url_s}}offline.html',
     ]
   ,
@@ -45,8 +55,7 @@ var SWO_o =
     ]
   ,
 
-  //XX   pathname_s: ''
-  //XX ,
+  IOR_b: false,      //: ImageOnRequest external script loaded boolean
 
 
   
@@ -329,7 +338,8 @@ var SWO_o =
     json_s     //: as payload_o
   )
   {
-    console.log( json_s )
+    IOR_o
+      .init__v( json_s )
   }
 ,
 
@@ -459,23 +469,6 @@ cache__v
 
 
 
-/*//-------------------------------------- DO WE NEED THOSE DATA?
-  import__v
-  ()
-  {
-    self
-      .importScripts
-      (
-        SWO_o.DOC_JS_s,
-        SWO_o.LAB_JS_s
-      )
-  }
-,
-//---------------------------------------------------------------
-*/
-
-
-
   init__v
   ()
   {
@@ -503,14 +496,25 @@ cache__v
       )
     SWO_o
       ['{{C_o.msg_o.REGISTER_s}}__v']()
-    //....................... ??? DO WE NEED THOSE DATA?
-    //... SWO_o
-    //...   .import__v()
   }
 ,
 
 }
 SWO_o
   .init__v()  // !!! no IIFE
+
+self
+  .importScripts( SWO_o.IOR_FILE_s )
+
+/*//-------------------------------------- DO WE NEED THOSE DATA?
+self
+  .importScripts
+  (
+    SWO_o.DOC_JS_s,
+    SWO_o.LAB_JS_s
+  )
+//---------------------------------------------------------------
+*/
+
 
 

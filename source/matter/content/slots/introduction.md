@@ -5,7 +5,6 @@
   tags: [ 'notag' ],
 
   doc_n: 0,    //: CONCEPT_s
-  doc_s: 'introduction',
   title_s: 'About progressiVecontent',
   topics_a: [ 'web site architecture', 'fondamentals' ],
   words_a: [ 'content-on-request', 'machine learning', 'lazy loading', 'speed loading' ],
@@ -36,16 +35,3 @@ This site fully explores this concept and deploys an experimental ~°implementat
 ~°no framework°~ inside! {{ A_o.NAME_s }} __is__ the _framework_
 {% end_note_txt %}
 , unveiling usefull ~°code bits°~ as __~°imarq°~__ ~°IIIF compatible images-on-request°~, __~°smartReg°~__ ~°templated RegExp°~ or __~°ilite°~__ ~°interactive code highlighting°~.
-
-
-{% _ior_path '1585_coster-₀_₀-1625_youngwoman/full/max/0/jpg' %}
-Adam de Coster [1586-1643]
-Young women holding a distaff before a lit candle
-{% end_ior_path %}
-
-
-{% _ior_spot '1585_coster-₀_₀-1625_youngwoman' %}
-color full  == quality:color
-gray medium == size:400,/quality:gray
-gray small  == size:100,/quality:gray
-{% end_ior_spot %}

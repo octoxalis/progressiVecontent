@@ -36,28 +36,6 @@ EXT_o.ARRAY_s =
   \\]     //: closing Array bracket
   )       //: close capture group
   `
-EXT_o.LINE_s =
-  `
-  (       //: open capture group
-  [       //: open char range
-  \\s\\S  //: anything
-  ]       //: close char range
-  *?      //: non-greedy...
-  )       //: close capture group
-  \\n     //: ... up to a new line
-  `
-EXT_o.TITLE_s =
-  `
-  ^       //: start of line
-  :       //: title delimiter
-  (       //: open capture group
-  [       //: open char range
-  ^:      //: word and space chars
-  ]       //: close char range
-  +?      //: non-greedy...
-  )       //: close capture group
-  :       //: title delimiter
-  `
 EXT_o.DOC_n =
   `
   \\s*?   //: optional space, non-greedy
@@ -71,19 +49,33 @@ EXT_o.DOC_n =
   \\s*?   //: optional space, non-greedy
   ,       //: object properties separator
   `
-EXT_o.DOC_s =
+//~~EXT_o.DOC_s =
+//~~  `
+//~~  \\s*?   //: optional space, non-greedy
+//~~  (?:'|") //: string delimiter
+//~~  (       //: open capture group
+//~~  [       //: open char range
+//~~  \\w     //: word char
+//~~  ]       //: close char range
+//~~  +?      //: non-greedy...
+//~~  )       //: close capture group
+//~~  (?:'|") //: string delimiter
+//~~  `
+  EXT_o.DOC_s =
   `
   \\s*?   //: optional space, non-greedy
   (?:'|") //: string delimiter
+  (?:sys|slots)  //: path
+  \/      //: directory slash
   (       //: open capture group
   [       //: open char range
   \\w     //: word char
   ]       //: close char range
   +?      //: non-greedy...
   )       //: close capture group
+  \.html  //: file extension
   (?:'|") //: string delimiter
   `
-
 EXT_o.TAG_s =
   `
   ~°           //: opening word delimiter
@@ -161,7 +153,7 @@ EXT_o.docs__o =
   const docS_re =
     smRE_o
       `
-      doc_s:     //: JS front matter Array
+      permalink:     //: JS front matter String
       ${EXT_o.DOC_s}
       `
   const docS_a =
@@ -286,7 +278,6 @@ EXT_o.toIndex__v =
     )
   let text_s = ''
   let json_a = []
-  let index_n = 0
   let doc_a =
     new Set()
   for
