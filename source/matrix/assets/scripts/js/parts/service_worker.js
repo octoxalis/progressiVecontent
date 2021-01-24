@@ -26,7 +26,6 @@ var SWO_o =
     [
       '{{U_o.url_s}}assets/scripts/js/index.min.js',
       '{{U_o.url_s}}assets/scripts/js/slot.min.js',
-      '{{U_o.url_s}}assets/scripts/js/slider.min.js',
 
 
       '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
