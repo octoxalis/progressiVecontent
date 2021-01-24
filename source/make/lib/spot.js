@@ -2,12 +2,44 @@ const SPO_o =
 {
   selector_o:    //:- Object properties from shortcodes functions - assets files (CSS & JS)
   {
-    'data-doc_s="contents' : ['css:slider', /*'js:slider',*/ 'css:slot', 'js:slot', /*'js:graph_c', 'js:graph',*/ 'css:dialog_block', ],
-    'data-id="note_': ['css:note', 'js:note'],
-    'data-ior_path': ['js:ior'],
-    'data-id="code_': ['css:code', 'js:code'],
-    'data-doc_s="skin': ['css:skin', 'js:skin' ],
-    'data-doc_s="bookmark': ['css:bookmark', 'js:bookmark' ],
+    'data-doc_s="contents' :
+      [
+        'js:slot',
+
+        'css:slider',
+        'css:slot',
+        'css:dialog_block',
+      ],
+
+    'data-id="note_':
+      [
+        'js:note',
+        'css:note',
+      ],
+
+    'data-ior_path':
+      [
+        'js:ior'
+      ],
+
+    'data-id="code_':
+      [
+        'js:code',
+        'css:code',
+      ],
+
+    'data-doc_s="skin':
+      [
+        'js:skin',
+        'css:skin',
+      ],
+
+    'data-doc_s="bookmark':
+      [
+        'js:bookmark',
+      'css:bookmark',
+      ],
+      
     //...'data-id="comments' : ['js:comments'],
     //...'data-id="performance' : ['css:performance', 'js:web_vitals', 'js:web_vitals_report', 'js:perf_api'],
   }

@@ -278,9 +278,9 @@ content_s =>
       <dd>
       <a href="https://ilite.netlify.app" target="_blank" title="Interactively highlighted by ilite.js">ilite</a>
       </dd></dl></div>
-      <pre data-id="code">    //: <pre> and <div> as wrappers for full width <code> and <dl>
+      <pre data-id="code">
       <code data-id="code" data-lang="${content_o.lang_s}">${code_s}</code>
-      </pre>`
+      </pre>`    //: <pre> and <div> as wrappers for full width <code> and <dl>
     )
   }
 ,

@@ -13,7 +13,6 @@ var IOR_o =
 
 
 
-
   parse__a
   (
     json_s
@@ -102,6 +101,15 @@ var IOR_o =
 
 
 
+  toCache__v
+  (
+    json_s
+  )
+  {
+    const url_o =
+      IOR_o
+        .parse__a( json_s )      ;console.log( JSON.stringify( url_o ) )
+  }
 
 
 

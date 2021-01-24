@@ -27,7 +27,6 @@ var SWO_o =
       '{{U_o.url_s}}assets/scripts/js/index.min.js',
       '{{U_o.url_s}}assets/scripts/js/slot.min.js',
 
-
       '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
 
       //...'{{U_o.url_s}}slots/introduction.html',
@@ -264,6 +263,7 @@ var SWO_o =
     if ( !cache_a.length ) return
     //>
     const restore_a = []
+
     for ( let url_s of cache_a )
     {
       const pathSlot_s =
@@ -272,6 +272,7 @@ var SWO_o =
           (
             url_s
           )
+
       restore_a
         .push
         (
@@ -279,6 +280,7 @@ var SWO_o =
             .split( '/' )
         )
     }
+
     SWO_o
       .send__v    //: to main
       (
@@ -337,31 +339,8 @@ var SWO_o =
     json_s     //: as payload_o
   )
   {
-    const urlMap_o =
-      IOR_o
-        .parse__a( json_s )
-/*
-    const entry_a =
-      await caches
-        .keys()
-
-      await entry_a
-        .filter
-        (
-          entry_s => entry_s !== SWO_o.cache_s
-        )
-
-    await Promise
-      .all
-      (
-        remove_a
-          .map
-          (
-            remove_s => caches.delete( remove_s )
-          )
-      )
-      */
-    //;console.log( JSON.stringify( urlMap_o ) )
+    IOR_o
+      .toCache__v( json_s )
 
   }
 ,
