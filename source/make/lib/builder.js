@@ -182,9 +182,7 @@ module.exports =
  * List Markdown files to process
  * Keep 2 levels depth only for content slots
  */
-//==============
 void function ()
-//==============
 {
   const MD_DIR_s = C_o.CONTENT_PATH_s    //: all Mardown files
   const DEPTH_n  = 2
@@ -194,6 +192,7 @@ void function ()
   {
     BUI_o
       .count_n = BUI_o.file_a.length
+
     //; console.table(BUI_o.file_a)
   }
 } ()

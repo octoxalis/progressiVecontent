@@ -60,7 +60,7 @@ module.exports =
   
   URL_S_s:    '?s=/',       //: url search prefix, e.g. '{{U_o.url_s}}{{C_o.URL_S_s}}{{C_o.SLOTS_s}}/sl
 
-  KEY_n:      1,            //: service worker key
+  KEY_n:      3,            //: service worker key
   
 
   //=== INDEX ===
@@ -103,6 +103,7 @@ module.exports =
   }
 ,
 
+  SLOT_DELAY_n:    250,   //: LIB_o.slotInit__v delay for renew__v handler
   KEYVAL_DELIM_s:  '==',  //: _ior_spot shortcode
   LINE_DELIM_s:    '\n',
 

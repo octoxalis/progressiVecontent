@@ -2,14 +2,12 @@
 
 var LIB_o =
 {
-
-
-  /*//------ NOT USED
   eval__v:
   code_s =>
-  code_s && (new Function( code_s ))()
+    code_s
+    &&
+    ( new Function( code_s ) )()
 ,
-  */
 
 
 
@@ -145,7 +143,9 @@ toggleId__v:
   const id_e = 
     LIB_o
       .nodeId__o( id_s )
-  id_e && id_e.classList.toggle( class_s )
+  id_e
+  &&
+  id_e.classList.toggle( class_s )
 }
 ,
 
@@ -273,22 +273,28 @@ toggleId__v:
             adopted_e.contentDocument.body
             ||
             adopted_e.contentDocument
+
           const root_e =
             content_e
               .children[0]
+
           adopter_e
             .appendChild( root_e )
+
           scriptify__v( root_e )
+
+          callback_f
+          &&
+          callback_f( adopter_e, root_e )
+
           LIB_o
-            .slotInit__v( root_e )
-          callback_f && callback_f( adopter_e, root_e )
-          LIB_o
-            .invisible__v
-            (
-              adopted_e
-            )
+            .invisible__v( adopted_e )
+
           adopted_e
             .remove()
+          
+          LIB_o
+            .slotInit__v( root_e )
         }
       )
   }
@@ -327,7 +333,11 @@ toggleId__v:
   ) =>
   {
     for ( let id_s of id_a )
-      !document.querySelector( `link#${id_s}_css` ) && LIB_o.link__v( id_s )
+    {
+      ! document.querySelector( `link#${id_s}_css` )
+      &&
+      LIB_o.link__v( id_s )
+    }
   }
 ,
 
@@ -362,7 +372,11 @@ toggleId__v:
   ) =>
   {
     for ( let id_s of id_a )
-      !document.querySelector( `script#${id_s}_js` ) && LIB_o.script__v( id_s )
+    {
+      ! document.querySelector( `script#${id_s}_js` )
+      &&
+      LIB_o.script__v( id_s )
+    }
   }
 ,
 
@@ -380,18 +394,30 @@ toggleId__v:
     const adopter_e =
       LIB_o
         .nodeId__o( 'sections' )
+
     const iframe_e =
       document
         .createElement( 'iframe' )
-    //???? iframe_e.src = `${path_s}/${doc_s}.html`
-    iframe_e.src = `/${path_s}/${doc_s}.html`
-    iframe_e.dataset.doc_n = ''+step_n
+
+    iframe_e.src =
+      `/${path_s}/${doc_s}.html`
+
+    iframe_e.dataset.doc_n =
+      ''+step_n
+
     adopter_e
       .appendChild( iframe_e )
+
     LIB_o
-      .adopt__v( adopter_e, iframe_e, callback_f )
+      .adopt__v
+      (
+        adopter_e,
+        iframe_e,
+        callback_f
+      )
   }
 ,
+
 
 
   slotInit__v:
@@ -399,60 +425,65 @@ toggleId__v:
     section_e
   ) =>
   {
-    const close_e =    //:-- slot remove button
-      section_e
-       .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-doc_s]' )
-    if ( close_e )
-    {
-      close_e
-        .addEventListener
-        (
-          'click',
-          () => 
-            SLOT_o
-              .remove__v( section_e )
-        )
-    }
-    const button_a =    //: slot image unfold button
-      section_e
-        .querySelectorAll( 'button[aria-label="unfold image"]' )
-    for ( const button_e of button_a )
-    {
-      button_e
-        .addEventListener
-        (
-          'mouseover',
-          () =>
-            NOTE_o
-              .unfold__v( button_e )
-        )
-    }
-    const link_a =        //: slot image link button
-      section_e
-        .querySelectorAll( 'a[class="note_link"]' )
-    for ( const link_e of link_a )
-    {
-      link_e
-        .addEventListener
-        (
-          'click',
-          () =>
-            NOTE_o
-              .act_o[`${link_e.dataset.method}`]
-              (
-                link_e,
-                `${link_e.dataset.param}`
-              )
-        )
-      link_e
-        .addEventListener
+    setTimeout    //--> TODO: find a Promise way
+    (
+      () =>
+      {
+        const close_e =    //:-- slot remove button
+          section_e
+           .querySelector( '{{ C_o.CLOSE_ICON_TAG_s }}[data-doc_s]' )
+           
+        if ( close_e )
+        {
+          close_e
+            .addEventListener
+            (
+              'click',
+              () => 
+                SLOT_o
+                  .remove__v( section_e )
+            )
+        }
+        
+        const scriptList_e =
+          section_e
+            .querySelector( 'script[data-node="Script"]' )
+        
+        if ( scriptList_e )
+        {
+          const list_a =
+            scriptList_e
+              .dataset
+              .list
+              .split( ' ' )    //: space separator
+          
+          const doc_n =
+            section_e
+              .dataset
+              .doc_n
+        
+          for
           (
-            'keydown',
-            () =>
-              link_e
-                .click()
+            let script_s
+            of
+            list_a
           )
-    }
+          {
+            const var_s =
+              `${script_s.toUpperCase()}_o`
+            eval
+            (
+              `${var_s}
+               ??
+               ${var_s}?.renew__v
+               ??
+               ${var_s}?.renew__v( doc_n )`
+            )
+          }
+        }
+      },
+      {{C_o.SLOT_DELAY_n}}
+    )
   }
 ,
 

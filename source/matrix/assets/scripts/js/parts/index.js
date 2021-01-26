@@ -74,7 +74,7 @@ var IND_o =
   
   
   
-    unfold__v
+  unfold__v
   (
     event_o
   )
@@ -93,7 +93,7 @@ var IND_o =
         'sections_slider',
         'aside'
       )
-}
+  }
 ,
 
 
@@ -166,6 +166,7 @@ var IND_o =
   )
   {
     let base_s
+
     if
     (
       set_n === undefined  //: initial load only
@@ -176,6 +177,7 @@ var IND_o =
           '{{C_o.HUE_P_n}}'
           :
           '{{C_o.LUM_MODE_n}}'
+
       set_n =
         window
           .localStorage
@@ -184,10 +186,12 @@ var IND_o =
         ||
         base_s    //: 1st site visit or local storage cleared
     }
+
     window
       .localStorage
       .setItem
       ( set_s, set_n )
+
     LIB_o
       .rootVar__v
         (
@@ -270,7 +274,7 @@ var IND_o =
 
 
 
-clearUrl__v
+  clearUrl__v
   ()
   {
     if ( window.location.hash )    //: location from an internal link
@@ -291,23 +295,27 @@ clearUrl__v
 
 
 
+  renew__v
+  (
+    //--doc_n
+  )
+  {
+    const method_s =
+      window
+        .localStorage
+        .getItem
+          ( 'worker_b' )  ?
+      'initial'
+      :
+      'boot'
+    IND_o
+      [ `${method_s}__v` ]( method_s )
+
+    //======================
+    ;console.log( 'code.js' )
+  }
 
 }
 
-
-void function    //:- init serviceWorker & launcher event
-()
-{
-  const method_s =
-    window
-      .localStorage
-      .getItem
-        ( 'worker_b' )  ?
-    'initial'
-    :
-    'boot'
-  IND_o
-    [ `${method_s}__v` ]( method_s )
-} ()
-
-
+IND_o
+  .renew__v()

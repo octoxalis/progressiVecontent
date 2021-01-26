@@ -28,42 +28,6 @@ class Ior    //: Image on request map class (Array of definitions)
 
     this.map_o =
       new Object( null )            //: IOR id_s dictionnary
-
-    this
-      .init__v()
-}
-
-
-
-  init__v    //: scan document for ior nodes
-  ()
-  {
-    document
-      .querySelectorAll( `[data-ior_path]` )    //: IDENT
-      .forEach
-      (
-        ul_e =>
-        {
-          const id_s =
-            this
-              .id__s
-              (
-                ul_e
-                  .dataset
-                    .ior_path        //-- {{C_o.IOR_ID_s}}
-              )
-
-          this
-            .spot__v( id_s )
-            
-          this
-            .legend__v
-            (
-              id_s,
-              ul_e
-            )
-        }
-      )
   }
 
 
@@ -184,6 +148,41 @@ class Ior    //: Image on request map class (Array of definitions)
 
 
   //=== API ===
+  scan__v    //: scan element (section) for ior nodes
+  (
+    root_e
+  )
+  {
+    root_e
+      .querySelectorAll( `[data-ior_path]` )    //: IDENT
+      .forEach
+      (
+        ul_e =>
+        {
+          const id_s =
+            this
+              .id__s
+              (
+                ul_e
+                  .dataset
+                    .ior_path        //-- {{C_o.IOR_ID_s}}
+              )
+
+          this
+            .spot__v( id_s )
+            
+          this
+            .legend__v
+            (
+              id_s,
+              ul_e
+            )
+        }
+      )
+  }
+
+
+
   json__s    //: get map_o as JSON
   ()
   {

@@ -1,11 +1,11 @@
-// === COD_o: code.js ==
+// === CODE_o: code.js ==
 
-var COD_o =
+var CODE_o =
 {
-  uvar__v:
+  uvar__v
   (
     target_e
-  ) =>
+  )
   {
     const uvar_s =
       target_e
@@ -36,60 +36,69 @@ var COD_o =
 
 
 
-line__v:
-(
-  target_e
-) =>
-{
-  const li_e =
+  line__v
+  (
     target_e
-      .closest('LI')
-  if ( li_e )
+  )
   {
-    li_e
-      .classList
-      .toggle( 'i_spot' )
+    const li_e =
+      target_e
+        .closest('LI')
+    if ( li_e )
+    {
+      li_e
+        .classList
+        .toggle( 'i_spot' )
+    }
   }
-}
 ,
 
-}
 
 
+  renew__v
+  (
+    doc_n
+  )
+  {
+    const section_e =
+      document
+        .querySelector( `section[data-doc_n="${doc_n}"]` )
+        
+    const code_a =
+      section_e
+        .querySelectorAll( `code[data-id="code"]` )
 
-void function ()
-{
-  const code_a =
-    document
-      .querySelectorAll( `code[data-id="code"]` )
-  ;[ ...code_a ]
-    .forEach
-    (
-      code_e =>
-      {
-        code_e
-          .addEventListener
-          (
-            'click',
-            click_o =>    //: handler
-            {
-              const target_e =
-                click_o.target
-              if ( target_e.classList.contains( 'i_uv' ) )
+    ;[ ...code_a ]
+      .forEach
+      (
+        code_e =>
+        {
+          code_e
+            .addEventListener
+            (
+              'click',
+              click_o =>    //: handler
               {
-                return (
-                  COD_o
-                    .uvar__v( target_e )
-                )
+                const target_e =
+                  click_o.target
+                if ( target_e.classList.contains( 'i_uv' ) )
+                {
+                  return (
+                    CODE_o
+                      .uvar__v( target_e )
+                  )
+                }
+                //>
+                CODE_o
+                  .line__v( target_e )
               }
-              //>
-              COD_o
-                .line__v( target_e )
-            }
-              
-          )
-      }
-    )
-  //>
-  ;console.log( 'code.js' )
-} ()
+                
+            )
+        }
+      )
+
+    //======================
+    ;console.log( 'code.js' )
+  }
+
+}

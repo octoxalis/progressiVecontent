@@ -14,6 +14,7 @@ const SPO_o =
     'data-id="note_':
       [
         'js:note',
+
         'css:note',
       ],
 
@@ -25,19 +26,22 @@ const SPO_o =
     'data-id="code_':
       [
         'js:code',
+
         'css:code',
       ],
 
     'data-doc_s="skin':
       [
         'js:skin',
+
         'css:skin',
       ],
 
     'data-doc_s="bookmark':
       [
         'js:bookmark',
-      'css:bookmark',
+        
+        'css:bookmark',
       ],
       
     //...'data-id="comments' : ['js:comments'],
@@ -74,8 +78,8 @@ const SPO_o =
         asset_o[`${prop_s}_s`] += `${asset_s} `
       }
     }
-    asset_o.style_s = SPO_o.script__s( 'Link', asset_o.style_s )  //: see DOM.slotLink__v
-    if ( asset_o.script_s ) asset_o.script_s = SPO_o.script__s( 'Script', asset_o.script_s )//: see DOM.slotScript__v
+    asset_o.style_s = SPO_o.script__s( 'Link', asset_o.style_s )  //: see LIB.slotLink__v
+    if ( asset_o.script_s ) asset_o.script_s = SPO_o.script__s( 'Script', asset_o.script_s )//: see LIB.slotScript__v
     return asset_o
   }
 ,

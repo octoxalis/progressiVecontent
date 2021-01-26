@@ -160,7 +160,16 @@ receive__v    //:-- Listen to messages
                     `data-doc_s=${section_e.dataset.doc_s}`
                   ],
                 )
-              },
+              //??if
+              //??(
+              //??  section_e
+              //??    .querySelector( '[data-ior_path]' )
+              //??)
+              //??{
+              //??  //...IOR_o
+              //??  //...  .init__v( section_e )
+              //??}
+            },
           )
     }
     

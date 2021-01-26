@@ -2,7 +2,6 @@
 
 var SLOT_o =
 {
-
   dialog__o    //: inline dialog box to display lists
   (
     section_s
@@ -53,11 +52,20 @@ var SLOT_o =
 ,
 
 
+
+  renew__v
+  (
+    doc_n
+  )
+  {
+
+    //======================
+    ;console.log( 'slot.js' )
+  }
+  
 }
 
 
-  //>
-  ;console.log( 'slot.js' )
 
 
 

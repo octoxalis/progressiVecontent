@@ -23,9 +23,9 @@ Sothebys, New York &#12290; 2017-01-25: N09601-23
 
 
 {% _ior_spot '1585_coster-₀_₀-1625_youngwoman' %}
-color full  == quality:color
-gray medium == size:512,/quality:gray
 gray small  == size:64,/quality:gray
+gray medium == size:512,/quality:gray
+color full  == quality:color
 {% end_ior_spot %}
 
 
@@ -38,7 +38,7 @@ Private collection, Paris, France
 
 
 {% _ior_spot '1585_coster-₀_₀-1625_sangerolamo' %}
-color full  == quality:color
-gray medium == size:512,/quality:gray
 gray small  == size:64,/quality:gray
+gray medium == size:512,/quality:gray
+color full  == quality:color
 {% end_ior_spot %}

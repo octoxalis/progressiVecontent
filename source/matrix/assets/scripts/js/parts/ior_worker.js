@@ -108,7 +108,33 @@ var IOR_o =
   {
     const url_o =
       IOR_o
-        .parse__a( json_s )      ;console.log( JSON.stringify( url_o ) )
+        .parse__a( json_s )
+    
+    const cache_a = []
+
+
+    for ( let key_s in url_o )
+    {
+      let url_a =
+        url_o[key_s]
+      url_a
+        .forEach
+        (
+          url_s =>
+          {
+            ;console.log( `${key_s}:${url_s}` )
+            if
+            (
+              url_s
+                .match
+            )
+            {
+              
+            }
+          }
+        )
+
+    }
   }
 
 

@@ -27,23 +27,29 @@ const U_o =
   HOME_s:    `[Home page]: ${CONF_o.URL_s}`,
   NETLIFY_s: `https://www.netlify.com`,
   NODE_s :   `[Node.js]: https://nodejs.org`,
+
+
+  renew__v:
+  () =>
+  {
+    U_o.url_s =
+      U_o
+        [
+          U_o.dev_b === true
+          ?
+            'DEV_s'
+          :
+            'PRO_s'
+        ]
+    
+    //======================
+    console
+      .log( `Site URL: ${U_o.url_s}` )
+  }
+
 }
 
-
-
-void function ()
-{
-  U_o.url_s =
-    U_o
-      [
-        U_o.dev_b === true
-        ?
-          'DEV_s'
-        :
-          'PRO_s'
-      ]
-  console
-    .log( `Site URL: ${U_o.url_s}` )
-} ()
+U_o
+  .renew__v()
 
 module.exports = U_o

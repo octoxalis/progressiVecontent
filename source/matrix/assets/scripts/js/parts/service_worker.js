@@ -10,6 +10,8 @@ var SWO_o =
   ,
   IOR_FILE_s: '{{U_o.url_s}}assets/scripts/js/ior_worker.min.js'
   ,
+  CACHE_FILE_s: '{{U_o.url_s}}assets/scripts/js/cache_worker.min.js'
+  ,
 
   slots_a:    //: '/path_s/doc_s.html' (!!! keep initial slash)
     [
@@ -27,13 +29,21 @@ var SWO_o =
       '{{U_o.url_s}}assets/scripts/js/index.min.js',
       '{{U_o.url_s}}assets/scripts/js/slot.min.js',
 
-      '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
+      //--> urlMut_a : '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
 
       //...'{{U_o.url_s}}slots/introduction.html',
       //...'{{U_o.url_s}}slots/content_graph.html',
       //...'{{U_o.url_s}}slots/nodes_assembly.html',
       //...'{{U_o.url_s}}slots/slider.html',
       //XX'{{U_o.url_s}}offline.html',
+    ]
+  ,
+  
+
+  urlMut_a:     //: URLs of assets to immediately cache
+    [
+      '{{U_o.url_s}}slots/ior.html',    //!!! DEV ONLY
+      //'{{U_o.url_s}}slots/introduction.html',
     ]
   ,
   
@@ -75,8 +85,16 @@ var SWO_o =
           const cache_o =
             await caches
               .open( SWO_o.cache_s )
-          await cache_o
-            .addAll( SWO_o.url_a  )
+
+          await
+          SWO_o
+            .addAll__v
+            (
+              cache_o,
+              SWO_o.url_a,
+              SWO_o.urlMut_a,
+            )
+
           self
             .skipWaiting()
         } ()
@@ -96,12 +114,14 @@ var SWO_o =
         const entry_a =
           await caches
             .keys()
+
         const remove_a =
           await entry_a
             .filter
             (
               entry_s => entry_s !== SWO_o.cache_s
             )
+
         await Promise
           .all
           (
@@ -111,6 +131,7 @@ var SWO_o =
                 remove_s => caches.delete( remove_s )
               )
           )
+
         self
           .clients
           .claim()
@@ -132,6 +153,7 @@ var SWO_o =
       fetch_o
         ?.request
         ?.mode
+
     if (mode_s  === 'navigate' )
     {
       try
@@ -156,6 +178,7 @@ var SWO_o =
                     resp_o
                       .clone()
                   )
+
               fetch_o
                 .waitUntil
                 (
@@ -165,6 +188,7 @@ var SWO_o =
                     const cache_o =
                       await caches
                         .open( SWO_o.cache_s )
+
                     await cache_o
                       .put
                       (
@@ -173,12 +197,13 @@ var SWO_o =
                       )
                   }()    //: IIFE
                 )
-                return (
-                  await caches
-                    .match( url_o )
-                  )
-                  ||
-                  response_o
+
+              return (
+                await caches
+                  .match( url_o )
+                )
+                ||
+                response_o
             } ()
           )
       }
@@ -190,6 +215,7 @@ var SWO_o =
         const cache_o =
           caches
             .open( SWO_o.cache_s )
+
         return (
           cache_o
           &&
@@ -211,13 +237,14 @@ var SWO_o =
   )
   {
     let { pathname, search } = url_o
+
     if ( search )    //: for internal links (-> '?s=/slots/page.html')
     {
       pathname =
         search
           .slice( '{{C_o.URL_S_s}}'.length - 1 )    //: see supra
     }
-    //........................................
+
     SWO_o
       .cache__v( pathname )
   }
@@ -258,8 +285,8 @@ var SWO_o =
   {
     const cache_a = 
       Array
-        .from( SWO_o.cache_a )
-    //;console.log( cache_a )
+        .from( SWO_o.cache_a )      //;console.log( cache_a )
+        
     if ( !cache_a.length ) return
     //>
     const restore_a = []
@@ -314,12 +341,13 @@ var SWO_o =
   )
   {
     const { cache_a } = payload_o    //: recipient_s not used
+
     if ( cache_a )    //: replace items (after sorting/removing)
     {
       SWO_o.cache_a = cache_a
       return
-      //>
     }
+    //>
     //: get cache_a items
     SWO_o
       .send__v    //: to main
@@ -342,12 +370,80 @@ var SWO_o =
     IOR_o
       .toCache__v( json_s )
 
+    //........................
+
+
   }
 ,
 
 
 
-cache__v
+  addAll__v      //: https://github.com/TalAter/cache.adderall
+  (
+    cache_o,
+    immutable_a = [],
+    mutable_a = []
+  )
+  {
+    let keep_a = []
+  
+    return (
+      Promise
+        .all
+        (
+          immutable_a    // Go over immutable requests
+            .map
+            (
+              url_s =>
+              {
+                return (
+                  caches
+                    .match( url_s )
+                    .then
+                    (
+                      response_o =>
+                      {
+                        if (response_o)
+                        {
+                          return (
+                            cache_o
+                              .put
+                              (
+                                url_s,
+                                response_o
+                              )
+                          )
+                        }
+                        keep_a
+                          .push( url_s )
+  
+                        return (
+                          Promise
+                            .resolve()
+                        )
+                      }
+                    )
+                )
+              }
+            )
+        )
+        .then  // go over mutable requests, and immutable requests not found in any cache
+        (
+          () =>
+            cache_o
+              .addAll
+              (
+                keep_a
+                  .concat( mutable_a )
+              )
+          )
+    )
+  }
+,
+
+
+
+  cache__v
   (
     pathSlot_s
   )
@@ -426,6 +522,7 @@ cache__v
       msg_o
         ?.data
         ?.type_s
+
     if ( !type_s ) return
     //>
     if
@@ -490,33 +587,40 @@ cache__v
               SWO_o[`${event_s}__v`]( event_o )
           )
       )
+
     self
       .addEventListener
       (
         'message',
         SWO_o.receive__v
       )
+
     SWO_o
       ['{{C_o.msg_o.REGISTER_s}}__v']()
   }
 ,
 
 }
-SWO_o
-  .init__v()  // !!! no IIFE
 
-self
-  .importScripts( SWO_o.IOR_FILE_s )
 
-/*//-------------------------------------- DO WE NEED THOSE DATA?
+
 self
   .importScripts
   (
-    SWO_o.DOC_JS_s,
-    SWO_o.LAB_JS_s
+    SWO_o.CACHE_FILE_s,
+    SWO_o.IOR_FILE_s,
   )
-//---------------------------------------------------------------
-*/
+
+//??-------------------------------------- DO WE NEED THOSE DATA?
+//??self
+//??  .importScripts
+//??  (
+//??    SWO_o.DOC_JS_s,
+//??    SWO_o.LAB_JS_s
+//??  )
+//??---------------------------------------------------------------
 
 
 
+SWO_o
+  .init__v()  // !!! no IIFE

@@ -232,6 +232,17 @@ var GRA_o =
                     )
                 }
               )
+
+            //if ( +step_s > -1 )    //: skip sys slots
+            if
+            (
+              section_e
+                .querySelector( '[data-ior_path]' )
+            )
+            {
+              IOR_o
+                .init__v( section_e )
+            }
           }
         )
       }

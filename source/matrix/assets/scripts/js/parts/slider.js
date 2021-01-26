@@ -11,12 +11,14 @@ var SLI_o =
     SLI_o.slider_e =
       LIB_o
         .nodeId__o( 'sections_slider' )
+
     SLI_o
       .slider_c =
         new Slider3D(
           SLI_o.slider_e,
           LIB_o.nodeId__o( 'sections' )
           )
+
     return (
       SLI_o
         .slider_c
@@ -35,18 +37,21 @@ var SLI_o =
       event_o
         .target
         .closest( '[data-step]' )
+
     if ( step_e )
     {
       const step_n =
         +step_e
           .dataset
           .step
+
       const doc_n =
         +LIB_o
           .nodeId__o( 'sections_slider' )
           .querySelector( `dl[data-step="${step_n}"]` )
           .dataset
           .section
+          
       SLI_o
         .location__v
         (
@@ -137,24 +142,36 @@ var SLI_o =
   }
 ,
 
+
+
+  renew__v
+  (
+    //~~section_e=document
+    //--doc_n
+  )
+  {
+    LIB_o
+      .rootVar__v
+      (
+        '--SECTIONS_CAP',
+        SLI_o.slider__n()
+      )
+
+    SER_o
+      .send__v
+      (
+        '{{C_o.msg_o.RESTORE_s}}',
+        null
+      )
+
+    SLI_o
+      .listen__v()
+
+    //======================
+    ;console.log( 'slider.js' )
+  }
+
 }
 
-
-void function
-()
-{
-  LIB_o
-    .rootVar__v( '--SECTIONS_CAP', SLI_o.slider__n() )
-  SER_o
-    .send__v
-    (
-      '{{C_o.msg_o.RESTORE_s}}',
-      null
-    )
-  SLI_o
-    .listen__v()
-  //>
-  ;console.log( 'slider.js' )
-} ()
-
-
+SLI_o
+  .renew__v()

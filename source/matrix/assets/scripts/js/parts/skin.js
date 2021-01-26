@@ -107,57 +107,59 @@ var SKIN_o =
 ,
 
 
+  renew__v
+  (
+    //--doc_n
+  )
+  {
+    document
+      .querySelector
+      (
+        `#hue_picker`
+      )
+      .addEventListener
+      (
+        'click',
+        SKIN_o.hue__v
+      )
+
+    document
+      .querySelector
+      (
+        `#hue_current`
+      )
+      .dataset
+      ['skin'] =
+        window
+          .localStorage
+          .getItem
+            ( 'hue_base' )
+
+    document
+      .querySelector
+      (
+        `#lum_picker`
+      )
+      .addEventListener
+      (
+        'click',
+        SKIN_o.lum__v
+      )
+
+    document
+      .querySelector
+      (
+        `#lum_current`
+      )
+      .dataset
+      ['skin'] =
+        window
+          .localStorage
+          .getItem
+            ( 'lum_mode' ) === '-1' ?    //: toString
+            'dark'
+            :
+            'light'
+  }
+
 }
-
-
-
-void function ()
-{
-  document
-    .querySelector
-    (
-      `#hue_picker`
-    )
-    .addEventListener
-    (
-      'click',
-      SKIN_o.hue__v
-    )
-  document
-    .querySelector
-    (
-      `#hue_current`
-    )
-    .dataset
-    ['skin'] =
-      window
-        .localStorage
-        .getItem
-          ( 'hue_base' )
-document
-    .querySelector
-    (
-      `#lum_picker`
-    )
-    .addEventListener
-    (
-      'click',
-      SKIN_o.lum__v
-    )
-  document
-    .querySelector
-    (
-      `#lum_current`
-    )
-    .dataset
-    ['skin'] =
-      window
-        .localStorage
-        .getItem
-          ( 'lum_mode' ) === '-1' ?    //: toString
-          'dark'
-          :
-          'light'
-} ()
-
-

@@ -188,24 +188,73 @@ var NOTE_o =
   }
 ,
 
+
+
+  renew__v
+  (
+    //~~section_e=document
+    doc_n
+  )
+  {
+    const section_e =
+      document
+        .querySelector( `section[data-doc_n="${doc_n}"]` )
+
+    section_e
+      .addEventListener
+      (
+        'click',
+        NOTE_o.text__v
+      )
+      
+    //................................................
+    const button_a =    //: slot image unfold button
+      section_e
+        .querySelectorAll( 'button[aria-label="unfold image"]' )
+
+    for ( const button_e of button_a )
+    {
+      button_e
+        .addEventListener
+        (
+          'mouseover',
+          () =>
+            NOTE_o
+              .unfold__v( button_e )
+        )
+    }
+
+    const link_a =        //: slot image link button
+      section_e
+        .querySelectorAll( 'a[class="note_link"]' )
+
+    for ( const link_e of link_a )
+    {
+      link_e
+        .addEventListener
+        (
+          'click',
+          () =>
+            NOTE_o
+              .act_o[`${link_e.dataset.method}`]
+              (
+                link_e,
+                `${link_e.dataset.param}`
+              )
+        )
+      link_e
+        .addEventListener
+          (
+            'keydown',
+            () =>
+              link_e
+                .click()
+          )
+    }
+    //................................................
+
+    //======================
+    ;console.log( 'note.js' )
+  }
+
 }
-
-
-
-void function ()
-{
-  document
-    .querySelector
-    (
-      `#sections`
-    )
-    .addEventListener
-    (
-      'click',
-      NOTE_o.text__v
-    )
-  //>
-  ;console.log( 'note.js' )
-} ()
-
-
