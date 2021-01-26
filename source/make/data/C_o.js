@@ -106,6 +106,7 @@ module.exports =
   SLOT_DELAY_n:    250,   //: LIB_o.slotInit__v delay for renew__v handler
   KEYVAL_DELIM_s:  '==',  //: _ior_spot shortcode
   LINE_DELIM_s:    '\n',
+  IOR_SMALLER_s:   'full/64,/',
 
 
 

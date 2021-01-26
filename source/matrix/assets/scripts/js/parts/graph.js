@@ -201,7 +201,7 @@ var GRA_o =
           `section[data-doc_n="${step_s}"]`
           //...`section[data-doc_n="${+step_s + 1}"]`              //: Number cast
         )
-    if ( !section_e )  //: not yet fetched
+    if ( ! section_e )  //: not yet fetched
     {
       IND_o
         .load__v
@@ -232,17 +232,6 @@ var GRA_o =
                     )
                 }
               )
-
-            //if ( +step_s > -1 )    //: skip sys slots
-            if
-            (
-              section_e
-                .querySelector( '[data-ior_path]' )
-            )
-            {
-              IOR_o
-                .init__v( section_e )
-            }
           }
         )
       }

@@ -471,13 +471,13 @@ toggleId__v:
           {
             const var_s =
               `${script_s.toUpperCase()}_o`
+              
             eval
             (
               `${var_s}
-               ??
-               ${var_s}?.renew__v
-               ??
-               ${var_s}?.renew__v( doc_n )`
+               &&
+               ${var_s}
+                 ?.renew__v( doc_n )`
             )
           }
         }

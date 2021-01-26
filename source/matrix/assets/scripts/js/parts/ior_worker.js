@@ -112,11 +112,11 @@ var IOR_o =
     
     const cache_a = []
 
-
     for ( let key_s in url_o )
     {
       let url_a =
         url_o[key_s]
+        
       url_a
         .forEach
         (
@@ -126,10 +126,12 @@ var IOR_o =
             if
             (
               url_s
-                .match
+                .indexOf( '{{C_o.IOR_SMALLER_s}}' )
+              >
+              -1
             )
             {
-              
+              console.log( 'PUT IN CACHE' )
             }
           }
         )
